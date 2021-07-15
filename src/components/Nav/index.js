@@ -2,15 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Dropdown, Icon, Menu } from 'semantic-ui-react';
 import './style.scss';
-import logo from '/src/assets/logo.png'
+import logo from './logo.png';
 
 const Nav = () => (
-  <div className="nav flui">
+  <div className="nav">
     <Menu icon="labeled" fluid compact>
       <Menu.Item
         name="Logo"
       >
-        Logo
+        <img id="nav-logo" src={logo} alt="logo" />
       </Menu.Item>
       <Menu.Item
         name="gamepad"
