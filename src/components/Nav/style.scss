@@ -1,9 +1,10 @@
 @use '/src/styles/vars';
+@use 'sass:math';
 
 // General
 
 #nav-logo {
-  width:100px;
+  width:100%;
 }
 
 .ui.segment.nav-segment {
@@ -12,6 +13,20 @@
 
 .ui.menu.nav-menu {
   height: 10vh;
+}
+
+img.ui.mini.circular.navbuttons {
+  background-color: #fff;
+}
+
+// This selector is used to hide the semantic-ui automatic dropdown icon, without losing its functionality of dropdown
+// I'm making it large so it can be easily clickable, and transparent.
+div.ui.floating.dropdown {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  color: rgba(0,0,0,0);
+  background-color: rgba(0,0,0,0);
 }
 
 
