@@ -6,7 +6,11 @@
   width:100px;
 }
 
-.ui.menu {
+.ui.segment.nav-segment {
+  height: 10vh;
+}
+
+.ui.menu.nav-menu {
   height: 10vh;
 }
 
@@ -19,7 +23,7 @@
   }
 }
 
-.theme21 {
+.theme2 {
   .ui.menu.item {
     background-color: vars.$primary_theme2;
   }

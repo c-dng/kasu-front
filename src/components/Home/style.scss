@@ -1,9 +1,27 @@
-.home {
+@use '/src/styles/vars';
 
+// General
 
-}
-
-.ui.two.buttons {
+.home-buttonWrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
+
+.ui.button.home-button {
+  border-radius: 20px;
+  margin: 0;
+  border: 1px solid black;
+  width: 10rem;
+  // box-shadow: 10px 5px 5px black;
+}
+
+.ui.fluid.card{
+  
+  border: 1px solid red;
+}
+
+div.or.home-orButton {
+
+}
+
+// Theme 
