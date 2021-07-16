@@ -16,7 +16,7 @@ const Login = () => (
 
     <Input placeholder='Password...' />
 
-    <Button fluid>Se connecter</Button>
+    <Button fluid color='blue'>Se connecter</Button>
 
     <Card.Content extra>
       <Icon name='question' /> Mot de passe oublié
