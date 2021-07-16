@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Card, Image } from 'semantic-ui-react'
+import { Button, Card, Image, Form } from 'semantic-ui-react'
 import './style.scss';
 
 const Home = () => (
@@ -20,12 +20,13 @@ const Home = () => (
       </Card.Content>
       <Card.Content extra>
         <div className='ui two buttons'>
-          <Button basic color='grey'>
+          <Form.Button>
             Se connecter
-          </Button>
-          <Button basic color='grey'>
+          </Form.Button>
+          <Form.Button>
             S'inscrire
-          </Button>
+          </Form.Button>
+
         </div>
       </Card.Content>
     </Card>
