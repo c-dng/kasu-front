@@ -1,6 +1,7 @@
 // == Import npm
 import React from 'react';
 import Nav from '/src/components/Nav';
+import Home from '/src/components/Home';
 import Footer from '/src/components/Footer';
 // == Import
 
@@ -10,6 +11,7 @@ import './styles.scss';
 const App = () => (
   <div className="app theme1">
     <Nav />
+    <Home />
     <Footer />
   </div>
 );

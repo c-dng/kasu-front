@@ -1,13 +1,23 @@
 import React from 'react';
-import { Dropdown, Icon, Menu } from 'semantic-ui-react';
+import { Menu } from 'semantic-ui-react'
 import './style.scss';
 
 const Footer = () => (
-  <footer className="footer">
-  <p className="legal-notice">Mentions légales</p>
-  <p className="team">L'équipe</p>
-  <p className="contact-us">Contactez-nous</p>
-</footer>
+  <div className="footer">
+<Menu fluid widths={3}>
+        <Menu.Item
+          name='Mentions légales'
+        />
+
+        <Menu.Item
+          name='L/équipe'
+        />
+
+        <Menu.Item
+          name='Contactez-nous'
+        />
+      </Menu>
+  </div>
 );
 
 export default Footer;
