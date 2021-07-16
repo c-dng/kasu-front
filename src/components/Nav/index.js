@@ -3,19 +3,20 @@ import PropTypes from 'prop-types';
 import { Dropdown, Icon, Menu, Segment } from 'semantic-ui-react';
 import './style.scss';
 import logo from './logo.png';
+import chatlogo from './chatlogo.jpg';
 
 const Nav = () => (
   <div className="nav">
-    <Segment inverted>
-      <Menu inverted icon fluid widths={5} borderless fixed="top">
+    <Segment>
+      <Menu icon fluid widths={5} borderless fixed="top">
         <Menu.Item name="Logo">
           <img id="nav-logo" src={logo} alt="logo" />
         </Menu.Item>
-        <Menu.Item name="gamepad">
-          <Icon name="gamepad" />
+        <Menu.Item name="chat">
+          <img id="chat" src={chatlogo} alt="logo" />
         </Menu.Item>
         <Menu.Item name="avatar">
-          <Icon name="image" />
+          <Icon color="red" name="image" />
         </Menu.Item>
         <Dropdown icon="image" pointing className="link item">
           <Dropdown.Menu direction="left">

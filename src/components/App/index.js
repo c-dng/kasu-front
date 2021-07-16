@@ -7,7 +7,7 @@ import './styles.scss';
 
 // == Composant
 const App = () => (
-  <div className="app">
+  <div className="app theme1">
     <Nav />
   </div>
 );
