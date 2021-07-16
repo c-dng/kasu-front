@@ -21,7 +21,8 @@ const Home = () => (
       <Card.Content>
         <div className="home-buttonWrapper">
 
-          {/* <Button.Group>
+          {/* this is just in case we prefer the dual connect/register button
+          <Button.Group>
             <Button negative>Connexion</Button>
             <Button.Or className="home-orButton" text="ou" />
             <Button positive>Inscription</Button>
