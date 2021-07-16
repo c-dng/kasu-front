@@ -25,7 +25,6 @@ const Home = () => (
               <Form.Button >
                 S'inscrire
               </Form.Button>
-
             </div>
           </Card.Content>
         </Card>
