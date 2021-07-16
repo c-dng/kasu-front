@@ -1,22 +1,21 @@
 import React from 'react';
-import { Menu } from 'semantic-ui-react'
+import { Image, Label, Icon } from 'semantic-ui-react'
 import './style.scss';
 
 const Footer = () => (
-  <div className="footer">
-<Menu fluid widths={3}>
-        <Menu.Item
-          name='Mentions légales'
-        />
-
-        <Menu.Item
-          name='L/équipe'
-        />
-
-        <Menu.Item
-          name='Contactez-nous'
-        />
-      </Menu>
+  <div>
+    <Label as='a'>
+    <Icon disabled name='file alternate outline' />
+      Mentions légales
+    </Label>
+    <Label as='a'>
+    <Icon disabled name='users' />
+      L'équipe
+    </Label>
+    <Label as='a'>
+      <Icon disabled name='envelope outline' />
+      Contactez-nous
+    </Label>
   </div>
 );
 
