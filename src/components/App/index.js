@@ -6,6 +6,8 @@ import Home from 'src/components/Home';
 import Footer from 'src/components/Footer';
 import HomeSearchBar from 'src/components/HomeSearchBar';
 import Login from 'src/components/Login';
+import Register from 'src/components/Register';
+
 
 // == Import
 
@@ -25,6 +27,9 @@ const App = () => (
       </Route>
       <Route path="/login" exact>
         <Login />
+      </Route>
+      <Route path="/register" exact>
+        <Register />
       </Route>
     </Switch>
 
