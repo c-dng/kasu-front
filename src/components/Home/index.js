@@ -5,7 +5,7 @@ import './style.scss';
 const Home = () => (
   <div className="home">
       <Card.Group>
-        <Card>
+        <Card fluid>
           <Card.Content>
             <Card.Description>
               <strong>Kasu</strong>, qui veut dire "prêter" en japonais, est une plateforme offrant la possibilité aux passionnés de s'échanger mutuellement et temporairement leurs mangas.
