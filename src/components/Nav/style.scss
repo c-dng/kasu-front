@@ -1,3 +1,26 @@
-.gamepad {
-  color: red;
+@use '/src/styles/vars';
+
+// General
+
+#nav-logo {
+  width:100px;
+}
+
+.ui.menu {
+  height: 10vh;
+}
+
+
+// Theme specific
+
+.theme1 {
+  .ui.menu.item {
+    background-color: vars.$primary_theme1;
+  }
+}
+
+.theme21 {
+  .ui.menu.item {
+    background-color: vars.$primary_theme2;
+  }
 }
