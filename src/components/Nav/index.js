@@ -5,7 +5,7 @@ import {
 } from 'semantic-ui-react';
 import './style.scss';
 import logo from './logo.png';
-import chatlogo from './chatlogo.jpg';
+import chatlogo from './chatlogo.png';
 
 const Nav = () => (
   <div className="nav">
