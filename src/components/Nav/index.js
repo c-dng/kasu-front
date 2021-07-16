@@ -1,16 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-  Dropdown, Icon, Menu, Segment,
-} from 'semantic-ui-react';
+import { Dropdown, Icon, Menu, Segment } from 'semantic-ui-react';
 import './style.scss';
 import logo from './logo.png';
 import chatlogo from './chatlogo.jpg';
 
 const Nav = () => (
   <div className="nav">
-    <Segment className="nav-segment">
-      <Menu className="nav-menu" icon fluid widths={5} borderless fixed="top">
+    <Segment>
+      <Menu icon fluid widths={5} borderless fixed="top">
         <Menu.Item name="Logo">
           <img id="nav-logo" src={logo} alt="logo" />
         </Menu.Item>
