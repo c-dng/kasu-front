@@ -15,12 +15,12 @@ const LoginForm = () => (
         <Form className="loginform-form">
           <Form.Field>
             <label htmlFor="e-mail">E-mail
-              <Form.Input type="text" id="e-mail" name="e-mail" />
+              <Form.Input className="loginform-field" type="text" id="e-mail" name="e-mail" />
             </label>
           </Form.Field>
           <Form.Field>
             <label htmlFor="password"> Mot de passe
-              <Form.Input id="password" name="password" />
+              <Form.Input className="loginform-field" id="password" name="password" />
             </label>
           </Form.Field>
           <Form.Field>

@@ -9,15 +9,16 @@
     border-radius: 1rem;;
     margin: 0;
     border: 1px solid black;
-    width: 7.5rem;
     font-size: 0.8rem;
   }
-
+div.field.loginform-field.loginform-field {
+  width: 12rem;
+  margin: 0 auto;
+}
   input#password {
     border-radius: 1rem;;
     margin: 0;
     border: 1px solid black;
-    width: 7.5rem;
     font-size: 0.8rem;
   }
   // login button
