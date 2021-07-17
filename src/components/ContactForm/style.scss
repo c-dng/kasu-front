@@ -1,0 +1,37 @@
+// .contactForm {
+//   padding: 1.5em;
+//   margin: 2em;
+//   border: 1px solid black;
+//   border-radius: 3%;
+//   background-color: rgb(211, 211, 211);
+// }
+
+div.ui.centered.card.contactForm-card {
+  width: 80%;
+  border-radius: 1rem;
+}
+
+div.contactForm {
+  margin: 3rem 0;
+}
+
+div.header.contactForm-cardHeader {
+  text-align: center;
+}
+
+button.ui.button.contactForm-sendButton {
+  border-radius: 1rem;
+  margin: 0;
+  border: 1px solid black;
+  width: 7.5rem;
+  font-size: 0.8rem;
+}
+div.contactForm-buttonWrapper {
+  display: flex;
+  justify-content: center;
+}
+form.ui.form.contactForm-form {
+  // display: flex;
+  // flex-direction: column;
+  // align
+}
