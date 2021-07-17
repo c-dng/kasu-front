@@ -1,5 +1,7 @@
 import React from 'react';
-import { Button, Card, Divider, Form } from 'semantic-ui-react';
+import {
+  Button, Card, Divider, Form,
+} from 'semantic-ui-react';
 
 import './style.scss';
 

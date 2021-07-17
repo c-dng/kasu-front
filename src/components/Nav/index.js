@@ -19,7 +19,7 @@ const Nav = () => (
           </Link>
         </Menu.Item>
         <Menu.Item>
-          <Image circular className="navbuttons" id="temporary-avatar" src={chatlogo} alt="avatar-logo" size="mini" />
+          <Image circular className="navbuttons" id="temporary-avatar" src="https://react.semantic-ui.com/images/avatar/large/steve.jpg" alt="avatar-logo" size="mini" />
           <Dropdown floating icon="dropdown">
             <Dropdown.Menu>
               <Dropdown.Header>Gestion de profil</Dropdown.Header>
