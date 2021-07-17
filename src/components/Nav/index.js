@@ -13,8 +13,8 @@ const Nav = () => (
   <div className="nav">
     <Segment className="nav-segment">
       <Menu className="nav-menu" icon fluid widths={5} borderless fixed="top">
-        <Menu.Item name="Logo">
-          <Image id="nav-logo" src={logo} alt="logo" />
+        <Menu.Item className="nav-logoContainer" name="Logo">
+          <Image className="nav-logo" src={logo} alt="logo" />
         </Menu.Item>
         <Menu.Item name="chat">
           <Image circular className="navbuttons" src={chatlogo} alt="logo" size="mini" />

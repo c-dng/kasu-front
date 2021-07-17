@@ -3,10 +3,18 @@
 
 // General
 
-#nav-logo {
-  width:100%;
+img.ui.image.nav-logo.nav-logo {
+
+  max-height: 100%;
+  max-width: 100%;
+  
+  object-fit: contain;
 }
 
+// multiplying the .nav-logoContainer class to increase the selector specificity to override the semantic-ui classes
+div.item.nav-logoContainer.nav-logoContainer.nav-logoContainer {
+  padding: 0 ;
+}
 .ui.segment.nav-segment {
   height: 10vh;
 }
