@@ -5,7 +5,7 @@ import Nav from 'src/components/Nav/';
 import Home from 'src/components/Home';
 import Footer from 'src/components/Footer';
 import HomeSearchBar from 'src/components/HomeSearchBar';
-import LoginForm from 'src/components/LoginForm';
+import LoginForm from 'src/containers/LoginForm';
 import Register from 'src/components/Register';
 import ContactForm from 'src/components/ContactForm';
 
