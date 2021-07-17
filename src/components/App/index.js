@@ -12,6 +12,7 @@ import Register from 'src/components/Register';
 
 import './styles.scss';
 import { Route, Switch } from 'react-router-dom';
+import NoAccountBox from '../NoAccountBox';
 
 // == Composant
 const App = () => (
@@ -26,6 +27,7 @@ const App = () => (
       </Route>
       <Route path="/login" exact>
         <LoginForm />
+        <NoAccountBox />
       </Route>
       <Route path="/register" exact>
         <Register />
