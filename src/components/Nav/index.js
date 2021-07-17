@@ -24,7 +24,7 @@ const Nav = () => (
         </Menu.Item>
         <Menu.Item>
           <Image circular className="navbuttons" src={dropdownlogo} alt="dropdown-logo" size="mini" />
-          <Dropdown floating icon="dropdown" >
+          <Dropdown floating icon="dropdown">
             <Dropdown.Menu direction="left">
               <Dropdown.Header>Gestion de profil</Dropdown.Header>
               <Dropdown.Item>Mon Compte</Dropdown.Item>

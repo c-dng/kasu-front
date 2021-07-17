@@ -1,0 +1,41 @@
+// Global 
+  // Card
+  div.ui.centered.card.loginform-card {
+    width: 80%;
+    border-radius: 1rem;
+  }
+
+  input#e-mail {
+    border-radius: 1rem;;
+    margin: 0;
+    border: 1px solid black;
+    width: 7.5rem;
+    font-size: 0.8rem;
+  }
+
+  input#password {
+    border-radius: 1rem;;
+    margin: 0;
+    border: 1px solid black;
+    width: 7.5rem;
+    font-size: 0.8rem;
+  }
+  // login button
+  button.ui.button.login-button {
+    border-radius: 1rem;;
+    margin: 0;
+    border: 1px solid black;
+    width: 7.5rem;
+    font-size: 0.8rem;
+  }
+
+  div.content.loginform-cardContent {
+    text-align: center;
+  }
+
+  // loginform wrapper
+  div.loginform {
+    margin: 3rem 0;
+  }
+
+//Theming 

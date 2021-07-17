@@ -5,7 +5,7 @@ import './style.scss';
 
 const Home = () => (
   <div className="home">
-    <Card centered>
+    <Card className="home-card" centered>
       <Card.Content>
         <Card.Description>
           <strong>Kasu</strong>, qui veut dire "prêter" en japonais, est une plateforme offrant
