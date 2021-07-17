@@ -26,7 +26,7 @@ const Register = () => (
     />
 
     <div class="ui container" centered>
-    <Form className='attached fluid segment' fluid>
+    <Form className='attached fluid segment register-form' fluid>
       <Form.Input className='register-form-input' label='Saisissez un e-mail' placeholder='E-mail' type='text' />
 
       <Form.Input className='register-form-input-email' label='Saisissez un pseudo' placeholder='Pseudo' type='text' />

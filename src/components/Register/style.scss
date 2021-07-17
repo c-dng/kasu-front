@@ -5,11 +5,11 @@
   text-align: center;
   margin-right: auto;
   margin-left: auto;
-
 }
 
 .attached.fluid.segment {
 background-color: grey;
+
 
 }
 
@@ -19,3 +19,12 @@ background-color: grey;
   width: 80%;
 }
 
+
+.ui.form.attached.fluid.segment.register-form{
+  border-radius: 3%;
+  border: 1px solid black;
+}
+
+.ui.warning.bottom.attached.message {
+  margin: auto;
+}
