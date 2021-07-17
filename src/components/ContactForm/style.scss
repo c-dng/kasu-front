@@ -1,11 +1,3 @@
-// .contactForm {
-//   padding: 1.5em;
-//   margin: 2em;
-//   border: 1px solid black;
-//   border-radius: 3%;
-//   background-color: rgb(211, 211, 211);
-// }
-
 div.ui.centered.card.contactForm-card {
   width: 80%;
   border-radius: 1rem;
@@ -29,9 +21,4 @@ button.ui.button.contactForm-sendButton {
 div.contactForm-buttonWrapper {
   display: flex;
   justify-content: center;
-}
-form.ui.form.contactForm-form {
-  // display: flex;
-  // flex-direction: column;
-  // align
 }

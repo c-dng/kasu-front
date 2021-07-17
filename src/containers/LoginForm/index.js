@@ -15,7 +15,6 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   changeEmail: function (email) {
-    console.log(email);
     dispatch(changeEmail(email));
   },
   changePassword: function (password) {
