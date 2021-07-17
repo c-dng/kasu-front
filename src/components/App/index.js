@@ -7,6 +7,7 @@ import Footer from 'src/components/Footer';
 import HomeSearchBar from 'src/components/HomeSearchBar';
 import LoginForm from 'src/containers/LoginForm';
 import Register from 'src/components/Register';
+import ContactForm from 'src/components/ContactForm';
 
 // == Import
 
@@ -31,6 +32,9 @@ const App = () => (
       </Route>
       <Route path="/register" exact>
         <Register />
+      </Route>
+      <Route path="/contact" exact>
+        <ContactForm/ >
       </Route>
     </Switch>
 
