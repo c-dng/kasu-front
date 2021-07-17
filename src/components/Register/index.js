@@ -19,16 +19,17 @@ const fakeDatas = [
 
 const Register = () => (
 
-  <div className="register">
+  <div className="register" >
     <Message
       attached
       header='Inscription'
     />
 
-    <Form className='attached fluid segment'>
-      <Form.Input label='Saisissez un e-mail' placeholder='E-mail' type='text' />
+    <div class="ui container" centered>
+    <Form className='attached fluid segment' fluid>
+      <Form.Input className='register-form-input' label='Saisissez un e-mail' placeholder='E-mail' type='text' />
 
-      <Form.Input label='Saisissez un pseudo' placeholder='Pseudo' type='text' />
+      <Form.Input className='register-form-input-email' label='Saisissez un pseudo' placeholder='Pseudo' type='text' />
 
       <Form.Input label='Saisissez un mot de passe' placeholder='Mot de passe' type='text' />
 
@@ -71,7 +72,7 @@ const Register = () => (
       <Icon name='help' />
       Déjà un compte?&nbsp;<a href='/login'>Connectez vous</a>&nbsp;ici.
     </Message>
-
+  </div>
   </div>
 )
 
