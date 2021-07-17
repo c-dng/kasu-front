@@ -34,7 +34,7 @@ const App = () => (
         <Register />
       </Route>
       <Route path="/contact" exact>
-        <ContactForm/ >
+        <ContactForm />
       </Route>
     </Switch>
 
