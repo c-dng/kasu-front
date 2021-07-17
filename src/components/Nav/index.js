@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Dropdown, Icon, Menu, Segment } from 'semantic-ui-react';
+import {
+  Dropdown, Image, Menu, Segment,
+} from 'semantic-ui-react';
 import './style.scss';
 import { Link } from 'react-router-dom';
 import logo from './logo.png';
@@ -9,10 +11,12 @@ import logoutlogo from './logoutlogo.png';
 
 const Nav = () => (
   <div className="nav">
-    <Segment>
-      <Menu icon fluid widths={5} borderless fixed="top">
-        <Menu.Item name="Logo">
-          <img id="nav-logo" src={logo} alt="logo" />
+    <Segment className="nav-segment">
+      <Menu className="nav-menu" icon fluid widths={4} borderless fixed="top">
+        <Menu.Item className="nav-logoContainer" name="Logo">
+          <Link to="/" exact={+true} className="nav-logoLinkContainer">
+            <Image className="nav-logo" src={logo} alt="logo" />
+          </Link>
         </Menu.Item>
         <Menu.Item>
           <Image circular className="navbuttons" id="temporary-avatar" src={chatlogo} alt="avatar-logo" size="mini" />

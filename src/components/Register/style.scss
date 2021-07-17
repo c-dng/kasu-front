@@ -13,18 +13,59 @@ background-color: grey;
 
 }
 
-.field.register-form-input {
-  
-  margin: auto;
-  width: 80%;
+div.field.register-form-input.register-form-input {
+  width: 20rem;
+  margin: 0 auto;
 }
 
+div.field.register-form-input-email.register-form-input-email {
+  width: 20rem;
+  margin: 0 auto;
+}
+
+div.field.register-form-input-password.register-form-input-password {
+  width: 20rem;
+  margin: 0 auto;
+}
+
+div.field.register-form-input-adress.register-form-input-adress {
+  width: 30rem;
+  margin: 1em;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+div.field.register-form-input-firstname.register-form-input-firstname {
+  width: 20rem;
+  margin: 1em;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+div.field.register-form-input-lastname.register-form-input-lastname {
+  width: 20rem;
+  margin: 1em;
+  margin-right: auto;
+  margin-left: auto;
+}
 
 .ui.form.attached.fluid.segment.register-form{
   border-radius: 3%;
   border: 1px solid black;
 }
 
-.ui.warning.bottom.attached.message {
+.ui.warning.bottom.attached.message.form-message {
   margin: auto;
+  border: 0px;
+}
+
+// button register
+.ui.blue.button {
+
+border-radius: 1rem;;
+margin: 0;
+border: 1px solid black;
+width: 7.5rem;
+font-size: 0.8rem;
+
 }
