@@ -1,0 +1,26 @@
+@use '/src/styles/vars';
+
+// General
+
+.home-buttonWrapper {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.ui.button.home-button {
+  border-radius: 1rem;;
+  margin: 0;
+  border: 1px solid black;
+  width: 7.5rem;
+  font-size: 0.8rem;
+  // box-shadow: 10px 5px 5px black;
+}
+
+.ui.centered.card.home-card {
+  
+  width: 80%;
+  border-radius: 1rem;
+}
+
+
+// Theme 
