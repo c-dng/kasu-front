@@ -1,59 +1,53 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Dropdown, Icon, Menu } from 'semantic-ui-react';
+import {
+  Dropdown, Image, Menu, Segment,
+} from 'semantic-ui-react';
 import './style.scss';
-import logo from '/src/assets/logo.png'
+import { Link } from 'react-router-dom';
+import logo from './logo.png';
+import chatlogo from './chatlogo.png';
+import logoutlogo from './logoutlogo.png';
 
 const Nav = () => (
-  <div className="nav flui">
-    <Menu icon="labeled" fluid compact>
-      <Menu.Item
-        name="Logo"
-      >
-        Logo
-      </Menu.Item>
-      <Menu.Item
-        name="gamepad"
-      >
-        <Icon name="gamepad" />
-        Games
-      </Menu.Item>
-
-      <Menu.Item
-        name="avatar"
-      >
-        Avatar
-      </Menu.Item>
-
-      <Dropdown item icon="wrench" simple>
-        <Dropdown.Menu>
-          <Dropdown.Item>
-            <span className="text">Mon compte</span>
-          </Dropdown.Item>
-          <Dropdown.Item>
-            <span className="text">Mes collections</span>
-          </Dropdown.Item>
-          <Dropdown.Item>
-            <Icon name="dropdown" />
-            <span className="text">Thèmes</span>
-
+  <div className="nav">
+    <Segment className="nav-segment">
+      <Menu className="nav-menu" icon fluid widths={4} borderless fixed="top">
+        <Menu.Item className="nav-logoContainer" name="Logo">
+          <Link to="/" exact={+true} className="nav-logoLinkContainer">
+            <Image className="nav-logo" src={logo} alt="logo" />
+          </Link>
+        </Menu.Item>
+        <Menu.Item>
+          <Image circular className="navbuttons" id="temporary-avatar" src={chatlogo} alt="avatar-logo" size="mini" />
+          <Dropdown floating icon="dropdown">
             <Dropdown.Menu>
-              <Dropdown.Item>Thème 1</Dropdown.Item>
-              <Dropdown.Item>Thème 2</Dropdown.Item>
-              <Dropdown.Item>Thème 3</Dropdown.Item>
-              <Dropdown.Item>Thème 4</Dropdown.Item>
+              <Dropdown.Header>Gestion de profil</Dropdown.Header>
+              <Dropdown.Item as={Link} to="/profil/:id" exact={+true}>Mon Compte</Dropdown.Item>
+              <Dropdown.Item as={Link} to="/profil/mes-infos" exact={+true}>Mes Infos Personnelles</Dropdown.Item>
+              <Dropdown.Item as={Link} to="/profil/collection" exact={+true}>Ma Collection</Dropdown.Item>
+              <Dropdown.Divider />
+              <Dropdown.Item>
+                <Dropdown text="Mon thème">
+                  <Dropdown.Menu>
+                    <Dropdown.Item>Thème 1</Dropdown.Item>
+                    <Dropdown.Item>Thème 2</Dropdown.Item>
+                    <Dropdown.Item>Thème 3</Dropdown.Item>
+                    <Dropdown.Item>Thème 4</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+              </Dropdown.Item>
             </Dropdown.Menu>
-          </Dropdown.Item>
-
-        </Dropdown.Menu>
-      </Dropdown>
-      <Menu.Item
-        name="Logout"
-
-      >
-        Logout
-      </Menu.Item>
-    </Menu>
+          </Dropdown>
+        </Menu.Item>
+        <Menu.Item name="chat">
+          <Image as={Link} to="/conversations" exact={+true} className="navbuttons" src={chatlogo} alt="logo" size="mini" />
+        </Menu.Item>
+        <Menu.Item name="logout">
+          <Image className="navbuttons" src={logoutlogo} alt="logo" size="mini" />
+        </Menu.Item>
+      </Menu>
+    </Segment>
   </div>
 );
 

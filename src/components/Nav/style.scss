@@ -1,3 +1,63 @@
-.gamepad {
-  color: red;
+@use '/src/styles/vars';
+
+// General
+
+img.ui.image.nav-logo.nav-logo {
+
+  max-height: 100%;
+  max-width: 100%;
+
+  object-fit: contain;
+}
+
+a.nav-logoLinkContainer.nav-logoLinkContainer {
+  max-height: 100%;
+  height:100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+// multiplying the .nav-logoContainer class to increase the selector specificity to override the semantic-ui classes
+div.item.nav-logoContainer.nav-logoContainer.nav-logoContainer {
+  padding: 0 ;
+}
+.ui.segment.nav-segment {
+  height: 10vh;
+}
+
+.ui.menu.nav-menu {
+  height: 10vh;
+}
+
+img.ui.mini.navbuttons {
+
+}
+
+// This selector is used to hide the semantic-ui automatic dropdown icon, without losing its functionality of dropdown
+// I'm making it large so it can be easily clickable, and transparent.
+div.ui.floating.dropdown {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  color: rgba(0,0,0,0);
+  background-color: rgba(0,0,0,0);
+}
+
+#temporary-avatar.ui.mini.circular.image.navbuttons {
+
+  background-color: black;
+}
+
+// Theme specific
+
+.theme1 {
+  .ui.menu.item {
+    background-color: vars.$primary_theme1;
+  }
+}
+
+.theme2 {
+  .ui.menu.item {
+    background-color: vars.$primary_theme2;
+  }
 }
