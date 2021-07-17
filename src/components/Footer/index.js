@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { Menu } from 'semantic-ui-react';
 import './style.scss';
@@ -6,9 +7,9 @@ import './style.scss';
 const Footer = () => (
   <div className="footer">
     <Menu compact secondary>
-      <Menu.Item>Mentions légales</Menu.Item>
-      <Menu.Item>L'équipe</Menu.Item>
-      <Menu.Item>Contactez-nous</Menu.Item>
+      <Menu.Item as={Link} to="/mentions-legales" exact={+true}>Mentions légales</Menu.Item>
+      <Menu.Item as={Link} to="/team" exact={+true}>L'équipe</Menu.Item>
+      <Menu.Item as={Link} to="/contact" exact={+true}>Contactez-nous</Menu.Item>
     </Menu>
     {/*
     <Label as='a'>
