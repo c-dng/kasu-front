@@ -1,5 +1,4 @@
 @use '/src/styles/vars';
-@use 'sass:math';
 
 // General
 
@@ -7,7 +6,14 @@ img.ui.image.nav-logo.nav-logo {
 
   max-height: 100%;
   max-width: 100%;
-  
+
+  object-fit: contain;
+}
+
+a.nav-logoLinkContainer.nav-logoLinkContainer {
+  max-height: 100%;
+  height:100%;
+  max-width: 100%;
   object-fit: contain;
 }
 
@@ -23,8 +29,8 @@ div.item.nav-logoContainer.nav-logoContainer.nav-logoContainer {
   height: 10vh;
 }
 
-img.ui.mini.circular.navbuttons {
-  background-color: #fff;
+img.ui.mini.navbuttons {
+
 }
 
 // This selector is used to hide the semantic-ui automatic dropdown icon, without losing its functionality of dropdown
@@ -37,6 +43,10 @@ div.ui.floating.dropdown {
   background-color: rgba(0,0,0,0);
 }
 
+#temporary-avatar.ui.mini.circular.image.navbuttons {
+
+  background-color: black;
+}
 
 // Theme specific
 
