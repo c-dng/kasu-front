@@ -33,7 +33,7 @@ const App = () => (
       <Route path="/register" exact>
         <Register />
       </Route>
-      <Route path="/form" exact>
+      <Route path="/contact" exact>
         <ContactForm/ >
       </Route>
     </Switch>
