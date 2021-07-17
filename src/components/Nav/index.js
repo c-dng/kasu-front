@@ -8,27 +8,23 @@ import logo from './logo.png';
 import chatlogo from './chatlogo.png';
 import dropdownlogo from './dropdownlogo.png';
 import logoutlogo from './logoutlogo.png';
+import { Link } from 'react-router-dom';
 
 const Nav = () => (
   <div className="nav">
     <Segment className="nav-segment">
       <Menu className="nav-menu" icon fluid widths={5} borderless fixed="top">
         <Menu.Item className="nav-logoContainer" name="Logo">
-          <Image className="nav-logo" src={logo} alt="logo" />
-        </Menu.Item>
-        <Menu.Item name="chat">
-          <Image circular className="navbuttons" src={chatlogo} alt="logo" size="mini" />
-        </Menu.Item>
-        <Menu.Item name="avatar">
-          <Image circular className="navbuttons" src={chatlogo} alt="logo" size="mini" />
+          <Image as={Link} to="/" exact className="nav-logo" src={logo} alt="logo" />
         </Menu.Item>
         <Menu.Item>
-          <Image circular className="navbuttons" src={dropdownlogo} alt="dropdown-logo" size="mini" />
+          <Image circular className="navbuttons" id="temporary-avatar" src={chatlogo} alt="avatar-logo" size="mini" />
           <Dropdown floating icon="dropdown">
-            <Dropdown.Menu direction="left">
+            <Dropdown.Menu>
               <Dropdown.Header>Gestion de profil</Dropdown.Header>
-              <Dropdown.Item>Mon Compte</Dropdown.Item>
-              <Dropdown.Item>Ma Collection</Dropdown.Item>
+              <Dropdown.Item as={Link} to="/profil/:id" exact>Mon Compte</Dropdown.Item>
+              <Dropdown.Item as={Link} to="/profil/mes-infos" exact>Mes Infos Personnelles</Dropdown.Item>
+              <Dropdown.Item as={Link} to="/profil/collection" exact>Ma Collection</Dropdown.Item>
               <Dropdown.Divider />
               <Dropdown.Item>
                 <Dropdown text="Mon thème">
@@ -42,6 +38,9 @@ const Nav = () => (
               </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
+        </Menu.Item>
+        <Menu.Item name="chat">
+          <Image as={Link} to="/conversations" exact circular className="navbuttons" src={chatlogo} alt="logo" size="mini" />
         </Menu.Item>
         <Menu.Item name="logout">
           <Image circular className="navbuttons" src={logoutlogo} alt="logo" size="mini" />
