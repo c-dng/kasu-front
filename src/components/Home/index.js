@@ -5,7 +5,7 @@ import './style.scss';
 
 const Home = () => (
   <div className="home">
-    <Card fluid>
+    <Card className="home-card" centered>
       <Card.Content>
         <Card.Description>
           <strong>Kasu</strong>, qui veut dire "prêter" en japonais, est une plateforme offrant
@@ -21,7 +21,8 @@ const Home = () => (
       <Card.Content>
         <div className="home-buttonWrapper">
 
-          {/* <Button.Group>
+          {/* this is just in case we prefer the dual connect/register button
+          <Button.Group>
             <Button negative>Connexion</Button>
             <Button.Or className="home-orButton" text="ou" />
             <Button positive>Inscription</Button>

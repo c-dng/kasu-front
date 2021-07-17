@@ -5,14 +5,15 @@ import Nav from 'src/components/Nav/';
 import Home from 'src/components/Home';
 import Footer from 'src/components/Footer';
 import HomeSearchBar from 'src/components/HomeSearchBar';
-import Login from 'src/components/Login';
+import LoginForm from 'src/containers/LoginForm';
 import Register from 'src/components/Register';
-
+import ContactForm from 'src/components/ContactForm';
 
 // == Import
 
 import './styles.scss';
 import { Route, Switch } from 'react-router-dom';
+import NoAccountBox from '../NoAccountBox';
 
 // == Composant
 const App = () => (
@@ -26,10 +27,14 @@ const App = () => (
         <Home />
       </Route>
       <Route path="/login" exact>
-        <Login />
+        <LoginForm />
+        <NoAccountBox />
       </Route>
       <Route path="/register" exact>
         <Register />
+      </Route>
+      <Route path="/contact" exact>
+        <ContactForm/ >
       </Route>
     </Switch>
 
