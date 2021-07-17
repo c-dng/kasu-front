@@ -8,6 +8,7 @@ import HomeSearchBar from 'src/components/HomeSearchBar';
 import LoginForm from 'src/components/LoginForm';
 import Register from 'src/components/Register';
 import ContactForm from 'src/components/ContactForm';
+import ProfilPage from 'src/components/ProfilPage';
 
 // == Import
 
@@ -33,8 +34,11 @@ const App = () => (
       <Route path="/register" exact>
         <Register />
       </Route>
-      <Route path="/form" exact>
+      <Route path="/contact" exact>
         <ContactForm/ >
+      </Route>
+      <Route path="/profil" exact>
+        <ProfilPage/ >
       </Route>
     </Switch>
 
