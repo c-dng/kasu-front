@@ -1,0 +1,32 @@
+// General 
+
+.alreadyAccount {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+div.registerForm{
+  margin: 3rem 0;
+}
+
+div.ui.card.registerForm-card {
+  width: 80%;
+  border-radius: 1rem;
+}
+
+.registerForm-registerButton.registerForm-registerButton.registerForm-registerButton {
+  border-radius: 1rem;;
+  margin: 0;
+  border: 1px solid black;
+  width: 7.5rem;
+  font-size: 0.8rem;
+}
+
+div.registerForm-buttonWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+// Theming
+

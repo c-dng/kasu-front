@@ -5,13 +5,13 @@ import './style.scss';
 
 const NoAccountBox = () => (
   <div className="noAccountBox">
-    <Card className="loginform-card" centered>
-      <Card.Content className="loginform-cardContent">
+    <Card className="noAccountBox-card" centered>
+      <Card.Content className="noAccount-cardContent">
         <Card.Header text-align="center">Pas encore de compte ?</Card.Header>
         <Divider />
         {/* the {+true} is used to resolve an error linked to semantic-ui and the "exact"
         attribute from react-router */}
-        <Button className="register-button" as={Link} to="/register" exact={+true}>S'inscrire</Button>
+        <div className="noAccountBox-buttonWrapper"><Button className="noAccount-registerButton" as={Link} to="/register" exact={+true}>S'inscrire</Button></div>
       </Card.Content>
     </Card>
   </div>
