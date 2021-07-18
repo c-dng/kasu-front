@@ -5,7 +5,7 @@ import Nav from 'src/components/Nav/';
 import Home from 'src/components/Home';
 import Footer from 'src/components/Footer';
 import HomeSearchBar from 'src/components/HomeSearchBar';
-import SearchResultsByLocation from 'src/components/SearchResultsByLocation '
+import SearchResultsByLocation from 'src/components/SearchResultsByLocation';
 import LoginForm from 'src/containers/LoginForm';
 import Register from 'src/components/Register';
 import ContactForm from 'src/components/ContactForm';
@@ -44,7 +44,7 @@ const App = () => (
       <Route path="/conversations" exact>
         <Conversations />
       </Route>
-      <Route path="/rechercher/ville " exact>
+      <Route path="/rechercher/ville" exact>
         <SearchResultsByLocation />
       </Route>
     </Switch>

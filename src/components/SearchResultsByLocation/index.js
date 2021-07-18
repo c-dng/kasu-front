@@ -3,8 +3,9 @@ import { Card, Icon, Image, Button, Header, Rating} from 'semantic-ui-react'
 
 import './style.scss';
 
-const SearchResultsbyCP = () => (
-  <div className="searchResultsbyCP">
+
+const SearchResultsByLocation = () => (
+  <div className="searchResultsbyLocation">
     <Card centered>
       <Image src='https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/313968/313968._SX1280_QL80_TTD_.jpg' wrapped ui={false} />
       <Card.Content>
@@ -26,4 +27,4 @@ const SearchResultsbyCP = () => (
   </div>
 );
 
-export default SearchResultsbyCP;
+export default SearchResultsByLocation;
