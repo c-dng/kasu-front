@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Icon, Image, Button, Header } from 'semantic-ui-react'
+import { Card, Icon, Image, Button, Header, Rating} from 'semantic-ui-react'
 
 import './style.scss';
 
@@ -10,8 +10,9 @@ const SearchResultsbyCP = () => (
       <Card.Content>
         <div className="owner">
           <Image src='https://react.semantic-ui.com/images/wireframe/square-image.png' avatar />
-          Propriétaire
+          Propriétaire <Rating icon='star' defaultRating={4} maxRating={5} />
         </div>
+
         <Card.Meta className='localisation'>
           <Icon disabled name='map marker alternate' />
           Localisation
