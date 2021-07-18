@@ -9,6 +9,7 @@ import SearchResultsByLocation from 'src/components/SearchResultsByLocation';
 import LoginForm from 'src/containers/LoginForm';
 import Register from 'src/components/Register';
 import ContactForm from 'src/components/ContactForm';
+import Conversations from 'src/containers/Conversations';
 import SetProfilPage from 'src/components/SetProfilPage';
 
 // == Import
@@ -16,7 +17,6 @@ import SetProfilPage from 'src/components/SetProfilPage';
 import './style.scss';
 import { Route, Switch } from 'react-router-dom';
 import NoAccountBox from '../NoAccountBox';
-import Conversations from '../Conversations';
 import AlreadyAccountBox from '../AlreadyAccountBox';
 
 // == Composant
