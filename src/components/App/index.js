@@ -22,7 +22,7 @@ import AlreadyAccountBox from '../AlreadyAccountBox';
 // == Composant
 const App = () => (
   <div className="app theme1">
-    
+
     <Nav />
     <Switch>
       <Route path="/" exact>
