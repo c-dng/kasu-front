@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Button, Card } from 'semantic-ui-react';
+import { Button, Card, Image } from 'semantic-ui-react';
 import './style.scss';
+import homeCardLogo from './home-card-logo.jpg';
 
 const Home = () => (
   <div className="home">
     <Card className="home-card" centered>
+      <Image className="home-cardImage" src={homeCardLogo} wrapped ui={false} />
       <Card.Content>
         <Card.Description>
           <strong>Kasu</strong>, qui veut dire "prêter" en japonais, est une plateforme offrant
