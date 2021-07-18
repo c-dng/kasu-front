@@ -1,16 +1,51 @@
 // General
 
-div.ui.centered.card.conversation-card{
+div.ui.centered.card.conversation-card {
   width: 80%;
   box-shadow: none;
   border: 1px solid red;
 }
+
 div.conversation:first-child {
   margin-top: 3rem;
 }
 
 div.conversation:not(:first-child) {
   margin-top: 2rem;
+}
+
+.conversations-button--hiddenBox.conversations-button--hiddenBox.conversations-button--hiddenBox {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+}
+
+.conversations-button--notHiddenBox.conversations-button--notHiddenBox.conversations-button--notHiddenBox {
+  position: fixed;
+  bottom: 8rem;
+  right: 2rem;
+}
+
+
+.conversations-buttons.conversations-buttons.conversations-buttons {
+  padding: 0;
+  background-color: #c1c1c1;
+  border-radius: 100%;
+  margin: 0 auto;
+}
+
+.conversations-buttonImages.conversations-buttonImages.conversations-buttonImages {
+  padding: 0.5rem;
+}
+
+.conversations-hiddenBox.conversations-hiddenBox.conversations-hiddenBox {
+  background-color: #c1c1c1;
+  height: 7rem;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  margin: 0;
+
 }
 
 // Theming
