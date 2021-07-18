@@ -5,7 +5,7 @@ import Nav from 'src/components/Nav/';
 import Home from 'src/components/Home';
 import Footer from 'src/components/Footer';
 import HomeSearchBar from 'src/components/HomeSearchBar';
-import SearchResultsbyCP from 'src/components/SearchResultsbyCP'
+import SearchResultsByLocation from 'src/components/SearchResultsByLocation '
 import LoginForm from 'src/containers/LoginForm';
 import Register from 'src/components/Register';
 import ContactForm from 'src/components/ContactForm';
@@ -22,7 +22,6 @@ const App = () => (
   <div className="app theme1">
     
     <Nav />
-    <SearchResultsbyCP />
     <Switch>
       <Route path="/" exact>
         <HomeSearchBar />
@@ -44,6 +43,9 @@ const App = () => (
       </Route>
       <Route path="/conversations" exact>
         <Conversations />
+      </Route>
+      <Route path="/rechercher/ville " exact>
+        <SearchResultsByLocation />
       </Route>
     </Switch>
   </div>
