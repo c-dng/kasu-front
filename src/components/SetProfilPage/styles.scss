@@ -1,0 +1,105 @@
+.setProfilPage {
+  
+  border: 1px solid black;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 2em;
+  border-radius: 3%;
+};
+
+div.setProfilPage-first-part {
+  padding: 1em;
+  position: relative;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.5em;
+}
+
+img.ui.tiny.image.setProfilPage-first-part-image {
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+button.ui.button.setProfilPage-first-part-addButton {
+  font-weight: bolder;
+  left: 70px;
+  font-size: x-large;
+  padding: .2em .4em;
+  position: absolute;
+  top: 115px;
+}
+
+div.setProfilPage-first-part p {
+  padding-top: 1em;
+  padding-left: 0.3em;
+  position: relative;
+}
+
+div.setProfilPage-second-part {
+  padding: 1em;
+}
+
+div.setProfilPage-third-part {
+  padding: 1em;
+}
+
+button.ui.mini.button.setProfilPage-third-part-emailButton {
+  border-radius: 1.5em;
+}
+
+button.ui.mini.button.setProfilPage-third-part-passwordButton {
+  border-radius: 1.5em;
+}
+
+div.setProfilPage-fourth-part {
+  padding: 1em;
+}
+
+div.field.setProfilPage-fourth-part-adress {
+ padding: 1em;
+ width: 100%;
+}
+
+div.fields.setProfilPage-fourth-part-holiday-mode {
+  
+  padding-right: 1em;
+  padding-top: 2em;
+}
+
+p {
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 0.3em;
+}
+
+div.setProfilPage-fifth-part {
+  padding: 1em;
+  text-align: center;
+}
+
+button.ui.button.setProfilPage-fifth-part-cancelButton.setProfilPage-fifth-part-cancelButton {
+  border-radius: 1.5em;
+  margin-right: 1em;
+  
+}
+
+button.ui.positive.button.setProfilPage-fifth-part-validateButton {
+  border-radius: 1.5em;
+}
+
+div.setProfilPage-sixth-part {
+  padding: 1em;
+  text-align: center;
+}
+
+button.ui.negative.button.setProfilPage-sixth-part-deleteAccountButton {
+  border-radius: 1.5em;
+}
+
+
+
+
+
+
