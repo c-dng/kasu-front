@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, TextArea, Button, Form, Radio } from 'semantic-ui-react'
+import { Image, TextArea, Button, Form, Radio, Divider } from 'semantic-ui-react'
 import './styles.scss';
 import logo from './logo.png';
 
@@ -8,10 +8,11 @@ const SetProfilPage = () => (
 
     <div className="setProfilPage-first-part">
       <h1>Mon profil</h1>
+      <Divider />
       <Image className="setProfilPage-first-part-image" src={logo} size="tiny"/>
       <Button className="setProfilPage-first-part-addButton" circular>+</Button>
       <p>A propos de moi</p>
-    </div> 
+    </div>
 
     <div className="setProfilPage-second-part">
       <h3>Présentation</h3>
