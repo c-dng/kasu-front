@@ -27,7 +27,6 @@ const App = () => (
     <Switch>
       <Route path="/" exact>
         <Home />
-        <SearchBar />
         <Footer />
       </Route>
       <Route path="/login" exact>
