@@ -20,8 +20,9 @@ import Conversations from '../Conversations';
 // == Composant
 const App = () => (
   <div className="app theme1">
-
+    
     <Nav />
+    <SearchResultsbyCP />
     <Switch>
       <Route path="/" exact>
         <HomeSearchBar />
