@@ -1,17 +1,30 @@
-// button 'Voir plus'
-.seeMore-buttonWrapper {
+.ui.cards.container {
+  padding-left: 1.5em;
+}
+
+
+.infoscard {
   text-align: center;
+  margin-right: 2em;
+}
+
+.nameManga {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+  padding-left: 1em;
 }
 
 .owner {
-  text-align: center;
-  padding-bottom: 0.5em;
+  padding-left: 2em;
+  font-size: 1em;
 }
 
 .localisation {
-  text-align: center;
+  margin-bottom: 1em;
 }
 
-.availableVolume {
-  text-align: center;
+.description.numberVolume{
+  margin-top: 0.6em;
+  padding-left: 2.3em;
 }
+

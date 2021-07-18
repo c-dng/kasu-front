@@ -45,6 +45,7 @@ const App = () => (
         <Conversations />
       </Route>
       <Route path="/rechercher/ville" exact>
+        <HomeSearchBar />
         <SearchResultsByLocation />
       </Route>
     </Switch>
