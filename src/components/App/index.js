@@ -11,7 +11,7 @@ import ContactForm from 'src/components/ContactForm';
 
 // == Import
 
-import './styles.scss';
+import './style.scss';
 import { Route, Switch } from 'react-router-dom';
 import NoAccountBox from '../NoAccountBox';
 import Conversations from '../Conversations';
