@@ -1,20 +1,20 @@
 import React from 'react';
-import { Card, Icon, Image, Button, Rating, Divider, Select} from 'semantic-ui-react'
+import { Card, Icon, Image, Button, Rating, Divider, Select, Transition} from 'semantic-ui-react'
 
 import './style.scss';
 
 const countryOptions = [
-  { key: 'af', value: 'af', text: 'Afghanistan' },
-  { key: 'ax', value: 'ax', text: 'Aland Islands' },
-  { key: 'al', value: 'al', text: 'Albania' },
-  { key: 'dz', value: 'dz', text: 'Algeria' },
-  { key: 'as', value: 'as', text: 'American Samoa' },
+  { key: 't1', value: 'T1', text: 'Tome 1' },
+  { key: 't2', value: 'T2', text: 'Tome 2' },
+  { key: 't3', value: 'T3', text: 'Tome 3' },
+  { key: 't4', value: 'T4', text: 'Tome 4' },
+  { key: 't5', value: 'T5', text: 'Tome 5' },
 ]
 
 const SearchResultsByLocation = () => (
-  <Card.Group className='container'>
+  <Card.Group className='container' centered>
     <Card>
-      <Card.Content>
+      <Card.Content className='test'>
         <Image
           floated='right'
           size='medium'
@@ -40,14 +40,14 @@ const SearchResultsByLocation = () => (
             Voir plus
           </Button>
           <Button basic color='blue'>
-            Contacter l'utilisateur
+            Contacter le propriétaire
           </Button>
         </div>
       </Card.Content>
     </Card>
-   
+
     <Card>
-      <Card.Content>
+      <Card.Content className='test'>
         <Image
           floated='right'
           size='medium'
@@ -73,14 +73,14 @@ const SearchResultsByLocation = () => (
             Voir plus
           </Button>
           <Button basic color='blue'>
-            Contacter l'utilisateur
+            Contacter le propriétaire
           </Button>
         </div>
       </Card.Content>
     </Card>
 
     <Card>
-      <Card.Content>
+      <Card.Content className='test'>
         <Image
           floated='right'
           size='medium'
@@ -106,14 +106,14 @@ const SearchResultsByLocation = () => (
             Voir plus
           </Button>
           <Button basic color='blue'>
-            Contacter l'utilisateur
+            Contacter le propriétaire
           </Button>
         </div>
       </Card.Content>
     </Card>
 
     <Card>
-      <Card.Content>
+      <Card.Content className='test'>
         <Image
           floated='right'
           size='medium'
@@ -139,14 +139,14 @@ const SearchResultsByLocation = () => (
             Voir plus
           </Button>
           <Button basic color='blue'>
-            Contacter l'utilisateur
+            Contacter le propriétaire
           </Button>
         </div>
       </Card.Content>
     </Card>
 
     <Card>
-      <Card.Content>
+      <Card.Content className='test'>
         <Image
           floated='right'
           size='medium'
@@ -172,14 +172,14 @@ const SearchResultsByLocation = () => (
             Voir plus
           </Button>
           <Button basic color='blue'>
-            Contacter l'utilisateur
+            Contacter le propriétaire
           </Button>
         </div>
       </Card.Content>
     </Card>
 
     <Card>
-      <Card.Content>
+      <Card.Content className='test'>
         <Image
           floated='right'
           size='medium'
@@ -205,12 +205,12 @@ const SearchResultsByLocation = () => (
             Voir plus
           </Button>
           <Button basic color='blue'>
-            Contacter l'utilisateur
+            Contacter le propriétaire
           </Button>
         </div>
       </Card.Content>
     </Card>
-    
+
   </Card.Group>
 )
 
