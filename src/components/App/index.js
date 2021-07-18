@@ -40,9 +40,11 @@ const App = () => (
       </Route>
       <Route path="/contact" exact>
         <ContactForm/ >
+        <Footer />
       </Route>
       <Route path="/profil/:id" exact>
         <SetProfilPage/ >
+        <Footer />
       </Route>
     </Switch>
   </div>
