@@ -4,7 +4,7 @@ import { Card, Image } from 'semantic-ui-react';
 const Conversation = () => (
   <div className="conversation">
     <Card centered className="conversation-card">
-      <Card.Content borderless>
+      <Card.Content>
         <Image
           floated="left"
           size="mini"
