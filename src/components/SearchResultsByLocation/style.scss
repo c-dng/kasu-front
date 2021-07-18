@@ -29,3 +29,25 @@ margin-left: 2em;
   padding-left: 2.3em;
 }
 
+// bouton voir plus
+button.ui.black.basic.button.showMore {
+  border-top-left-radius: 1.5em;
+  border-bottom-left-radius: 1.5em;
+  padding: 0.2em;
+}
+
+button.ui.blue.basic.button.contactOwner {
+  border-top-right-radius: 1.5em;
+  border-bottom-right-radius: 1.5em;
+  padding: 0.2em;
+}
+
+.showMore-active {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  display: block;
+}
+
+.showMore-hidden {
+  display: none;
+}
