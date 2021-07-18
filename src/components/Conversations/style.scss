@@ -1,0 +1,16 @@
+// General
+
+div.ui.centered.card.conversation-card{
+  width: 80%;
+  box-shadow: none;
+  border: 1px solid red;
+}
+div.conversation:first-child {
+  margin-top: 3rem;
+}
+
+div.conversation:not(:first-child) {
+  margin-top: 2rem;
+}
+
+// Theming
