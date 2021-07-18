@@ -8,6 +8,7 @@ import HomeSearchBar from 'src/components/HomeSearchBar';
 import LoginForm from 'src/containers/LoginForm';
 import Register from 'src/components/Register';
 import ContactForm from 'src/components/ContactForm';
+import SetProfilPage from 'src/components/SetProfilPage';
 
 // == Import
 
