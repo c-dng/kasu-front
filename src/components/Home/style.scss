@@ -2,13 +2,22 @@
 
 // General
 
+div.home.home {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+.home-cardImage.home-cardImage.home-cardImage {
+  
+  
+}
 .home-buttonWrapper {
   display: flex;
   justify-content: space-evenly;
 }
 
 .ui.button.home-button {
-  border-radius: 1rem;;
+  border-radius: 1rem;
   margin: 0;
   border: 1px solid black;
   width: 7.5rem;
@@ -17,7 +26,7 @@
 }
 
 .ui.centered.card.home-card {
-  
+  overflow:hidden;
   width: 80%;
   border-radius: 1rem;
 }

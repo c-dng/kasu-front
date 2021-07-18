@@ -1,0 +1,52 @@
+div.ui.cards.searchResultsByLocation {
+  display: flex;
+  justify-content: center;
+}
+
+.infoscard {
+  text-align: center;
+  margin-right: 2em;
+}
+
+.nameManga {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+  padding-left: 1em;
+}
+
+.owner {
+  padding-left: 2em;
+  font-size: 1em;
+}
+
+.localisation {
+  margin-bottom: 1em;
+}
+
+.description.numberVolume{
+  margin-top: 0.6em;
+  padding-left: 2.3em;
+}
+
+// bouton voir plus
+button.ui.black.basic.button.showMore {
+  border-top-left-radius: 1.5em;
+  border-bottom-left-radius: 1.5em;
+  padding: 0.2em;
+}
+
+button.ui.blue.basic.button.contactOwner {
+  border-top-right-radius: 1.5em;
+  border-bottom-right-radius: 1.5em;
+  padding: 0.2em;
+}
+
+.showMore-active {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  display: block;
+}
+
+.showMore-hidden {
+  display: none;
+}

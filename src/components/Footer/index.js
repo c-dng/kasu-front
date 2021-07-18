@@ -7,9 +7,9 @@ import './style.scss';
 const Footer = () => (
   <div className="footer">
     <Menu compact secondary>
-      <Menu.Item as={Link} to="/mentions-legales" exact={+true}>Mentions légales</Menu.Item>
-      <Menu.Item as={Link} to="/team" exact={+true}>L'équipe</Menu.Item>
-      <Menu.Item as={Link} to="/contact" exact={+true}>Contactez-nous</Menu.Item>
+      <Menu.Item as={Link} to="/mentions-legales" className="footer-items" exact={+true}>Mentions légales</Menu.Item>
+      <Menu.Item as={Link} to="/team" className="footer-items" exact={+true}>L'équipe</Menu.Item>
+      <Menu.Item as={Link} to="/contact" className="footer-items" exact={+true}>Contactez-nous</Menu.Item>
     </Menu>
     {/*
     <Label as='a'>
