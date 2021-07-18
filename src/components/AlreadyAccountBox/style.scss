@@ -1,22 +1,22 @@
-a.ui.button.noAccount-registerButton {
+.alreadyAccountBox-loginButton.alreadyAccountBox-loginButton.alreadyAccountBox-loginButton {
   border-radius: 1rem;;
-  margin: 0 auto;
+  margin: 0;
   border: 1px solid black;
   width: 7.5rem;
   font-size: 0.8rem;
 }
 
-div.noAccountBox-buttonWrapper {
+div.alreadyAccountBox-buttonWrapper {
   display: flex;
   justify-content: center;
 }
 
-div.noAccountBox {
+div.alreadyAccountBox {
   margin-bottom: 3rem;
   text-align: center;
 }
 
-div.ui.centered.card.noAccountBox-card {
+div.ui.card.alreadyAccountBox-card {
   width: 80%;
   border-radius: 1rem;
 }

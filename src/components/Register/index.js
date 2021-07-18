@@ -39,9 +39,8 @@ const Register = () => {
               label="Votre ville"
               options={fakeDatas}
             />
-            <div className="contactForm-buttonWrapper"><Button className="contactForm-sendButton">S'inscrire</Button></div>
+            <div className="registerForm-buttonWrapper"><Button className="registerForm-registerButton">S'inscrire</Button></div>
           </Form>
-          <div className="alreadyAccount">Déjà un compte?&nbsp;<a href='/login'>Connectez vous</a>&nbsp;</div>
         </Card.Content>
       </Card>
     </div>
