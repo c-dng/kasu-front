@@ -11,10 +11,11 @@ import ContactForm from 'src/components/ContactForm';
 
 // == Import
 
-import './styles.scss';
+import './style.scss';
 import { Route, Switch } from 'react-router-dom';
 import NoAccountBox from '../NoAccountBox';
 import Conversations from '../Conversations';
+import AlreadyAccountBox from '../AlreadyAccountBox';
 
 // == Composant
 const App = () => (
@@ -35,6 +36,7 @@ const App = () => (
       </Route>
       <Route path="/register" exact>
         <Register />
+        <AlreadyAccountBox />
         <Footer />
       </Route>
       <Route path="/contact" exact>
