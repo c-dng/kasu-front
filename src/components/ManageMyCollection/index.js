@@ -1,38 +1,45 @@
 import React from 'react';
-import { Header, Icon, Image, Segment, Dropdown, Button } from 'semantic-ui-react'
+import { Header, Divider, Icon, Image, Segment, Dropdown, Button } from 'semantic-ui-react'
 
 import './style.scss';
 
 const options = [
-  { key: 't1', value: 'T1', text: 'Tome 1' },
-  { key: 't2', value: 'T2', text: 'Tome 2' },
-  { key: 't3', value: 'T3', text: 'Tome 3' },
-  { key: 't4', value: 'T4', text: 'Tome 4' },
-  { key: 't5', value: 'T5', text: 'Tome 5' },
+  { key: 't1', value: 'T1', text: '1' },
+  { key: 't2', value: 'T2', text: '2' },
+  { key: 't3', value: 'T3', text: '3' },
+  { key: 't4', value: 'T4', text: '4' },
+  { key: 't5', value: 'T5', text: '5' },
+  { key: 't6', value: 'T6', text: '6' },
+  { key: 't7', value: 'T7', text: '7' },
+  { key: 't8', value: 'T8', text: '8' },
+  { key: 't9', value: 'T9', text: '9' },
 ]
 
 const ManageMyCollection = () => (
   <div className="manageMyCollection">
 
-    {/* <h1>Gestion des collections</h1> */}
-    <Header as='h4' attached='top'>
+    <h1>Gestion des collections</h1>
+    <Header as='h4' attached='centered'>
       Résultat de votre recherche
     </Header>
 
-    <Image className="Manga-image"
-           src="https://images-na.ssl-images-amazon.com/images/I/91GSy4frSdL.jpg"
-    />
-
-    <Header className="titleNameManga " as='h4'>
+    <Header className="titleNameManga " as='h3'>
     Seven Deadly Sins
     </Header>
-    
-    <Segment attached="premier">
-      <Dropdown placeholder='Tome(s) à ajouter' fluid multiple selection options={options} />
+    <Image className="Manga-image"
+        src="https://images-na.ssl-images-amazon.com/images/I/91GSy4frSdL.jpg"
+        size="small"
+        centered
+    />
+
+    <div className="LineVolumeToAdd">
+      <Dropdown className="dropdownChooseManga" placeholder='Tome(s) à ajouter' size="5" fluid multiple selection options={options} />
+      <div className="ButtonAddToMyCollection">
       <Button className="add-to-my-collection" color="red">
         Ajouter à ma collection
       </Button>
-    </Segment>
+      </div>
+    </div>
 
     <Header className="myCollection" as='h2'>
     <Icon name='settings' />
@@ -42,32 +49,50 @@ const ManageMyCollection = () => (
     </Header.Content>
     </Header>
 
-    <Header as='h4' attached='top'>
-    <Image className="Manga-image"
-           src="https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/313968/313968._SX1280_QL80_TTD_.jpg"
-    />
-        Nom du manga
+    <Divider></Divider>
+
+    <div className="globalCardManga">
+    
+      <div className="myMangas">
+    <Header className="titleNameManga " as='h3'>
+        Attaque des Titans
     </Header>
-    <Segment attached="deuxieme">
-      <Dropdown placeholder='Tome(s) à éditer' fluid multiple selection options={options} />
-    <div>
-    <Button color='black'>
-        Disponiblité
-    </Button>
-    <Button color='black'>
-        Éditer
-    </Button>
-    <Button color='red'>
-        Supprimer
-    </Button>
+
+    <Image className="Manga-image"
+        src="https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/313968/313968._SX1280_QL80_TTD_.jpg"
+        size="small"
+        centered
+    />
+
+    <div className="tree-buttons">
+    <Segment>
+      <Dropdown placeholder='Choisir le(s) tome(s)' size="5" fluid multiple selection options={options} />
+      <Button color='black'>
+          Disponibilité
+      </Button>
+      <Button color='black'>
+          Éditer
+      </Button>
+      <Button color='red'>
+          Supprimer
+      </Button>
+      </Segment>
     </div>
 
-    </Segment>
+    
+    </div>
+
+
+    
 
 
 
 
-  </div>
+
+</div>
+</div>
+
+
 );
 
 export default ManageMyCollection;
