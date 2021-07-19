@@ -12,7 +12,9 @@ const SearchExplained = () => (
       Pour commencer, tapez le nom de votre ville dans la barre de recherche.
       Bonne lecture !
     </p>
-    <SearchBar />
+    <div className="searchExplained-searchWrapper">
+      <SearchBar className="searchExplained-searchBar" />
+    </div>
   </div>
 );
 
