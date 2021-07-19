@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button, Grid, Image, Transition } from 'semantic-ui-react';
+import {
+  Button, Grid, Image, Transition,
+} from 'semantic-ui-react';
 import Conversation from './Conversation';
 import convButtonWhite from './conversations-button-white.png';
 import newMessageWhite from './new-message-white.png';
@@ -58,7 +60,6 @@ const Conversations = ({ isBoxHidden, handleHiddenBoxDisplay }) => {
             </Button>
           </Grid.Column>
         </Grid>
-
 
       </Transition>
     </div>

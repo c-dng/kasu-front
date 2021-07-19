@@ -24,7 +24,7 @@ const SetProfilPage = () => (
 
     <div className="setProfilPage-third-part">
       <p className="setProfilPage-padding">email@gmail.com</p>
-      <Button.Group className="setProfilPage-padding" size='mini'>
+      <Button.Group className="setProfilPage-padding" size="mini">
         <Button className="setProfilPage-third-part-emailButton" size="mini">Changer email</Button>
         <Button className="setProfilPage-third-part-passwordButton" size="mini">Changer le mot de passe</Button>
       </Button.Group>
