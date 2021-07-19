@@ -2,36 +2,35 @@ import React from 'react';
 import {
   Image, TextArea, Button, Form, Radio, Divider,
 } from 'semantic-ui-react';
-import './styles.scss';
+import './style.scss';
 import logo from './logo.png';
 
 const SetProfilPage = () => (
   <div className="setProfilPage">
 
     <div className="setProfilPage-first-part">
-      <h1>Mon profil</h1>
-      <Divider />
+      <h1 className="setProfilPage-h1">Mon profil</h1>
       <Image className="setProfilPage-first-part-image" src={logo} size="tiny" />
       <Button className="setProfilPage-first-part-addButton" circular>+</Button>
-      <p>A propos de moi</p>
+      <p className="setProfilPage-padding">A propos de moi</p>
     </div>
 
     <div className="setProfilPage-second-part">
-      <h3>Présentation</h3>
-      <Form>
+      <h3 className="setProfilPage-padding">Présentation</h3>
+      <Form className="setProfilPage-padding">
         <TextArea placeholder="Parle nous un peu de toi..." />
       </Form>
     </div>
 
     <div className="setProfilPage-third-part">
-      <p>email@gmail.com</p>
-      <Button.Group size='mini'>
-      <Button className="setProfilPage-third-part-emailButton" size="mini">Changer email</Button>
-      <Button className="setProfilPage-third-part-passwordButton" size="mini">Changer le mot de passe</Button>
+      <p className="setProfilPage-padding">email@gmail.com</p>
+      <Button.Group className="setProfilPage-padding" size='mini'>
+        <Button className="setProfilPage-third-part-emailButton" size="mini">Changer email</Button>
+        <Button className="setProfilPage-third-part-passwordButton" size="mini">Changer le mot de passe</Button>
       </Button.Group>
     </div>
 
-    <div className="setProfilPage-fourth-part">
+    <div className="setProfilPage-fourth-part setProfilPage-padding">
       <Form size="mini">
         <Form.Group unstackable widths={2}>
           <Form.Input placeholder="Nom" />
