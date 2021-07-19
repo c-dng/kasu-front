@@ -3,11 +3,15 @@
 div.ui.centered.card.conversation-card {
   width: 80%;
   box-shadow: none;
-  border: 1px solid red;
+
 }
 
 div.conversation:first-child {
-  margin-top: 3rem;
+  margin-top: 2rem;
+}
+
+.conversation-cardContent.conversation-cardContent.conversation-cardContent {
+  padding: 0 !important;
 }
 
 div.conversation:not(:first-child) {
@@ -22,8 +26,40 @@ div.conversation:not(:first-child) {
 
 .conversations-button--notHiddenBox.conversations-button--notHiddenBox.conversations-button--notHiddenBox {
   position: fixed;
-  bottom: 8rem;
-  right: 2rem;
+  animation-duration: 0.5s;
+  animation-name: slideup;
+  animation-fill-mode: forwards;
+}
+
+.conversations-button--hiddenBox.conversations-button--hiddenBox.conversations-button--hiddenBox {
+  position: fixed;
+  animation-duration: 0.5s;
+  animation-name: slidedown;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideup {
+  from {
+    bottom: 2rem;
+    right: 2rem;
+  }
+
+  to {
+    bottom: 8rem;
+    right: 2rem;
+  }
+}
+
+@keyframes slidedown {
+  from {
+    bottom: 8rem;
+    right: 2rem;
+  }
+
+  to {
+    bottom: 2rem;
+    right: 2rem;
+  }
 }
 
 

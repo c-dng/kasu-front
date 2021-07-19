@@ -32,11 +32,12 @@ const Conversations = ({ isBoxHidden, handleHiddenBoxDisplay }) => {
         <Conversation />
         <Conversation />
         <Conversation />
+        <Conversation />
+        <Conversation />
       </div>
       <Button className={buttonClasses} onClick={handleHiddenBox}>
         <Image size="tiny" circular src={convButton} className="conversations-buttonImages conversations-buttonImage" />
       </Button>
-
 
       <Transition visible={!isBoxHidden} animation="slide up" duration={500}>
 
