@@ -25,8 +25,10 @@ const SetProfilPage = () => (
 
     <div className="setProfilPage-third-part">
       <p>email@gmail.com</p>
+      <Button.Group size='mini'>
       <Button className="setProfilPage-third-part-emailButton" size="mini">Changer email</Button>
       <Button className="setProfilPage-third-part-passwordButton" size="mini">Changer le mot de passe</Button>
+      </Button.Group>
     </div>
 
     <div className="setProfilPage-fourth-part">
@@ -43,7 +45,7 @@ const SetProfilPage = () => (
           <Form.Input placeholder="Ville" />
         </Form.Group>
         <Form.Group className="setProfilPage-fourth-part-holiday-mode">
-          <p>Mode vacances</p>
+          <div>Mode vacances</div>
           <Radio toggle />
         </Form.Group>
       </Form>
