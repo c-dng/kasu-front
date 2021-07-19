@@ -1,13 +1,16 @@
 .setProfilPage {
-  
   border: 1px solid rgb(212 212 213);
   width: 80%;
   margin: 3rem auto;
   border-radius: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 1em;
 };
 
 div.setProfilPage-first-part {
-  padding: 1em;
+  margin-bottom: 1em;
   position: relative;
 }
 
@@ -21,33 +24,39 @@ h1 {
 img.ui.tiny.image.setProfilPage-first-part-image {
   border-radius: 50%;
   border: 1px solid black;
+  margin: 0 auto;
 }
 
 button.ui.button.setProfilPage-first-part-addButton {
   font-weight: bolder;
-  left: 70px;
   font-size: x-large;
   padding: .2em .4em;
   position: absolute;
-  top: 115px;
+  left: 51%;
+  top: 69%;
 }
 
 div.setProfilPage-first-part p {
   padding-top: 1em;
   padding-left: 0.3em;
-  position: relative;
 }
 
 div.setProfilPage-second-part {
-  padding: 1em;
+  margin-bottom: 1em;
 }
 
 div.setProfilPage-third-part {
-  padding: 1em;
+  margin-bottom: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
 }
 
 button.ui.mini.button.setProfilPage-third-part-emailButton {
   border-radius: 1.5em;
+  margin-right: 0.5em;
+  text-align: center;
 }
 
 button.ui.mini.button.setProfilPage-third-part-passwordButton {
@@ -55,28 +64,29 @@ button.ui.mini.button.setProfilPage-third-part-passwordButton {
 }
 
 div.setProfilPage-fourth-part {
-  padding: 1em;
+  margin-bottom: 1em;
+  justify-content: space-between;
 }
 
 div.field.setProfilPage-fourth-part-adress {
- padding: 1em;
  width: 100%;
+ padding-top: 1em;
+ padding-bottom: 1em;
 }
 
 div.fields.setProfilPage-fourth-part-holiday-mode {
-  
-  padding-right: 1em;
-  padding-top: 2em;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+padding-top: 1em;
 }
 
-p {
-  padding-left: 1em;
-  padding-right: 1em;
-  padding-top: 0.3em;
+div.setProfilPage-fourth-part div{
+ margin-right: 1em;
 }
 
 div.setProfilPage-fifth-part {
-  padding: 1em;
+  margin-bottom: 1em;
   text-align: center;
 }
 
@@ -91,12 +101,14 @@ button.ui.positive.button.setProfilPage-fifth-part-validateButton {
 }
 
 div.setProfilPage-sixth-part {
-  padding: 1em;
   text-align: center;
 }
 
 button.ui.negative.button.setProfilPage-sixth-part-deleteAccountButton {
   border-radius: 1.5em;
+  color: red;
+  background-color: white;
+  border: 1px solid red;
 }
 
 
