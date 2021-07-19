@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {
-  Button, Image, Segment,
+  Button, Image,
 } from 'semantic-ui-react';
 import './style.scss';
 import homeBanner from './homeBanner.jpg';

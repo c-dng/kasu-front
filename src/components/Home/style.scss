@@ -50,9 +50,27 @@ div.home.home {
   text-align: center;
 }
 
-.home-cardImageContent.home-cardImageContent.home-cardImageContent {
-  background-image: url("./home-card-logo.jpg") !important;
-  background-size: cover !important;
+.searchExplained-searchWrapper {
+  background-image: url("./home-card-logo.jpg") ;
+  background-size: cover ;
+  padding: 3rem;
+}
+
+.searchExplained {
+  text-align: center;
+}
+.searchExplained-description {
+  margin: 2rem;
+}
+
+h2.searchExplained-title.searchExplained-title {
+  font-size: 1.3rem;
+  margin-top: 2rem;
 
 }
+
+.searchExplained-searchBar.searchExplained-searchBar.searchExplained-searchBar {
+
+}
+
 // Theme 

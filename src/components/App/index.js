@@ -12,6 +12,7 @@ import ContactForm from 'src/components/ContactForm';
 import Conversations from 'src/containers/Conversations';
 import SetProfilPage from 'src/components/SetProfilPage';
 import ManageMyCollection from 'src/components/ManageMyCollection';
+import ViewProfilPage from 'src/components/ViewProfilPage';
 
 // == Import
 
@@ -57,6 +58,10 @@ const App = () => (
       </Route>
       <Route path="/profil/collection" exact>
         <ManageMyCollection />
+      </Route>
+      <Route path="/profil/mes-infos" exact>
+        <ViewProfilPage />
+        <Footer />
       </Route>
     </Switch>
   </div>
