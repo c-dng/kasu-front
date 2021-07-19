@@ -50,6 +50,10 @@ const App = () => (
         <SearchBar />
         <SearchResultsByLocation />
       </Route>
+      <Route path="/profil/:id" exact>
+        <SetProfilPage />
+        <Footer />
+      </Route>
     </Switch>
   </div>
 );
