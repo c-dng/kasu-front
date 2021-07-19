@@ -1,39 +1,29 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Button, Card, Image } from 'semantic-ui-react';
+import {
+  Button, Image, Segment,
+} from 'semantic-ui-react';
 import './style.scss';
-import homeCardLogo from './home-card-logo.jpg';
+import homeBanner from './homeBanner.jpg';
+import SearchExplained from './SearchExplained';
 
 const Home = () => (
-  <div className="home">
-    <Card className="home-card" centered>
-      <Image className="home-cardImage" src={homeCardLogo} wrapped ui={false} />
-      <Card.Content>
-        <Card.Description>
+  <div>
+    <div className="home">
+      <Image className="home-banner" src={homeBanner} />
+      <div className="home-BannerTextButton">
+        <h1 className="home-h1">BIENVENUE CHEZ KASU</h1>
+        <p className="home-description">
           <strong>Kasu</strong>, qui veut dire "prêter" en japonais, est une plateforme offrant
           la possibilité aux passionnés de s'échanger mutuellement et temporairement leurs mangas.
-          <br />
-          Cherchez les collections disponibles près de chez vous!
-          <br />
-          Entrez en contact et définissez ensemble vos conditions d’échange.
-          <br />
-          Bonne lecture!
-        </Card.Description>
-      </Card.Content>
-      <Card.Content>
+        </p>
         <div className="home-buttonWrapper">
-
-          {/* this is just in case we prefer the dual connect/register button
-          <Button.Group>
-            <Button negative>Connexion</Button>
-            <Button.Or className="home-orButton" text="ou" />
-            <Button positive>Inscription</Button>
-          </Button.Group> */}
           <Button className="home-button" as={Link} to="/login">Se connecter</Button>
           <Button className="home-button" as={Link} to="/register">S'inscrire</Button>
         </div>
-      </Card.Content>
-    </Card>
+      </div>
+    </div>
+    <SearchExplained />
   </div>
 );
 

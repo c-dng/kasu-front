@@ -4,16 +4,32 @@
 
 div.home.home {
   display: flex;
-  justify-content: center;
-  margin-top: 3rem;
+  flex-wrap: wrap;
 }
-.home-cardImage.home-cardImage.home-cardImage {
-  
-  
+.home-h1.home-h1 {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+.home-description.home-description {
+  padding: 0;
+  margin: 1rem 2rem 1rem 2rem;
+}
+.home-BannerTextButton.home-BannerTextButton.home-BannerTextButton {
+  background-color: black;
+  color: white;
+  text-align: center;
+  width: 100%;
 }
 .home-buttonWrapper {
   display: flex;
   justify-content: space-evenly;
+  margin-bottom: 1rem;
+}
+
+.home-cardImage.home-cardImage.home-cardImage {
+  height: 100%; 
+  width: 100%; 
+  object-fit: contain
 }
 
 .ui.button.home-button {
@@ -29,7 +45,14 @@ div.home.home {
   overflow:hidden;
   width: 80%;
   border-radius: 1rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  text-align: center;
 }
 
+.home-cardImageContent.home-cardImageContent.home-cardImageContent {
+  background-image: url("./home-card-logo.jpg") !important;
+  background-size: cover !important;
 
+}
 // Theme 

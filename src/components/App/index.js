@@ -27,7 +27,6 @@ const App = () => (
     <Switch>
       <Route path="/" exact>
         <Home />
-        <SearchBar />
         <Footer />
       </Route>
       <Route path="/login" exact>
@@ -50,6 +49,10 @@ const App = () => (
       <Route path="/rechercher/ville" exact>
         <SearchBar />
         <SearchResultsByLocation />
+      </Route>
+      <Route path="/profil/:id" exact>
+        <SetProfilPage />
+        <Footer />
       </Route>
     </Switch>
   </div>
