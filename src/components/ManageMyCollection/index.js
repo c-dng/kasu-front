@@ -1,11 +1,72 @@
 import React from 'react';
-import { Segment } from 'semantic-ui-react'
+import { Header, Icon, Image, Segment, Dropdown, Button } from 'semantic-ui-react'
 
 import './style.scss';
 
+const options = [
+  { key: 't1', value: 'T1', text: 'Tome 1' },
+  { key: 't2', value: 'T2', text: 'Tome 2' },
+  { key: 't3', value: 'T3', text: 'Tome 3' },
+  { key: 't4', value: 'T4', text: 'Tome 4' },
+  { key: 't5', value: 'T5', text: 'Tome 5' },
+]
+
 const ManageMyCollection = () => (
   <div className="manageMyCollection">
-      <Segment>Pellentesque habitant morbi tristique senectus.</Segment>
+
+    {/* <h1>Gestion des collections</h1> */}
+    <Header as='h4' attached='top'>
+      Résultat de votre recherche
+    </Header>
+
+    <Image className="Manga-image"
+           src="https://images-na.ssl-images-amazon.com/images/I/91GSy4frSdL.jpg"
+    />
+
+        Nom du manga
+    <Segment attached>
+        Selectionnez le(s) tome(s) à ajouter
+      <Dropdown placeholder='Selectionner un ou plusieurs tomes' fluid multiple selection options={options} />
+      <Button className="add-to-my-collection" color="red">
+        Ajouter à ma collection
+      </Button>
+    </Segment>
+
+    <Header as='h2'>
+    <Icon name='settings' />
+    <Header.Content>
+        Ma collection
+      <Header.Subheader>Gérer la visibilité, éditer, supprimer</Header.Subheader>
+    </Header.Content>
+    </Header>
+
+    <Header as='h4' attached='top'>
+    <Image className="Manga-image"
+           src="https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/313968/313968._SX1280_QL80_TTD_.jpg"
+    />
+        Nom du manga
+    </Header>
+    <Segment attached>
+        Selectionnez le(s) tome(s) à éditer
+      <Dropdown placeholder='Selectionner un ou plusieurs tomes' fluid multiple selection options={options} />
+
+    <div>
+    <Button color='black'>
+        Masquer
+    </Button>
+    <Button color='black'>
+        Éditer
+    </Button>
+    <Button color='red'>
+        Supprimer
+    </Button>
+    </div>
+
+    </Segment>
+
+
+
+
   </div>
 );
 

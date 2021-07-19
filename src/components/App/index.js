@@ -56,6 +56,7 @@ const App = () => (
         <Footer />
       </Route>
       <Route path="/profil/collection" exact>
+        <SearchBar />
         <ManageMyCollection />
       </Route>
     </Switch>
