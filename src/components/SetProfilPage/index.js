@@ -25,9 +25,9 @@ const SetProfilPage = () => (
 
     <div className="setProfilPage-third-part">
       <p>email@gmail.com</p>
-      <Button.Group size='tiny'>
-      <Button className="setProfilPage-third-part-emailButton" size="mini">Changer email</Button>
-      <Button className="setProfilPage-third-part-passwordButton" size="mini">Changer le mot de passe</Button>
+      <Button.Group size="tiny">
+        <Button className="setProfilPage-third-part-emailButton" size="mini">Changer email</Button>
+        <Button className="setProfilPage-third-part-passwordButton" size="mini">Changer le mot de passe</Button>
       </Button.Group>
     </div>
 
