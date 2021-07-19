@@ -29,8 +29,7 @@ const LoginForm = ({
     <div className="loginform">
       <Card className="loginform-card" centered>
         <Card.Content className="loginform-cardContent">
-          <Card.Header text-align="center">Connexion</Card.Header>
-          <Divider />
+          <Card.Header className="loginform-cardHeader" text-align="center">Connexion</Card.Header>
           <Form className="loginform-form" onSubmit={handleSubmit}>
             <Form.Field>
               <label htmlFor="e-mail">E-mail
