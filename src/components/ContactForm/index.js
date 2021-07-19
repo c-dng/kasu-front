@@ -1,9 +1,11 @@
 import React from 'react';
 import {
-  Button, Card, Divider, Form,
+  Button, Card, Divider, Form, Image,
 } from 'semantic-ui-react';
 
 import './style.scss';
+
+import contactFormBanner from './contactFormBanner.png';
 
 const ContactForm = () => {
   const options = [
@@ -16,10 +18,10 @@ const ContactForm = () => {
 
   return (
     <div className="contactForm">
+      <Image className="home-banner" src={contactFormBanner} />
       <Card className="contactForm-card" centered>
-        <Card.Content>
+        <Card.Content className="contactForm-cardContent">
           <Card.Header text-align="center" className="contactForm-cardHeader">Formulaire de contact</Card.Header>
-          <Divider />
           <Form className="contactForm-form">
             <Form.Input fluid label="Saisissez votre email:" width="16" />
             <Form.Select
