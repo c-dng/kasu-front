@@ -1,0 +1,17 @@
+.ui.header.titleNameManga {
+  margin-top: 1em;
+  text-align: center;
+}
+
+// first heading : add volume(s)
+div.ui.premier.attached.segment{
+
+  display: flex;
+
+}
+
+// second section : my collection
+.ui.header.myCollection {
+  display: flex;
+  justify-content:center
+}

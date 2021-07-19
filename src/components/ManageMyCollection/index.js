@@ -23,16 +23,18 @@ const ManageMyCollection = () => (
            src="https://images-na.ssl-images-amazon.com/images/I/91GSy4frSdL.jpg"
     />
 
-        Nom du manga
-    <Segment attached>
-        Selectionnez le(s) tome(s) à ajouter
-      <Dropdown placeholder='Selectionner un ou plusieurs tomes' fluid multiple selection options={options} />
+    <Header className="titleNameManga " as='h4'>
+    Seven Deadly Sins
+    </Header>
+    
+    <Segment attached="premier">
+      <Dropdown placeholder='Tome(s) à ajouter' fluid multiple selection options={options} />
       <Button className="add-to-my-collection" color="red">
         Ajouter à ma collection
       </Button>
     </Segment>
 
-    <Header as='h2'>
+    <Header className="myCollection" as='h2'>
     <Icon name='settings' />
     <Header.Content>
         Ma collection
@@ -46,13 +48,11 @@ const ManageMyCollection = () => (
     />
         Nom du manga
     </Header>
-    <Segment attached>
-        Selectionnez le(s) tome(s) à éditer
-      <Dropdown placeholder='Selectionner un ou plusieurs tomes' fluid multiple selection options={options} />
-
+    <Segment attached="deuxieme">
+      <Dropdown placeholder='Tome(s) à éditer' fluid multiple selection options={options} />
     <div>
     <Button color='black'>
-        Masquer
+        Disponiblité
     </Button>
     <Button color='black'>
         Éditer
