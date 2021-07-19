@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  Image, Container, Button, Select, Divider, Form } from 'semantic-ui-react';
+  Image, Container, Button, Select, Divider, Form} from 'semantic-ui-react';
 import './styles.scss';
 import logo from './logo.png';
 
@@ -21,12 +21,12 @@ const ViewProfilPage = () => {
         <div className="viewProfilPage-first-part">
           <h1>Mon profil</h1>
           <Divider />
-          <Image className="viewProfilPage-first-part-image" src={logo} size="tiny" />
+          <Image className="viewProfilPage-first-part-image" src={logo} size='tiny' />
           <Button className="viewProfilPage-first-part-addButton" circular>+</Button>
         </div>
 
         <div className="viewProfilPage-second-part">
-          <h3>Présentation</h3>
+          <h4>Présentation</h4>
           <Container textAlign='justified'>
             <p>
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
@@ -34,28 +34,52 @@ const ViewProfilPage = () => {
             </p>
           </Container>
         </div>
-
+        <Divider />
         <div className="viewProfilPage-third-part">
-          <h3>Localisation</h3>
+          <h4>Localisation</h4>
           <Container className="viewProfilPage-third-part-localisation" textAlign='center'>
             <p>France</p>
             <p>Ville</p>
             <p>Code Postal</p>
           </Container>
         </div>
-
+        <Divider />
         <Container className="viewProfilPage-fourth-part">
           <p>Mode vacances: Activé/Désactivé</p>
         </Container>
-
-        <Container className="viewProfilPage-fifth-part" width='8'>
+        <Divider />
+        <Container className="viewProfilPage-fifth-part">
           <Container>
-            <Image src={logo} size='mini' />
+            <Image className="viewProfilPage-fifth-part-image" src='https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/313968/313968._SX1280_QL80_TTD_.jpg' size='tiny' />
           </Container>
           <Container>
             <p>Nom Manga 1</p>
-            <Form size='4'>
-              <Select placeholder='Sélectionner un tome' options={availableTomes} />
+            <Form size='mini'>
+            <Select placeholder='Sélectionner un tome' options={availableTomes} />
+            </Form>
+          </Container>
+        </Container>
+
+        <Container className="viewProfilPage-fifth-part">
+          <Container>
+            <Image className="viewProfilPage-fifth-part-image" src='https://images-na.ssl-images-amazon.com/images/I/91GSy4frSdL.jpg' size='tiny' />
+          </Container>
+          <Container>
+            <p>Nom Manga 2</p>
+            <Form size='mini'>
+            <Select placeholder='Sélectionner un tome' options={availableTomes} />
+            </Form>
+          </Container>
+        </Container>
+
+        <Container className="viewProfilPage-fifth-part">
+          <Container>
+            <Image className="viewProfilPage-fifth-part-image" src='https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/313968/313968._SX1280_QL80_TTD_.jpg' size='tiny'/>
+          </Container>
+          <Container>
+            <p>Nom Manga 3</p>
+            <Form size='mini'>
+            <Select placeholder='Sélectionner un tome' options={availableTomes} />
             </Form>
           </Container>
         </Container>
