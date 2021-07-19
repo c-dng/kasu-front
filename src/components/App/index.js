@@ -11,6 +11,7 @@ import Register from 'src/components/Register';
 import ContactForm from 'src/components/ContactForm';
 import Conversations from 'src/containers/Conversations';
 import SetProfilPage from 'src/components/SetProfilPage';
+import ViewProfilPage from 'src/components/ViewProfilPage';
 
 // == Import
 
@@ -50,8 +51,12 @@ const App = () => (
         <SearchBar />
         <SearchResultsByLocation />
       </Route>
-      <Route path="/profil/:id" exact>
+      <Route path="/profil/id" exact>
         <SetProfilPage />
+        <Footer />
+      </Route>
+      <Route path="/profil/mes-infos" exact>
+        <ViewProfilPage />
         <Footer />
       </Route>
     </Switch>

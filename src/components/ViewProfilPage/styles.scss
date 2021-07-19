@@ -1,0 +1,77 @@
+.viewProfilPage {
+  border: 1px solid rgb(212 212 213);
+  width: 80%;
+  margin: 3rem auto;
+  border-radius: 1em;
+  padding: 1em;
+};
+
+div.viewProfilPage-first-part {
+  position: relative;
+  margin-bottom: 1em;
+}
+
+
+
+img.ui.tiny.image.viewProfilPage-first-part-image {
+  border-radius: 50%;
+  border: 1px solid black;
+  margin: auto;
+}
+
+button.ui.button.viewProfilPage-first-part-addButton {
+  font-weight: bolder;
+  font-size: x-large;
+  padding: .2em .4em;
+  position: absolute;
+  top: 80%;
+  left: 52%;
+}
+
+div.viewProfilPage-second-part {
+  margin-bottom: 1em;
+}
+
+div.viewProfilPage-third-part {
+  margin-bottom: 1em;
+}
+
+div.ui.center.aligned.container.viewProfilPage-third-part-localisation {
+  display: flex;
+  border-radius: 0.3em;
+}
+
+div.ui.container.viewProfilPage-fourth-part {
+  padding-bottom: 0.5em;
+  margin-bottom: 1em;
+  border-radius: 0.3em;
+}
+
+div.ui.container.viewProfilPage-fifth-part {
+  border: 1px solid #d4d4d5;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1em;
+  text-align: center;
+  border-radius: 0.5em;
+  margin-bottom: 1em;
+}
+
+img.ui.tiny.image.viewProfilPage-fifth-part-image {
+  margin: 0 auto;
+  border: 2px solid black;
+}
+
+div.viewProfilPage-sixth-part {
+display: flex;
+}
+
+button.ui.mini.button.viewProfilPage-sixth-part-deleteAccountButton {
+  color: black;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 1.5em;
+  margin: 0 auto;
+}
+
