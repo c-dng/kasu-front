@@ -23,10 +23,9 @@ const Register = () => {
   return (
     <div className="registerForm">
       <Card className="registerForm-card" centered>
-        <Card.Content>
-          <Card.Header text-align="center" className="contactForm-cardHeader">Inscription</Card.Header>
-          <Divider />
-          <Form className="contactForm-form">
+        <Card.Content className="registerForm-cardContent">
+          <Card.Header text-align="center" className="registerForm-cardHeader">Inscription</Card.Header>
+          <Form className="registerForm-form">
             <Form.Input fluid label="Votre email" width="16" />
             <Form.Input fluid label="Votre pseudo" width="16" />
             <Form.Input fluid label="Votre mot de passe" width="16" />

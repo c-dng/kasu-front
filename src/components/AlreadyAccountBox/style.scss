@@ -4,6 +4,7 @@
   border: 1px solid black;
   width: 7.5rem;
   font-size: 0.8rem;
+  margin-bottom: 1rem;
 }
 
 div.alreadyAccountBox-buttonWrapper {
@@ -19,4 +20,18 @@ div.alreadyAccountBox {
 div.ui.card.alreadyAccountBox-card {
   width: 80%;
   border-radius: 1rem;
+}
+
+div.content.alreadyAccountBox-cardContent.alreadyAccountBox-cardContent.alreadyAccountBox-cardContent {
+  text-align: center;
+  padding: 0;
+}
+
+div.header.alreadyAccountBox-cardHeader.alreadyAccountBox-cardHeader.alreadyAccountBox-cardHeader {
+  color: white;
+  background-color: black;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
 }

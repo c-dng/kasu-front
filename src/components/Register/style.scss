@@ -28,5 +28,23 @@ div.registerForm-buttonWrapper {
   justify-content: center;
 }
 
+div.content.registerForm-cardContent.registerForm-cardContent.registerForm-cardContent {
+  padding: 0;
+}
+
+div.header.registerForm-cardHeader.registerForm-cardHeader.registerForm-cardHeader {
+  color: white;
+  background-color: black;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  text-align: center;
+}
+
+form.ui.form.registerForm-form.registerForm-form{
+  padding: 1rem;
+}
+
 // Theming
 
