@@ -1,9 +1,10 @@
 import React from 'react';
 import {
-  Button, Card, Divider, Form, Icon, Message, Link,
+  Button, Card, Divider, Form, Icon, Message, Link, Image,
 } from 'semantic-ui-react';
 
 import './style.scss';
+import alternativeBanner from 'src/assets/alternativeBanner.png';
 
 const Register = () => {
   // fake datas so that the selection of cities can be displayed
@@ -22,6 +23,7 @@ const Register = () => {
 
   return (
     <div className="registerForm">
+      <Image className="registerForm-banner" src={alternativeBanner} />
       <Card className="registerForm-card" centered>
         <Card.Content className="registerForm-cardContent">
           <Card.Header text-align="center" className="registerForm-cardHeader">Inscription</Card.Header>

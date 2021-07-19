@@ -2,10 +2,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  Card, Icon, Button, Form, Divider,
+  Card, Icon, Button, Form, Divider, Image,
 } from 'semantic-ui-react';
 
 import './style.scss';
+
+import alternativeBanner from 'src/assets/alternativeBanner.png';
 
 const LoginForm = ({
   email,
@@ -27,6 +29,7 @@ const LoginForm = ({
 
   return (
     <div className="loginform">
+      <Image className="contactForm-banner" src={alternativeBanner} />
       <Card className="loginform-card" centered>
         <Card.Content className="loginform-cardContent">
           <Card.Header className="loginform-cardHeader" text-align="center">Connexion</Card.Header>

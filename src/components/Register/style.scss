@@ -7,12 +7,17 @@
 }
 
 div.registerForm{
-  margin: 3rem 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0;
 }
 
 div.ui.card.registerForm-card {
   width: 80%;
   border-radius: 1rem;
+  margin: 3rem 0;
+
 }
 
 .registerForm-registerButton.registerForm-registerButton.registerForm-registerButton {

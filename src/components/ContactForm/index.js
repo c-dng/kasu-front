@@ -5,7 +5,7 @@ import {
 
 import './style.scss';
 
-import contactFormBanner from './contactFormBanner.png';
+import alternativeBanner from 'src/assets/alternativeBanner.png';
 
 const ContactForm = () => {
   const options = [
@@ -18,7 +18,7 @@ const ContactForm = () => {
 
   return (
     <div className="contactForm">
-      <Image className="home-banner" src={contactFormBanner} />
+      <Image className="contactForm-banner" src={alternativeBanner} />
       <Card className="contactForm-card" centered>
         <Card.Content className="contactForm-cardContent">
           <Card.Header text-align="center" className="contactForm-cardHeader">Formulaire de contact</Card.Header>
