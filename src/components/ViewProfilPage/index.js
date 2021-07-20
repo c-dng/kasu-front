@@ -1,7 +1,7 @@
 import React from 'react';
-import { Image, Container, Button, Select, Divider, Form } from 'semantic-ui-react';
+import { Image, Container, Button, Select, Divider, Form, Icon} from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
-import './styles.scss';
+import './style.scss';
 import logo from './logo.png';
 
 const ViewProfilPage = () => {
@@ -17,24 +17,23 @@ const ViewProfilPage = () => {
 
   return (
       <div className="viewProfilPage">
-        
-        <div className="viewProfilPage-first-part">
-          <h1>Mon profil</h1>
-          <Divider />
-          <Image className="viewProfilPage-first-part-image" src={logo} size='tiny' />
-          <Button className="viewProfilPage-first-part-addButton" circular>+</Button>
+        <div className="viewProfilPage-firstPart">
+          <h1 className="setProfilPage-h1 setProfilPage-h1 setProfilPage-h1" >Mon profil</h1>
+          <Image className="viewProfilPage-firstPartImage" src={logo} size='tiny' />
+          <Button className="viewProfilPage-firstPartAddButton" circular>+</Button>
         </div>
 
-        <div className="viewProfilPage-second-part">
+        <div className="viewProfilPage-secondPart">
           <Container textAlign='center'>
             <p>Pseudo</p>
           </Container>
-          <div className="viewProfilPage-second-part-change-buttons">
-            <Link to="/profil/id" exact={+true} className="viewProfilPage-second-part-change-buttons-left-link">
-              <Button size='mini' className="viewProfilPage-second-part-change-buttons-left" attached='left'>Gérer mon profil</Button>
+          <div className="viewProfilPage-secondPartChangeButtons">
+            <Link to="/profil/id" exact={+true}>
+              <Button size='mini' className="viewProfilPage-secondPartChangeButtonsLeft" attached='left'>Gérer mon profil</Button>
             </Link>
-            <Link to="/profil/collection" exact={+true} className="viewProfilPage-second-part-change-buttons-right-link">  
-                <Button size='mini' className="viewProfilPage-second-part-change-buttons-right" attached='right'>Gérer mes collections</Button>
+            <Link to="/profil/collection" exact={+true}>  
+                <Button size='mini' className="viewProfilPage-secondPartChangeButtonsRight"
+                attached='right'>Gérer mes collections</Button>
             </Link> 
           </div>
           <h4>Présentation</h4>
@@ -46,22 +45,23 @@ const ViewProfilPage = () => {
           </Container>
         </div>
         <Divider />
-        <div className="viewProfilPage-third-part">
+        <div className="viewProfilPage-thirdPart">
           <h4>Localisation</h4>
-          <Container className="viewProfilPage-third-part-localisation">
+          <Container className="viewProfilPage-thirdPartLocation">
+          <Icon size='large' name="map marker alternate"></Icon>
             <p>France</p>
             <p>Ville</p>
             <p>Code Postal</p>
           </Container>
         </div>
         <Divider />
-        <Container className="viewProfilPage-fourth-part">
+        <Container className="viewProfilPage-fourthPart">
           <p>Mode vacances: Activé/Désactivé</p>
         </Container>
         <Divider />
-        <Container className="viewProfilPage-fifth-part">
+        <Container className="viewProfilPage-fifthPart">
           <Container>
-            <Image className="viewProfilPage-fifth-part-image" src='https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/313968/313968._SX1280_QL80_TTD_.jpg' size='tiny' />
+            <Image className="viewProfilPage-fifthPartImage" src='https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/313968/313968._SX1280_QL80_TTD_.jpg' size='tiny' />
           </Container>
           <Container>
             <p>Nom Manga 1</p>
@@ -71,9 +71,9 @@ const ViewProfilPage = () => {
           </Container>
         </Container>
 
-        <Container className="viewProfilPage-fifth-part">
+        <Container className="viewProfilPage-fifthPart">
           <Container>
-            <Image className="viewProfilPage-fifth-part-image" src='https://images-na.ssl-images-amazon.com/images/I/91GSy4frSdL.jpg' size='tiny' />
+            <Image className="viewProfilPage-fifthPartImage" src='https://images-na.ssl-images-amazon.com/images/I/91GSy4frSdL.jpg' size='tiny' />
           </Container>
           <Container>
             <p>Nom Manga 2</p>
@@ -83,9 +83,9 @@ const ViewProfilPage = () => {
           </Container>
         </Container>
 
-        <Container className="viewProfilPage-fifth-part">
+        <Container className="viewProfilPage-fifthPart">
           <Container>
-            <Image className="viewProfilPage-fifth-part-image" src='https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/313968/313968._SX1280_QL80_TTD_.jpg' size='tiny'/>
+            <Image className="viewProfilPage-fifthPartImage" src='https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/313968/313968._SX1280_QL80_TTD_.jpg' size='tiny'/>
           </Container>
           <Container>
             <p>Nom Manga 3</p>
@@ -95,13 +95,11 @@ const ViewProfilPage = () => {
           </Container>
         </Container>
 
-        <div className="viewProfilPage-sixth-part">
-          <Button className="viewProfilPage-sixth-part-deleteAccountButton" size='mini'>Voir plus</Button>
+        <div className="viewProfilPage-sixthPart">
+          <Button className="viewProfilPage-sixthPartDeleteAccountButton" size='mini'>Voir plus</Button>
         </div>
-
       </div>
     );
 };
-
 
 export default ViewProfilPage;
