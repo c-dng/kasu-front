@@ -12,7 +12,7 @@ import Conversations from 'src/containers/Conversations';
 import SetProfilPage from 'src/components/SetProfilPage';
 import ManageMyCollection from 'src/components/ManageMyCollection';
 import ViewProfilPage from 'src/components/ViewProfilPage';
-import ManageMyCollectionNoResultsFound from 'src/components/ManageMyCollectionNoResultsFound';
+import Team from 'src/components/Team';
 
 // == Import
 
@@ -62,6 +62,9 @@ const App = ({ theme }) => (
       <Route path="/profil/mes-infos" exact>
         <ViewProfilPage />
         <Footer />
+      </Route>
+      <Route path="/team" exact>
+        <Team />
       </Route>
     </Switch>
   </div>
