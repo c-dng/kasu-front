@@ -3,60 +3,61 @@
 //title of page
 h2 {
   text-align: center;
+  // margin-top: 1em;   -> don't work
 }
 
 // subtitle
-div.subtitle {
+.manageMyCollection-subtitle{
   text-align: center;
 }
 
 // title name of manga
-div.titleNameManga {
+.manageMyCollection-titleNameManga {
   margin-top: 1em;
   text-align: center;
   margin-bottom: 0.5em;
 }
 
 // img result of search
-.ui.small.centered.image.manga-image {
-  margin-bottom: 1em;
-}
-// dropdown volumes to add
-.ui.fluid.multiple.selection.dropdown.dropdownChooseManga {
-  margin: auto;
-  width: 50%;
+.manageMyCollection-mangaImage {
+  margin-bottom: 0.5em;
 }
 
-// button add volume(s)
-.ui.red.button.add-to-my-collection{
-  margin: auto;
+.manageMyCollection-myCollectionTreeButtons {
   display: flex;
-  margin-bottom: 3.5em;
+  justify-content: center;
+  margin-top: 0.5em;
+  margin-bottom: 3em;
 }
 
 // SECOND SECTION : MY COLLECTION
 
 // My collection
-div.myCollection {
+div.manageMyCollection-myCollection{
+  margin-top: 3em;
   display: flex;
   justify-content: center;
 }
 
-// title of your manga
-.header-title-manga-owner {
+// title of our manga
+.ui.header.manageMyCollection-myCollectionTitleMangaOwner{
   text-align: center;
   margin-bottom: 0.5em;
 }
 
+// image of our manga
+.ui.small.centered.image.manageMyCollection-myCollectionTitleMangaOwnerImage {
+  margin-bottom: 0.5em;
+} 
+
 // dropdown volume to edit
-div.ui.fluid.multiple.selection.dropdown {
-  display: flex;
-  justify-content: center;
+.ui.fluid.multiple.selection.dropdown {
+  text-align: center;
 }
 
 // focus 3 buttons
-div.tree-buttons {
-  margin-top: 1em;
+div.myCollection-tree-buttons{
+  margin-top: 0.5em;
   display: flex;
   justify-content: center;
 }

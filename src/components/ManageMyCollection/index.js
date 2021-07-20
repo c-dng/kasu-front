@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header, Divider, Icon, Image, Segment, Dropdown, Button } from 'semantic-ui-react'
+import { Header, Divider, Icon, Image, Dropdown, Button } from 'semantic-ui-react'
 import SearchBar from 'src/components/SearchBar';
 import './style.scss';
 
@@ -21,31 +21,30 @@ const ManageMyCollection = () => (
     <h2>Gestion des collections</h2>
       <SearchBar />
 
-    <div className="subtitle">
-      <Header as='h4' attached>
+      <Header className="manageMyCollection-subtitle" as='h4' attached>
       Résultat de votre recherche
       </Header>
-    </div>
 
-    <div className="titleNameManga">
-      <Header as='h3'>
+      <Header className="manageMyCollection-titleNameManga" as='h3'>
       Seven Deadly Sins
       </Header>
-    </div>
-      <Image className="manga-image"
+
+      <Image className="manageMyCollection-mangaImage"
         src="https://images-na.ssl-images-amazon.com/images/I/91GSy4frSdL.jpg"
         size="small"
         centered
     />
 
-    <div className="lineVolumeToAdd">
-        <Dropdown className="dropdownChooseManga" placeholder='Tome(s) à ajouter' size="5" fluid multiple selection options={options} />
-          <Button className="add-to-my-collection" color="red">
+    <div className="manageMyCollection-selectAndAdd">
+        <Dropdown className="manageMyCollection-dropdownSelectAndAdd" placeholder='Tome(s) à ajouter' size="5" fluid multiple selection options={options} />
+        <div className="manageMyCollection-myCollectionTreeButtons">
+          <Button color="red">
             Ajouter à ma collection
           </Button>
+        </div>
     </div>
 
-    <div className="myCollection">
+    <div className="manageMyCollection-myCollection">
       <Header as='h2'>
         <Icon name='settings' />
         <Header.Content>
@@ -59,37 +58,30 @@ const ManageMyCollection = () => (
 
       <Divider></Divider>
 
-    <div className="globalCardManga">
-        <div className="header-title-manga-owner">
-          <Header as='h3'>
+      <Header className="manageMyCollection-myCollectionTitleMangaOwner" as='h3'>
             Attaque des Titans
-          </Header>
-        </div>
+      </Header>
 
-      <Image className="Manga-image"
+      <Image className="manageMyCollection-myCollectionTitleMangaOwnerImage"
           src="https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/313968/313968._SX1280_QL80_TTD_.jpg"
           size="small"
           centered
       />
 
-      <div className="tree-buttons">
-      <Segment>
         <Dropdown
           placeholder='Choisir le(s) tome(s)' size="5" fluid multiple selection options={options} />
-        <Button color='black'>
-            Disponibilité
-        </Button>
-        <Button color='black'>
-            Éditer
-        </Button>
-        <Button color='red'>
-            Supprimer
-        </Button>
-        </Segment>
-      </div>
-    </div>
-</div>
-
+          <div className="manageMyCollection-myCollectionTreeButtons">
+            <Button color='black'>
+                Disponibilité
+            </Button>
+            <Button color='black'>
+                Éditer
+            </Button>
+            <Button color='red'>
+                Supprimer
+            </Button>
+          </div>
+   </div>
 );
 
 export default ManageMyCollection;
