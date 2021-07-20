@@ -7,8 +7,7 @@ const NoAccountBox = () => (
   <div className="noAccountBox">
     <Card className="noAccountBox-card" centered>
       <Card.Content className="noAccount-cardContent">
-        <Card.Header text-align="center">Pas encore de compte ?</Card.Header>
-        <Divider />
+        <Card.Header text-align="center" className="noAccount-cardHeader">Pas encore de compte ?</Card.Header>
         {/* the {+true} is used to resolve an error linked to semantic-ui and the "exact"
         attribute from react-router */}
         <div className="noAccountBox-buttonWrapper"><Button className="noAccount-registerButton" as={Link} to="/register" exact={+true}>S'inscrire</Button></div>

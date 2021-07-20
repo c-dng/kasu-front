@@ -1,11 +1,9 @@
 import React from 'react';
-import { Divider } from 'semantic-ui-react';
 import SearchBar from '../../SearchBar';
 
 const SearchExplained = () => (
   <div className="searchExplained">
     <h2 className="searchExplained-title">Découvrez les collections près de chez vous</h2>
-    {/* <Divider /> */}
     <p className="searchExplained-description">
       Cherchez les collections disponibles près de chez vous, entrez en contact
       et définissez ensemble vos conditions d’échange.

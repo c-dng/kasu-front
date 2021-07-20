@@ -1,14 +1,11 @@
 div.ui.centered.card.contactForm-card {
   width: 80%;
   border-radius: 1rem;
+  margin-top: 3rem;
 }
 
 div.contactForm {
-  margin: 3rem 0;
-}
-
-div.header.contactForm-cardHeader {
-  text-align: center;
+  margin-bottom: 3rem;
 }
 
 button.ui.button.contactForm-sendButton {
@@ -21,4 +18,18 @@ button.ui.button.contactForm-sendButton {
 div.contactForm-buttonWrapper {
   display: flex;
   justify-content: center;
+}
+
+div.content.contactForm-cardContent.contactForm-cardContent.contactForm-cardContent {
+  padding: 0;
+}
+
+div.header.contactForm-cardHeader.contactForm-cardHeader.contactForm-cardHeader {
+  color: white;
+  background-color: black;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  text-align: center;
 }

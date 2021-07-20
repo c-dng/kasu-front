@@ -29,9 +29,6 @@ div.item.nav-logoContainer.nav-logoContainer.nav-logoContainer {
   height: 10vh;
 }
 
-img.ui.mini.navbuttons {
-
-}
 
 // This selector is used to hide the semantic-ui automatic dropdown icon, without losing its functionality of dropdown
 // I'm making it large so it can be easily clickable, and transparent.
@@ -47,7 +44,7 @@ div.ui.floating.dropdown {
 
 .theme1 {
   .ui.menu.item {
-    background-color: vars.$primary_theme1;
+
   }
 }
 

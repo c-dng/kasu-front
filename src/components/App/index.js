@@ -1,10 +1,9 @@
 // == Import npm
 import React from 'react';
-
-import Nav from 'src/components/Nav/';
+import PropTypes from 'prop-types';
+import Nav from 'src/containers/Nav/';
 import Home from 'src/components/Home';
 import Footer from 'src/components/Footer';
-import SearchBar from 'src/components/SearchBar';
 import SearchResultsByLocation from 'src/components/SearchResultsByLocation';
 import LoginForm from 'src/containers/LoginForm';
 import Register from 'src/components/Register';
@@ -22,8 +21,8 @@ import NoAccountBox from '../NoAccountBox';
 import AlreadyAccountBox from '../AlreadyAccountBox';
 
 // == Composant
-const App = () => (
-  <div className="app theme1">
+const App = ({ theme }) => (
+  <div className={`app ${theme}`}>
 
     <Nav />
     <Switch>
@@ -49,8 +48,8 @@ const App = () => (
         <Conversations />
       </Route>
       <Route path="/rechercher/ville" exact>
-        <SearchBar />
         <SearchResultsByLocation />
+        <Footer />
       </Route>
       <Route path="/profil/id" exact>
         <SetProfilPage />
@@ -66,6 +65,10 @@ const App = () => (
     </Switch>
   </div>
 );
+
+LoginForm.propTypes = {
+  theme: PropTypes.string.isRequired,
+};
 
 // == Export
 export default App;
