@@ -19,10 +19,10 @@ const ManageMyCollection = () => (
   <div className="manageMyCollection">
 
     <h2>Gestion des collections</h2>
-      <SearchBar />
+      <SearchBar className="manageMyCollection-searchBar" />
 
       <Header className="manageMyCollection-subtitle" as='h4' attached>
-      Résultat de votre recherche
+      Résultat trouvé :
       </Header>
 
       <Header className="manageMyCollection-titleNameManga" as='h3'>
