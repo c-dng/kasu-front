@@ -1,8 +1,9 @@
 import React from 'react';
-import { Image, Container, Button, Select, Divider, Form, Icon} from 'semantic-ui-react';
+import { Image, Container, Button, Select, Divider, Form, Icon } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import './style.scss';
 import logo from './logo.png';
+import alternativeBanner from 'src/assets/alternativeBanner.png';
 
 const ViewProfilPage = () => {
   const availableTomes = [
@@ -15,96 +16,99 @@ const ViewProfilPage = () => {
   ];
 
   return (
-      <div className="viewProfilPage">
-          <div className="viewProfilPage-firstPart">
-            <h1 className="setProfilPage-h1" >Mon profil</h1>
-            <Image className="viewProfilPage-firstPartImage" src={logo} size='tiny' />
-            <Button className="viewProfilPage-firstPartAddButton" circular>+</Button>
-          </div>
+    <div className="viewProfilPage">
+      <Image className="registerForm-banner" src={alternativeBanner} />
+      <div className="viewProfilPage-mainWrapper">
+        <div className="viewProfilPage-firstPart">
+          <h1 className="setProfilPage-h1" >Mon profil</h1>
+          <Image className="viewProfilPage-firstPartImage" src={logo} size='tiny' />
+          <Button className="viewProfilPage-firstPartAddButton" circular>+</Button>
+        </div>
 
-          <div className="viewProfilPage-secondPart">
-            <Container textAlign='center'>
-              <p>Pseudo</p>
-            </Container>
-            <div className="viewProfilPage-secondPartChangeButtons">
-              <Link to="/profil/id" exact={+true}>
-                <Button size='mini' className="viewProfilPage-secondPartChangeButtonsLeft" attached='left'>Gérer mon profil</Button>
-              </Link>
-              <Link to="/profil/collection" exact={+true}>  
-                  <Button size='mini' className="viewProfilPage-secondPartChangeButtonsRight"
-                  attached='right'>Gérer mes collections</Button>
-              </Link> 
-            </div>
-            <h4>Présentation</h4>
-            <Container textAlign='justified'>
-              <p>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-                ligula eget dolor.
+        <div className="viewProfilPage-secondPart">
+          <Container textAlign='center'>
+            <p>Pseudo</p>
+          </Container>
+          <div className="viewProfilPage-secondPartChangeButtons">
+            <Link to="/profil/id" exact={+true}>
+              <Button size='mini' className="viewProfilPage-secondPartChangeButtonsLeft" attached='left'>Gérer mon profil</Button>
+            </Link>
+            <Link to="/profil/collection" exact={+true}>
+              <Button size='mini' className="viewProfilPage-secondPartChangeButtonsRight"
+                attached='right'>Gérer mes collections</Button>
+            </Link>
+          </div>
+          <h4>Présentation</h4>
+          <Container textAlign='justified'>
+            <p>
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+              ligula eget dolor.
               </p>
-            </Container>
-          </div>
+          </Container>
+        </div>
 
-          <Divider />
+        <Divider />
 
-          <div className="viewProfilPage-thirdPart">
-            <h4>Localisation</h4>
-            <Container className="viewProfilPage-thirdPartLocation">
+        <div className="viewProfilPage-thirdPart">
+          <h4>Localisation</h4>
+          <Container className="viewProfilPage-thirdPartLocation">
             <Icon size='large' name="map marker alternate"></Icon>
-              <p>France</p>
-              <p>Ville</p>
-              <p>Code Postal</p>
-            </Container>
-          </div>
-
-          <Divider />
-
-          <Container className="viewProfilPage-fourthPart">
-            <p>Mode vacances: Activé/Désactivé</p>
+            <p>France</p>
+            <p>Ville</p>
+            <p>Code Postal</p>
           </Container>
+        </div>
 
-          <Divider />
+        <Divider />
 
-          <Container className="viewProfilPage-fifthPart">
-            <Container>
-              <Image className="viewProfilPage-fifthPartImage" src='https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/313968/313968._SX1280_QL80_TTD_.jpg' size='tiny' />
-            </Container>
-            <Container>
-              <p>Nom Manga 1</p>
-              <Form size='mini'>
+        <Container className="viewProfilPage-fourthPart">
+          <p>Mode vacances: Activé/Désactivé</p>
+        </Container>
+
+        <Divider />
+
+        <Container className="viewProfilPage-fifthPart">
+          <Container>
+            <Image className="viewProfilPage-fifthPartImage" src='https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/313968/313968._SX1280_QL80_TTD_.jpg' size='tiny' />
+          </Container>
+          <Container>
+            <p>Nom Manga 1</p>
+            <Form size='mini'>
               <Select placeholder='Sélectionner un tome' options={availableTomes} />
-              </Form>
-            </Container>
+            </Form>
           </Container>
+        </Container>
 
-          <Container className="viewProfilPage-fifthPart">
-            <Container>
-              <Image className="viewProfilPage-fifthPartImage" src='https://images-na.ssl-images-amazon.com/images/I/91GSy4frSdL.jpg' size='tiny' />
-            </Container>
-            <Container>
-              <p>Nom Manga 2</p>
-              <Form size='mini'>
-              <Select placeholder='Sélectionner un tome' options={availableTomes} />
-              </Form>
-            </Container>
+        <Container className="viewProfilPage-fifthPart">
+          <Container>
+            <Image className="viewProfilPage-fifthPartImage" src='https://images-na.ssl-images-amazon.com/images/I/91GSy4frSdL.jpg' size='tiny' />
           </Container>
-          
-          <Container className="viewProfilPage-fifthPart">
-            <Container>
-              <Image className="viewProfilPage-fifthPartImage" src='https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/313968/313968._SX1280_QL80_TTD_.jpg' size='tiny'/>
-            </Container>
-            <Container>
-              <p>Nom Manga 3</p>
-              <Form size='mini'>
+          <Container>
+            <p>Nom Manga 2</p>
+            <Form size='mini'>
               <Select placeholder='Sélectionner un tome' options={availableTomes} />
-              </Form>
-            </Container>
+            </Form>
           </Container>
+        </Container>
 
-          <div className="viewProfilPage-sixthPart">
-            <Button className="viewProfilPage-sixthPartDeleteAccountButton" size='mini'>Voir plus</Button>
-          </div>
+        <Container className="viewProfilPage-fifthPart">
+          <Container>
+            <Image className="viewProfilPage-fifthPartImage" src='https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/313968/313968._SX1280_QL80_TTD_.jpg' size='tiny' />
+          </Container>
+          <Container>
+            <p>Nom Manga 3</p>
+            <Form size='mini'>
+              <Select placeholder='Sélectionner un tome' options={availableTomes} />
+            </Form>
+          </Container>
+        </Container>
+
+        <div className="viewProfilPage-sixthPart">
+          <Button className="viewProfilPage-sixthPartDeleteAccountButton" size='mini'>Voir plus</Button>
+        </div>
       </div>
-    );
+    </div>
+  );
 };
 
 export default ViewProfilPage;
