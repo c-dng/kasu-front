@@ -3,21 +3,20 @@
   width: 80%;
   margin: 3rem auto;
   border-radius: 1em;
-  padding: 1em;
 };
 
-div.viewProfilPage-first-part {
+div.viewProfilPage-firstPart {
   position: relative;
   margin-bottom: 1em;
 }
 
-img.ui.tiny.image.viewProfilPage-first-part-image {
+img.ui.tiny.image.viewProfilPage-firstPartImage {
   border-radius: 50%;
   border: 1px solid black;
   margin: auto;
 }
 
-button.ui.button.viewProfilPage-first-part-addButton {
+button.ui.button.viewProfilPage-firstPartAddButton {
   font-weight: bolder;
   font-size: x-large;
   padding: .2em .4em;
@@ -26,26 +25,52 @@ button.ui.button.viewProfilPage-first-part-addButton {
   left: 52%;
 }
 
-div.viewProfilPage-second-part {
+div.viewProfilPage-secondPart, div.viewProfilPage-thirdPart {
+  margin-bottom: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+div.viewProfilPage-secondPartChangeButtons {
+  margin-top: 1em;
+  text-align: center;
+}
+
+div.ui.mini.left.attached.button.viewProfilPage-secondPartChangeButtonsLeft {
+  border-top-left-radius: 1em;
+  border-bottom-left-radius: 1em;
+  color: black;
+  border: 1px solid black;
+  background-color: white;
+}
+
+div.ui.mini.right.attached.button.viewProfilPage-secondPartChangeButtonsRight {
+  border-top-right-radius: 1em;
+  border-bottom-right-radius: 1em;
+  color: black;
+  border: 1px solid black;
+  background-color: white;
+}
+
+div.viewProfilPage-thirdPart {
   margin-bottom: 1em;
 }
 
-div.viewProfilPage-third-part {
-  margin-bottom: 1em;
-}
-
-div.ui.center.aligned.container.viewProfilPage-third-part-localisation {
+div.ui.container.viewProfilPage-thirdPartLocation {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: row;
   border-radius: 0.3em;
 }
 
-div.ui.container.viewProfilPage-fourth-part {
+div.ui.container.viewProfilPage-fourthPart {
   padding-bottom: 0.5em;
   margin-bottom: 1em;
   border-radius: 0.3em;
 }
 
-div.ui.container.viewProfilPage-fifth-part {
+div.ui.container.viewProfilPage-fifthPart {
   border: 1px solid #d4d4d5;
   display: flex;
   flex-wrap: wrap;
@@ -56,20 +81,34 @@ div.ui.container.viewProfilPage-fifth-part {
   margin-bottom: 1em;
 }
 
-img.ui.tiny.image.viewProfilPage-fifth-part-image {
+img.ui.tiny.image.viewProfilPage-fifthPartImage {
   margin: 0 auto;
   border: 2px solid black;
 }
 
-div.viewProfilPage-sixth-part {
+div.viewProfilPage-sixthPart {
 display: flex;
+margin-bottom: 1em;
 }
 
-button.ui.mini.button.viewProfilPage-sixth-part-deleteAccountButton {
+button.ui.mini.button.viewProfilPage-sixthPartDeleteAccountButton {
   color: black;
   background-color: white;
   border: 1px solid black;
   border-radius: 1.5em;
   margin: 0 auto;
+}
+
+h1.setProfilPage-h1 {
+  color: white;
+  background-color: black;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  text-align: center;
+  font-size: 1.29rem;
+  margin-top: -.21425em;
+  font-family: Lato,Helvetica Neue,Arial,Helvetica,sans-serif;
 }
 
