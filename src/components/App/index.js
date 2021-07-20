@@ -1,7 +1,7 @@
 // == Import npm
 import React from 'react';
-
-import Nav from 'src/components/Nav/';
+import PropTypes from 'prop-types';
+import Nav from 'src/containers/Nav/';
 import Home from 'src/components/Home';
 import Footer from 'src/components/Footer';
 import SearchResultsByLocation from 'src/components/SearchResultsByLocation';
@@ -20,8 +20,8 @@ import NoAccountBox from '../NoAccountBox';
 import AlreadyAccountBox from '../AlreadyAccountBox';
 
 // == Composant
-const App = () => (
-  <div className="app theme1">
+const App = ({ theme }) => (
+  <div className={`app ${theme}`}>
 
     <Nav />
     <Switch>
@@ -61,6 +61,10 @@ const App = () => (
     </Switch>
   </div>
 );
+
+LoginForm.propTypes = {
+  theme: PropTypes.string.isRequired,
+};
 
 // == Export
 export default App;

@@ -2,8 +2,8 @@ import React from 'react';
 import {
   Image, TextArea, Button, Form, Radio, Container, Modal, Header, Icon, Input } from 'semantic-ui-react';
 import './style.scss';
-import logo from './logo.png';
 import alternativeBanner from 'src/assets/alternativeBanner.png';
+import logo from './logo.png';
 
 const SetProfilPage = () => {
 
