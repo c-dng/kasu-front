@@ -3,7 +3,7 @@ import { LOGIN_USER, saveUser, LOGOUT_USER } from 'src/actions/user';
 
 const axiosInstance = axios.create(
   {
-    baseURL: 'http://localhost:3000',
+    baseURL: 'https://api.kasu.laetitia-dev.com/',
   },
 );
 
@@ -12,14 +12,14 @@ const authMiddleware = (store) => (next) => (action) => {
     case LOGIN_USER: {
       const { email, password } = store.getState().user;
       axiosInstance
-        .post('/login', { email, password })
+        .post('/api/login_check', { username: email, password })
         .then(
           (response) => {
             console.log(response);
 
             store.dispatch(saveUser(response.data));
 
-            axiosInstance.defaults.headers.common.Authorization = `bearer ${response.data.token}`;
+            axiosInstance.defaults.headers.common.Authorization = `Bearer ${response.data.token}`;
           },
         );
       next(action);

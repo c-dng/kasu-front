@@ -17,6 +17,10 @@ a.nav-logoLinkContainer.nav-logoLinkContainer {
 
 }
 
+.nav-loginButton.nav-loginButton {
+  
+}
+
 // multiplying the .nav-logoContainer class to increase the selector specificity to override the semantic-ui classes
 div.item.nav-logoContainer.nav-logoContainer.nav-logoContainer {
   padding: 0 ;

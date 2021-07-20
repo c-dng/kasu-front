@@ -10,8 +10,10 @@ import logoWhite from './logo-white.png';
 import chatlogo from './chatlogo.png';
 import chatlogoWhite from './chatlogo-white.png';
 import logoutlogo from './logoutlogo.png';
+import loginlogo from './loginlogo.png';
 
-const Nav = ({ changeWebsiteTheme, navIconsColor }) => {
+
+const Nav = ({ changeWebsiteTheme, navIconsColor, isLogged, disconnectUser }) => {
   let logoToDisplay;
   let chatlogoToDisplay;
 
@@ -30,6 +32,9 @@ const Nav = ({ changeWebsiteTheme, navIconsColor }) => {
       break;
   }
 
+  const handleLogout = (evt) => {
+    disconnectUser();
+  }
   const handleTheme1 = (evt) => {
     changeWebsiteTheme('theme1', 'black');
   };
@@ -55,33 +60,44 @@ const Nav = ({ changeWebsiteTheme, navIconsColor }) => {
               <Image className="nav-logo" src={logoToDisplay} alt="logo" />
             </Link>
           </Menu.Item>
-          <Menu.Item>
-            <Image circular className="navbuttons" id="temporary-avatar" src="https://react.semantic-ui.com/images/avatar/large/steve.jpg" alt="avatar-logo" size="mini" />
-            <Dropdown floating icon="dropdown">
-              <Dropdown.Menu>
-                <Dropdown.Header>Gestion de profil</Dropdown.Header>
-                <Dropdown.Item as={Link} to="/profil/mes-infos" exact={+true}>Mon Compte</Dropdown.Item>
-                <Dropdown.Item as={Link} to="/profil/collection" exact={+true}>Ma Collection</Dropdown.Item>
-                <Dropdown.Divider />
-                <Dropdown.Item>
-                  <Dropdown text="Mon thème">
-                    <Dropdown.Menu>
-                      <Dropdown.Item onClick={handleTheme1}>Thème 1</Dropdown.Item>
-                      <Dropdown.Item onClick={handleTheme2}>Thème 2</Dropdown.Item>
-                      <Dropdown.Item onClick={handleTheme3}>Thème 3</Dropdown.Item>
-                      <Dropdown.Item onClick={handleTheme4}>Thème 4</Dropdown.Item>
-                    </Dropdown.Menu>
-                  </Dropdown>
-                </Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
+          {isLogged && (
+            <Menu.Item>
+              <Image circular className="navbuttons" id="temporary-avatar" src="https://react.semantic-ui.com/images/avatar/large/steve.jpg" alt="avatar-logo" size="mini" />
+              <Dropdown floating icon="dropdown">
+                <Dropdown.Menu>
+                  <Dropdown.Header>Gestion de profil</Dropdown.Header>
+                  <Dropdown.Item as={Link} to="/profil/mes-infos" exact={+true}>Mon Compte</Dropdown.Item>
+                  <Dropdown.Item as={Link} to="/profil/collection" exact={+true}>Ma Collection</Dropdown.Item>
+                  <Dropdown.Divider />
+                  <Dropdown.Item>
+                    <Dropdown text="Mon thème">
+                      <Dropdown.Menu>
+                        <Dropdown.Item onClick={handleTheme1}>Thème 1</Dropdown.Item>
+                        <Dropdown.Item onClick={handleTheme2}>Thème 2</Dropdown.Item>
+                        <Dropdown.Item onClick={handleTheme3}>Thème 3</Dropdown.Item>
+                        <Dropdown.Item onClick={handleTheme4}>Thème 4</Dropdown.Item>
+                      </Dropdown.Menu>
+                    </Dropdown>
+                  </Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            </Menu.Item>
+          )}
+          {isLogged && (
+            <Menu.Item name="chat">
+              <Image as={Link} to="/conversations" exact={+true} className="navbuttons" src={chatlogoToDisplay} alt="logo" size="mini" />
+            </Menu.Item>
+          )}
+          {isLogged && (
+            <Menu.Item name="logout">
+              <Image onClick={handleLogout} className="navbuttons" src={logoutlogo} alt="logo" size="mini" />
+            </Menu.Item>
+          )}
+          {!isLogged && (
+          <Menu.Item position="right" name="login">
+            <Image as={Link} to="/login" exact={+true} className="navbuttons nav-loginButton" src={loginlogo} alt="logo" size="mini" />
           </Menu.Item>
-          <Menu.Item name="chat">
-            <Image as={Link} to="/conversations" exact={+true} className="navbuttons" src={chatlogoToDisplay} alt="logo" size="mini" />
-          </Menu.Item>
-          <Menu.Item name="logout">
-            <Image className="navbuttons" src={logoutlogo} alt="logo" size="mini" />
-          </Menu.Item>
+          )}
         </Menu>
       </Segment>
     </div>
@@ -91,6 +107,8 @@ const Nav = ({ changeWebsiteTheme, navIconsColor }) => {
 Nav.propTypes = {
   changeWebsiteTheme: PropTypes.func.isRequired,
   navIconsColor: PropTypes.string.isRequired,
+  isLogged: PropTypes.bool.isRequired,
+  disconnectUser: PropTypes.func.isRequired,
 };
 
 export default Nav;
