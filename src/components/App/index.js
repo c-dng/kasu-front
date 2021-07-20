@@ -12,6 +12,7 @@ import Conversations from 'src/containers/Conversations';
 import SetProfilPage from 'src/components/SetProfilPage';
 import ManageMyCollection from 'src/components/ManageMyCollection';
 import ViewProfilPage from 'src/components/ViewProfilPage';
+import ManageMyCollectionNoResultsFound from 'src/components/ManageMyCollectionNoResultsFound';
 
 // == Import
 
