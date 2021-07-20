@@ -3,8 +3,8 @@ import {
   Image, TextArea, Button, Form, Radio, Divider,
 } from 'semantic-ui-react';
 import './style.scss';
-import logo from './logo.png';
 import alternativeBanner from 'src/assets/alternativeBanner.png';
+import logo from './logo.png';
 
 const SetProfilPage = () => (
   <div className="setProfilPage">
