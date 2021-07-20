@@ -32,8 +32,9 @@ button.ui.button.setProfilPage-first-part-addButton {
   font-size: x-large;
   padding: .2em .4em;
   position: absolute;
+  border-radius: 50%;
   left: 51%;
-  top: 69%;
+  top: 70%;
 }
 
 div.setProfilPage-first-part p {
@@ -53,14 +54,26 @@ div.setProfilPage-third-part {
   justify-content: center;
 }
 
-button.ui.mini.button.setProfilPage-third-part-emailButton {
-  border-radius: 1.5em;
-  margin-right: 0.5em;
+p.setProfilPage-thirdPartParagraphEmail {
   text-align: center;
 }
 
-button.ui.mini.button.setProfilPage-third-part-passwordButton {
-  border-radius: 1.5em;
+div.ui.mini.left.attached.button.setProfilPage-third-part-emailButton {
+  border-top-left-radius: 1.5em;
+  border-bottom-left-radius: 1.5em;
+  text-align: center;
+  border: 1px solid black;
+  background-color: white;
+  color: black;
+}
+
+div.ui.mini.right.attached.button.setProfilPage-third-part-passwordButton {
+  border-top-right-radius: 1.5em;
+  border-bottom-right-radius: 1.5em;
+  text-align: center;
+  border: 1px solid black;
+  background-color: white;
+  color: black;
 }
 
 div.setProfilPage-fourth-part {
@@ -93,8 +106,10 @@ div.setProfilPage-fifth-part {
 button.ui.button.setProfilPage-fifth-part-cancelButton.setProfilPage-fifth-part-cancelButton {
   border-radius: 1.5em;
   margin-right: 1em;
-  
-}
+  border: 1px solid black;
+  background-color: white;
+  color: black;
+}  
 
 button.ui.positive.button.setProfilPage-fifth-part-validateButton {
   border-radius: 1.5em;
