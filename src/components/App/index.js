@@ -4,7 +4,6 @@ import React from 'react';
 import Nav from 'src/components/Nav/';
 import Home from 'src/components/Home';
 import Footer from 'src/components/Footer';
-import SearchBar from 'src/components/SearchBar';
 import SearchResultsByLocation from 'src/components/SearchResultsByLocation';
 import LoginForm from 'src/containers/LoginForm';
 import Register from 'src/components/Register';
@@ -48,8 +47,8 @@ const App = () => (
         <Conversations />
       </Route>
       <Route path="/rechercher/ville" exact>
-        <SearchBar />
         <SearchResultsByLocation />
+        <Footer />
       </Route>
       <Route path="/profil/id" exact>
         <SetProfilPage />
