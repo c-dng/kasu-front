@@ -13,25 +13,26 @@ const SetProfilPage = () => {
   <div className="setProfilPage">
     <Image className="registerForm-banner" src={alternativeBanner} />
     <div className="setProfilPage-mainWrapper">
-      <div className="setProfilPage-first-part">
+      <div className="setProfilPage-firstPart">
         <h1 className="setProfilPage-h1">Mon profil</h1>
-        <Image className="setProfilPage-first-part-image" src={logo} size="tiny" />
-        <Button className="setProfilPage-first-part-addButton">+</Button>
+        <Image className="setProfilPageFirstPartImage" src={logo} size="tiny" />
+        <Button className="setProfilPage-firstPartAddButton">+</Button>
         <Container textAlign='center'>
           <p>Pseudo</p>
         </Container>
       </div>
-      <div className="setProfilPage-second-part">
+      <div className="setProfilPage-secondPart">
         <h3 className="setProfilPage-padding">Présentation</h3>
         <Form className="setProfilPage-padding">
           <TextArea placeholder="Parle nous un peu de toi..." />
         </Form>
       </div>
-      <div className="setProfilPage-third-part">
+      <div className="setProfilPage-thirdPart">
         <p className="setProfilPage-thirdPartParagraphEmail">email@gmail.com</p>
         <Button.Group className="setProfilPage-thirdPartButtonsGroup" size="mini">
           <Modal
-          trigger={<Button attached='left' className="setProfilPage-third-part-emailButton" size="mini">Changer email</Button>}
+          className="setProfilPage-thirdPartModalEmail"
+          trigger={<Button attached='left' className="setProfilPage-thirdPartEmailButton" size="mini">Changer email</Button>}
           header='Entrez un nouvel email'
           content={<Input iconPosition='left' placeholder='Email'>
           <Icon name='at' />
@@ -40,43 +41,45 @@ const SetProfilPage = () => {
           actions={['Annuler', { key: 'valider', content: 'Valider', positive: true }]}
           />
           <Modal
-          trigger={<Button attached='right' className="setProfilPage-third-part-passwordButton" size="mini">Changer le mot de passe</Button>}
+          className="setProfilPage-thirdPartModalPassword"
+          trigger={<Button attached='right' className="setProfilPage-thirdPartPasswordButton" size="mini">Changer le mot de passe</Button>}
           header='Entrez un nouveau mot de passe'
           content={<Input iconPosition='left' placeholder='Mot de passe'/ >}
           actions={['Annuler', { key: 'valider', content: 'Valider', positive: true }]}
           />
         </Button.Group>
       </div>
-      <div className="setProfilPage-fourth-part setProfilPage-padding">
+      <div className="setProfilPage-fourthPart setProfilPage-padding">
         <Form size="mini">
           <Form.Group unstackable widths={2}>
             <Form.Input placeholder="Nom" />
             <Form.Input placeholder="Prénom" />
           </Form.Group>
           <Form.Group>
-            <Form.Input className="setProfilPage-fourth-part-adress" placeholder="Address" />
+            <Form.Input className="setProfilPage-fourthPartAdress" placeholder="Address" />
           </Form.Group>
           <Form.Group unstackable widths={2}>
             <Form.Input placeholder="Code Postal" />
             <Form.Input placeholder="Ville" />
           </Form.Group>
-          <Form.Group className="setProfilPage-fourth-part-holiday-mode">
+          <Form.Group className="setProfilPage-fourthPartHolidayMode">
             <div>Mode vacances</div>
             <Radio toggle />
           </Form.Group>
         </Form>
       </div>
-      <div className="setProfilPage-fifth-part">
-        <Button.Group size="tiny">
-          <Button className="setProfilPage-fifth-part-cancelButton setProfilPage-fifth-part-cancelButton">Annuler</Button>
-          <Button className="setProfilPage-fifth-part-validateButton" positive>Valider</Button>
+      <div className="setProfilPage-fifthPart">
+        <Button.Group size="tiny" centered>
+          <Button className="setProfilPage-fifthPartCancelButton setProfilPage-fifthPartCancelButton">Annuler</Button>
+          <Button className="setProfilPage-fifthPartValidateButton" positive>Valider</Button>
         </Button.Group>
       </div>
-      <div className="setProfilPage-sixth-part">
+      <div className="setProfilPage-sixthPart">
         <Modal
+          className="setProfilPage-sixthPartModalDeleteAccount"
           closeIcon
           open={open}
-          trigger={<Button className="setProfilPage-sixth-part-deleteAccountButton" negative>Supprimer mon compte</Button>}
+          trigger={<Button size='tiny' className="setProfilPage-sixthPartDeleteAccountButton" negative>Supprimer mon compte</Button>}
           onClose={() => setOpen(false)}
           onOpen={() => setOpen(true)}
         >
