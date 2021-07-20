@@ -11,8 +11,8 @@ const Conversation = () => (
           circular
           src="https://react.semantic-ui.com/images/avatar/large/steve.jpg"
         />
-        <Card.Header>Steve Sanders</Card.Header>
-        <Card.Meta className="">Lorem ipsum dolor sit amet consec tetur adipisicing elit </Card.Meta>
+        <Card.Header className="conversation-cardHeader">Steve Sanders</Card.Header>
+        <Card.Meta className="conversation-cardMeta">Lorem ipsum dolor sit amet consec tetur adipisicing elit </Card.Meta>
       </Card.Content>
     </Card>
   </div>
