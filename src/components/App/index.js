@@ -58,6 +58,7 @@ const App = ({ theme }) => (
       </Route>
       <Route path="/profil/collection" exact>
         <ManageMyCollection />
+        <Footer />
       </Route>
       <Route path="/profil/mes-infos" exact>
         <ViewProfilPage />
