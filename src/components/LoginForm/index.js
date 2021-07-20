@@ -35,8 +35,8 @@ const LoginForm = ({
           <Card.Header className="loginform-cardHeader" text-align="center">Connexion</Card.Header>
           <Form className="loginform-form" onSubmit={handleSubmit}>
             <Form.Field>
-              <label htmlFor="e-mail" className="loginform-fieldLabel">E-mail</label>
-              <Form.Input className="loginform-field" type="text" id="e-mail" name="e-mail" onChange={handleChangeEmail} value={email} />
+              <label htmlFor="email" className="loginform-fieldLabel">Email</label>
+              <Form.Input className="loginform-field" type="text" id="email" name="email" onChange={handleChangeEmail} value={email} />
 
             </Form.Field>
             <Form.Field>
