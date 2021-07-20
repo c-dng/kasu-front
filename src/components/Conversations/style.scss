@@ -22,6 +22,7 @@ div.conversation:not(:first-child) {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
+  
 }
 
 .conversations-button--notHiddenBox.conversations-button--notHiddenBox.conversations-button--notHiddenBox {
@@ -29,6 +30,8 @@ div.conversation:not(:first-child) {
   animation-duration: 0.5s;
   animation-name: slideup;
   animation-fill-mode: forwards;
+  
+
 }
 
 .conversations-button--hiddenBox.conversations-button--hiddenBox.conversations-button--hiddenBox {
@@ -63,9 +66,9 @@ div.conversation:not(:first-child) {
 }
 
 
-.conversations-buttons.conversations-buttons.conversations-buttons {
+.conversations-buttons.conversations-buttons.conversations-buttons.conversations-buttons {
   padding: 0;
-  background-color: #c1c1c1;
+  background-color: #c61100;
   border-radius: 100%;
   margin: 0 auto;
 }
@@ -75,7 +78,7 @@ div.conversation:not(:first-child) {
 }
 
 .conversations-hiddenBox.conversations-hiddenBox.conversations-hiddenBox {
-  background-color: #c1c1c1;
+  background-color: #c61100;
   height: 7rem;
   width: 100%;
   position: fixed;

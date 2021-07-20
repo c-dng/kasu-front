@@ -4,6 +4,7 @@ a.ui.button.noAccount-registerButton {
   border: 1px solid black;
   width: 7.5rem;
   font-size: 0.8rem;
+  margin-bottom: 1rem;
 }
 
 div.noAccountBox-buttonWrapper {
@@ -19,4 +20,18 @@ div.noAccountBox {
 div.ui.centered.card.noAccountBox-card {
   width: 80%;
   border-radius: 1rem;
+}
+
+div.content.noAccount-cardContent.noAccount-cardContent.noAccount-cardContent {
+  text-align: center;
+  padding: 0;
+}
+
+div.header.noAccount-cardHeader.noAccount-cardHeader.noAccount-cardHeader {
+  color: white;
+  background-color: black;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
 }

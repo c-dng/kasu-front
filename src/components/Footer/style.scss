@@ -11,4 +11,8 @@
 a.item.footer-items.footer-items.footer-items {
   color: white;
 }
+
+a.item.footer-items.footer-items.footer-items[tabIndex]:focus  {
+  color: white;
+}
 // Theming

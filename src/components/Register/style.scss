@@ -7,12 +7,17 @@
 }
 
 div.registerForm{
-  margin: 3rem 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0;
 }
 
 div.ui.card.registerForm-card {
   width: 80%;
   border-radius: 1rem;
+  margin: 3rem 0;
+
 }
 
 .registerForm-registerButton.registerForm-registerButton.registerForm-registerButton {
@@ -26,6 +31,24 @@ div.ui.card.registerForm-card {
 div.registerForm-buttonWrapper {
   display: flex;
   justify-content: center;
+}
+
+div.content.registerForm-cardContent.registerForm-cardContent.registerForm-cardContent {
+  padding: 0;
+}
+
+div.header.registerForm-cardHeader.registerForm-cardHeader.registerForm-cardHeader {
+  color: white;
+  background-color: black;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  text-align: center;
+}
+
+form.ui.form.registerForm-form.registerForm-form{
+  padding: 1rem;
 }
 
 // Theming

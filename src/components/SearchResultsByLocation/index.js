@@ -1,8 +1,9 @@
 import React from 'react';
 import {
-  Card, Icon, Image, Button, Rating, Divider, Select, Transition,
+  Card, Icon, Image, Button, Rating, Select,
 } from 'semantic-ui-react';
 import './style.scss';
+import SearchBar from 'src/components/SearchBar';
 
 const volumeOptions = [
   { key: 't1', value: 'T1', text: 'Tome 1' },
@@ -22,156 +23,86 @@ const SearchResultsByLocation = () => {
   }
 
   return (
-    <Card.Group className="searchResultsByLocation">
-      <Card className="searchResultsByLocation-card">
-        <Card.Content className="test">
-          <Image
-            floated="right"
-            size="medium"
-            src="https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/313968/313968._SX1280_QL80_TTD_.jpg"
-          />
+    <div className="searchResultsByLocation">
 
-          <div className="infoscard">
-            <Card.Header className="nameManga"> Nom du manga </Card.Header>
-            <div className="owner">
-              <Image src="https://react.semantic-ui.com/images/wireframe/square-image.png" avatar />
-              Propriétaire <Rating icon="star" defaultRating={4} maxRating={5} />
+      <div className="searchResultsByLocation-searchBarWrapper">
+        <SearchBar />
+      </div>
+      <Card.Group className="searchResultsByLocation-cardGroup">
+        <Card className="searchResultsByLocation-card">
+          <Card.Content className="searchResultsByLocation-cardContentImgInfos">
+            <Image
+              size="medium"
+              src="https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/313968/313968._SX1280_QL80_TTD_.jpg"
+            />
+
+            <div className="searchResultsByLocation-infoscard">
+              <Card.Header className="searchResultsByLocation-nameManga">Nom du manga</Card.Header>
+              <div className="searchResultsByLocation-owner">
+                <Image src="https://react.semantic-ui.com/images/wireframe/square-image.png" avatar />
+                Propriétaire
+              </div>
+              <Card.Meta className="searchResultsByLocation-localisation"> <Icon disabled name="map marker alternate" /> Localisation</Card.Meta>
+
+              <Card.Description className="searchResultsByLocation-numberVolume">
+                <Select placeholder="Tomes disponibles" options={volumeOptions} />
+              </Card.Description>
             </div>
-            <Card.Meta className="localisation"> <Icon disabled name="map marker alternate" /> Localisation</Card.Meta>
-
-            <Card.Description className="numberVolume">
-              <Select placeholder="Tomes disponibles" options={volumeOptions} />
-            </Card.Description>
-          </div>
-        </Card.Content>
-        <Card.Content extra>
-          <div className="ui two buttons">
-            <Button basic className="showMore" color="black" onClick={toggle}>
-              Voir plus
-            </Button>
-            <Button basic color="blue" className="contactOwner">
-              Contacter le propriétaire
-            </Button>
-          </div>
-          <div className={open ? 'showMore-active' : 'showMore-hidden'}>
-            <h3>Synopsis</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          </div>
-        </Card.Content>
-      </Card>
-
-      <Card className="searchResultsByLocation-card">
-        <Card.Content className="test">
-          <Image
-            floated="right"
-            size="medium"
-            src="https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/313968/313968._SX1280_QL80_TTD_.jpg"
-          />
-
-          <div className="infoscard">
-            <Card.Header className="nameManga"> Nom du manga </Card.Header>
-            <div className="owner">
-              <Image src="https://react.semantic-ui.com/images/wireframe/square-image.png" avatar />
-              Propriétaire <Rating icon="star" defaultRating={4} maxRating={5} />
+          </Card.Content>
+          <Card.Content extra>
+            <div className="ui two buttons">
+              <Button basic className="searchResultsByLocation-showMore" color="black" onClick={toggle}>
+                Voir plus
+              </Button>
+              <Button basic color="blue" className="searchResultsByLocation-contactOwner">
+                Contacter le propriétaire
+              </Button>
             </div>
-            <Card.Meta className="localisation"> <Icon disabled name="map marker alternate" /> Localisation</Card.Meta>
-
-            <Card.Description className="numberVolume">
-              <Select placeholder="Tomes disponibles" options={volumeOptions} />
-            </Card.Description>
-          </div>
-        </Card.Content>
-        <Card.Content extra>
-          <div className="ui two buttons">
-            <Button basic className="showMore" color="black" onClick={toggle}>
-              Voir plus
-            </Button>
-            <Button basic color="blue" className="contactOwner">
-              Contacter le propriétaire
-            </Button>
-          </div>
-          <div className={open ? 'showMore-active' : 'showMore-hidden'}>
-            <h3>Synopsis</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          </div>
-        </Card.Content>
-      </Card>
-
-      <Card className="searchResultsByLocation-card">
-        <Card.Content className="test">
-          <Image
-            floated="right"
-            size="medium"
-            src="https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/313968/313968._SX1280_QL80_TTD_.jpg"
-          />
-
-          <div className="infoscard">
-            <Card.Header className="nameManga"> Nom du manga </Card.Header>
-            <div className="owner">
-              <Image src="https://react.semantic-ui.com/images/wireframe/square-image.png" avatar />
-              Propriétaire <Rating icon="star" defaultRating={4} maxRating={5} />
+            <div className={open ? 'searchResultsByLocation-showMore--active' : 'searchResultsByLocation-showMore--hidden'}>
+              <h3>Synopsis</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             </div>
-            <Card.Meta className="localisation"> <Icon disabled name="map marker alternate" /> Localisation</Card.Meta>
+          </Card.Content>
+        </Card>
 
-            <Card.Description className="numberVolume">
-              <Select placeholder="Tomes disponibles" options={volumeOptions} />
-            </Card.Description>
-          </div>
-        </Card.Content>
-        <Card.Content extra>
-          <div className="ui two buttons">
-            <Button basic className="showMore" color="black" onClick={toggle}>
-              Voir plus
-            </Button>
-            <Button basic color="blue" className="contactOwner">
-              Contacter le propriétaire
-            </Button>
-          </div>
-          <div className={open ? 'showMore-active' : 'showMore-hidden'}>
-            <h3>Synopsis</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          </div>
-        </Card.Content>
-      </Card>
+        <Card className="searchResultsByLocation-card">
+          <Card.Content className="searchResultsByLocation-cardContentImgInfos">
+            <Image
+              size="medium"
+              src="https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/313968/313968._SX1280_QL80_TTD_.jpg"
+            />
 
-      <Card className="searchResultsByLocation-card">
-        <Card.Content className="test">
-          <Image
-            floated="right"
-            size="medium"
-            src="https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/313968/313968._SX1280_QL80_TTD_.jpg"
-          />
+            <div className="searchResultsByLocation-infoscard">
+              <Card.Header className="searchResultsByLocation-nameManga">Nom du manga</Card.Header>
+              <div className="searchResultsByLocation-owner">
+                <Image src="https://react.semantic-ui.com/images/wireframe/square-image.png" avatar />
+                Propriétaire
+              </div>
+              <Card.Meta className="searchResultsByLocation-localisation"> <Icon disabled name="map marker alternate" /> Localisation</Card.Meta>
 
-          <div className="infoscard">
-            <Card.Header className="nameManga"> Nom du manga </Card.Header>
-            <div className="owner">
-              <Image src="https://react.semantic-ui.com/images/wireframe/square-image.png" avatar />
-              Propriétaire <Rating icon="star" defaultRating={4} maxRating={5} />
+              <Card.Description className="searchResultsByLocation-numberVolume">
+                <Select placeholder="Tomes disponibles" options={volumeOptions} />
+              </Card.Description>
             </div>
-            <Card.Meta className="localisation"> <Icon disabled name="map marker alternate" /> Localisation</Card.Meta>
+          </Card.Content>
+          <Card.Content extra>
+            <div className="ui two buttons">
+              <Button basic className="searchResultsByLocation-showMore" color="black" onClick={toggle}>
+                Voir plus
+              </Button>
+              <Button basic color="blue" className="searchResultsByLocation-contactOwner">
+                Contacter le propriétaire
+              </Button>
+            </div>
+            <div className={open ? 'searchResultsByLocation-showMore--active' : 'searchResultsByLocation-showMore--hidden'}>
+              <h3>Synopsis</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+          </Card.Content>
+        </Card>
 
-            <Card.Description className="numberVolume">
-              <Select placeholder="Tomes disponibles" options={volumeOptions} />
-            </Card.Description>
-          </div>
-        </Card.Content>
-        <Card.Content extra>
-          <div className="ui two buttons">
-            <Button basic className="showMore" color="black" onClick={toggle}>
-              Voir plus
-            </Button>
-            <Button basic color="blue" className="contactOwner">
-              Contacter le propriétaire
-            </Button>
-          </div>
-          <div className={open ? 'showMore-active' : 'showMore-hidden'}>
-            <h3>Synopsis</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          </div>
-        </Card.Content>
-      </Card>
-
-    </Card.Group>
+      </Card.Group>
+    </div>
   );
 };
 
