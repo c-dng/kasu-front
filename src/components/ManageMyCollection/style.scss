@@ -1,11 +1,15 @@
 // FIRST SECTION : RESULT OF SEARCH
 
 //title of page
-h2 {
+div.manageMyCollection h2{
   text-align: center;
-  // margin-top: 1em;   -> don't work
+  margin-top: 1em;
 }
 
+// searchBar
+.manageMyCollection-searchBar {
+  margin-top: 0;
+}
 // subtitle
 .manageMyCollection-subtitle{
   text-align: center;
