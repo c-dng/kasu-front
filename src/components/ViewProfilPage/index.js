@@ -1,6 +1,6 @@
 import React from 'react';
-import {
-  Image, Container, Button, Select, Divider, Form} from 'semantic-ui-react';
+import { Image, Container, Button, Select, Divider, Form } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 import './styles.scss';
 import logo from './logo.png';
 
@@ -26,9 +26,16 @@ const ViewProfilPage = () => {
         </div>
 
         <div className="viewProfilPage-second-part">
+          <Container textAlign='center'>
+            <p>Pseudo</p>
+          </Container>
           <div className="viewProfilPage-second-part-change-buttons">
+            <Link to="/profil/id" exact={+true} className="viewProfilPage-second-part-change-buttons-left-link">
               <Button size='mini' className="viewProfilPage-second-part-change-buttons-left" attached='left'>Gérer mon profil</Button>
-              <Button size='mini' className="viewProfilPage-second-part-change-buttons-right" attached='right'>Gérer mes collections</Button>
+            </Link>
+            <Link to="/profil/collection" exact={+true} className="viewProfilPage-second-part-change-buttons-right-link">  
+                <Button size='mini' className="viewProfilPage-second-part-change-buttons-right" attached='right'>Gérer mes collections</Button>
+            </Link> 
           </div>
           <h4>Présentation</h4>
           <Container textAlign='justified'>
