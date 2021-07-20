@@ -2,6 +2,7 @@ import { CHANGE_THEME } from '../actions/global';
 
 export const initialState = {
   theme: 'theme1',
+  navIcons: 'black',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -10,6 +11,7 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         theme: action.themeName,
+        navIcons: action.navIconsColor,
       };
 
     default:

@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  Button, Card, Divider, Form, Image,
+  Button, Card, Divider, Form, Image, Input,
 } from 'semantic-ui-react';
 
 import './style.scss';
@@ -23,13 +23,21 @@ const ContactForm = () => {
         <Card.Content className="contactForm-cardContent">
           <Card.Header text-align="center" className="contactForm-cardHeader">Formulaire de contact</Card.Header>
           <Form className="contactForm-form">
-            <Form.Input fluid label="Saisissez votre email:" width="16" />
-            <Form.Select
-              fluid
-              label="Choisissez un objet:"
-              options={options}
-            />
-            <Form.TextArea label="Saisissez votre message:" />
+            <Form.Field>
+              <label className="contactForm-emailLabel">Saisissez votre email:</label>
+              <Input fluid width="16" />
+            </Form.Field>
+            <Form.Field>
+              <label className="contactForm-objectLabel">Choisissez un objet:</label>
+              <Form.Select
+                fluid
+                options={options}
+              />
+            </Form.Field>
+            <Form.Field>
+              <label className="contactForm-msgLabel">Saisissez votre message:</label>
+              <Form.TextArea />
+            </Form.Field>
             <div className="contactForm-buttonWrapper"><Button className="contactForm-sendButton">Envoyer</Button></div>
           </Form>
         </Card.Content>

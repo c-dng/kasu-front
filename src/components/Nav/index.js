@@ -6,24 +6,44 @@ import {
 import './style.scss';
 import { Link } from 'react-router-dom';
 import logo from './logo.png';
+import logoWhite from './logo-white.png';
 import chatlogo from './chatlogo.png';
+import chatlogoWhite from './chatlogo-white.png';
 import logoutlogo from './logoutlogo.png';
 
-const Nav = ({ changeWebsiteTheme }) => {
+const Nav = ({ changeWebsiteTheme, navIconsColor }) => {
+  let logoToDisplay;
+  let chatlogoToDisplay;
+
+  switch (navIconsColor) {
+    case 'black':
+      logoToDisplay = logo;
+      chatlogoToDisplay = chatlogo;
+      break;
+    case 'white':
+      logoToDisplay = logoWhite;
+      chatlogoToDisplay = chatlogoWhite;
+      break;
+    default:
+      logoToDisplay = logo;
+      chatlogoToDisplay = chatlogo;
+      break;
+  }
+
   const handleTheme1 = (evt) => {
-    changeWebsiteTheme('theme1');
+    changeWebsiteTheme('theme1', 'black');
   };
 
   const handleTheme2 = (evt) => {
-    changeWebsiteTheme('theme2');
+    changeWebsiteTheme('theme2', 'white');
   };
 
   const handleTheme3 = (evt) => {
-    changeWebsiteTheme('theme3');
+    changeWebsiteTheme('theme3', 'black');
   };
 
   const handleTheme4 = (evt) => {
-    changeWebsiteTheme('theme4');
+    changeWebsiteTheme('theme4', 'black');
   };
 
   return (
@@ -32,7 +52,7 @@ const Nav = ({ changeWebsiteTheme }) => {
         <Menu className="nav-menu" icon fluid widths={4} borderless fixed="top">
           <Menu.Item className="nav-logoContainer" name="Logo">
             <Link to="/" exact={+true} className="nav-logoLinkContainer">
-              <Image className="nav-logo" src={logo} alt="logo" />
+              <Image className="nav-logo" src={logoToDisplay} alt="logo" />
             </Link>
           </Menu.Item>
           <Menu.Item>
@@ -57,7 +77,7 @@ const Nav = ({ changeWebsiteTheme }) => {
             </Dropdown>
           </Menu.Item>
           <Menu.Item name="chat">
-            <Image as={Link} to="/conversations" exact={+true} className="navbuttons" src={chatlogo} alt="logo" size="mini" />
+            <Image as={Link} to="/conversations" exact={+true} className="navbuttons" src={chatlogoToDisplay} alt="logo" size="mini" />
           </Menu.Item>
           <Menu.Item name="logout">
             <Image className="navbuttons" src={logoutlogo} alt="logo" size="mini" />
@@ -70,6 +90,7 @@ const Nav = ({ changeWebsiteTheme }) => {
 
 Nav.propTypes = {
   changeWebsiteTheme: PropTypes.func.isRequired,
+  navIconsColor: PropTypes.string.isRequired,
 };
 
 export default Nav;

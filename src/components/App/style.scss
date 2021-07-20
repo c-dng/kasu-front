@@ -1,7 +1,25 @@
+@use '/src/styles/vars';
+
+// Global
+
 div.app.app {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
   justify-content: flex-start;
-  
+}
+
+
+// Theming 
+
+.theme1 {
+  //global app background-color & font color
+  background-color: vars.$primaryColor_theme1;
+  color: vars.$primaryFontColor_theme1;
+}
+
+.theme2 {
+  //global app background-color
+  background-color: vars.$primaryColor_theme2;
+  color: vars.$primaryFontColor_theme2;
 }

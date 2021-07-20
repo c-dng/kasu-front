@@ -2,7 +2,7 @@ import React from 'react';
 import {
   Image, Container, Button, Select, Divider, Form,
 } from 'semantic-ui-react';
-import './styles.scss';
+import './style.scss';
 import logo from './logo.png';
 
 const ViewProfilPage = () => {

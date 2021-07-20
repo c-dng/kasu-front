@@ -1,3 +1,5 @@
+@use '/src/styles/vars';
+
 div.ui.centered.card.contactForm-card {
   width: 80%;
   border-radius: 1rem;
@@ -11,7 +13,6 @@ div.contactForm {
 button.ui.button.contactForm-sendButton {
   border-radius: 1rem;
   margin: 0;
-  border: 1px solid black;
   width: 7.5rem;
   font-size: 0.8rem;
 }
@@ -25,11 +26,101 @@ div.content.contactForm-cardContent.contactForm-cardContent.contactForm-cardCont
 }
 
 div.header.contactForm-cardHeader.contactForm-cardHeader.contactForm-cardHeader {
-  color: white;
-  background-color: black;
+
   padding: 1rem;
   margin-bottom: 1rem;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
   text-align: center;
+}
+
+form.contactForm-form {
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+// Theming 
+
+.theme1 {
+
+  div.header.contactForm-cardHeader.contactForm-cardHeader.contactForm-cardHeader {
+    color: vars.$secondaryFontColor_theme1;
+    background-color: vars.$secondaryColor_theme1;
+  }
+
+  div.contactForm {
+    background-color: vars.$primaryColor_theme1;
+  }
+
+  button.ui.button.contactForm-sendButton {
+    border: 1px solid vars.$secondaryColor_theme1;
+  }
+
+  form.contactForm-form {
+    background-color: vars.$primaryColor_theme1;
+  }
+
+  div.ui.centered.card.contactForm-card {
+    border: 1px solid vars.$primaryBorderColor_theme1;
+  }
+
+  .contactForm-emailLabel.contactForm-emailLabel.contactForm-emailLabel {
+    color: vars.$primaryFontColor_theme1;
+  }
+  .contactForm-msgLabel.contactForm-msgLabel.contactForm-msgLabel {
+    color: vars.$primaryFontColor_theme1;
+  }
+  .contactForm-objectLabel.contactForm-objectLabel.contactForm-objectLabel {
+    color: vars.$primaryFontColor_theme1;
+  }
+
+  .contactForm-sendButton.contactForm-sendButton.contactForm-sendButton {
+    background-color: vars.$primaryColor_theme1;
+    color :vars.$primaryFontColor_theme1;
+  }
+}
+
+.theme2 {
+
+  div.header.contactForm-cardHeader.contactForm-cardHeader.contactForm-cardHeader {
+    color: vars.$secondaryFontColor_theme2;
+    background-color: vars.$secondaryColor_theme2;
+  }
+
+  div.contactForm {
+    background-color: vars.$primaryColor_theme2;
+  }
+
+  button.ui.button.contactForm-sendButton {
+    border: 1px solid vars.$secondaryColor_theme2;
+  }
+
+  form.contactForm-form {
+    background-color: vars.$primaryColor_theme2;
+
+  }
+
+  div.ui.centered.card.contactForm-card {
+    border: 1px solid vars.$primaryBorderColor_theme2;
+    background-color: vars.$primaryColor_theme2;
+  }
+
+  .contactForm-emailLabel.contactForm-emailLabel.contactForm-emailLabel {
+    color: vars.$primaryFontColor_theme2;
+  }
+  .contactForm-msgLabel.contactForm-msgLabel.contactForm-msgLabel {
+    color: vars.$primaryFontColor_theme2;
+  }
+  .contactForm-objectLabel.contactForm-objectLabel.contactForm-objectLabel {
+    color: vars.$primaryFontColor_theme2;
+  }
+
+  .contactForm-sendButton.contactForm-sendButton.contactForm-sendButton {
+    background-color: vars.$primaryColor_theme2;
+    color: vars.$primaryFontColor_theme2;
+  }
+
+  .contactForm-cardHeader.contactForm-cardHeader.contactForm-cardHeader {
+    background-color: vars.$secondaryColor_theme2;
+  }
 }

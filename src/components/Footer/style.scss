@@ -1,18 +1,44 @@
+@use '/src/styles/vars';
+
 // General
 
 .footer {
   display: flex;
   justify-content: center;
   margin-top: auto;
-  background-color: #c61100;
-  color: white;
 }
 
-a.item.footer-items.footer-items.footer-items {
-  color: white;
-}
-
-a.item.footer-items.footer-items.footer-items[tabIndex]:focus  {
-  color: white;
-}
 // Theming
+
+.theme1 {
+
+  .footer {
+    background-color: vars.$tertiaryColor_theme1;
+    color: vars.$tertiaryFontColor_theme1;
+  }
+
+  a.item.footer-items.footer-items.footer-items {
+    color: vars.$tertiaryFontColor_theme1;
+  }
+
+  a.item.footer-items.footer-items.footer-items[tabIndex]:focus {
+    color: vars.$tertiaryFontColor_theme1;
+  }
+
+}
+
+.theme2 {
+  .footer {
+    background-color: vars.$tertiaryColor_theme2;
+    color: vars.$tertiaryFontColor_theme2;
+  }
+
+  a.item.footer-items.footer-items.footer-items {
+    color: vars.$tertiaryFontColor_theme2;
+  }
+
+  a.item.footer-items.footer-items.footer-items[tabIndex]:focus {
+    color: vars.$tertiaryFontColor_theme2;
+  }
+
+}

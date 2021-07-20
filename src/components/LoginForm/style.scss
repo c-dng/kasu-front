@@ -1,58 +1,83 @@
+@use '/src/styles/vars';
+
 // Global 
-  // Card
-  div.ui.centered.card.loginform-card {
-    width: 80%;
-    border-radius: 1rem;
-    margin: 3rem 0;
-  }
+// Card
+div.ui.centered.card.loginform-card {
+  width: 80%;
+  border-radius: 1rem;
+  margin: 3rem 0;
+}
 
-  .loginform.loginform {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 0;
-  }
+.loginform.loginform {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0;
+}
 
-  div.header.loginform-cardHeader.loginform-cardHeader.loginform-cardHeader {
-    color: white;
-    background-color: black;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
-  }
+div.header.loginform-cardHeader.loginform-cardHeader.loginform-cardHeader {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
 
-  input#e-mail {
-    margin: 0;
+input#e-mail {
+  margin: 0;
 
-    font-size: 0.8rem;
-  }
+  font-size: 0.8rem;
+}
+
 div.field.loginform-field.loginform-field {
   width: 12rem;
   margin: 0 auto;
 }
-  input #password {
-    margin: 0;
-    font-size: 0.8rem;
-  }
-  // login button
+
+input #password {
+  margin: 0;
+  font-size: 0.8rem;
+}
+
+// login button
+button.ui.button.login-button {
+  border-radius: 1rem;
+  margin: 0;
+  border: 1px solid black;
+  width: 7.5rem;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+div.content.loginform-cardContent.loginform-cardContent.loginform-cardContent {
+  text-align: center;
+  padding: 0;
+}
+
+// loginform wrapper
+div.loginform {
+  margin: 3rem 0;
+}
+
+// Theming 
+
+.theme1 {
   button.ui.button.login-button {
-    border-radius: 1rem;
-    margin: 0;
-    border: 1px solid black;
-    width: 7.5rem;
-    font-size: 0.8rem;
-    margin-bottom: 1rem;
+    border: 1px solid vars.$primaryBorderColor_theme1;
   }
 
-  div.content.loginform-cardContent.loginform-cardContent.loginform-cardContent {
-    text-align: center;
-    padding: 0;
+  div.header.loginform-cardHeader.loginform-cardHeader.loginform-cardHeader {
+    color: vars.$secondaryFontColor_theme1;
+    background-color: vars.$secondaryColor_theme1;
+  }
+}
+
+.theme2 {
+  button.ui.button.login-button {
+    border: 1px solid vars.$primaryBorderColor_theme2;
   }
 
-  // loginform wrapper
-  div.loginform {
-    margin: 3rem 0;
+  div.header.loginform-cardHeader.loginform-cardHeader.loginform-cardHeader {
+    color: vars.$secondaryFontColor_theme2;
+    background-color: vars.$secondaryColor_theme2;
   }
-
-//Theming 
+}

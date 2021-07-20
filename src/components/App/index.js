@@ -10,7 +10,9 @@ import Register from 'src/components/Register';
 import ContactForm from 'src/components/ContactForm';
 import Conversations from 'src/containers/Conversations';
 import SetProfilPage from 'src/components/SetProfilPage';
+import ManageMyCollection from 'src/components/ManageMyCollection';
 import ViewProfilPage from 'src/components/ViewProfilPage';
+import Team from 'src/components/Team';
 
 // == Import
 
@@ -54,15 +56,21 @@ const App = ({ theme }) => (
         <SetProfilPage />
         <Footer />
       </Route>
+      <Route path="/profil/collection" exact>
+        <ManageMyCollection />
+      </Route>
       <Route path="/profil/mes-infos" exact>
         <ViewProfilPage />
         <Footer />
+      </Route>
+      <Route path="/team" exact>
+        <Team />
       </Route>
     </Switch>
   </div>
 );
 
-LoginForm.propTypes = {
+App.propTypes = {
   theme: PropTypes.string.isRequired,
 };
 
