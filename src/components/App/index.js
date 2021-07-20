@@ -66,7 +66,7 @@ const App = ({ theme }) => (
   </div>
 );
 
-LoginForm.propTypes = {
+App.propTypes = {
   theme: PropTypes.string.isRequired,
 };
 
