@@ -9,44 +9,37 @@
 
 };
 
-div.setProfilPage-first-part {
+div.setProfilPage-firstPart {
   margin-bottom: 1em;
   position: relative;
 }
 
-h1 {
-  text-align: center;
-  font-size: 1.29rem;
-  margin-top: -.21425em;
-  font-family: Lato,Helvetica Neue,Arial,Helvetica,sans-serif;
-}
-
-img.ui.tiny.image.setProfilPage-first-part-image {
+img.ui.tiny.image.setProfilPageFirstPartImage {
   border-radius: 50%;
   border: 1px solid black;
   margin: 0 auto;
 }
 
-button.ui.button.setProfilPage-first-part-addButton {
+button.ui.button.setProfilPage-firstPartAddButton {
   font-weight: bolder;
   font-size: x-large;
   padding: .2em .4em;
   position: absolute;
   border-radius: 50%;
   left: 51%;
-  top: 70%;
+  top: 65%;
 }
 
-div.setProfilPage-first-part p {
-  padding-top: 1em;
+div.setProfilPage-firstPart p {
+  padding-top: 2em;
   padding-left: 0.3em;
 }
 
-div.setProfilPage-second-part {
+div.setProfilPage-secondPart {
   margin-bottom: 1em;
 }
 
-div.setProfilPage-third-part {
+div.setProfilPage-thirdPart {
   margin-bottom: 1em;
   display: flex;
   flex-wrap: wrap;
@@ -58,7 +51,11 @@ p.setProfilPage-thirdPartParagraphEmail {
   text-align: center;
 }
 
-div.ui.mini.left.attached.button.setProfilPage-third-part-emailButton {
+div.ui.mini.buttons.setProfilPage-thirdPartButtonsGroup {
+  margin: auto;
+}
+
+div.ui.mini.left.attached.button.setProfilPage-thirdPartEmailButton {
   border-top-left-radius: 1.5em;
   border-bottom-left-radius: 1.5em;
   text-align: center;
@@ -67,7 +64,7 @@ div.ui.mini.left.attached.button.setProfilPage-third-part-emailButton {
   color: black;
 }
 
-div.ui.mini.right.attached.button.setProfilPage-third-part-passwordButton {
+div.ui.mini.right.attached.button.setProfilPage-thirdPartPasswordButton {
   border-top-right-radius: 1.5em;
   border-bottom-right-radius: 1.5em;
   text-align: center;
@@ -76,34 +73,38 @@ div.ui.mini.right.attached.button.setProfilPage-third-part-passwordButton {
   color: black;
 }
 
-div.setProfilPage-fourth-part {
+div.ui.modal.transition.visible.active.setProfilPage-thirdPartModalEmail {
+  width: 80%;
+}
+
+div.ui.modal.transition.visible.active.setProfilPage-thirdPartModalPassword {
+  width: 80%;
+}
+
+div.setProfilPage-fourthPart {
   margin-bottom: 1em;
   justify-content: space-between;
 }
 
-div.field.setProfilPage-fourth-part-adress {
+div.field.setProfilPage-fourthPartAdress {
  width: 100%;
  padding-top: 1em;
  padding-bottom: 1em;
 }
 
-div.fields.setProfilPage-fourth-part-holiday-mode {
+div.fields.setProfilPage-fourthPartHolidayMode {
 display: flex;
 flex-wrap: wrap;
 justify-content: center;
 padding-top: 1em;
 }
 
-div.setProfilPage-fourth-part div{
- margin-right: 1em;
-}
-
-div.setProfilPage-fifth-part {
+div.setProfilPage-fifthPart {
   margin-bottom: 1em;
   text-align: center;
 }
 
-button.ui.button.setProfilPage-fifth-part-cancelButton.setProfilPage-fifth-part-cancelButton {
+button.ui.button.setProfilPage-fifthPartCancelButton.setProfilPage-fifthPartCancelButton {
   border-radius: 1.5em;
   margin-right: 1em;
   border: 1px solid black;
@@ -111,20 +112,24 @@ button.ui.button.setProfilPage-fifth-part-cancelButton.setProfilPage-fifth-part-
   color: black;
 }  
 
-button.ui.positive.button.setProfilPage-fifth-part-validateButton {
+button.ui.positive.button.setProfilPage-fifthPartValidateButton {
   border-radius: 1.5em;
 }
 
-div.setProfilPage-sixth-part {
+div.setProfilPage-sixthPart {
   text-align: center;
 }
 
-button.ui.negative.button.setProfilPage-sixth-part-deleteAccountButton {
+button.ui.negative.button.setProfilPage-sixthPartDeleteAccountButton {
   border-radius: 1.5em;
   color: red;
   background-color: white;
   border: 1px solid red;
   margin-bottom: 1rem;
+}
+
+div.ui.modal.transition.visible.active.setProfilPage-sixthPartModalDeleteAccount {
+  width: 80%;
 }
 
 .setProfilPage-h1.setProfilPage-h1.setProfilPage-h1 {
@@ -134,10 +139,11 @@ button.ui.negative.button.setProfilPage-sixth-part-deleteAccountButton {
   margin-bottom: 1rem;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
+  text-align: center;
+  font-size: 1.29rem;
+  margin-top: -.21425em;
+  font-family: Lato,Helvetica Neue,Arial,Helvetica,sans-serif;
 }
-
-
-
 
 .setProfilPage-padding.setProfilPage-padding.setProfilPage-padding {
   padding-left: 1rem;
