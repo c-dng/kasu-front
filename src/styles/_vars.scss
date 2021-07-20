@@ -1,9 +1,38 @@
 // Theme 1
 
-$primary_theme1: #fff;
-$secondary_theme1: red;
+  //background colors
+
+  $primaryColor_theme1: white;
+  $secondaryColor_theme1: black;
+  $tertiaryColor_theme1: #c61100;
+
+  //font colors
+
+  $primaryFontColor_theme1: black;
+  $secondaryFontColor_theme1: white;
+  $tertiaryFontColor_theme1: white;
+
+  //border colors
+
+  $primaryBorderColor_theme1: black;
+  $secondaryBorderColor_theme1: white;
+
 
 // Theme 2
 
-$primary_theme2: blue;
-$secondary_theme2: yellow;
+  //background colors
+
+  $primaryColor_theme2: black;
+  $secondaryColor_theme2: white;
+  $tertiaryColor_theme2: #c61100;
+
+  //font colors
+
+  $primaryFontColor_theme2: white;
+  $secondaryFontColor_theme2: black;
+  $tertiaryFontColor_theme2: white;
+
+  //border colors
+
+  $primaryBorderColor_theme2: white;
+  $secondaryBorderColor_theme2: black;
