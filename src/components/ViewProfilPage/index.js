@@ -26,6 +26,10 @@ const ViewProfilPage = () => {
         </div>
 
         <div className="viewProfilPage-second-part">
+          <div className="viewProfilPage-second-part-change-buttons">
+              <Button size='mini' className="viewProfilPage-second-part-change-buttons-left" attached='left'>Gérer mon profil</Button>
+              <Button size='mini' className="viewProfilPage-second-part-change-buttons-right" attached='right'>Gérer mes collections</Button>
+          </div>
           <h4>Présentation</h4>
           <Container textAlign='justified'>
             <p>
@@ -37,7 +41,7 @@ const ViewProfilPage = () => {
         <Divider />
         <div className="viewProfilPage-third-part">
           <h4>Localisation</h4>
-          <Container className="viewProfilPage-third-part-localisation" textAlign='center'>
+          <Container className="viewProfilPage-third-part-localisation">
             <p>France</p>
             <p>Ville</p>
             <p>Code Postal</p>

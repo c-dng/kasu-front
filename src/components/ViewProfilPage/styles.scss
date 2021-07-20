@@ -32,12 +32,40 @@ div.viewProfilPage-second-part {
   margin-bottom: 1em;
 }
 
+div.viewProfilPage-second-part-change-buttons {
+  margin-top: 2em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-top-left-radius: 1em;
+  border-bottom-left-radius: 1em;
+}
+
+div.ui.mini.left.attached.button.viewProfilPage-second-part-change-buttons-left {
+  border-top-left-radius: 1.5em;
+  border-bottom-left-radius: 1.5em;
+  color: black;
+  background-color: white;
+  border: 1px solid black;
+}
+
+div.ui.mini.right.attached.button.viewProfilPage-second-part-change-buttons-right {
+  border-top-right-radius: 1.5em;
+  border-bottom-right-radius: 1.5em;
+  color: black;
+  background-color: white;
+  border: 1px solid black;
+}
+
 div.viewProfilPage-third-part {
   margin-bottom: 1em;
 }
 
-div.ui.center.aligned.container.viewProfilPage-third-part-localisation {
+div.ui.container.viewProfilPage-third-part-localisation {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: row;
   border-radius: 0.3em;
 }
 
