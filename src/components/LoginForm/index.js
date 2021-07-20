@@ -35,14 +35,14 @@ const LoginForm = ({
           <Card.Header className="loginform-cardHeader" text-align="center">Connexion</Card.Header>
           <Form className="loginform-form" onSubmit={handleSubmit}>
             <Form.Field>
-              <label htmlFor="e-mail">E-mail
-                <Form.Input className="loginform-field" type="text" id="e-mail" name="e-mail" onChange={handleChangeEmail} value={email} />
-              </label>
+              <label htmlFor="e-mail" className="loginform-fieldLabel">E-mail</label>
+              <Form.Input className="loginform-field" type="text" id="e-mail" name="e-mail" onChange={handleChangeEmail} value={email} />
+
             </Form.Field>
             <Form.Field>
-              <label htmlFor="password"> Mot de passe
-                <Form.Input className="loginform-field" id="password" name="password" onChange={handleChangePassword} value={password} />
-              </label>
+              <label htmlFor="password" className="loginform-fieldLabel">Mot de passe</label>
+              <Form.Input className="loginform-field" id="password" name="password" onChange={handleChangePassword} value={password} />
+
             </Form.Field>
             <Form.Field>
               <Icon name="question" /> Mot de passe oublié

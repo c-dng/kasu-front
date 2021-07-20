@@ -24,7 +24,6 @@ div.header.loginform-cardHeader.loginform-cardHeader.loginform-cardHeader {
 
 input#e-mail {
   margin: 0;
-
   font-size: 0.8rem;
 }
 
@@ -33,7 +32,7 @@ div.field.loginform-field.loginform-field {
   margin: 0 auto;
 }
 
-input #password {
+input#password {
   margin: 0;
   font-size: 0.8rem;
 }
@@ -63,21 +62,45 @@ div.loginform {
 .theme1 {
   button.ui.button.login-button {
     border: 1px solid vars.$primaryBorderColor_theme1;
+    background-color: vars.$primaryColor_theme1;
+    color :vars.$primaryFontColor_theme1;
   }
 
   div.header.loginform-cardHeader.loginform-cardHeader.loginform-cardHeader {
     color: vars.$secondaryFontColor_theme1;
     background-color: vars.$secondaryColor_theme1;
   }
+
+  .loginform-card.loginform-card.loginform-card {
+    color: vars.$primaryFontColor_theme1;
+    background-color: vars.$primaryColor_theme1;
+  }
+
+  .loginform-fieldLabel.loginform-fieldLabel.loginform-fieldLabel {
+    color: vars.$primaryFontColor_theme1;
+  }
+
 }
 
 .theme2 {
   button.ui.button.login-button {
     border: 1px solid vars.$primaryBorderColor_theme2;
+    background-color: vars.$primaryColor_theme2;
+    color :vars.$primaryFontColor_theme2;
   }
 
   div.header.loginform-cardHeader.loginform-cardHeader.loginform-cardHeader {
     color: vars.$secondaryFontColor_theme2;
     background-color: vars.$secondaryColor_theme2;
   }
+
+  .loginform-card.loginform-card.loginform-card {
+    color: vars.$primaryFontColor_theme2;
+    background-color: vars.$primaryColor_theme2;
+  }
+
+  .loginform-fieldLabel.loginform-fieldLabel.loginform-fieldLabel {
+    color: vars.$primaryFontColor_theme2;
+  }
+
 }

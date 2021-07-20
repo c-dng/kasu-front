@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Card, Button, Divider } from 'semantic-ui-react';
+import { Card, Button } from 'semantic-ui-react';
 import './style.scss';
 
 const NoAccountBox = () => (

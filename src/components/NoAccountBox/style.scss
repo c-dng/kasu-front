@@ -1,3 +1,7 @@
+@use '/src/styles/vars';
+
+// General
+
 a.ui.button.noAccount-registerButton {
   border-radius: 1rem;;
   margin: 0 auto;
@@ -34,4 +38,44 @@ div.header.noAccount-cardHeader.noAccount-cardHeader.noAccount-cardHeader {
   margin-bottom: 1rem;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
+}
+
+// Theming 
+
+.theme1 {
+  .noAccount-registerButton.noAccount-registerButton.noAccount-registerButton {
+    border: 1px solid vars.$primaryBorderColor_theme1;
+    background-color: vars.$primaryColor_theme1;
+    color :vars.$primaryFontColor_theme1;
+  }
+
+  div.header.noAccount-cardHeader.noAccount-cardHeader.noAccount-cardHeader {
+    color: vars.$secondaryFontColor_theme1;
+    background-color: vars.$secondaryColor_theme1;
+  }
+
+  .noAccountBox-card.noAccountBox-card.noAccountBox-card {
+    color: vars.$primaryFontColor_theme1;
+    background-color: vars.$primaryColor_theme1;
+  }
+
+}
+
+.theme2 {
+  .noAccount-registerButton.noAccount-registerButton.noAccount-registerButton {
+    border: 1px solid vars.$primaryBorderColor_theme2;
+    background-color: vars.$primaryColor_theme2;
+    color :vars.$primaryFontColor_theme2;
+  }
+
+  div.header.noAccount-cardHeader.noAccount-cardHeader.noAccount-cardHeader {
+    color: vars.$secondaryFontColor_theme2;
+    background-color: vars.$secondaryColor_theme2;
+  }
+
+  .noAccountBox-card.noAccountBox-card.noAccountBox-card {
+    color: vars.$primaryFontColor_theme2;
+    background-color: vars.$primaryColor_theme2;
+  }
+
 }

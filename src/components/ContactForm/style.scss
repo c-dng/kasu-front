@@ -54,6 +54,8 @@ form.contactForm-form {
 
   button.ui.button.contactForm-sendButton {
     border: 1px solid vars.$secondaryColor_theme1;
+    background-color: vars.$primaryColor_theme1;
+    color :vars.$primaryFontColor_theme1;
   }
 
   form.contactForm-form {
@@ -74,10 +76,6 @@ form.contactForm-form {
     color: vars.$primaryFontColor_theme1;
   }
 
-  .contactForm-sendButton.contactForm-sendButton.contactForm-sendButton {
-    background-color: vars.$primaryColor_theme1;
-    color :vars.$primaryFontColor_theme1;
-  }
 }
 
 .theme2 {
@@ -93,6 +91,8 @@ form.contactForm-form {
 
   button.ui.button.contactForm-sendButton {
     border: 1px solid vars.$secondaryColor_theme2;
+    background-color: vars.$primaryColor_theme2;
+    color: vars.$primaryFontColor_theme2;
   }
 
   form.contactForm-form {
@@ -115,12 +115,4 @@ form.contactForm-form {
     color: vars.$primaryFontColor_theme2;
   }
 
-  .contactForm-sendButton.contactForm-sendButton.contactForm-sendButton {
-    background-color: vars.$primaryColor_theme2;
-    color: vars.$primaryFontColor_theme2;
-  }
-
-  .contactForm-cardHeader.contactForm-cardHeader.contactForm-cardHeader {
-    background-color: vars.$secondaryColor_theme2;
-  }
 }
