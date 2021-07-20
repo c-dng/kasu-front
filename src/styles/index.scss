@@ -1,6 +1,23 @@
 @use 'reset';
 @use 'vars';
 
+
+// General
+
 body {
   font-family: sans-serif;
 }
+
+// Theming 
+
+// .theme1 {
+//   body {
+//     background-color: vars.$primaryColor_theme1;
+//   }
+// }
+
+// .theme2 {
+//   html {
+//     background-color: vars.$primaryColor_theme2 !important;
+//   }
+// }
