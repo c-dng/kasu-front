@@ -1,7 +1,10 @@
+@use '/src/styles/vars';
+
+// General
+
 .alreadyAccountBox-loginButton.alreadyAccountBox-loginButton.alreadyAccountBox-loginButton {
   border-radius: 1rem;;
   margin: 0;
-  border: 1px solid black;
   width: 7.5rem;
   font-size: 0.8rem;
   margin-bottom: 1rem;
@@ -28,8 +31,7 @@ div.content.alreadyAccountBox-cardContent.alreadyAccountBox-cardContent.alreadyA
 }
 
 div.header.alreadyAccountBox-cardHeader.alreadyAccountBox-cardHeader.alreadyAccountBox-cardHeader {
-  color: white;
-  background-color: black;
+
   padding: 1rem;
   margin-bottom: 1rem;
   border-top-left-radius: 1rem;
@@ -39,3 +41,44 @@ div.header.alreadyAccountBox-cardHeader.alreadyAccountBox-cardHeader.alreadyAcco
 form.ui.form.contactForm-form.contactForm-form.contactForm-form {
   padding: 1rem;
 }
+
+// Theming 
+
+.theme1 {
+  .alreadyAccountBox-loginButton.alreadyAccountBox-loginButton.alreadyAccountBox-loginButton {
+    border: 1px solid vars.$primaryBorderColor_theme1;
+    background-color: vars.$primaryColor_theme1;
+    color :vars.$primaryFontColor_theme1;
+  }
+
+  div.header.alreadyAccountBox-cardHeader.alreadyAccountBox-cardHeader.alreadyAccountBox-cardHeader {
+    color: vars.$secondaryFontColor_theme1;
+    background-color: vars.$secondaryColor_theme1;
+  }
+  
+  .alreadyAccountBox-card.alreadyAccountBox-card.alreadyAccountBox-card {
+    color: vars.$primaryFontColor_theme1;
+    background-color: vars.$primaryColor_theme1;
+  }
+
+}
+
+.theme2 {
+  .alreadyAccountBox-loginButton.alreadyAccountBox-loginButton.alreadyAccountBox-loginButton {
+    border: 1px solid vars.$primaryBorderColor_theme2;
+    background-color: vars.$primaryColor_theme2;
+    color :vars.$primaryFontColor_theme2;
+  }
+
+  div.header.alreadyAccountBox-cardHeader.alreadyAccountBox-cardHeader.alreadyAccountBox-cardHeader {
+    color: vars.$secondaryFontColor_theme2;
+    background-color: vars.$secondaryColor_theme2;
+  }
+  
+  .alreadyAccountBox-card.alreadyAccountBox-card.alreadyAccountBox-card {
+    color: vars.$primaryFontColor_theme2;
+    background-color: vars.$primaryColor_theme2;
+  }
+
+}
+

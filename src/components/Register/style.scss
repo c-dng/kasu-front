@@ -1,3 +1,5 @@
+@use '/src/styles/vars';
+
 // General 
 
 .alreadyAccount {
@@ -23,7 +25,6 @@ div.ui.card.registerForm-card {
 .registerForm-registerButton.registerForm-registerButton.registerForm-registerButton {
   border-radius: 1rem;;
   margin: 0;
-  border: 1px solid black;
   width: 7.5rem;
   font-size: 0.8rem;
 }
@@ -38,8 +39,6 @@ div.content.registerForm-cardContent.registerForm-cardContent.registerForm-cardC
 }
 
 div.header.registerForm-cardHeader.registerForm-cardHeader.registerForm-cardHeader {
-  color: white;
-  background-color: black;
   padding: 1rem;
   margin-bottom: 1rem;
   border-top-left-radius: 1rem;
@@ -51,5 +50,51 @@ form.ui.form.registerForm-form.registerForm-form{
   padding: 1rem;
 }
 
-// Theming
+// Theming 
+
+.theme1 {
+  button.ui.button.registerForm-registerButton {
+    border: 1px solid vars.$primaryBorderColor_theme1;
+    background-color: vars.$primaryColor_theme1;
+    color :vars.$primaryFontColor_theme1;
+  }
+
+  div.header.registerForm-cardHeader.registerForm-cardHeader.registerForm-cardHeader {
+    color: vars.$secondaryFontColor_theme1;
+    background-color: vars.$secondaryColor_theme1;
+  }
+
+  .registerForm-card.registerForm-card.registerForm-card {
+    color: vars.$primaryFontColor_theme1;
+    background-color: vars.$primaryColor_theme1;
+  }
+
+  .registerForm-fieldLabel.registerForm-fieldLabel.registerForm-fieldLabel {
+    color: vars.$primaryFontColor_theme1;
+  }
+
+}
+
+.theme2 {
+  button.ui.button.registerForm-registerButton {
+    border: 1px solid vars.$primaryBorderColor_theme2;
+    background-color: vars.$primaryColor_theme2;
+    color :vars.$primaryFontColor_theme2;
+  }
+
+  div.header.registerForm-cardHeader.registerForm-cardHeader.registerForm-cardHeader {
+    color: vars.$secondaryFontColor_theme2;
+    background-color: vars.$secondaryColor_theme2;
+  }
+
+  .registerForm-card.registerForm-card.registerForm-card {
+    color: vars.$primaryFontColor_theme2;
+    background-color: vars.$primaryColor_theme2;
+  }
+
+  .registerForm-fieldLabel.registerForm-fieldLabel.registerForm-fieldLabel {
+    color: vars.$primaryFontColor_theme2;
+  }
+
+}
 

@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import {
   Button, Card, Divider, Form, Icon, Message, Link, Image,
@@ -28,20 +29,26 @@ const Register = () => {
         <Card.Content className="registerForm-cardContent">
           <Card.Header text-align="center" className="registerForm-cardHeader">Inscription</Card.Header>
           <Form className="registerForm-form">
-            <Form.Input fluid label="Votre email" width="16" />
-            <Form.Input fluid label="Votre pseudo" width="16" />
-            <Form.Input fluid label="Votre mot de passe" width="16" />
-            <Form.Group widths="equal">
-              <Form.Input fluid label="Votre prénom" />
-              <Form.Input fluid label="Votre nom de famille" />
-            </Form.Group>
-            <Form.Input fluid label="Votre adresse" width="16" />
-            <Form.Input fluid label="Votre code postal" width="16" />
+            <label className="registerForm-fieldLabel">Votre email</label>
+            <Form.Input fluid width="16" />
+            <label className="registerForm-fieldLabel">Votre pseudo</label>
+            <Form.Input fluid width="16" />
+            <label className="registerForm-fieldLabel">Votre mot de passe</label>
+            <Form.Input fluid width="16" />
+            <label className="registerForm-fieldLabel">Votre prénom</label>
+            <Form.Input fluid />
+            <label className="registerForm-fieldLabel">Votre nom de famille</label>
+            <Form.Input fluid />
+            <label className="registerForm-fieldLabel">Votre adresse</label>
+            <Form.Input fluid width="16" />
+            <label className="registerForm-fieldLabel">Votre code postal</label>
+            <Form.Input fluid width="16" />
+            <label className="registerForm-fieldLabel">Votre ville</label>
             <Form.Select
               fluid
-              label="Votre ville"
               options={fakeDatas}
             />
+
             <div className="registerForm-buttonWrapper"><Button className="registerForm-registerButton">S'inscrire</Button></div>
           </Form>
         </Card.Content>
