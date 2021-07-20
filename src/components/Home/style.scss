@@ -86,6 +86,10 @@ h2.searchExplained-title.searchExplained-title {
   .home {
     background-color: vars.$primaryColor_theme1;
   }
+  .home-button.home-button.home-button {
+    background-color: vars.$primaryColor_theme1;
+    color: vars.$primaryFontColor_theme1;
+  }
 }
 
 .theme2 {
@@ -101,5 +105,10 @@ h2.searchExplained-title.searchExplained-title {
 
   .home {
     background-color: vars.$primaryColor_theme2;
+  }
+
+  .home-button.home-button.home-button {
+    background-color: vars.$primaryColor_theme2;
+    color: vars.$primaryFontColor_theme2;
   }
 }

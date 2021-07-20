@@ -75,10 +75,14 @@ form.contactForm-form {
     color: vars.$primaryFontColor_theme1;
   }
 
+  .contactForm-sendButton.contactForm-sendButton.contactForm-sendButton {
+    background-color: vars.$primaryColor_theme1;
+    color: vars.$primaryFontColor_theme1;
+  }
 }
 
 .theme2 {
-  background-color: vars.$primaryColor_theme2;
+
   div.header.contactForm-cardHeader.contactForm-cardHeader.contactForm-cardHeader {
     color: vars.$secondaryFontColor_theme2;
     background-color: vars.$secondaryColor_theme2;
@@ -108,6 +112,11 @@ form.contactForm-form {
     color: vars.$primaryFontColor_theme2;
   }
   .contactForm-objectLabel.contactForm-objectLabel.contactForm-objectLabel {
+    color: vars.$primaryFontColor_theme2;
+  }
+
+  .contactForm-sendButton.contactForm-sendButton.contactForm-sendButton {
+    background-color: vars.$primaryColor_theme2;
     color: vars.$primaryFontColor_theme2;
   }
 }
