@@ -77,7 +77,7 @@ form.contactForm-form {
 
   .contactForm-sendButton.contactForm-sendButton.contactForm-sendButton {
     background-color: vars.$primaryColor_theme1;
-    color: vars.$primaryFontColor_theme1;
+    color :vars.$primaryFontColor_theme1;
   }
 }
 
@@ -103,6 +103,7 @@ form.contactForm-form {
 
   div.ui.centered.card.contactForm-card {
     border: 1px solid vars.$primaryBorderColor_theme2;
+    background-color: vars.$primaryColor_theme2;
   }
 
   .contactForm-emailLabel.contactForm-emailLabel.contactForm-emailLabel {
@@ -118,5 +119,9 @@ form.contactForm-form {
   .contactForm-sendButton.contactForm-sendButton.contactForm-sendButton {
     background-color: vars.$primaryColor_theme2;
     color: vars.$primaryFontColor_theme2;
+  }
+
+  .contactForm-cardHeader.contactForm-cardHeader.contactForm-cardHeader {
+    background-color: vars.$secondaryColor_theme2;
   }
 }
