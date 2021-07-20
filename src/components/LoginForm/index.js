@@ -29,7 +29,7 @@ const LoginForm = ({
 
   return (
     <div className="loginform">
-      <Image className="contactForm-banner" src={alternativeBanner} />
+      <Image className="loginform-banner" src={alternativeBanner} />
       <Card className="loginform-card" centered>
         <Card.Content className="loginform-cardContent">
           <Card.Header className="loginform-cardHeader" text-align="center">Connexion</Card.Header>

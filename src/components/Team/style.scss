@@ -1,0 +1,39 @@
+// General 
+
+// page title
+div.team h2  {
+  margin-top: 1em;
+}
+
+// page description
+p {
+  text-align: center;
+}
+
+// global wrapper
+.team-cardGlobal {
+  margin-top: 2em;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+// the card
+.ui.card.team-card {
+  margin: auto;
+}
+
+// name of the collaborator
+.team-cardName {
+  text-align: center;
+}
+
+// role of the collaborator
+.team-cardNameRole {
+  text-align: center;
+}
+
+// link to GitHub profil
+.team-cardNameExtra {
+  text-align: center;
+}

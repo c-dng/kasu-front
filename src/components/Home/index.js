@@ -8,8 +8,8 @@ import homeBanner from './homeBanner.jpg';
 import SearchExplained from './SearchExplained';
 
 const Home = () => (
-  <div>
-    <div className="home">
+  <div className="home">
+    <div className="home-mainWrapper">
       <Image className="home-banner" src={homeBanner} />
       <div className="home-BannerTextButton">
         <h1 className="home-h1">BIENVENUE CHEZ KASU</h1>

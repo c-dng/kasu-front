@@ -1,7 +1,7 @@
 // == Import npm
 import React from 'react';
-
-import Nav from 'src/components/Nav/';
+import PropTypes from 'prop-types';
+import Nav from 'src/containers/Nav/';
 import Home from 'src/components/Home';
 import Footer from 'src/components/Footer';
 import SearchResultsByLocation from 'src/components/SearchResultsByLocation';
@@ -10,7 +10,9 @@ import Register from 'src/components/Register';
 import ContactForm from 'src/components/ContactForm';
 import Conversations from 'src/containers/Conversations';
 import SetProfilPage from 'src/components/SetProfilPage';
+import ManageMyCollection from 'src/components/ManageMyCollection';
 import ViewProfilPage from 'src/components/ViewProfilPage';
+import Team from 'src/components/Team';
 
 // == Import
 
@@ -20,8 +22,8 @@ import NoAccountBox from '../NoAccountBox';
 import AlreadyAccountBox from '../AlreadyAccountBox';
 
 // == Composant
-const App = () => (
-  <div className="app theme1">
+const App = ({ theme }) => (
+  <div className={`app ${theme}`}>
 
     <Nav />
     <Switch>
@@ -54,13 +56,23 @@ const App = () => (
         <SetProfilPage />
         <Footer />
       </Route>
+      <Route path="/profil/collection" exact>
+        <ManageMyCollection />
+      </Route>
       <Route path="/profil/mes-infos" exact>
         <ViewProfilPage />
         <Footer />
       </Route>
+      <Route path="/team" exact>
+        <Team />
+      </Route>
     </Switch>
   </div>
 );
+
+App.propTypes = {
+  theme: PropTypes.string.isRequired,
+};
 
 // == Export
 export default App;
