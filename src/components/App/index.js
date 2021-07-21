@@ -73,6 +73,7 @@ const App = ({ theme, autoLogin }) => {
         </Route>
         <Route path="/team" exact>
           <Team />
+          <Footer />
         </Route>
       </Switch>
     </div>
