@@ -1,4 +1,4 @@
-import { CHANGE_EMAIL, CHANGE_PASSWORD, SAVE_USER, LOGOUT_USER } from '../actions/user';
+import { CHANGE_EMAIL, CHANGE_PASSWORD, SAVE_USER, LOGOUT_USER, AUTO_LOGIN_USER } from '../actions/user';
 
 export const initialState = {
   email: '',
@@ -26,6 +26,11 @@ const reducer = (state = initialState, action = {}) => {
         pseudo: action.data.pseudo,
         email: '',
         password: '',
+      };
+    case AUTO_LOGIN_USER:
+      return {
+        ...state,
+        logged: true,
       };
     case LOGOUT_USER:
       return {

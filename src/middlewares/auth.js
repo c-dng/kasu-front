@@ -20,6 +20,7 @@ const authMiddleware = (store) => (next) => (action) => {
             store.dispatch(saveUser(response.data));
 
             axiosInstance.defaults.headers.common.Authorization = `Bearer ${response.data.token}`;
+            localStorage.setItem('token', response.data.token);
           },
         );
       next(action);

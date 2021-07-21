@@ -1,5 +1,7 @@
 import React from 'react';
-import { Header, Divider, Icon, Image, Dropdown, Button } from 'semantic-ui-react'
+import {
+  Header, Divider, Icon, Image, Dropdown, Button,
+} from 'semantic-ui-react';
 import SearchBar from 'src/components/SearchBar';
 import './style.scss';
 
@@ -13,42 +15,43 @@ const options = [
   { key: 't7', value: 'T7', text: '7' },
   { key: 't8', value: 'T8', text: '8' },
   { key: 't9', value: 'T9', text: '9' },
-]
+];
 
 const ManageMyCollection = () => (
   <div className="manageMyCollection">
 
     <h2>Gestion des collections</h2>
-      <SearchBar className="manageMyCollection-searchBar" />
+    <SearchBar className="manageMyCollection-searchBar" />
 
-      <Header className="manageMyCollection-subtitle" as='h4' attached>
+    <Header className="manageMyCollection-subtitle" as="h4" attached>
       Résultat trouvé :
-      </Header>
+    </Header>
 
-      <Header className="manageMyCollection-titleNameManga" as='h3'>
+    <Header className="manageMyCollection-titleNameManga" as="h3">
       Seven Deadly Sins
-      </Header>
+    </Header>
 
-      <Image className="manageMyCollection-mangaImage"
-        src="https://images-na.ssl-images-amazon.com/images/I/91GSy4frSdL.jpg"
-        size="small"
-        centered
+    <Image
+      className="manageMyCollection-mangaImage"
+      src="https://images-na.ssl-images-amazon.com/images/I/91GSy4frSdL.jpg"
+      size="small"
+      centered
     />
 
     <div className="manageMyCollection-selectAndAdd">
-        <Dropdown className="manageMyCollection-dropdownSelectAndAdd" placeholder='Tome(s) à ajouter' size="5" fluid multiple selection options={options} />
-        <div className="manageMyCollection-myCollectionTreeButtons">
-          <Button color="red">
-            Ajouter à ma collection
-          </Button>
-        </div>
+      <Dropdown className="manageMyCollection-dropdownSelectAndAdd" placeholder="Tome(s) à ajouter" size="5" fluid multiple selection options={options} />
+      <div className="manageMyCollection-myCollectionTreeButtons">
+        <Button color="red">
+          Ajouter à ma collection
+        </Button>
+      </div>
     </div>
 
     <div className="manageMyCollection-myCollection">
-      <Header as='h2'>
-        <Icon name='settings' />
+      <Header as="h2">
+        <Icon name="settings" />
         <Header.Content>
-            Ma collection
+          Ma collection
           <Header.Subheader>
             Gérer la visibilité, l'édition, ou la suppression
           </Header.Subheader>
@@ -56,32 +59,39 @@ const ManageMyCollection = () => (
       </Header>
     </div>
 
-      <Divider></Divider>
+    <Divider />
 
-      <Header className="manageMyCollection-myCollectionTitleMangaOwner" as='h3'>
-            Attaque des Titans
-      </Header>
+    <Header className="manageMyCollection-myCollectionTitleMangaOwner" as="h3">
+      Attaque des Titans
+    </Header>
 
-      <Image className="manageMyCollection-myCollectionTitleMangaOwnerImage"
-          src="https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/313968/313968._SX1280_QL80_TTD_.jpg"
-          size="small"
-          centered
-      />
+    <Image
+      className="manageMyCollection-myCollectionTitleMangaOwnerImage"
+      src="https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/313968/313968._SX1280_QL80_TTD_.jpg"
+      size="small"
+      centered
+    />
 
-        <Dropdown
-          placeholder='Choisir le(s) tome(s)' size="5" fluid multiple selection options={options} />
-          <div className="manageMyCollection-myCollectionTreeButtons">
-            <Button color='black'>
-                Disponibilité
-            </Button>
-            <Button color='black'>
-                Éditer
-            </Button>
-            <Button color='red'>
-                Supprimer
-            </Button>
-          </div>
-   </div>
+    <Dropdown
+      placeholder="Choisir le(s) tome(s)"
+      size="5"
+      fluid
+      multiple
+      selection
+      options={options}
+    />
+    <div className="manageMyCollection-myCollectionTreeButtons">
+      <Button color="black">
+        Disponibilité
+      </Button>
+      <Button color="black">
+        Éditer
+      </Button>
+      <Button color="red">
+        Supprimer
+      </Button>
+    </div>
+  </div>
 );
 
 export default ManageMyCollection;

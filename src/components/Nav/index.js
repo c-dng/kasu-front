@@ -12,8 +12,9 @@ import chatlogoWhite from './chatlogo-white.png';
 import logoutlogo from './logoutlogo.png';
 import loginlogo from './loginlogo.png';
 
-
-const Nav = ({ changeWebsiteTheme, navIconsColor, isLogged, disconnectUser }) => {
+const Nav = ({
+  changeWebsiteTheme, navIconsColor, isLogged, disconnectUser,
+}) => {
   let logoToDisplay;
   let chatlogoToDisplay;
 
@@ -34,7 +35,7 @@ const Nav = ({ changeWebsiteTheme, navIconsColor, isLogged, disconnectUser }) =>
 
   const handleLogout = (evt) => {
     disconnectUser();
-  }
+  };
   const handleTheme1 = (evt) => {
     changeWebsiteTheme('theme1', 'black');
   };
