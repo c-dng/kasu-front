@@ -13,6 +13,7 @@ import SetProfilPage from 'src/components/SetProfilPage';
 import ManageMyCollection from 'src/components/ManageMyCollection';
 import ViewProfilPage from 'src/components/ViewProfilPage';
 import Team from 'src/components/Team';
+import LegalNotice from 'src/components/LegalNotice';
 
 // == Import
 
@@ -72,6 +73,10 @@ const App = ({ theme, autoLogin }) => {
         </Route>
         <Route path="/team" exact>
           <Team />
+          <Footer />
+        </Route>
+        <Route path="/mentions-legales" exact>
+          <LegalNotice />
           <Footer />
         </Route>
       </Switch>
