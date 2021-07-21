@@ -11,21 +11,16 @@
 
 // SECOND SECTION : MY COLLECTION
 
-// My collection
-div.manageMyCollection-myCollection{
-  margin-top: 3em;
-  display: flex;
-  justify-content: center;
-}
-
 // title of our manga
 h3.manageMyCollection-myCollectionTitleManga{
-  text-align: center;
-  margin-bottom: 0.5em;
+  font-size: 1rem;
+  margin: 0 0.4rem;
 }
-h4.manageMyCollection-myCollectionAuthorManga{
+.manageMyCollection-myCollectionAuthorManga{
   text-align: center;
-  margin-bottom: 0.5em;
+  font-size: 0.9rem;
+  margin-top: 0;
+  color: #c1c1c1;
 }
 
 
@@ -38,9 +33,10 @@ h4.manageMyCollection-myCollectionAuthorManga{
 
 .manageMyCollection-itemContentWrapper.manageMyCollection-itemContentWrapper.manageMyCollection-itemContentWrapper {
   display: flex;
-  width: 95%;
+  width: 80%;
   margin: 0 auto;
   justify-content: space-between;
+  margin-bottom: 1rem;
 }
 .manageMyCollection {
   display: flex;
@@ -69,7 +65,7 @@ div.content.manageMyCollection-mainCardContent.manageMyCollection-mainCardConten
 .manageMyCollection-subHeader {
   width: 80%;
   text-align: center;
-  margin: 0 auto;
+  margin: 0 10%;
   font-size: 1.1rem;
   margin-bottom: 1rem;
 }
@@ -115,9 +111,32 @@ img.ui.small.image.manageMyCollection-mangaImage.manageMyCollection-mangaImage.m
   margin: 1rem 0;
 }
 
+h2.ui.header {
+  display: flex;
+  align-items: center;
+}
+.manageMyCollection-myCollection.manageMyCollection-myCollection {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.manageMyCollection-myCollectionMangaInfoWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.manageMyCollection-myCollectionButtons.manageMyCollection-myCollectionButtons.manageMyCollection-myCollectionButtons {
+  font-size: 1rem;
+}
 // Theming
 
 .theme1 {
+
+  .manageMyCollection-addToMyCollectionButton.manageMyCollection-addToMyCollectionButton.manageMyCollection-addToMyCollectionButton {
+    background-color: vars.$tertiaryColor_theme1;
+    color :vars.$secondaryFontColor_theme1;
+  }
   button.ui.button.registerForm-registerButton {
     border: 1px solid vars.$primaryBorderColor_theme1;
     background-color: vars.$primaryColor_theme1;
@@ -141,6 +160,12 @@ img.ui.small.image.manageMyCollection-mangaImage.manageMyCollection-mangaImage.m
 }
 
 .theme2 {
+
+  .manageMyCollection-addToMyCollectionButton.manageMyCollection-addToMyCollectionButton.manageMyCollection-addToMyCollectionButton {
+    background-color: vars.$tertiaryColor_theme2;
+    color :vars.$primaryFontColor_theme2;
+  }
+
   button.ui.button.registerForm-registerButton {
     border: 1px solid vars.$primaryBorderColor_theme2;
     background-color: vars.$primaryColor_theme2;

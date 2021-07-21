@@ -44,7 +44,7 @@ const ManageMyCollection = () => (
         <div className="manageMyCollection-selectAndAdd">
           <Dropdown className="manageMyCollection-dropdownSelectAndAdd" placeholder="Tome(s) à ajouter" size="5" fluid multiple selection options={options} />
           <div className="manageMyCollection-addToMyCollection">
-            <Button color="red">Ajouter à ma collection</Button>
+            <Button className="manageMyCollection-addToMyCollectionButton">Ajouter à ma collection</Button>
           </div>
         </div>
 
@@ -63,7 +63,7 @@ const ManageMyCollection = () => (
         <div className="manageMyCollection-selectAndAdd">
           <Dropdown className="manageMyCollection-dropdownSelectAndAdd" placeholder="Tome(s) à ajouter" size="5" fluid multiple selection options={options} />
           <div className="manageMyCollection-addToMyCollection">
-            <Button color="red">Ajouter à ma collection</Button>
+            <Button className="manageMyCollection-addToMyCollectionButton">Ajouter à ma collection</Button>
           </div>
         </div>
 
@@ -81,9 +81,7 @@ const ManageMyCollection = () => (
           </Header>
         </div>
 
-        <Divider />
-
-        
+        <Divider className="manageMyCollection-divider" />
 
         <div className="manageMyCollection-myCollectionItem">
 
@@ -94,17 +92,17 @@ const ManageMyCollection = () => (
               size="tiny"
             />
             <div className="manageMyCollection-myCollectionMangaInfoWrapper">
-              <h3 className="manageMyCollection-myCollectionTitleManga">Attaque des Titans</h3>
-              <h4 className="manageMyCollection-myCollectionAuthorManga">Auteur</h4>
+              <h3 className="manageMyCollection-myCollectionTitleManga">Attaque des Titans - <span className="manageMyCollection-myCollectionAuthorManga">Auteur</span></h3>
+
             </div>
             <div className="manageMyCollection-myCollectionThreeButtons">
-              <Button color="black">
+              <Button className="manageMyCollection-myCollectionButtons" compact>
                 Disponibilité
               </Button>
-              <Button color="black">
+              <Button className="manageMyCollection-myCollectionButtons" compact>
                 Éditer
               </Button>
-              <Button color="red">
+              <Button className="manageMyCollection-myCollectionButtons" compact>
                 Supprimer
               </Button>
             </div>
