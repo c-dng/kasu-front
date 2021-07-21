@@ -112,3 +112,13 @@ h2.searchExplained-title.searchExplained-title {
     color: vars.$primaryFontColor_theme2;
   }
 }
+
+// GESTION DES MEDIA QUERIES
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (min-width : 1224px) {
+  /* Styles */
+  div.home.media {
+    
+  }
+  }
