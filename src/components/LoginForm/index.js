@@ -2,12 +2,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  Card, Icon, Button, Form, Divider, Image,
+  Card, Icon, Button, Form, Image,
 } from 'semantic-ui-react';
 
 import './style.scss';
 
 import alternativeBanner from 'src/assets/alternativeBanner.png';
+import { Redirect } from 'react-router-dom';
 
 const LoginForm = ({
   email,
@@ -15,6 +16,7 @@ const LoginForm = ({
   changeEmail,
   changePassword,
   handleLogin,
+  isLogged,
 }) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -26,6 +28,10 @@ const LoginForm = ({
   const handleChangePassword = (evt) => {
     changePassword(evt.target.value);
   };
+
+  if (isLogged) {
+    return <Redirect to="/" />;
+  }
 
   return (
     <div className="loginform">
@@ -61,6 +67,7 @@ LoginForm.propTypes = {
   changeEmail: PropTypes.func.isRequired,
   changePassword: PropTypes.func.isRequired,
   handleLogin: PropTypes.func.isRequired,
+  isLogged: PropTypes.bool.isRequired,
 };
 
 export default LoginForm;

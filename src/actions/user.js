@@ -18,6 +18,12 @@ export const loginUser = () => ({
   type: LOGIN_USER,
 });
 
+export const AUTO_LOGIN_USER = 'AUTO_LOGIN_USER';
+
+export const autoLoginUser = () => ({
+  type: AUTO_LOGIN_USER,
+});
+
 export const SAVE_USER = 'SAVE_USER';
 
 export const saveUser = (data) => ({

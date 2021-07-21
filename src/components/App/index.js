@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Nav from 'src/containers/Nav/';
-import Home from 'src/components/Home';
+import Home from 'src/containers/Home';
 import Footer from 'src/components/Footer';
 import SearchResultsByLocation from 'src/components/SearchResultsByLocation';
 import LoginForm from 'src/containers/LoginForm';
@@ -21,55 +21,64 @@ import { Route, Switch } from 'react-router-dom';
 import NoAccountBox from '../NoAccountBox';
 import AlreadyAccountBox from '../AlreadyAccountBox';
 
-// == Composant
-const App = ({ theme }) => (
-  <div className={`app ${theme}`}>
 
-    <Nav />
-    <Switch>
-      <Route path="/" exact>
-        <Home />
-        <Footer />
-      </Route>
-      <Route path="/login" exact>
-        <LoginForm />
-        <NoAccountBox />
-        <Footer />
-      </Route>
-      <Route path="/register" exact>
-        <Register />
-        <AlreadyAccountBox />
-        <Footer />
-      </Route>
-      <Route path="/contact" exact>
-        <ContactForm />
-        <Footer />
-      </Route>
-      <Route path="/conversations" exact>
-        <Conversations />
-      </Route>
-      <Route path="/rechercher/ville" exact>
-        <SearchResultsByLocation />
-        <Footer />
-      </Route>
-      <Route path="/profil/id" exact>
-        <SetProfilPage />
-        <Footer />
-      </Route>
-      <Route path="/profil/collection" exact>
-        <ManageMyCollection />
-        <Footer />
-      </Route>
-      <Route path="/profil/mes-infos" exact>
-        <ViewProfilPage />
-        <Footer />
-      </Route>
-      <Route path="/team" exact>
-        <Team />
-      </Route>
-    </Switch>
-  </div>
-);
+// == Composant
+const App = ({ theme, autoLogin }) => {
+  console.log(localStorage);
+  const token = localStorage.getItem('token');
+  if (token) {
+    autoLogin();
+  }
+
+  return (
+    <div className={`app ${theme}`}>
+
+      <Nav />
+      <Switch>
+        <Route path="/" exact>
+          <Home />
+          <Footer />
+        </Route>
+        <Route path="/login" exact>
+          <LoginForm />
+          <NoAccountBox />
+          <Footer />
+        </Route>
+        <Route path="/register" exact>
+          <Register />
+          <AlreadyAccountBox />
+          <Footer />
+        </Route>
+        <Route path="/contact" exact>
+          <ContactForm />
+          <Footer />
+        </Route>
+        <Route path="/conversations" exact>
+          <Conversations />
+        </Route>
+        <Route path="/rechercher/ville" exact>
+          <SearchResultsByLocation />
+          <Footer />
+        </Route>
+        <Route path="/profil/id" exact>
+          <SetProfilPage />
+          <Footer />
+        </Route>
+        <Route path="/profil/collection" exact>
+          <ManageMyCollection />
+          <Footer />
+        </Route>
+        <Route path="/profil/mes-infos" exact>
+          <ViewProfilPage />
+          <Footer />
+        </Route>
+        <Route path="/team" exact>
+          <Team />
+        </Route>
+      </Switch>
+    </div>
+  );
+};
 
 App.propTypes = {
   theme: PropTypes.string.isRequired,

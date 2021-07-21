@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import {
   Button, Image,
@@ -7,7 +8,7 @@ import './style.scss';
 import homeBanner from './homeBanner.jpg';
 import SearchExplained from './SearchExplained';
 
-const Home = () => (
+const Home = ({ isLogged }) => (
   <div className="home">
     <div className="home-mainWrapper">
       <Image className="home-banner" src={homeBanner} />
@@ -17,14 +18,20 @@ const Home = () => (
           <strong>Kasu</strong>, qui veut dire "prêter" en japonais, est une plateforme offrant
           la possibilité aux passionnés de s'échanger mutuellement et temporairement leurs mangas.
         </p>
+        {!isLogged && (
         <div className="home-buttonWrapper">
           <Button className="home-button" as={Link} to="/login">Se connecter</Button>
           <Button className="home-button" as={Link} to="/register">S'inscrire</Button>
         </div>
+        )}
       </div>
     </div>
     <SearchExplained />
   </div>
 );
+
+Home.propTypes = {
+  isLogged: PropTypes.bool.isRequired,
+};
 
 export default Home;
