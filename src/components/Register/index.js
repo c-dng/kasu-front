@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import {
-  Button, Card, Divider, Form, Icon, Message, Link, Image,
+  Button, Card, Form, Image,
 } from 'semantic-ui-react';
 
 import './style.scss';

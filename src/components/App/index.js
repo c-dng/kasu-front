@@ -21,7 +21,6 @@ import { Route, Switch } from 'react-router-dom';
 import NoAccountBox from '../NoAccountBox';
 import AlreadyAccountBox from '../AlreadyAccountBox';
 
-
 // == Composant
 const App = ({ theme, autoLogin }) => {
   const token = localStorage.getItem('token');

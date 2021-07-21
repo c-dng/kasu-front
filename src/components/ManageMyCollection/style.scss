@@ -1,37 +1,12 @@
+@use '/src/styles/vars';
+
 // FIRST SECTION : RESULT OF SEARCH
 
-//title of page
-div.manageMyCollection h2{
-  text-align: center;
-  margin-top: 1em;
-}
-
-// searchBar
-.manageMyCollection-searchBar {
-  margin-top: 0;
-}
-// subtitle
-.manageMyCollection-subtitle{
-  text-align: center;
-}
-
-// title name of manga
-.manageMyCollection-titleNameManga {
-  margin-top: 1em;
-  text-align: center;
-  margin-bottom: 0.5em;
-}
-
-// img result of search
-.manageMyCollection-mangaImage {
-  margin-bottom: 0.5em;
-}
-
-.manageMyCollection-myCollectionTreeButtons {
+.manageMyCollection-myCollectionThreeButtons {
   display: flex;
-  justify-content: center;
-  margin-top: 0.5em;
-  margin-bottom: 3em;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30%;
 }
 
 // SECOND SECTION : MY COLLECTION
@@ -44,24 +19,146 @@ div.manageMyCollection-myCollection{
 }
 
 // title of our manga
-.ui.header.manageMyCollection-myCollectionTitleMangaOwner{
+h3.manageMyCollection-myCollectionTitleManga{
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+h4.manageMyCollection-myCollectionAuthorManga{
   text-align: center;
   margin-bottom: 0.5em;
 }
 
-// image of our manga
-.ui.small.centered.image.manageMyCollection-myCollectionTitleMangaOwnerImage {
-  margin-bottom: 0.5em;
-} 
+
 
 // dropdown volume to edit
-.ui.fluid.multiple.selection.dropdown {
+// .ui.fluid.multiple.selection.dropdown {
+//   text-align: center;
+// }
+
+
+.manageMyCollection-itemContentWrapper.manageMyCollection-itemContentWrapper.manageMyCollection-itemContentWrapper {
+  display: flex;
+  width: 95%;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+.manageMyCollection {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.manageMyCollection-mainCard.manageMyCollection-mainCard.manageMyCollection-mainCard.manageMyCollection-mainCard  {
+  width: 80%;
+  border-radius: 1rem;
+  margin: 3rem 0;
+}
+
+
+div.content.manageMyCollection-mainCardContent.manageMyCollection-mainCardContent.manageMyCollection-mainCardContent {
+  padding: 0rem;
+}
+
+.manageMyCollection-mainCardHeader.manageMyCollection-mainCardHeader.manageMyCollection-mainCardHeader {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
   text-align: center;
 }
 
-// focus 3 buttons
-div.myCollection-tree-buttons{
-  margin-top: 0.5em;
+.manageMyCollection-subHeader {
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.manageMyCollection-searchBarWrapper {
+  background-image: url('src/assets/collection-photo.jpg') ;
+  background-size: cover ;
+  padding: 2rem;
+}
+
+.manageMyCollection-divider.manageMyCollection-divider.manageMyCollection-divider {
+  width: 80%;
+  margin: 1rem auto;
+  background-color: black;
+}
+
+.manageMyCollection-subtitle {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.manageMyCollection-titleNameManga {
+  text-align: center;
+  margin: 1rem 10%;
+}
+.manageMyCollection-mangaImageWrapper {
   display: flex;
   justify-content: center;
+}
+img.ui.small.image.manageMyCollection-mangaImage.manageMyCollection-mangaImage.manageMyCollection-mangaImage {
+  margin: 0 auto;
+}
+
+.manageMyCollection-selectAndAdd.manageMyCollection-selectAndAdd.manageMyCollection-selectAndAdd.manageMyCollection-selectAndAdd {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.manageMyCollection-dropdownSelectAndAdd.manageMyCollection-dropdownSelectAndAdd.manageMyCollection-dropdownSelectAndAdd {
+  margin: 1rem 0;
+}
+
+// Theming
+
+.theme1 {
+  button.ui.button.registerForm-registerButton {
+    border: 1px solid vars.$primaryBorderColor_theme1;
+    background-color: vars.$primaryColor_theme1;
+    color :vars.$primaryFontColor_theme1;
+  }
+
+  div.header.manageMyCollection-mainCardHeader.manageMyCollection-mainCardHeader.manageMyCollection-mainCardHeader {
+    color: vars.$secondaryFontColor_theme1;
+    background-color: vars.$secondaryColor_theme1;
+  }
+
+  .registerForm-card.registerForm-card.registerForm-card {
+    color: vars.$primaryFontColor_theme1;
+    background-color: vars.$primaryColor_theme1;
+  }
+
+  .registerForm-fieldLabel.registerForm-fieldLabel.registerForm-fieldLabel {
+    color: vars.$primaryFontColor_theme1;
+  }
+
+}
+
+.theme2 {
+  button.ui.button.registerForm-registerButton {
+    border: 1px solid vars.$primaryBorderColor_theme2;
+    background-color: vars.$primaryColor_theme2;
+    color :vars.$primaryFontColor_theme2;
+  }
+
+  div.header.registerForm-cardHeader.registerForm-cardHeader.registerForm-cardHeader {
+    color: vars.$secondaryFontColor_theme2;
+    background-color: vars.$secondaryColor_theme2;
+  }
+
+  .registerForm-card.registerForm-card.registerForm-card {
+    color: vars.$primaryFontColor_theme2;
+    background-color: vars.$primaryColor_theme2;
+  }
+
+  .registerForm-fieldLabel.registerForm-fieldLabel.registerForm-fieldLabel {
+    color: vars.$primaryFontColor_theme2;
+  }
+
 }

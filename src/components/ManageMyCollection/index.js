@@ -1,9 +1,10 @@
 import React from 'react';
 import {
-  Header, Divider, Icon, Image, Dropdown, Button,
+  Header, Divider, Icon, Image, Dropdown, Button, Card,
 } from 'semantic-ui-react';
 import SearchBar from 'src/components/SearchBar';
 import './style.scss';
+import alternativeBanner from 'src/assets/alternativeBanner.png';
 
 const options = [
   { key: 't1', value: 'T1', text: '1' },
@@ -19,78 +20,98 @@ const options = [
 
 const ManageMyCollection = () => (
   <div className="manageMyCollection">
+    <Image className="manageMyCollection-banner" src={alternativeBanner} />
+    <Card className="manageMyCollection-mainCard">
+      <Card.Content className="manageMyCollection-mainCardContent">
+        <Card.Header className="manageMyCollection-mainCardHeader">Gestion des collections</Card.Header>
+        <h3 className="manageMyCollection-subHeader">Cherche un manga à ajouter à ta collection dans notre base de donnée !</h3>
+        <div className="manageMyCollection-searchBarWrapper">
+          <SearchBar className="manageMyCollection-searchBar" />
+        </div>
+        <Divider className="manageMyCollection-divider" />
+        <h4 className="manageMyCollection-subtitle">Résultat(s) trouvé(s) :</h4>
+        <Divider className="manageMyCollection-divider" />
+        <h3 className="manageMyCollection-titleNameManga">Seven Deadly Sins</h3>
 
-    <h2>Gestion des collections</h2>
-    <SearchBar className="manageMyCollection-searchBar" />
+        <div className="manageMyCollection-mangaImageWrapper">
+          <Image
+            className="manageMyCollection-mangaImage"
+            src="https://images-na.ssl-images-amazon.com/images/I/91GSy4frSdL.jpg"
+            size="small"
+          />
+        </div>
 
-    <Header className="manageMyCollection-subtitle" as="h4" attached>
-      Résultat trouvé :
-    </Header>
+        <div className="manageMyCollection-selectAndAdd">
+          <Dropdown className="manageMyCollection-dropdownSelectAndAdd" placeholder="Tome(s) à ajouter" size="5" fluid multiple selection options={options} />
+          <div className="manageMyCollection-addToMyCollection">
+            <Button color="red">Ajouter à ma collection</Button>
+          </div>
+        </div>
 
-    <Header className="manageMyCollection-titleNameManga" as="h3">
-      Seven Deadly Sins
-    </Header>
+        <Divider className="manageMyCollection-divider" />
 
-    <Image
-      className="manageMyCollection-mangaImage"
-      src="https://images-na.ssl-images-amazon.com/images/I/91GSy4frSdL.jpg"
-      size="small"
-      centered
-    />
+        <h3 className="manageMyCollection-titleNameManga">Seven Deadly Sins: Reloaded, Origins, The beginning, Spin-off</h3>
 
-    <div className="manageMyCollection-selectAndAdd">
-      <Dropdown className="manageMyCollection-dropdownSelectAndAdd" placeholder="Tome(s) à ajouter" size="5" fluid multiple selection options={options} />
-      <div className="manageMyCollection-myCollectionTreeButtons">
-        <Button color="red">
-          Ajouter à ma collection
-        </Button>
-      </div>
-    </div>
+        <div className="manageMyCollection-mangaImageWrapper">
+          <Image
+            className="manageMyCollection-mangaImage"
+            src="https://images-na.ssl-images-amazon.com/images/I/91GSy4frSdL.jpg"
+            size="small"
+          />
+        </div>
 
-    <div className="manageMyCollection-myCollection">
-      <Header as="h2">
-        <Icon name="settings" />
-        <Header.Content>
-          Ma collection
-          <Header.Subheader>
-            Gérer la visibilité, l'édition, ou la suppression
-          </Header.Subheader>
-        </Header.Content>
-      </Header>
-    </div>
+        <div className="manageMyCollection-selectAndAdd">
+          <Dropdown className="manageMyCollection-dropdownSelectAndAdd" placeholder="Tome(s) à ajouter" size="5" fluid multiple selection options={options} />
+          <div className="manageMyCollection-addToMyCollection">
+            <Button color="red">Ajouter à ma collection</Button>
+          </div>
+        </div>
 
-    <Divider />
+        <Divider className="manageMyCollection-divider" />
 
-    <Header className="manageMyCollection-myCollectionTitleMangaOwner" as="h3">
-      Attaque des Titans
-    </Header>
+        <div className="manageMyCollection-myCollection">
+          <Header as="h2">
+            <Icon name="settings" />
+            <Header.Content>
+              Ma collection
+              <Header.Subheader>
+                Gérer la visibilité, l'édition, ou la suppression
+              </Header.Subheader>
+            </Header.Content>
+          </Header>
+        </div>
 
-    <Image
-      className="manageMyCollection-myCollectionTitleMangaOwnerImage"
-      src="https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/313968/313968._SX1280_QL80_TTD_.jpg"
-      size="small"
-      centered
-    />
+        <Divider />
 
-    <Dropdown
-      placeholder="Choisir le(s) tome(s)"
-      size="5"
-      fluid
-      multiple
-      selection
-      options={options}
-    />
-    <div className="manageMyCollection-myCollectionTreeButtons">
-      <Button color="black">
-        Disponibilité
-      </Button>
-      <Button color="black">
-        Éditer
-      </Button>
-      <Button color="red">
-        Supprimer
-      </Button>
-    </div>
+        
+
+        <div className="manageMyCollection-myCollectionItem">
+
+          <div className="manageMyCollection-itemContentWrapper">
+            <Image
+              className="manageMyCollection-myCollectionTitleMangaImage"
+              src="https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/313968/313968._SX1280_QL80_TTD_.jpg"
+              size="tiny"
+            />
+            <div className="manageMyCollection-myCollectionMangaInfoWrapper">
+              <h3 className="manageMyCollection-myCollectionTitleManga">Attaque des Titans</h3>
+              <h4 className="manageMyCollection-myCollectionAuthorManga">Auteur</h4>
+            </div>
+            <div className="manageMyCollection-myCollectionThreeButtons">
+              <Button color="black">
+                Disponibilité
+              </Button>
+              <Button color="black">
+                Éditer
+              </Button>
+              <Button color="red">
+                Supprimer
+              </Button>
+            </div>
+          </div>
+        </div>
+      </Card.Content>
+    </Card>
   </div>
 );
 
