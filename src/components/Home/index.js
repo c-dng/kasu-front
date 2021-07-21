@@ -11,9 +11,7 @@ import SearchExplained from './SearchExplained';
 const Home = ({ isLogged }) => (
   <div className="home">
     <div className="home-mainWrapper">
-      <div className='home-mainWrapperImage'>
-        <Image className="home-banner" src={homeBanner} />
-      </div>
+      <Image className="home-banner" src={homeBanner} />
       <div className="home-BannerTextButton">
         <h1 className="home-h1">BIENVENUE CHEZ KASU</h1>
         <p className="home-description">
