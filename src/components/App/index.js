@@ -24,7 +24,6 @@ import AlreadyAccountBox from '../AlreadyAccountBox';
 
 // == Composant
 const App = ({ theme, autoLogin }) => {
-  console.log(localStorage);
   const token = localStorage.getItem('token');
   if (token) {
     autoLogin();
@@ -82,6 +81,7 @@ const App = ({ theme, autoLogin }) => {
 
 App.propTypes = {
   theme: PropTypes.string.isRequired,
+  autoLogin: PropTypes.func.isRequired,
 };
 
 // == Export
