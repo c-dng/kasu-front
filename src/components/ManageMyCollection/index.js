@@ -1,3 +1,4 @@
+/* eslint-disable react/self-closing-comp */
 import React from 'react';
 import {
   Header, Divider, Icon, Image, Dropdown, Button, Card,
@@ -71,10 +72,10 @@ const ManageMyCollection = () => (
 
         <div className="manageMyCollection-myCollection">
           <Header as="h2">
-            <Icon name="settings" />
-            <Header.Content>
+            <Icon className="manageMyCollection-myCollectionIcon" name="settings" />
+            <Header.Content className="manageMyCollection-myCollectionHeaderContent">
               Ma collection
-              <Header.Subheader>
+              <Header.Subheader className="manageMyCollection-myCollectionSubHeader">
                 Gérer la visibilité, l'édition, ou la suppression
               </Header.Subheader>
             </Header.Content>
@@ -93,18 +94,50 @@ const ManageMyCollection = () => (
             />
             <div className="manageMyCollection-myCollectionMangaInfoWrapper">
               <h3 className="manageMyCollection-myCollectionTitleManga">Attaque des Titans - <span className="manageMyCollection-myCollectionAuthorManga">Auteur</span></h3>
-
             </div>
-            <div className="manageMyCollection-myCollectionThreeButtons">
-              <Button className="manageMyCollection-myCollectionButtons" compact>
+          </div>
+          <div className="manageMyCollection-myCollectionThreeButtons">
+            <div className="manageMyCollection-myCollectionButtonsSubGroup">
+              <Button className="manageMyCollection-myCollectionButtons" fluid>
                 Disponibilité
               </Button>
-              <Button className="manageMyCollection-myCollectionButtons" compact>
+              <div className="manageMyCollection-artificialMargin"></div>
+              <Button className="manageMyCollection-myCollectionButtons" fluid>
                 Éditer
               </Button>
-              <Button className="manageMyCollection-myCollectionButtons" compact>
-                Supprimer
+            </div>
+            <Button className="manageMyCollection-myCollectionButtons manageMyCollection-DeleteButton" fluid>
+              Supprimer
+            </Button>
+          </div>
+        </div>
+        <Divider className="manageMyCollection-divider" />
+        <div className="manageMyCollection-myCollectionItems">
+          <div className="manageMyCollection-myCollectionItem">
+
+            <div className="manageMyCollection-itemContentWrapper">
+              <Image
+                className="manageMyCollection-myCollectionTitleMangaImage"
+                src="https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/313968/313968._SX1280_QL80_TTD_.jpg"
+                size="tiny"
+              />
+              <div className="manageMyCollection-myCollectionMangaInfoWrapper">
+                <h3 className="manageMyCollection-myCollectionTitleManga">Attaque des Titans - <span className="manageMyCollection-myCollectionAuthorManga">Auteur</span></h3>
+              </div>
+            </div>
+            <div className="manageMyCollection-myCollectionThreeButtons">
+              <div className="manageMyCollection-myCollectionButtonsSubGroup">
+                <Button className="manageMyCollection-myCollectionButtons" fluid>
+                  Disponibilité
               </Button>
+                <div className="manageMyCollection-artificialMargin"></div>
+                <Button className="manageMyCollection-myCollectionButtons" fluid>
+                  Éditer
+              </Button>
+              </div>
+              <Button className="manageMyCollection-myCollectionButtons manageMyCollection-DeleteButton" fluid>
+                Supprimer
+            </Button>
             </div>
           </div>
         </div>
