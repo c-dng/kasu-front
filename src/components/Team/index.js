@@ -1,16 +1,17 @@
 import React from 'react';
 import { Card, Icon, Image } from 'semantic-ui-react';
-
+import alternativeBanner from 'src/assets/alternativeBanner.png';
 import './style.scss';
 
 const Team = () => (
   <div className="team">
+    <Image className="team-banner" src={alternativeBanner} />
     <h2>Notre équipe</h2>
-    <p>Loremloremloremloremlorem Loremloremlorem</p>
+    <p className="team-description">Pendant 4 mois nous avons appris le métier de développeur web, en mêlant théorie et pratique. Dans le cadre du projet de fin de formation, nous avons réalisé ce site en 1 mois : 1 semaine pour définir le cahier des charges, et 3 semaines à coder.</p>
 
     <div className="team-cardGlobal">
       <Card className="team-card">
-        <Image className="team-cardImage" src="https://react.semantic-ui.com/images/avatar/large/daniel.jpg" wrapped ui={false} size="small" />
+        <Image src="https://react.semantic-ui.com/images/avatar/large/daniel.jpg" wrapped ui={false} size="small" />
         <Card.Content>
           <Card.Header className="team-cardName">Olivier Y.</Card.Header>
           <Card.Description className="team-cardNameRole">

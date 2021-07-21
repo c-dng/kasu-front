@@ -6,11 +6,6 @@ div.team h2  {
   text-align: center;
 }
 
-// page description
-p {
-  text-align: center;
-}
-
 // global wrapper
 .team-cardGlobal {
   margin-top: 2em;
@@ -21,7 +16,12 @@ p {
 
 // the card
 .ui.card.team-card {
-  margin: auto;
+  margin: 1rem;
+}
+
+.team-description {
+  width: 80%;
+  margin: 0 auto;
 }
 
 // name of the collaborator
@@ -37,4 +37,8 @@ p {
 // link to GitHub profil
 .team-cardNameExtra {
   text-align: center;
+}
+
+.team-cardGlobal:last-child {
+  margin-bottom: 3rem;
 }

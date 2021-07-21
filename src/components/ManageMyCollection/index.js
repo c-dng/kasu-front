@@ -129,15 +129,15 @@ const ManageMyCollection = () => (
               <div className="manageMyCollection-myCollectionButtonsSubGroup">
                 <Button className="manageMyCollection-myCollectionButtons" fluid>
                   Disponibilité
-              </Button>
+                </Button>
                 <div className="manageMyCollection-artificialMargin"></div>
                 <Button className="manageMyCollection-myCollectionButtons" fluid>
                   Éditer
-              </Button>
+                </Button>
               </div>
               <Button className="manageMyCollection-myCollectionButtons manageMyCollection-DeleteButton" fluid>
                 Supprimer
-            </Button>
+              </Button>
             </div>
           </div>
         </div>
