@@ -214,7 +214,7 @@ const HomeCarousel = () => {
         }}
         showDots={false}
         sliderClass=""
-        slidesToSlide={2}
+        slidesToSlide={1}
         swipeable
       >
         {
