@@ -161,7 +161,8 @@ div.manageMyCollection-itemWrapperDesktopVersion {
   margin-bottom: 1rem;
 }
 
-// Media queries
+
+
 
 // Desktop and laptops
 @media only screen and (min-width : 1224px) {
@@ -175,7 +176,7 @@ div.manageMyCollection-itemWrapperDesktopVersion {
   div.ui.card.manageMyCollection-mainCard.manageMyCollection-mainCard {
     width: 70%;
     margin: 3em auto;
-    
+    border-radius: 1em;
   }
 
   div.manageMyCollection-mainCardContent {
@@ -188,8 +189,8 @@ div.manageMyCollection-itemWrapperDesktopVersion {
   }
 
   div.manageMyCollection-firstBlocDesktopVersion {
-    border: 1px solid black;
     border-radius: 1.5em;
+    border: 1px solid;
   }
 
   h3.manageMyCollection-subHeader, div.header.manageMyCollection-mainCardHeader {
@@ -199,6 +200,7 @@ div.manageMyCollection-itemWrapperDesktopVersion {
   div.manageMyCollection-wrapperDesktopVersion {
     display: flex;
     margin-bottom: 1em;
+    align-items: flex-end;
   }
 
   div.manageMyCollection-cardDesktopVersion {
@@ -206,9 +208,8 @@ div.manageMyCollection-itemWrapperDesktopVersion {
   }
 
   div.manageMyCollection-secondBlocDesktopVersion {
-    border: 1px solid black;
     border-radius: 1.5em;
-    margin-top: 1em;
+    margin-top: 3em;
     }
 
   div.manageMyCollection-myCollection.manageMyCollection-myCollection {
@@ -216,31 +217,51 @@ div.manageMyCollection-itemWrapperDesktopVersion {
     margin-bottom: 1rem;
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
-    background-color: black;
     width: auto;
     text-align: center;
   }
 
-  h2.ui.header {
+  div.content.manageMyCollection-myCollectionHeaderContent {
     padding: 0;
-    background-color: black;
-    color: white;
+    margin: auto;
   }
 
   div.content.manageMyCollection-myCollectionHeaderContent {
     padding: 0; 
   }
 
-  div.sub.header.manageMyCollection-myCollectionSubHeader {
-    color: white;
-  }
-
   div.manageMyCollection-itemWrapperDesktopVersion {
     display: flex;
+    flex-wrap: wrap;
   }
 
   div.manageMyCollection-itemDesktopVersion {
     width: 25%;
+  }
+
+  div.manageMyCollection-myCollectionThreeButtons {
+    width: fit-content;
+  }
+
+  h2.ui.header {
+    display: inline-block;
+  }
+
+  div.manageMyCollection-secondBlocDesktopVersion {
+    border: 1px solid vars.$primaryBorderColor_theme1;
+    }
+
+  div.manageMyCollection-firstBlocDesktopVersion {
+    border: 1px solid vars.$primaryBorderColor_theme1;
+  }
+
+  div.content.manageMyCollection-myCollectionHeaderContent {
+    background-color: vars.$secondaryColor_theme1;
+    color: vars.$secondaryFontColor_theme1;
+  }
+
+  div.manageMyCollection-myCollection.manageMyCollection-myCollection {
+    background-color: vars.$secondaryColor_theme1;
   }
 }
 
@@ -271,7 +292,7 @@ div.manageMyCollection-itemWrapperDesktopVersion {
   .manageMyCollection-addToMyCollectionButton.manageMyCollection-addToMyCollectionButton.manageMyCollection-addToMyCollectionButton {
     background-color: vars.$primaryColor_theme1;
     color: vars.$primaryFontColor_theme1;
-    border: 1px solid vars.$primaryBorderColor_theme1;
+    border-color: vars.$primaryBorderColor_theme1;
   }
 
   .manageMyCollection-myCollectionButtons.manageMyCollection-myCollectionButtons.manageMyCollection-myCollectionButtons {
@@ -294,11 +315,27 @@ div.manageMyCollection-itemWrapperDesktopVersion {
     background-color: vars.$secondaryColor_theme1;
   }
 
+  i.settings.icon.manageMyCollection-myCollectionIcon {
+    color: vars.$secondaryColor_theme1;
+  }
+
+  div.sub.header.manageMyCollection-myCollectionSubHeaderTwo.manageMyCollection-myCollectionSubHeaderTwo {
+    color: vars.$primaryFontColor_theme1;
+  } 
+  
+  div.content.manageMyCollection-myCollectionHeaderContent {
+    background-color: vars.$primaryColor_theme1;
+    color: vars.$primaryFontColor_theme1;
+  }
+
+  div.manageMyCollection-myCollection.manageMyCollection-myCollection {
+    background-color: vars.$primaryColor_theme1;
+  }
+  
 }
 
 
 .theme2 {
-
 
   .manageMyCollection-mainCard.manageMyCollection-mainCard.manageMyCollection-mainCard.manageMyCollection-mainCard {
     background-color: vars.$primaryColor_theme2;
@@ -343,6 +380,31 @@ div.manageMyCollection-itemWrapperDesktopVersion {
   div.header.manageMyCollection-mainCardHeader.manageMyCollection-mainCardHeader.manageMyCollection-mainCardHeader {
     color: vars.$secondaryFontColor_theme2;
     background-color: vars.$secondaryColor_theme2;
+  }
+
+  i.settings.icon.manageMyCollection-myCollectionIcon {
+    color: vars.$primaryColor_theme2;
+  }
+
+  div.sub.header.manageMyCollection-myCollectionSubHeaderTwo.manageMyCollection-myCollectionSubHeaderTwo {
+    color: vars.$primaryColor_theme2;
+  }
+
+  div.content.manageMyCollection-myCollectionHeaderContent {
+    background-color: vars.$secondaryColor_theme2;
+    color: vars.$secondaryFontColor_theme2;
+  }
+
+  div.manageMyCollection-myCollection.manageMyCollection-myCollection {
+    background-color: vars.$secondaryColor_theme2;
+  }
+
+  div.manageMyCollection-secondBlocDesktopVersion {
+    border: 1px solid vars.$primaryBorderColor_theme2;
+    }
+
+  div.manageMyCollection-firstBlocDesktopVersion {
+    border: 1px solid vars.$primaryBorderColor_theme2;
   }
 
 }

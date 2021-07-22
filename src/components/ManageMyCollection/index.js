@@ -23,7 +23,7 @@ const ManageMyCollection = () => (
   <div className="manageMyCollection">
     <Image className="manageMyCollection-banner" src={alternativeBanner} />
     <Card className="manageMyCollection-mainCard">
-      <Card.Content className="manageMyCollection-mainCardContent">
+      <div className="manageMyCollection-mainCardContent">
 
           <div className="manageMyCollection-firstBlocDesktopVersion">
               <Card.Header className="manageMyCollection-mainCardHeader">Gestion des collections</Card.Header>
@@ -111,6 +111,7 @@ const ManageMyCollection = () => (
                     </div>
                   </div>
                </div>
+               
                 <Divider className="manageMyCollection-divider-MobileVersion" />
           </div>
           <div className="manageMyCollection-secondBlocDesktopVersion">
@@ -119,7 +120,7 @@ const ManageMyCollection = () => (
                   <Icon className="manageMyCollection-myCollectionIcon" name="settings" />
                   <Header.Content className="manageMyCollection-myCollectionHeaderContent">
                     Ma collection
-                    <Header.Subheader className="manageMyCollection-myCollectionSubHeader">
+                    <Header.Subheader className="manageMyCollection-myCollectionSubHeaderTwo">
                       Gérer la visibilité, l'édition, ou la suppression
                     </Header.Subheader>
                   </Header.Content>
@@ -190,7 +191,7 @@ const ManageMyCollection = () => (
                 </div>
             </div>
           </div>   
-      </Card.Content>
+      </div>
     </Card>
   </div>
 );
