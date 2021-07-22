@@ -27,7 +27,7 @@ const authMiddleware = (store) => (next) => (action) => {
       break;
     }
     case LOGOUT_USER:
-
+      localStorage.removeItem('token');
       delete axiosInstance.defaults.headers.common.Authorization;
       next(action);
       break;
