@@ -19,7 +19,6 @@ import LegalNotice from 'src/components/LegalNotice';
 
 import './style.scss';
 import { Route, Switch } from 'react-router-dom';
-import NoAccountBox from '../NoAccountBox';
 import AlreadyAccountBox from '../AlreadyAccountBox';
 
 // == Composant
@@ -40,7 +39,6 @@ const App = ({ theme, autoLogin }) => {
         </Route>
         <Route path="/login" exact>
           <LoginForm />
-          <NoAccountBox />
           <Footer />
         </Route>
         <Route path="/register" exact>
