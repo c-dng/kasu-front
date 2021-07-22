@@ -5,7 +5,7 @@ import './style.scss';
 const SearchBar = () => (
   <div className="searchbar">
     <div className="searchbar-searchWrapper">
-      <Search fluid />
+      <Search />
     </div>
   </div>
 );
