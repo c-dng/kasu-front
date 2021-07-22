@@ -41,17 +41,15 @@ div.header.noAccount-cardHeader.noAccount-cardHeader.noAccount-cardHeader {
   border-top-right-radius: 1rem;
 }
 
+
+// Media Queries
+
+//Desktop-laptops
 @media only screen and (min-width : 1224px) {
 
   div.noAccountBox {
     margin: 0;
 
-  }
-
-  .loginform-banner {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
   }
   
 

@@ -21,8 +21,9 @@ div.alreadyAccountBox {
 }
 
 div.ui.card.alreadyAccountBox-card {
-  width: 80%;
+  width: 100%;
   border-radius: 1rem;
+
 }
 
 div.content.alreadyAccountBox-cardContent.alreadyAccountBox-cardContent.alreadyAccountBox-cardContent {
@@ -40,6 +41,31 @@ div.header.alreadyAccountBox-cardHeader.alreadyAccountBox-cardHeader.alreadyAcco
 
 form.ui.form.contactForm-form.contactForm-form.contactForm-form {
   padding: 1rem;
+}
+
+// Media Queries
+
+//Desktop-laptops
+@media only screen and (min-width : 1224px) {
+
+  div.alreadyAccountBox {
+    margin-top: 3rem;
+
+  }
+
+  .loginform-banner {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+  
+
+  // Theming media query
+
+
+
+
+
 }
 
 // Theming 
