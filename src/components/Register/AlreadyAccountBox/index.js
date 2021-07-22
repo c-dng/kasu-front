@@ -5,7 +5,7 @@ import './style.scss';
 
 const AlreadyAccountBox = () => (
   <div className="alreadyAccountBox">
-    <Card className="alreadyAccountBox-card" centered>
+    <Card className="alreadyAccountBox-card">
       <Card.Content className="alreadyAccountBox-cardContent">
         <Card.Header className="alreadyAccountBox-cardHeader" text-align="center">Vous possédez déjà un compte ?</Card.Header>
         {/* the {+true} is used to resolve an error linked to semantic-ui and the "exact"
