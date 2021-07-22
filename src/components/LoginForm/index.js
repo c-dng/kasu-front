@@ -1,3 +1,4 @@
+/* eslint-disable react/self-closing-comp */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -9,6 +10,7 @@ import './style.scss';
 
 import alternativeBanner from 'src/assets/alternativeBanner.png';
 import { Redirect } from 'react-router-dom';
+import NoAccountBox from './NoAccountBox';
 
 const LoginForm = ({
   email,
@@ -36,27 +38,31 @@ const LoginForm = ({
   return (
     <div className="loginform">
       <Image className="loginform-banner" src={alternativeBanner} />
-      <Card className="loginform-card" centered>
-        <Card.Content className="loginform-cardContent">
-          <Card.Header className="loginform-cardHeader" text-align="center">Connexion</Card.Header>
-          <Form className="loginform-form" onSubmit={handleSubmit}>
-            <Form.Field>
-              <label htmlFor="email" className="loginform-fieldLabel">Email</label>
-              <Form.Input className="loginform-field" type="text" id="email" name="email" onChange={handleChangeEmail} value={email} />
-
-            </Form.Field>
-            <Form.Field>
-              <label htmlFor="password" className="loginform-fieldLabel">Mot de passe</label>
-              <Form.Input className="loginform-field" id="password" name="password" onChange={handleChangePassword} value={password} />
-
-            </Form.Field>
-            <Form.Field>
-              <Icon name="question" /> Mot de passe oublié
-            </Form.Field>
-            <Button className="login-button" type="submit">Se connecter</Button>
-          </Form>
-        </Card.Content>
-      </Card>
+      <div className="loginform-ImageAndGlobalWrapper">
+        <div className="loginform-desktopImage"></div>
+        <div className="loginform-globalContentWrapper">
+          <Card className="loginform-card" centered>
+            <Card.Content className="loginform-cardContent">
+              <Card.Header className="loginform-cardHeader" text-align="center">Connexion</Card.Header>
+              <Form className="loginform-form" onSubmit={handleSubmit}>
+                <Form.Field>
+                  <label htmlFor="email" className="loginform-fieldLabel">Email</label>
+                  <Form.Input className="loginform-field" type="text" id="email" name="email" onChange={handleChangeEmail} value={email} />
+                </Form.Field>
+                <Form.Field>
+                  <label htmlFor="password" className="loginform-fieldLabel">Mot de passe</label>
+                  <Form.Input className="loginform-field" id="password" name="password" onChange={handleChangePassword} value={password} />
+                </Form.Field>
+                <Form.Field>
+                  <Icon name="question" /> Mot de passe oublié
+                </Form.Field>
+                <Button className="login-button" type="submit">Se connecter</Button>
+              </Form>
+            </Card.Content>
+          </Card>
+          <NoAccountBox />
+        </div>
+      </div>
     </div>
   );
 };
