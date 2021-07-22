@@ -39,6 +39,47 @@ form.contactForm-form {
   border-bottom-right-radius: 1rem;
 }
 
+// Media Queries
+
+//Desktop-laptops
+@media only screen and (min-width : 1224px) {
+
+
+  .contactForm-banner {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+
+  div.ui.centered.card.contactForm-card {
+    width: 70%;
+    margin-left: 3rem;
+    margin-top: 0;
+  }
+  
+  .contactForm-globalContentWrapper {
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    margin: 3rem auto;
+  }
+  .contactForm-desktopImage {
+    background-image: url('src/assets/desktopImage.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 70%;
+    // height: 550px;
+
+  }
+
+  // Theming media query
+
+
+
+
+
+}
+
 // Theming 
 
 .theme1 {

@@ -1,94 +1,125 @@
+// General
+
 @use '/src/styles/vars';
 
 div.ui.centered.card.legalNotice-card {
-    width: 80%;
-    border-radius: 1rem;
-    margin-top: 3rem;
+  width: 80%;
+  border-radius: 1rem;
+  margin-top: 3rem;
 }
 
 div.legalNotice {
-    margin-bottom: 3rem;
+  margin-bottom: 3rem;
 }
 
 div.header.legalNotice-cardHeader.legalNotice-cardHeader.legalNotice-cardHeader {
-    padding: 1rem;
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
-    text-align: center;
-  }
-
-div.content.legalNotice-cardContent.legalNotice-cardContent.legalNotice-cardContent {
-    padding: 0;
-  }
-
-div.description.legalNotice-cardDescription.legalNotice-cardDescription.legalNotice-cardDescription {
-    border-bottom-left-radius: 1rem;
-    border-bottom-right-radius: 1rem;
-    padding: 1rem;
+  padding: 1rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  text-align: center;
 }
 
-p.legalNotice-creationDate, li, p.legalNotice-link {
-    text-align: center;
+div.content.legalNotice-cardContent.legalNotice-cardContent.legalNotice-cardContent {
+  padding: 0;
+}
+
+div.description.legalNotice-cardDescription.legalNotice-cardDescription.legalNotice-cardDescription {
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  padding: 1rem;
+}
+
+p.legalNotice-creationDate,
+li,
+p.legalNotice-link {
+  text-align: center;
 }
 
 p {
-    text-align: justify;
+  text-align: justify;
 }
 
 h2.legalNotice-h2 {
-    font-size: 1.2em;
-    text-align: center;
+  font-size: 1.2em;
+  text-align: center;
 }
+
+// Media Queries
+
+//Desktop-laptops
+@media only screen and (min-width : 1224px) {
+
+
+  .legalNotice-banner {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+
+  div.ui.centered.card.legalNotice-card {
+    width: 70%;
+  }
+  
+
+  // Theming media query
+
+
+
+
+
+}
+
+// Theming 
 
 .theme1 {
 
-    div.header.legalNotice-cardHeader.legalNotice-cardHeader.legalNotice-cardHeader {
-      color: vars.$secondaryFontColor_theme1;
-      background-color: vars.$secondaryColor_theme1;
-    }
-  
-    div.legalNotice {
-      background-color: vars.$primaryColor_theme1;
-    }
-  
-    div.ui.centered.card.legalNotice-card {
-      border: 1px solid vars.$primaryBorderColor_theme1;
-    }
-
-    h2.legalNotice-h2 {
-        font-size: 1.2em;
-        color: vars.$primaryFontColor_theme1;
-        text-align: center;
-    }
-
-    div.description.legalNotice-cardDescription.legalNotice-cardDescription.legalNotice-cardDescription  {
-        color: vars.$primaryFontColor_theme1;
-    }
+  div.header.legalNotice-cardHeader.legalNotice-cardHeader.legalNotice-cardHeader {
+    color: vars.$secondaryFontColor_theme1;
+    background-color: vars.$secondaryColor_theme1;
   }
 
-  .theme2 {
-
-    div.header.legalNotice-cardHeader.legalNotice-cardHeader.legalNotice-cardHeader {
-        color: vars.$secondaryFontColor_theme2;
-        background-color: vars.$secondaryColor_theme2;
-    }
-  
-    div.legalNotice {
-      background-color: vars.$primaryColor_theme2;
-    }
-  
-    div.ui.centered.card.legalNotice-card {
-      border: 1px solid vars.$primaryBorderColor_theme2;
-    }
-
-    h2.legalNotice-h2 {
-        font-size: 1.2em;
-        color: vars.$primaryFontColor_theme2;
-        text-align: center;
-    }
-
-    div.description.legalNotice-cardDescription.legalNotice-cardDescription.legalNotice-cardDescription  {
-        color: vars.$primaryFontColor_theme2;
-        background-color: vars.$primaryColor_theme2;
-    }
+  div.legalNotice {
+    background-color: vars.$primaryColor_theme1;
   }
+
+  div.ui.centered.card.legalNotice-card {
+    border: 1px solid vars.$primaryBorderColor_theme1;
+  }
+
+  h2.legalNotice-h2 {
+    font-size: 1.2em;
+    color: vars.$primaryFontColor_theme1;
+    text-align: center;
+  }
+
+  div.description.legalNotice-cardDescription.legalNotice-cardDescription.legalNotice-cardDescription {
+    color: vars.$primaryFontColor_theme1;
+  }
+}
+
+.theme2 {
+
+  div.header.legalNotice-cardHeader.legalNotice-cardHeader.legalNotice-cardHeader {
+    color: vars.$secondaryFontColor_theme2;
+    background-color: vars.$secondaryColor_theme2;
+  }
+
+  div.legalNotice {
+    background-color: vars.$primaryColor_theme2;
+  }
+
+  div.ui.centered.card.legalNotice-card {
+    border: 1px solid vars.$primaryBorderColor_theme2;
+  }
+
+  h2.legalNotice-h2 {
+    font-size: 1.2em;
+    color: vars.$primaryFontColor_theme2;
+    text-align: center;
+  }
+
+  div.description.legalNotice-cardDescription.legalNotice-cardDescription.legalNotice-cardDescription {
+    color: vars.$primaryFontColor_theme2;
+    background-color: vars.$primaryColor_theme2;
+  }
+}
