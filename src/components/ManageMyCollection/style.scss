@@ -1,6 +1,8 @@
 @use '/src/styles/vars';
 
-
+div.ui.card.manageMyCollection {
+  margin: 0;
+}
 
 h3.manageMyCollection-myCollectionTitleManga {
   font-size: 1rem;
@@ -13,8 +15,6 @@ h3.manageMyCollection-myCollectionTitleManga {
   margin-top: 0;
   color: #c1c1c1;
 }
-
-
 
 .manageMyCollection-itemContentWrapper.manageMyCollection-itemContentWrapper.manageMyCollection-itemContentWrapper {
   display: flex;
@@ -64,6 +64,12 @@ div.content.manageMyCollection-mainCardContent.manageMyCollection-mainCardConten
 }
 
 .manageMyCollection-divider.manageMyCollection-divider.manageMyCollection-divider {
+  width: 80%;
+  margin: 1rem auto;
+  background-color: black;
+}
+
+div.ui.divider.manageMyCollection-divider-MobileVersion {
   width: 80%;
   margin: 1rem auto;
   background-color: black;
@@ -149,6 +155,93 @@ h2.ui.header {
 
 .manageMyCollection-addToMyCollectionButton.manageMyCollection-addToMyCollectionButton.manageMyCollection-addToMyCollectionButton {
   border-radius: 1rem;
+}
+
+div.manageMyCollection-itemWrapperDesktopVersion {
+  margin-bottom: 1rem;
+}
+
+// Media queries
+
+// Desktop and laptops
+@media only screen and (min-width : 1224px) {
+
+  .manageMyCollection-banner.manageMyCollection-banner.manageMyCollection-banner {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+
+  div.ui.card.manageMyCollection-mainCard.manageMyCollection-mainCard {
+    width: 70%;
+    margin: 3em auto;
+    
+  }
+
+  div.manageMyCollection-mainCardContent {
+    display: flex;
+    flex-direction: column;
+  }
+
+  div.ui.divider.manageMyCollection-divider-MobileVersion.manageMyCollection-divider-MobileVersion {
+    display: none;
+  }
+
+  div.manageMyCollection-firstBlocDesktopVersion {
+    border: 1px solid black;
+    border-radius: 1.5em;
+  }
+
+  h3.manageMyCollection-subHeader, div.header.manageMyCollection-mainCardHeader {
+    font-size: x-large;
+  }
+
+  div.manageMyCollection-wrapperDesktopVersion {
+    display: flex;
+    margin-bottom: 1em;
+  }
+
+  div.manageMyCollection-cardDesktopVersion {
+    width: 25%;
+  }
+
+  div.manageMyCollection-secondBlocDesktopVersion {
+    border: 1px solid black;
+    border-radius: 1.5em;
+    margin-top: 1em;
+    }
+
+  div.manageMyCollection-myCollection.manageMyCollection-myCollection {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    background-color: black;
+    width: auto;
+    text-align: center;
+  }
+
+  h2.ui.header {
+    padding: 0;
+    background-color: black;
+    color: white;
+  }
+
+  div.content.manageMyCollection-myCollectionHeaderContent {
+    padding: 0; 
+  }
+
+  div.sub.header.manageMyCollection-myCollectionSubHeader {
+    color: white;
+  }
+
+  div.manageMyCollection-itemWrapperDesktopVersion {
+    display: flex;
+  }
+
+  div.manageMyCollection-itemDesktopVersion {
+    width: 25%;
+  }
 }
 
 // Theming
@@ -253,3 +346,34 @@ h2.ui.header {
   }
 
 }
+
+/*
+<div className="manageMyCollection-myCollectionItems">
+                  <div className="manageMyCollection-myCollectionItem">
+                    <div className="manageMyCollection-itemContentWrapper">
+                      <Image
+                        className="manageMyCollection-myCollectionTitleMangaImage"
+                        src="https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/313968/313968._SX1280_QL80_TTD_.jpg"
+                        size="tiny"
+                        />
+                      <div className="manageMyCollection-myCollectionMangaInfoWrapper">
+                        <h3 className="manageMyCollection-myCollectionTitleManga">Attaque des Titans - <span className="manageMyCollection-myCollectionAuthorManga">Auteur</span></h3>
+                      </div>
+                    </div>
+                    <div className="manageMyCollection-myCollectionThreeButtons">
+                      <div className="manageMyCollection-myCollectionButtonsSubGroup">
+                        <Button className="manageMyCollection-myCollectionButtons" fluid>
+                          Disponibilité
+                        </Button>
+                        <div className="manageMyCollection-artificialMargin"></div>
+                        <Button className="manageMyCollection-myCollectionButtons" fluid>
+                          Éditer
+                        </Button>
+                      </div>
+                      <Button className="manageMyCollection-myCollectionButtons manageMyCollection-DeleteButton" fluid>
+                        Supprimer
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+*/
