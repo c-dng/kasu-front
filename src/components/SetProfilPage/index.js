@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  Image, TextArea, Button, Form, Radio, Container, Modal, Header, Icon, Input,
+  Image, TextArea, Button, Form, Radio, Container, Modal, Header, Icon, Input, Label
 } from 'semantic-ui-react';
 import './style.scss';
 import alternativeBanner from 'src/assets/alternativeBanner.png';
@@ -65,7 +65,8 @@ const SetProfilPage = () => {
               <Form.Input placeholder="Ville" />
             </Form.Group>
             <Form.Group className="setProfilPage-fourthPartHolidayMode">
-              <Radio size='mini' label='Mode vacances' toggle />
+            <Label className="setProfilPage-fourthPartHolidayModeLabel">Mode vacances: </Label>
+              <Radio size='mini' toggle />
             </Form.Group>
           </Form>
         </div>

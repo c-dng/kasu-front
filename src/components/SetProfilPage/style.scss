@@ -128,8 +128,6 @@ div.ui.modal.transition.visible.active.setProfilPage-sixthPartModalDeleteAccount
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
   text-align: center;
-  font-size: 1.29rem;
-  margin-top: -.21425em;
   font-family: Lato,Helvetica Neue,Arial,Helvetica,sans-serif;
 }
 
@@ -151,61 +149,70 @@ div.ui.modal.transition.visible.active.setProfilPage-sixthPartModalDeleteAccount
   }
 
   div.ui.mini.left.attached.button.setProfilPage-thirdPartEmailButton {
-    border: 1px solid black;
-    background-color: white;
-    color: black;
+    border: 1px solid vars.$primaryBorderColor_theme1;
+    background-color: vars.$primaryColor_theme1;
+    color: vars.$primaryFontColor_theme1;
   }
 
   div.ui.mini.right.attached.button.setProfilPage-thirdPartPasswordButton {
-    border: 1px solid black;
-    background-color: white;
-    color: black;
+    border: 1px solid vars.$primaryBorderColor_theme1;
+    background-color: vars.$primaryColor_theme1;
+    color: vars.$primaryFontColor_theme1;
   }
 
   button.ui.button.setProfilPage-fifthPartCancelButton.setProfilPage-fifthPartCancelButton {
-    border: 1px solid black;
-    background-color: white;
-    color: black;
+    border: 1px solid vars.$primaryBorderColor_theme1;
+    background-color: vars.$primaryColor_theme1;
+    color: vars.$primaryFontColor_theme1;
   }
 
   .setProfilPage-h1.setProfilPage-h1.setProfilPage-h1 {
-    color: white;
-    background-color: black;
-    border: 1px solid white;
+    color: vars.$secondaryFontColor_theme1;
+    background-color: vars.$secondaryColor_theme1;
+  }
+
+  div.ui.label.setProfilPage-fourthPartHolidayModeLabel {
+  background-color: vars.$primaryColor_theme1;
+  color: vars.$primaryFontColor_theme1;
   }
 }
 
 .theme2 {
 
   .setProfilPage-mainWrapper {
-    border: 1px solid rgb(212 212 213);
+    border: 1px solid vars.$primaryBorderColor_theme2;
   }
 
   img.ui.tiny.image.setProfilPageFirstPartImage {
-    border: 1px solid black;
+    border: 1px solid vars.$primaryBorderColor_theme2;
+    background-color: vars.$primaryColor_theme2;
   }
 
   div.ui.mini.left.attached.button.setProfilPage-thirdPartEmailButton {
-    border: 1px solid black;
-    background-color: white;
-    color: black;
+    border: 1px solid vars.$primaryBorderColor_theme2;
+    background-color: vars.$primaryColor_theme2;
+    color: vars.$primaryFontColor_theme2;
   }
 
   div.ui.mini.right.attached.button.setProfilPage-thirdPartPasswordButton {
-    border: 1px solid black;
-    background-color: white;
-    color: black;
+    border: 1px solid vars.$primaryBorderColor_theme2;
+    background-color: vars.$primaryColor_theme2;
+    color: vars.$primaryFontColor_theme2;
   }
 
   button.ui.button.setProfilPage-fifthPartCancelButton.setProfilPage-fifthPartCancelButton {
-    border: 1px solid black;
-    background-color: white;
-    color: black;
+    border: 1px solid vars.$primaryBorderColor_theme2;
+    background-color: vars.$primaryColor_theme2;
+    color: vars.$primaryFontColor_theme2;
   }
 
   .setProfilPage-h1.setProfilPage-h1.setProfilPage-h1 {
-    color: white;
-    background-color: black;
-    border: 1px solid white;
+    color: vars.$secondaryFontColor_theme2;
+    background-color: vars.$secondaryColor_theme2;
+  }
+
+  div.ui.label.setProfilPage-fourthPartHolidayModeLabel {
+  background-color: vars.$primaryColor_theme2;
+  color: vars.$primaryFontColor_theme2;
   }
 }
