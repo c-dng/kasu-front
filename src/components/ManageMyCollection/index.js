@@ -5,7 +5,7 @@ import {
 } from 'semantic-ui-react';
 import SearchBar from 'src/components/SearchBar';
 import './style.scss';
-import alternativeBanner from 'src/assets/alternativeBanner.png';
+import alternativeBanner from 'src/assets/images/alternativeBanner.png';
 
 const options = [
   { key: 't1', value: 'T1', text: '1' },

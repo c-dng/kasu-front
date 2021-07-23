@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Icon, Image } from 'semantic-ui-react';
-import alternativeBanner from 'src/assets/alternativeBanner.png';
+import alternativeBanner from 'src/assets/images/alternativeBanner.png';
 import './style.scss';
 
 const Team = () => (

@@ -4,10 +4,10 @@ import {
   Button, Grid, Image, Transition,
 } from 'semantic-ui-react';
 import Conversation from './Conversation';
-import convButtonWhite from './conversations-button-white.png';
-import newMessageWhite from './new-message-white.png';
-import searchWhite from './search-white.png';
-import helpWhite from './help-white.png';
+import convButtonWhite from 'src/assets/images/conversations-button-white.png';
+import newMessageWhite from 'src/assets/images/new-message-white.png';
+import searchWhite from 'src/assets/images/search-white.png';
+import helpWhite from 'src/assets/images/help-white.png';
 import './style.scss';
 import classNames from 'classnames';
 

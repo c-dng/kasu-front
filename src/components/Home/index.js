@@ -7,7 +7,7 @@ import {
 } from 'semantic-ui-react';
 import './style.scss';
 
-import homeBanner from './homeBanner.jpg';
+import homeBanner from 'src/assets/images/homeBanner.jpg';
 import SearchExplained from './SearchExplained';
 import HomeCarousel from './HomeCarousel';
 
