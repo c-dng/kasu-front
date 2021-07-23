@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  Image, Container, Button, Select, Divider, Form, Icon, Header,
+  Image, Container, Button, Divider, Icon, Header,
 } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import './style.scss';
@@ -74,18 +74,15 @@ const ViewProfilPage = () => {
             </Container>
           </div>
 
-
-
-
           <Divider className="viewProfilPage-divider" />
           <div className="manageMyCollection-myCollection">
             <Header as="h2">
               <Icon className="viewProfilPage-myCollectionIcon" name="settings" />
               <Header.Content className="viewProfilPage-myCollectionHeaderContent">
                 Ma collection
-              <Header.Subheader className="viewProfilPage-myCollectionSubHeaderTwo">
+                <Header.Subheader className="viewProfilPage-myCollectionSubHeaderTwo">
                   Gérer la visibilité, l'édition, ou la suppression
-              </Header.Subheader>
+                </Header.Subheader>
               </Header.Content>
             </Header>
           </div>
@@ -105,15 +102,15 @@ const ViewProfilPage = () => {
               <div className="viewProfilPage-myCollectionButtonsSubGroup">
                 <Button className="viewProfilPage-myCollectionButtons" fluid>
                   Disponibilité
-              </Button>
+                </Button>
                 <div className="viewProfilPage-artificialMargin" />
                 <Button className="viewProfilPage-myCollectionButtons" fluid>
                   Éditer
-              </Button>
+                </Button>
               </div>
               <Button className="viewProfilPage-myCollectionButtons viewProfilPage-DeleteButton" fluid>
                 Supprimer
-            </Button>
+              </Button>
             </div>
           </div>
           <Divider className="viewProfilPage-divider" />
@@ -132,15 +129,15 @@ const ViewProfilPage = () => {
               <div className="viewProfilPage-myCollectionButtonsSubGroup">
                 <Button className="viewProfilPage-myCollectionButtons" fluid>
                   Disponibilité
-              </Button>
+                </Button>
                 <div className="viewProfilPage-artificialMargin" />
                 <Button className="viewProfilPage-myCollectionButtons" fluid>
                   Éditer
-              </Button>
+                </Button>
               </div>
               <Button className="viewProfilPage-myCollectionButtons viewProfilPage-DeleteButton" fluid>
                 Supprimer
-            </Button>
+              </Button>
             </div>
           </div>
           <Divider className="viewProfilPage-divider" />
@@ -150,8 +147,6 @@ const ViewProfilPage = () => {
           </div>
         </MediaQuery>
       </div>
-
-
 
       <MediaQuery minWidth={1224}>
         <DesktopMyCollectionProfile />

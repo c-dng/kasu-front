@@ -5,13 +5,25 @@ import {
 import './style.scss';
 import alternativeBanner from 'src/assets/images/alternativeBanner.png';
 import logo from 'src/assets/images/logo2.png';
+import DesktopSetIdCard from './DesktopSetIdCard';
+
 
 const SetProfilPage = () => {
   const [open, setOpen] = React.useState(false);
 
   return (
     <div className="setProfilPage">
+
       <Image className="registerForm-banner" src={alternativeBanner} />
+      <div className="viewProfilPage">
+        <Image className="registerForm-banner" src={alternativeBanner} />
+        <div className="viewProfilPage-mainWrapper">
+
+          <h1 className="setProfilPage-h1">Mon profil</h1>
+          <DesktopSetIdCard />
+        </div>
+      </div>
+
       <div className="setProfilPage-mainWrapper">
         <div className="setProfilPage-firstPart">
           <h1 className="setProfilPage-h1">Mon profil</h1>
@@ -39,7 +51,7 @@ const SetProfilPage = () => {
                   <Icon name="at" />
                   <input />
                 </Input>
-)}
+              )}
               actions={['Annuler', { key: 'valider', content: 'Valider', positive: true }]}
             />
             <Modal
@@ -71,7 +83,7 @@ const SetProfilPage = () => {
           </Form>
         </div>
         <div className="setProfilPage-fifthPart">
-          <Button.Group size="tiny" centered>
+          <Button.Group size="tiny">
             <Button className="setProfilPage-fifthPartCancelButton setProfilPage-fifthPartCancelButton">Annuler</Button>
             <Button className="setProfilPage-fifthPartValidateButton" positive>Valider</Button>
           </Button.Group>
