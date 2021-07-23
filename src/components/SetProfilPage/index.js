@@ -66,11 +66,11 @@ const SetProfilPage = () => {
         <div className="setProfilPage-fourthPart setProfilPage-padding">
           <Form size="mini">
             <Form.Group unstackable widths={2}>
-              <Form.Input placeholder="Nom" />
               <Form.Input placeholder="Prénom" />
+              <Form.Input placeholder="Nom" />
             </Form.Group>
             <Form.Group>
-              <Form.Input className="setProfilPage-fourthPartAdress" placeholder="Address" />
+              <Form.Input className="setProfilPage-fourthPartAdress" placeholder="Adresse" />
             </Form.Group>
             <Form.Group unstackable widths={2}>
               <Form.Input placeholder="Code Postal" />
