@@ -8,6 +8,7 @@ import alternativeBanner from 'src/assets/images/alternativeBanner.png';
 
 import MediaQuery from 'react-responsive';
 import DesktopIdCard from './DesktopIdCard';
+import DesktopMyCollectionProfile from './DesktopMyCollectionProfile';
 
 const ViewProfilPage = () => {
   const availableTomes = [
@@ -25,7 +26,9 @@ const ViewProfilPage = () => {
       <div className="viewProfilPage-mainWrapper">
 
         <h1 className="setProfilPage-h1">Mon profil</h1>
-
+        <MediaQuery minWidth={1224}>
+          <DesktopIdCard />
+        </MediaQuery>
         <MediaQuery maxWidth={1223}>
           <Image className="viewProfilPage-firstPartImage" src="https://react.semantic-ui.com/images/avatar/large/steve.jpg" size="tiny" />
           <Button className="viewProfilPage-firstPartAddButton" circular>+</Button>
@@ -70,84 +73,90 @@ const ViewProfilPage = () => {
               <p>Désactivé</p>
             </Container>
           </div>
-        </MediaQuery>
 
-        <MediaQuery minWidth={1224}>
-          <DesktopIdCard />
-        </MediaQuery>
 
-        <Divider className="viewProfilPage-divider" />
-        <div className="manageMyCollection-myCollection">
-          <Header as="h2">
-            <Icon className="viewProfilPage-myCollectionIcon" name="settings" />
-            <Header.Content className="viewProfilPage-myCollectionHeaderContent">
-              Ma collection
+
+
+          <Divider className="viewProfilPage-divider" />
+          <div className="manageMyCollection-myCollection">
+            <Header as="h2">
+              <Icon className="viewProfilPage-myCollectionIcon" name="settings" />
+              <Header.Content className="viewProfilPage-myCollectionHeaderContent">
+                Ma collection
               <Header.Subheader className="viewProfilPage-myCollectionSubHeaderTwo">
-                Gérer la visibilité, l'édition, ou la suppression
+                  Gérer la visibilité, l'édition, ou la suppression
               </Header.Subheader>
-            </Header.Content>
-          </Header>
-        </div>
-        <Divider className="viewProfilPage-divider" />
-        <div className="viewProfilPage-myCollectionItem">
-          <div className="viewProfilPage-itemContentWrapper">
-            <Image
-              className="viewProfilPage-myCollectionTitleMangaImage"
-              src="https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/313968/313968._SX1280_QL80_TTD_.jpg"
-              size="tiny"
-            />
-            <div className="viewProfilPage-myCollectionMangaInfoWrapper">
-              <h3 className="viewProfilPage-myCollectionTitleManga">Attaque des Titans - <span className="viewProfilPage-myCollectionAuthorManga">Auteur</span></h3>
-            </div>
+              </Header.Content>
+            </Header>
           </div>
-          <div className="viewProfilPage-myCollectionThreeButtons">
-            <div className="viewProfilPage-myCollectionButtonsSubGroup">
-              <Button className="viewProfilPage-myCollectionButtons" fluid>
-                Disponibilité
-              </Button>
-              <div className="viewProfilPage-artificialMargin" />
-              <Button className="viewProfilPage-myCollectionButtons" fluid>
-                Éditer
-              </Button>
+          <Divider className="viewProfilPage-divider" />
+          <div className="viewProfilPage-myCollectionItem">
+            <div className="viewProfilPage-itemContentWrapper">
+              <Image
+                className="viewProfilPage-myCollectionTitleMangaImage"
+                src="https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/313968/313968._SX1280_QL80_TTD_.jpg"
+                size="tiny"
+              />
+              <div className="viewProfilPage-myCollectionMangaInfoWrapper">
+                <h3 className="viewProfilPage-myCollectionTitleManga">Attaque des Titans - <span className="viewProfilPage-myCollectionAuthorManga">Auteur</span></h3>
+              </div>
             </div>
-            <Button className="viewProfilPage-myCollectionButtons viewProfilPage-DeleteButton" fluid>
-              Supprimer
+            <div className="viewProfilPage-myCollectionThreeButtons">
+              <div className="viewProfilPage-myCollectionButtonsSubGroup">
+                <Button className="viewProfilPage-myCollectionButtons" fluid>
+                  Disponibilité
+              </Button>
+                <div className="viewProfilPage-artificialMargin" />
+                <Button className="viewProfilPage-myCollectionButtons" fluid>
+                  Éditer
+              </Button>
+              </div>
+              <Button className="viewProfilPage-myCollectionButtons viewProfilPage-DeleteButton" fluid>
+                Supprimer
             </Button>
-          </div>
-        </div>
-        <Divider className="viewProfilPage-divider" />
-        <div className="viewProfilPage-myCollectionItem">
-          <div className="viewProfilPage-itemContentWrapper">
-            <Image
-              className="viewProfilPage-myCollectionTitleMangaImage"
-              src="https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/313968/313968._SX1280_QL80_TTD_.jpg"
-              size="tiny"
-            />
-            <div className="viewProfilPage-myCollectionMangaInfoWrapper">
-              <h3 className="viewProfilPage-myCollectionTitleManga">Attaque des Titans - <span className="viewProfilPage-myCollectionAuthorManga">Auteur</span></h3>
             </div>
           </div>
-          <div className="viewProfilPage-myCollectionThreeButtons">
-            <div className="viewProfilPage-myCollectionButtonsSubGroup">
-              <Button className="viewProfilPage-myCollectionButtons" fluid>
-                Disponibilité
-              </Button>
-              <div className="viewProfilPage-artificialMargin" />
-              <Button className="viewProfilPage-myCollectionButtons" fluid>
-                Éditer
-              </Button>
+          <Divider className="viewProfilPage-divider" />
+          <div className="viewProfilPage-myCollectionItem">
+            <div className="viewProfilPage-itemContentWrapper">
+              <Image
+                className="viewProfilPage-myCollectionTitleMangaImage"
+                src="https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/313968/313968._SX1280_QL80_TTD_.jpg"
+                size="tiny"
+              />
+              <div className="viewProfilPage-myCollectionMangaInfoWrapper">
+                <h3 className="viewProfilPage-myCollectionTitleManga">Attaque des Titans - <span className="viewProfilPage-myCollectionAuthorManga">Auteur</span></h3>
+              </div>
             </div>
-            <Button className="viewProfilPage-myCollectionButtons viewProfilPage-DeleteButton" fluid>
-              Supprimer
+            <div className="viewProfilPage-myCollectionThreeButtons">
+              <div className="viewProfilPage-myCollectionButtonsSubGroup">
+                <Button className="viewProfilPage-myCollectionButtons" fluid>
+                  Disponibilité
+              </Button>
+                <div className="viewProfilPage-artificialMargin" />
+                <Button className="viewProfilPage-myCollectionButtons" fluid>
+                  Éditer
+              </Button>
+              </div>
+              <Button className="viewProfilPage-myCollectionButtons viewProfilPage-DeleteButton" fluid>
+                Supprimer
             </Button>
+            </div>
           </div>
-        </div>
-        <Divider className="viewProfilPage-divider" />
+          <Divider className="viewProfilPage-divider" />
 
-        <div className="viewProfilPage-sixthPart">
-          <Button className="viewProfilPage-sixthPartDeleteAccountButton" size="mini">Voir plus</Button>
-        </div>
+          <div className="viewProfilPage-sixthPart">
+            <Button className="viewProfilPage-sixthPartDeleteAccountButton" size="mini">Voir plus</Button>
+          </div>
+        </MediaQuery>
       </div>
+
+
+
+      <MediaQuery minWidth={1224}>
+        <DesktopMyCollectionProfile />
+      </MediaQuery>
+
     </div>
   );
 };
