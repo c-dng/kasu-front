@@ -12,7 +12,7 @@ const Team = () => (
       <div className="team-cardGlobal">
         <Card className="team-card">
           <Image src="https://react.semantic-ui.com/images/avatar/large/daniel.jpg" wrapped ui={false} size="small" />
-          <Card.Content>
+          <Card.Content className="team-cardContent">
             <Card.Header className="team-cardName">Olivier Y.</Card.Header>
             <Card.Description className="team-cardNameRole">
               Lead Developer Front-end
@@ -25,7 +25,7 @@ const Team = () => (
         </Card>
         <Card className="team-card">
           <Image src="https://react.semantic-ui.com/images/avatar/large/daniel.jpg" wrapped ui={false} size="small" />
-          <Card.Content>
+          <Card.Content className="team-cardContent">
             <Card.Header className="team-cardName">Laetitia D.</Card.Header>
             <Card.Description className="team-cardNameRole">
               Lead Developer Back-end
@@ -38,7 +38,7 @@ const Team = () => (
         </Card>
         <Card className="team-card">
           <Image src="https://react.semantic-ui.com/images/avatar/large/daniel.jpg" wrapped ui={false} size="small" />
-          <Card.Content>
+          <Card.Content className="team-cardContent">
             <Card.Header className="team-cardName">Laetitia R.</Card.Header>
             <Card.Description className="team-cardNameRole">
               Product Owner
@@ -51,7 +51,7 @@ const Team = () => (
         </Card>
         <Card className="team-card">
           <Image src="https://react.semantic-ui.com/images/avatar/large/daniel.jpg" wrapped ui={false} size="small" />
-          <Card.Content>
+          <Card.Content className="team-cardContent">
             <Card.Header className="team-cardName">Mathieu G.</Card.Header>
             <Card.Description className="team-cardNameRole">
               Git Master
@@ -64,7 +64,7 @@ const Team = () => (
         </Card>
         <Card className="team-card">
           <Image src="https://react.semantic-ui.com/images/avatar/large/daniel.jpg" wrapped ui={false} size="small" />
-          <Card.Content>
+          <Card.Content className="team-cardContent">
             <Card.Header className="team-cardName">Camille D.</Card.Header>
             <Card.Description className="team-cardNameRole">
               Scrum Master
@@ -72,7 +72,7 @@ const Team = () => (
           </Card.Content>
           <Card.Content className="team-cardNameExtra" extra>
             <Icon name="github" />
-            <a href="https://github.com/c-dng">GitHub</a>
+            <div className="test"><a href="https://github.com/c-dng">GitHub</a></div>
           </Card.Content>
         </Card>
       </div>
