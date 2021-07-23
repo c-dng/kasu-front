@@ -66,13 +66,11 @@ div.content.manageMyCollection-mainCardContent.manageMyCollection-mainCardConten
 .manageMyCollection-divider.manageMyCollection-divider.manageMyCollection-divider {
   width: 80%;
   margin: 1rem auto;
-  background-color: black;
 }
 
 div.ui.divider.manageMyCollection-divider-MobileVersion {
   width: 80%;
   margin: 1rem auto;
-  background-color: black;
 }
 
 .manageMyCollection-subtitle {
@@ -162,8 +160,6 @@ div.manageMyCollection-itemWrapperDesktopVersion {
 }
 
 
-
-
 // Desktop and laptops
 @media only screen and (min-width : 1224px) {
 
@@ -219,6 +215,7 @@ div.manageMyCollection-itemWrapperDesktopVersion {
     border-top-right-radius: 1rem;
     width: auto;
     text-align: center;
+    border: 1px solid;
   }
 
   div.content.manageMyCollection-myCollectionHeaderContent {
@@ -247,14 +244,6 @@ div.manageMyCollection-itemWrapperDesktopVersion {
     display: inline-block;
   }
 
-  div.manageMyCollection-secondBlocDesktopVersion {
-    border: 1px solid vars.$primaryBorderColor_theme1;
-    }
-
-  div.manageMyCollection-firstBlocDesktopVersion {
-    border: 1px solid vars.$primaryBorderColor_theme1;
-  }
-
   div.content.manageMyCollection-myCollectionHeaderContent {
     background-color: vars.$secondaryColor_theme1;
     color: vars.$secondaryFontColor_theme1;
@@ -263,12 +252,91 @@ div.manageMyCollection-itemWrapperDesktopVersion {
   div.manageMyCollection-myCollection.manageMyCollection-myCollection {
     background-color: vars.$secondaryColor_theme1;
   }
+
+  //Theming 1 en desktop
+  .theme1 {
+    i.settings.icon.manageMyCollection-myCollectionIcon {
+      color: vars.$primaryColor_theme1;
+    }
+  
+    div.sub.header.manageMyCollection-myCollectionSubHeaderTwo.manageMyCollection-myCollectionSubHeaderTwo {
+      color: vars.$secondaryFontColor_theme1;
+    } 
+    
+    div.content.manageMyCollection-myCollectionHeaderContent {
+      background-color: vars.$secondaryColor_theme1;
+      color: vars.$secondaryFontColor_theme1;
+    }
+  
+    div.manageMyCollection-myCollection {
+      background-color: vars.$secondaryColor_theme1;
+    }
+    
+    div.manageMyCollection-secondBlocDesktopVersion {
+      border: 1px solid vars.$primaryBorderColor_theme1;
+      }
+  
+    div.manageMyCollection-firstBlocDesktopVersion {
+      border: 1px solid vars.$primaryBorderColor_theme1;
+    }
+
+    div.manageMyCollection-mainCard.manageMyCollection-mainCard  {
+      border: none;
+    }
+
+    button.ui.fluid.button.manageMyCollection-myCollectionButtons.manageMyCollection-DeleteButton {
+      color: vars.$primaryFontColor_theme1;
+    }
+
+    div.sub.header.manageMyCollection-myCollectionSubHeaderTwo.manageMyCollection-myCollectionSubHeaderTwo {
+      color: vars.$secondaryFontColor_theme1;
+    } 
+
+  }
+  //Theming 2 en desktop
+  .theme2 {
+    i.settings.icon.manageMyCollection-myCollectionIcon {
+      color: vars.$primaryColor_theme2;
+    }
+  
+    div.sub.header.manageMyCollection-myCollectionSubHeaderTwo.manageMyCollection-myCollectionSubHeaderTwo {
+      color: vars.$secondaryFontColor_theme2;
+    } 
+    
+    div.content.manageMyCollection-myCollectionHeaderContent {
+      background-color: vars.$secondaryColor_theme2;
+      color: vars.$secondaryFontColor_theme2;
+    }
+  
+    div.manageMyCollection-myCollection {
+      background-color: vars.$secondaryColor_theme2;
+    }
+
+    div.manageMyCollection-secondBlocDesktopVersion {
+      border: 1px solid vars.$secondaryBorderColor_theme1;
+      }
+  
+    div.manageMyCollection-firstBlocDesktopVersion {
+      border: 1px solid vars.$secondaryBorderColor_theme1;
+    }
+
+    div.manageMyCollection-mainCard.manageMyCollection-mainCard  {
+      border: none;
+    }
+
+    button.ui.fluid.button.manageMyCollection-myCollectionButtons.manageMyCollection-DeleteButton {
+      color: vars.$primaryFontColor_theme2;
+    }
+  }
 }
 
 // Theming
 
 .theme1 {
 
+  div.manageMyCollection-mainCard {
+    border: 1px solid vars.$primaryBorderColor_theme1;
+  }
 
   .manageMyCollection-mainCard.manageMyCollection-mainCard.manageMyCollection-mainCard.manageMyCollection-mainCard {
     background-color: vars.$primaryColor_theme1;
@@ -292,7 +360,7 @@ div.manageMyCollection-itemWrapperDesktopVersion {
   .manageMyCollection-addToMyCollectionButton.manageMyCollection-addToMyCollectionButton.manageMyCollection-addToMyCollectionButton {
     background-color: vars.$primaryColor_theme1;
     color: vars.$primaryFontColor_theme1;
-    border-color: vars.$primaryBorderColor_theme1;
+    border: 1px solid vars.$primaryBorderColor_theme1;
   }
 
   .manageMyCollection-myCollectionButtons.manageMyCollection-myCollectionButtons.manageMyCollection-myCollectionButtons {
@@ -315,25 +383,18 @@ div.manageMyCollection-itemWrapperDesktopVersion {
     background-color: vars.$secondaryColor_theme1;
   }
 
-  i.settings.icon.manageMyCollection-myCollectionIcon {
-    color: vars.$secondaryColor_theme1;
-  }
-
-  div.sub.header.manageMyCollection-myCollectionSubHeaderTwo.manageMyCollection-myCollectionSubHeaderTwo {
+  div.sub.header.manageMyCollection-myCollectionSubHeaderTwo {
     color: vars.$primaryFontColor_theme1;
   } 
-  
-  div.content.manageMyCollection-myCollectionHeaderContent {
-    background-color: vars.$primaryColor_theme1;
+
+  div.ui.divider.manageMyCollection-divider-MobileVersion {
+    background-color: vars.$secondaryColor_theme1;
+  }
+
+  button.ui.fluid.button.manageMyCollection-myCollectionButtons.manageMyCollection-DeleteButton {
     color: vars.$primaryFontColor_theme1;
-  }
-
-  div.manageMyCollection-myCollection.manageMyCollection-myCollection {
-    background-color: vars.$primaryColor_theme1;
-  }
-  
+  }  
 }
-
 
 .theme2 {
 
@@ -370,7 +431,7 @@ div.manageMyCollection-itemWrapperDesktopVersion {
 
   .manageMyCollection-DeleteButton.manageMyCollection-DeleteButton.manageMyCollection-DeleteButton {
     background-color: vars.$tertiaryColor_theme2;
-    color: vars.$primaryFontColor_theme2;
+    color: vars.$secondaryFontColor_theme2;
   }
 
   .manageMyCollection-divider.manageMyCollection-divider.manageMyCollection-divider {
@@ -382,60 +443,19 @@ div.manageMyCollection-itemWrapperDesktopVersion {
     background-color: vars.$secondaryColor_theme2;
   }
 
-  i.settings.icon.manageMyCollection-myCollectionIcon {
-    color: vars.$primaryColor_theme2;
+  div.sub.header.manageMyCollection-myCollectionSubHeaderTwo {
+    color: vars.$primaryFontColor_theme2;
   }
 
-  div.sub.header.manageMyCollection-myCollectionSubHeaderTwo.manageMyCollection-myCollectionSubHeaderTwo {
-    color: vars.$primaryColor_theme2;
-  }
-
-  div.content.manageMyCollection-myCollectionHeaderContent {
-    background-color: vars.$secondaryColor_theme2;
-    color: vars.$secondaryFontColor_theme2;
-  }
-
-  div.manageMyCollection-myCollection.manageMyCollection-myCollection {
-    background-color: vars.$secondaryColor_theme2;
-  }
-
-  div.manageMyCollection-secondBlocDesktopVersion {
-    border: 1px solid vars.$primaryBorderColor_theme2;
-    }
-
-  div.manageMyCollection-firstBlocDesktopVersion {
+  div.manageMyCollection-mainCard {
     border: 1px solid vars.$primaryBorderColor_theme2;
   }
 
+  div.ui.divider.manageMyCollection-divider-MobileVersion {
+    background-color: vars.$secondaryColor_theme2;
+  }
+
+  button.ui.fluid.button.manageMyCollection-myCollectionButtons.manageMyCollection-DeleteButton {
+    color: vars.$primaryFontColor_theme2;
+  }
 }
-
-/*
-<div className="manageMyCollection-myCollectionItems">
-                  <div className="manageMyCollection-myCollectionItem">
-                    <div className="manageMyCollection-itemContentWrapper">
-                      <Image
-                        className="manageMyCollection-myCollectionTitleMangaImage"
-                        src="https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/313968/313968._SX1280_QL80_TTD_.jpg"
-                        size="tiny"
-                        />
-                      <div className="manageMyCollection-myCollectionMangaInfoWrapper">
-                        <h3 className="manageMyCollection-myCollectionTitleManga">Attaque des Titans - <span className="manageMyCollection-myCollectionAuthorManga">Auteur</span></h3>
-                      </div>
-                    </div>
-                    <div className="manageMyCollection-myCollectionThreeButtons">
-                      <div className="manageMyCollection-myCollectionButtonsSubGroup">
-                        <Button className="manageMyCollection-myCollectionButtons" fluid>
-                          Disponibilité
-                        </Button>
-                        <div className="manageMyCollection-artificialMargin"></div>
-                        <Button className="manageMyCollection-myCollectionButtons" fluid>
-                          Éditer
-                        </Button>
-                      </div>
-                      <Button className="manageMyCollection-myCollectionButtons manageMyCollection-DeleteButton" fluid>
-                        Supprimer
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-*/

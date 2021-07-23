@@ -22,7 +22,7 @@ const options = [
 const ManageMyCollection = () => (
   <div className="manageMyCollection">
     <Image className="manageMyCollection-banner" src={alternativeBanner} />
-    <Card className="manageMyCollection-mainCard">
+    <div className="manageMyCollection-mainCard">
       <div className="manageMyCollection-mainCardContent">
 
           <div className="manageMyCollection-firstBlocDesktopVersion">
@@ -192,7 +192,7 @@ const ManageMyCollection = () => (
             </div>
           </div>   
       </div>
-    </Card>
+    </div>
   </div>
 );
 
