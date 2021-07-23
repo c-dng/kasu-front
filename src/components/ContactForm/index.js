@@ -21,7 +21,7 @@ const ContactForm = () => {
     <div className="contactForm">
       <Image className="contactForm-banner" src={alternativeBanner} />
       <div className="contactForm-globalContentWrapper">
-        <div className="contactForm-desktopImage"></div>
+        <div className="contactForm-desktopImage" />
         <Card className="contactForm-card" centered>
           <Card.Content className="contactForm-cardContent">
             <Card.Header text-align="center" className="contactForm-cardHeader">Formulaire de contact</Card.Header>

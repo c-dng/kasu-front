@@ -223,9 +223,6 @@ div.manageMyCollection-itemWrapperDesktopVersion {
     margin: auto;
   }
 
-  div.content.manageMyCollection-myCollectionHeaderContent {
-    padding: 0; 
-  }
 
   div.manageMyCollection-itemWrapperDesktopVersion {
     display: flex;
@@ -236,9 +233,10 @@ div.manageMyCollection-itemWrapperDesktopVersion {
     width: 25%;
   }
 
-  div.manageMyCollection-myCollectionThreeButtons {
-    width: fit-content;
+  .manageMyCollection-myCollectionThreeButtons {
+    width: 70%;
   }
+  
 
   h2.ui.header {
     display: inline-block;
@@ -251,6 +249,10 @@ div.manageMyCollection-itemWrapperDesktopVersion {
 
   div.manageMyCollection-myCollection.manageMyCollection-myCollection {
     background-color: vars.$secondaryColor_theme1;
+  }
+
+  .manageMyCollection-itemContentWrapper.manageMyCollection-itemContentWrapper.manageMyCollection-itemContentWrapper {
+    width: 70%;
   }
 
   //Theming 1 en desktop

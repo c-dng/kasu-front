@@ -1,20 +1,32 @@
 import React from 'react';
 import {
-  Image, TextArea, Button, Form, Radio, Container, Modal, Header, Icon, Input, Label
+  Image, TextArea, Button, Form, Radio, Container, Modal, Header, Icon, Input, Label,
 } from 'semantic-ui-react';
 import './style.scss';
 import alternativeBanner from 'src/assets/images/alternativeBanner.png';
 import logo from 'src/assets/images/logo2.png';
+import DesktopSetIdCard from './DesktopSetIdCard';
+
 
 const SetProfilPage = () => {
   const [open, setOpen] = React.useState(false);
 
   return (
     <div className="setProfilPage">
+
       <Image className="registerForm-banner" src={alternativeBanner} />
+      <div className="viewProfilPage">
+        <Image className="registerForm-banner" src={alternativeBanner} />
+        <div className="viewProfilPage-mainWrapper">
+
+          <h1 className="setProfilPage-h1">Mon profil</h1>
+          <DesktopSetIdCard />
+        </div>
+      </div>
+
       <div className="setProfilPage-mainWrapper">
         <div className="setProfilPage-firstPart">
-            <h1 className="setProfilPage-h1">Mon profil</h1>
+          <h1 className="setProfilPage-h1">Mon profil</h1>
           <Image className="setProfilPageFirstPartImage" src={logo} size="tiny" />
           <Button className="setProfilPage-firstPartAddButton">+</Button>
           <Container textAlign="center">
@@ -39,7 +51,7 @@ const SetProfilPage = () => {
                   <Icon name="at" />
                   <input />
                 </Input>
-)}
+              )}
               actions={['Annuler', { key: 'valider', content: 'Valider', positive: true }]}
             />
             <Modal
@@ -65,13 +77,13 @@ const SetProfilPage = () => {
               <Form.Input placeholder="Ville" />
             </Form.Group>
             <Form.Group className="setProfilPage-fourthPartHolidayMode">
-            <Label className="setProfilPage-fourthPartHolidayModeLabel">Mode vacances: </Label>
-              <Radio size='mini' toggle />
+              <Label className="setProfilPage-fourthPartHolidayModeLabel">Mode vacances: </Label>
+              <Radio size="mini" toggle />
             </Form.Group>
           </Form>
         </div>
         <div className="setProfilPage-fifthPart">
-          <Button.Group size="tiny" centered>
+          <Button.Group size="tiny">
             <Button className="setProfilPage-fifthPartCancelButton setProfilPage-fifthPartCancelButton">Annuler</Button>
             <Button className="setProfilPage-fifthPartValidateButton" positive>Valider</Button>
           </Button.Group>

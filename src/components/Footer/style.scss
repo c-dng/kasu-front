@@ -50,7 +50,7 @@
   .theme1 {
 
     .footer.footer {
-      background-color: white;
+      background-color: vars.$primaryColor_theme1;
       color: vars.$primaryFontColor_theme1;
     }
 
@@ -60,6 +60,21 @@
   
     a.item.footer-items.footer-items.footer-items[tabIndex]:focus {
       color: vars.$primaryFontColor_theme1;
+    }
+  }
+  .theme2 {
+
+    .footer.footer {
+      background-color: vars.$primaryColor_theme2;
+      color: vars.$primaryFontColor_theme2;
+    }
+
+    a.item.footer-items.footer-items.footer-items {
+      color: vars.$primaryFontColor_theme2;
+    }
+  
+    a.item.footer-items.footer-items.footer-items[tabIndex]:focus {
+      color: vars.$primaryFontColor_theme2;
     }
   }
 }

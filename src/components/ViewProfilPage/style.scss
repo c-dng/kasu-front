@@ -1,13 +1,17 @@
+@use '/src/styles/vars';
+
 .viewProfilPage-mainWrapper {
-  border: 1px solid rgb(212 212 213);
   width: 80%;
   margin: 3rem auto;
   border-radius: 1em;
-};
-
-div.viewProfilPage-firstPart {
   position: relative;
-  margin-bottom: 1em;
+}
+
+;
+
+.viewProfilPage-pseudo.viewProfilPage-pseudo {
+  text-align: center;
+  margin-top: 0.5em;
 }
 
 img.ui.tiny.image.viewProfilPage-firstPartImage {
@@ -16,16 +20,24 @@ img.ui.tiny.image.viewProfilPage-firstPartImage {
   margin: auto;
 }
 
+.viewProfilPage-infoSubtitles.viewProfilPage-infoSubtitles {
+  width: 90%;
+  margin: 1rem auto;
+}
+
 button.ui.button.viewProfilPage-firstPartAddButton {
   font-weight: bolder;
   font-size: x-large;
+  background-color: white;
+  color: black;
   padding: .2em .4em;
   position: absolute;
-  top: 80%;
-  left: 52%;
+  top: 9.5%;
+  left: 53%;
 }
 
-div.viewProfilPage-secondPart, div.viewProfilPage-thirdPart {
+div.viewProfilPage-secondPart,
+div.viewProfilPage-thirdPart {
   margin-bottom: 1em;
   padding-left: 1em;
   padding-right: 1em;
@@ -59,7 +71,7 @@ div.viewProfilPage-thirdPart {
 div.ui.container.viewProfilPage-thirdPartLocation {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-direction: row;
   border-radius: 0.3em;
 }
@@ -87,8 +99,8 @@ img.ui.tiny.image.viewProfilPage-fifthPartImage {
 }
 
 div.viewProfilPage-sixthPart {
-display: flex;
-margin-bottom: 1em;
+  display: flex;
+  margin-bottom: 1em;
 }
 
 button.ui.mini.button.viewProfilPage-sixthPartDeleteAccountButton {
@@ -109,6 +121,403 @@ h1.setProfilPage-h1 {
   text-align: center;
   font-size: 1.29rem;
   margin-top: -.21425em;
-  font-family: Lato,Helvetica Neue,Arial,Helvetica,sans-serif;
+  font-family: Lato, Helvetica Neue, Arial, Helvetica, sans-serif;
 }
 
+// DesktopIdCard 
+
+.desktopIdCard-mainCard {
+  margin: 0 auto;
+  width: 50%;
+  border-radius: 1rem;
+  padding: 1rem;
+  display: flex;
+  margin-bottom: 1em;
+}
+
+.desktopIdCard-avatar.desktopIdCard-avatar.desktopIdCard-avatar {
+  max-width: 100%;
+  width: 100%;
+  margin-right: 1rem;
+  object-fit: cover;
+  flex-shrink: 0;
+  border-radius: 1rem;
+}
+
+.desktopIdCard-memberName {
+  margin-bottom: 0.2em;
+}
+
+.desktopIdCard-locationWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.desktopIdCard-memberLocation {
+  color: gray;
+}
+
+.desktopIdCard-holidayWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.desktopIdCard-memberHolidayMode {
+  color: gray;
+}
+
+div.ui.mini.left.attached.button.desktopIdCard-changeButtonsLeft {
+  border-top-left-radius: 1em;
+  border-bottom-left-radius: 1em;
+}
+
+div.ui.mini.right.attached.button.desktopIdCard-changeButtonsRight {
+  border-top-right-radius: 1em;
+  border-bottom-right-radius: 1em;
+}
+
+div.desktopIdCard-changeButtonsWrapper {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.desktopIdCard-memberPartWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+// My Collection Part
+
+div.ui.divider.viewProfilPage-divider {
+  width: 80%;
+  margin: 1rem auto;
+}
+
+div.content.viewProfilPage-myCollectionHeaderContent {
+  padding: 0;
+  margin: auto;
+}
+
+.viewProfilPage-itemContentWrapper.viewProfilPage-itemContentWrapper.viewProfilPage-itemContentWrapper {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.viewProfilPage-myCollectionMangaInfoWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h3.viewProfilPage-myCollectionTitleManga {
+  font-size: 1rem;
+  margin: 0 1rem;
+}
+
+.viewProfilPage-myCollectionAuthorManga {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 0;
+  color: #c1c1c1;
+}
+
+.viewProfilPage-myCollectionThreeButtons {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.viewProfilPage-myCollectionButtonsSubGroup {
+  display: flex;
+}
+
+.viewProfilPage-myCollectionButtons.viewProfilPage-myCollectionButtons.viewProfilPage-myCollectionButtons {
+  font-size: 1rem;
+  margin: 0;
+  border-radius: 1rem;
+}
+
+.viewProfilPage-artificialMargin {
+  margin-right: 0.5rem;
+}
+
+.viewProfilPage-DeleteButton.viewProfilPage-DeleteButton.viewProfilPage-DeleteButton {
+  margin-top: 0.5rem;
+}
+
+// DesktopMyCollectionProfile
+
+.DesktopMyCollectionProfile-mainCard.DesktopMyCollectionProfile-mainCard.DesktopMyCollectionProfile-mainCard.DesktopMyCollectionProfile-mainCard.DesktopMyCollectionProfile-mainCard {
+  margin: 0 auto;
+  width: 70%;
+  border-radius: 1em;
+  margin-bottom: 3em;
+}
+
+.DesktopMyCollectionProfile-header.DesktopMyCollectionProfile-header.DesktopMyCollectionProfile-header {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.DesktopMyCollectionProfile-itemContentWrapper {
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.DesktopMyCollectionProfile-myCollectionButtonsSubGroup {
+  display: flex;
+  justify-content: center;
+}
+
+.DesktopMyCollectionProfile-myCollectionButtons.DesktopMyCollectionProfile-myCollectionButtons.DesktopMyCollectionProfile-myCollectionButtons {
+  font-size: 1rem;
+  margin: 0;
+  border-radius: 1rem;
+}
+
+.DesktopMyCollectionProfile-myCollectionThreeButtons {
+
+  margin-top: 1em;
+}
+
+div.content.DesktopMyCollectionProfile-myCollectionCardContent.DesktopMyCollectionProfile-myCollectionCardContent.DesktopMyCollectionProfile-myCollectionCardContent.DesktopMyCollectionProfile-myCollectionCardContent.DesktopMyCollectionProfile-myCollectionCardContent.DesktopMyCollectionProfile-myCollectionCardContent {
+  padding: 2em;
+  border-bottom-left-radius: 1em !important;
+  border-bottom-right-radius: 1em !important;
+}
+
+.DesktopMyCollectionProfile-artificialMargin.DesktopMyCollectionProfile-artificialMargin {
+  margin-right: 0.5em;
+}
+
+button.ui.fluid.DesktopMyCollectionProfile-DeleteButton.DesktopMyCollectionProfile-DeleteButton.DesktopMyCollectionProfile-DeleteButton {
+  margin-top: 0.5em;
+}
+
+.DesktopMyCollectionProfile-myCollectionTitleManga.DesktopMyCollectionProfile-myCollectionTitleManga {
+  font-size: 1.2em;
+  margin: 0 1em;
+}
+
+.DesktopMyCollectionProfile-myCollectionAuthorManga.DesktopMyCollectionProfile-myCollectionAuthorManga {
+  font-size: 1.1rem;
+  color: #c1c1c1;
+}
+
+.DesktopMyCollectionProfile-myCollectionGrid.DesktopMyCollectionProfile-myCollectionGrid.DesktopMyCollectionProfile-myCollectionGrid {}
+
+// Desktop and laptops
+@media only screen and (min-width : 1224px) {
+
+  .viewProfilPage-mainWrapper {
+
+    width: 70%;
+    margin: 3rem auto;
+    border-radius: 1em;
+  }
+
+  ;
+
+  //Theming 1 en desktop
+  .theme1 {}
+
+  //Theming 2 en desktop
+  .theme2 {
+    .viewProfilPage-mainWrapper {
+      border: 1px solid white !important;
+
+    }
+
+  }
+}
+
+
+// Theming 
+
+.theme1 {
+  div.ui.divider.viewProfilPage-divider {
+    background-color: vars.$secondaryColor_theme1;
+  }
+
+  div.sub.header.viewProfilPage-myCollectionSubHeaderTwo {
+    color: vars.$primaryFontColor_theme1;
+  }
+
+  i.settings.icon.viewProfilPage-myCollectionIcon {
+    color: vars.$primaryFontColor_theme1;
+  }
+
+  .viewProfilPage-myCollectionHeaderContent {
+    background-color: vars.$primaryColor_theme1;
+    color: vars.$primaryFontColor_theme1;
+  }
+
+  .viewProfilPage-myCollectionButtons.viewProfilPage-myCollectionButtons.viewProfilPage-myCollectionButtons {
+    background-color: vars.$primaryColor_theme1;
+    color: vars.$primaryFontColor_theme1;
+    border: 1px solid vars.$primaryBorderColor_theme1;
+  }
+
+  .viewProfilPage-DeleteButton.viewProfilPage-DeleteButton.viewProfilPage-DeleteButton {
+    background-color: vars.$tertiaryColor_theme1;
+    color: vars.$secondaryFontColor_theme1;
+  }
+
+  .DesktopMyCollectionProfile-header.DesktopMyCollectionProfile-header.DesktopMyCollectionProfile-header {
+    color: vars.$secondaryFontColor_theme1;
+    background-color: vars.$secondaryColor_theme1;
+  }
+
+  div.sub.header.DesktopMyCollectionProfile-myCollectionSubHeaderTwo {
+    color: vars.$secondaryFontColor_theme1;
+    background-color: vars.$secondaryColor_theme1;
+  }
+
+  .DesktopMyCollectionProfile-myCollectionButtons.DesktopMyCollectionProfile-myCollectionButtons.DesktopMyCollectionProfile-myCollectionButtons {
+    background-color: vars.$primaryColor_theme1;
+    color: vars.$primaryFontColor_theme1;
+    border: 1px solid vars.$primaryBorderColor_theme1;
+  }
+
+  .DesktopMyCollectionProfile-DeleteButton.DesktopMyCollectionProfile-DeleteButton.DesktopMyCollectionProfile-DeleteButton {
+    background-color: vars.$tertiaryColor_theme1;
+    color: vars.$secondaryFontColor_theme1;
+  }
+
+  div.ui.mini.left.attached.button.desktopIdCard-changeButtonsLeft {
+    color: vars.$primaryFontColor_theme1;
+    border: 1px solid vars.$primaryBorderColor_theme1;
+    background-color: vars.$primaryColor_theme1;
+  }
+
+  div.ui.mini.right.attached.button.desktopIdCard-changeButtonsRight {
+    color: vars.$primaryFontColor_theme1;
+    border: 1px solid vars.$primaryBorderColor_theme1;
+    background-color: vars.$primaryColor_theme1;
+  }
+
+  .desktopIdCard-mainCard {
+    border: 1px solid vars.$primaryBorderColor_theme1;
+  }
+
+  .DesktopMyCollectionProfile-myCollectionGrid.DesktopMyCollectionProfile-myCollectionGrid.DesktopMyCollectionProfile-myCollectionGrid.DesktopMyCollectionProfile-myCollectionGrid {
+    background-color: vars.$primaryColor_theme1;
+    color: vars.$primaryFontColor_theme1;
+  }
+
+  .DesktopMyCollectionProfile-header.DesktopMyCollectionProfile-header.DesktopMyCollectionProfile-header {
+    background-color: vars.$secondaryColor_theme1;
+    color: vars.$secondaryFontColor_theme1;
+  }
+
+  div.content.DesktopMyCollectionProfile-myCollectionCardContent.DesktopMyCollectionProfile-myCollectionCardContent {
+    background-color: vars.$primaryColor_theme1;
+    color: vars.$primaryFontColor_theme1;
+  }
+
+  .viewProfilPage-mainWrapper {
+    border: 1px solid vars.$primaryBorderColor_theme1;
+  }
+}
+
+
+.theme2 {
+  div.ui.divider.viewProfilPage-divider {
+    background-color: vars.$secondaryColor_theme2;
+  }
+
+  div.sub.header.viewProfilPage-myCollectionSubHeaderTwo {
+    color: vars.$primaryFontColor_theme2;
+  }
+
+  i.settings.icon.viewProfilPage-myCollectionIcon {
+    color: vars.$primaryFontColor_theme2;
+  }
+
+  .viewProfilPage-myCollectionHeaderContent {
+    background-color: vars.$primaryColor_theme2;
+    color: vars.$primaryFontColor_theme2;
+  }
+
+  .viewProfilPage-myCollectionButtons.viewProfilPage-myCollectionButtons.viewProfilPage-myCollectionButtons {
+    background-color: vars.$primaryColor_theme2;
+    color: vars.$primaryFontColor_theme2;
+    border: 1px solid vars.$primaryBorderColor_theme2;
+  }
+
+  .viewProfilPage-DeleteButton.viewProfilPage-DeleteButton.viewProfilPage-DeleteButton {
+    background-color: vars.$tertiaryColor_theme2;
+    color: vars.$secondaryFontColor_theme2;
+  }
+
+  .DesktopMyCollectionProfile-header.DesktopMyCollectionProfile-header.DesktopMyCollectionProfile-header {
+    color: vars.$secondaryFontColor_theme2;
+    background-color: vars.$secondaryColor_theme2;
+  }
+
+  div.sub.header.DesktopMyCollectionProfile-myCollectionSubHeaderTwo {
+    color: vars.$secondaryFontColor_theme2;
+    background-color: vars.$secondaryColor_theme2;
+  }
+
+  .DesktopMyCollectionProfile-myCollectionButtons.DesktopMyCollectionProfile-myCollectionButtons.DesktopMyCollectionProfile-myCollectionButtons {
+    background-color: vars.$primaryColor_theme2;
+    color: vars.$primaryFontColor_theme2;
+    border: 1px solid vars.$primaryBorderColor_theme2;
+  }
+
+  .DesktopMyCollectionProfile-DeleteButton.DesktopMyCollectionProfile-DeleteButton.DesktopMyCollectionProfile-DeleteButton {
+    background-color: vars.$tertiaryColor_theme2;
+    color: vars.$secondaryFontColor_theme2;
+  }
+
+  div.ui.mini.left.attached.button.desktopIdCard-changeButtonsLeft {
+    color: vars.$primaryFontColor_theme2;
+    border: 1px solid vars.$primaryBorderColor_theme2;
+    background-color: vars.$primaryColor_theme2;
+  }
+
+  div.ui.mini.right.attached.button.desktopIdCard-changeButtonsRight {
+    color: vars.$primaryFontColor_theme2;
+    border: 1px solid vars.$primaryBorderColor_theme2;
+    background-color: vars.$primaryColor_theme2;
+  }
+
+  .desktopIdCard-mainCard {
+    border: 1px solid vars.$primaryBorderColor_theme2;
+  }
+
+  .DesktopMyCollectionProfile-myCollectionGrid.DesktopMyCollectionProfile-myCollectionGrid.DesktopMyCollectionProfile-myCollectionGrid.DesktopMyCollectionProfile-myCollectionGrid {
+    background-color: vars.$primaryColor_theme2;
+    color: vars.$primaryFontColor_theme2;
+  }
+
+  .DesktopMyCollectionProfile-header.DesktopMyCollectionProfile-header.DesktopMyCollectionProfile-header {
+    background-color: vars.$secondaryColor_theme2;
+    color: vars.$secondaryFontColor_theme2;
+  }
+
+  div.content.DesktopMyCollectionProfile-myCollectionCardContent.DesktopMyCollectionProfile-myCollectionCardContent {
+    background-color: vars.$primaryColor_theme2;
+    color: vars.$primaryFontColor_theme2;
+  }
+
+  .viewProfilPage-mainWrapper {
+    border: 1px solid vars.$primaryBorderColor_theme2;
+  }
+}
