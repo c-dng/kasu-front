@@ -3,8 +3,8 @@ import {
   Image, TextArea, Button, Form, Radio, Container, Modal, Header, Icon, Input, Label
 } from 'semantic-ui-react';
 import './style.scss';
-import alternativeBanner from 'src/assets/alternativeBanner.png';
-import logo from './logo.png';
+import alternativeBanner from 'src/assets/images/alternativeBanner.png';
+import logo from 'src/assets/images/logo2.png';
 
 const SetProfilPage = () => {
   const [open, setOpen] = React.useState(false);

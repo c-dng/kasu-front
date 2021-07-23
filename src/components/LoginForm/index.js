@@ -8,7 +8,7 @@ import {
 
 import './style.scss';
 
-import alternativeBanner from 'src/assets/alternativeBanner.png';
+import alternativeBanner from 'src/assets/images/alternativeBanner.png';
 import { Redirect } from 'react-router-dom';
 import NoAccountBox from './NoAccountBox';
 

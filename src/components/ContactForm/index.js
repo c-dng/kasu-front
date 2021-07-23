@@ -5,8 +5,8 @@ import {
 
 import './style.scss';
 
-import alternativeBanner from 'src/assets/alternativeBanner.png';
-import desktopImage from 'src/assets/desktopImage.jpg';
+import alternativeBanner from 'src/assets/images/alternativeBanner.png';
+import desktopImage from 'src/assets/images/desktopImage.jpg';
 
 const ContactForm = () => {
   const options = [

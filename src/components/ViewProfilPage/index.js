@@ -4,8 +4,8 @@ import {
 } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import './style.scss';
-import alternativeBanner from 'src/assets/alternativeBanner.png';
-import logo from './logo.png';
+import alternativeBanner from 'src/assets/images/alternativeBanner.png';
+import logo from 'src/assets/images/logo.png';
 
 const ViewProfilPage = () => {
   const availableTomes = [
