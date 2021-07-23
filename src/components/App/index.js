@@ -19,7 +19,6 @@ import LegalNotice from 'src/components/LegalNotice';
 
 import './style.scss';
 import { Route, Switch } from 'react-router-dom';
-import AlreadyAccountBox from '../Register/AlreadyAccountBox';
 
 // == Composant
 const App = ({ theme, autoLogin }) => {
@@ -27,7 +26,13 @@ const App = ({ theme, autoLogin }) => {
   if (token) {
     autoLogin();
   }
-
+  // const mediaQuery = window.matchMedia('( min-width: 1224px )');
+  // const handleDesktopChange = (e) => {
+  //   if (e.matches) {
+  //     console.log('Media Query Matched!');
+  //   }
+  // };
+  // mediaQuery.addEventListener('resize', handleDesktopChange);
   return (
     <div className={`app ${theme}`}>
 
@@ -65,6 +70,7 @@ const App = ({ theme, autoLogin }) => {
           <Footer />
         </Route>
         <Route path="/profil/mes-infos" exact>
+
           <ViewProfilPage />
           <Footer />
         </Route>
