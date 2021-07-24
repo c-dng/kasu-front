@@ -58,8 +58,7 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         logged: true,
-        pseudo: action.data.pseudo,
-        email: '',
+        pseudo: '',
         password: '',
       };
     case AUTO_LOGIN_USER:

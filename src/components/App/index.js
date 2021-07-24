@@ -14,6 +14,7 @@ import ManageMyCollection from 'src/components/ManageMyCollection';
 import ViewProfilPage from 'src/components/ViewProfilPage';
 import Team from 'src/components/Team';
 import LegalNotice from 'src/components/LegalNotice';
+import Chat from 'src/containers/Chat';
 
 // == Import
 
@@ -26,13 +27,7 @@ const App = ({ theme, autoLogin }) => {
   if (token) {
     autoLogin();
   }
-  // const mediaQuery = window.matchMedia('( min-width: 1224px )');
-  // const handleDesktopChange = (e) => {
-  //   if (e.matches) {
-  //     console.log('Media Query Matched!');
-  //   }
-  // };
-  // mediaQuery.addEventListener('resize', handleDesktopChange);
+
   return (
     <div className={`app ${theme}`}>
 
@@ -57,6 +52,9 @@ const App = ({ theme, autoLogin }) => {
         <Route path="/conversations" exact>
           <Conversations />
         </Route>
+        <Route path="/conversation/:id" exact>
+          <Chat />
+        </Route>
         <Route path="/rechercher/ville" exact>
           <SearchResultsByLocation />
           <Footer />
@@ -70,7 +68,6 @@ const App = ({ theme, autoLogin }) => {
           <Footer />
         </Route>
         <Route path="/profil/mes-infos" exact>
-
           <ViewProfilPage />
           <Footer />
         </Route>

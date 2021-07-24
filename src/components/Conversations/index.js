@@ -3,13 +3,14 @@ import PropTypes from 'prop-types';
 import {
   Button, Grid, Image, Transition,
 } from 'semantic-ui-react';
-import Conversation from './Conversation';
 import convButtonWhite from 'src/assets/images/conversations-button-white.png';
 import newMessageWhite from 'src/assets/images/new-message-white.png';
 import searchWhite from 'src/assets/images/search-white.png';
 import helpWhite from 'src/assets/images/help-white.png';
 import './style.scss';
 import classNames from 'classnames';
+import { Link } from 'react-router-dom';
+import Conversation from './Conversation';
 
 const Conversations = ({ isBoxHidden, handleHiddenBoxDisplay }) => {
   const handleHiddenBox = (evt) => {
@@ -25,7 +26,9 @@ const Conversations = ({ isBoxHidden, handleHiddenBoxDisplay }) => {
   return (
     <div className="conversations">
       <div className="conversations-notHiddenBox">
-        <Conversation />
+        <Link to="/conversation/:id" exact={+true}>
+          <Conversation />
+        </Link>
         <Conversation />
         <Conversation />
         <Conversation />
