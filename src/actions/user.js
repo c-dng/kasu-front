@@ -1,8 +1,8 @@
-export const CHANGE_EMAIL = 'CHANGE_EMAIL';
+export const CHANGE_PSEUDO = 'CHANGE_PSEUDO';
 
-export const changeEmail = (email) => ({
-  type: CHANGE_EMAIL,
-  email,
+export const changePseudo = (pseudo) => ({
+  type: CHANGE_PSEUDO,
+  pseudo,
 });
 
 export const CHANGE_PASSWORD = 'CHANGE_PASSWORD';

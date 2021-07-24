@@ -13,9 +13,9 @@ import { Redirect } from 'react-router-dom';
 import NoAccountBox from './NoAccountBox';
 
 const LoginForm = ({
-  email,
+  pseudo,
   password,
-  changeEmail,
+  changePseudo,
   changePassword,
   handleLogin,
   isLogged,
@@ -24,8 +24,8 @@ const LoginForm = ({
     evt.preventDefault();
     handleLogin();
   };
-  const handleChangeEmail = (evt) => {
-    changeEmail(evt.target.value);
+  const handleChangePseudo = (evt) => {
+    changePseudo(evt.target.value);
   };
   const handleChangePassword = (evt) => {
     changePassword(evt.target.value);
@@ -46,8 +46,8 @@ const LoginForm = ({
               <Card.Header className="loginform-cardHeader" text-align="center">Connexion</Card.Header>
               <Form className="loginform-form" onSubmit={handleSubmit}>
                 <Form.Field>
-                  <label htmlFor="email" className="loginform-fieldLabel">Email</label>
-                  <Form.Input className="loginform-field" type="text" id="email" name="email" onChange={handleChangeEmail} value={email} />
+                  <label htmlFor="pseudo" className="loginform-fieldLabel">Pseudo</label>
+                  <Form.Input className="loginform-field" type="text" id="pseudo" name="pseudo" onChange={handleChangePseudo} value={pseudo} />
                 </Form.Field>
                 <Form.Field>
                   <label htmlFor="password" className="loginform-fieldLabel">Mot de passe</label>
@@ -68,9 +68,9 @@ const LoginForm = ({
 };
 
 LoginForm.propTypes = {
-  email: PropTypes.string.isRequired,
+  pseudo: PropTypes.string.isRequired,
   password: PropTypes.string.isRequired,
-  changeEmail: PropTypes.func.isRequired,
+  changePseudo: PropTypes.func.isRequired,
   changePassword: PropTypes.func.isRequired,
   handleLogin: PropTypes.func.isRequired,
   isLogged: PropTypes.bool.isRequired,

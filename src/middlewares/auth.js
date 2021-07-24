@@ -10,9 +10,9 @@ const axiosInstance = axios.create(
 const authMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case LOGIN_USER: {
-      const { email, password } = store.getState().user;
+      const { pseudo, password } = store.getState().user;
       axiosInstance
-        .post('/api/login_check', { username: email, password })
+        .post('/api/login_check', { username: pseudo, password })
         .then(
           (response) => {
             console.log(response);

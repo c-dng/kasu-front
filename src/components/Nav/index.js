@@ -61,7 +61,7 @@ const Nav = ({
               <Image className="nav-logo" src={logoToDisplay} alt="logo" />
             </Link>
           </Menu.Item>
-          {true && (
+          {isLogged && (
             <Menu.Item>
               <Image circular className="navbuttons" id="temporary-avatar" src="https://react.semantic-ui.com/images/avatar/large/steve.jpg" alt="avatar-logo" size="mini" />
               <Dropdown floating icon="dropdown">
@@ -84,12 +84,12 @@ const Nav = ({
               </Dropdown>
             </Menu.Item>
           )}
-          {true && (
+          {isLogged && (
             <Menu.Item name="chat">
               <Image as={Link} to="/conversations" exact={+true} className="navbuttons" src={chatlogoToDisplay} alt="logo" size="mini" />
             </Menu.Item>
           )}
-          {true && (
+          {isLogged && (
             <Menu.Item name="logout">
               <Image onClick={handleLogout} className="navbuttons" src={logoutlogo} alt="logo" size="mini" />
             </Menu.Item>
