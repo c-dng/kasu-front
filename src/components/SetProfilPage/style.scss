@@ -136,6 +136,14 @@ div.ui.modal.transition.visible.active.setProfilPage-sixthPartModalDeleteAccount
   padding-right: 1rem;
 }
 
+
+
+// Desktop 
+
+.desktopIdCard-mainCard {
+  width: 50%;
+}
+
 // Theming 
 
 .theme1 {
@@ -179,6 +187,9 @@ div.ui.modal.transition.visible.active.setProfilPage-sixthPartModalDeleteAccount
 
 .theme2 {
 
+  .desktopIdCard-mainCard {
+    background-color: vars.$primaryColor_theme2;
+  }
   .setProfilPage-mainWrapper {
     border: 1px solid vars.$primaryBorderColor_theme2;
   }
