@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Button, Divider, Header, Form, Icon, Image, Label, Modal, Radio, TextArea } from 'semantic-ui-react';
+import { Button, Divider, Header, Form, Icon, Input, Image, Label, Modal, Radio, TextArea } from 'semantic-ui-react';
 
 const DesktopSetIdCard = () => {
   const [open, setOpen] = React.useState(false);
@@ -39,26 +39,39 @@ const DesktopSetIdCard = () => {
             <Icon name="camera" />
           </Button>
           <div className="desktopIdCard-changeButtonsWrapper">
-            <Link to="/profil/id" exact={+true}>
-              <Button size="mini" className="desktopIdCard-changeButtonsLeft" attached="left">Changer e-mail</Button>
-            </Link>
-            <Link to="/profil/collection" exact={+true}>
-              <Button
-                size="mini"
-                className="desktopIdCard-changeButtonsRight"
-                attached="right"
-              >Changer le mot de passe
-              </Button>
-            </Link>
+           
+          <Button.Group className="setProfilPage-thirdPartButtonsGroup" size="mini">
+            <Modal
+              className="setProfilPage-thirdPartModalEmail"
+              trigger={<Button attached="left" className="setProfilPage-thirdPartEmailButton" size="mini">Changer email</Button>}
+              header="Entrez un nouvel email"
+              content={(
+                <Input iconPosition="left" placeholder="Email">
+                  <Icon name="at" />
+                  <input />
+                </Input>
+              )}
+              actions={['Annuler', { key: 'valider', content: 'Valider', positive: true }]}
+            />
+            <Modal
+              className="setProfilPage-thirdPartModalPassword"
+              trigger={<Button attached="right" className="setProfilPage-thirdPartPasswordButton" size="mini">Changer le mot de passe</Button>}
+              header="Entrez un nouveau mot de passe"
+              content={<Input iconPosition="left" placeholder="Mot de passe" />}
+              actions={['Annuler', { key: 'valider', content: 'Valider', positive: true }]}
+            />
+          </Button.Group>
 
           </div>
         </div>
+        
+        <Divider />
 
         <div className="desktopIdCard-fourthPart setProfilPage-padding">
           <Form size="mini">
             <Form.Group unstackable widths={2}>
-              <Form.Input placeholder="Nom" />
               <Form.Input placeholder="Prénom" />
+              <Form.Input placeholder="Nom" />
             </Form.Group>
             <Form.Group>
               <Form.Input className="setProfilPage-fourthPartAdress" placeholder="Adresse" />
