@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { LOGIN_USER, saveUser, LOGOUT_USER } from 'src/actions/user';
+import { LOGIN_USER, REGISTER_USER, saveUser, LOGOUT_USER } from 'src/actions/user';
 
 const axiosInstance = axios.create(
   {
@@ -31,7 +31,64 @@ const authMiddleware = (store) => (next) => (action) => {
       delete axiosInstance.defaults.headers.common.Authorization;
       next(action);
       break;
-
+    case REGISTER_USER: {
+      const {
+        pseudo,
+        password,
+        email,
+        firstName,
+        lastName,
+        address,
+        zipCode,
+        city,
+      } = store.getState().user;
+      axiosInstance
+        .post('/api/v1/user/add', {
+          email,
+          firstname: firstName,
+          lastname: lastName,
+          pseudo,
+          password,
+          address,
+          zip_code: zipCode,
+          city,
+          status: 1,
+        })
+        .then(
+          (response) => {
+            console.log({
+              email,
+              firstname: firstName,
+              lastname: lastName,
+              pseudo,
+              password,
+              address,
+              zip_code: zipCode,
+              city,
+              status: 1,
+            });
+            console.log(response);
+          },
+        )
+        .catch(
+          (error) => {
+            console.log({
+              email,
+              firstname: firstName,
+              lastname: lastName,
+              pseudo,
+              password,
+              address,
+              zip_code: zipCode,
+              city,
+              status: 1,
+            });
+            console.log(error);
+          },
+        );
+      next(action);
+      break;
+    }
     default:
       next(action);
   }
