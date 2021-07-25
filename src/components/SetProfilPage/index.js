@@ -5,7 +5,7 @@ import {
 import './style.scss';
 import alternativeBanner from 'src/assets/images/alternativeBanner.png';
 import logo from 'src/assets/images/logo2.png';
-// import DesktopSetIdCard from './DesktopSetIdCard';
+import DesktopSetIdCard from './DesktopSetIdCard';
 
 const SetProfilPage = () => {
   const [open, setOpen] = React.useState(false);
@@ -19,10 +19,7 @@ const SetProfilPage = () => {
         <div className="viewProfilPage-mainWrapper">
 
           <h1 className="setProfilPage-h1">Gérer mon profil</h1>
-          {/* <DesktopSetIdCard /> */}
-
-
-
+          <DesktopSetIdCard />
 
         </div>
       </div>
