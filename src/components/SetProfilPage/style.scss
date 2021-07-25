@@ -14,6 +14,11 @@ div.setProfilPage-firstPart {
   position: relative;
 }
 
+h1.setProfilPage-h1.setProfilPage-h1.setProfilPage-h1 {
+  margin-bottom: 0;
+}  
+
+
 img.ui.tiny.image.setProfilPageFirstPartImage {
   border-radius: 50%;
   margin: 0 auto;
@@ -136,13 +141,162 @@ div.ui.modal.transition.visible.active.setProfilPage-sixthPartModalDeleteAccount
   padding-right: 1rem;
 }
 
-
-
 // Desktop 
+div.ui.segment.desktopIdCard-MainWrapper {
 
-.desktopIdCard-mainCard {
-  width: 50%;
+  border-bottom-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  margin-top: 0;
 }
+
+.column.desktopIdCard-leftPartWrapper {
+  border-bottom-left-radius: 1rem;
+}
+
+.column.desktopIdCard-rightPartWrapper {
+    border-bottom-right-radius: 1rem;
+}
+
+div.ui.tag.label.desktopIdCard-rightPartWrapperLoginAndPic {
+  display: flex;
+}
+
+span.desktopIdCard-holidayWrapper{
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-right: 0;
+}
+
+div.ui.buttons.desktopIdCard-ButtonMemberDelete {
+  display: flex;
+}
+
+:root {
+  --surface-color: #fff;
+  --curve: 40;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  background-color: #fef8f8;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 4rem 5vw;
+  padding: 0;
+  list-style-type: none;
+}
+
+.card {
+  position: relative;
+  display: block;
+  height: 100%;  
+  border-radius: calc(var(--curve) * 1px);
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.card__image {      
+  width: 100%;
+  height: auto;
+}
+
+.card__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;      
+  border-radius: calc(var(--curve) * 1px);    
+  background-color: var(--surface-color);      
+  transform: translateY(100%);
+  transition: .2s ease-in-out;
+}
+
+.card:hover .card__overlay {
+  transform: translateY(0);
+}
+
+.card__header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  padding: 2em;
+  border-radius: calc(var(--curve) * 1px) 0 0 0;    
+  background-color: var(--surface-color);
+  transform: translateY(-100%);
+  transition: .2s ease-in-out;
+}
+
+.card__arc {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  bottom: 100%;
+  right: 0;      
+  z-index: 1;
+}
+
+.card__arc path {
+  fill: var(--surface-color);
+  d: path("M 40 80 c 22 0 40 -22 40 -40 v 40 Z");
+}       
+
+.card:hover .card__header {
+  transform: translateY(0);
+}
+
+.card__thumb {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;      
+  border-radius: 50%;      
+}
+
+.card__title {
+  font-size: 1em;
+  margin: 0 0 .3em;
+  color: #6A515E;
+}
+
+.card__tagline {
+  display: block;
+  margin: 1em 0;
+  font-family: "MockFlowFont";  
+  font-size: .8em; 
+  color: #D7BDCA;  
+}
+
+.card__status {
+  font-size: .8em;
+  color: #D7BDCA;
+}
+
+.card__description {
+  padding: 0 2em 2em;
+  margin: 0;
+  color: #D7BDCA;
+  font-family: "MockFlowFont";   
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}    
+
+
+  .desktopIdCard-mainCard {
+  justify-content: center;
+  width : 100%
+}
+
 
 // Theming 
 
@@ -177,6 +331,7 @@ div.ui.modal.transition.visible.active.setProfilPage-sixthPartModalDeleteAccount
   .setProfilPage-h1.setProfilPage-h1.setProfilPage-h1 {
     color: vars.$secondaryFontColor_theme1;
     background-color: vars.$secondaryColor_theme1;
+
   }
 
   div.ui.label.setProfilPage-fourthPartHolidayModeLabel {
@@ -192,6 +347,14 @@ div.ui.modal.transition.visible.active.setProfilPage-sixthPartModalDeleteAccount
   }
   .setProfilPage-mainWrapper {
     border: 1px solid vars.$primaryBorderColor_theme2;
+  }
+
+  .column.desktopIdCard-leftPartWrapper {
+    background-color: vars.$primaryColor_theme2;
+  }
+
+  .column.desktopIdCard-rightPartWrapper {
+    background-color: vars.$primaryColor_theme2;
   }
 
   img.ui.tiny.image.setProfilPageFirstPartImage {
