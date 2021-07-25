@@ -41,32 +41,7 @@ const authMiddleware = (store) => (next) => (action) => {
       next(action);
       break;
     }
-    case AUTO_LOGIN_USER: 
-    const { pseudo, password } = store.getState().user;
-      axiosInstance
-        .post('/api/login_check', { username: pseudo, password })
-        .then(
-          (response) => {
-            console.log(response);
-            store.dispatch(saveUser(response.data));
-          },
-        )
-        .then((response) => {
-          const userId = store.getState().user.data.id;
-          axiosInstance
-            .get(`/api/v1/user/${userId}/chat`)
-            .then(
-              (response) => {
-                console.log(response);
-
-                store.dispatch(saveUserConversations(response.data));
-
-              },
-            );
-        });
-
-      next(action);
-      break;
+    
     case LOGOUT_USER:
       localStorage.removeItem('token');
       delete axiosInstance.defaults.headers.common.Authorization;

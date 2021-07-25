@@ -64,16 +64,25 @@ const reducer = (state = initialState, action = {}) => {
         password: '',
         data: action.data.data,
       };
-      case SAVE_USER_CONVERSATIONS:
-        return {
-          ...state,
-          conversations: action.data,
-        };
+    case SAVE_USER_CONVERSATIONS:
+      return {
+        ...state,
+        conversations: action.data,
+      };
     case LOGOUT_USER:
       return {
         ...state,
-        logged: false,
+        email: '',
+        password: '',
         pseudo: '',
+        address: '',
+        zipCode: 0,
+        city: '',
+        firstName: '',
+        lastName: '',
+        logged: false,
+        data: {},
+        conversations: {},
       };
     default:
       return state;
