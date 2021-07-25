@@ -7,6 +7,7 @@ import {
 
 const mapStateToProps = (state, ownProps) => ({
   isBoxHidden: state.chat.isBoxHidden,
+  conversations: state.user.conversations,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

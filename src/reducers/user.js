@@ -69,11 +69,6 @@ const reducer = (state = initialState, action = {}) => {
           ...state,
           conversations: action.data,
         };
-    case AUTO_LOGIN_USER:
-      return {
-        ...state,
-        logged: true,
-      };
     case LOGOUT_USER:
       return {
         ...state,

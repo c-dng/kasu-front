@@ -12,7 +12,7 @@ import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import Conversation from './Conversation';
 
-const Conversations = ({ isBoxHidden, handleHiddenBoxDisplay }) => {
+const Conversations = ({ isBoxHidden, handleHiddenBoxDisplay, conversations }) => {
   const handleHiddenBox = (evt) => {
     handleHiddenBoxDisplay();
   };
@@ -26,9 +26,17 @@ const Conversations = ({ isBoxHidden, handleHiddenBoxDisplay }) => {
   return (
     <div className="conversations">
       <div className="conversations-notHiddenBox">
-        <Link to="/conversation/:id" exact={+true}>
+        {/* <Link to="/conversation/:id" exact={+true}>
           <Conversation />
-        </Link>
+        </Link> */}
+        {console.log(Object.entries(conversations))}
+        {console.log(conversations)}
+        {
+          // This is a way to iterate over an object items as if it were arrays (therefore being able to use the ".map" declarative function)
+          Object.entries(conversations).map((conversation) => (
+            <Link key={conversation[1].chat.id} to={`/conversation/${conversation[1].chat.id}`} exact={+true}><Conversation key={conversation[1].chat.id} /></Link>
+          ))}
+        {/* <Conversation />
         <Conversation />
         <Conversation />
         <Conversation />
@@ -37,8 +45,7 @@ const Conversations = ({ isBoxHidden, handleHiddenBoxDisplay }) => {
         <Conversation />
         <Conversation />
         <Conversation />
-        <Conversation />
-        <Conversation />
+        <Conversation /> */}
       </div>
       <Button className={buttonClasses} onClick={handleHiddenBox}>
         <Image size="tiny" circular src={convButtonWhite} className="conversations-buttonImages conversations-buttonImage" />
