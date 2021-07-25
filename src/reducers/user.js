@@ -1,4 +1,4 @@
-import { CHANGE_PSEUDO, CHANGE_EMAIL, CHANGE_PASSWORD, SAVE_USER, LOGOUT_USER, AUTO_LOGIN_USER, CHANGE_ADDRESS, CHANGE_ZIP_CODE, CHANGE_FIRST_NAME, CHANGE_LAST_NAME, CHANGE_CITY } from '../actions/user';
+import { CHANGE_PSEUDO, CHANGE_EMAIL, CHANGE_PASSWORD, SAVE_USER, LOGOUT_USER, AUTO_LOGIN_USER, CHANGE_ADDRESS, CHANGE_ZIP_CODE, CHANGE_FIRST_NAME, CHANGE_LAST_NAME, CHANGE_CITY, SAVE_USER_CONVERSATIONS } from '../actions/user';
 
 export const initialState = {
   email: '',
@@ -10,6 +10,8 @@ export const initialState = {
   firstName: '',
   lastName: '',
   logged: false,
+  data: {},
+  conversations: {},
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -60,7 +62,13 @@ const reducer = (state = initialState, action = {}) => {
         logged: true,
         pseudo: '',
         password: '',
+        data: action.data.data,
       };
+      case SAVE_USER_CONVERSATIONS:
+        return {
+          ...state,
+          conversations: action.data,
+        };
     case AUTO_LOGIN_USER:
       return {
         ...state,

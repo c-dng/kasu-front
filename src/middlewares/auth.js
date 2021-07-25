@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { LOGIN_USER, REGISTER_USER, saveUser, LOGOUT_USER } from 'src/actions/user';
+import { LOGIN_USER, REGISTER_USER, saveUser, LOGOUT_USER, saveUserConversations } from 'src/actions/user';
 
 const axiosInstance = axios.create(
   {
@@ -22,7 +22,21 @@ const authMiddleware = (store) => (next) => (action) => {
             axiosInstance.defaults.headers.common.Authorization = `Bearer ${response.data.token}`;
             localStorage.setItem('token', response.data.token);
           },
-        );
+        )
+        .then((response) => {
+          const userId = store.getState().user.data.id;
+          axiosInstance
+            .get(`/api/v1/user/${userId}/chat`)
+            .then(
+              (response) => {
+                console.log(response);
+
+                store.dispatch(saveUserConversations(response.data));
+
+              },
+            );
+        });
+
       next(action);
       break;
     }
