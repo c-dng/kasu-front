@@ -18,7 +18,7 @@ const SetProfilPage = () => {
         <Image className="registerForm-banner" src={alternativeBanner} />
         <div className="viewProfilPage-mainWrapper">
 
-          <h1 className="setProfilPage-h1">Gérer mon profil</h1>
+          <h1 className="setProfilPage-title">Gérer mon profil</h1>
           <DesktopSetIdCard />
 
         </div>

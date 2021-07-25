@@ -11,126 +11,132 @@ const DesktopSetIdCard = () => {
   return (
     
     <Segment className="desktopIdCard-MainWrapper">
-    <Grid columns={2}>
-      <Grid.Column className="desktopIdCard-leftPartWrapper">
-      <Label as='a' color='red' ribbon>
-          Mes infos
-        </Label>
+      <Grid columns={2}>
+        <Grid.Column className="desktopIdCard-leftPartWrapper">
+            
+          <div className="desktopIdCard-leftPartWrapper2elements">
+            <Label className="desktopIdCard-leftPartWrapperLogin">
+                <Header as='h3'>Pseudo</Header>
+             </Label>
+
+            <Image className="desktopIdCard-leftPartWrapperImage"
+                size="medium"
+                label={{ as: 'a', color: 'red', corner: 'right', icon: 'camera' }}
+                src="https://react.semantic-ui.com/images/avatar/large/steve.jpg"
+            />
+
+            <span className="desktopIdCard-holidayWrapper">
+              <Label className="setProfilPage-fourthPartHolidayModeLabel">Mode vacances: </Label>
+              <Radio size="medium" toggle />
+            </span>
+          </div>
+
+            <Label className="desktopIdCard-bioLabel">
+              <p className="desktopIdCard-bioP">Bio</p>
+            </Label>
+
+            <Form className="desktopIdCard-memberDescription">
+                    <TextArea placeholder="Parle nous un peu de toi..." />
+            </Form>
+
+        </Grid.Column>
+
+      <Grid.Column className="desktopIdCard-rightPartWrapper">
+  
+            <Label as='a' color='red' ribbon='right'>
+                Mes infos
+            </Label>
 
       <Form>
-       <Form.Group widths='equal'>
-          <Form.Input
-            icon='user'
-            iconPosition='left'
-            placeholder='Prénom'
-          />
-          <Form.Input
-            icon='user'
-            iconPosition='left'
-            placeholder='Nom'
-          />
+        <Form.Group widths='equal'>
 
-          </Form.Group>
+            <Form.Input className="desktopIdCard-formInputName"
+              icon='user'
+              iconPosition='left'
+              placeholder='Prénom'
+            />
 
-          <Form.Input
-            icon='map marker alternate'
-            iconPosition='left'
-            placeholder='Adresse'
-          />
+            <Form.Input className="desktopIdCard-formInputLastName"
+              icon='user'
+              iconPosition='left'
+              placeholder='Nom'
+            />
+        </Form.Group>
 
-          <Form.Input
-            placeholder='Code Postal'
-          />
+            <Form.Input
+              icon='map marker alternate'
+              iconPosition='left'
+              placeholder='Adresse'
+            />
+
+            <Form.Input
+              placeholder='Code Postal'
+            />
                     
-          <Form.Input
-            placeholder='Ville'
-          />
+            <Form.Input
+              placeholder='Ville'
+            />
 
-          <Form.Group widths='equal'>
+        <Form.Group widths='equal'>
 
-          <Form.Input
-            input='password'
-            icon='lock'
-            iconPosition='left'
-            placeholder='Mot de passe'
-          />
-          <Form.Input
-            input='password'
-            icon='lock'
-            iconPosition='left'
-            placeholder='Confirmer mot de passe'
-          />
+            <Form.Input className="desktopIdCard-formInpuPassword"
+              input='password'
+              icon='lock'
+              iconPosition='left'
+              placeholder='Mot de passe'
+            />
+
+            <Form.Input className="desktopIdCard-formInpuConfirmPassword"
+              input='password'
+              icon='lock'
+              iconPosition='left'
+              placeholder='Confirmer mot de passe'
+            />
 
         </Form.Group>
   
-      <ButtonGroup widths='2' >
-          <Button icon='save' primary />
-          <Button icon='erase' secondary />
-      </ButtonGroup>
+                <Button animated='fade'>
+                    <Button.Content visible>Modifier votre e-mail</Button.Content>
+                    <Button.Content hidden>email@gmail.com</Button.Content>
+                </Button>
 
-      <Button.Group className="desktopIdCard-ButtonMemberDelete">
-              <Modal
-                    Icon='user delete'
-                    open={open}
-                    trigger={<Button className="desktopIdCard-memberDelete"><Icon name='user delete'/></Button>}
-                    onClose={() => setOpen(false)}
-                    onOpen={() => setOpen(true)}
-                  >
-                    <Header icon='delete' content='Confirmer votre action' />
+
+
+          <div className="desktopIdCard-Bottom3Buttons">
+              <ButtonGroup widths='3' >
+                    <Button icon='erase' secondary />
+                   
+                    <Modal
+                      Icon='user delete'
+                      open={open}
+                      trigger={<Button className="desktopIdCard-memberDelete"><Icon name='user delete'/></Button>}
+                      onClose={() => setOpen(false)}
+                      onOpen={() => setOpen(true)}
+                    >
+                    
+                  <Header icon='delete' content='Confirmer votre action' />
                     <Modal.Content>
-                      <p>
-                        Voulez-vous vraiment supprimer votre compte ?
-                      </p>
+                        <p>
+                          Voulez-vous vraiment supprimer votre compte ?
+                        </p>
                     </Modal.Content>
                     <Modal.Actions>
-                      <Button color='red' onClick={() => setOpen(false)}>
-                        <Icon name='remove' /> Non
-                      </Button>
-                      <Button color='green' onClick={() => setOpen(false)}>
-                        <Icon name='checkmark' /> Oui
-                      </Button>
+                        <Button color='red' onClick={() => setOpen(false)}>
+                            <Icon name='remove' /> Non
+                        </Button>
+                        <Button color='green' onClick={() => setOpen(false)}>
+                            <Icon name='checkmark' /> Oui
+                        </Button>
                     </Modal.Actions>
-                  </Modal>
+                    </Modal>
 
-              </Button.Group>
-       </Form>
-      
-      </Grid.Column>
-
-      <Grid.Column className="desktopIdCard-rightPartWrapper">
-
-    <Label className="desktopIdCard-rightPartWrapperLoginAndPic">
-        <Header as='h3'>Pseudo</Header>
-    </Label>
-
-    <Image
-          size="medium"
-          src="https://react.semantic-ui.com/images/avatar/large/steve.jpg"
-    />
-        <div>
-    <Label as='a' size={'small'}>
-        <Icon name="camera" />
-        Modifier l'avatar
-    </Label>
-        </div>
-
-      <span className="desktopIdCard-holidayWrapper">
-            <Label className="setProfilPage-fourthPartHolidayModeLabel">Mode vacances: </Label>
-            <Radio size="medium" toggle />
-      </span>
-
-      <Label>
-        <p>Bio</p>
-      </Label>
-      <Form className="desktopIdCard-memberDescription">
-            <TextArea placeholder="Parle nous un peu de toi..." />
-       </Form>
-        
-      </Grid.Column>
+                    <Button icon='save' color='red' />
+              </ButtonGroup>
+            </div>
+          </Form>
+        </Grid.Column>
     </Grid>
 
-
-    {/* <Divider vertical ></Divider> */}
   </Segment>        
 
   );
