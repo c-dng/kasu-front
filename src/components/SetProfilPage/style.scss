@@ -30,7 +30,6 @@ h1.setProfilPage-h1.setProfilPage-h1.setProfilPage-h1 {
   margin-bottom: 0.7em;
 }  
 
-
 img.ui.tiny.image.setProfilPageFirstPartImage {
   border-radius: 50%;
   margin: 0 auto;
@@ -166,10 +165,6 @@ div.ui.segment.desktopIdCard-MainWrapper {
   padding-left: 0;
   padding-right: 0;
 }
-
-// .column.desktopIdCard-rightPartWrapper {
-//   border-bottom-right-radius: 1rem;
-// }
 
 div.ui.top.left.attached.label.desktopIdCard-leftPartWrapperLogin {
   font-size: 1em;
@@ -340,7 +335,6 @@ body {
   overflow: hidden;
 }    
 
-
   .desktopIdCard-mainCard {
   justify-content: center;
   width : 100%
@@ -393,7 +387,7 @@ body {
 
 h1.setProfilPage-title.setProfilPage-title.setProfilPage-title {
   background-color: white;
-  color:black;
+  color: vars.$secondaryFontColor_theme2;
 }
 
 h3.ui.header.ui.header.ui.header.ui.header    {
@@ -402,12 +396,12 @@ h3.ui.header.ui.header.ui.header.ui.header    {
 
 div.ui.top.left.attached.label.desktopIdCard-leftPartWrapperLogin {
   background-color: vars.$primaryColor_theme2;
-  color:white;
-  border: 1px solid white;
+  color: vars.$secondaryFontColor_theme1;
+  border: 1px solid vars.$secondaryFontColor_theme1;
 }
 
 div.ui.medium.image.desktopIdCard-leftPartWrapperImage {
-  border: 1px solid white;
+  border: 1px solid vars.$secondaryFontColor_theme1;
 }
 
 div.ui.fitted.toggle.checkbox {
@@ -416,7 +410,7 @@ div.ui.fitted.toggle.checkbox {
 
 .ui.label.desktopIdCard-bioLabel {
   background-color: vars.$primaryColor_theme2;
-  border: 1px solid white;
+  border: 1px solid vars.$secondaryFontColor_theme1;
 }
 
 p.desktopIdCard-bioP {
@@ -424,9 +418,9 @@ p.desktopIdCard-bioP {
 }
 
 button.ui.button.desktopIdCard-EditEmail {
-  background-color: black;
+  background-color: vars.$primaryColor_theme2;
   color: white;
-  border: 1px solid rgb(226, 226, 226);
+  border: 1px solid vars.$secondaryFontColor_theme1;
 }
 
 button.ui.button.desktopIdCard-memberDelete {
