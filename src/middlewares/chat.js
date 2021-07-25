@@ -2,6 +2,7 @@ import { WS_CONNECT, SEND_MESSAGE, saveReceivedMessage } from 'src/actions/chat'
 
 // Ici, on déclare notre variable
 import { io } from 'socket.io-client';
+import { WS_DISCONNECT } from '../actions/chat';
 
 let socket;
 
@@ -13,7 +14,14 @@ const chatMiddleware = (store) => (next) => (action) => {
       socket.on('send_message', (message) => {
         store.dispatch(saveReceivedMessage(message));
       });
-      
+
+      next(action);
+      break;
+    }
+    case WS_DISCONNECT: {
+  
+      socket.emit('disconnectAction');
+      console.log('socket disconnected');
       next(action);
       break;
     }

@@ -17,6 +17,12 @@ export const wsConnect = () => ({
   type: WS_CONNECT,
 });
 
+export const WS_DISCONNECT = 'WS_DISCONNECT';
+
+export const wsDisconnect = () => ({
+  type: WS_DISCONNECT,
+});
+
 export const SEND_MESSAGE = 'SEND_MESSAGE';
 
 export const sendMessage = () => ({

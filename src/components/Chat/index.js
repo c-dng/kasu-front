@@ -3,10 +3,14 @@ import PropTypes from 'prop-types';
 import Messages from '../../containers/Chat/Messages';
 import ChatField from '../../containers/Chat/ChatField';
 
-const Chat = ({ onChatLoad }) => {
-  useEffect(
-    onChatLoad,
-    [],
+const Chat = ({ onChatLoad, onChatUnmount }) => {
+  useEffect(() => {
+    onChatLoad();
+    return function cleanup() {
+      onChatUnmount();
+    };
+  },
+    []
   );
 
   return (
