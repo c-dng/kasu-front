@@ -1,4 +1,4 @@
-import { TOGGLE_HIDDEN_BOX } from '../actions/chat';
+import { SAVE_RECEIVED_MESSAGE, SEND_MESSAGE, SET_NEW_MESSAGE, TOGGLE_HIDDEN_BOX } from '../actions/chat';
 
 export const initialState = {
   isBoxHidden: true,
@@ -31,6 +31,21 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         isBoxHidden: !state.isBoxHidden,
+      };
+    case SET_NEW_MESSAGE:
+      return {
+        ...state,
+        newMessage: action.newMessage,
+      };
+    case SEND_MESSAGE:
+      return {
+        ...state,
+        newMessage: '',
+      };
+    case SAVE_RECEIVED_MESSAGE:
+      return {
+        ...state,
+        messages: [...state.messages, action.receivedMessage],
       };
 
     default:

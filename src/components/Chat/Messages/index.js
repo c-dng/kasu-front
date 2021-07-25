@@ -1,12 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 
-import Message from 'src/containers/Chat/Message.js';
+import Message from 'src/components/Chat/Messages/Message';
 
 import '../style.scss';
 
 const Messages = ({ messages }) => {
-  // on demande au hook useRef de nous créer une référence
   const ref = useRef();
 
   useEffect(
