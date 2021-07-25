@@ -23,11 +23,6 @@ import { Route, Switch } from 'react-router-dom';
 
 // == Composant
 const App = ({ theme, autoLogin }) => {
-  const token = localStorage.getItem('token');
-  if (token) {
-    autoLogin();
-  }
-
   return (
     <div className={`app ${theme}`}>
 
@@ -59,16 +54,16 @@ const App = ({ theme, autoLogin }) => {
           <SearchResultsByLocation />
           <Footer />
         </Route>
-        <Route path="/profil/id" exact>
-          <SetProfilPage />
-          <Footer />
-        </Route>
         <Route path="/profil/collection" exact>
           <ManageMyCollection />
           <Footer />
         </Route>
         <Route path="/profil/mes-infos" exact>
           <ViewProfilPage />
+          <Footer />
+        </Route>
+        <Route path="/profil/:id" exact>
+          <SetProfilPage />
           <Footer />
         </Route>
         <Route path="/team" exact>

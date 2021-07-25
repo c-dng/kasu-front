@@ -4,8 +4,7 @@ import PropTypes from 'prop-types';
 const Message = ({ author, message, isMine }) => (
   <div className="message"
   >
-    <div className="message__author">{author}</div>
-    <div className="message__content">{message}</div>
+    <div className="message-content">{message}</div>
   </div>
 );
 

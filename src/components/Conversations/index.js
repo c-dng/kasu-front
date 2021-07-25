@@ -12,7 +12,7 @@ import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import Conversation from './Conversation';
 
-const Conversations = ({ isBoxHidden, handleHiddenBoxDisplay, conversations }) => {
+const Conversations = ({ isBoxHidden, handleHiddenBoxDisplay, conversations, loadSingleChat }) => {
   const handleHiddenBox = (evt) => {
     handleHiddenBoxDisplay();
   };
@@ -34,7 +34,10 @@ const Conversations = ({ isBoxHidden, handleHiddenBoxDisplay, conversations }) =
         {
           // This is a way to iterate over an object items as if it were arrays (therefore being able to use the ".map" declarative function)
           Object.entries(conversations).map((conversation) => (
-            <Link key={conversation[1].chat.id} to={`/conversation/${conversation[1].chat.id}`} exact={+true}><Conversation key={conversation[1].chat.id} /></Link>
+            <Link key={conversation[1].chat.id} onClick={() => {
+              console.log(conversation[1].chat.id)
+              loadSingleChat(conversation[1].chat.id)
+            }} to={`/conversation/${conversation[1].chat.id}`} exact={+true}><Conversation key={conversation[1].chat.id} /></Link>
           ))}
         {/* <Conversation />
         <Conversation />

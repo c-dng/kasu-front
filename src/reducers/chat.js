@@ -1,4 +1,4 @@
-import { SAVE_RECEIVED_MESSAGE, SEND_MESSAGE, SET_NEW_MESSAGE, TOGGLE_HIDDEN_BOX } from '../actions/chat';
+import { SAVE_RECEIVED_MESSAGE, SEND_MESSAGE, SET_NEW_MESSAGE, TOGGLE_HIDDEN_BOX, SAVE_LAST_SINGLE_CHAT } from '../actions/chat';
 
 export const initialState = {
   isBoxHidden: true,
@@ -23,6 +23,7 @@ export const initialState = {
       message: 'un peu ouais !',
     },
   ],
+  lastSingleChat: {},
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -47,6 +48,11 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         messages: [...state.messages, action.receivedMessage],
       };
+    case SAVE_LAST_SINGLE_CHAT:
+      return {
+        ...state,
+        lastSingleChat: action.singleChat,
+      }
 
     default:
       return state;

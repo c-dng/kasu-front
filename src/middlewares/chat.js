@@ -1,10 +1,17 @@
-import { WS_CONNECT, SEND_MESSAGE, saveReceivedMessage } from 'src/actions/chat';
-
+import { WS_CONNECT, SEND_MESSAGE, saveReceivedMessage, LOAD_SINGLE_CHAT, saveLastSingleChat } from 'src/actions/chat';
+import axios from 'axios';
 // Ici, on déclare notre variable
 import { io } from 'socket.io-client';
 import { WS_DISCONNECT } from '../actions/chat';
 
 let socket;
+const axiosInstance = axios.create(
+  {
+    baseURL: 'https://api.kasu.laetitia-dev.com/',
+  },
+);
+const token = localStorage.getItem('token');
+axiosInstance.defaults.headers.common.Authorization = `Bearer ${token}`;
 
 const chatMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
@@ -19,7 +26,7 @@ const chatMiddleware = (store) => (next) => (action) => {
       break;
     }
     case WS_DISCONNECT: {
-  
+
       socket.emit('disconnectAction');
       console.log('socket disconnected');
       next(action);
@@ -36,6 +43,20 @@ const chatMiddleware = (store) => (next) => (action) => {
 
       socket.emit('send_message', messageToSend);
 
+      next(action);
+      break;
+    }
+    case LOAD_SINGLE_CHAT: {
+      const payloadId = action.ChatId;
+      const userId = store.getState().user.data.id;
+      axiosInstance
+        .get(`api/v1/user/${userId}/chat/${payloadId}`)
+        .then(
+          (response) => {
+            console.log(response);
+            store.dispatch(saveLastSingleChat(response.data));
+          },
+        );
       next(action);
       break;
     }

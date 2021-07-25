@@ -35,3 +35,17 @@ export const saveReceivedMessage = (receivedMessage) => ({
   type: SAVE_RECEIVED_MESSAGE,
   receivedMessage,
 });
+
+export const LOAD_SINGLE_CHAT = 'LOAD_SINGLE_CHAT';
+
+export const loadSingleChat = (id) => ({
+  type: LOAD_SINGLE_CHAT,
+  ChatId: id,
+});
+
+export const SAVE_LAST_SINGLE_CHAT = 'SAVE_LAST_SINGLE_CHAT';
+
+export const saveLastSingleChat = (singleChat) => ({
+  type: SAVE_LAST_SINGLE_CHAT,
+  singleChat,
+});
