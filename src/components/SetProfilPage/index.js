@@ -7,7 +7,6 @@ import alternativeBanner from 'src/assets/images/alternativeBanner.png';
 import logo from 'src/assets/images/logo2.png';
 // import DesktopSetIdCard from './DesktopSetIdCard';
 
-
 const SetProfilPage = () => {
   const [open, setOpen] = React.useState(false);
 
