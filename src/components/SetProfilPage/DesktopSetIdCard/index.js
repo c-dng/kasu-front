@@ -14,10 +14,9 @@ const DesktopSetIdCard = () => {
       <Grid columns={2}>
         <Grid.Column className="desktopIdCard-leftPartWrapper">
             
+
           <div className="desktopIdCard-leftPartWrapper2elements">
-            <Label className="desktopIdCard-leftPartWrapperLogin">
-                <Header as='h3'>Pseudo</Header>
-             </Label>
+          <Label className="desktopIdCard-leftPartWrapperLogin" attached='top left'>Mon pseudo</Label>
 
             <Image className="desktopIdCard-leftPartWrapperImage"
                 size="medium"
@@ -29,6 +28,7 @@ const DesktopSetIdCard = () => {
               <Label className="setProfilPage-fourthPartHolidayModeLabel">Mode vacances: </Label>
               <Radio size="medium" toggle />
             </span>
+            
           </div>
 
             <Label className="desktopIdCard-bioLabel">
@@ -94,22 +94,19 @@ const DesktopSetIdCard = () => {
             />
 
         </Form.Group>
-  
-                <Button animated='fade'>
-                    <Button.Content visible>Modifier votre e-mail</Button.Content>
-                    <Button.Content hidden>email@gmail.com</Button.Content>
-                </Button>
 
-
+          <div>
+              <Button className="desktopIdCard-EditEmail">Modifier mon email</Button>
+          </div>
 
           <div className="desktopIdCard-Bottom3Buttons">
               <ButtonGroup widths='3' >
-                    <Button icon='erase' secondary />
+                    <Button icon='erase' color='black' />
                    
                     <Modal
                       Icon='user delete'
                       open={open}
-                      trigger={<Button className="desktopIdCard-memberDelete"><Icon name='user delete'/></Button>}
+                      trigger={<Button className="desktopIdCard-memberDelete" color='red'><Icon name='user delete'/></Button>}
                       onClose={() => setOpen(false)}
                       onOpen={() => setOpen(true)}
                     >
@@ -130,7 +127,7 @@ const DesktopSetIdCard = () => {
                     </Modal.Actions>
                     </Modal>
 
-                    <Button icon='save' color='red' />
+                    <Button icon='save' color='green' />
               </ButtonGroup>
             </div>
           </Form>
