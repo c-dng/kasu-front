@@ -125,12 +125,12 @@ const DesktopSetIdCard = () => {
       <Form className="desktopIdCard-memberDescription">
             <TextArea placeholder="Parle nous un peu de toi..." />
        </Form>
-
         
       </Grid.Column>
     </Grid>
 
-    <Divider vertical></Divider>
+
+    {/* <Divider vertical ></Divider> */}
   </Segment>        
 
   );
