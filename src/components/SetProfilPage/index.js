@@ -33,7 +33,10 @@ const SetProfilPage = () => {
           <Button className="mobileSetProfil-changeImage" circular>+</Button>
 
           <h3 className="mobileSetProfil-h3">Mon pseudo</h3>
-
+          <span className="desktopIdCard-holidayWrapper">
+              <Label className="setProfilPage-fourthPartHolidayModeLabel">Mode vacances: </Label>
+              <Radio size="medium" toggle />
+          </span>
           <Form>
               <TextArea rows={2} placeholder='Bio' />
           </Form>
