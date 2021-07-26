@@ -5,9 +5,7 @@ import {
 import './style.scss';
 import alternativeBanner from 'src/assets/images/alternativeBanner.png';
 import MediaQuery from 'react-responsive';
-import logo from 'src/assets/images/logo.png';
 import DesktopSetIdCard from './DesktopSetIdCard';
-import { Divider } from 'semantic-ui-react';
 
 const SetProfilPage = () => {
   const [open, setOpen] = React.useState(false);
