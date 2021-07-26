@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage'; // defaults to localStorage for web
-
+import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2'; // This allows to merge two-levels deep (a combined reducer)
 import authMiddleware from 'src/middlewares/auth';
 import reducer from 'src/reducers';
 import chatMiddleware from 'src/middlewares/chat';
@@ -11,6 +11,7 @@ import contactAdmin from 'src/middlewares/contactAdmin';
 const persistConfig = {
   key: 'root',
   storage,
+  stateReconciler: autoMergeLevel2,
 };
 
 const persistedReducer = persistReducer(persistConfig, reducer);

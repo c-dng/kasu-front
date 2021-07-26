@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { LOGIN_USER, REGISTER_USER, saveUser, LOGOUT_USER, saveUserConversations } from 'src/actions/user';
+import { setLoadingFalse, setLoadingTrue } from '../actions/global';
 
 const axiosInstance = axios.create(
   {
@@ -11,6 +12,7 @@ const authMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case LOGIN_USER: {
       const { pseudo, password } = store.getState().user;
+      store.dispatch(setLoadingTrue());
       axiosInstance
         .post('api/login_check', { username: pseudo, password })
         .then(
@@ -32,7 +34,7 @@ const authMiddleware = (store) => (next) => (action) => {
                 console.log(response2);
 
                 store.dispatch(saveUserConversations(response2.data));
-
+                store.dispatch(setLoadingFalse());
               },
             );
         });
@@ -40,7 +42,7 @@ const authMiddleware = (store) => (next) => (action) => {
       next(action);
       break;
     }
-    
+
     case LOGOUT_USER:
       localStorage.removeItem('token');
       delete axiosInstance.defaults.headers.common.Authorization;

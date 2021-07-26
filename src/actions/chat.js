@@ -25,8 +25,9 @@ export const wsDisconnect = () => ({
 
 export const SEND_MESSAGE = 'SEND_MESSAGE';
 
-export const sendMessage = () => ({
+export const sendMessage = (id) => ({
   type: SEND_MESSAGE,
+  chatId: id,
 });
 
 export const SAVE_RECEIVED_MESSAGE = 'SAVE_RECEIVED_MESSAGE';
@@ -40,7 +41,7 @@ export const LOAD_SINGLE_CHAT = 'LOAD_SINGLE_CHAT';
 
 export const loadSingleChat = (id) => ({
   type: LOAD_SINGLE_CHAT,
-  ChatId: id,
+  chatId: id,
 });
 
 export const SAVE_LAST_SINGLE_CHAT = 'SAVE_LAST_SINGLE_CHAT';

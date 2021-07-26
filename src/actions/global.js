@@ -45,3 +45,15 @@ export const ERASE_MESSAGE= 'ERASE_MESSAGE';
 export const eraseMessage = () => ({
   type: ERASE_MESSAGE,
 });
+
+export const SET_LOADING_TRUE = 'SET_LOADING_TRUE';
+
+export const setLoadingTrue = () => ({
+  type: SET_LOADING_TRUE,
+});
+
+export const SET_LOADING_FALSE = 'SET_LOADING_FALSE';
+
+export const setLoadingFalse = () => ({
+  type: SET_LOADING_FALSE,
+});
