@@ -4,7 +4,7 @@ import {
 } from 'semantic-ui-react';
 import './style.scss';
 import alternativeBanner from 'src/assets/images/alternativeBanner.png';
-import logo from 'src/assets/images/logo2.png';
+import logo from 'src/assets/images/logo.png';
 import DesktopSetIdCard from './DesktopSetIdCard';
 
 const SetProfilPage = () => {

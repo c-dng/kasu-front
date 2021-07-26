@@ -3,15 +3,18 @@ import PropTypes from 'prop-types';
 import {
   Button, Grid, Image, Transition,
 } from 'semantic-ui-react';
-import Conversation from './Conversation';
 import convButtonWhite from 'src/assets/images/conversations-button-white.png';
 import newMessageWhite from 'src/assets/images/new-message-white.png';
 import searchWhite from 'src/assets/images/search-white.png';
 import helpWhite from 'src/assets/images/help-white.png';
 import './style.scss';
 import classNames from 'classnames';
+import { Link } from 'react-router-dom';
+import Conversation from './Conversation';
 
-const Conversations = ({ isBoxHidden, handleHiddenBoxDisplay }) => {
+const Conversations = ({
+  isBoxHidden, handleHiddenBoxDisplay, conversations, loadSingleChat,
+}) => {
   const handleHiddenBox = (evt) => {
     handleHiddenBoxDisplay();
   };
@@ -25,6 +28,28 @@ const Conversations = ({ isBoxHidden, handleHiddenBoxDisplay }) => {
   return (
     <div className="conversations">
       <div className="conversations-notHiddenBox">
+        {/* <Link to="/conversation/:id" exact={+true}>
+          <Conversation />
+        </Link> */}
+        {console.log(Object.entries(conversations))}
+        {console.log(conversations)}
+        {
+          // This is a way to iterate over an object items as if it were arrays
+          // (therefore being able to use the ".map" declarative function)
+          Object.entries(conversations).map((conversation) => (
+            <Link
+              key={conversation[1].chat.id}
+              onClick={() => {
+                console.log(conversation[1].chat.id);
+                loadSingleChat(conversation[1].chat.id);
+              }}
+              to={`/conversation/${conversation[1].chat.id}`}
+              exact={+true}
+            ><Conversation key={conversation[1].chat.id} />
+            </Link>
+          ))
+}
+        {/* <Conversation />
         <Conversation />
         <Conversation />
         <Conversation />
@@ -33,9 +58,7 @@ const Conversations = ({ isBoxHidden, handleHiddenBoxDisplay }) => {
         <Conversation />
         <Conversation />
         <Conversation />
-        <Conversation />
-        <Conversation />
-        <Conversation />
+        <Conversation /> */}
       </div>
       <Button className={buttonClasses} onClick={handleHiddenBox}>
         <Image size="tiny" circular src={convButtonWhite} className="conversations-buttonImages conversations-buttonImage" />

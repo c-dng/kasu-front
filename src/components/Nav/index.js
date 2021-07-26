@@ -5,7 +5,7 @@ import {
 } from 'semantic-ui-react';
 import './style.scss';
 import { Link } from 'react-router-dom';
-import logo from 'src/assets/images/logo3.png';
+import logo from 'src/assets/images/logo.png';
 import logoWhite from 'src/assets/images/logo-white.png';
 import chatlogo from 'src/assets/images/chatlogo.png';
 import chatlogoWhite from 'src/assets/images/chatlogo-white.png';
