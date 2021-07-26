@@ -18,7 +18,7 @@ const Messages = ({ messages }) => {
     <div className="messages" ref={ref}>
       {
         messages.map(
-          (message) => <Message key={message.id} {...message} />,
+          (message) => <Message key={message.id} singleMessage={message.content} />,
         )
       }
     </div>

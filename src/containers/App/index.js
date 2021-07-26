@@ -5,6 +5,7 @@ import { autoLoginUser } from '../../actions/user';
 
 const mapStateToProps = (state, ownProps) => ({
   theme: state.global.theme,
+  loading: state.global.loading,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

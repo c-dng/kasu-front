@@ -15,14 +15,17 @@ import ViewProfilPage from 'src/components/ViewProfilPage';
 import Team from 'src/components/Team';
 import LegalNotice from 'src/components/LegalNotice';
 import Chat from 'src/containers/Chat';
-
+import Loading from 'src/components/App/Loading';
 // == Import
 
 import './style.scss';
 import { Route, Switch } from 'react-router-dom';
 
 // == Composant
-const App = ({ theme, autoLogin }) => {
+const App = ({ theme, loading }) => {
+  if (loading) {
+    return <Loading />;
+  }
   return (
     <div className={`app ${theme}`}>
 
@@ -81,7 +84,11 @@ const App = ({ theme, autoLogin }) => {
 
 App.propTypes = {
   theme: PropTypes.string.isRequired,
-  autoLogin: PropTypes.func.isRequired,
+  loading: PropTypes.bool,
+};
+
+App.defaultProps = {
+  loading: false,
 };
 
 // == Export

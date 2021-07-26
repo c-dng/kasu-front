@@ -1,5 +1,17 @@
 @use '/src/styles/vars';
 
+h1.setProfilPage-title.setProfilPage-title.setProfilPage-title {
+  color: white;
+  background-color: black;
+  padding: 1rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  text-align: center;
+  font-size: 1.29rem;
+  margin-bottom: 0;
+  font-family: Lato, Helvetica Neue, Arial, Helvetica, sans-serif;
+}
+
 .setProfilPage-mainWrapper {
   width: 80%;
   margin: 3rem auto;
@@ -10,9 +22,13 @@
 };
 
 div.setProfilPage-firstPart {
-  margin-bottom: 1em;
+  margin-bottom: 0;
   position: relative;
 }
+
+h1.setProfilPage-h1.setProfilPage-h1.setProfilPage-h1 {
+  margin-bottom: 0.7em;
+}  
 
 img.ui.tiny.image.setProfilPageFirstPartImage {
   border-radius: 50%;
@@ -136,6 +152,195 @@ div.ui.modal.transition.visible.active.setProfilPage-sixthPartModalDeleteAccount
   padding-right: 1rem;
 }
 
+// Desktop 
+div.ui.segment.desktopIdCard-MainWrapper {
+
+  border-bottom-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  margin-top: 0;
+}
+
+.column.desktopIdCard-leftPartWrapper.column.desktopIdCard-leftPartWrapper.column.desktopIdCard-leftPartWrapper {
+  border-bottom-left-radius: 1rem;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+div.ui.top.left.attached.label.desktopIdCard-leftPartWrapperLogin {
+  font-size: 1em;
+}
+
+
+div.desktopIdCard-leftPartWrapper2elements {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+span.desktopIdCard-holidayWrapper{
+  margin-top: 1em;
+}
+
+div.ui.fitted.toggle.checkbox {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+div.ui.label.desktopIdCard-bioLabel {
+margin-bottom: 0em;
+margin-left: 0;
+margin-right: 0;
+}
+
+button.ui.button.desktopIdCard-EditEmail {
+  display: flex;
+  justify-content: center;
+  margin-right: 0;
+  border: 1px solid rgb(226, 226, 226);
+}
+
+div.desktopIdCard-Bottom3Buttons.desktopIdCard-Bottom3Buttons{
+  display: flex;
+  margin-top: 8.1em;
+}
+
+div.ui.three.buttons {
+  border: 1px solid white;
+}
+
+button.ui.button.desktopIdCard-memberDelete {
+  display: flex;
+  justify-content: center;
+}
+
+:root {
+  --surface-color: #fff;
+  --curve: 40;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  background-color: #fef8f8;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 4rem 5vw;
+  padding: 0;
+  list-style-type: none;
+}
+
+.card {
+  position: relative;
+  display: block;
+  height: 100%;  
+  border-radius: calc(var(--curve) * 1px);
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.card__image {      
+  width: 100%;
+  height: auto;
+}
+
+.card__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;      
+  border-radius: calc(var(--curve) * 1px);    
+  background-color: var(--surface-color);      
+  transform: translateY(100%);
+  transition: .2s ease-in-out;
+}
+
+.card:hover .card__overlay {
+  transform: translateY(0);
+}
+
+.card__header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  padding: 2em;
+  border-radius: calc(var(--curve) * 1px) 0 0 0;    
+  background-color: var(--surface-color);
+  transform: translateY(-100%);
+  transition: .2s ease-in-out;
+}
+
+.card__arc {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  bottom: 100%;
+  right: 0;      
+  z-index: 1;
+}
+
+.card__arc path {
+  fill: var(--surface-color);
+  d: path("M 40 80 c 22 0 40 -22 40 -40 v 40 Z");
+}       
+
+.card:hover .card__header {
+  transform: translateY(0);
+}
+
+.card__thumb {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;      
+  border-radius: 50%;      
+}
+
+.card__title {
+  font-size: 1em;
+  margin: 0 0 .3em;
+  color: #6A515E;
+}
+
+.card__tagline {
+  display: block;
+  margin: 1em 0;
+  font-family: "MockFlowFont";  
+  font-size: .8em; 
+  color: #D7BDCA;  
+}
+
+.card__status {
+  font-size: .8em;
+  color: #D7BDCA;
+}
+
+.card__description {
+  padding: 0 2em 2em;
+  margin: 0;
+  color: #D7BDCA;
+  font-family: "MockFlowFont";   
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}    
+
+  .desktopIdCard-mainCard {
+  justify-content: center;
+  width : 100%
+}
+
+
 // Theming 
 
 .theme1 {
@@ -169,6 +374,7 @@ div.ui.modal.transition.visible.active.setProfilPage-sixthPartModalDeleteAccount
   .setProfilPage-h1.setProfilPage-h1.setProfilPage-h1 {
     color: vars.$secondaryFontColor_theme1;
     background-color: vars.$secondaryColor_theme1;
+
   }
 
   div.ui.label.setProfilPage-fourthPartHolidayModeLabel {
@@ -179,8 +385,61 @@ div.ui.modal.transition.visible.active.setProfilPage-sixthPartModalDeleteAccount
 
 .theme2 {
 
+h1.setProfilPage-title.setProfilPage-title.setProfilPage-title {
+  background-color: white;
+  color: vars.$secondaryFontColor_theme2;
+}
+
+h3.ui.header.ui.header.ui.header.ui.header    {
+  color: vars.$secondaryFontColor_theme1;
+}
+
+div.ui.top.left.attached.label.desktopIdCard-leftPartWrapperLogin {
+  background-color: vars.$primaryColor_theme2;
+  color: vars.$secondaryFontColor_theme1;
+  border: 1px solid vars.$secondaryFontColor_theme1;
+}
+
+div.ui.medium.image.desktopIdCard-leftPartWrapperImage {
+  border: 1px solid vars.$secondaryFontColor_theme1;
+}
+
+div.ui.fitted.toggle.checkbox {
+  border: 1px solid vars.$primaryFontColor_theme2;;
+}
+
+.ui.label.desktopIdCard-bioLabel {
+  background-color: vars.$primaryColor_theme2;
+  border: 1px solid vars.$secondaryFontColor_theme1;
+}
+
+p.desktopIdCard-bioP {
+  color: vars.$secondaryFontColor_theme1;
+}
+
+button.ui.button.desktopIdCard-EditEmail {
+  background-color: vars.$primaryColor_theme2;
+  color: white;
+  border: 1px solid vars.$secondaryFontColor_theme1;
+}
+
+button.ui.button.desktopIdCard-memberDelete {
+  border: 1px solid vars.$secondaryFontColor_theme1;
+}
+
+  .desktopIdCard-mainCard {
+    background-color: vars.$primaryColor_theme2;
+  }
   .setProfilPage-mainWrapper {
     border: 1px solid vars.$primaryBorderColor_theme2;
+  }
+
+  .column.desktopIdCard-leftPartWrapper {
+    background-color: vars.$primaryColor_theme2;
+  }
+
+  .column.desktopIdCard-rightPartWrapper {
+    background-color: vars.$primaryColor_theme2;
   }
 
   img.ui.tiny.image.setProfilPageFirstPartImage {

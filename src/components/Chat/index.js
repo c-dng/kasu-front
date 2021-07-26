@@ -10,8 +10,7 @@ const Chat = ({ onChatLoad, onChatUnmount }) => {
       onChatUnmount();
     };
   },
-    []
-  );
+  []);
 
   return (
     <div className="chat">
@@ -23,5 +22,6 @@ const Chat = ({ onChatLoad, onChatUnmount }) => {
 
 Chat.propTypes = {
   onChatLoad: PropTypes.func.isRequired,
+  onChatUnmount: PropTypes.func.isRequired,
 };
 export default Chat;
