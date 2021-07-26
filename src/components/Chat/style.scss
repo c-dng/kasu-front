@@ -1,0 +1,26 @@
+// General
+
+// ChatField
+
+.chatField {
+  position: fixed;
+  bottom: 1em;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+}
+
+form.chatField-form {
+  width: 90%;
+}
+
+div.ui.input.chatField-input {
+  width: 100%;
+}
+
+div.chatField-inputAndSubmit {
+  display: flex;
+  justify-content: center;
+}

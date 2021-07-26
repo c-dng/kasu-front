@@ -73,6 +73,13 @@ export const saveUser = (data) => ({
   data,
 });
 
+export const SAVE_USER_CONVERSATIONS = 'SAVE_USER_CONVERSATIONS';
+
+export const saveUserConversations = (data) => ({
+  type: SAVE_USER_CONVERSATIONS,
+  data,
+});
+
 export const LOGOUT_USER = 'LOGOUT_USER';
 
 export const logoutUser = () => ({

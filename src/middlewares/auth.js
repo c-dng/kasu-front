@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { LOGIN_USER, REGISTER_USER, saveUser, LOGOUT_USER } from 'src/actions/user';
+import { LOGIN_USER, REGISTER_USER, saveUser, LOGOUT_USER, saveUserConversations } from 'src/actions/user';
 
 const axiosInstance = axios.create(
   {
@@ -12,7 +12,7 @@ const authMiddleware = (store) => (next) => (action) => {
     case LOGIN_USER: {
       const { pseudo, password } = store.getState().user;
       axiosInstance
-        .post('/api/login_check', { username: pseudo, password })
+        .post('api/login_check', { username: pseudo, password })
         .then(
           (response) => {
             console.log(response);
@@ -22,10 +22,25 @@ const authMiddleware = (store) => (next) => (action) => {
             axiosInstance.defaults.headers.common.Authorization = `Bearer ${response.data.token}`;
             localStorage.setItem('token', response.data.token);
           },
-        );
+        )
+        .then((response) => {
+          const userId = store.getState().user.data.id;
+          axiosInstance
+            .get(`api/v1/user/${userId}/chat`)
+            .then(
+              (response2) => {
+                console.log(response2);
+
+                store.dispatch(saveUserConversations(response2.data));
+
+              },
+            );
+        });
+
       next(action);
       break;
     }
+    
     case LOGOUT_USER:
       localStorage.removeItem('token');
       delete axiosInstance.defaults.headers.common.Authorization;
