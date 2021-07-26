@@ -1,4 +1,11 @@
-import { WS_CONNECT, SEND_MESSAGE, saveReceivedMessage, LOAD_SINGLE_CHAT, saveLastSingleChat, WS_DISCONNECT } from 'src/actions/chat';
+import {
+  WS_CONNECT,
+  SEND_MESSAGE,
+  saveReceivedMessage,
+  LOAD_SINGLE_CHAT,
+  saveLastSingleChat,
+  WS_DISCONNECT,
+} from 'src/actions/chat';
 import axios from 'axios';
 // Ici, on déclare notre variable
 import { io } from 'socket.io-client';
@@ -25,18 +32,15 @@ const chatMiddleware = (store) => (next) => (action) => {
       break;
     }
     case WS_DISCONNECT: {
-
       socket.emit('disconnectAction');
       console.log('socket disconnected');
       next(action);
       break;
     }
     case SEND_MESSAGE: {
-
-      const { username, newMessage } = store.getState().chat;
+      const { newMessage } = store.getState().chat;
 
       const messageToSend = {
-        author: 'toto',
         message: newMessage,
       };
 
@@ -52,10 +56,15 @@ const chatMiddleware = (store) => (next) => (action) => {
         .get(`api/v1/user/${userId}/chat/${payloadId}`)
         .then(
           (response) => {
+            console.log('ça marche');
             console.log(response);
             store.dispatch(saveLastSingleChat(response.data));
           },
-        );
+        )
+        .catch(
+          (error) => {
+            console.log('merde');
+          });
       next(action);
       break;
     }
