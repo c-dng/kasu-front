@@ -20,9 +20,16 @@ export const changeObject = (object) => ({
   object,
 });
 
-export const CHANGE_MESSAGE = 'CHANGE_MESSAGE';
+export const CHANGE_CONTENT = 'CHANGE_CONTENT';
 
-export const changeMessage = (message) => ({
-  type: CHANGE_MESSAGE,
-  message,
+export const changeContent = (content) => ({
+  type: CHANGE_CONTENT,
+  content,
+});
+
+export const SUBMIT_FORM = 'SUBMIT_FORM';
+
+export const submitForm = (content) => ({
+  type: SUBMIT_FORM,
+  content,
 });

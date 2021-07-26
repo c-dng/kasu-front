@@ -1,11 +1,11 @@
-import { CHANGE_THEME, CHANGE_OBJECT, CHANGE_MESSAGE, CHANGE_EMAIL } from '../actions/global';
+import { CHANGE_THEME, CHANGE_OBJECT, CHANGE_CONTENT, CHANGE_EMAIL } from '../actions/global';
 
 export const initialState = {
   theme: 'theme1',
   navIcons: 'black',
   email: '',
   object: '',
-  message: ''
+  content: ''
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -26,10 +26,10 @@ const reducer = (state = initialState, action = {}) => {
       ...state,
       object: action.object,
     };
-    case CHANGE_MESSAGE:
+    case CHANGE_CONTENT:
       return {
       ...state,
-      message: action.message,
+      content: action.content,
     };
     default:
       return state;

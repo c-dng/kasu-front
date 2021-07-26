@@ -11,10 +11,10 @@ import desktopImage from 'src/assets/images/desktopImage.jpg';
 const ContactForm = ({
   email,
   object,
-  message,
+  content,
   changeEmail,
   changeObject,
-  changeMessage
+  changeContent
 }) => {
 
   const handleChangeEmail = (evt) => {
@@ -23,10 +23,10 @@ const ContactForm = ({
   };
   const handleChangeObject = (evt) => {
      changeObject(evt.target.value);
-     console.log(evt.target.value);
+     //console.log(evt.target.value);
   };
-  const handleChangeMessage = (evt) => {
-     changeMessage(evt.target.value);
+  const handleChangeContent = (evt) => {
+     changeContent(evt.target.value);
   };
 
   return (
@@ -54,7 +54,7 @@ const ContactForm = ({
               </Form.Field>
               <Form.Field >
                 <label className="contactForm-msgLabel">Saisissez votre message:</label>
-                <Form.TextArea id="message" name="message" onChange={handleChangeMessage} value={message} />
+                <Form.TextArea id="message" name="message" onChange={handleChangeContent} value={content} />
               </Form.Field>
               <div className="contactForm-buttonWrapper"><Button className="contactForm-sendButton">Envoyer</Button></div>
             </Form>
