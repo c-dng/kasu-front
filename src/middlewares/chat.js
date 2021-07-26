@@ -1,7 +1,15 @@
-import { WS_CONNECT, SEND_MESSAGE, saveReceivedMessage, LOAD_SINGLE_CHAT, saveLastSingleChat, WS_DISCONNECT } from 'src/actions/chat';
+import {
+  WS_CONNECT,
+  SEND_MESSAGE,
+  saveReceivedMessage,
+  LOAD_SINGLE_CHAT,
+  saveLastSingleChat,
+  WS_DISCONNECT,
+} from 'src/actions/chat';
 import axios from 'axios';
 // Ici, on déclare notre variable
 import { io } from 'socket.io-client';
+import { setLoadingFalse, setLoadingTrue } from '../actions/global';
 
 let socket;
 const axiosInstance = axios.create(
@@ -25,35 +33,60 @@ const chatMiddleware = (store) => (next) => (action) => {
       break;
     }
     case WS_DISCONNECT: {
-
       socket.emit('disconnectAction');
       console.log('socket disconnected');
       next(action);
       break;
     }
     case SEND_MESSAGE: {
-
-      const { username, newMessage } = store.getState().chat;
+      const { newMessage } = store.getState().chat.newMessage;
 
       const messageToSend = {
-        author: 'toto',
         message: newMessage,
       };
-
+      const payloadId = action.chatId;
+      const userId = store.getState().user.data.id;
+      store.dispatch(setLoadingTrue());
+      axiosInstance
+        .post(`api/v1/user/${userId}/chat/${payloadId}/message`, { content: newMessage })
+        .then(
+          (response) => {
+            console.log('message envoyé');
+            console.log(response);
+            store.dispatch(setLoadingFalse());
+          },
+        )
+        .catch(
+          (error) => {
+            store.dispatch(setLoadingFalse());
+            console.log(error);
+          },
+        );
       socket.emit('send_message', messageToSend);
 
       next(action);
       break;
     }
     case LOAD_SINGLE_CHAT: {
-      const payloadId = action.ChatId;
+      const payloadId = action.chatId;
       const userId = store.getState().user.data.id;
+      store.dispatch(setLoadingTrue());
       axiosInstance
         .get(`api/v1/user/${userId}/chat/${payloadId}`)
         .then(
           (response) => {
+            console.log('ça marche');
             console.log(response);
             store.dispatch(saveLastSingleChat(response.data));
+            store.dispatch(setLoadingFalse());
+          },
+        )
+        .catch(
+          (error) => {
+            store.dispatch(setLoadingFalse());
+            console.log('ça plante');
+            console.log(error);
+            console.log(axiosInstance);
           },
         );
       next(action);

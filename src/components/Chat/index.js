@@ -22,5 +22,6 @@ const Chat = ({ onChatLoad, onChatUnmount }) => {
 
 Chat.propTypes = {
   onChatLoad: PropTypes.func.isRequired,
+  onChatUnmount: PropTypes.func.isRequired,
 };
 export default Chat;
