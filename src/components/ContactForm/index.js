@@ -8,7 +8,7 @@ import './style.scss';
 import alternativeBanner from 'src/assets/images/alternativeBanner.png';
 import desktopImage from 'src/assets/images/desktopImage.jpg';
 
-const ContactForm = () => {
+const ContactForm = ({ email, object, message }) => {
   const options = [
     { key: 't', text: 'Problème technique', value: 'probleme' },
     { key: 'a', text: 'Ajouter un manga', value: 'manga' },
@@ -16,6 +16,19 @@ const ContactForm = () => {
     { key: 'l', text: 'Problème de connexion', value: 'login' },
     { key: 'o', text: 'Autre', value: 'other' },
   ];
+
+  
+
+  const handleChangeEmail = (evt) => {
+    changeEmail(evt.target.value);
+    console.log(evt.target.value)
+  };
+  const handleChangeObject = (evt) => {
+    changeObject(evt.target.value);
+  };
+  const handleChangeMessage = (evt) => {
+    changeMessage(evt.target.value);
+  };
 
   return (
     <div className="contactForm">
@@ -28,18 +41,21 @@ const ContactForm = () => {
             <Form className="contactForm-form">
               <Form.Field>
                 <label className="contactForm-emailLabel">Saisissez votre email:</label>
-                <Input fluid width="16" />
+                <Input fluid width="16" value={email} name='email' />
               </Form.Field>
               <Form.Field>
                 <label className="contactForm-objectLabel">Choisissez un objet:</label>
                 <Form.Select
                   fluid
                   options={options}
+                  value={object}
+                  name='object'
+                  onChange={handleChangeObject}
                 />
               </Form.Field>
-              <Form.Field>
+              <Form.Field >
                 <label className="contactForm-msgLabel">Saisissez votre message:</label>
-                <Form.TextArea />
+                <Form.TextArea value={message} name='message' onChange={handleChangeMessage}/>
               </Form.Field>
               <div className="contactForm-buttonWrapper"><Button className="contactForm-sendButton">Envoyer</Button></div>
             </Form>
