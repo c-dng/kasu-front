@@ -340,6 +340,58 @@ body {
   width : 100%
 }
 
+// Mobile
+
+div.mobileSetProfilPage {
+  margin-top: 1em;
+}
+
+img.ui.tiny.circular.image.mobileSetProfil-image {
+  margin: auto;
+  border: 1px solid white;
+}
+
+button.ui.button.mobileSetProfil-changeImage {
+  background-color: #fff;
+  color: #000;
+  font-size: x-large;
+  left: 56%;
+  padding: .2em .4em;
+  position: absolute;
+  top: 16.5%;
+  border: 1px solid rgb(214, 213, 213)
+}
+
+h3.mobileSetProfil-h3.mobileSetProfil-h3 {
+  text-align: center;
+  margin-top: 0.50em;
+  margin-bottom: 0.50em;
+}
+
+p.mobileSetProfil-deleteMyAccount {
+  margin-top: 0.5em;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 1.5em !important
+}
+
+div.mobileSetProfil-groupTwoButtons {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1em;
+}
+
+button.ui.button.mobileSetProfil-buttonValidate {
+  background-color: #A1DFD3;
+  color: #326158;
+}
+
+
+
+
+
+
+
 
 // Theming 
 
@@ -473,5 +525,24 @@ button.ui.button.desktopIdCard-memberDelete {
   div.ui.label.setProfilPage-fourthPartHolidayModeLabel {
   background-color: vars.$primaryColor_theme2;
   color: vars.$primaryFontColor_theme2;
+  }
+
+  // Theme 2 - Mobile
+
+  
+  img.ui.tiny.circular.image.mobileSetProfil-image {
+    border: 2px solid vars.$secondaryFontColor_theme1;
+  }
+
+  button.ui.large.button.mobileSetProfil-buttonCancel {
+    background-color: vars.$primaryColor_theme2;
+    color: vars.$primaryFontColor_theme2;
+    border: 1px solid vars.$primaryFontColor_theme2;
+  }
+
+  button.ui.large.button.mobileSetProfil-buttonValidate {
+    background-color: vars.$primaryColor_theme2;
+    color: vars.$primaryFontColor_theme2;
+    border: 1px solid vars.$primaryFontColor_theme2;
   }
 }
