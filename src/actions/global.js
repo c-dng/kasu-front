@@ -29,7 +29,13 @@ export const changeContent = (content) => ({
 
 export const SUBMIT_FORM = 'SUBMIT_FORM';
 
-export const submitForm = (content) => ({
+export const submitForm = () => ({
   type: SUBMIT_FORM,
-  content,
+});
+
+export const SAVE_MESSAGE= 'SAVE_MESSAGE';
+
+export const saveMessage = (message) => ({
+  type: SAVE_MESSAGE,
+  message,
 });

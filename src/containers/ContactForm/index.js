@@ -2,15 +2,15 @@ import { connect } from 'react-redux';
 
 import ContactForm from 'src/components/ContactForm';
 import {
-  changeEmail, changeObject, changeContent
+  changeEmail, changeObject, changeContent, submitForm
 } from '../../actions/global';
 
 const mapStateToProps = (state, ownProps) => ({
 
   email: state.global.email,
   object: state.global.object,
-  content: state.global.content
-
+  content: state.global.content,
+  message: state.global.message
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
@@ -25,6 +25,10 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 
   changeContent: function (content) {
     dispatch(changeContent(content));
+  },
+
+  handleMessage: function () {
+    dispatch(submitForm());
   },
 });
 
