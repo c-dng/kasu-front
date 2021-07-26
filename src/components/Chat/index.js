@@ -10,8 +10,7 @@ const Chat = ({ onChatLoad, onChatUnmount }) => {
       onChatUnmount();
     };
   },
-    []
-  );
+  []);
 
   return (
     <div className="chat">

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Message = ({ author, message, isMine }) => (
+const Message = ({ message, isMine }) => (
   <div className="message"
   >
     <div className="message-content">{message}</div>

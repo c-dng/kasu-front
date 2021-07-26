@@ -1,8 +1,7 @@
-import { WS_CONNECT, SEND_MESSAGE, saveReceivedMessage, LOAD_SINGLE_CHAT, saveLastSingleChat } from 'src/actions/chat';
+import { WS_CONNECT, SEND_MESSAGE, saveReceivedMessage, LOAD_SINGLE_CHAT, saveLastSingleChat, WS_DISCONNECT } from 'src/actions/chat';
 import axios from 'axios';
 // Ici, on déclare notre variable
 import { io } from 'socket.io-client';
-import { WS_DISCONNECT } from '../actions/chat';
 
 let socket;
 const axiosInstance = axios.create(

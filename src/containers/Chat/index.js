@@ -13,7 +13,7 @@ const mapDispatchToProps = (dispatch) => ({
   },
   onChatUnmount: () => {
     dispatch(wsDisconnect());
-  }
+  },
 });
 
 export default connect(mapStateToprops, mapDispatchToProps)(Chat);

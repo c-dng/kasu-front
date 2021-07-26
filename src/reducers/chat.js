@@ -2,8 +2,8 @@ import { SAVE_RECEIVED_MESSAGE, SEND_MESSAGE, SET_NEW_MESSAGE, TOGGLE_HIDDEN_BOX
 
 export const initialState = {
   isBoxHidden: true,
-  email: 'test',
-  password: 'a',
+  email: '',
+  password: '',
   username: '',
   newMessage: '',
   messages: [
@@ -52,7 +52,7 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         lastSingleChat: action.singleChat,
-      }
+      };
 
     default:
       return state;

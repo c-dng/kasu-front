@@ -28,10 +28,10 @@ const authMiddleware = (store) => (next) => (action) => {
           axiosInstance
             .get(`api/v1/user/${userId}/chat`)
             .then(
-              (response) => {
-                console.log(response);
+              (response2) => {
+                console.log(response2);
 
-                store.dispatch(saveUserConversations(response.data));
+                store.dispatch(saveUserConversations(response2.data));
 
               },
             );
