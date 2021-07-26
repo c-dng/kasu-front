@@ -5,9 +5,6 @@ import { LOGOUT_USER } from '../actions/user';
 
 export const initialState = {
   isBoxHidden: true,
-  email: '',
-  password: '',
-  username: '',
   newMessage: '',
   lastSingleChat: {},
 };
@@ -41,11 +38,7 @@ const reducer = (state = initialState, action = {}) => {
       };
     case LOGOUT_USER:
       return {
-        ...state,
         isBoxHidden: true,
-        email: '',
-        password: '',
-        username: '',
         newMessage: '',
         lastSingleChat: {},
       };
