@@ -15,7 +15,6 @@ const SetProfilPage = () => {
 
       <Image className="registerForm-banner" src={alternativeBanner} />
       <div className="viewProfilPage">
-        <Image className="registerForm-banner" src={alternativeBanner} />
         <div className="viewProfilPage-mainWrapper">
 
           <h1 className="setProfilPage-title">Gérer mon profil</h1>
