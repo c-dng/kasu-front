@@ -39,3 +39,9 @@ export const saveMessage = (message) => ({
   type: SAVE_MESSAGE,
   message,
 });
+
+export const ERASE_MESSAGE= 'ERASE_MESSAGE';
+
+export const eraseMessage = () => ({
+  type: ERASE_MESSAGE,
+});

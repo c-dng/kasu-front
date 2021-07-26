@@ -1,4 +1,4 @@
-import { CHANGE_THEME, CHANGE_OBJECT, CHANGE_CONTENT, CHANGE_EMAIL, SAVE_MESSAGE } from '../actions/global';
+import { CHANGE_THEME, CHANGE_OBJECT, ERASE_MESSAGE, CHANGE_CONTENT, CHANGE_EMAIL, SAVE_MESSAGE, SUBMIT_FORM } from '../actions/global';
 
 export const initialState = {
   theme: 'theme1',
@@ -36,6 +36,17 @@ const reducer = (state = initialState, action = {}) => {
       return {
       ...state,
       message: action.message,
+    };
+    case ERASE_MESSAGE:
+      return {
+      ...state,
+      message: '',
+    };
+    case SUBMIT_FORM:
+      return {
+      ...state,
+      object: '',
+      content: ''
     };
     default:
       return state;

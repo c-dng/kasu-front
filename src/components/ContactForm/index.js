@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   Button, Card, Divider, Form, Image, Input,
 } from 'semantic-ui-react';
@@ -16,8 +16,15 @@ const ContactForm = ({
   changeEmail,
   changeObject,
   changeContent,
-  handleMessage
+  handleMessage,
+  onContactFormUnmount
 }) => {
+
+  useEffect(() => (
+    function cleanup() {
+    onContactFormUnmount();
+  }),
+  []);
 
   const handleChangeEmail = (evt) => {
     changeEmail(evt.target.value);
@@ -39,7 +46,7 @@ const ContactForm = ({
   return (
     <div className="contactForm">
       <Image className="contactForm-banner" src={alternativeBanner} />
-      <div className="contactForm-message">{message.message}!</div>
+      <div className="contactForm-message">{message.message}</div>
       <div className="contactForm-globalContentWrapper">
         <div className="contactForm-desktopImage" />
         <Card className="contactForm-card" centered>
