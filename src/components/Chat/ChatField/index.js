@@ -5,13 +5,13 @@ import '../style.scss';
 import { Button, Image, Input } from 'semantic-ui-react';
 import sendIcon from 'src/assets/images/sendMessage.png';
 
-const ChatField = ({ manageSubmit, newMessage, setNewMessage, userId }) => (
+const ChatField = ({ manageSubmit, newMessage, setNewMessage, chatId }) => (
   <div className="chatField">
     <form
       className="chatField-form"
       onSubmit={(event) => {
         event.preventDefault();
-        manageSubmit(userId);
+        manageSubmit(chatId, newMessage);
       }}
     >
       <div className="chatField-inputAndSubmit">
@@ -34,9 +34,12 @@ const ChatField = ({ manageSubmit, newMessage, setNewMessage, userId }) => (
 
 ChatField.propTypes = {
   manageSubmit: PropTypes.func.isRequired,
-  newMessage: PropTypes.string.isRequired,
+  newMessage: PropTypes.string,
   setNewMessage: PropTypes.func.isRequired,
-  userId: PropTypes.number.isRequired,
+  chatId: PropTypes.number.isRequired,
 };
 
+ChatField.defaultProps = {
+  newMessage: '',
+};
 export default ChatField;

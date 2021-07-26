@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { LOGIN_USER, REGISTER_USER, saveUser, LOGOUT_USER, saveUserConversations } from 'src/actions/user';
 import { setLoadingFalse, setLoadingTrue } from '../actions/global';
+import { wsConnect, wsDisconnect } from '../actions/chat';
 
 const axiosInstance = axios.create(
   {
@@ -35,6 +36,7 @@ const authMiddleware = (store) => (next) => (action) => {
 
                 store.dispatch(saveUserConversations(response2.data));
                 store.dispatch(setLoadingFalse());
+                store.dispatch(wsConnect());
               },
             );
         });
@@ -46,6 +48,7 @@ const authMiddleware = (store) => (next) => (action) => {
     case LOGOUT_USER:
       localStorage.removeItem('token');
       delete axiosInstance.defaults.headers.common.Authorization;
+      store.dispatch(wsDisconnect());
       next(action);
       break;
     case REGISTER_USER: {

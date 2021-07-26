@@ -1,5 +1,5 @@
 // == Import npm
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Nav from 'src/containers/Nav';
 import Home from 'src/containers/Home';
@@ -20,12 +20,30 @@ import Loading from 'src/components/App/Loading';
 
 import './style.scss';
 import { Route, Switch } from 'react-router-dom';
-
+import { useBeforeunload } from 'react-beforeunload';
 // == Composant
-const App = ({ theme, loading }) => {
+const App = ({
+  theme, loading, onPageLoad, onRefreshOrTabClosing, isLogged, chatId
+}) => {
   if (loading) {
     return <Loading />;
   }
+
+  const handleOnClose = (evt) => {
+    if (isLogged) {
+      onRefreshOrTabClosing();
+    }
+  };
+
+  useBeforeunload((event) => {
+    handleOnClose();
+  });
+
+  useEffect(() => {
+    if (isLogged) {
+      onPageLoad(chatId);
+    }
+  }, []);
   return (
     <div className={`app ${theme}`}>
 

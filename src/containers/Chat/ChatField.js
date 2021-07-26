@@ -5,12 +5,12 @@ import { sendMessage, setNewMessage } from 'src/actions/chat';
 
 const mapStateToprops = (state) => ({
   newMessage: state.chat.newMessage,
-  userId: state.chat.lastSingleChat.id,
+  chatId: state.chat.lastSingleChat.id,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  manageSubmit: (id) => {
-    dispatch(sendMessage(id));
+  manageSubmit: (id, content) => {
+    dispatch(sendMessage(id, content));
   },
   setNewMessage: (newMessage) => {
     dispatch(setNewMessage(newMessage));
