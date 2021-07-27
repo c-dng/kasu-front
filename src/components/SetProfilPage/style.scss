@@ -112,6 +112,11 @@ div.ui.segment.desktopIdCard-MainWrapper {
   border-bottom-right-radius: 1rem;
 }
 
+div.desktopIdCard-leftPartWrapper2elements {
+  display: flex;
+  justify-content: center;
+}
+
 span.desktopIdCard-holidayWrapper {
   display: flex;
   justify-content: center;
@@ -180,10 +185,6 @@ div.column.desktopIdCard-rightPartWrapper {
   div.ui.label.setProfilPage-fourthPartHolidayModeLabel {
   background-color: vars.$primaryColor_theme1;
   color: vars.$primaryFontColor_theme1;
-  }
-
-  div.ui.fitted.toggle.checkbox {
-    border: 1px solid vars.$primaryBorderColor_theme1;
   }
 
   button.ui.small.negative.button.mobileSetProfil-deleteMyAccount {
