@@ -17,6 +17,7 @@ const DesktopSetIdCard = ({
 }) => {
 
   const [open, setOpen] = React.useState(false);
+  console.log();
 
   return (
     
@@ -29,17 +30,18 @@ const DesktopSetIdCard = ({
           <Label className="desktopIdCard-leftPartWrapperLogin" attached='top left'>{pseudo}</Label>
 
             <Image className="desktopIdCard-leftPartWrapperImage"
+                centered
                 size="medium"
                 label={{ as: 'a', color: 'red', corner: 'right', icon: 'camera' }}
                 src="https://react.semantic-ui.com/images/avatar/large/steve.jpg"
             />
-
-            <span className="desktopIdCard-holidayWrapper">
-              <Label className="setProfilPage-fourthPartHolidayModeLabel">Mode vacances: </Label>
-              <Radio size="medium" toggle />
-            </span>
             
           </div>
+
+          <span className="desktopIdCard-holidayWrapper">
+              <Label className="setProfilPage-fourthPartHolidayModeLabel">Mode vacances: </Label>
+              <Radio size="medium" toggle />
+          </span>
 
             <Label className="desktopIdCard-bioLabel">
               <p className="desktopIdCard-bioP">Bio</p>
@@ -86,6 +88,7 @@ const DesktopSetIdCard = ({
             <Form.Input
               placeholder='Code Postal'
               value={zipCode}
+              type='number'
             />
                     
             <Form.Input
@@ -113,16 +116,31 @@ const DesktopSetIdCard = ({
 
         </Form.Group>
 
-          <div>
-              <Button className="desktopIdCard-EditEmail">Modifier mon email</Button>
-          </div>
+        <Form.Group widths='equal'>
+
+            <Form.Input 
+              className="desktopIdCard-formInputEmail"
+              icon='mail'
+              iconPosition='left'
+              placeholder='Email'
+              value={email}
+            />
+
+            <Form.Input className="desktopIdCard-formInputConfirmEmail"
+              icon='mail'
+              iconPosition='left'
+              placeholder='Confirmer email'
+              value={email}
+            />
+
+        </Form.Group>
 
           <div className="desktopIdCard-Bottom3Buttons">
               <ButtonGroup widths='3' >
                     <Button icon='erase' color='black' />
                    
                     <Modal
-                      Icon='user delete'
+                      icon='user delete'
                       open={open}
                       trigger={<Button className="desktopIdCard-memberDelete" color='red'><Icon name='user delete'/></Button>}
                       onClose={() => setOpen(false)}

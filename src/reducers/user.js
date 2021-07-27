@@ -1,7 +1,7 @@
 import { CHANGE_PSEUDO, CHANGE_EMAIL, CHANGE_PASSWORD, SAVE_USER, LOGOUT_USER, CHANGE_ADDRESS, CHANGE_ZIP_CODE, CHANGE_FIRST_NAME, CHANGE_LAST_NAME, CHANGE_CITY, SAVE_USER_CONVERSATIONS } from '../actions/user';
 
 export const initialState = {
-  email: '',
+  email: 'gdhfdjgjgy',
   password: '',
   pseudo: '',
   address: '',
