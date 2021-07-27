@@ -1,19 +1,14 @@
-import axios from 'axios';
+import api from 'src/api';
 import { LOGIN_USER, REGISTER_USER, saveUser, LOGOUT_USER, saveUserConversations } from 'src/actions/user';
 import { setLoadingFalse, setLoadingTrue } from '../actions/global';
-
-const axiosInstance = axios.create(
-  {
-    baseURL: 'https://api.kasu.laetitia-dev.com/',
-  },
-);
+import { wsDisconnect } from '../actions/chat';
 
 const authMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case LOGIN_USER: {
       const { pseudo, password } = store.getState().user;
       store.dispatch(setLoadingTrue());
-      axiosInstance
+      api
         .post('api/login_check', { username: pseudo, password })
         .then(
           (response) => {
@@ -21,13 +16,13 @@ const authMiddleware = (store) => (next) => (action) => {
 
             store.dispatch(saveUser(response.data));
 
-            axiosInstance.defaults.headers.common.Authorization = `Bearer ${response.data.token}`;
+            api.defaults.headers.common.Authorization = `Bearer ${response.data.token}`;
             localStorage.setItem('token', response.data.token);
           },
         )
         .then((response) => {
           const userId = store.getState().user.data.id;
-          axiosInstance
+          api
             .get(`api/v1/user/${userId}/chat`)
             .then(
               (response2) => {
@@ -35,6 +30,7 @@ const authMiddleware = (store) => (next) => (action) => {
 
                 store.dispatch(saveUserConversations(response2.data));
                 store.dispatch(setLoadingFalse());
+                // store.dispatch(wsConnect());
               },
             );
         });
@@ -45,7 +41,8 @@ const authMiddleware = (store) => (next) => (action) => {
 
     case LOGOUT_USER:
       localStorage.removeItem('token');
-      delete axiosInstance.defaults.headers.common.Authorization;
+      delete api.defaults.headers.common.Authorization;
+      store.dispatch(wsDisconnect());
       next(action);
       break;
     case REGISTER_USER: {
@@ -59,7 +56,7 @@ const authMiddleware = (store) => (next) => (action) => {
         zipCode,
         city,
       } = store.getState().user;
-      axiosInstance
+      api
         .post('/api/v1/user/add', {
           email,
           firstname: firstName,
