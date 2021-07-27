@@ -12,6 +12,8 @@ export const initialState = {
   logged: false,
   data: {},
   conversations: {},
+  holiday_mode: false,
+  bio: '',
 };
 
 const reducer = (state = initialState, action = {}) => {

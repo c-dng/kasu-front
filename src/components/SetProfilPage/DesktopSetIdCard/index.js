@@ -4,7 +4,17 @@ import { LabelDetail } from 'semantic-ui-react';
 import { ButtonGroup } from 'semantic-ui-react';
 import { Button, Divider, Grid, Header, Form, Icon, Input, Image, Label, Modal, Radio, Segment, TextArea } from 'semantic-ui-react';
 
-const DesktopSetIdCard = () => {
+const DesktopSetIdCard = ({
+  email,
+  password,
+  pseudo,
+  address,
+  zipCode,
+  city,
+  firstName,
+  lastName,
+  holiday_mode
+}) => {
 
   const [open, setOpen] = React.useState(false);
 
@@ -16,7 +26,7 @@ const DesktopSetIdCard = () => {
             
 
           <div className="desktopIdCard-leftPartWrapper2elements">
-          <Label className="desktopIdCard-leftPartWrapperLogin" attached='top left'>Mon pseudo</Label>
+          <Label className="desktopIdCard-leftPartWrapperLogin" attached='top left'>{pseudo}</Label>
 
             <Image className="desktopIdCard-leftPartWrapperImage"
                 size="medium"
@@ -34,6 +44,7 @@ const DesktopSetIdCard = () => {
             <Label className="desktopIdCard-bioLabel">
               <p className="desktopIdCard-bioP">Bio</p>
             </Label>
+
 
             <Form className="desktopIdCard-memberDescription">
                     <TextArea placeholder="Parle nous un peu de toi..." />
@@ -54,12 +65,14 @@ const DesktopSetIdCard = () => {
               icon='user'
               iconPosition='left'
               placeholder='Prénom'
+              value={firstName}
             />
 
             <Form.Input className="desktopIdCard-formInputLastName"
               icon='user'
               iconPosition='left'
               placeholder='Nom'
+              value={lastName}
             />
         </Form.Group>
 
@@ -67,14 +80,17 @@ const DesktopSetIdCard = () => {
               icon='map marker alternate'
               iconPosition='left'
               placeholder='Adresse'
+              value={address}
             />
 
             <Form.Input
               placeholder='Code Postal'
+              value={zipCode}
             />
                     
             <Form.Input
               placeholder='Ville'
+              value={city}
             />
 
         <Form.Group widths='equal'>
@@ -84,6 +100,7 @@ const DesktopSetIdCard = () => {
               icon='lock'
               iconPosition='left'
               placeholder='Mot de passe'
+              value={password}
             />
 
             <Form.Input className="desktopIdCard-formInpuConfirmPassword"
@@ -91,6 +108,7 @@ const DesktopSetIdCard = () => {
               icon='lock'
               iconPosition='left'
               placeholder='Confirmer mot de passe'
+              value={password}
             />
 
         </Form.Group>

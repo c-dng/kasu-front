@@ -7,7 +7,17 @@ import alternativeBanner from 'src/assets/images/alternativeBanner.png';
 import logo from 'src/assets/images/logo.png';
 import DesktopSetIdCard from './DesktopSetIdCard';
 
-const SetProfilPage = () => {
+const SetProfilPage = ({
+  email,
+  password,
+  pseudo,
+  address,
+  zipCode,
+  city,
+  firstName,
+  lastName,
+  holiday_mode
+}) => {
   const [open, setOpen] = React.useState(false);
 
   return (
