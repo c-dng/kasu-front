@@ -1,351 +1,162 @@
 @use '/src/styles/vars';
 
-h1.setProfilPage-title.setProfilPage-title.setProfilPage-title {
-  color: white;
-  background-color: black;
-  padding: 1rem;
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
-  text-align: center;
-  font-size: 1.29rem;
-  margin-bottom: 0;
-  font-family: Lato, Helvetica Neue, Arial, Helvetica, sans-serif;
-}
+// Mobile
 
-.setProfilPage-mainWrapper {
-  width: 80%;
-  margin: 3rem auto;
-  border-radius: 1em;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-};
-
-div.setProfilPage-firstPart {
-  margin-bottom: 0;
-  position: relative;
-}
-
-h1.setProfilPage-h1.setProfilPage-h1.setProfilPage-h1 {
-  margin-bottom: 0.7em;
-}  
-
-img.ui.tiny.image.setProfilPageFirstPartImage {
-  border-radius: 50%;
-  margin: 0 auto;
-}
-
-button.ui.button.setProfilPage-firstPartAddButton {
-  font-weight: bolder;
-  font-size: x-large;
-  padding: .2em .4em;
-  position: absolute;
-  border-radius: 50%;
-  left: 51%;
-  top: 65%;
-}
-
-div.setProfilPage-firstPart p {
+div.mobileSetProfilPage {
   margin-top: 1em;
-  text-align: center;
-}
-
-div.setProfilPage-secondPart {
-  margin-bottom: 1em;
-}
-
-div.setProfilPage-thirdPart {
-  margin-bottom: 1em;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: center;
-}
-
-p.setProfilPage-thirdPartParagraphEmail {
-  text-align: center;
-}
-
-div.ui.mini.buttons.setProfilPage-thirdPartButtonsGroup {
-  margin: auto;
-}
-
-div.ui.mini.left.attached.button.setProfilPage-thirdPartEmailButton {
-  border-top-left-radius: 1.5em;
-  border-bottom-left-radius: 1.5em;
-  text-align: center;
-}
-
-div.ui.mini.right.attached.button.setProfilPage-thirdPartPasswordButton {
-  border-top-right-radius: 1.5em;
-  border-bottom-right-radius: 1.5em;
-  text-align: center;
-}
-
-div.ui.modal.transition.visible.active.setProfilPage-thirdPartModalEmail {
-  width: 80%;
-}
-
-div.ui.modal.transition.visible.active.setProfilPage-thirdPartModalPassword {
-  width: 80%;
-}
-
-div.setProfilPage-fourthPart {
-  margin-bottom: 1em;
-  justify-content: space-between;
-}
-
-div.field.setProfilPage-fourthPartAdress {
- width: 100%;
- padding-top: 1em;
- padding-bottom: 1em;
-}
-
-div.fields.setProfilPage-fourthPartHolidayMode {
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-padding-top: 1em;
-}
-
-div.setProfilPage-fifthPart {
-  margin-bottom: 1em;
-  text-align: center;
-}
-
-button.ui.button.setProfilPage-fifthPartCancelButton.setProfilPage-fifthPartCancelButton {
-  border-radius: 1.5em;
   margin-right: 1em;
-}  
-
-button.ui.positive.button.setProfilPage-fifthPartValidateButton {
-  border-radius: 1.5em;
+  margin-left: 1em;
 }
 
-div.setProfilPage-sixthPart {
+div.setProfilPage-mainWrapper {
+  border-radius: 1em;
+  margin: 3rem;
+}
+
+h1.setProfilPage-title {
   text-align: center;
-}
-
-button.ui.negative.button.setProfilPage-sixthPartDeleteAccountButton {
-  border-radius: 1.5em;
-  color: red;
-  background-color: white;
-  border: 1px solid red;
-  margin-bottom: 1rem;
-}
-
-div.ui.modal.transition.visible.active.setProfilPage-sixthPartModalDeleteAccount {
-  width: 80%;
-}
-
-.setProfilPage-h1.setProfilPage-h1.setProfilPage-h1 {
-  padding: 1rem;
-  margin-bottom: 1rem;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
-  text-align: center;
-  font-family: Lato,Helvetica Neue,Arial,Helvetica,sans-serif;
-}
-
-.setProfilPage-padding.setProfilPage-padding.setProfilPage-padding {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-// Desktop 
-div.ui.segment.desktopIdCard-MainWrapper {
-
-  border-bottom-right-radius: 1rem;
-  border-bottom-left-radius: 1rem;
-  margin-top: 0;
-}
-
-.column.desktopIdCard-leftPartWrapper.column.desktopIdCard-leftPartWrapper.column.desktopIdCard-leftPartWrapper {
-  border-bottom-left-radius: 1rem;
-  padding-left: 0;
-  padding-right: 0;
-}
-
-div.ui.top.left.attached.label.desktopIdCard-leftPartWrapperLogin {
-  font-size: 1em;
-}
-
-
-div.desktopIdCard-leftPartWrapper2elements {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-span.desktopIdCard-holidayWrapper{
-  margin-top: 1em;
+  font-size: 1.29rem;
+  padding: 1rem;
 }
 
 div.ui.fitted.toggle.checkbox {
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
+}
+
+textarea.mobileSetProfil-textArea.mobileSetProfil-textArea.mobileSetProfil-textArea {
+  margin-bottom: 1em;
+}
+
+img.ui.tiny.circular.image.mobileSetProfil-image {
+  margin: auto;
+  border: 1px solid white;
+}
+
+button.ui.button.mobileSetProfil-changeImage {
+  background-color: #fff;
+  color: #000;
+  font-size: x-large;
+  left: 54%;
+  padding: .2em .4em;
+  position: absolute;
+  top: 59%;
+  border: 1px solid rgb(214, 213, 213)
+}
+
+h3.mobileSetProfil-h3.mobileSetProfil-h3 {
+  text-align: center;
+  margin-top: 0.50em;
+  margin-bottom: 0.50em;
+}
+
+span.desktopIdCard-holidayWrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.5em;
+}
+
+div.mobileSetProfil-divDeleteMyAccount {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1em;
+}
+
+button.ui.negative.button.mobileSetProfil-deleteMyAccount {
+  border-radius: 1em;
+  border: 1px solid white;
+}
+
+div.mobileSetProfil-groupTwoButtons {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1em;
+}
+
+button.ui.button.mobileSetProfil-buttonCancel {
+  border-radius: 1rem;
+  border: 1px solid white;
+
+}
+
+button.ui.button.mobileSetProfil-buttonValidate {
+  background-color: #A1DFD3;
+  color: #326158;
+  border-radius: 1rem;
+  border: 1px solid white;
+
+}
+
+//Desktop
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width : 1224px) {
+  div.setProfilPage-mainWrapper {
+    width: 70%;
+    margin: auto;
+    margin-top: 3rem;
+  }
+}
+
+h1.setProfilPage-title {
+  margin-bottom: 0;
+}
+
+div.ui.segment.desktopIdCard-MainWrapper {
+  margin-top: 0;
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
 }
 
-div.ui.label.desktopIdCard-bioLabel {
-margin-bottom: 0em;
-margin-left: 0;
-margin-right: 0;
+div.desktopIdCard-leftPartWrapper2elements {
+  display: flex;
+  justify-content: center;
+}
+
+span.desktopIdCard-holidayWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 button.ui.button.desktopIdCard-EditEmail {
+  font-size: 1rem;
+  margin-bottom: 1em;
+}
+  
++div.desktopIdCard-leftPartWrapper2elements {
   display: flex;
   justify-content: center;
-  margin-right: 0;
-  border: 1px solid rgb(226, 226, 226);
 }
 
 div.desktopIdCard-Bottom3Buttons.desktopIdCard-Bottom3Buttons{
-  display: flex;
-  margin-top: 8.1em;
+  margin-top: 9em;
 }
 
-div.ui.three.buttons {
-  border: 1px solid white;
+div.column.desktopIdCard-leftPartWrapper {
+  border-bottom-left-radius: 1em;
 }
 
-button.ui.button.desktopIdCard-memberDelete {
-  display: flex;
-  justify-content: center;
+div.column.desktopIdCard-rightPartWrapper {
+  border-bottom-right-radius: 1em;
 }
-
-:root {
-  --surface-color: #fff;
-  --curve: 40;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Noto Sans JP', sans-serif;
-  background-color: #fef8f8;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin: 4rem 5vw;
-  padding: 0;
-  list-style-type: none;
-}
-
-.card {
-  position: relative;
-  display: block;
-  height: 100%;  
-  border-radius: calc(var(--curve) * 1px);
-  overflow: hidden;
-  text-decoration: none;
-}
-
-.card__image {      
-  width: 100%;
-  height: auto;
-}
-
-.card__overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;      
-  border-radius: calc(var(--curve) * 1px);    
-  background-color: var(--surface-color);      
-  transform: translateY(100%);
-  transition: .2s ease-in-out;
-}
-
-.card:hover .card__overlay {
-  transform: translateY(0);
-}
-
-.card__header {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 2em;
-  padding: 2em;
-  border-radius: calc(var(--curve) * 1px) 0 0 0;    
-  background-color: var(--surface-color);
-  transform: translateY(-100%);
-  transition: .2s ease-in-out;
-}
-
-.card__arc {
-  width: 80px;
-  height: 80px;
-  position: absolute;
-  bottom: 100%;
-  right: 0;      
-  z-index: 1;
-}
-
-.card__arc path {
-  fill: var(--surface-color);
-  d: path("M 40 80 c 22 0 40 -22 40 -40 v 40 Z");
-}       
-
-.card:hover .card__header {
-  transform: translateY(0);
-}
-
-.card__thumb {
-  flex-shrink: 0;
-  width: 50px;
-  height: 50px;      
-  border-radius: 50%;      
-}
-
-.card__title {
-  font-size: 1em;
-  margin: 0 0 .3em;
-  color: #6A515E;
-}
-
-.card__tagline {
-  display: block;
-  margin: 1em 0;
-  font-family: "MockFlowFont";  
-  font-size: .8em; 
-  color: #D7BDCA;  
-}
-
-.card__status {
-  font-size: .8em;
-  color: #D7BDCA;
-}
-
-.card__description {
-  padding: 0 2em 2em;
-  margin: 0;
-  color: #D7BDCA;
-  font-family: "MockFlowFont";   
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-  overflow: hidden;
-}    
-
-  .desktopIdCard-mainCard {
-  justify-content: center;
-  width : 100%
-}
-
 
 // Theming 
 
 .theme1 {
 
   .setProfilPage-mainWrapper {
+    border: 1px solid vars.$primaryBorderColor_theme1;
+  }
+
+  h1.setProfilPage-title {
+    background-color: vars.$secondaryColor_theme1;
+    color: vars.$secondaryFontColor_theme1;
     border: 1px solid vars.$primaryBorderColor_theme1;
   }
 
@@ -371,67 +182,74 @@ body {
     color: vars.$primaryFontColor_theme1;
   }
 
-  .setProfilPage-h1.setProfilPage-h1.setProfilPage-h1 {
-    color: vars.$secondaryFontColor_theme1;
-    background-color: vars.$secondaryColor_theme1;
-
-  }
-
   div.ui.label.setProfilPage-fourthPartHolidayModeLabel {
   background-color: vars.$primaryColor_theme1;
   color: vars.$primaryFontColor_theme1;
+  }
+
+  button.ui.small.negative.button.mobileSetProfil-deleteMyAccount {
+    border: 1px solid vars.$primaryBorderColor_theme1;
+    color: vars.$primaryFontColor_theme1;
+  }
+
+  button.ui.small.button.mobileSetProfil-buttonCancel {
+    border: 1px solid vars.$primaryBorderColor_theme1;
+    color: vars.$primaryFontColor_theme1;
+  }
+
+  button.ui.small.button.mobileSetProfil-buttonValidate {
+    border: 1px solid vars.$primaryBorderColor_theme1;
+    color: vars.$primaryFontColor_theme1;
   }
 }
 
 .theme2 {
 
-h1.setProfilPage-title.setProfilPage-title.setProfilPage-title {
-  background-color: white;
-  color: vars.$secondaryFontColor_theme2;
-}
+  h1.setProfilPage-title.setProfilPage-title.setProfilPage-title {
+    background-color: white;
+    color: vars.$secondaryFontColor_theme2;
+  }
 
-h3.ui.header.ui.header.ui.header.ui.header    {
-  color: vars.$secondaryFontColor_theme1;
-}
+  h3.ui.header.ui.header.ui.header.ui.header    {
+    color: vars.$secondaryFontColor_theme1;
+  }
 
-div.ui.top.left.attached.label.desktopIdCard-leftPartWrapperLogin {
-  background-color: vars.$primaryColor_theme2;
-  color: vars.$secondaryFontColor_theme1;
-  border: 1px solid vars.$secondaryFontColor_theme1;
-}
+  div.ui.top.left.attached.label.desktopIdCard-leftPartWrapperLogin {
+    background-color: vars.$primaryColor_theme2;
+    color: vars.$secondaryFontColor_theme1;
+    border: 1px solid vars.$secondaryFontColor_theme1;
+  }
 
-div.ui.medium.image.desktopIdCard-leftPartWrapperImage {
-  border: 1px solid vars.$secondaryFontColor_theme1;
-}
+  div.ui.medium.image.desktopIdCard-leftPartWrapperImage {
+    border: 1px solid vars.$secondaryFontColor_theme1;
+  }
 
-div.ui.fitted.toggle.checkbox {
-  border: 1px solid vars.$primaryFontColor_theme2;;
-}
+  .ui.label.desktopIdCard-bioLabel {
+    background-color: vars.$primaryColor_theme2;
+    border: 1px solid vars.$secondaryFontColor_theme1;
+  }
 
-.ui.label.desktopIdCard-bioLabel {
-  background-color: vars.$primaryColor_theme2;
-  border: 1px solid vars.$secondaryFontColor_theme1;
-}
+  p.desktopIdCard-bioP {
+    color: vars.$secondaryFontColor_theme1;
+  }
 
-p.desktopIdCard-bioP {
-  color: vars.$secondaryFontColor_theme1;
-}
+  button.ui.button.desktopIdCard-EditEmail {
+    background-color: vars.$primaryColor_theme2;
+    color: vars.$primaryFontColor_theme2;
+    border: 1px solid vars.$secondaryFontColor_theme1;
+  }
 
-button.ui.button.desktopIdCard-EditEmail {
-  background-color: vars.$primaryColor_theme2;
-  color: white;
-  border: 1px solid vars.$secondaryFontColor_theme1;
-}
-
-button.ui.button.desktopIdCard-memberDelete {
-  border: 1px solid vars.$secondaryFontColor_theme1;
-}
+  button.ui.button.desktopIdCard-memberDelete {
+    border: 1px solid vars.$secondaryFontColor_theme1;
+  }
 
   .desktopIdCard-mainCard {
     background-color: vars.$primaryColor_theme2;
   }
+
   .setProfilPage-mainWrapper {
-    border: 1px solid vars.$primaryBorderColor_theme2;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
   }
 
   .column.desktopIdCard-leftPartWrapper {
@@ -465,13 +283,54 @@ button.ui.button.desktopIdCard-memberDelete {
     color: vars.$primaryFontColor_theme2;
   }
 
-  .setProfilPage-h1.setProfilPage-h1.setProfilPage-h1 {
-    color: vars.$secondaryFontColor_theme2;
-    background-color: vars.$secondaryColor_theme2;
-  }
-
   div.ui.label.setProfilPage-fourthPartHolidayModeLabel {
   background-color: vars.$primaryColor_theme2;
   color: vars.$primaryFontColor_theme2;
+  }
+
+  button.ui.green.icon.button {
+    border: 1px solid vars.$secondaryFontColor_theme1;
+  }
+
+  button.ui.black.icon.button {
+    border: 1px solid vars.$secondaryFontColor_theme1;
+  }
+
+  // Theme 2 - Mobile
+
+  
+  img.ui.tiny.circular.image.mobileSetProfil-image {
+    border: 2px solid vars.$primaryBorderColor_theme2;
+  }
+
+  button.ui.large.button.mobileSetProfil-buttonCancel {
+    background-color: vars.$primaryColor_theme2;
+    color: vars.$primaryFontColor_theme2;
+    border: 1px solid vars.$primaryBorderColor_theme2;
+  }
+
+  button.ui.large.button.mobileSetProfil-buttonValidate {
+    background-color: vars.$primaryColor_theme2;
+    color: vars.$primaryFontColor_theme2;
+    border: 1px solid vars.$primaryBorderColor_theme2;
+  }
+
+  div.ui.fitted.toggle.checkbox {
+    border: 1px solid vars.$primaryBorderColor_theme2;
+  }
+
+  button.ui.small.button.mobileSetProfil-buttonCancel {
+    border: 1px solid vars.$primaryBorderColor_theme2;
+  }
+
+  button.ui.small.button.mobileSetProfil-buttonValidate {
+    border: 1px solid vars.$primaryBorderColor_theme2;
+  }
+
+  /* Responsive Mobile ----------- */
+  @media only screen and (max-width : 1224px) {
+    .setProfilPage-mainWrapper {
+      border: 1px solid vars.$primaryBorderColor_theme2;
+    }
   }
 }
