@@ -20,6 +20,9 @@ const authMiddleware = (store) => (next) => (action) => {
             localStorage.setItem('token', response.data.token);
           },
         )
+        .catch((error) => {
+          store.dispatch(setLoadingFalse());
+        })
         .then((response) => {
           const userId = store.getState().user.data.id;
           api

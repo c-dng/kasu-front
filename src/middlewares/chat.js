@@ -75,7 +75,6 @@ const chatMiddleware = (store) => (next) => (action) => {
             store.dispatch(setLoadingFalse());
             console.log('ça plante');
             console.log(error);
-            console.log(api);
           },
         );
       next(action);
