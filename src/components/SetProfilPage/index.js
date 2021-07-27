@@ -36,7 +36,7 @@ const SetProfilPage = () => {
           <span className="desktopIdCard-holidayWrapper">
               <Label className="setProfilPage-fourthPartHolidayModeLabel">Mode vacances: </Label>
               <Radio size="medium" toggle />
-          </span>
+            </span>
           <Form>
               <TextArea rows={2} placeholder='Bio' />
           </Form>
