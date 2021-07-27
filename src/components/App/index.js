@@ -7,7 +7,7 @@ import Footer from 'src/components/Footer';
 import SearchResultsByLocation from 'src/components/SearchResultsByLocation';
 import LoginForm from 'src/containers/LoginForm';
 import Register from 'src/containers/Register';
-import ContactForm from 'src/components/ContactForm';
+import ContactForm from 'src/containers/ContactForm';
 import Conversations from 'src/containers/Conversations';
 import SetProfilPage from 'src/components/SetProfilPage';
 import ManageMyCollection from 'src/components/ManageMyCollection';
