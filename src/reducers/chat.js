@@ -36,8 +36,8 @@ const reducer = (state = initialState, action = {}) => {
           ...state.lastSingleChat,
           messages: [
             ...state.lastSingleChat.messages,
-            
-          ]
+            action.message,
+          ],
         },
       };
     case SAVE_RECEIVED_MESSAGE:
