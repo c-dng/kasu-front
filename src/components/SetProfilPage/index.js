@@ -14,8 +14,7 @@ const SetProfilPage = () => {
     <div className="setProfilPage">
 
       <Image className="registerForm-banner" src={alternativeBanner} />
-      <div className="viewProfilPage">
-        <div className="viewProfilPage-mainWrapper">
+        <div className="setProfilPage-mainWrapper">
 
           <h1 className="setProfilPage-title">Gérer mon profil</h1>
           <MediaQuery minWidth={1224}>
@@ -24,26 +23,23 @@ const SetProfilPage = () => {
 
           <MediaQuery maxWidth={1223}>
           <div className="mobileSetProfilPage">
-
-          <Image className="mobileSetProfil-image" 
-              src='https://react.semantic-ui.com/images/avatar/large/steve.jpg'
-              size='tiny'
-              circular
-          />
-          <Button className="mobileSetProfil-changeImage" circular>+</Button>
-
+          <div className="mobileSetProfil-ButtonAddAndImage">
+            <Image className="mobileSetProfil-image" 
+                src='https://react.semantic-ui.com/images/avatar/large/steve.jpg'
+                size='tiny'
+                circular
+            />
+            <Button className="mobileSetProfil-changeImage" circular>+</Button>
+          </div>
           <h3 className="mobileSetProfil-h3">Mon pseudo</h3>
           <span className="desktopIdCard-holidayWrapper">
               <Label className="setProfilPage-fourthPartHolidayModeLabel">Mode vacances: </Label>
               <Radio size="medium" toggle />
             </span>
-          <Form>
-              <TextArea rows={2} placeholder='Bio' />
-          </Form>
-          
-          </div>
 
           <Form>
+             <TextArea className="mobileSetProfil-textArea" rows={2} placeholder='Bio' />
+
              <Form.Group widths='equal'>
                 <Form.Input className="mobileSetProfil-formInputName"
                   icon='user'
@@ -74,29 +70,52 @@ const SetProfilPage = () => {
                   iconPosition='left'
                   placeholder='Ville'
                 />
-            
-                <Form.Input className="mobileSetProfil-formInputPassword"
-                  action='Modifier'
-                  placeholder='Mot de passe' 
+
+                <Form.Input
+                  input='password'
+                  icon='lock'
+                  iconPosition='left'
+                  placeholder='Mot de passe'
+                  fluid
                 />
 
-                <Form.Input className="mobileSetProfil-formInputEmail"
-                  action='Modifier'
-                  placeholder='E-mail' 
+                <Form.Input
+                  input='password'
+                  icon='lock'
+                  iconPosition='left'
+                  placeholder='Confirmer mot de passe'
+                  fluid
                 />
+
+                <Form.Input
+                  input='email'
+                  icon='mail'
+                  iconPosition='left'
+                  placeholder='Email'
+                  fluid
+                />
+
+                <Form.Input
+                  input='email'
+                  icon='mail'
+                  iconPosition='left'
+                  placeholder='Confirmer email'
+                  fluid
+                />
+
             </Form.Group>
           </Form>
-
-            <p className="mobileSetProfil-deleteMyAccount">X Supprimer mon compte</p>
-            <div className="mobileSetProfil-groupTwoButtons">
-                <Button size='large' className="mobileSetProfil-buttonCancel">Annuler</Button>
-                <Button size='large' className="mobileSetProfil-buttonValidate">Valider</Button>
+              <div className="mobileSetProfil-divDeleteMyAccount">
+                  <Button size='small' className="mobileSetProfil-deleteMyAccount" negative>Supprimer mon compte</Button>
+              </div>   
+              <div className="mobileSetProfil-groupTwoButtons">
+                  <Button size='small' className="mobileSetProfil-buttonCancel">Annuler</Button>
+                  <Button size='small' className="mobileSetProfil-buttonValidate">Valider</Button>
+              </div>
             </div>
-
           </MediaQuery>
 
-        </div>
-      </div>
+        </div>  
     </div>
   );
 };
