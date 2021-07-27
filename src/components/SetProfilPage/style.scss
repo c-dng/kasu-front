@@ -21,6 +21,13 @@ h1.setProfilPage-title {
   padding: 1rem;
 }
 
+div.ui.fitted.toggle.checkbox {
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
 textarea.mobileSetProfil-textArea.mobileSetProfil-textArea.mobileSetProfil-textArea {
   margin-bottom: 1em;
 }
@@ -117,8 +124,7 @@ button.ui.button.desktopIdCard-EditEmail {
   margin-bottom: 1em;
 }
   
-
-div.desktopIdCard-leftPartWrapper2elements {
++div.desktopIdCard-leftPartWrapper2elements {
   display: flex;
   justify-content: center;
 }
@@ -132,10 +138,8 @@ div.column.desktopIdCard-leftPartWrapper {
 }
 
 div.column.desktopIdCard-rightPartWrapper {
-border-bottom-right-radius: 1em;
+  border-bottom-right-radius: 1em;
 }
-
-
 
 // Theming 
 
@@ -176,6 +180,25 @@ border-bottom-right-radius: 1em;
   div.ui.label.setProfilPage-fourthPartHolidayModeLabel {
   background-color: vars.$primaryColor_theme1;
   color: vars.$primaryFontColor_theme1;
+  }
+
+  div.ui.fitted.toggle.checkbox {
+    border: 1px solid vars.$primaryBorderColor_theme1;
+  }
+
+  button.ui.small.negative.button.mobileSetProfil-deleteMyAccount {
+    border: 1px solid vars.$primaryBorderColor_theme1;
+    color: vars.$primaryFontColor_theme1;
+  }
+
+  button.ui.small.button.mobileSetProfil-buttonCancel {
+    border: 1px solid vars.$primaryBorderColor_theme1;
+    color: vars.$primaryFontColor_theme1;
+  }
+
+  button.ui.small.button.mobileSetProfil-buttonValidate {
+    border: 1px solid vars.$primaryBorderColor_theme1;
+    color: vars.$primaryFontColor_theme1;
   }
 }
 
@@ -276,19 +299,31 @@ border-bottom-right-radius: 1em;
 
   
   img.ui.tiny.circular.image.mobileSetProfil-image {
-    border: 2px solid vars.$secondaryFontColor_theme1;
+    border: 2px solid vars.$primaryBorderColor_theme2;
   }
 
   button.ui.large.button.mobileSetProfil-buttonCancel {
     background-color: vars.$primaryColor_theme2;
     color: vars.$primaryFontColor_theme2;
-    border: 1px solid vars.$primaryFontColor_theme2;
+    border: 1px solid vars.$primaryBorderColor_theme2;
   }
 
   button.ui.large.button.mobileSetProfil-buttonValidate {
     background-color: vars.$primaryColor_theme2;
     color: vars.$primaryFontColor_theme2;
-    border: 1px solid vars.$primaryFontColor_theme2;
+    border: 1px solid vars.$primaryBorderColor_theme2;
+  }
+
+  div.ui.fitted.toggle.checkbox {
+    border: 1px solid vars.$primaryBorderColor_theme2;
+  }
+
+  button.ui.small.button.mobileSetProfil-buttonCancel {
+    border: 1px solid vars.$primaryBorderColor_theme2;
+  }
+
+  button.ui.small.button.mobileSetProfil-buttonValidate {
+    border: 1px solid vars.$primaryBorderColor_theme2;
   }
 
   /* Responsive Mobile ----------- */
