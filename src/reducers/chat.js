@@ -1,5 +1,5 @@
 import {
-  SAVE_RECEIVED_MESSAGE, SEND_MESSAGE, SET_NEW_MESSAGE, TOGGLE_HIDDEN_BOX, SAVE_LAST_SINGLE_CHAT,
+  SAVE_RECEIVED_MESSAGE, SEND_MESSAGE, SET_NEW_MESSAGE, TOGGLE_HIDDEN_BOX, SAVE_LAST_SINGLE_CHAT, ADD_MESSAGE,
 } from '../actions/chat';
 import { LOGOUT_USER } from '../actions/user';
 
@@ -25,6 +25,20 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         newMessage: '',
+      };
+    case ADD_MESSAGE:
+      if (state.lastSingleChat.id !== action.chatId) {
+        return state;
+      }
+      return {
+        ...state,
+        lastSingleChat: {
+          ...state.lastSingleChat,
+          messages: [
+            ...state.lastSingleChat.messages,
+            action.message,
+          ],
+        },
       };
     case SAVE_RECEIVED_MESSAGE:
       return {
