@@ -54,6 +54,13 @@ export const changeCity = (city) => ({
   city,
 });
 
+export const CHANGE_HOLIDAY_MODE = 'CHANGE_HOLIDAY_MODE';
+
+export const changeHolidayMode = (holiday_mode) => ({
+  type: CHANGE_HOLIDAY_MODE,
+  holiday_mode,
+});
+
 export const LOGIN_USER = 'LOGIN_USER';
 
 export const loginUser = () => ({

@@ -16,11 +16,46 @@ const SetProfilPage = ({
   city,
   firstName,
   lastName,
-  holiday_mode
+  holiday_mode,
+  changeEmail,
+  changePassword,
+  changePseudo,
+  changeAddress,
+  changeZipCode,
+  changeCity,
+  changeFirstName,
+  changeLastName,
+  changeHoliday_mode
 }) => {
   const [open, setOpen] = React.useState(false);
-  console.log({zipCode});
-  console.log({email});
+  
+  const handleChangeEmail = (evt) => {
+    changeEmail(evt.target.value);
+  };
+  const handleChangePassword = (evt) => {
+    changePassword(evt.target.value);
+  };
+  const handleChangePseudo = (evt) => {
+    changePseudo(evt.target.value);
+  };
+  const handleChangeAddress = (evt) => {
+    changeAddress(evt.target.value);
+  };
+  const handleChangeZipCode = (evt) => {
+    changeZipCode(evt.target.value);
+  };
+  const handleChangeCity = (evt) => {
+    changeCity(evt.target.value);
+  };
+  const handleChangeFirstName = (evt) => {
+    changeFirstName(evt.target.value);
+  };
+  const handleChangeLastName = (evt) => {
+    changeLastName(evt.target.value);
+  };
+  const handleChangeHoliday_mode = (evt) => {
+  changeHoliday_mode(evt.target.value);
+  };
 
   return (
     <div className="setProfilPage">
@@ -40,6 +75,15 @@ const SetProfilPage = ({
             firstName={firstName}
             lastName={lastName}
             holiday_mode={holiday_mode}
+            changeEmail={changeEmail}
+            changePassword={changePassword}
+            changePseudo={changePseudo}
+            changeAddress={changeAddress}
+            changeZipCode={changeZipCode}
+            changeCity={changeCity}
+            changeFirstName={changeFirstName}
+            changeLastName={changeLastName}
+            changeHoliday_mode={changeHoliday_mode}
             />
           </MediaQuery>
 
@@ -68,6 +112,7 @@ const SetProfilPage = ({
                   iconPosition='left'
                   placeholder='Prénom'
                   value={firstName}
+                  onChange={handleChangeFirstName}
                 />
 
                 <Form.Input className="mobileSetProfil-formInputLastName"
@@ -75,6 +120,7 @@ const SetProfilPage = ({
                   iconPosition='left'
                   placeholder='Nom'
                   value={lastName}
+                  onChange={handleChangeLastName}
                 />
 
                 <Form.Input
@@ -82,6 +128,7 @@ const SetProfilPage = ({
                   iconPosition='left'
                   placeholder='Adresse'
                   value={address}
+                  onChange={handleChangeAddress}
                 />
 
                 <Form.Input
@@ -90,6 +137,7 @@ const SetProfilPage = ({
                   placeholder='Code Postal'
                   type='number'
                   value={zipCode}
+                  onChange={handleChangeZipCode}
                 />
                     
                 <Form.Input
@@ -97,6 +145,7 @@ const SetProfilPage = ({
                   iconPosition='left'
                   placeholder='Ville'
                   value={city}
+                  onChange={handleChangeCity}
                 />
 
                 <Form.Input
@@ -106,6 +155,7 @@ const SetProfilPage = ({
                   placeholder='Mot de passe'
                   fluid
                   value={password}
+                  onChange={handleChangePassword}
                 />
 
                 <Form.Input
@@ -115,6 +165,7 @@ const SetProfilPage = ({
                   placeholder='Confirmer mot de passe'
                   fluid
                   value={password}
+                  //onChange={handleChangePassword}
                 />
 
                 <Form.Input
@@ -124,6 +175,7 @@ const SetProfilPage = ({
                   placeholder='Email'
                   fluid
                   value={email}
+                  onChange={handleChangeEmail}
                 />
 
                 <Form.Input
@@ -133,6 +185,7 @@ const SetProfilPage = ({
                   placeholder='Confirmer email'
                   fluid
                   value={email}
+                  //onChange={handleChangeEmail}
                 />
 
             </Form.Group>

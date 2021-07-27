@@ -1,7 +1,7 @@
-import { CHANGE_PSEUDO, CHANGE_EMAIL, CHANGE_PASSWORD, SAVE_USER, LOGOUT_USER, CHANGE_ADDRESS, CHANGE_ZIP_CODE, CHANGE_FIRST_NAME, CHANGE_LAST_NAME, CHANGE_CITY, SAVE_USER_CONVERSATIONS } from '../actions/user';
+import { CHANGE_PSEUDO, CHANGE_EMAIL, CHANGE_PASSWORD, SAVE_USER, LOGOUT_USER, CHANGE_ADDRESS, CHANGE_ZIP_CODE, CHANGE_FIRST_NAME, CHANGE_LAST_NAME, CHANGE_CITY, CHANGE_HOLIDAY_MODE, SAVE_USER_CONVERSATIONS } from '../actions/user';
 
 export const initialState = {
-  email: 'gdhfdjgjgy',
+  email: '',
   password: '',
   pseudo: '',
   address: '',
@@ -58,6 +58,11 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         city: action.city,
       };
+    case CHANGE_HOLIDAY_MODE:
+    return {
+      ...state,
+      holiday_mode: action.holiday_mode,
+    };
     case SAVE_USER:
       return {
         ...state,

@@ -13,11 +13,48 @@ const DesktopSetIdCard = ({
   city,
   firstName,
   lastName,
-  holiday_mode
+  holiday_mode,
+  changeEmail,
+  changePassword,
+  changePseudo,
+  changeAddress,
+  changeZipCode,
+  changeCity,
+  changeFirstName,
+  changeLastName,
+  changeHoliday_mode
 }) => {
 
   const [open, setOpen] = React.useState(false);
   console.log();
+
+  const handleChangeEmail = (evt) => {
+    changeEmail(evt.target.value);
+  };
+  const handleChangePassword = (evt) => {
+    changePassword(evt.target.value);
+  };
+  const handleChangePseudo = (evt) => {
+    changePseudo(evt.target.value);
+  };
+  const handleChangeAddress = (evt) => {
+    changeAddress(evt.target.value);
+  };
+  const handleChangeZipCode = (evt) => {
+    changeZipCode(evt.target.value);
+  };
+  const handleChangeCity = (evt) => {
+    changeCity(evt.target.value);
+  };
+  const handleChangeFirstName = (evt) => {
+    changeFirstName(evt.target.value);
+  };
+  const handleChangeLastName = (evt) => {
+    changeLastName(evt.target.value);
+  };
+  const handleChangeHoliday_mode = (evt) => {
+  changeHoliday_mode(evt.target.value);
+  };
 
   return (
     
@@ -68,6 +105,7 @@ const DesktopSetIdCard = ({
               iconPosition='left'
               placeholder='Prénom'
               value={firstName}
+              onChange={handleChangeFirstName}
             />
 
             <Form.Input className="desktopIdCard-formInputLastName"
@@ -75,6 +113,7 @@ const DesktopSetIdCard = ({
               iconPosition='left'
               placeholder='Nom'
               value={lastName}
+              onChange={handleChangeLastName}
             />
         </Form.Group>
 
@@ -83,17 +122,20 @@ const DesktopSetIdCard = ({
               iconPosition='left'
               placeholder='Adresse'
               value={address}
+              onChange={handleChangeAddress}
             />
 
             <Form.Input
               placeholder='Code Postal'
               value={zipCode}
               type='number'
+              onChange={handleChangeZipCode}
             />
                     
             <Form.Input
               placeholder='Ville'
               value={city}
+              onChange={handleChangeCity}
             />
 
         <Form.Group widths='equal'>
@@ -104,6 +146,7 @@ const DesktopSetIdCard = ({
               iconPosition='left'
               placeholder='Mot de passe'
               value={password}
+              onChange={handleChangePassword}
             />
 
             <Form.Input className="desktopIdCard-formInpuConfirmPassword"
@@ -112,6 +155,7 @@ const DesktopSetIdCard = ({
               iconPosition='left'
               placeholder='Confirmer mot de passe'
               value={password}
+              //onChange={handleChangePassword}
             />
 
         </Form.Group>
@@ -124,6 +168,7 @@ const DesktopSetIdCard = ({
               iconPosition='left'
               placeholder='Email'
               value={email}
+              onChange={handleChangeEmail}
             />
 
             <Form.Input className="desktopIdCard-formInputConfirmEmail"
@@ -131,6 +176,7 @@ const DesktopSetIdCard = ({
               iconPosition='left'
               placeholder='Confirmer email'
               value={email}
+              //onChange={handleChangeEmail}
             />
 
         </Form.Group>
