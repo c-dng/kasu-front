@@ -32,6 +32,16 @@ export const sendMessage = (id, content) => ({
   content,
 });
 
+export const ADD_MESSAGE = 'ADD_MESSAGE';
+
+export const addMessage = (message, chatId, userId) => ({
+  type: ADD_MESSAGE,
+  message,
+  chatId,
+  userId,
+
+});
+
 export const SAVE_RECEIVED_MESSAGE = 'SAVE_RECEIVED_MESSAGE';
 
 export const saveReceivedMessage = (receivedMessage) => ({

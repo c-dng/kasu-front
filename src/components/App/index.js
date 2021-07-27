@@ -25,9 +25,6 @@ import { useBeforeunload } from 'react-beforeunload';
 const App = ({
   theme, loading, onPageLoad, onRefreshOrTabClosing, isLogged, chatId
 }) => {
-  if (loading) {
-    return <Loading />;
-  }
 
   const handleOnClose = (evt) => {
     if (isLogged) {
@@ -40,10 +37,16 @@ const App = ({
   });
 
   useEffect(() => {
-    if (isLogged) {
+    console.log('App useEffect', { isLogged, chatId });
+    if (isLogged && chatId) {
       onPageLoad(chatId);
     }
-  }, []);
+  }, [chatId, isLogged]);
+
+  if (loading) {
+    return <Loading />;
+  }
+
   return (
     <div className={`app ${theme}`}>
 
