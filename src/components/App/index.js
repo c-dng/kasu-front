@@ -23,9 +23,8 @@ import { Route, Switch } from 'react-router-dom';
 import { useBeforeunload } from 'react-beforeunload';
 // == Composant
 const App = ({
-  theme, loading, onPageLoad, onRefreshOrTabClosing, isLogged, chatId
+  theme, loading, onPageLoad, onRefreshOrTabClosing, isLogged, chatId,
 }) => {
-
   const handleOnClose = (evt) => {
     if (isLogged) {
       onRefreshOrTabClosing();

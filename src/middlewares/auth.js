@@ -1,5 +1,5 @@
 import api from 'src/api';
-import { LOGIN_USER, REGISTER_USER, saveUser, LOGOUT_USER, saveUserConversations } from 'src/actions/user';
+import { LOGIN_USER, REGISTER_USER, saveUser, LOGOUT_USER, saveUserConversations, LOAD_CONVERSATIONS } from 'src/actions/user';
 import { setLoadingFalse, setLoadingTrue } from '../actions/global';
 import { wsDisconnect } from '../actions/chat';
 
@@ -20,6 +20,9 @@ const authMiddleware = (store) => (next) => (action) => {
             localStorage.setItem('token', response.data.token);
           },
         )
+        .catch((error) => {
+          store.dispatch(setLoadingFalse());
+        })
         .then((response) => {
           const userId = store.getState().user.data.id;
           api
@@ -39,6 +42,26 @@ const authMiddleware = (store) => (next) => (action) => {
       break;
     }
 
+    case LOAD_CONVERSATIONS: {
+      const userId = store.getState().user.data.id;
+      store.dispatch(setLoadingTrue());
+      api
+        .get(`api/v1/user/${userId}/chat`)
+        .then(
+          (response) => {
+            console.log('great conversation loading', response);
+
+            store.dispatch(saveUserConversations(response.data));
+            store.dispatch(setLoadingFalse());
+          },
+        )
+        .catch((error) => {
+          console.log('load conversations went wrong', error);
+          store.dispatch(setLoadingFalse());
+        });
+      next(action);
+      break;
+    }
     case LOGOUT_USER:
       localStorage.removeItem('token');
       delete api.defaults.headers.common.Authorization;
