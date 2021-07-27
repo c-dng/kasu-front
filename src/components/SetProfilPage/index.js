@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  Image, TextArea, Button, Form, Radio, Container, Modal, Header, Icon, Input, Label,
+  Image, TextArea, Button, Form, Radio, Label,
 } from 'semantic-ui-react';
 import './style.scss';
 import alternativeBanner from 'src/assets/images/alternativeBanner.png';
@@ -25,10 +25,17 @@ const SetProfilPage = ({
   changeCity,
   changeFirstName,
   changeLastName,
-  changeHoliday_mode
+  changeHoliday_mode,
+  handleUpdate,
+  displayUserInfos
 }) => {
   const [open, setOpen] = React.useState(false);
-  
+
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    console.log('Bien soumis!');
+    handleUpdate();
+  };
   const handleChangeEmail = (evt) => {
     changeEmail(evt.target.value);
   };
@@ -53,8 +60,8 @@ const SetProfilPage = ({
   const handleChangeLastName = (evt) => {
     changeLastName(evt.target.value);
   };
-  const handleChangeHoliday_mode = (evt) => {
-  changeHoliday_mode(evt.target.value);
+  const changeHolidayMode = (evt) => {
+    changeHolidayMode(evt.target.value);
   };
 
   return (
@@ -83,7 +90,9 @@ const SetProfilPage = ({
             changeCity={changeCity}
             changeFirstName={changeFirstName}
             changeLastName={changeLastName}
-            changeHoliday_mode={changeHoliday_mode}
+            changeHolidayMode={changeHolidayMode}
+            handleUpdate={handleUpdate}
+            displayUserInfos={displayUserInfos}
             />
           </MediaQuery>
 
@@ -97,16 +106,25 @@ const SetProfilPage = ({
             />
             <Button className="mobileSetProfil-changeImage" circular>+</Button>
           </div>
-          <h3 className="mobileSetProfil-h3"> {pseudo}</h3>
+          <h3 className="mobileSetProfil-h3">{pseudo}</h3>
           <span className="desktopIdCard-holidayWrapper">
               <Label className="setProfilPage-fourthPartHolidayModeLabel">Mode vacances: </Label>
               <Radio size="medium" toggle />
             </span>
 
-          <Form>
+          <Form  onSubmit={handleSubmit}>
              <TextArea className="mobileSetProfil-textArea" rows={2} placeholder='Bio' />
 
              <Form.Group widths='equal'>
+
+             <Form.Input className="mobileSetProfil-formInputName"
+                  icon='user'
+                  iconPosition='left'
+                  placeholder='Pseudo'
+                  value={pseudo}
+                  onChange={handleChangePseudo}
+                />
+
                 <Form.Input className="mobileSetProfil-formInputName"
                   icon='user'
                   iconPosition='left'
@@ -159,16 +177,6 @@ const SetProfilPage = ({
                 />
 
                 <Form.Input
-                  input='password'
-                  icon='lock'
-                  iconPosition='left'
-                  placeholder='Confirmer mot de passe'
-                  fluid
-                  value={password}
-                  //onChange={handleChangePassword}
-                />
-
-                <Form.Input
                   input='email'
                   icon='mail'
                   iconPosition='left'
@@ -178,16 +186,6 @@ const SetProfilPage = ({
                   onChange={handleChangeEmail}
                 />
 
-                <Form.Input
-                  input='email'
-                  icon='mail'
-                  iconPosition='left'
-                  placeholder='Confirmer email'
-                  fluid
-                  value={email}
-                  //onChange={handleChangeEmail}
-                />
-
             </Form.Group>
           </Form>
               <div className="mobileSetProfil-divDeleteMyAccount">
@@ -195,7 +193,7 @@ const SetProfilPage = ({
               </div>   
               <div className="mobileSetProfil-groupTwoButtons">
                   <Button size='small' className="mobileSetProfil-buttonCancel">Annuler</Button>
-                  <Button size='small' className="mobileSetProfil-buttonValidate">Valider</Button>
+                  <Button type="submit" size='small' className="mobileSetProfil-buttonValidate">Valider</Button>
               </div>
             </div>
           </MediaQuery>

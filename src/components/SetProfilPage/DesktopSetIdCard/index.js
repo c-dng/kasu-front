@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { LabelDetail } from 'semantic-ui-react';
 import { ButtonGroup } from 'semantic-ui-react';
+import validator from 'validator'; //checking of password
 import { Button, Divider, Grid, Header, Form, Icon, Input, Image, Label, Modal, Radio, Segment, TextArea } from 'semantic-ui-react';
 
 const DesktopSetIdCard = ({
@@ -22,16 +23,29 @@ const DesktopSetIdCard = ({
   changeCity,
   changeFirstName,
   changeLastName,
-  changeHoliday_mode
+  changeHolidayMode,
+  handleUpdate,
+  displayUserInfos
 }) => {
+
+  useEffect(() => (
+    displayUserInfos()
+    ),
+    []);
 
   const [open, setOpen] = React.useState(false);
   console.log();
 
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    console.log('Bien soumis!');
+    handleUpdate();
+  };
   const handleChangeEmail = (evt) => {
     changeEmail(evt.target.value);
   };
   const handleChangePassword = (evt) => {
+    validate(evt.target.value);//checking password
     changePassword(evt.target.value);
   };
   const handleChangePseudo = (evt) => {
@@ -52,9 +66,25 @@ const DesktopSetIdCard = ({
   const handleChangeLastName = (evt) => {
     changeLastName(evt.target.value);
   };
-  const handleChangeHoliday_mode = (evt) => {
-  changeHoliday_mode(evt.target.value);
+  const handleChangeHolidayMode = (evt) => {
+    changeHolidayMode(evt.target.value);
   };
+
+  const [errorMessage, setErrorMessage] = React.useState('')
+  
+  const validate = (value) => {
+  
+    if (validator.isStrongPassword(value, {
+      minLength: 6, minLowercase: 1,
+      minUppercase: 1, minNumbers: 1, minSymbols: 1
+    })) {
+      setErrorMessage('');
+      console.log(errorMessage);
+    } else {
+      setErrorMessage('Veuillez entrer un mot de passe valide: min-6 caractères, une majuscule, une minuscule, un chiffre et un des caractères suivants: @$%_*|=-');
+      console.log(errorMessage);
+    }
+  }
 
   return (
     
@@ -97,7 +127,14 @@ const DesktopSetIdCard = ({
                 Mes infos
             </Label>
 
-      <Form>
+      <Form onSubmit={handleSubmit}>
+
+            <Form.Input
+              placeholder='Pseudo'
+              value={pseudo}
+              onChange={handleChangePseudo}
+            />
+
         <Form.Group widths='equal'>
 
             <Form.Input className="desktopIdCard-formInputName"
@@ -149,37 +186,18 @@ const DesktopSetIdCard = ({
               onChange={handleChangePassword}
             />
 
-            <Form.Input className="desktopIdCard-formInpuConfirmPassword"
-              input='password'
-              icon='lock'
-              iconPosition='left'
-              placeholder='Confirmer mot de passe'
-              value={password}
-              //onChange={handleChangePassword}
-            />
-
-        </Form.Group>
-
-        <Form.Group widths='equal'>
-
             <Form.Input 
               className="desktopIdCard-formInputEmail"
               icon='mail'
+              type='email'
               iconPosition='left'
               placeholder='Email'
               value={email}
               onChange={handleChangeEmail}
             />
-
-            <Form.Input className="desktopIdCard-formInputConfirmEmail"
-              icon='mail'
-              iconPosition='left'
-              placeholder='Confirmer email'
-              value={email}
-              //onChange={handleChangeEmail}
-            />
-
         </Form.Group>
+
+          <div className="desktopIdCard-errorMessage">{errorMessage}</div>
 
           <div className="desktopIdCard-Bottom3Buttons">
               <ButtonGroup widths='3' >
@@ -209,7 +227,7 @@ const DesktopSetIdCard = ({
                     </Modal.Actions>
                     </Modal>
 
-                    <Button icon='save' color='green' />
+                    <Button type="submit" icon='save' color='green' />
               </ButtonGroup>
             </div>
           </Form>

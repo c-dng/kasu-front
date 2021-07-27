@@ -129,7 +129,7 @@ button.ui.button.desktopIdCard-EditEmail {
   margin-bottom: 1em;
 }
   
-+div.desktopIdCard-leftPartWrapper2elements {
+div.desktopIdCard-leftPartWrapper2elements {
   display: flex;
   justify-content: center;
 }
@@ -144,6 +144,11 @@ div.column.desktopIdCard-leftPartWrapper {
 
 div.column.desktopIdCard-rightPartWrapper {
   border-bottom-right-radius: 1em;
+}
+
+div.desktopIdCard-errorMessage {
+  font-weight: bold;
+  color: black;
 }
 
 // Theming 

@@ -1,4 +1,4 @@
-import { CHANGE_PSEUDO, CHANGE_EMAIL, CHANGE_PASSWORD, SAVE_USER, LOGOUT_USER, CHANGE_ADDRESS, CHANGE_ZIP_CODE, CHANGE_FIRST_NAME, CHANGE_LAST_NAME, CHANGE_CITY, CHANGE_HOLIDAY_MODE, SAVE_USER_CONVERSATIONS } from '../actions/user';
+import { GET_USER_INFOS, CHANGE_PSEUDO, CHANGE_EMAIL, CHANGE_PASSWORD, SAVE_USER, LOGOUT_USER, CHANGE_ADDRESS, CHANGE_ZIP_CODE, CHANGE_FIRST_NAME, CHANGE_LAST_NAME, CHANGE_CITY, CHANGE_HOLIDAY_MODE, SAVE_USER_CONVERSATIONS, UPDATE_USER } from '../actions/user';
 
 export const initialState = {
   email: '',
@@ -9,11 +9,12 @@ export const initialState = {
   city: '',
   firstName: '',
   lastName: '',
+  holiday_mode: false,
+  bio: '',
   logged: false,
   data: {},
   conversations: {},
-  holiday_mode: false,
-  bio: '',
+  infos: {},
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -71,6 +72,25 @@ const reducer = (state = initialState, action = {}) => {
         password: '',
         data: action.data.data,
       };
+    case GET_USER_INFOS:
+      return {
+        ...state,
+        infos: action.infos,
+      };
+    case UPDATE_USER:
+      return {
+      ...state,
+      email: '',
+      password: '',
+      pseudo: '',
+      address: '',
+      zipCode: 0,
+      city: '',
+      firstName: '',
+      lastName: '',
+      holiday_mode: false,
+      bio: '',
+    };
     case SAVE_USER_CONVERSATIONS:
       return {
         ...state,

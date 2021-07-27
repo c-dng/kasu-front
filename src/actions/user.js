@@ -98,3 +98,15 @@ export const REGISTER_USER = 'REGISTER_USER';
 export const RegisterUser = () => ({
   type: REGISTER_USER,
 });
+
+export const UPDATE_USER = 'UPDATE_USER';
+
+export const updateUser = () => ({
+  type: UPDATE_USER,
+});
+
+export const GET_USER_INFOS = 'GET_USER_INFOS';
+
+export const getUserInfos = () => ({
+  type: GET_USER_INFOS,
+});

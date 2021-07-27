@@ -64,6 +64,10 @@ const reducer = (state = initialState, action = {}) => {
       return {
         theme: 'theme1',
         navIcons: 'black',
+        email: '',
+        object: '',
+        content: '',
+        message:'',
         loading: false,
       };
     default:

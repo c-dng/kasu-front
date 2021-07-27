@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import SetProfilPage from 'src/components/SetProfilPage';
 
 import {
-    changeEmail, changePassword, changeCity, changeAddress, changeZipCode, changeLastName, changeFirstName, changePseudo, changeHoliday_mode } from '../../actions/user';
+    updateUser, changeEmail, changePassword, changeCity, changeAddress, changeZipCode, changeLastName, changeFirstName, changePseudo, changeHolidayMode, getUserInfos } from '../../actions/user';
 
 const mapStateToProps = (state, ownProps) => ({
     email: state.user.email,
@@ -15,11 +15,16 @@ const mapStateToProps = (state, ownProps) => ({
     firstName: state.user.firstName,
     lastName: state.user.lastName,
     holiday_mode: state.user.holiday_mode,
-    bio: state.user.bio
+    bio: state.user.bio,
+    infos: state.user.infos
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-    
+   
+    handleUpdate: function () {
+        dispatch(updateUser());
+      },
+
     changeEmail: function (email) {
     dispatch(changeEmail(email));
     },
@@ -52,9 +57,13 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     dispatch(changePseudo(pseudo));
     },
 
-    changeHoliday_mode: function (holiday_mode) {
-    dispatch(changeHoliday_mode(holiday_mode));
+    changeHolidayMode: function (holiday_mode) {
+    dispatch(changeHolidayMode(holiday_mode));
     },
+
+    displayUserInfos: function (infos) {
+    dispatch(getUserInfos(infos));
+    }
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SetProfilPage);
