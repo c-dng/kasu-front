@@ -17,13 +17,12 @@ const ContactForm = ({
   changeObject,
   changeContent,
   handleMessage,
-  onContactFormUnmount
+  onContactFormUnmount,
 }) => {
-
   useEffect(() => (
     function cleanup() {
-    onContactFormUnmount();
-  }),
+      onContactFormUnmount();
+    }),
   []);
 
   const handleChangeEmail = (evt) => {
@@ -31,11 +30,11 @@ const ContactForm = ({
     // console.log(evt.target.value);
   };
   const handleChangeObject = (evt) => {
-     changeObject(evt.target.value);
-     //console.log(evt.target.value);
+    changeObject(evt.target.value);
+    // console.log(evt.target.value);
   };
   const handleChangeContent = (evt) => {
-     changeContent(evt.target.value);
+    changeContent(evt.target.value);
   };
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -59,15 +58,15 @@ const ContactForm = ({
               </Form.Field>
               <Form.Field>
                 <label className="contactForm-objectLabel">Choisissez un objet:</label>
-                <Form.Field control='select' onChange={handleChangeObject} value={object} >
-                  <option value='Problème'>Problème</option>
-                  <option value='Ajouter un manga'>Ajouter un manga</option>
-                  <option value='Médiation'>Médiation</option>
-                  <option value='Problème de connexion'>Problème de connexion</option>
-                  <option value='Autre'>Autre</option>
+                <Form.Field control="select" onChange={handleChangeObject} value={object}>
+                  <option value="Problème">Problème</option>
+                  <option value="Ajouter un manga">Ajouter un manga</option>
+                  <option value="Médiation">Médiation</option>
+                  <option value="Problème de connexion">Problème de connexion</option>
+                  <option value="Autre">Autre</option>
                 </Form.Field>
               </Form.Field>
-              <Form.Field >
+              <Form.Field>
                 <label className="contactForm-msgLabel">Saisissez votre message:</label>
                 <Form.TextArea id="message" name="message" onChange={handleChangeContent} value={content} />
               </Form.Field>
