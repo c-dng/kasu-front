@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import {
-  Image, TextArea, Button, Form, Icon, Label, Checkbox,
+  Image, TextArea, Button, Form, Label, Checkbox, Modal, Icon, Header
 } from 'semantic-ui-react';
 import './style.scss';
 import alternativeBanner from 'src/assets/images/alternativeBanner.png';
@@ -29,13 +29,14 @@ const SetProfilPage = ({
   handleUpdate,
   displayUserInfos
 }) => {
-
+  
   useEffect(() => (
     displayUserInfos()
     ),
     []);
 
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(false);//Modal to delete account
+  const [avatar, setAvatar] = React.useState(false);//Modal to choose an avatar
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -66,7 +67,6 @@ const SetProfilPage = ({
   const handleChangeLastName = (evt) => {
     changeLastName(evt.target.value);
   };
-
   // toggle function
   const onChangeCheckbox = (evt, data) => {
     let checked = data.checked;
@@ -104,6 +104,7 @@ const SetProfilPage = ({
             changeHolidayMode={changeHolidayMode}
             handleUpdate={handleUpdate}
             displayUserInfos={displayUserInfos}
+            onChangeCheckbox={onChangeCheckbox}
             />
           </MediaQuery>
 
@@ -117,7 +118,35 @@ const SetProfilPage = ({
                 size="tiny"
                 circular
               />
-              <Button className="mobileSetProfil-addButton" circular icon='photo' />
+              <Modal
+                onClose={() => setAvatar(false)}
+                onOpen={() => setAvatar(true)}
+                open={avatar}
+                trigger={<Button className="mobileSetProfil-addButton" circular icon='photo' />}
+                >
+                <Modal.Header>Upload image</Modal.Header>
+                <Modal.Content image>
+                  <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
+                  <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
+                  <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
+                  <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
+                  <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
+                  <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
+                  <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
+                  <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
+                  <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
+                  <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
+                  <Modal.Description>
+                    <p>Veuillez choisir un avatar</p>
+                  </Modal.Description>
+                </Modal.Content>
+                <Modal.Actions>
+                  <Button onClick={() => setAvatar(false)}>Cancel</Button>
+                  <Button onClick={() => setAvatar(false)} positive>
+                    Ok
+                  </Button>
+                </Modal.Actions>
+              </Modal>
             </div>
 
             <h3 className="mobileSetProfil-h3">{pseudo}</h3>
@@ -207,7 +236,26 @@ const SetProfilPage = ({
             </Form>
 
             <div className="mobileSetProfil-divDeleteMyAccount">
-                <Button size='small' className="mobileSetProfil-deleteMyAccount" negative>Supprimer mon compte</Button>
+                <Modal
+                  icon='user delete'
+                  open={open}
+                  trigger={<Button size='small' className="mobileSetProfil-deleteMyAccount" negative>Supprimer mon compte</Button>}
+                  onClose={() => setOpen(false)}
+                  onOpen={() => setOpen(true)}
+                  >      
+                  <Header icon='delete' content='Confirmer votre action' />
+                  <Modal.Content>
+                    <p>Voulez-vous vraiment supprimer votre compte ?</p>
+                  </Modal.Content>
+                  <Modal.Actions>
+                    <Button color='red' onClick={() => setOpen(false)}>
+                      <Icon name='remove' /> Non
+                    </Button>
+                    <Button color='green' onClick={() => setOpen(true)}>
+                      <Icon name='checkmark' /> Oui
+                    </Button>
+                  </Modal.Actions>
+                </Modal>
             </div>   
             <div className="mobileSetProfil-groupTwoButtons">
                 <Button size='small' className="mobileSetProfil-buttonCancel">Annuler</Button>

@@ -29,7 +29,6 @@ div.ui.fitted.toggle.checkbox {
 }
 
 div.field.mobileIdCard-holidayWrapper div.ui.input {
-  display: flex;
   justify-content: center;
   margin-bottom: 1em;
 }
@@ -89,6 +88,10 @@ button.ui.negative.button.mobileSetProfil-deleteMyAccount {
   border: 1px solid white;
 }
 
+button.ui.small.negative.button.mobileSetProfil-deleteMyAccount {
+  background-color: #D31900;
+}
+
 div.mobileSetProfil-groupTwoButtons {
   display: flex;
   justify-content: space-around;
@@ -132,11 +135,18 @@ div.desktopIdCard-MainWrapper {
 div.desktopIdCard-leftPartWrapper {
   width: 50%;
   display: flex;
+  flex-direction: column;
   padding-top: 4em;
 }
 
-div.ui.medium.centered.image.desktopIdCard-leftPartWrapperImage {
+img.ui.medium.centered.image.desktopIdCard-leftPartWrapperImage {
   height: fit-content;
+  width: 50%;
+}
+
+button.ui.circular.icon.button.desktopSetProfil-addButton {
+  align-self: center;
+  margin-top: 2em;
 }
 
 div.desktopIdCard-rightPartWrapper {
@@ -149,17 +159,12 @@ a.ui.red.right.ribbon.label {
   margin-top: 0.5em;
 }
 
-div.field.desktopIdCard-holidayWrapper {
-  display: flex;
+div.field.desktopIdCard-holidayWrapper.desktopIdCard-holidayWrapper {
   justify-content: center;
-  margin-top: 1em;
-  margin-bottom: 1em;
 }
 
-span.desktopIdCard-holidayWrapper{
-  margin-top: 1.5em;
-  display: flex;
-  justify-content: center;
+div.field.desktopIdCard-holidayWrapper.desktopIdCard-holidayWrapper div.ui.input {
+  width: auto;
 }
 
 div.ui.label.desktopIdCard-bioLabel {
@@ -254,36 +259,36 @@ div.desktopIdCard-errorMessage {
   }
 
   h3.ui.header.ui.header.ui.header.ui.header    {
-    color: vars.$secondaryFontColor_theme1;
+    color: vars.$primaryFontColor_theme2;
   }
 
   div.ui.top.left.attached.label.desktopIdCard-leftPartWrapperLogin {
     background-color: vars.$primaryColor_theme2;
-    color: vars.$secondaryFontColor_theme1;
-    border: 1px solid vars.$secondaryFontColor_theme1;
+    color: vars.$primaryFontColor_theme2;
+    border: 1px solid vars.$primaryBorderColor_theme2;
   }
 
   div.ui.medium.image.desktopIdCard-leftPartWrapperImage {
-    border: 1px solid vars.$secondaryFontColor_theme1;
+    border: 1px solid vars.$primaryBorderColor_theme2;
   }
 
   .ui.label.desktopIdCard-bioLabel {
     background-color: vars.$primaryColor_theme2;
-    border: 1px solid vars.$secondaryFontColor_theme1;
+    border: 1px solid vars.$primaryBorderColor_theme2;
   }
 
   p.desktopIdCard-bioP {
-    color: vars.$secondaryFontColor_theme1;
+    color: vars.$primaryFontColor_theme2;
   }
 
   button.ui.button.desktopIdCard-EditEmail {
     background-color: vars.$primaryColor_theme2;
     color: vars.$primaryFontColor_theme2;
-    border: 1px solid vars.$secondaryFontColor_theme1;
+    border: 1px solid vars.$primaryBorderColor_theme2;
   }
 
   button.ui.button.desktopIdCard-memberDelete {
-    border: 1px solid vars.$secondaryFontColor_theme1;
+    border: 1px solid vars.$primaryBorderColor_theme2;
   }
 
   .desktopIdCard-mainCard {
@@ -332,12 +337,16 @@ div.desktopIdCard-errorMessage {
   color: vars.$primaryFontColor_theme2;
   }
 
-  button.ui.green.icon.button {
+  button.ui.icon.button.desktopIdCard-ButtonValidate {
     border: 1px solid vars.$secondaryFontColor_theme1;
   }
 
   button.ui.black.icon.button {
-    border: 1px solid vars.$secondaryFontColor_theme1;
+    border: 1px solid vars.$primaryBorderColor_theme2;
+  }
+
+  button.ui.green.icon.button {
+    border: 1px solid vars.$primaryBorderColor_theme2;
   }
 
   // Theme 2 - Mobile

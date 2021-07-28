@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { LabelDetail } from 'semantic-ui-react';
 import { ButtonGroup } from 'semantic-ui-react';
 import validator from 'validator'; //checking of password
-import { Button, Divider, Grid, Header, Form, Icon, Input, Image, Label, Modal, Radio, Segment, TextArea } from 'semantic-ui-react';
+import { Button, Header, Form, Icon, Checkbox, Image, Label, Modal, TextArea } from 'semantic-ui-react';
 
 const DesktopSetIdCard = ({
   email,
@@ -14,7 +13,6 @@ const DesktopSetIdCard = ({
   city,
   firstName,
   lastName,
-  holiday_mode,
   changeEmail,
   changePassword,
   changePseudo,
@@ -33,7 +31,9 @@ const DesktopSetIdCard = ({
     ),
     []);
 
-  const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = React.useState(false);//Modal to delete account
+    const [avatar, setAvatar] = React.useState(false);//Modal to choose an avatar
+    const [errorMessage, setErrorMessage] = React.useState('')//display a message received from API
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -74,8 +74,6 @@ const DesktopSetIdCard = ({
     let checked = data.checked;
     changeHolidayMode(checked);
   }
-
-  const [errorMessage, setErrorMessage] = React.useState('')
   
   const validate = (value) => {
   
@@ -98,19 +96,49 @@ const DesktopSetIdCard = ({
           <Image className="desktopIdCard-leftPartWrapperImage"
               centered
               size="medium"
-              label={{ as: 'a', color: 'red', corner: 'right', icon: 'camera' }}
               src="https://react.semantic-ui.com/images/avatar/large/steve.jpg"
             />
+          <Modal
+            onClose={() => setAvatar(false)}
+            onOpen={() => setAvatar(true)}
+            open={avatar}
+            trigger={<Button size="massive" className="desktopSetProfil-addButton" circular icon='photo' />}
+            >
+            <Modal.Header>Upload image</Modal.Header>
+            <Modal.Content image>
+              <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
+              <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
+              <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
+              <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
+              <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
+              <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
+              <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
+              <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
+              <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
+              <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
+              <Modal.Description>
+                <p>Veuillez choisir un avatar</p>
+              </Modal.Description>
+            </Modal.Content>
+            <Modal.Actions>
+              <Button onClick={() => setAvatar(false)}>Cancel</Button>
+              <Button onClick={() => setAvatar(false)} positive>
+                Ok
+              </Button>
+            </Modal.Actions>
+          </Modal>
       </div>
 
       <div className="desktopIdCard-rightPartWrapper">
         <Label as='a' color='red' ribbon='right'>Mes infos</Label>
 
         <Form onSubmit={handleSubmit}>
-          <span className="desktopIdCard-holidayWrapper">
-              <Label className="setProfilPage-fourthPartHolidayModeLabel">Mode vacances: </Label>
-              <Radio size="medium" toggle />
-          </span>
+          <Form.Input className="desktopIdCard-holidayWrapper">
+            <Label className="setProfilPage-fourthPartHolidayModeLabel">Mode vacances:</Label>
+            <Checkbox toggle
+            onClick={(evt, data)=>onChangeCheckbox(evt, data)}
+            />
+          </Form.Input>
           <Label className="desktopIdCard-bioLabel">
                 <p className="desktopIdCard-bioP">Description</p>
           </Label>
