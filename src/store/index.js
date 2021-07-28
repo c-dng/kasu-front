@@ -6,6 +6,7 @@ import authMiddleware from 'src/middlewares/auth';
 import reducer from 'src/reducers';
 import chatMiddleware from 'src/middlewares/chat';
 import contactAdmin from 'src/middlewares/contactAdmin';
+import searchMiddleware from 'src/middlewares/search';
 
 
 const persistConfig = {
@@ -19,7 +20,7 @@ const persistedReducer = persistReducer(persistConfig, reducer);
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const enhancers = composeEnhancers(
-  applyMiddleware(authMiddleware, chatMiddleware, contactAdmin),
+  applyMiddleware(authMiddleware, chatMiddleware, contactAdmin, searchMiddleware),
 );
 
 // const store = createStore(reducer, enhancers);

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Nav from 'src/containers/Nav';
 import Home from 'src/containers/Home';
 import Footer from 'src/components/Footer';
-import SearchResultsByLocation from 'src/components/SearchResultsByLocation';
+import SearchResultsByLocation from 'src/containers/SearchResultsByLocation';
 import LoginForm from 'src/containers/LoginForm';
 import Register from 'src/containers/Register';
 import ContactForm from 'src/containers/ContactForm';
