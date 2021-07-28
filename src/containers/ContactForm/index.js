@@ -2,15 +2,15 @@ import { connect } from 'react-redux';
 
 import ContactForm from 'src/components/ContactForm';
 import {
-  changeEmail, changeObject, changeMessage
+  changeEmail, changeObject, changeContent, submitForm, eraseMessage,
 } from '../../actions/global';
 
 const mapStateToProps = (state, ownProps) => ({
 
   email: state.global.email,
   object: state.global.object,
-  message: state.global.message
-
+  content: state.global.content,
+  message: state.global.message,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
@@ -23,8 +23,16 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     dispatch(changeObject(object));
   },
 
-  changeMessage: function (message) {
-    dispatch(changeMessage(message));
+  changeContent: function (content) {
+    dispatch(changeContent(content));
+  },
+
+  handleMessage: function () {
+    dispatch(submitForm());
+  },
+
+  onContactFormUnmount: () => {
+    dispatch(eraseMessage());
   },
 });
 

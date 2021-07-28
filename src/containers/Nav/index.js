@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 
 import Nav from 'src/components/Nav';
 import { changeTheme } from '../../actions/global';
-import { logoutUser } from '../../actions/user';
+import { loadConversations, logoutUser } from '../../actions/user';
 
 const mapStateToProps = (state, ownProps) => ({
   navIconsColor: state.global.navIcons,
@@ -15,6 +15,9 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   },
   disconnectUser: function () {
     dispatch(logoutUser());
+  },
+  handleConversationsLoad: function () {
+    dispatch(loadConversations());
   },
 });
 

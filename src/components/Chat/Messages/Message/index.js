@@ -1,16 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Message = ({ message, isMine }) => (
-  <div className="message"
-  >
-    <div className="message-content">{message}</div>
+const Message = ({ singleMessage, messageUserId, isMine }) => (
+  <div className={isMine ? 'message message--own' : 'message'}>
+    <div className={isMine ? 'message-content message-content--own' : 'message-content'}>{singleMessage}</div>
   </div>
 );
 
 Message.propTypes = {
-  author: PropTypes.string.isRequired,
-  message: PropTypes.string.isRequired,
+  singleMessage: PropTypes.string.isRequired,
+  isMine: PropTypes.bool.isRequired,
 };
 
 export default Message;

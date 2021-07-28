@@ -1,11 +1,13 @@
-import { CHANGE_THEME, CHANGE_OBJECT, CHANGE_MESSAGE, CHANGE_EMAIL } from '../actions/global';
+import { CHANGE_THEME, CHANGE_OBJECT, CHANGE_CONTENT, SAVE_MESSAGE, ERASE_MESSAGE, SUBMIT_FORM, SET_LOADING_TRUE, SET_LOADING_FALSE, LOGOUT_USER, CHANGE_EMAIL } from '../actions/global';
 
 export const initialState = {
   theme: 'theme1',
   navIcons: 'black',
   email: '',
   object: '',
-  message: ''
+  content: '',
+  message:'',
+  loading: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -24,13 +26,45 @@ const reducer = (state = initialState, action = {}) => {
     case CHANGE_OBJECT:
       return {
       ...state,
-      email: action.object,
+      object: action.object,
     };
-    case CHANGE_MESSAGE:
+    case CHANGE_CONTENT:
       return {
       ...state,
-      email: action.message,
+      content: action.content,
     };
+    case SAVE_MESSAGE:
+      return {
+      ...state,
+      message: action.message,
+    };
+    case ERASE_MESSAGE:
+      return {
+      ...state,
+      message: '',
+    };
+    case SUBMIT_FORM:
+      return {
+      ...state,
+      object: '',
+      content: '',
+    };
+    case SET_LOADING_TRUE:
+      return {
+        ...state,
+        loading: true,
+      };
+    case SET_LOADING_FALSE:
+      return {
+        ...state,
+        loading: false,
+      };
+    case LOGOUT_USER:
+      return {
+        theme: 'theme1',
+        navIcons: 'black',
+        loading: false,
+      };
     default:
       return state;
   }

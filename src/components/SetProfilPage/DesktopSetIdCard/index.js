@@ -16,20 +16,22 @@ const DesktopSetIdCard = () => {
             
 
           <div className="desktopIdCard-leftPartWrapper2elements">
+
           <Label className="desktopIdCard-leftPartWrapperLogin" attached='top left'>Mon pseudo</Label>
 
             <Image className="desktopIdCard-leftPartWrapperImage"
+                centered
                 size="medium"
                 label={{ as: 'a', color: 'red', corner: 'right', icon: 'camera' }}
                 src="https://react.semantic-ui.com/images/avatar/large/steve.jpg"
             />
-
-            <span className="desktopIdCard-holidayWrapper">
-              <Label className="setProfilPage-fourthPartHolidayModeLabel">Mode vacances: </Label>
-              <Radio size="medium" toggle />
-            </span>
             
           </div>
+
+          <span className="desktopIdCard-holidayWrapper">
+              <Label className="setProfilPage-fourthPartHolidayModeLabel">Mode vacances: </Label>
+              <Radio size="medium" toggle />
+          </span>
 
             <Label className="desktopIdCard-bioLabel">
               <p className="desktopIdCard-bioP">Bio</p>
@@ -95,9 +97,23 @@ const DesktopSetIdCard = () => {
 
         </Form.Group>
 
-          <div>
-              <Button className="desktopIdCard-EditEmail">Modifier mon email</Button>
-          </div>
+        <Form.Group widths='equal'>
+
+            <Form.Input 
+              className="desktopIdCard-formInputEmail"
+              icon='mail'
+              iconPosition='left'
+              placeholder='Email'
+              
+            />
+
+            <Form.Input className="desktopIdCard-formInputConfirmEmail"
+              icon='mail'
+              iconPosition='left'
+              placeholder='Confirmer email'
+            />
+
+        </Form.Group>
 
           <div className="desktopIdCard-Bottom3Buttons">
               <ButtonGroup widths='3' >
@@ -127,7 +143,7 @@ const DesktopSetIdCard = () => {
                     </Modal.Actions>
                     </Modal>
 
-                    <Button icon='save' color='green' />
+                    <Button className="desktopIdCard-ButtonValidate" icon='save' />
               </ButtonGroup>
             </div>
           </Form>

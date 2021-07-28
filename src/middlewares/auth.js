@@ -1,17 +1,14 @@
-import axios from 'axios';
-import { LOGIN_USER, REGISTER_USER, saveUser, LOGOUT_USER, saveUserConversations } from 'src/actions/user';
-
-const axiosInstance = axios.create(
-  {
-    baseURL: 'https://api.kasu.laetitia-dev.com/',
-  },
-);
+import api from 'src/api';
+import { LOGIN_USER, REGISTER_USER, saveUser, LOGOUT_USER, saveUserConversations, LOAD_CONVERSATIONS } from 'src/actions/user';
+import { setLoadingFalse, setLoadingTrue } from '../actions/global';
+import { wsDisconnect } from '../actions/chat';
 
 const authMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case LOGIN_USER: {
       const { pseudo, password } = store.getState().user;
-      axiosInstance
+      store.dispatch(setLoadingTrue());
+      api
         .post('api/login_check', { username: pseudo, password })
         .then(
           (response) => {
@@ -19,20 +16,24 @@ const authMiddleware = (store) => (next) => (action) => {
 
             store.dispatch(saveUser(response.data));
 
-            axiosInstance.defaults.headers.common.Authorization = `Bearer ${response.data.token}`;
+            api.defaults.headers.common.Authorization = `Bearer ${response.data.token}`;
             localStorage.setItem('token', response.data.token);
           },
         )
+        .catch((error) => {
+          store.dispatch(setLoadingFalse());
+        })
         .then((response) => {
           const userId = store.getState().user.data.id;
-          axiosInstance
+          api
             .get(`api/v1/user/${userId}/chat`)
             .then(
               (response2) => {
                 console.log(response2);
 
                 store.dispatch(saveUserConversations(response2.data));
-
+                store.dispatch(setLoadingFalse());
+                // store.dispatch(wsConnect());
               },
             );
         });
@@ -40,10 +41,31 @@ const authMiddleware = (store) => (next) => (action) => {
       next(action);
       break;
     }
-    
+
+    case LOAD_CONVERSATIONS: {
+      const userId = store.getState().user.data.id;
+      store.dispatch(setLoadingTrue());
+      api
+        .get(`api/v1/user/${userId}/chat`)
+        .then(
+          (response) => {
+            console.log('great conversation loading', response);
+
+            store.dispatch(saveUserConversations(response.data));
+            store.dispatch(setLoadingFalse());
+          },
+        )
+        .catch((error) => {
+          console.log('load conversations went wrong', error);
+          store.dispatch(setLoadingFalse());
+        });
+      next(action);
+      break;
+    }
     case LOGOUT_USER:
       localStorage.removeItem('token');
-      delete axiosInstance.defaults.headers.common.Authorization;
+      delete api.defaults.headers.common.Authorization;
+      store.dispatch(wsDisconnect());
       next(action);
       break;
     case REGISTER_USER: {
@@ -57,7 +79,7 @@ const authMiddleware = (store) => (next) => (action) => {
         zipCode,
         city,
       } = store.getState().user;
-      axiosInstance
+      api
         .post('/api/v1/user/add', {
           email,
           firstname: firstName,

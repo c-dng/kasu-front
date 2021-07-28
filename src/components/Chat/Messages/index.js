@@ -1,26 +1,28 @@
 import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 
-import Message from 'src/components/Chat/Messages/Message';
+import Message from 'src/containers/Chat/Message';
 
 import '../style.scss';
 
 const Messages = ({ messages }) => {
-  const ref = useRef();
+  const messagesEndRef = useRef(null);
 
-  useEffect(
-    () => {
-      ref.current.scrollTop = ref.current.scrollHeight;
-    },
-    [messages],
-  );
+  const scrollToBottom = () => {
+    messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  useEffect(scrollToBottom, [messages]);
+
   return (
-    <div className="messages" ref={ref}>
+    <div className="messages">
       {
         messages.map(
-          (message) => <Message key={message.id} {...message} />,
+          (message) => <Message key={message.id} messageUserId={message.author.id} singleMessage={message.content} />,
         )
+
       }
+      <div ref={messagesEndRef} />
     </div>
   );
 };

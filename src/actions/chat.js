@@ -13,8 +13,9 @@ export const setNewMessage = (newMessage) => ({
 
 export const WS_CONNECT = 'WS_CONNECT';
 
-export const wsConnect = () => ({
+export const wsConnect = (chatId) => ({
   type: WS_CONNECT,
+  chatId: chatId,
 });
 
 export const WS_DISCONNECT = 'WS_DISCONNECT';
@@ -25,8 +26,20 @@ export const wsDisconnect = () => ({
 
 export const SEND_MESSAGE = 'SEND_MESSAGE';
 
-export const sendMessage = () => ({
+export const sendMessage = (id, content) => ({
   type: SEND_MESSAGE,
+  chatId: id,
+  content,
+});
+
+export const ADD_MESSAGE = 'ADD_MESSAGE';
+
+export const addMessage = (message, chatId, userId) => ({
+  type: ADD_MESSAGE,
+  message,
+  chatId,
+  userId,
+
 });
 
 export const SAVE_RECEIVED_MESSAGE = 'SAVE_RECEIVED_MESSAGE';
@@ -40,7 +53,7 @@ export const LOAD_SINGLE_CHAT = 'LOAD_SINGLE_CHAT';
 
 export const loadSingleChat = (id) => ({
   type: LOAD_SINGLE_CHAT,
-  ChatId: id,
+  chatId: id,
 });
 
 export const SAVE_LAST_SINGLE_CHAT = 'SAVE_LAST_SINGLE_CHAT';

@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom';
 import Conversation from './Conversation';
 
 const Conversations = ({
-  isBoxHidden, handleHiddenBoxDisplay, conversations, loadSingleChat,
+  isBoxHidden, handleHiddenBoxDisplay, conversations, loadSingleChat, userPseudo,
 }) => {
   const handleHiddenBox = (evt) => {
     handleHiddenBoxDisplay();
@@ -36,29 +36,39 @@ const Conversations = ({
         {
           // This is a way to iterate over an object items as if it were arrays
           // (therefore being able to use the ".map" declarative function)
-          Object.entries(conversations).map((conversation) => (
-            <Link
-              key={conversation[1].chat.id}
-              onClick={() => {
-                console.log(conversation[1].chat.id);
-                loadSingleChat(conversation[1].chat.id);
-              }}
-              to={`/conversation/${conversation[1].chat.id}`}
-              exact={+true}
-            ><Conversation key={conversation[1].chat.id} />
-            </Link>
-          ))
-}
-        {/* <Conversation />
-        <Conversation />
-        <Conversation />
-        <Conversation />
-        <Conversation />
-        <Conversation />
-        <Conversation />
-        <Conversation />
-        <Conversation />
-        <Conversation /> */}
+          Object.entries(conversations).map((conversation) => {
+            let pseudoToDisplay;
+            let pictureToDisplay;
+            if (conversation[1].chat.users[1].pseudo === userPseudo) {
+              pseudoToDisplay = conversation[1].chat.users[0].pseudo;
+              pictureToDisplay = conversation[1].chat.users[0].picture;
+            }
+            else {
+              pseudoToDisplay = conversation[1].chat.users[1].pseudo;
+              pictureToDisplay = conversation[1].chat.users[1].picture;
+            }
+
+            return (
+              <Link
+                key={conversation[1].chat.id}
+                onClick={() => {
+                  console.log(conversation[1].chat.id);
+                  loadSingleChat(conversation[1].chat.id);
+                }}
+                to={`/conversation/${conversation[1].chat.id}`}
+                exact={+true}
+              >
+                <Conversation
+                  key={conversation[1].chat.id}
+                  lastMessage={conversation[1].lastmessage.content}
+                  pseudo={pseudoToDisplay}
+                  picture={pictureToDisplay}
+                />
+              </Link>
+            );
+          })
+        }
+
       </div>
       <Button className={buttonClasses} onClick={handleHiddenBox}>
         <Image size="tiny" circular src={convButtonWhite} className="conversations-buttonImages conversations-buttonImage" />

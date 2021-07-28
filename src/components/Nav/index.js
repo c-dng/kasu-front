@@ -13,7 +13,7 @@ import logoutlogo from 'src/assets/images/logoutlogo.png';
 import loginlogo from 'src/assets/images/loginlogo.png';
 
 const Nav = ({
-  changeWebsiteTheme, navIconsColor, isLogged, disconnectUser,
+  changeWebsiteTheme, navIconsColor, isLogged, disconnectUser, handleConversationsLoad,
 }) => {
   let logoToDisplay;
   let chatlogoToDisplay;
@@ -86,7 +86,7 @@ const Nav = ({
           )}
           {isLogged && (
             <Menu.Item name="chat">
-              <Image as={Link} to="/conversations" exact={+true} className="navbuttons" src={chatlogoToDisplay} alt="logo" size="mini" />
+              <Image as={Link} onClick={() => handleConversationsLoad} to="/conversations" exact={+true} className="navbuttons" src={chatlogoToDisplay} alt="logo" size="mini" />
             </Menu.Item>
           )}
           {isLogged && (
@@ -110,6 +110,8 @@ Nav.propTypes = {
   navIconsColor: PropTypes.string.isRequired,
   isLogged: PropTypes.bool.isRequired,
   disconnectUser: PropTypes.func.isRequired,
+  handleConversationsLoad: PropTypes.func.isRequired,
+
 };
 
 export default Nav;

@@ -1,28 +1,11 @@
-import { SAVE_RECEIVED_MESSAGE, SEND_MESSAGE, SET_NEW_MESSAGE, TOGGLE_HIDDEN_BOX, SAVE_LAST_SINGLE_CHAT } from '../actions/chat';
+import {
+  SAVE_RECEIVED_MESSAGE, SEND_MESSAGE, SET_NEW_MESSAGE, TOGGLE_HIDDEN_BOX, SAVE_LAST_SINGLE_CHAT, ADD_MESSAGE,
+} from '../actions/chat';
+import { LOGOUT_USER } from '../actions/user';
 
 export const initialState = {
   isBoxHidden: true,
-  email: '',
-  password: '',
-  username: '',
   newMessage: '',
-  messages: [
-    {
-      id: 1,
-      author: 'Super chien',
-      message: 'Salut ça va ?',
-    },
-    {
-      id: 2,
-      author: 'Super chat',
-      message: 'T\'as pas des super croquettes ?',
-    },
-    {
-      id: 3,
-      author: 'Super chien',
-      message: 'un peu ouais !',
-    },
-  ],
   lastSingleChat: {},
 };
 
@@ -43,15 +26,35 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         newMessage: '',
       };
+    case ADD_MESSAGE:
+      if (state.lastSingleChat.id !== action.chatId) {
+        return state;
+      }
+      return {
+        ...state,
+        lastSingleChat: {
+          ...state.lastSingleChat,
+          messages: [
+            ...state.lastSingleChat.messages,
+            action.message,
+          ],
+        },
+      };
     case SAVE_RECEIVED_MESSAGE:
       return {
         ...state,
-        messages: [...state.messages, action.receivedMessage],
+        // A FAIRE
       };
     case SAVE_LAST_SINGLE_CHAT:
       return {
         ...state,
         lastSingleChat: action.singleChat,
+      };
+    case LOGOUT_USER:
+      return {
+        isBoxHidden: true,
+        newMessage: '',
+        lastSingleChat: {},
       };
 
     default:

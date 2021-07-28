@@ -73,6 +73,13 @@ export const saveUser = (data) => ({
   data,
 });
 
+export const LOAD_CONVERSATIONS = 'LOAD_CONVERSATIONS';
+
+export const loadConversations = (data) => ({
+  type: LOAD_CONVERSATIONS,
+  data,
+});
+
 export const SAVE_USER_CONVERSATIONS = 'SAVE_USER_CONVERSATIONS';
 
 export const saveUserConversations = (data) => ({

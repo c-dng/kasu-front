@@ -20,9 +20,40 @@ export const changeObject = (object) => ({
   object,
 });
 
-export const CHANGE_MESSAGE = 'CHANGE_MESSAGE';
+export const CHANGE_CONTENT = 'CHANGE_CONTENT';
 
-export const changeMessage = (message) => ({
-  type: CHANGE_MESSAGE,
+export const changeContent = (content) => ({
+  type: CHANGE_CONTENT,
+  content,
+});
+
+export const SUBMIT_FORM = 'SUBMIT_FORM';
+
+export const submitForm = () => ({
+  type: SUBMIT_FORM,
+});
+
+export const SAVE_MESSAGE= 'SAVE_MESSAGE';
+
+export const saveMessage = (message) => ({
+  type: SAVE_MESSAGE,
   message,
+});
+
+export const ERASE_MESSAGE= 'ERASE_MESSAGE';
+
+export const eraseMessage = () => ({
+  type: ERASE_MESSAGE,
+});
+
+export const SET_LOADING_TRUE = 'SET_LOADING_TRUE';
+
+export const setLoadingTrue = () => ({
+  type: SET_LOADING_TRUE,
+});
+
+export const SET_LOADING_FALSE = 'SET_LOADING_FALSE';
+
+export const setLoadingFalse = () => ({
+  type: SET_LOADING_FALSE,
 });
