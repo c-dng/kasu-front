@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import {
   Button, Grid, Image, Transition,
@@ -10,10 +10,11 @@ import helpWhite from 'src/assets/images/help-white.png';
 import './style.scss';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
+import { useBeforeunload } from 'react-beforeunload';
 import Conversation from './Conversation';
 
 const Conversations = ({
-  isBoxHidden, handleHiddenBoxDisplay, conversations, loadSingleChat, userPseudo,
+  isBoxHidden, handleHiddenBoxDisplay, conversations, loadSingleChat, userPseudo, handleConversationsLoad,
 }) => {
   const handleHiddenBox = (evt) => {
     handleHiddenBoxDisplay();
@@ -25,6 +26,15 @@ const Conversations = ({
     'conversations-button--notHiddenBox': !isBoxHidden,
   });
 
+  // useEffect(() => {
+  //   console.log('App useEffect Conversations');
+  //   handleConversationsLoad();
+  // });
+
+  useBeforeunload((event) => {
+    console.log('action before unload');
+    handleConversationsLoad();
+  });
   return (
     <div className="conversations">
       <div className="conversations-notHiddenBox">

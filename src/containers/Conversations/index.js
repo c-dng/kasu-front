@@ -4,6 +4,7 @@ import Conversations from 'src/components/Conversations';
 import {
   toggleHiddenBox, loadSingleChat,
 } from '../../actions/chat';
+import { loadConversations } from '../../actions/user';
 
 const mapStateToProps = (state, ownProps) => ({
   isBoxHidden: state.chat.isBoxHidden,
@@ -17,6 +18,9 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   },
   loadSingleChat: function (id) {
     dispatch(loadSingleChat(id));
+  },
+  handleConversationsLoad: function () {
+    dispatch(loadConversations());
   },
 });
 

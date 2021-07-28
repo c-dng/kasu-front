@@ -65,6 +65,7 @@ const chatMiddleware = (store) => (next) => (action) => {
           (response) => {
             console.log('ça marche');
             console.log(response);
+            store.dispatch(setLoadingFalse());
             store.dispatch(saveLastSingleChat(response.data));
             store.dispatch(setLoadingFalse());
           },
