@@ -91,7 +91,7 @@ const Nav = ({
           )}
           {isLogged && (
             <Menu.Item name="logout">
-              <Image onClick={handleLogout} className="navbuttons" src={logoutlogo} alt="logo" size="mini" />
+              <Image as={Link} to="/" exact={+true} onClick={handleLogout} className="navbuttons" src={logoutlogo} alt="logo" size="mini" />
             </Menu.Item>
           )}
           {!isLogged && (
