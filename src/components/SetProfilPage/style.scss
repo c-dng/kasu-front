@@ -71,6 +71,10 @@ button.ui.negative.button.mobileSetProfil-deleteMyAccount {
   border: 1px solid white;
 }
 
+button.ui.small.negative.button.mobileSetProfil-deleteMyAccount {
+  background-color: #D31900;
+}
+
 div.mobileSetProfil-groupTwoButtons {
   display: flex;
   justify-content: space-around;
@@ -136,6 +140,10 @@ button.ui.button.desktopIdCard-EditEmail {
 
 div.desktopIdCard-Bottom3Buttons.desktopIdCard-Bottom3Buttons{
   margin-top: 9em;
+}
+
+button.ui.icon.button.desktopIdCard-ButtonValidate {
+  background-color: #3FBEA7;
 }
 
 div.column.desktopIdCard-leftPartWrapper {
@@ -288,7 +296,7 @@ div.column.desktopIdCard-rightPartWrapper {
   color: vars.$primaryFontColor_theme2;
   }
 
-  button.ui.green.icon.button {
+  button.ui.icon.button.desktopIdCard-ButtonValidate {
     border: 1px solid vars.$secondaryFontColor_theme1;
   }
 
