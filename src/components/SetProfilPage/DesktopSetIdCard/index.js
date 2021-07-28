@@ -143,7 +143,7 @@ const DesktopSetIdCard = () => {
                     </Modal.Actions>
                     </Modal>
 
-                    <Button icon='save' color='green' />
+                    <Button className="desktopIdCard-ButtonValidate" icon='save' />
               </ButtonGroup>
             </div>
           </Form>
