@@ -1,0 +1,162 @@
+@use '/src/styles/vars';
+
+// General 
+
+.alreadyAccount {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+div.registerForm{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0;
+}
+
+.registerForm-globalContentWrapper.registerForm-globalContentWrapper {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+div.ui.card.registerForm-card {
+  border-radius: 1rem;
+  margin: 3rem 0;
+}
+
+.registerForm-registerButton.registerForm-registerButton.registerForm-registerButton {
+  border-radius: 1rem;
+  margin: 0;
+  width: 7.5rem;
+  font-size: 0.8rem;
+}
+
+div.registerForm-buttonWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+div.content.registerForm-cardContent.registerForm-cardContent.registerForm-cardContent {
+  padding: 0;
+}
+
+div.header.registerForm-cardHeader.registerForm-cardHeader.registerForm-cardHeader {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  text-align: center;
+}
+
+form.ui.form.registerForm-form.registerForm-form{
+  padding: 1rem;
+}
+
+.registerForm-field.registerForm-field.registerForm-field {
+  margin-bottom: 1rem;
+}
+
+
+// Media Queries
+
+//Desktop-laptops
+@media only screen and (min-width : 1224px) {
+
+
+  .registerForm-banner {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+
+  form.ui.form.registerForm-form.registerForm-form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .registerForm-field.registerForm-field {
+    width: 30%;
+    margin-right: 1rem;
+  }
+
+  .registerForm-buttonWrapper {
+    margin: auto 0;
+    width: 30%;
+    margin-right: 1rem;
+  }
+
+  .registerForm-globalContentWrapper.registerForm-globalContentWrapper {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+  }
+
+  div.ui.card.registerForm-card {
+    border-radius: 1rem;
+    margin: 3rem 0;
+    flex: 2 1 auto;
+    margin-right: 3rem;
+  }
+
+  
+
+  // Theming media query
+
+
+
+
+
+}
+
+// Theming 
+
+.theme1 {
+  button.ui.button.registerForm-registerButton {
+    border: 1px solid vars.$primaryBorderColor_theme1;
+    background-color: vars.$primaryColor_theme1;
+    color :vars.$primaryFontColor_theme1;
+  }
+
+  div.header.registerForm-cardHeader.registerForm-cardHeader.registerForm-cardHeader {
+    color: vars.$secondaryFontColor_theme1;
+    background-color: vars.$secondaryColor_theme1;
+  }
+
+  .registerForm-card.registerForm-card.registerForm-card {
+    color: vars.$primaryFontColor_theme1;
+    background-color: vars.$primaryColor_theme1;
+  }
+
+  .registerForm-fieldLabel.registerForm-fieldLabel.registerForm-fieldLabel {
+    color: vars.$primaryFontColor_theme1;
+  }
+
+}
+
+.theme2 {
+  button.ui.button.registerForm-registerButton {
+    border: 1px solid vars.$primaryBorderColor_theme2;
+    background-color: vars.$primaryColor_theme2;
+    color :vars.$primaryFontColor_theme2;
+  }
+
+  div.header.registerForm-cardHeader.registerForm-cardHeader.registerForm-cardHeader {
+    color: vars.$secondaryFontColor_theme2;
+    background-color: vars.$secondaryColor_theme2;
+  }
+
+  .registerForm-card.registerForm-card.registerForm-card {
+    color: vars.$primaryFontColor_theme2;
+    background-color: vars.$primaryColor_theme2;
+  }
+
+  .registerForm-fieldLabel.registerForm-fieldLabel.registerForm-fieldLabel {
+    color: vars.$primaryFontColor_theme2;
+  }
+
+}
+

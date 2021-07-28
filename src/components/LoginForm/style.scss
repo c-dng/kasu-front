@@ -1,0 +1,142 @@
+@use '/src/styles/vars';
+
+// Global 
+// Card
+div.ui.centered.card.loginform-card {
+  width: 80%;
+  border-radius: 1rem;
+  margin: 3rem 0;
+}
+
+.loginform-globalContentWrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0;
+}
+
+div.header.loginform-cardHeader.loginform-cardHeader.loginform-cardHeader {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+input#email {
+  margin: 0;
+  font-size: 0.8rem;
+}
+
+div.field.loginform-field.loginform-field {
+  width: 12rem;
+  margin: 0 auto;
+}
+
+input#password {
+  margin: 0;
+  font-size: 0.8rem;
+}
+
+// login button
+button.ui.button.login-button {
+  border-radius: 1rem;
+  margin: 0;
+  border: 1px solid black;
+  width: 7.5rem;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+div.content.loginform-cardContent.loginform-cardContent.loginform-cardContent {
+  text-align: center;
+  padding: 0;
+}
+
+
+@media only screen and (min-width : 1224px) {
+
+  .loginform-globalContentWrapper {
+
+  }
+
+  .loginform-banner {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+  
+  div.ui.centered.card.loginform-card {
+    margin: 0;
+    margin-bottom: 3rem;
+  }
+
+  .loginform-desktopImage {
+    background-image: url('src/assets/images/desktopImage.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 70%;
+    // height: 550px;
+
+  }
+
+  .loginform-ImageAndGlobalWrapper {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    margin: 3rem auto;
+  }
+  // Theming media query
+
+
+
+
+
+}
+
+// Theming 
+
+.theme1 {
+  button.ui.button.login-button {
+    border: 1px solid vars.$primaryBorderColor_theme1;
+    background-color: vars.$primaryColor_theme1;
+    color :vars.$primaryFontColor_theme1;
+  }
+
+  div.header.loginform-cardHeader.loginform-cardHeader.loginform-cardHeader {
+    color: vars.$secondaryFontColor_theme1;
+    background-color: vars.$secondaryColor_theme1;
+  }
+
+  .loginform-card.loginform-card.loginform-card {
+    color: vars.$primaryFontColor_theme1;
+    background-color: vars.$primaryColor_theme1;
+  }
+
+  .loginform-fieldLabel.loginform-fieldLabel.loginform-fieldLabel {
+    color: vars.$primaryFontColor_theme1;
+  }
+
+}
+
+.theme2 {
+  button.ui.button.login-button {
+    border: 1px solid vars.$primaryBorderColor_theme2;
+    background-color: vars.$primaryColor_theme2;
+    color :vars.$primaryFontColor_theme2;
+  }
+
+  div.header.loginform-cardHeader.loginform-cardHeader.loginform-cardHeader {
+    color: vars.$secondaryFontColor_theme2;
+    background-color: vars.$secondaryColor_theme2;
+  }
+
+  .loginform-card.loginform-card.loginform-card {
+    color: vars.$primaryFontColor_theme2;
+    background-color: vars.$primaryColor_theme2;
+  }
+
+  .loginform-fieldLabel.loginform-fieldLabel.loginform-fieldLabel {
+    color: vars.$primaryFontColor_theme2;
+  }
+
+}

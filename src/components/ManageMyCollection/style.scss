@@ -1,0 +1,463 @@
+@use '/src/styles/vars';
+
+div.ui.card.manageMyCollection {
+  margin: 0;
+}
+
+h3.manageMyCollection-myCollectionTitleManga {
+  font-size: 1rem;
+  margin: 0 1rem;
+}
+
+.manageMyCollection-myCollectionAuthorManga {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 0;
+  color: #c1c1c1;
+}
+
+.manageMyCollection-itemContentWrapper.manageMyCollection-itemContentWrapper.manageMyCollection-itemContentWrapper {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.manageMyCollection {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.manageMyCollection-mainCard.manageMyCollection-mainCard.manageMyCollection-mainCard.manageMyCollection-mainCard {
+  width: 80%;
+  border-radius: 1rem;
+  margin: 3rem 0;
+}
+
+
+div.content.manageMyCollection-mainCardContent.manageMyCollection-mainCardContent.manageMyCollection-mainCardContent {
+  padding: 0rem;
+}
+
+.manageMyCollection-mainCardHeader.manageMyCollection-mainCardHeader.manageMyCollection-mainCardHeader {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  text-align: center;
+}
+
+.manageMyCollection-subHeader {
+  width: 80%;
+  text-align: center;
+  margin: 0 10%;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.manageMyCollection-searchBarWrapper {
+  background-image: url('src/assets/images/collection-photo.jpg');
+  background-size: cover;
+  padding: 2rem;
+}
+
+.manageMyCollection-divider.manageMyCollection-divider.manageMyCollection-divider {
+  width: 80%;
+  margin: 1rem auto;
+}
+
+div.ui.divider.manageMyCollection-divider-MobileVersion {
+  width: 80%;
+  margin: 1rem auto;
+}
+
+.manageMyCollection-subtitle {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.manageMyCollection-titleNameManga {
+  text-align: center;
+  margin: 1rem 10%;
+}
+
+.manageMyCollection-mangaImageWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+img.ui.small.image.manageMyCollection-mangaImage.manageMyCollection-mangaImage.manageMyCollection-mangaImage {
+  margin: 0 auto;
+}
+
+.manageMyCollection-selectAndAdd.manageMyCollection-selectAndAdd.manageMyCollection-selectAndAdd.manageMyCollection-selectAndAdd {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.manageMyCollection-dropdownSelectAndAdd.manageMyCollection-dropdownSelectAndAdd.manageMyCollection-dropdownSelectAndAdd {
+  margin: 1rem 0;
+}
+
+h2.ui.header {
+  display: flex;
+  align-items: center;
+}
+
+.manageMyCollection-myCollection.manageMyCollection-myCollection {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.manageMyCollection-myCollectionMangaInfoWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.manageMyCollection-myCollectionThreeButtons {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.manageMyCollection-myCollectionButtons.manageMyCollection-myCollectionButtons.manageMyCollection-myCollectionButtons {
+  font-size: 1rem;
+  margin: 0;
+  border-radius: 1rem;
+}
+
+.manageMyCollection-myCollectionButtonsSubGroup {
+  display: flex;
+}
+
+.manageMyCollection-DeleteButton.manageMyCollection-DeleteButton.manageMyCollection-DeleteButton {
+  margin-top: 0.5rem;
+}
+
+.manageMyCollection-artificialMargin {
+  margin-right: 0.5rem;
+}
+
+.manageMyCollection-myCollectionItems.manageMyCollection-myCollectionItems {
+  margin-bottom: 1rem;
+}
+
+.manageMyCollection-addToMyCollectionButton.manageMyCollection-addToMyCollectionButton.manageMyCollection-addToMyCollectionButton {
+  border-radius: 1rem;
+}
+
+div.manageMyCollection-itemWrapperDesktopVersion {
+  margin-bottom: 1rem;
+}
+
+
+// Desktop and laptops
+@media only screen and (min-width : 1224px) {
+
+  .manageMyCollection-banner.manageMyCollection-banner.manageMyCollection-banner {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+
+  div.ui.card.manageMyCollection-mainCard.manageMyCollection-mainCard {
+    width: 70%;
+    margin: 3em auto;
+    border-radius: 1em;
+  }
+
+  div.manageMyCollection-mainCardContent {
+    display: flex;
+    flex-direction: column;
+  }
+
+  div.ui.divider.manageMyCollection-divider-MobileVersion.manageMyCollection-divider-MobileVersion {
+    display: none;
+  }
+
+  div.manageMyCollection-firstBlocDesktopVersion {
+    border-radius: 1.5em;
+    border: 1px solid;
+  }
+
+  h3.manageMyCollection-subHeader, div.header.manageMyCollection-mainCardHeader {
+    font-size: x-large;
+  }
+
+  div.manageMyCollection-wrapperDesktopVersion {
+    display: flex;
+    margin-bottom: 1em;
+    align-items: flex-end;
+  }
+
+  div.manageMyCollection-cardDesktopVersion {
+    width: 25%;
+  }
+
+  div.manageMyCollection-secondBlocDesktopVersion {
+    border-radius: 1.5em;
+    margin-top: 3em;
+    }
+
+  div.manageMyCollection-myCollection.manageMyCollection-myCollection {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    width: auto;
+    text-align: center;
+    border: 1px solid;
+  }
+
+  div.content.manageMyCollection-myCollectionHeaderContent {
+    padding: 0;
+    margin: auto;
+  }
+
+
+  div.manageMyCollection-itemWrapperDesktopVersion {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  div.manageMyCollection-itemDesktopVersion {
+    width: 25%;
+  }
+
+  .manageMyCollection-myCollectionThreeButtons {
+    width: 70%;
+  }
+  
+
+  h2.ui.header {
+    display: inline-block;
+  }
+
+  div.content.manageMyCollection-myCollectionHeaderContent {
+    background-color: vars.$secondaryColor_theme1;
+    color: vars.$secondaryFontColor_theme1;
+  }
+
+  div.manageMyCollection-myCollection.manageMyCollection-myCollection {
+    background-color: vars.$secondaryColor_theme1;
+  }
+
+  .manageMyCollection-itemContentWrapper.manageMyCollection-itemContentWrapper.manageMyCollection-itemContentWrapper {
+    width: 70%;
+  }
+
+  //Theming 1 en desktop
+  .theme1 {
+    i.settings.icon.manageMyCollection-myCollectionIcon {
+      color: vars.$primaryColor_theme1;
+    }
+  
+    div.sub.header.manageMyCollection-myCollectionSubHeaderTwo.manageMyCollection-myCollectionSubHeaderTwo {
+      color: vars.$secondaryFontColor_theme1;
+    } 
+    
+    div.content.manageMyCollection-myCollectionHeaderContent {
+      background-color: vars.$secondaryColor_theme1;
+      color: vars.$secondaryFontColor_theme1;
+    }
+  
+    div.manageMyCollection-myCollection {
+      background-color: vars.$secondaryColor_theme1;
+    }
+    
+    div.manageMyCollection-secondBlocDesktopVersion {
+      border: 1px solid vars.$primaryBorderColor_theme1;
+      }
+  
+    div.manageMyCollection-firstBlocDesktopVersion {
+      border: 1px solid vars.$primaryBorderColor_theme1;
+    }
+
+    div.manageMyCollection-mainCard.manageMyCollection-mainCard  {
+      border: none;
+    }
+
+    button.ui.fluid.button.manageMyCollection-myCollectionButtons.manageMyCollection-DeleteButton {
+      color: vars.$primaryFontColor_theme1;
+    }
+
+    div.sub.header.manageMyCollection-myCollectionSubHeaderTwo.manageMyCollection-myCollectionSubHeaderTwo {
+      color: vars.$secondaryFontColor_theme1;
+    } 
+
+  }
+  //Theming 2 en desktop
+  .theme2 {
+    i.settings.icon.manageMyCollection-myCollectionIcon {
+      color: vars.$primaryColor_theme2;
+    }
+  
+    div.sub.header.manageMyCollection-myCollectionSubHeaderTwo.manageMyCollection-myCollectionSubHeaderTwo {
+      color: vars.$secondaryFontColor_theme2;
+    } 
+    
+    div.content.manageMyCollection-myCollectionHeaderContent {
+      background-color: vars.$secondaryColor_theme2;
+      color: vars.$secondaryFontColor_theme2;
+    }
+  
+    div.manageMyCollection-myCollection {
+      background-color: vars.$secondaryColor_theme2;
+    }
+
+    div.manageMyCollection-secondBlocDesktopVersion {
+      border: 1px solid vars.$secondaryBorderColor_theme1;
+      }
+  
+    div.manageMyCollection-firstBlocDesktopVersion {
+      border: 1px solid vars.$secondaryBorderColor_theme1;
+    }
+
+    div.manageMyCollection-mainCard.manageMyCollection-mainCard  {
+      border: none;
+    }
+
+    button.ui.fluid.button.manageMyCollection-myCollectionButtons.manageMyCollection-DeleteButton {
+      color: vars.$primaryFontColor_theme2;
+    }
+  }
+}
+
+// Theming
+
+.theme1 {
+
+  div.manageMyCollection-mainCard {
+    border: 1px solid vars.$primaryBorderColor_theme1;
+  }
+
+  .manageMyCollection-mainCard.manageMyCollection-mainCard.manageMyCollection-mainCard.manageMyCollection-mainCard {
+    background-color: vars.$primaryColor_theme1;
+    color: vars.$primaryFontColor_theme1;
+  }
+
+  .manageMyCollection-myCollectionHeaderContent {
+    background-color: vars.$primaryColor_theme1;
+    color: vars.$primaryFontColor_theme1;
+  }
+
+  div.sub.header.manageMyCollection-myCollectionSubHeader.manageMyCollection-myCollectionSubHeader {
+    background-color: vars.$primaryColor_theme1;
+    color: vars.$primaryFontColor_theme1;
+  }
+
+  .manageMyCollection-myCollectionIcon.manageMyCollection-myCollectionIcon {
+    color: vars.$primaryFontColor_theme1;
+  }
+
+  .manageMyCollection-addToMyCollectionButton.manageMyCollection-addToMyCollectionButton.manageMyCollection-addToMyCollectionButton {
+    background-color: vars.$primaryColor_theme1;
+    color: vars.$primaryFontColor_theme1;
+    border: 1px solid vars.$primaryBorderColor_theme1;
+  }
+
+  .manageMyCollection-myCollectionButtons.manageMyCollection-myCollectionButtons.manageMyCollection-myCollectionButtons {
+    background-color: vars.$primaryColor_theme1;
+    color: vars.$primaryFontColor_theme1;
+    border: 1px solid vars.$primaryBorderColor_theme1;
+  }
+
+  .manageMyCollection-DeleteButton.manageMyCollection-DeleteButton.manageMyCollection-DeleteButton {
+    background-color: vars.$tertiaryColor_theme1;
+    color: vars.$secondaryFontColor_theme1;
+  }
+
+  .manageMyCollection-divider.manageMyCollection-divider.manageMyCollection-divider {
+    background-color: vars.$secondaryColor_theme1;
+  }
+
+  div.header.manageMyCollection-mainCardHeader.manageMyCollection-mainCardHeader.manageMyCollection-mainCardHeader {
+    color: vars.$secondaryFontColor_theme1;
+    background-color: vars.$secondaryColor_theme1;
+  }
+
+  div.sub.header.manageMyCollection-myCollectionSubHeaderTwo {
+    color: vars.$primaryFontColor_theme1;
+  } 
+
+  div.ui.divider.manageMyCollection-divider-MobileVersion {
+    background-color: vars.$secondaryColor_theme1;
+  }
+
+  button.ui.fluid.button.manageMyCollection-myCollectionButtons.manageMyCollection-DeleteButton {
+    color: vars.$primaryFontColor_theme1;
+  }  
+}
+
+.theme2 {
+
+  .manageMyCollection-mainCard.manageMyCollection-mainCard.manageMyCollection-mainCard.manageMyCollection-mainCard {
+    background-color: vars.$primaryColor_theme2;
+    color: vars.$primaryFontColor_theme2;
+  }
+
+  .manageMyCollection-myCollectionHeaderContent {
+    background-color: vars.$primaryColor_theme2;
+    color: vars.$primaryFontColor_theme2;
+  }
+
+  div.sub.header.manageMyCollection-myCollectionSubHeader.manageMyCollection-myCollectionSubHeader {
+    background-color: vars.$primaryColor_theme2;
+    color: vars.$primaryFontColor_theme2;
+  }
+
+  .manageMyCollection-myCollectionIcon.manageMyCollection-myCollectionIcon {
+    color: vars.$primaryFontColor_theme2;
+  }
+
+  .manageMyCollection-addToMyCollectionButton.manageMyCollection-addToMyCollectionButton.manageMyCollection-addToMyCollectionButton {
+    background-color: vars.$primaryColor_theme2;
+    color: vars.$primaryFontColor_theme2;
+    border: 1px solid vars.$primaryBorderColor_theme2;
+  }
+
+  .manageMyCollection-myCollectionButtons.manageMyCollection-myCollectionButtons.manageMyCollection-myCollectionButtons {
+    background-color: vars.$primaryColor_theme2;
+    color: vars.$primaryFontColor_theme2;
+    border: 1px solid vars.$primaryBorderColor_theme2;
+  }
+
+  .manageMyCollection-DeleteButton.manageMyCollection-DeleteButton.manageMyCollection-DeleteButton {
+    background-color: vars.$tertiaryColor_theme2;
+    color: vars.$secondaryFontColor_theme2;
+  }
+
+  .manageMyCollection-divider.manageMyCollection-divider.manageMyCollection-divider {
+    background-color: vars.$secondaryColor_theme2;
+  }
+
+  div.header.manageMyCollection-mainCardHeader.manageMyCollection-mainCardHeader.manageMyCollection-mainCardHeader {
+    color: vars.$secondaryFontColor_theme2;
+    background-color: vars.$secondaryColor_theme2;
+  }
+
+  div.sub.header.manageMyCollection-myCollectionSubHeaderTwo {
+    color: vars.$primaryFontColor_theme2;
+  }
+
+  div.manageMyCollection-mainCard {
+    border: 1px solid vars.$primaryBorderColor_theme2;
+  }
+
+  div.ui.divider.manageMyCollection-divider-MobileVersion {
+    background-color: vars.$secondaryColor_theme2;
+  }
+
+  button.ui.fluid.button.manageMyCollection-myCollectionButtons.manageMyCollection-DeleteButton {
+    color: vars.$primaryFontColor_theme2;
+  }
+}

@@ -1,0 +1,123 @@
+@use '/src/styles/vars';
+
+// General
+
+div.ui.centered.card.conversation-card {
+  width: 80%;
+  box-shadow: none;
+
+}
+
+div.conversation:first-child {
+  margin-top: 2rem;
+}
+
+.conversation-cardContent.conversation-cardContent.conversation-cardContent {
+  padding: 0 !important;
+}
+
+div.conversation:not(:first-child) {
+  margin-top: 2rem;
+}
+
+.conversations-button--hiddenBox.conversations-button--hiddenBox.conversations-button--hiddenBox {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  
+}
+
+.conversations-button--notHiddenBox.conversations-button--notHiddenBox.conversations-button--notHiddenBox {
+  position: fixed;
+  animation-duration: 0.5s;
+  animation-name: slideup;
+  animation-fill-mode: forwards;
+  
+
+}
+
+.conversations-button--hiddenBox.conversations-button--hiddenBox.conversations-button--hiddenBox {
+  position: fixed;
+  animation-duration: 0.5s;
+  animation-name: slidedown;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideup {
+  from {
+    bottom: 2rem;
+    right: 2rem;
+  }
+
+  to {
+    bottom: 8rem;
+    right: 2rem;
+  }
+}
+
+@keyframes slidedown {
+  from {
+    bottom: 8rem;
+    right: 2rem;
+  }
+
+  to {
+    bottom: 2rem;
+    right: 2rem;
+  }
+}
+
+
+.conversations-buttons.conversations-buttons.conversations-buttons.conversations-buttons {
+  padding: 0;
+  background-color: #c61100;
+  border-radius: 100%;
+  margin: 0 auto;
+}
+
+.conversations-buttonImages.conversations-buttonImages.conversations-buttonImages {
+  padding: 0.5rem;
+}
+
+.conversations-hiddenBox.conversations-hiddenBox.conversations-hiddenBox {
+  background-color: #c61100;
+  height: 7rem;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  margin: 0;
+
+}
+
+// Theming 
+
+.theme1 {
+  .conversation-card.conversation-card.conversation-card {
+
+    background-color: vars.$primaryColor_theme1;
+  }
+
+  div.header.conversation-cardHeader.conversation-cardHeader.conversation-cardHeader {
+    color: vars.$primaryFontColor_theme1;
+  }
+  
+  div.meta.conversation-cardMeta.conversation-cardMeta.conversation-cardMeta {
+    color: vars.$metaFontColor_theme1;
+  }
+
+}
+
+.theme2 {
+  .conversation-card.conversation-card.conversation-card {
+
+    background-color: vars.$primaryColor_theme2;
+  }
+
+  div.header.conversation-cardHeader.conversation-cardHeader.conversation-cardHeader {
+    color: vars.$primaryFontColor_theme2;
+  }
+  
+  div.meta.conversation-cardMeta.conversation-cardMeta.conversation-cardMeta {
+    color: vars.$metaFontColor_theme2;
+  }
+}

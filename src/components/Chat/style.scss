@@ -1,0 +1,77 @@
+// General
+
+// ChatField
+
+.chatField.chatField.chatField.chatField {
+  position: sticky;
+  padding-bottom: 1em;
+  padding-top: 1em;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  background-color: white;
+
+}
+
+form.chatField-form {
+  width: 90%;
+}
+
+div.ui.input.chatField-input {
+  width: 100%;
+}
+
+div.ui.input.chatField-input>input {
+  border: 1px solid black;
+}
+
+
+div.chatField-inputAndSubmit {
+  display: flex;
+  justify-content: center;
+}
+
+button.ui.icon.button.chatField-submit {
+  border: 1px solid black;
+}
+
+// Messages 
+
+.messages.messages.messages {
+  padding: 0 2em;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+div.message.message:nth-last-child(2) {
+  margin-bottom: 0;
+}
+
+.message {
+  text-align: left;
+  margin-bottom: 2rem;
+
+  &--own {
+    text-align: right;
+  }
+
+  &-content {
+    border-radius: 1rem;
+    padding: 1.2rem;
+    background-color: rgb(243, 191, 114);
+    color: black;
+    display: inline-block;
+    text-align: left;
+    max-width: 80%;
+  }
+
+  &-content--own {
+    background-color: rgb(105, 174, 252);
+    text-align: left;
+  }
+}

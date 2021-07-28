@@ -1,0 +1,165 @@
+@use '/src/styles/vars';
+
+// General 
+
+// page title
+div.team h2 {
+  margin-top: 1em;
+  text-align: center;
+}
+
+// global wrapper
+.team-cardGlobal {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+// the card
+.ui.card.team-card {
+  margin: 1rem;
+}
+
+.team-description {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+// name of the collaborator
+.team-cardName {
+  text-align: center;
+}
+
+// role of the collaborator
+.team-cardNameRole {
+  text-align: center;
+}
+
+// link to GitHub profil
+.team-cardNameExtra {
+  text-align: center;
+}
+
+.team-cardGlobal:last-child {
+  margin-bottom: 3rem;
+}
+
+// Media Queries
+
+//Desktop-laptops
+@media only screen and (min-width : 1224px) {
+
+
+  .team-banner {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+
+  .team-globalContentWrapper {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .team-cardGlobal {
+    margin-top: 0;
+  }
+
+  div.ui.card.team-card {
+    margin: 1rem;
+    width: 17%;
+  }
+
+  .team-description {
+    margin-bottom: 2rem;
+  }
+
+  div.team h2 {
+    margin-top: 2rem;
+  }
+  
+  // Theming media query
+
+
+
+
+
+}
+
+
+// Theming
+
+.theme1 {
+
+  div.content.team-cardContent {
+    // fonctionne (noir)
+    background-color: vars.$primaryColor_theme1;
+  }
+
+  div.header.team-cardName.header.team-cardName.header.team-cardName {
+    // mettre en blanc
+    color: vars.$primaryFontColor_theme1;
+  }
+
+  div.description.team-cardNameRole.description.team-cardNameRole.description.team-cardNameRole  {
+    // mettre en blanc
+    color: vars.$primaryFontColor_theme1;
+  }
+
+  // GITHUB
+  // logo GitHub
+  i.github.icon {
+    color: vars.$primaryFontColor_theme1;
+  }
+
+  div.extra.content.team-cardNameExtra.extra.content.team-cardNameExtra.extra.content.team-cardNameExtra.extra.content.team-cardNameExtra {
+    // black
+    background-color: vars.$primaryColor_theme1;
+  }
+
+  div.a {
+    color: white
+  }
+
+}
+
+.theme2 {
+
+  div.content.team-cardContent {
+    // fonctionne (noir)
+    background-color: vars.$primaryColor_theme2;
+  }
+
+  div.header.team-cardName.header.team-cardName.header.team-cardName {
+    // mettre en blanc
+    color: vars.$primaryFontColor_theme2;
+  }
+
+  div.description.team-cardNameRole.description.team-cardNameRole.description.team-cardNameRole  {
+    // mettre en blanc
+    color: vars.$primaryFontColor_theme2;
+  }
+
+  // GITHUB
+  // logo GitHub
+  i.github.icon {
+    color: vars.$primaryFontColor_theme2;
+  }
+
+  div.extra.content.team-cardNameExtra.extra.content.team-cardNameExtra.extra.content.team-cardNameExtra.extra.content.team-cardNameExtra {
+    // black
+    background-color: vars.$primaryColor_theme2;
+  }
+  div.a {
+    color: white
+  }
+
+  // Reste à faire (ne fonctionne pas)
+  // a {
+  //   color:red;
+  // }
+}
+  // text GitHub
+  

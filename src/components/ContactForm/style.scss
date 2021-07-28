@@ -1,0 +1,166 @@
+@use '/src/styles/vars';
+
+div.ui.centered.card.contactForm-card {
+  width: 80%;
+  border-radius: 1rem;
+  margin-top: 3rem;
+}
+
+div.contactForm-message {
+  text-align: center;
+  margin-top: 1em;
+  font-size: larger;
+  font-weight: bolder;
+}
+
+div.contactForm {
+  margin-bottom: 3rem;
+}
+
+button.ui.button.contactForm-sendButton {
+  border-radius: 1rem;
+  margin: 0;
+  width: 7.5rem;
+  font-size: 0.8rem;
+}
+div.contactForm-buttonWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+div.content.contactForm-cardContent.contactForm-cardContent.contactForm-cardContent {
+  padding: 0;
+}
+
+div.header.contactForm-cardHeader.contactForm-cardHeader.contactForm-cardHeader {
+
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  text-align: center;
+}
+
+form.contactForm-form {
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+// Media Queries
+
+//Desktop-laptops
+@media only screen and (min-width : 1224px) {
+
+
+  .contactForm-banner {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+
+  div.ui.centered.card.contactForm-card {
+    width: 70%;
+    margin-left: 3rem;
+    margin-top: 0;
+  }
+  
+  .contactForm-globalContentWrapper {
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    margin: 3rem auto;
+  }
+  .contactForm-desktopImage {
+    background-image: url('src/assets/images/desktopImage.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 70%;
+    // height: 550px;
+
+  }
+
+  // Theming media query
+
+
+
+
+
+}
+
+// Theming 
+
+.theme1 {
+
+  div.header.contactForm-cardHeader.contactForm-cardHeader.contactForm-cardHeader {
+    color: vars.$secondaryFontColor_theme1;
+    background-color: vars.$secondaryColor_theme1;
+  }
+
+  div.contactForm {
+    background-color: vars.$primaryColor_theme1;
+  }
+
+  button.ui.button.contactForm-sendButton {
+    border: 1px solid vars.$secondaryColor_theme1;
+    background-color: vars.$primaryColor_theme1;
+    color :vars.$primaryFontColor_theme1;
+  }
+
+  form.contactForm-form {
+    background-color: vars.$primaryColor_theme1;
+  }
+
+  div.ui.centered.card.contactForm-card {
+    border: 1px solid vars.$primaryBorderColor_theme1;
+  }
+
+  .contactForm-emailLabel.contactForm-emailLabel.contactForm-emailLabel {
+    color: vars.$primaryFontColor_theme1;
+  }
+  .contactForm-msgLabel.contactForm-msgLabel.contactForm-msgLabel {
+    color: vars.$primaryFontColor_theme1;
+  }
+  .contactForm-objectLabel.contactForm-objectLabel.contactForm-objectLabel {
+    color: vars.$primaryFontColor_theme1;
+  }
+
+}
+
+.theme2 {
+
+  div.header.contactForm-cardHeader.contactForm-cardHeader.contactForm-cardHeader {
+    color: vars.$secondaryFontColor_theme2;
+    background-color: vars.$secondaryColor_theme2;
+  }
+
+  div.contactForm {
+    background-color: vars.$primaryColor_theme2;
+  }
+
+  button.ui.button.contactForm-sendButton {
+    border: 1px solid vars.$secondaryColor_theme2;
+    background-color: vars.$primaryColor_theme2;
+    color: vars.$primaryFontColor_theme2;
+  }
+
+  form.contactForm-form {
+    background-color: vars.$primaryColor_theme2;
+
+  }
+
+  div.ui.centered.card.contactForm-card {
+    border: 1px solid vars.$primaryBorderColor_theme2;
+    background-color: vars.$primaryColor_theme2;
+  }
+
+  .contactForm-emailLabel.contactForm-emailLabel.contactForm-emailLabel {
+    color: vars.$primaryFontColor_theme2;
+  }
+  .contactForm-msgLabel.contactForm-msgLabel.contactForm-msgLabel {
+    color: vars.$primaryFontColor_theme2;
+  }
+  .contactForm-objectLabel.contactForm-objectLabel.contactForm-objectLabel {
+    color: vars.$primaryFontColor_theme2;
+  }
+
+}
