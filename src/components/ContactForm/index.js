@@ -24,11 +24,6 @@ const ContactForm = ({
       onContactFormUnmount();
     }),
   []);
-
-  const handleChangeEmail = (evt) => {
-    changeEmail(evt.target.value);
-    // console.log(evt.target.value);
-  };
   const handleChangeObject = (evt) => {
     changeObject(evt.target.value);
     // console.log(evt.target.value);
@@ -41,6 +36,11 @@ const ContactForm = ({
     console.log(message.message);
     handleMessage();
   };
+  const handleChangeEmail = (evt) => {
+    changeEmail(evt.target.value);
+    console.log(evt.target.value)
+  };
+
 
   return (
     <div className="contactForm">
@@ -66,7 +66,7 @@ const ContactForm = ({
                   <option value="Autre">Autre</option>
                 </Form.Field>
               </Form.Field>
-              <Form.Field>
+              <Form.Field >
                 <label className="contactForm-msgLabel">Saisissez votre message:</label>
                 <Form.TextArea id="message" name="message" onChange={handleChangeContent} value={content} />
               </Form.Field>
