@@ -117,3 +117,13 @@ export const GET_USER_INFOS = 'GET_USER_INFOS';
 export const getUserInfos = () => ({
   type: GET_USER_INFOS,
 });
+
+export const SAVE_USER_INFOS = 'SAVE_USER_INFOS';
+
+export const saveUserInfos = (infos) => ({
+  type: SAVE_USER_INFOS,
+  infos,
+});
+
+
+

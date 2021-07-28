@@ -61,8 +61,8 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     dispatch(changeHolidayMode(holiday_mode));
     },
 
-    displayUserInfos: function (infos) {
-    dispatch(getUserInfos(infos));
+    displayUserInfos: function () {
+    dispatch(getUserInfos());
     }
 });
 

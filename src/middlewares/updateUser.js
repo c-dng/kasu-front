@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { UPDATE_USER, GET_USER_INFOS } from 'src/actions/user';
+import { UPDATE_USER, GET_USER_INFOS, saveUserInfos } from 'src/actions/user';
 
 const axiosInstance = axios.create(
     {
@@ -20,8 +20,8 @@ const updateUser = (store) => (next) => (action) => {
             .get(`api/v1/user/${userId}`)
             .then(
                 (response) => {
-                console.log(response.data);
-                //store.dispatch(saveMessage(response.data));
+                console.log(response.data.contact);
+                store.dispatch(saveUserInfos(response.data.contact));
                 },
             );       
       next(action);

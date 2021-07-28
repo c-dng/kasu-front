@@ -34,7 +34,6 @@ const DesktopSetIdCard = ({
     []);
 
   const [open, setOpen] = React.useState(false);
-  console.log();
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
