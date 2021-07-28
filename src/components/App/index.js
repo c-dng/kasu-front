@@ -42,9 +42,9 @@ const App = ({
     }
   }, [chatId, isLogged]);
 
-  // if (loading) {
-  //   return <Loading />;
-  // }
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <div className={`app ${theme}`}>
