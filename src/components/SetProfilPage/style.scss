@@ -28,13 +28,31 @@ div.ui.fitted.toggle.checkbox {
   border-top-right-radius: 1rem;
 }
 
+div.field.mobileIdCard-holidayWrapper div.ui.input {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1em;
+}
+
 textarea.mobileSetProfil-textArea.mobileSetProfil-textArea.mobileSetProfil-textArea {
   margin-bottom: 1em;
+}
+
+div.mobileSetProfil-ButtonAddAndImage {
+  display: flex;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+button.ui.circular.icon.button.mobileSetProfil-addButton {
+  align-self: flex-end;
 }
 
 img.ui.tiny.circular.image.mobileSetProfil-image {
   margin: auto;
   border: 1px solid white;
+  width: 45%;
 }
 
 button.ui.button.mobileSetProfil-changeImage {
@@ -54,7 +72,7 @@ h3.mobileSetProfil-h3.mobileSetProfil-h3 {
   margin-bottom: 0.50em;
 }
 
-span.desktopIdCard-holidayWrapper {
+div.ui.input.desktopIdCard-holidayWrapper {
   display: flex;
   justify-content: center;
   margin-bottom: 0.5em;
@@ -80,7 +98,6 @@ div.mobileSetProfil-groupTwoButtons {
 button.ui.button.mobileSetProfil-buttonCancel {
   border-radius: 1rem;
   border: 1px solid white;
-
 }
 
 button.ui.button.mobileSetProfil-buttonValidate {
@@ -88,7 +105,6 @@ button.ui.button.mobileSetProfil-buttonValidate {
   color: #326158;
   border-radius: 1rem;
   border: 1px solid white;
-
 }
 
 //Desktop
@@ -106,44 +122,66 @@ h1.setProfilPage-title {
   margin-bottom: 0;
 }
 
-div.ui.segment.desktopIdCard-MainWrapper {
-  margin-top: 0;
+div.desktopIdCard-MainWrapper {
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
-}
-
-div.desktopIdCard-leftPartWrapper2elements {
+  padding-bottom: 2em;
   display: flex;
-  justify-content: center;
 }
 
-span.desktopIdCard-holidayWrapper {
+div.desktopIdCard-leftPartWrapper {
+  width: 50%;
+  display: flex;
+  padding-top: 4em;
+}
+
+div.ui.medium.centered.image.desktopIdCard-leftPartWrapperImage {
+  height: fit-content;
+}
+
+div.desktopIdCard-rightPartWrapper {
+  width: 50%;
+}
+
+a.ui.red.right.ribbon.label {
+  left: calc(100% + 1.3em);
+  padding-left: 1.6em;
+  margin-top: 0.5em;
+}
+
+div.field.desktopIdCard-holidayWrapper {
   display: flex;
   justify-content: center;
   margin-top: 1em;
   margin-bottom: 1em;
 }
 
-button.ui.button.desktopIdCard-EditEmail {
-  font-size: 1rem;
-  margin-bottom: 1em;
-}
-  
-div.desktopIdCard-leftPartWrapper2elements {
+span.desktopIdCard-holidayWrapper{
+  margin-top: 1.5em;
   display: flex;
   justify-content: center;
 }
 
+div.ui.label.desktopIdCard-bioLabel {
+  margin-bottom: 0.5em;
+}
+
+textarea.desktopIdCard-memberDescription.desktopIdCard-memberDescription.desktopIdCard-memberDescription {
+  margin-bottom: 1em;
+}
+
+form.ui.form {
+  width: 90%;
+  margin: auto;
+}
+
+button.ui.button.desktopIdCard-EditEmail {
+  font-size: 1rem;
+  margin-bottom: 1em;
+}
+
 div.desktopIdCard-Bottom3Buttons.desktopIdCard-Bottom3Buttons{
-  margin-top: 9em;
-}
-
-div.column.desktopIdCard-leftPartWrapper {
-  border-bottom-left-radius: 1em;
-}
-
-div.column.desktopIdCard-rightPartWrapper {
-  border-bottom-right-radius: 1em;
+  margin-top: 2em;
 }
 
 div.desktopIdCard-errorMessage {
@@ -255,13 +293,14 @@ div.desktopIdCard-errorMessage {
   .setProfilPage-mainWrapper {
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
+    border: 1px solid vars.$primaryBorderColor_theme2;
   }
 
-  .column.desktopIdCard-leftPartWrapper {
+  .desktopIdCard-leftPartWrapper {
     background-color: vars.$primaryColor_theme2;
   }
 
-  .column.desktopIdCard-rightPartWrapper {
+  .desktopIdCard-rightPartWrapper {
     background-color: vars.$primaryColor_theme2;
   }
 

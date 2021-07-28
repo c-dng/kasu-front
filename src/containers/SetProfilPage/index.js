@@ -22,8 +22,8 @@ const mapStateToProps = (state, ownProps) => ({
 const mapDispatchToProps = (dispatch, ownProps) => ({
    
     handleUpdate: function () {
-        dispatch(updateUser());
-      },
+    dispatch(updateUser());
+    },
 
     changeEmail: function (email) {
     dispatch(changeEmail(email));

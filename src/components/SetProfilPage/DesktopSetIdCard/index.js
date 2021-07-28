@@ -69,6 +69,12 @@ const DesktopSetIdCard = ({
     changeHolidayMode(evt.target.value);
   };
 
+  // toggle function
+  const onChangeCheckbox = (evt, data) => {
+    let checked = data.checked;
+    changeHolidayMode(checked);
+  }
+
   const [errorMessage, setErrorMessage] = React.useState('')
   
   const validate = (value) => {
@@ -87,55 +93,35 @@ const DesktopSetIdCard = ({
 
   return (
     
-    <Segment className="desktopIdCard-MainWrapper">
-      <Grid columns={2}>
-        <Grid.Column className="desktopIdCard-leftPartWrapper">
-            
-
-          <div className="desktopIdCard-leftPartWrapper2elements">
-          <Label className="desktopIdCard-leftPartWrapperLogin" attached='top left'>{pseudo}</Label>
-
-            <Image className="desktopIdCard-leftPartWrapperImage"
-                centered
-                size="medium"
-                label={{ as: 'a', color: 'red', corner: 'right', icon: 'camera' }}
-                src="https://react.semantic-ui.com/images/avatar/large/steve.jpg"
+    <div className="desktopIdCard-MainWrapper">
+      <div className="desktopIdCard-leftPartWrapper">
+          <Image className="desktopIdCard-leftPartWrapperImage"
+              centered
+              size="medium"
+              label={{ as: 'a', color: 'red', corner: 'right', icon: 'camera' }}
+              src="https://react.semantic-ui.com/images/avatar/large/steve.jpg"
             />
-            
-          </div>
+      </div>
 
+      <div className="desktopIdCard-rightPartWrapper">
+        <Label as='a' color='red' ribbon='right'>Mes infos</Label>
+
+        <Form onSubmit={handleSubmit}>
           <span className="desktopIdCard-holidayWrapper">
               <Label className="setProfilPage-fourthPartHolidayModeLabel">Mode vacances: </Label>
               <Radio size="medium" toggle />
           </span>
+          <Label className="desktopIdCard-bioLabel">
+                <p className="desktopIdCard-bioP">Description</p>
+          </Label>
+          <TextArea className="desktopIdCard-memberDescription" placeholder="Parle nous un peu de toi..." />
 
-            <Label className="desktopIdCard-bioLabel">
-              <p className="desktopIdCard-bioP">Bio</p>
-            </Label>
-
-
-            <Form className="desktopIdCard-memberDescription">
-                    <TextArea placeholder="Parle nous un peu de toi..." />
-            </Form>
-
-        </Grid.Column>
-
-      <Grid.Column className="desktopIdCard-rightPartWrapper">
-  
-            <Label as='a' color='red' ribbon='right'>
-                Mes infos
-            </Label>
-
-      <Form onSubmit={handleSubmit}>
-
-            <Form.Input
-              placeholder='Pseudo'
-              value={pseudo}
-              onChange={handleChangePseudo}
-            />
-
-        <Form.Group widths='equal'>
-
+          <Form.Input
+            placeholder='Pseudo'
+            value={pseudo}
+            onChange={handleChangePseudo}
+          />
+          <Form.Group widths='equal'>
             <Form.Input className="desktopIdCard-formInputName"
               icon='user'
               iconPosition='left'
@@ -143,7 +129,6 @@ const DesktopSetIdCard = ({
               value={firstName}
               onChange={handleChangeFirstName}
             />
-
             <Form.Input className="desktopIdCard-formInputLastName"
               icon='user'
               iconPosition='left'
@@ -151,8 +136,7 @@ const DesktopSetIdCard = ({
               value={lastName}
               onChange={handleChangeLastName}
             />
-        </Form.Group>
-
+          </Form.Group>
             <Form.Input
               icon='map marker alternate'
               iconPosition='left'
@@ -160,22 +144,18 @@ const DesktopSetIdCard = ({
               value={address}
               onChange={handleChangeAddress}
             />
-
             <Form.Input
               placeholder='Code Postal'
               value={zipCode}
               type='number'
               onChange={handleChangeZipCode}
-            />
-                    
+            />      
             <Form.Input
               placeholder='Ville'
               value={city}
               onChange={handleChangeCity}
             />
-
-        <Form.Group widths='equal'>
-
+          <Form.Group widths='equal'>
             <Form.Input className="desktopIdCard-formInpuPassword"
               input='password'
               icon='lock'
@@ -184,7 +164,6 @@ const DesktopSetIdCard = ({
               value={password}
               onChange={handleChangePassword}
             />
-
             <Form.Input 
               className="desktopIdCard-formInputEmail"
               icon='mail'
@@ -194,47 +173,40 @@ const DesktopSetIdCard = ({
               value={email}
               onChange={handleChangeEmail}
             />
-        </Form.Group>
+          </Form.Group>
 
-          <div className="desktopIdCard-errorMessage">{errorMessage}</div>
-
+          <div className="desktopIdCard-errorMessage">
+            {errorMessage}
+          </div>
           <div className="desktopIdCard-Bottom3Buttons">
-              <ButtonGroup widths='3' >
-                    <Button icon='erase' color='black' />
-                   
-                    <Modal
-                      icon='user delete'
-                      open={open}
-                      trigger={<Button className="desktopIdCard-memberDelete" color='red'><Icon name='user delete'/></Button>}
-                      onClose={() => setOpen(false)}
-                      onOpen={() => setOpen(true)}
-                    >
-                    
+            <ButtonGroup widths='3' >
+              <Button icon='erase' color='black' />
+                <Modal
+                  icon='user delete'
+                  open={open}
+                  trigger={<Button className="desktopIdCard-memberDelete" color='red'><Icon name='user delete'/></Button>}
+                  onClose={() => setOpen(false)}
+                  onOpen={() => setOpen(true)}
+                  >      
                   <Header icon='delete' content='Confirmer votre action' />
-                    <Modal.Content>
-                        <p>
-                          Voulez-vous vraiment supprimer votre compte ?
-                        </p>
-                    </Modal.Content>
-                    <Modal.Actions>
-                        <Button color='red' onClick={() => setOpen(false)}>
-                            <Icon name='remove' /> Non
-                        </Button>
-                        <Button color='green' onClick={() => setOpen(false)}>
-                            <Icon name='checkmark' /> Oui
-                        </Button>
-                    </Modal.Actions>
-                    </Modal>
-
-                    <Button type="submit" icon='save' color='green' />
+                  <Modal.Content>
+                    <p>Voulez-vous vraiment supprimer votre compte ?</p>
+                  </Modal.Content>
+                  <Modal.Actions>
+                    <Button color='red' onClick={() => setOpen(false)}>
+                      <Icon name='remove' /> Non
+                    </Button>
+                    <Button color='green' onClick={() => setOpen(true)}>
+                      <Icon name='checkmark' /> Oui
+                    </Button>
+                  </Modal.Actions>
+                </Modal>
+                <Button type="submit" icon='save' color='green' />
               </ButtonGroup>
-            </div>
-          </Form>
-        </Grid.Column>
-    </Grid>
-
-  </Segment>        
-
+          </div>
+        </Form>
+      </div>
+    </div>        
   );
 }
 

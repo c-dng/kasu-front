@@ -31,7 +31,6 @@ const ViewProfilPage = () => {
         </MediaQuery>
         <MediaQuery maxWidth={1223}>
           <Image className="viewProfilPage-firstPartImage" src="https://react.semantic-ui.com/images/avatar/large/steve.jpg" size="tiny" />
-          <Button className="viewProfilPage-firstPartAddButton" circular>+</Button>
           <div className="viewProfilPage-secondPart">
             <Container textAlign="center">
               <h3 className="viewProfilPage-pseudo">Pseudo</h3>

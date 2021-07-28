@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
-  Image, TextArea, Button, Form, Radio, Label,
+  Image, TextArea, Button, Form, Icon, Label, Checkbox,
 } from 'semantic-ui-react';
 import './style.scss';
 import alternativeBanner from 'src/assets/images/alternativeBanner.png';
@@ -25,10 +25,16 @@ const SetProfilPage = ({
   changeCity,
   changeFirstName,
   changeLastName,
-  changeHoliday_mode,
+  changeHolidayMode,
   handleUpdate,
   displayUserInfos
 }) => {
+
+  useEffect(() => (
+    displayUserInfos()
+    ),
+    []);
+
   const [open, setOpen] = React.useState(false);
 
   const handleSubmit = (evt) => {
@@ -60,9 +66,14 @@ const SetProfilPage = ({
   const handleChangeLastName = (evt) => {
     changeLastName(evt.target.value);
   };
-  const changeHolidayMode = (evt) => {
-    changeHolidayMode(evt.target.value);
-  };
+
+  // toggle function
+  const onChangeCheckbox = (evt, data) => {
+    let checked = data.checked;
+    changeHolidayMode(checked);
+  }
+
+  console.log(holiday_mode);
 
   return (
     <div className="setProfilPage">
@@ -106,16 +117,20 @@ const SetProfilPage = ({
                 size="tiny"
                 circular
               />
-              <Button className="mobileSetProfil-changeImage" circular>+</Button>
+              <Button className="mobileSetProfil-addButton" circular icon='photo' />
             </div>
 
             <h3 className="mobileSetProfil-h3">{pseudo}</h3>
-            <span className="desktopIdCard-holidayWrapper">
-              <Label className="setProfilPage-fourthPartHolidayModeLabel">Mode vacances: </Label>
-              <Radio size="medium" toggle />
-            </span>
 
             <Form  onSubmit={handleSubmit}>
+
+              <Form.Input className="mobileIdCard-holidayWrapper">
+                <Label className="setProfilPage-fourthPartHolidayModeLabel">Mode vacances:</Label>
+                <Checkbox toggle
+                onClick={(evt, data)=>onChangeCheckbox(evt, data)}
+                />
+              </Form.Input>
+
               <TextArea className="mobileSetProfil-textArea" rows={2} placeholder='Bio' />
               <Form.Group widths='equal'>
 

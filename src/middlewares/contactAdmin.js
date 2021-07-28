@@ -1,31 +1,32 @@
-import axios from 'axios';
 import { SUBMIT_FORM, saveMessage } from 'src/actions/global';
-
-const axiosInstance = axios.create(
-  {
-    baseURL: 'https://api.kasu.laetitia-dev.com/',
-  },
-);
+import api from 'src/api';
+import { setLoadingFalse, setLoadingTrue } from '../actions/global';
 
 const token = localStorage.getItem('token');
 if (token) {
-    axiosInstance.defaults.headers.common.Authorization = `Bearer ${token}`;
+    api.defaults.headers.common.Authorization = `Bearer ${token}`;
 }
 
 const contactAdminMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case SUBMIT_FORM: {
+      store.dispatch(setLoadingTrue());
       const { object, content } = store.getState().global;
-      axiosInstance
+      api
         .post('api/v1/user/1/contact-admin', { object, content })
         .then(
             (response) => {
-            console.log(response.data);
+            console.log('Post and set save message succeeded', response.data);
             store.dispatch(saveMessage(response.data));
+            store.dispatch(setLoadingFalse());
             },
-        );       
-        next(action);
-        break;
+        )
+        .catch((error) => {
+          store.dispatch(setLoadingFalse());
+          console.log('Post and set save message failed', error)
+        });     
+      next(action);
+      break;
     }
     default:
       next(action);

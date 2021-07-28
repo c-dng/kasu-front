@@ -30,9 +30,6 @@ const DesktopIdCard = () => (
         </p>
         <Divider />
         <div className="desktopIdCard-memberPartWrapper">
-          <Button circular icon>
-            <Icon name="camera" />
-          </Button>
           <div className="desktopIdCard-changeButtonsWrapper">
             <Link to="/profil/id" exact={+true}>
               <Button size="mini" className="desktopIdCard-changeButtonsLeft" attached="left">Gérer mon profil</Button>
