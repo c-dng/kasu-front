@@ -85,13 +85,13 @@ const Nav = ({
             </Menu.Item>
           )}
           {isLogged && (
-            <Menu.Item name="chat">
-              <Image as={Link} onClick={() => handleConversationsLoad} to="/conversations" exact={+true} className="navbuttons" src={chatlogoToDisplay} alt="logo" size="mini" />
+            <Menu.Item as="div" onClick={() => handleConversationsLoad()} name="chat">
+              <Image as={Link} to="/conversations" exact={+true} className="navbuttons" src={chatlogoToDisplay} alt="logo" size="mini" />
             </Menu.Item>
           )}
           {isLogged && (
             <Menu.Item name="logout">
-              <Image onClick={handleLogout} className="navbuttons" src={logoutlogo} alt="logo" size="mini" />
+              <Image as={Link} to="/" exact={+true} onClick={handleLogout} className="navbuttons" src={logoutlogo} alt="logo" size="mini" />
             </Menu.Item>
           )}
           {!isLogged && (

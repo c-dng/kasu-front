@@ -1,31 +1,26 @@
 import axios from 'axios';
 import { SUBMIT_FORM, saveMessage } from 'src/actions/global';
-
-const axiosInstance = axios.create(
-  {
-    baseURL: 'https://api.kasu.laetitia-dev.com/',
-  },
-);
+import api from 'src/api';
 
 const token = localStorage.getItem('token');
 if (token) {
-    axiosInstance.defaults.headers.common.Authorization = `Bearer ${token}`;
+  api.defaults.headers.common.Authorization = `Bearer ${token}`;
 }
 
 const contactAdminMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case SUBMIT_FORM: {
       const { object, content } = store.getState().global;
-      axiosInstance
+      api
         .post('api/v1/user/1/contact-admin', { object, content })
         .then(
-            (response) => {
+          (response) => {
             console.log(response.data);
             store.dispatch(saveMessage(response.data));
-            },
-        );       
-        next(action);
-        break;
+          },
+        );
+      next(action);
+      break;
     }
     default:
       next(action);

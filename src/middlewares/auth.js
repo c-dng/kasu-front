@@ -13,7 +13,7 @@ const authMiddleware = (store) => (next) => (action) => {
         .then(
           (response) => {
             console.log(response);
-
+            store.dispatch(setLoadingFalse());
             store.dispatch(saveUser(response.data));
 
             api.defaults.headers.common.Authorization = `Bearer ${response.data.token}`;
@@ -43,6 +43,7 @@ const authMiddleware = (store) => (next) => (action) => {
     }
 
     case LOAD_CONVERSATIONS: {
+      console.log('doing a load of conversations');
       const userId = store.getState().user.data.id;
       store.dispatch(setLoadingTrue());
       api
@@ -50,7 +51,7 @@ const authMiddleware = (store) => (next) => (action) => {
         .then(
           (response) => {
             console.log('great conversation loading', response);
-
+            store.dispatch(setLoadingFalse());
             store.dispatch(saveUserConversations(response.data));
             store.dispatch(setLoadingFalse());
           },

@@ -75,9 +75,8 @@ export const saveUser = (data) => ({
 
 export const LOAD_CONVERSATIONS = 'LOAD_CONVERSATIONS';
 
-export const loadConversations = (data) => ({
+export const loadConversations = () => ({
   type: LOAD_CONVERSATIONS,
-  data,
 });
 
 export const SAVE_USER_CONVERSATIONS = 'SAVE_USER_CONVERSATIONS';
