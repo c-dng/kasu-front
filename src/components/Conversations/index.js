@@ -31,10 +31,10 @@ const Conversations = ({
   //   handleConversationsLoad();
   // });
 
-  useBeforeunload((event) => {
-    console.log('action before unload');
-    handleConversationsLoad();
-  });
+  // useBeforeunload((event) => {
+  //   console.log('action before unload');
+  //   handleConversationsLoad();
+  // });
   return (
     <div className="conversations">
       <div className="conversations-notHiddenBox">
