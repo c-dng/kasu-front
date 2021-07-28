@@ -21,7 +21,6 @@ const chatMiddleware = (store) => (next) => (action) => {
       console.log('socket defined');
       socket.on('send_message', (payload) => {
         console.log('tu viens de recevoir un signal "send_message" de la part de socket.io');
-        
         const { chatId, userId, message } = payload;
         store.dispatch(addMessage(message, chatId, userId));
       });
