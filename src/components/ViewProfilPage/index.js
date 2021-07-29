@@ -10,7 +10,9 @@ import MediaQuery from 'react-responsive';
 import DesktopIdCard from './DesktopIdCard';
 import DesktopMyCollectionProfile from './DesktopMyCollectionProfile';
 
-const ViewProfilPage = ({ pseudo, bio, city, zipcode, picture, holidayMode }) => {
+const ViewProfilPage = ({
+  pseudo, bio, city, zipcode, picture, holidayMode,
+}) => {
   const availableTomes = [
     { key: 't1', value: 't1', text: 'Tome 1' },
     { key: 't2', value: 't2', text: 'Tome 2' },
@@ -30,7 +32,7 @@ const ViewProfilPage = ({ pseudo, bio, city, zipcode, picture, holidayMode }) =>
           <DesktopIdCard pseudo={pseudo} bio={bio} city={city} zipcode={zipcode} picture={picture} holidayMode={holidayMode} />
         </MediaQuery>
         <MediaQuery maxWidth={1223}>
-          <Image className="viewProfilPage-firstPartImage" src={picture || 'https://api.multiavatar.com/Kasu.svg'} size="tiny" />
+          <Image className="viewProfilPage-firstPartImage" src={`https://api.multiavatar.com/${picture}.png`} size="tiny" />
           <div className="viewProfilPage-secondPart">
             <Container textAlign="center">
               <h3 className="viewProfilPage-pseudo">{pseudo}</h3>

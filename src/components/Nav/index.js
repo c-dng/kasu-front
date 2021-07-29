@@ -1,15 +1,4 @@
-/* eslint-disable linebreak-style */
-// eslint-disable-next-line linebreak-style
-// eslint-disable-next-line linebreak-style
-// eslint-disable-next-line linebreak-style
-/* eslint-disable react/prop-types */
-/* eslint-disable linebreak-style */
-// eslint-disable-next-line linebreak-style
-/* eslint-disable max-len */
-/* eslint-disable linebreak-style */
-// eslint-disable-next-line linebreak-style
 import React from 'react';
-// eslint-disable-next-line linebreak-style
 import PropTypes from 'prop-types';
 import {
   Dropdown, Image, Menu, Segment,
@@ -110,9 +99,9 @@ const Nav = ({
             </Menu.Item>
           )}
           {!isLogged && (
-          <Menu.Item position="right" name="login">
-            <Image as={Link} to="/login" exact={+true} className="navbuttons nav-loginButton" src={loginlogo} alt="logo" size="mini" />
-          </Menu.Item>
+            <Menu.Item position="right" name="login">
+              <Image as={Link} to="/login" exact={+true} className="navbuttons nav-loginButton" src={loginlogo} alt="logo" size="mini" />
+            </Menu.Item>
           )}
         </Menu>
       </Segment>
