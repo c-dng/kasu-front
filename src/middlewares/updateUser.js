@@ -1,4 +1,4 @@
-import { UPDATE_USER, GET_USER_INFOS, saveUserInfos } from 'src/actions/user';
+import { UPDATE_USER, GET_USER_INFOS, saveUserInfos, saveMessage } from 'src/actions/user';
 import api from 'src/api';
 import { setLoadingFalse, setLoadingTrue } from '../actions/global';
 
@@ -29,22 +29,22 @@ const updateUser = (store) => (next) => (action) => {
       break;
     }
     case UPDATE_USER: {
-      const { zipCode, address, city, lastName, firstName, pseudo, email, password, holiday_mode } = store.getState().user;
-      const userId = store.getState().user.data.id;
-      store.dispatch(setLoadingTrue());
-      api
-        .patch(`api/v1/user/${userId}/update`, { zipcode: zipCode, address, city, lastname: lastName, firstname: firstName, pseudo, email, password, holiday_mode })
-        .then(
-          (response) => {
-            console.log('update user infos succeeded', response.data);
-            store.dispatch(setLoadingFalse());
-            //store.dispatch(saveMessage(response.data));
-          },
-        )
-        .catch((error) => {
-          store.dispatch(setLoadingFalse());
-          console.log('update user infos failed', error)
-        });
+        const { zipCode, address, city, lastName, firstName, pseudo, email, password, holiday_mode, description } = store.getState().user;
+        const userId = store.getState().user.data.id;
+        store.dispatch(setLoadingTrue());
+        api
+            .patch(`api/v1/user/${userId}/update`, { zipcode: zipCode, address, city, lastname: lastName, firstname: firstName, pseudo, email, password, holiday_mode, description })
+            .then(
+                (response) => {
+                console.log('update user infos succeeded', response.data);
+                store.dispatch(saveMessage(response.data));
+                store.dispatch(setLoadingFalse());
+                },
+            )
+            .catch((error) => {
+              store.dispatch(setLoadingFalse());
+              console.log('update user infos failed', error)
+            });       
       next(action);
       break;
     }

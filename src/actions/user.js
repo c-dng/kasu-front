@@ -61,6 +61,13 @@ export const changeHolidayMode = (holiday_mode) => ({
   holiday_mode,
 });
 
+export const CHANGE_DESCRIPTION = 'CHANGE_DESCRIPTION';
+
+export const changeDescription = (description) => ({
+  type: CHANGE_DESCRIPTION,
+  description,
+});
+
 export const LOGIN_USER = 'LOGIN_USER';
 
 export const loginUser = () => ({
@@ -123,6 +130,20 @@ export const saveUserInfos = (infos) => ({
   type: SAVE_USER_INFOS,
   infos,
 });
+
+export const SAVE_MESSAGE= 'SAVE_MESSAGE';
+
+export const saveMessage = (message) => ({
+  type: SAVE_MESSAGE,
+  message,
+});
+
+export const ERASE_MESSAGE= 'ERASE_MESSAGE';
+
+export const eraseMessage = () => ({
+  type: ERASE_MESSAGE,
+});
+
 
 
 

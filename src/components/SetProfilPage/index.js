@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import {
   Image, TextArea, Button, Form, Label, Checkbox, Modal, Icon, Header,
 } from 'semantic-ui-react';
+import validator from 'validator'; //checking of password
 import './style.scss';
 import alternativeBanner from 'src/assets/images/alternativeBanner.png';
 import MediaQuery from 'react-responsive';
@@ -17,6 +18,8 @@ const SetProfilPage = ({
   firstName,
   lastName,
   holiday_mode,
+  description,
+  message,
   changeEmail,
   changePassword,
   changePseudo,
@@ -26,15 +29,24 @@ const SetProfilPage = ({
   changeFirstName,
   changeLastName,
   changeHolidayMode,
+  changeDescription,
   handleUpdate,
   displayUserInfos,
+  onSetProfilPageUnmount
 }) => {
-  useEffect(() => (
+  
+  useEffect(() => {
     displayUserInfos()
-  ), []);
+    return (
+    function cleanup() {
+    onSetProfilPageUnmount();
+    })},[]);
 
-  const [open, setOpen] = React.useState(false);// Modal to delete account
-  const [avatar, setAvatar] = React.useState(false);// Modal to choose an avatar
+    
+
+  const [open, setOpen] = React.useState(false);//Modal to delete account
+  const [avatar, setAvatar] = React.useState(false);//Modal to choose an avatar
+  const [errorMessage, setErrorMessage] = React.useState('')//display a message received from API
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -45,6 +57,7 @@ const SetProfilPage = ({
     changeEmail(evt.target.value);
   };
   const handleChangePassword = (evt) => {
+    validate(evt.target.value);//checking password
     changePassword(evt.target.value);
   };
   const handleChangePseudo = (evt) => {
@@ -65,23 +78,43 @@ const SetProfilPage = ({
   const handleChangeLastName = (evt) => {
     changeLastName(evt.target.value);
   };
+  const handleChangeDescription = (evt) => {
+    changeDescription(evt.target.value);
+  };
+
+
   // toggle function
   const onChangeCheckbox = (evt, data) => {
     const { checked } = data;
     changeHolidayMode(checked);
   };
 
-  console.log(holiday_mode);
+  //Check password with validator dependencie
+  const validate = (value) => {
+  
+    if (validator.isStrongPassword(value, {
+      minLength: 6, minLowercase: 1,
+      minUppercase: 1, minNumbers: 1, minSymbols: 1
+    })) {
+      setErrorMessage('');
+      console.log(errorMessage);
+    } else {
+      setErrorMessage('Veuillez entrer un mot de passe valide: min-6 caractères, une majuscule, une minuscule, un chiffre et un des caractères suivants: @$%_*|=-');
+      console.log(errorMessage);
+    }
+  }
+
+  //console.log(holiday_mode);
 
   return (
     <div className="setProfilPage">
 
       <Image className="registerForm-banner" src={alternativeBanner} />
       <div className="setProfilPage-mainWrapper">
-
-        <h1 className="setProfilPage-title">Gérer mon profil</h1>
-        <MediaQuery minWidth={1224}>
-          <DesktopSetIdCard
+          <h1 className="setProfilPage-title">Gérer mon profil</h1>
+          <div className="contactForm-message">{message}</div>
+          <MediaQuery minWidth={1224}>
+            <DesktopSetIdCard
             email={email}
             password={password}
             pseudo={pseudo}
@@ -91,6 +124,7 @@ const SetProfilPage = ({
             firstName={firstName}
             lastName={lastName}
             holiday_mode={holiday_mode}
+            description={description}
             changeEmail={changeEmail}
             changePassword={changePassword}
             changePseudo={changePseudo}
@@ -98,6 +132,7 @@ const SetProfilPage = ({
             changeZipCode={changeZipCode}
             changeCity={changeCity}
             changeFirstName={changeFirstName}
+            changeDescription={changeDescription}
             changeLastName={changeLastName}
             changeHolidayMode={changeHolidayMode}
             handleUpdate={handleUpdate}
@@ -153,14 +188,20 @@ const SetProfilPage = ({
 
               <Form.Input className="mobileIdCard-holidayWrapper">
                 <Label className="setProfilPage-fourthPartHolidayModeLabel">Mode vacances:</Label>
-                <Checkbox
-                  toggle
-                  onClick={(evt, data) => onChangeCheckbox(evt, data)}
+                <Checkbox toggle checked={holiday_mode ? true : false}
+                onClick={(evt, data)=>onChangeCheckbox(evt, data)}
                 />
               </Form.Input>
 
-              <TextArea className="mobileSetProfil-textArea" rows={2} placeholder="Bio" />
-              <Form.Group widths="equal">
+              <TextArea 
+              rows={2}
+              onChange={handleChangeDescription}
+              value={description}
+              className="mobileSetProfil-textArea"
+              placeholder='Bio'
+              />
+
+              <Form.Group widths='equal'>
 
                 <Form.Input
                   className="mobileSetProfil-formInputName"
@@ -235,37 +276,41 @@ const SetProfilPage = ({
                 />
 
               </Form.Group>
-            </Form>
+            
 
-            <div className="mobileSetProfil-divDeleteMyAccount">
-              <Modal
-                icon="user delete"
-                open={open}
-                trigger={<Button size="small" className="mobileSetProfil-deleteMyAccount" negative>Supprimer mon compte</Button>}
-                onClose={() => setOpen(false)}
-                onOpen={() => setOpen(true)}
-              >
-                <Header icon="delete" content="Confirmer votre action" />
-                <Modal.Content>
-                  <p>Voulez-vous vraiment supprimer votre compte ?</p>
-                </Modal.Content>
-                <Modal.Actions>
-                  <Button color="red" onClick={() => setOpen(false)}>
-                    <Icon name="remove" /> Non
-                  </Button>
-                  <Button color="green" onClick={() => setOpen(true)}>
-                    <Icon name="checkmark" /> Oui
-                  </Button>
-                </Modal.Actions>
-              </Modal>
-            </div>
-            <div className="mobileSetProfil-groupTwoButtons">
-              <Button size="small" className="mobileSetProfil-buttonCancel">Annuler</Button>
-              <Button type="submit" size="small" className="mobileSetProfil-buttonValidate">Valider</Button>
-            </div>
+              <div className="desktopIdCard-errorMessage">
+                {errorMessage}
+              </div>
+
+              <div className="mobileSetProfil-divDeleteMyAccount">
+                  <Modal
+                    icon='user delete'
+                    open={open}
+                    trigger={<Button size='small' className="mobileSetProfil-deleteMyAccount" negative>Supprimer mon compte</Button>}
+                    onClose={() => setOpen(false)}
+                    onOpen={() => setOpen(true)}
+                    >      
+                    <Header icon='delete' content='Confirmer votre action' />
+                    <Modal.Content>
+                      <p>Voulez-vous vraiment supprimer votre compte ?</p>
+                    </Modal.Content>
+                    <Modal.Actions>
+                      <Button color='red' onClick={() => setOpen(false)}>
+                        <Icon name='remove' /> Non
+                      </Button>
+                      <Button color='green' onClick={() => setOpen(true)}>
+                        <Icon name='checkmark' /> Oui
+                      </Button>
+                    </Modal.Actions>
+                  </Modal>
+              </div>   
+              <div className="mobileSetProfil-groupTwoButtons">
+                  <Button size='small' className="mobileSetProfil-buttonCancel">Annuler</Button>
+                  <Button type="submit" size='small' className="mobileSetProfil-buttonValidate">Valider</Button>
+              </div>
+            </Form>
           </div>
         </MediaQuery>
-
       </div>
     </div>
   );
