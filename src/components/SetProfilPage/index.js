@@ -42,6 +42,22 @@ const SetProfilPage = ({
   const [open, setOpen] = React.useState(false);// Modal to delete account
   const [avatar, setAvatar] = React.useState(false);// Modal to choose an avatar
   const [errorMessage, setErrorMessage] = React.useState('');// display a message received from API
+  const validate = (value) => {
+    if (validator.isStrongPassword(value, {
+      minLength: 6,
+      minLowercase: 1,
+      minUppercase: 1,
+      minNumbers: 1,
+      minSymbols: 1,
+    })) {
+      setErrorMessage('');
+      console.log(errorMessage);
+    }
+    else {
+      setErrorMessage('Veuillez entrer un mot de passe valide: min-6 caractères, une majuscule, une minuscule, un chiffre et un des caractères suivants: @$%_*|=-');
+      console.log(errorMessage);
+    }
+  };
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -84,22 +100,6 @@ const SetProfilPage = ({
   };
 
   // Check password with validator dependencie
-  const validate = (value) => {
-    if (validator.isStrongPassword(value, {
-      minLength: 6,
-      minLowercase: 1,
-      minUppercase: 1,
-      minNumbers: 1,
-      minSymbols: 1,
-    })) {
-      setErrorMessage('');
-      console.log(errorMessage);
-    }
-    else {
-      setErrorMessage('Veuillez entrer un mot de passe valide: min-6 caractères, une majuscule, une minuscule, un chiffre et un des caractères suivants: @$%_*|=-');
-      console.log(errorMessage);
-    }
-  };
 
   // console.log(holiday_mode);
 
