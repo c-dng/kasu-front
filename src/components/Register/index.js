@@ -98,7 +98,7 @@ const Register = ({
               </div>
               <div className="registerForm-field">
                 <label className="registerForm-fieldLabel">Votre code postal</label>
-                <Form.Input type='number' onChange={handleChangeZipCode} value={zipCode} className="registerForm-fieldInput" />
+                <Form.Input type="number" onChange={handleChangeZipCode} value={zipCode} className="registerForm-fieldInput" />
               </div>
               <div className="registerForm-field">
                 <label className="registerForm-fieldLabel">Votre ville</label>

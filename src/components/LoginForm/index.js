@@ -3,7 +3,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  Card, Icon, Button, Form, Image
+  Card, Icon, Button, Form, Image,
 } from 'semantic-ui-react';
 
 import './style.scss';

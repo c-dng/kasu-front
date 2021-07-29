@@ -7,7 +7,7 @@ import SearchBar from 'src/containers/SearchBar';
 import ResultCard from './ResultCard';
 
 const SearchResultsByLocation = ({ users }) => {
-  let open = true;
+  const open = true;
   console.log('en dehors du return');
 
   return (

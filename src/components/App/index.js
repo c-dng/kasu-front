@@ -11,7 +11,7 @@ import ContactForm from 'src/containers/ContactForm';
 import Conversations from 'src/containers/Conversations';
 import SetProfilPage from 'src/containers/SetProfilPage';
 import ManageMyCollection from 'src/components/ManageMyCollection';
-import ViewProfilPage from 'src/components/ViewProfilPage';
+import ViewProfilPage from 'src/containers/ViewProfilPage';
 import Team from 'src/components/Team';
 import LegalNotice from 'src/components/LegalNotice';
 import Chat from 'src/containers/Chat';

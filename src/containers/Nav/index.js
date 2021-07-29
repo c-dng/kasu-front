@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 
 import Nav from 'src/components/Nav';
 import { changeTheme } from '../../actions/global';
-import { loadConversations, logoutUser } from '../../actions/user';
+import { getUserInfos, loadConversations, logoutUser } from '../../actions/user';
 
 const mapStateToProps = (state, ownProps) => ({
   navIconsColor: state.global.navIcons,
@@ -19,6 +19,10 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   handleConversationsLoad: function () {
     dispatch(loadConversations());
   },
+  loadUserInfos: function () {
+    dispatch(getUserInfos());
+  },
+
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Nav);
