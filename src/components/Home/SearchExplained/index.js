@@ -1,5 +1,5 @@
 import React from 'react';
-import SearchBar from '../../SearchBar';
+import SearchBar from 'src/containers/SearchBar';
 
 const SearchExplained = () => (
   <div className="searchExplained">

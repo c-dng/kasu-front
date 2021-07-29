@@ -38,11 +38,6 @@ const Conversations = ({
   return (
     <div className="conversations">
       <div className="conversations-notHiddenBox">
-        {/* <Link to="/conversation/:id" exact={+true}>
-          <Conversation />
-        </Link> */}
-        {console.log(Object.entries(conversations))}
-        {console.log(conversations)}
         {
           // This is a way to iterate over an object items as if it were arrays
           // (therefore being able to use the ".map" declarative function)
