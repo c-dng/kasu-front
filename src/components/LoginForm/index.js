@@ -52,7 +52,7 @@ const LoginForm = ({
                 </Form.Field>
                 <Form.Field>
                   <label htmlFor="password" className="loginform-fieldLabel">Mot de passe</label>
-                  <Form.Input className="loginform-field" id="password" name="password" onChange={handleChangePassword} value={password} />
+                  <Form.Input className="loginform-field" id="password" name="password" type='password' onChange={handleChangePassword} value={password} />
                 </Form.Field>
                 <Form.Field>
                   <Icon name="question" /> <Link className="loginform-passwordforgot" to="/contact" exact={+true}>Mot de passe oublié </Link>
