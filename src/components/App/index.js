@@ -9,7 +9,7 @@ import LoginForm from 'src/containers/LoginForm';
 import Register from 'src/containers/Register';
 import ContactForm from 'src/containers/ContactForm';
 import Conversations from 'src/containers/Conversations';
-import SetProfilPage from 'src/components/SetProfilPage';
+import SetProfilPage from 'src/containers/SetProfilPage';
 import ManageMyCollection from 'src/components/ManageMyCollection';
 import ViewProfilPage from 'src/components/ViewProfilPage';
 import Team from 'src/components/Team';

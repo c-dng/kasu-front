@@ -24,11 +24,6 @@ const ContactForm = ({
       onContactFormUnmount();
     }),
   []);
-
-  const handleChangeEmail = (evt) => {
-    changeEmail(evt.target.value);
-    // console.log(evt.target.value);
-  };
   const handleChangeObject = (evt) => {
     changeObject(evt.target.value);
     // console.log(evt.target.value);
@@ -40,6 +35,10 @@ const ContactForm = ({
     evt.preventDefault();
     console.log(message.message);
     handleMessage();
+  };
+  const handleChangeEmail = (evt) => {
+    changeEmail(evt.target.value);
+    console.log(evt.target.value);
   };
 
   return (

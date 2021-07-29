@@ -69,6 +69,7 @@ const authMiddleware = (store) => (next) => (action) => {
       store.dispatch(wsDisconnect());
       next(action);
       break;
+
     case REGISTER_USER: {
       const {
         pseudo,
@@ -90,7 +91,6 @@ const authMiddleware = (store) => (next) => (action) => {
           address,
           zip_code: zipCode,
           city,
-          status: 1,
         })
         .then(
           (response) => {
@@ -103,7 +103,6 @@ const authMiddleware = (store) => (next) => (action) => {
               address,
               zip_code: zipCode,
               city,
-              status: 1,
             });
             console.log(response);
           },
@@ -119,7 +118,6 @@ const authMiddleware = (store) => (next) => (action) => {
               address,
               zip_code: zipCode,
               city,
-              status: 1,
             });
             console.log(error);
           },

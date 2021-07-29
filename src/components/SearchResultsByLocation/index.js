@@ -18,7 +18,7 @@ const SearchResultsByLocation = ({ users }) => {
       </div>
       <Card.Group className="searchResultsByLocation-cardGroup">
         {console.log('test')}
-        {console.log(Object.entries(users))}
+        {console.log(users)}
         {Object.entries(users).map((user) => (
 
           console.log(Object.entries(user))))}
