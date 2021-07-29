@@ -1,4 +1,6 @@
-import { SAVE_USER_INFOS, CHANGE_DESCRIPTION, CHANGE_PSEUDO, CHANGE_EMAIL, CHANGE_PASSWORD, SAVE_USER, LOGOUT_USER, CHANGE_ADDRESS, CHANGE_ZIP_CODE, CHANGE_FIRST_NAME, CHANGE_LAST_NAME, CHANGE_CITY, CHANGE_HOLIDAY_MODE, SAVE_USER_CONVERSATIONS, UPDATE_USER, ERASE_MESSAGE, SAVE_MESSAGE } from '../actions/user';
+import {
+  SAVE_USER_INFOS, CHANGE_DESCRIPTION, CHANGE_PSEUDO, CHANGE_EMAIL, CHANGE_PASSWORD, SAVE_USER, LOGOUT_USER, CHANGE_ADDRESS, CHANGE_ZIP_CODE, CHANGE_FIRST_NAME, CHANGE_LAST_NAME, CHANGE_CITY, CHANGE_HOLIDAY_MODE, SAVE_USER_CONVERSATIONS, UPDATE_USER, ERASE_MESSAGE, SAVE_MESSAGE,
+} from '../actions/user';
 
 export const initialState = {
   email: '',
@@ -15,8 +17,8 @@ export const initialState = {
   data: {},
   conversations: {},
   infos: {},
-  message:'',
-  picture:''
+  message: '',
+  picture: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -62,25 +64,25 @@ const reducer = (state = initialState, action = {}) => {
         city: action.city,
       };
     case CHANGE_HOLIDAY_MODE:
-    return {
-      ...state,
-      holiday_mode: action.holiday_mode,
-    };
+      return {
+        ...state,
+        holiday_mode: action.holiday_mode,
+      };
     case CHANGE_DESCRIPTION:
-    return {
-      ...state,
-      description: action.description,
-    };
+      return {
+        ...state,
+        description: action.description,
+      };
     case SAVE_MESSAGE:
       return {
-      ...state,
-      message: action.message,
-    };
+        ...state,
+        message: action.message,
+      };
     case ERASE_MESSAGE:
       return {
-      ...state,
-      message: '',
-    };
+        ...state,
+        message: '',
+      };
     case SAVE_USER:
       return {
         ...state,
@@ -106,18 +108,18 @@ const reducer = (state = initialState, action = {}) => {
       };
     case UPDATE_USER:
       return {
-      ...state,
-      email: '',
-      password: '',
-      pseudo: '',
-      address: '',
-      zipCode: '',
-      city: '',
-      firstName: '',
-      lastName: '',
-      holiday_mode: '',
-      description: '',
-    };
+        ...state,
+        email: '',
+        password: '',
+        pseudo: '',
+        address: '',
+        zipCode: '',
+        city: '',
+        firstName: '',
+        lastName: '',
+        holiday_mode: '',
+        description: '',
+      };
     case SAVE_USER_CONVERSATIONS:
       return {
         ...state,

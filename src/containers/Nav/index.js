@@ -7,7 +7,7 @@ import { loadConversations, logoutUser } from '../../actions/user';
 const mapStateToProps = (state, ownProps) => ({
   navIconsColor: state.global.navIcons,
   isLogged: state.user.logged,
-  picture:state.user.picture,
+  picture: state.user.data.picture,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

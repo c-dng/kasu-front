@@ -8,7 +8,6 @@ import chatMiddleware from 'src/middlewares/chat';
 import contactAdmin from 'src/middlewares/contactAdmin';
 import updateUser from 'src/middlewares/updateUser';
 
-
 const persistConfig = {
   key: 'root',
   storage,

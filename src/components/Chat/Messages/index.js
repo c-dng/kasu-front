@@ -18,9 +18,13 @@ const Messages = ({ messages }) => {
     <div className="messages">
       {
         messages.map(
-          (message) => <Message key={message.id}
-            messageUserId={message.author.id}
-            singleMessage={message.content} />,
+          (message) => (
+            <Message
+              key={message.id}
+              messageUserId={message.author.id}
+              singleMessage={message.content}
+            />
+          ),
         )
 
       }

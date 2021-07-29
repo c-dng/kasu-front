@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, Image } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 
-const Conversation = ({pseudo, lastMessage, pictureToDisplay}) => (
+const Conversation = ({ pseudo, lastMessage, pictureToDisplay }) => (
   <div className="conversation">
     <Card centered className="conversation-card">
       <Card.Content className="conversation-cardContent">
@@ -10,7 +10,7 @@ const Conversation = ({pseudo, lastMessage, pictureToDisplay}) => (
           floated="left"
           size="mini"
           circular
-          src={pictureToDisplay != null ? pictureToDisplay : "https://react.semantic-ui.com/images/avatar/large/steve.jpg"} 
+          src={pictureToDisplay != null ? pictureToDisplay : 'https://react.semantic-ui.com/images/avatar/large/steve.jpg'}
         />
         <Card.Header className="conversation-cardHeader">{pseudo}</Card.Header>
         <Card.Meta className="conversation-cardMeta">{lastMessage}</Card.Meta>

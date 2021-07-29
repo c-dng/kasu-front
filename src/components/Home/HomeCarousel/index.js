@@ -235,6 +235,6 @@ const HomeCarousel = () => {
       </Carousel>
     </div>
   );
-}
+};
 
 export default HomeCarousel;

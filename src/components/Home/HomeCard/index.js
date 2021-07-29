@@ -1,13 +1,17 @@
 import React from 'react';
-import { Button, Card, Icon, Image, Select } from 'semantic-ui-react';
+import {
+  Button, Card, Icon, Image, Select,
+} from 'semantic-ui-react';
 
-const HomeCard = ({ image,
+const HomeCard = ({
+  image,
   mangaName,
   ownerAvatar,
   ownerName,
   location,
   synopsys,
-  volumeOptions, }) => (
+  volumeOptions,
+}) => (
   <div className="homeCard">
     <Card className="homeCard-card">
       <Card.Content className="homeCard-cardContentImgInfos">

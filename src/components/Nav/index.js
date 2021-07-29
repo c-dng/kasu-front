@@ -13,7 +13,7 @@ import logoutlogo from 'src/assets/images/logoutlogo.png';
 import loginlogo from 'src/assets/images/loginlogo.png';
 
 const Nav = ({
-  changeWebsiteTheme, navIconsColor, isLogged, disconnectUser, handleConversationsLoad, picture
+  changeWebsiteTheme, navIconsColor, isLogged, disconnectUser, handleConversationsLoad, picture,
 }) => {
   let logoToDisplay;
   let chatlogoToDisplay;

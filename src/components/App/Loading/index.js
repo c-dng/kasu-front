@@ -6,14 +6,14 @@ const Loading = () => (
   <div className="loading">
     <div className="bookshelf_wrapper">
       <ul className="books_list">
-        <li className="book_item first"></li>
-        <li className="book_item second"></li>
-        <li className="book_item third"></li>
-        <li className="book_item fourth"></li>
-        <li className="book_item fifth"></li>
-        <li className="book_item sixth"></li>
+        <li className="book_item first" />
+        <li className="book_item second" />
+        <li className="book_item third" />
+        <li className="book_item fourth" />
+        <li className="book_item fifth" />
+        <li className="book_item sixth" />
       </ul>
-      <div className="shelf"></div>
+      <div className="shelf" />
     </div>
   </div>
 );
