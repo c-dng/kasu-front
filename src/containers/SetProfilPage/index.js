@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import SetProfilPage from 'src/components/SetProfilPage';
 
 import {
-    updateUser, changeEmail, changePassword, changeCity, changeAddress, changeZipCode, changeLastName, changeFirstName, changePseudo, changeHolidayMode, getUserInfos } from '../../actions/user';
+    updateUser, changeDescription, changeEmail, changePassword, changeCity, changeAddress, changeZipCode, changeLastName, changeFirstName, changePseudo, changeHolidayMode, getUserInfos } from '../../actions/user';
 
 const mapStateToProps = (state, ownProps) => ({
     email: state.user.email,
@@ -15,7 +15,7 @@ const mapStateToProps = (state, ownProps) => ({
     firstName: state.user.firstName,
     lastName: state.user.lastName,
     holiday_mode: state.user.holiday_mode,
-    bio: state.user.bio,
+    description: state.user.description,
     infos: state.user.infos
 });
 
@@ -59,6 +59,10 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 
     changeHolidayMode: function (holiday_mode) {
     dispatch(changeHolidayMode(holiday_mode));
+    },
+
+    changeDescription: function (description) {
+    dispatch(changeDescription(description));
     },
 
     displayUserInfos: function () {

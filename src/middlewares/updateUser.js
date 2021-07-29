@@ -29,16 +29,15 @@ const updateUser = (store) => (next) => (action) => {
       break;
     }
     case UPDATE_USER: {
-        const { zipCode, address, city, lastName, firstName, pseudo, email, password, holiday_mode } = store.getState().user;
+        const { zipCode, address, city, lastName, firstName, pseudo, email, password, holiday_mode, description } = store.getState().user;
         const userId = store.getState().user.data.id;
         store.dispatch(setLoadingTrue());
         api
-            .patch(`api/v1/user/${userId}/update`, { zipcode: zipCode, address, city, lastname: lastName, firstname: firstName, pseudo, email, password, holiday_mode })
+            .patch(`api/v1/user/${userId}/update`, { zipcode: zipCode, address, city, lastname: lastName, firstname: firstName, pseudo, email, password, holiday_mode, description })
             .then(
                 (response) => {
                 console.log('update user infos succeeded', response.data);
                 store.dispatch(setLoadingFalse());
-                //store.dispatch(saveMessage(response.data));
                 },
             )
             .catch((error) => {

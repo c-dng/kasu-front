@@ -1,16 +1,16 @@
-import { SAVE_USER_INFOS, CHANGE_PSEUDO, CHANGE_EMAIL, CHANGE_PASSWORD, SAVE_USER, LOGOUT_USER, CHANGE_ADDRESS, CHANGE_ZIP_CODE, CHANGE_FIRST_NAME, CHANGE_LAST_NAME, CHANGE_CITY, CHANGE_HOLIDAY_MODE, SAVE_USER_CONVERSATIONS, UPDATE_USER } from '../actions/user';
+import { SAVE_USER_INFOS, CHANGE_DESCRIPTION, CHANGE_PSEUDO, CHANGE_EMAIL, CHANGE_PASSWORD, SAVE_USER, LOGOUT_USER, CHANGE_ADDRESS, CHANGE_ZIP_CODE, CHANGE_FIRST_NAME, CHANGE_LAST_NAME, CHANGE_CITY, CHANGE_HOLIDAY_MODE, SAVE_USER_CONVERSATIONS, UPDATE_USER } from '../actions/user';
 
 export const initialState = {
   email: '',
   password: '',
   pseudo: '',
   address: '',
-  zipCode: 0,
+  zipCode: '',
   city: '',
   firstName: '',
   lastName: '',
   holiday_mode: false,
-  bio: '',
+  description: '',
   logged: false,
   data: {},
   conversations: {},
@@ -42,7 +42,7 @@ const reducer = (state = initialState, action = {}) => {
     case CHANGE_ZIP_CODE:
       return {
         ...state,
-        zipCode: parseInt(action.zipCode, 10),
+        zipCode: action.zipCode,
       };
     case CHANGE_FIRST_NAME:
       return {
@@ -64,6 +64,11 @@ const reducer = (state = initialState, action = {}) => {
       ...state,
       holiday_mode: action.holiday_mode,
     };
+    case CHANGE_DESCRIPTION:
+    return {
+      ...state,
+      description: action.description,
+    };
     case SAVE_USER:
       return {
         ...state,
@@ -84,7 +89,7 @@ const reducer = (state = initialState, action = {}) => {
         firstName: action.infos.firstname,
         lastName: action.infos.lastname,
         holiday_mode: action.infos.holiday_mode,
-        bio: action.infos.description,
+        description: action.infos.description,
       };
     case UPDATE_USER:
       return {
@@ -93,12 +98,12 @@ const reducer = (state = initialState, action = {}) => {
       password: '',
       pseudo: '',
       address: '',
-      zipCode: 0,
+      zipCode: '',
       city: '',
       firstName: '',
       lastName: '',
-      holiday_mode: false,
-      bio: '',
+      holiday_mode: '',
+      description: '',
     };
     case SAVE_USER_CONVERSATIONS:
       return {
@@ -111,13 +116,15 @@ const reducer = (state = initialState, action = {}) => {
         password: '',
         pseudo: '',
         address: '',
-        zipCode: 0,
+        zipCode: '',
         city: '',
         firstName: '',
         lastName: '',
         logged: false,
         data: {},
         conversations: {},
+        holiday_mode: false,
+        description: '',
       };
     default:
       return state;

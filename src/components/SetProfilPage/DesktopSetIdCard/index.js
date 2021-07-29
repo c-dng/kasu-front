@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ButtonGroup } from 'semantic-ui-react';
+import { ButtonGroup, FormInput } from 'semantic-ui-react';
 import validator from 'validator'; //checking of password
 import { Button, Header, Form, Icon, Checkbox, Image, Label, Modal, TextArea } from 'semantic-ui-react';
 
@@ -13,6 +13,7 @@ const DesktopSetIdCard = ({
   city,
   firstName,
   lastName,
+  description,
   changeEmail,
   changePassword,
   changePseudo,
@@ -22,6 +23,7 @@ const DesktopSetIdCard = ({
   changeFirstName,
   changeLastName,
   changeHolidayMode,
+  changeDescription,
   handleUpdate,
   displayUserInfos
 }) => {
@@ -65,16 +67,14 @@ const DesktopSetIdCard = ({
   const handleChangeLastName = (evt) => {
     changeLastName(evt.target.value);
   };
-  const handleChangeHolidayMode = (evt) => {
-    changeHolidayMode(evt.target.value);
+  const handleChangeDescription = (evt) => {
+    changeDescription(evt.target.value);
   };
-
-  // toggle function
+    // toggle function
   const onChangeCheckbox = (evt, data) => {
     let checked = data.checked;
     changeHolidayMode(checked);
   }
-  
   //Check password with validator dependencie
   const validate = (value) => {
   
@@ -140,11 +140,17 @@ const DesktopSetIdCard = ({
             onClick={(evt, data)=>onChangeCheckbox(evt, data)}
             />
           </Form.Input>
-          <Label className="desktopIdCard-bioLabel">
-                <p className="desktopIdCard-bioP">Description</p>
-          </Label>
-          <TextArea className="desktopIdCard-memberDescription" placeholder="Parle nous un peu de toi..." />
 
+          <Label className="desktopIdCard-bioLabel">
+            <p className="desktopIdCard-bioP">Description</p>
+          </Label>
+          <TextArea 
+          rows={3}
+          onChange={handleChangeDescription}
+          value={description}
+          className="mobileSetProfil-textArea"
+          placeholder='Bio'
+          />
           <Form.Input
             placeholder='Pseudo'
             value={pseudo}

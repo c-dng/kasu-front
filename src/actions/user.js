@@ -61,6 +61,13 @@ export const changeHolidayMode = (holiday_mode) => ({
   holiday_mode,
 });
 
+export const CHANGE_DESCRIPTION = 'CHANGE_DESCRIPTION';
+
+export const changeDescription = (description) => ({
+  type: CHANGE_DESCRIPTION,
+  description,
+});
+
 export const LOGIN_USER = 'LOGIN_USER';
 
 export const loginUser = () => ({

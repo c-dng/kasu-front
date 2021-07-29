@@ -18,6 +18,7 @@ const SetProfilPage = ({
   firstName,
   lastName,
   holiday_mode,
+  description,
   changeEmail,
   changePassword,
   changePseudo,
@@ -27,6 +28,7 @@ const SetProfilPage = ({
   changeFirstName,
   changeLastName,
   changeHolidayMode,
+  changeDescription,
   handleUpdate,
   displayUserInfos
 }) => {
@@ -70,6 +72,11 @@ const SetProfilPage = ({
   const handleChangeLastName = (evt) => {
     changeLastName(evt.target.value);
   };
+  const handleChangeDescription = (evt) => {
+    changeDescription(evt.target.value);
+  };
+
+
   // toggle function
   const onChangeCheckbox = (evt, data) => {
     let checked = data.checked;
@@ -111,6 +118,7 @@ const SetProfilPage = ({
             firstName={firstName}
             lastName={lastName}
             holiday_mode={holiday_mode}
+            description={description}
             changeEmail={changeEmail}
             changePassword={changePassword}
             changePseudo={changePseudo}
@@ -118,6 +126,7 @@ const SetProfilPage = ({
             changeZipCode={changeZipCode}
             changeCity={changeCity}
             changeFirstName={changeFirstName}
+            changeDescription={changeDescription}
             changeLastName={changeLastName}
             changeHolidayMode={changeHolidayMode}
             handleUpdate={handleUpdate}
@@ -173,12 +182,19 @@ const SetProfilPage = ({
 
               <Form.Input className="mobileIdCard-holidayWrapper">
                 <Label className="setProfilPage-fourthPartHolidayModeLabel">Mode vacances:</Label>
-                <Checkbox toggle
+                <Checkbox toggle checked={holiday_mode ? true : false}
                 onClick={(evt, data)=>onChangeCheckbox(evt, data)}
                 />
               </Form.Input>
 
-              <TextArea className="mobileSetProfil-textArea" rows={2} placeholder='Bio' />
+              <TextArea 
+              rows={2}
+              onChange={handleChangeDescription}
+              value={description}
+              className="mobileSetProfil-textArea"
+              placeholder='Bio'
+              />
+
               <Form.Group widths='equal'>
 
                 <Form.Input className="mobileSetProfil-formInputName"
@@ -251,39 +267,40 @@ const SetProfilPage = ({
                 />
 
               </Form.Group>
+            
+
+              <div className="desktopIdCard-errorMessage">
+                {errorMessage}
+              </div>
+
+              <div className="mobileSetProfil-divDeleteMyAccount">
+                  <Modal
+                    icon='user delete'
+                    open={open}
+                    trigger={<Button size='small' className="mobileSetProfil-deleteMyAccount" negative>Supprimer mon compte</Button>}
+                    onClose={() => setOpen(false)}
+                    onOpen={() => setOpen(true)}
+                    >      
+                    <Header icon='delete' content='Confirmer votre action' />
+                    <Modal.Content>
+                      <p>Voulez-vous vraiment supprimer votre compte ?</p>
+                    </Modal.Content>
+                    <Modal.Actions>
+                      <Button color='red' onClick={() => setOpen(false)}>
+                        <Icon name='remove' /> Non
+                      </Button>
+                      <Button color='green' onClick={() => setOpen(true)}>
+                        <Icon name='checkmark' /> Oui
+                      </Button>
+                    </Modal.Actions>
+                  </Modal>
+              </div>   
+              <div className="mobileSetProfil-groupTwoButtons">
+                  <Button size='small' className="mobileSetProfil-buttonCancel">Annuler</Button>
+                  <Button type="submit" size='small' className="mobileSetProfil-buttonValidate">Valider</Button>
+              </div>
             </Form>
-
-            <div className="desktopIdCard-errorMessage">
-              {errorMessage}
-            </div>
-
-            <div className="mobileSetProfil-divDeleteMyAccount">
-                <Modal
-                  icon='user delete'
-                  open={open}
-                  trigger={<Button size='small' className="mobileSetProfil-deleteMyAccount" negative>Supprimer mon compte</Button>}
-                  onClose={() => setOpen(false)}
-                  onOpen={() => setOpen(true)}
-                  >      
-                  <Header icon='delete' content='Confirmer votre action' />
-                  <Modal.Content>
-                    <p>Voulez-vous vraiment supprimer votre compte ?</p>
-                  </Modal.Content>
-                  <Modal.Actions>
-                    <Button color='red' onClick={() => setOpen(false)}>
-                      <Icon name='remove' /> Non
-                    </Button>
-                    <Button color='green' onClick={() => setOpen(true)}>
-                      <Icon name='checkmark' /> Oui
-                    </Button>
-                  </Modal.Actions>
-                </Modal>
-            </div>   
-            <div className="mobileSetProfil-groupTwoButtons">
-                <Button size='small' className="mobileSetProfil-buttonCancel">Annuler</Button>
-                <Button type="submit" size='small' className="mobileSetProfil-buttonValidate">Valider</Button>
-            </div>
-            </div>
+          </div>
         </MediaQuery>
       </div>
     </div>
