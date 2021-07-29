@@ -6,7 +6,7 @@ const mapStateToprops = (state) => ({
   isLogged: state.user.logged,
 });
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = () => ({
 
 });
 

@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+/* eslint-disable no-unused-vars */
 import {
   WS_CONNECT,
   SEND_MESSAGE,

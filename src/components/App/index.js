@@ -1,21 +1,21 @@
+/* eslint-disable linebreak-style */
 // == Import npm
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Nav from 'src/containers/Nav';
 import Home from 'src/containers/Home';
 import Footer from 'src/components/Footer';
-import SearchResultsByLocation from 'src/components/SearchResultsByLocation';
+import SearchResultsByLocation from 'src/containers/SearchResultsByLocation';
 import LoginForm from 'src/containers/LoginForm';
 import Register from 'src/containers/Register';
 import ContactForm from 'src/containers/ContactForm';
 import Conversations from 'src/containers/Conversations';
 import SetProfilPage from 'src/containers/SetProfilPage';
 import ManageMyCollection from 'src/components/ManageMyCollection';
-import ViewProfilPage from 'src/components/ViewProfilPage';
+import ViewProfilPage from 'src/containers/ViewProfilPage';
 import Team from 'src/components/Team';
 import LegalNotice from 'src/components/LegalNotice';
 import Chat from 'src/containers/Chat';
-import Loading from 'src/components/App/Loading';
 // == Import
 
 import './style.scss';
@@ -23,19 +23,21 @@ import { Route, Switch } from 'react-router-dom';
 import { useBeforeunload } from 'react-beforeunload';
 // == Composant
 const App = ({
-  theme, loading, onPageLoad, onRefreshOrTabClosing, isLogged, chatId,
+  // eslint-disable-next-line react/prop-types
+  theme, onPageLoad, onRefreshOrTabClosing, isLogged, chatId,
 }) => {
-  const handleOnClose = (evt) => {
+  const handleOnClose = () => {
     if (isLogged) {
       onRefreshOrTabClosing();
     }
   };
 
-  useBeforeunload((event) => {
+  useBeforeunload(() => {
     handleOnClose();
   });
 
   useEffect(() => {
+    // eslint-disable-next-line no-console
     console.log('App useEffect', { isLogged, chatId });
     if (isLogged && chatId) {
       onPageLoad(chatId);
@@ -104,6 +106,7 @@ const App = ({
 
 App.propTypes = {
   theme: PropTypes.string.isRequired,
+  // eslint-disable-next-line react/no-unused-prop-types
   loading: PropTypes.bool,
 };
 

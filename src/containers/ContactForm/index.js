@@ -5,7 +5,7 @@ import {
   changeEmail, changeObject, changeContent, submitForm, eraseMessage,
 } from '../../actions/global';
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state) => ({
 
   email: state.global.email,
   object: state.global.object,
@@ -13,7 +13,7 @@ const mapStateToProps = (state, ownProps) => ({
   message: state.global.message,
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
+const mapDispatchToProps = (dispatch) => ({
 
   changeEmail: function (email) {
     dispatch(changeEmail(email));

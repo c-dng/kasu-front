@@ -1,6 +1,21 @@
+/* eslint-disable linebreak-style */
+// eslint-disable-next-line linebreak-style
+/* eslint-disable no-console */
+/* eslint-disable linebreak-style */
+/* eslint-disable max-len */
+/* eslint-disable linebreak-style */
+/* eslint-disable no-use-before-define */
+/* eslint-disable linebreak-style */
+/* eslint-disable no-empty-pattern */
+/* eslint-disable linebreak-style */
+/* eslint-disable camelcase */
+/* eslint-disable linebreak-style */
+/* eslint-disable react/prop-types */
+/* eslint-disable linebreak-style */
+/* eslint-disable import/no-duplicates */
+/* eslint-disable linebreak-style */
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { ButtonGroup, FormInput } from 'semantic-ui-react';
+import { ButtonGroup } from 'semantic-ui-react';
 import validator from 'validator'; // checking of password
 import {
   Button, Header, Form, Icon, Checkbox, Image, Label, Modal, TextArea,
@@ -38,7 +53,7 @@ const DesktopSetIdCard = ({
   []);
 
   const [open, setOpen] = React.useState(false);// Modal to delete account
-  const [avatar, setAvatar] = React.useState(false);// Modal to choose an avatar
+  const [] = React.useState(false);// Modal to choose an avatar
   const [errorMessage, setErrorMessage] = React.useState('');// display a message received from API
 
   const handleSubmit = (evt) => {

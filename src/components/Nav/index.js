@@ -1,4 +1,15 @@
+/* eslint-disable linebreak-style */
+// eslint-disable-next-line linebreak-style
+// eslint-disable-next-line linebreak-style
+// eslint-disable-next-line linebreak-style
+/* eslint-disable react/prop-types */
+/* eslint-disable linebreak-style */
+// eslint-disable-next-line linebreak-style
+/* eslint-disable max-len */
+/* eslint-disable linebreak-style */
+// eslint-disable-next-line linebreak-style
 import React from 'react';
+// eslint-disable-next-line linebreak-style
 import PropTypes from 'prop-types';
 import {
   Dropdown, Image, Menu, Segment,
@@ -13,7 +24,8 @@ import logoutlogo from 'src/assets/images/logoutlogo.png';
 import loginlogo from 'src/assets/images/loginlogo.png';
 
 const Nav = ({
-  changeWebsiteTheme, navIconsColor, isLogged, disconnectUser, handleConversationsLoad, picture,
+
+  changeWebsiteTheme, navIconsColor, isLogged, disconnectUser, handleConversationsLoad, loadUserInfos, picture,
 }) => {
   let logoToDisplay;
   let chatlogoToDisplay;
@@ -33,21 +45,24 @@ const Nav = ({
       break;
   }
 
+  // eslint-disable-next-line no-unused-vars
   const handleLogout = (evt) => {
     disconnectUser();
   };
+  // eslint-disable-next-line no-unused-vars
   const handleTheme1 = (evt) => {
     changeWebsiteTheme('theme1', 'black');
   };
 
-  const handleTheme2 = (evt) => {
+  const handleTheme2 = () => {
     changeWebsiteTheme('theme2', 'white');
   };
 
-  const handleTheme3 = (evt) => {
+  const handleTheme3 = () => {
     changeWebsiteTheme('theme3', 'black');
   };
 
+  // eslint-disable-next-line no-unused-vars
   const handleTheme4 = (evt) => {
     changeWebsiteTheme('theme4', 'black');
   };
@@ -67,7 +82,7 @@ const Nav = ({
               <Dropdown floating icon="dropdown">
                 <Dropdown.Menu>
                   <Dropdown.Header>Gestion de profil</Dropdown.Header>
-                  <Dropdown.Item as={Link} to="/profil/mes-infos" exact={+true}>Mon Compte</Dropdown.Item>
+                  <Dropdown.Item as={Link} to="/profil/mes-infos" onClick={() => loadUserInfos()} exact={+true}>Mon Compte</Dropdown.Item>
                   <Dropdown.Item as={Link} to="/profil/collection" exact={+true}>Ma Collection</Dropdown.Item>
                   <Dropdown.Divider />
                   <Dropdown.Item>

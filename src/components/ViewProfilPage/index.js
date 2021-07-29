@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   Image, Container, Button, Divider, Icon, Header,
 } from 'semantic-ui-react';
@@ -10,7 +10,7 @@ import MediaQuery from 'react-responsive';
 import DesktopIdCard from './DesktopIdCard';
 import DesktopMyCollectionProfile from './DesktopMyCollectionProfile';
 
-const ViewProfilPage = () => {
+const ViewProfilPage = ({ pseudo, bio, city, zipcode, picture, holidayMode }) => {
   const availableTomes = [
     { key: 't1', value: 't1', text: 'Tome 1' },
     { key: 't2', value: 't2', text: 'Tome 2' },
@@ -27,13 +27,13 @@ const ViewProfilPage = () => {
 
         <h1 className="setProfilPage-h1">Mon profil</h1>
         <MediaQuery minWidth={1224}>
-          <DesktopIdCard />
+          <DesktopIdCard pseudo={pseudo} bio={bio} city={city} zipcode={zipcode} picture={picture} holidayMode={holidayMode} />
         </MediaQuery>
         <MediaQuery maxWidth={1223}>
-          <Image className="viewProfilPage-firstPartImage" size="tiny" />
+          <Image className="viewProfilPage-firstPartImage" src={picture || 'https://api.multiavatar.com/Kasu.svg'} size="tiny" />
           <div className="viewProfilPage-secondPart">
             <Container textAlign="center">
-              <h3 className="viewProfilPage-pseudo">Pseudo</h3>
+              <h3 className="viewProfilPage-pseudo">{pseudo}</h3>
             </Container>
             <div className="viewProfilPage-secondPartChangeButtons">
               <Link to="/profil/id" exact={+true}>
@@ -51,8 +51,7 @@ const ViewProfilPage = () => {
             <h4 className="viewProfilPage-infoSubtitles">Présentation</h4>
             <Container textAlign="justified">
               <p>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-                ligula eget dolor.
+                {bio || 'Vous n\'avez pas encore écrit de présentation, rendez-vous dans "Gérer mon profil" !'}
               </p>
             </Container>
           </div>
@@ -61,7 +60,7 @@ const ViewProfilPage = () => {
             <h4 className="viewProfilPage-infoSubtitles">Localisation</h4>
             <Container className="viewProfilPage-thirdPartLocation">
               <Icon size="large" name="map marker alternate" />
-              <p>Paris - 75000</p>
+              <p>{city} - {zipcode}</p>
             </Container>
           </div>
 
@@ -69,7 +68,7 @@ const ViewProfilPage = () => {
             <h4 className="viewProfilPage-infoSubtitles">Mode Vacances</h4>
             <Container className="viewProfilPage-thirdPartLocation">
               <Icon size="large" name="globe" />
-              <p>Désactivé</p>
+              <p>{holidayMode ? 'Activé' : 'Désactivé'}</p>
             </Container>
           </div>
 

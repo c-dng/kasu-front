@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 export const CHANGE_PSEUDO = 'CHANGE_PSEUDO';
 
 export const changePseudo = (pseudo) => ({
@@ -56,6 +57,7 @@ export const changeCity = (city) => ({
 
 export const CHANGE_HOLIDAY_MODE = 'CHANGE_HOLIDAY_MODE';
 
+// eslint-disable-next-line camelcase
 export const changeHolidayMode = (holiday_mode) => ({
   type: CHANGE_HOLIDAY_MODE,
   holiday_mode,

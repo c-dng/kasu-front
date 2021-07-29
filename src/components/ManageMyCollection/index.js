@@ -1,9 +1,10 @@
+/* eslint-disable linebreak-style */
 /* eslint-disable react/self-closing-comp */
 import React from 'react';
 import {
   Header, Divider, Icon, Image, Dropdown, Button, Card,
 } from 'semantic-ui-react';
-import SearchBar from 'src/components/SearchBar';
+import SearchBar from 'src/containers/SearchBar';
 import './style.scss';
 import alternativeBanner from 'src/assets/images/alternativeBanner.png';
 

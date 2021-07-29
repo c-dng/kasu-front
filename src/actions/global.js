@@ -1,5 +1,7 @@
+/* eslint-disable linebreak-style */
 export const CHANGE_THEME = 'CHANGE_THEME';
 
+// eslint-disable-next-line linebreak-style
 export const changeTheme = (themeName, navIconsColor) => ({
   type: CHANGE_THEME,
   themeName,

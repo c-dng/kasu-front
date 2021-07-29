@@ -1,5 +1,11 @@
+/* eslint-disable linebreak-style */
+// eslint-disable-next-line linebreak-style
+/* eslint-disable react/prop-types */
+/* eslint-disable linebreak-style */
+// eslint-disable-next-line linebreak-style
 import React from 'react';
 import { Card, Image } from 'semantic-ui-react';
+// eslint-disable-next-line no-unused-vars
 import PropTypes from 'prop-types';
 
 const Conversation = ({ pseudo, lastMessage, pictureToDisplay }) => (

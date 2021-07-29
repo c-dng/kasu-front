@@ -1,3 +1,8 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable no-console */
+/* eslint-disable linebreak-style */
+/* eslint-disable no-unused-vars */
+/* eslint-disable linebreak-style */
 import api from 'src/api';
 import {
   LOGIN_USER, REGISTER_USER, saveUser, LOGOUT_USER, saveUserConversations, LOAD_CONVERSATIONS,
