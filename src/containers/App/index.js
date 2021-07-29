@@ -11,6 +11,7 @@ const mapStateToProps = (state) => ({
   isLogged: state.user.logged,
   chatId: state.chat.lastSingleChat.id,
   mangaDatabase: state.manga.database,
+  redirectTo: state.global.redirectLink,
 });
 
 const mapDispatchToProps = (dispatch) => ({

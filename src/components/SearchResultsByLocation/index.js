@@ -20,14 +20,16 @@ const SearchResultsByLocation = ({ users }) => {
         <SearchBar />
       </div>
       <Card.Group className="searchResultsByLocation-cardGroup">
+        {console.log(Object.entries(users))}
         {
-
           Object.values(users).map((user) => {
-            const tar = Object.values(user.mangas);
+            const results = Object.values(user.mangas);
             return (
-              tar.map(() => (
-                <ResultCard />
-              ))
+              results.map((result) => {
+                console.log(result);
+                const userId = user.userId;
+                return <ResultCard mangaName={result.mangaInfo.title} mangaPicture={result.mangaInfo.picture} mangaSynopsis={result.mangaInfo.synopsis} />;
+              })
             );
           })
         }

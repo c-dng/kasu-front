@@ -18,7 +18,7 @@ import Chat from 'src/containers/Chat';
 // == Import
 
 import './style.scss';
-import { Route, Switch } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import { useBeforeunload } from 'react-beforeunload';
 import Loading from './Loading';
 // == Composant
@@ -51,10 +51,10 @@ const App = ({
     }
   }, [chatId, isLogged, mangaDatabase, token]);
 
+
   if (loading) {
     return <Loading />;
   }
-
   return (
     <div className={`app ${theme}`}>
 
