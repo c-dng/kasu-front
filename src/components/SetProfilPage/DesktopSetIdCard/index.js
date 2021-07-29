@@ -13,7 +13,9 @@ const DesktopSetIdCard = ({
   city,
   firstName,
   lastName,
+  holiday_mode,
   description,
+  message,
   changeEmail,
   changePassword,
   changePseudo,
@@ -25,6 +27,7 @@ const DesktopSetIdCard = ({
   changeHolidayMode,
   changeDescription,
   handleUpdate,
+  handleMessage,
   displayUserInfos
 }) => {
 
@@ -41,6 +44,7 @@ const DesktopSetIdCard = ({
     evt.preventDefault();
     console.log('Bien soumis!');
     handleUpdate();
+    handleMessage();
   };
   const handleChangeEmail = (evt) => {
     changeEmail(evt.target.value);
@@ -136,7 +140,7 @@ const DesktopSetIdCard = ({
         <Form onSubmit={handleSubmit}>
           <Form.Input className="desktopIdCard-holidayWrapper">
             <Label className="setProfilPage-fourthPartHolidayModeLabel">Mode vacances:</Label>
-            <Checkbox toggle
+            <Checkbox toggle checked={holiday_mode ? true : false}
             onClick={(evt, data)=>onChangeCheckbox(evt, data)}
             />
           </Form.Input>

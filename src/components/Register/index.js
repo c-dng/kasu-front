@@ -98,7 +98,7 @@ const Register = ({
               </div>
               <div className="registerForm-field">
                 <label className="registerForm-fieldLabel">Votre code postal</label>
-                <Form.Input onChange={handleChangeZipCode} value={zipCode} className="registerForm-fieldInput" />
+                <Form.Input type='number' onChange={handleChangeZipCode} value={zipCode} className="registerForm-fieldInput" />
               </div>
               <div className="registerForm-field">
                 <label className="registerForm-fieldLabel">Votre ville</label>
@@ -126,7 +126,7 @@ Register.propTypes = {
   lastName: PropTypes.string.isRequired,
   address: PropTypes.string.isRequired,
   city: PropTypes.string.isRequired,
-  zipCode: PropTypes.number.isRequired,
+  zipCode: PropTypes.string.isRequired,
   changePseudo: PropTypes.func.isRequired,
   changePassword: PropTypes.func.isRequired,
   changeEmail: PropTypes.func.isRequired,

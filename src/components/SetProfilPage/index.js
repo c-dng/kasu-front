@@ -19,6 +19,7 @@ const SetProfilPage = ({
   lastName,
   holiday_mode,
   description,
+  message,
   changeEmail,
   changePassword,
   changePseudo,
@@ -30,13 +31,18 @@ const SetProfilPage = ({
   changeHolidayMode,
   changeDescription,
   handleUpdate,
-  displayUserInfos
+  displayUserInfos,
+  onSetProfilPageUnmount
 }) => {
   
-  useEffect(() => (
+  useEffect(() => {
     displayUserInfos()
-    ),
-    []);
+    return (
+    function cleanup() {
+    onSetProfilPageUnmount();
+    })},[]);
+
+    
 
   const [open, setOpen] = React.useState(false);//Modal to delete account
   const [avatar, setAvatar] = React.useState(false);//Modal to choose an avatar
@@ -105,8 +111,8 @@ const SetProfilPage = ({
 
       <Image className="registerForm-banner" src={alternativeBanner} />
       <div className="setProfilPage-mainWrapper">
-
           <h1 className="setProfilPage-title">Gérer mon profil</h1>
+          <div className="contactForm-message">{message}</div>
           <MediaQuery minWidth={1224}>
             <DesktopSetIdCard
             email={email}

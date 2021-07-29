@@ -1,4 +1,4 @@
-import { UPDATE_USER, GET_USER_INFOS, saveUserInfos } from 'src/actions/user';
+import { UPDATE_USER, GET_USER_INFOS, saveUserInfos, saveMessage } from 'src/actions/user';
 import api from 'src/api';
 import { setLoadingFalse, setLoadingTrue } from '../actions/global';
 
@@ -37,6 +37,7 @@ const updateUser = (store) => (next) => (action) => {
             .then(
                 (response) => {
                 console.log('update user infos succeeded', response.data);
+                store.dispatch(saveMessage(response.data));
                 store.dispatch(setLoadingFalse());
                 },
             )

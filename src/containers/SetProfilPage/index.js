@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import SetProfilPage from 'src/components/SetProfilPage';
 
 import {
-    updateUser, changeDescription, changeEmail, changePassword, changeCity, changeAddress, changeZipCode, changeLastName, changeFirstName, changePseudo, changeHolidayMode, getUserInfos } from '../../actions/user';
+    updateUser, changeDescription, changeEmail, changePassword, changeCity, changeAddress, changeZipCode, changeLastName, changeFirstName, changePseudo, changeHolidayMode, getUserInfos, eraseMessage } from '../../actions/user';
 
 const mapStateToProps = (state, ownProps) => ({
     email: state.user.email,
@@ -16,7 +16,8 @@ const mapStateToProps = (state, ownProps) => ({
     lastName: state.user.lastName,
     holiday_mode: state.user.holiday_mode,
     description: state.user.description,
-    infos: state.user.infos
+    infos: state.user.infos,
+    message: state.user.message,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
@@ -67,7 +68,11 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 
     displayUserInfos: function () {
     dispatch(getUserInfos());
-    }
+    },
+
+    onSetProfilPageUnmount: () => {
+    dispatch(eraseMessage());
+    },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SetProfilPage);

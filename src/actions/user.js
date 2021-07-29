@@ -131,5 +131,19 @@ export const saveUserInfos = (infos) => ({
   infos,
 });
 
+export const SAVE_MESSAGE= 'SAVE_MESSAGE';
+
+export const saveMessage = (message) => ({
+  type: SAVE_MESSAGE,
+  message,
+});
+
+export const ERASE_MESSAGE= 'ERASE_MESSAGE';
+
+export const eraseMessage = () => ({
+  type: ERASE_MESSAGE,
+});
+
+
 
 
