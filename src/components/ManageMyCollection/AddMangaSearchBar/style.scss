@@ -1,0 +1,28 @@
+// General
+
+
+div.addMangaSearchbar-searchWrapper {
+  margin: 3rem 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+div.ui.fluid.search {
+  width: 80%;
+}
+
+div.ui.icon.input {
+  width: 100%;
+}
+
+div.ui.segment.addMangaSearchbar-segment {
+  width: 80%;
+  border-radius: 2em;
+  padding: 0.5em;
+}
+
+form.ui.form.addMangaSearchbar-form input {
+  border: none;
+}
+// Theming

@@ -1,11 +1,7 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable no-console */
-/* eslint-disable linebreak-style */
-/* eslint-disable eol-last */
-/* eslint-disable linebreak-style */
 import { SEARCH_BY_ZIPCODE, saveSearchResult } from 'src/actions/search';
 import api from 'src/api';
 import { setLoadingFalse, setLoadingTrue } from '../actions/global';
+import { saveMangaSearch, SEARCH_BY_MANGA_NAME } from '../actions/search';
 
 const token = localStorage.getItem('token');
 if (token) {
@@ -35,6 +31,19 @@ const contactAdminMiddleware = (store) => (next) => (action) => {
         );
       next(action);
       break;
+    }
+    case SEARCH_BY_MANGA_NAME: {
+      const { mangaDatabase } = store.getState().manga;
+      const mangaDatabaseAsAnArray = Object.values(mangaDatabase);
+      console.log('manga Database as an array', mangaDatabaseAsAnArray);
+      console.log('example of a manga title', mangaDatabaseAsAnArray[0].title);
+      const mangaSearch = action.mangaName;
+      const filtered = mangaDatabaseAsAnArray.filter((manga) => {
+        console.log(mangaSearch);
+        return manga.title.toLowerCase().includes(mangaSearch.toLowerCase());
+      });
+      console.log('filter: ', filtered);
+      store.dispatch(saveMangaSearch(filtered));
     }
     default:
       next(action);
