@@ -10,7 +10,7 @@ if (token) {
 const updateUser = (store) => (next) => (action) => {
   switch (action.type) {
     case GET_USER_INFOS: {
-      store.dispatch(setLoadingTrue());
+      // store.dispatch(setLoadingTrue());
       const userId = store.getState().user.data.id;
       api
         .get(`api/v1/user/${userId}`)
@@ -18,11 +18,11 @@ const updateUser = (store) => (next) => (action) => {
           (response) => {
             console.log('get user infos succeeded', response.data.contact);
             store.dispatch(saveUserInfos(response.data.contact));
-            store.dispatch(setLoadingFalse());
+            // store.dispatch(setLoadingFalse());
           },
         )
         .catch((error) => {
-          store.dispatch(setLoadingFalse());
+          // store.dispatch(setLoadingFalse());
           console.log('get user infos failed', error);
         });
       next(action);
