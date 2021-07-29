@@ -3,13 +3,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  Card, Icon, Button, Form, Image,
+  Card, Icon, Button, Form, Image
 } from 'semantic-ui-react';
 
 import './style.scss';
 
 import alternativeBanner from 'src/assets/images/alternativeBanner.png';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import NoAccountBox from './NoAccountBox';
 
 const LoginForm = ({
@@ -54,7 +54,7 @@ const LoginForm = ({
                   <Form.Input className="loginform-field" id="password" name="password" onChange={handleChangePassword} value={password} />
                 </Form.Field>
                 <Form.Field>
-                  <Icon name="question" /> Mot de passe oublié
+                  <Icon name="question" /> <Link className="loginform-passwordforgot" to="/contact" exact={+true}>Mot de passe oublié </Link>
                 </Form.Field>
                 <Button className="login-button" type="submit">Se connecter</Button>
               </Form>
