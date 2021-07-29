@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import {
-  Image, TextArea, Button, Form, Label, Checkbox, Modal, Icon, Header
+  Image, TextArea, Button, Form, Label, Checkbox, Modal, Icon, Header,
 } from 'semantic-ui-react';
 import validator from 'validator'; //checking of password
 import './style.scss';
@@ -85,9 +85,9 @@ const SetProfilPage = ({
 
   // toggle function
   const onChangeCheckbox = (evt, data) => {
-    let checked = data.checked;
+    const { checked } = data;
     changeHolidayMode(checked);
-  }
+  };
 
   //Check password with validator dependencie
   const validate = (value) => {
@@ -138,10 +138,10 @@ const SetProfilPage = ({
             handleUpdate={handleUpdate}
             displayUserInfos={displayUserInfos}
             onChangeCheckbox={onChangeCheckbox}
-            />
-          </MediaQuery>
+          />
+        </MediaQuery>
 
-      <MediaQuery maxWidth={1223}>
+        <MediaQuery maxWidth={1223}>
           <div className="mobileSetProfilPage">
 
             <div className="mobileSetProfil-ButtonAddAndImage">
@@ -155,20 +155,20 @@ const SetProfilPage = ({
                 onClose={() => setAvatar(false)}
                 onOpen={() => setAvatar(true)}
                 open={avatar}
-                trigger={<Button className="mobileSetProfil-addButton" circular icon='photo' />}
-                >
+                trigger={<Button className="mobileSetProfil-addButton" circular icon="photo" />}
+              >
                 <Modal.Header>Upload image</Modal.Header>
                 <Modal.Content image>
-                  <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
-                  <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
-                  <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
-                  <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
-                  <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
-                  <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
-                  <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
-                  <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
-                  <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
-                  <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
+                  <Button><Image circular size="mini" src="/images/wireframe/image-square.png" wrapped /></Button>
+                  <Button><Image circular size="mini" src="/images/wireframe/image-square.png" wrapped /></Button>
+                  <Button><Image circular size="mini" src="/images/wireframe/image-square.png" wrapped /></Button>
+                  <Button><Image circular size="mini" src="/images/wireframe/image-square.png" wrapped /></Button>
+                  <Button><Image circular size="mini" src="/images/wireframe/image-square.png" wrapped /></Button>
+                  <Button><Image circular size="mini" src="/images/wireframe/image-square.png" wrapped /></Button>
+                  <Button><Image circular size="mini" src="/images/wireframe/image-square.png" wrapped /></Button>
+                  <Button><Image circular size="mini" src="/images/wireframe/image-square.png" wrapped /></Button>
+                  <Button><Image circular size="mini" src="/images/wireframe/image-square.png" wrapped /></Button>
+                  <Button><Image circular size="mini" src="/images/wireframe/image-square.png" wrapped /></Button>
                   <Modal.Description>
                     <p>Veuillez choisir un avatar</p>
                   </Modal.Description>
@@ -184,7 +184,7 @@ const SetProfilPage = ({
 
             <h3 className="mobileSetProfil-h3">{pseudo}</h3>
 
-            <Form  onSubmit={handleSubmit}>
+            <Form onSubmit={handleSubmit}>
 
               <Form.Input className="mobileIdCard-holidayWrapper">
                 <Label className="setProfilPage-fourthPartHolidayModeLabel">Mode vacances:</Label>
@@ -203,51 +203,54 @@ const SetProfilPage = ({
 
               <Form.Group widths='equal'>
 
-                <Form.Input className="mobileSetProfil-formInputName"
-                  icon='user'
-                  iconPosition='left'
-                  placeholder='Pseudo'
+                <Form.Input
+                  className="mobileSetProfil-formInputName"
+                  icon="user"
+                  iconPosition="left"
+                  placeholder="Pseudo"
                   value={pseudo}
                   onChange={handleChangePseudo}
                 />
 
-                <Form.Input className="mobileSetProfil-formInputName"
-                  icon='user'
-                  iconPosition='left'
-                  placeholder='Prénom'
+                <Form.Input
+                  className="mobileSetProfil-formInputName"
+                  icon="user"
+                  iconPosition="left"
+                  placeholder="Prénom"
                   value={firstName}
                   onChange={handleChangeFirstName}
                 />
 
-                <Form.Input className="mobileSetProfil-formInputLastName"
-                  icon='user'
-                  iconPosition='left'
-                  placeholder='Nom'
+                <Form.Input
+                  className="mobileSetProfil-formInputLastName"
+                  icon="user"
+                  iconPosition="left"
+                  placeholder="Nom"
                   value={lastName}
                   onChange={handleChangeLastName}
                 />
 
                 <Form.Input
-                  icon='map marker alternate'
-                  iconPosition='left'
-                  placeholder='Adresse'
+                  icon="map marker alternate"
+                  iconPosition="left"
+                  placeholder="Adresse"
                   value={address}
                   onChange={handleChangeAddress}
                 />
 
                 <Form.Input
-                  icon='map'
-                  iconPosition='left'
-                  placeholder='Code Postal'
-                  type='number'
+                  icon="map"
+                  iconPosition="left"
+                  placeholder="Code Postal"
+                  type="number"
                   value={zipCode}
                   onChange={handleChangeZipCode}
                 />
 
                 <Form.Input
-                  icon='map'
-                  iconPosition='left'
-                  placeholder='Ville'
+                  icon="map"
+                  iconPosition="left"
+                  placeholder="Ville"
                   value={city}
                   onChange={handleChangeCity}
                 />

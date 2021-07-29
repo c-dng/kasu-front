@@ -54,7 +54,7 @@ const ContactForm = ({
                   <option value="Autre">Autre</option>
                 </Form.Field>
               </Form.Field>
-              <Form.Field >
+              <Form.Field>
                 <label className="contactForm-msgLabel">Saisissez votre message:</label>
                 <Form.TextArea id="message" name="message" onChange={handleChangeContent} value={content} />
               </Form.Field>

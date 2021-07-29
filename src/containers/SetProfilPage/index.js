@@ -21,46 +21,46 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-   
-    handleUpdate: function () {
+
+  handleUpdate: function () {
     dispatch(updateUser());
-    },
+  },
 
-    changeEmail: function (email) {
+  changeEmail: function (email) {
     dispatch(changeEmail(email));
-    },
+  },
 
-    changePassword: function (password) {
+  changePassword: function (password) {
     dispatch(changePassword(password));
-    },
+  },
 
-    changeCity: function (city) {
+  changeCity: function (city) {
     dispatch(changeCity(city));
-    },
+  },
 
-    changeAddress: function (address) {
+  changeAddress: function (address) {
     dispatch(changeAddress(address));
-    },
-    
-    changeZipCode: function (zipCode) {
+  },
+
+  changeZipCode: function (zipCode) {
     dispatch(changeZipCode(zipCode));
-    },
-    
-    changeLastName: function (lastName) {
+  },
+
+  changeLastName: function (lastName) {
     dispatch(changeLastName(lastName));
-    },
+  },
 
-    changeFirstName: function (firstName) {
+  changeFirstName: function (firstName) {
     dispatch(changeFirstName(firstName));
-    },
+  },
 
-    changePseudo: function (pseudo) {
+  changePseudo: function (pseudo) {
     dispatch(changePseudo(pseudo));
-    },
+  },
 
-    changeHolidayMode: function (holiday_mode) {
+  changeHolidayMode: function (holiday_mode) {
     dispatch(changeHolidayMode(holiday_mode));
-    },
+  },
 
     changeDescription: function (description) {
     dispatch(changeDescription(description));
