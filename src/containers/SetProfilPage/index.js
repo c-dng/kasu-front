@@ -3,21 +3,21 @@ import { connect } from 'react-redux';
 import SetProfilPage from 'src/components/SetProfilPage';
 
 import {
-  updateUser, changeEmail, changePassword, changeCity, changeAddress, changeZipCode, changeLastName, changeFirstName, changePseudo, changeHolidayMode, getUserInfos,
-} from '../../actions/user';
+    updateUser, changeDescription, changeEmail, changePassword, changeCity, changeAddress, changeZipCode, changeLastName, changeFirstName, changePseudo, changeHolidayMode, getUserInfos, eraseMessage } from '../../actions/user';
 
 const mapStateToProps = (state, ownProps) => ({
-  email: state.user.email,
-  password: state.user.password,
-  pseudo: state.user.pseudo,
-  address: state.user.address,
-  zipCode: state.user.zipCode,
-  city: state.user.city,
-  firstName: state.user.firstName,
-  lastName: state.user.lastName,
-  holiday_mode: state.user.holiday_mode,
-  bio: state.user.bio,
-  infos: state.user.infos,
+    email: state.user.email,
+    password: state.user.password,
+    pseudo: state.user.pseudo,
+    address: state.user.address,
+    zipCode: state.user.zipCode,
+    city: state.user.city,
+    firstName: state.user.firstName,
+    lastName: state.user.lastName,
+    holiday_mode: state.user.holiday_mode,
+    description: state.user.description,
+    infos: state.user.infos,
+    message: state.user.message,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
@@ -62,9 +62,17 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     dispatch(changeHolidayMode(holiday_mode));
   },
 
-  displayUserInfos: function () {
+    changeDescription: function (description) {
+    dispatch(changeDescription(description));
+    },
+
+    displayUserInfos: function () {
     dispatch(getUserInfos());
-  },
+    },
+
+    onSetProfilPageUnmount: () => {
+    dispatch(eraseMessage());
+    },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SetProfilPage);
