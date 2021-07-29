@@ -13,7 +13,7 @@ import logoutlogo from 'src/assets/images/logoutlogo.png';
 import loginlogo from 'src/assets/images/loginlogo.png';
 
 const Nav = ({
-  changeWebsiteTheme, navIconsColor, isLogged, disconnectUser, handleConversationsLoad,
+  changeWebsiteTheme, navIconsColor, isLogged, disconnectUser, handleConversationsLoad, loadUserInfos
 }) => {
   let logoToDisplay;
   let chatlogoToDisplay;
@@ -67,7 +67,7 @@ const Nav = ({
               <Dropdown floating icon="dropdown">
                 <Dropdown.Menu>
                   <Dropdown.Header>Gestion de profil</Dropdown.Header>
-                  <Dropdown.Item as={Link} to="/profil/mes-infos" exact={+true}>Mon Compte</Dropdown.Item>
+                  <Dropdown.Item as={Link} to="/profil/mes-infos" onClick={() => loadUserInfos()} exact={+true}>Mon Compte</Dropdown.Item>
                   <Dropdown.Item as={Link} to="/profil/collection" exact={+true}>Ma Collection</Dropdown.Item>
                   <Dropdown.Divider />
                   <Dropdown.Item>

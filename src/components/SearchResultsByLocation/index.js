@@ -7,7 +7,7 @@ import SearchBar from 'src/containers/SearchBar';
 import ResultCard from './ResultCard';
 
 const SearchResultsByLocation = ({ users }) => {
-  let open = true;
+  const open = true;
   console.log('en dehors du return');
 
   return (
@@ -17,22 +17,16 @@ const SearchResultsByLocation = ({ users }) => {
         <SearchBar />
       </div>
       <Card.Group className="searchResultsByLocation-cardGroup">
-        {console.log('test')}
-        {console.log(users)}
-        {Object.entries(users).map((user) => (
-
-          console.log(Object.entries(user))))}
         {
 
-          // This is a way to iterate over an object items as if it were arrays
-          // (therefore being able to use the ".map" declarative function)
-          Object.entries(users).map((user) => (
-
-            Object.entries(user).map((datas) => {
-              let id;
-              return <ResultCard />;
-            })
-          ))
+          Object.values(users).map((user) => {
+            const tar = Object.values(user.mangas);
+            return (
+              tar.map((manga) => (
+                <ResultCard />
+              ))
+            );
+          })
         }
       </Card.Group>
     </div>
