@@ -54,6 +54,13 @@ export const changeCity = (city) => ({
   city,
 });
 
+export const CHANGE_HOLIDAY_MODE = 'CHANGE_HOLIDAY_MODE';
+
+export const changeHolidayMode = (holiday_mode) => ({
+  type: CHANGE_HOLIDAY_MODE,
+  holiday_mode,
+});
+
 export const LOGIN_USER = 'LOGIN_USER';
 
 export const loginUser = () => ({
@@ -97,3 +104,25 @@ export const REGISTER_USER = 'REGISTER_USER';
 export const RegisterUser = () => ({
   type: REGISTER_USER,
 });
+
+export const UPDATE_USER = 'UPDATE_USER';
+
+export const updateUser = () => ({
+  type: UPDATE_USER,
+});
+
+export const GET_USER_INFOS = 'GET_USER_INFOS';
+
+export const getUserInfos = () => ({
+  type: GET_USER_INFOS,
+});
+
+export const SAVE_USER_INFOS = 'SAVE_USER_INFOS';
+
+export const saveUserInfos = (infos) => ({
+  type: SAVE_USER_INFOS,
+  infos,
+});
+
+
+

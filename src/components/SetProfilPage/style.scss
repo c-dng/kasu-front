@@ -28,13 +28,30 @@ div.ui.fitted.toggle.checkbox {
   border-top-right-radius: 1rem;
 }
 
+div.field.mobileIdCard-holidayWrapper div.ui.input {
+  justify-content: center;
+  margin-bottom: 1em;
+}
+
 textarea.mobileSetProfil-textArea.mobileSetProfil-textArea.mobileSetProfil-textArea {
   margin-bottom: 1em;
+}
+
+div.mobileSetProfil-ButtonAddAndImage {
+  display: flex;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+button.ui.circular.icon.button.mobileSetProfil-addButton {
+  align-self: flex-end;
 }
 
 img.ui.tiny.circular.image.mobileSetProfil-image {
   margin: auto;
   border: 1px solid white;
+  width: 45%;
 }
 
 button.ui.button.mobileSetProfil-changeImage {
@@ -54,7 +71,7 @@ h3.mobileSetProfil-h3.mobileSetProfil-h3 {
   margin-bottom: 0.50em;
 }
 
-span.desktopIdCard-holidayWrapper {
+div.ui.input.desktopIdCard-holidayWrapper {
   display: flex;
   justify-content: center;
   margin-bottom: 0.5em;
@@ -84,7 +101,6 @@ div.mobileSetProfil-groupTwoButtons {
 button.ui.button.mobileSetProfil-buttonCancel {
   border-radius: 1rem;
   border: 1px solid white;
-
 }
 
 button.ui.button.mobileSetProfil-buttonValidate {
@@ -92,7 +108,6 @@ button.ui.button.mobileSetProfil-buttonValidate {
   color: #326158;
   border-radius: 1rem;
   border: 1px solid white;
-
 }
 
 //Desktop
@@ -110,48 +125,73 @@ h1.setProfilPage-title {
   margin-bottom: 0;
 }
 
-div.ui.segment.desktopIdCard-MainWrapper {
-  margin-top: 0;
+div.desktopIdCard-MainWrapper {
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
+  padding-bottom: 2em;
+  display: flex;
 }
 
-div.desktopIdCard-leftPartWrapper2elements {
+div.desktopIdCard-leftPartWrapper {
+  width: 50%;
   display: flex;
+  flex-direction: column;
+  padding-top: 4em;
+}
+
+img.ui.medium.centered.image.desktopIdCard-leftPartWrapperImage {
+  height: fit-content;
+  width: 50%;
+}
+
+button.ui.circular.icon.button.desktopSetProfil-addButton {
+  align-self: center;
+  margin-top: 2em;
+}
+
+div.desktopIdCard-rightPartWrapper {
+  width: 50%;
+}
+
+a.ui.red.right.ribbon.label {
+  left: calc(100% + 1.3em);
+  padding-left: 1.6em;
+  margin-top: 0.5em;
+}
+
+div.field.desktopIdCard-holidayWrapper.desktopIdCard-holidayWrapper {
   justify-content: center;
 }
 
-span.desktopIdCard-holidayWrapper {
-  display: flex;
-  justify-content: center;
-  margin-top: 1em;
+div.field.desktopIdCard-holidayWrapper.desktopIdCard-holidayWrapper div.ui.input {
+  width: auto;
+}
+
+div.ui.label.desktopIdCard-bioLabel {
+  margin-bottom: 0.5em;
+}
+
+textarea.desktopIdCard-memberDescription.desktopIdCard-memberDescription.desktopIdCard-memberDescription {
   margin-bottom: 1em;
+}
+
+form.ui.form {
+  width: 90%;
+  margin: auto;
 }
 
 button.ui.button.desktopIdCard-EditEmail {
   font-size: 1rem;
   margin-bottom: 1em;
 }
-  
-+div.desktopIdCard-leftPartWrapper2elements {
-  display: flex;
-  justify-content: center;
-}
 
 div.desktopIdCard-Bottom3Buttons.desktopIdCard-Bottom3Buttons{
-  margin-top: 9em;
+  margin-top: 2em;
 }
 
-button.ui.icon.button.desktopIdCard-ButtonValidate {
-  background-color: #3FBEA7;
-}
-
-div.column.desktopIdCard-leftPartWrapper {
-  border-bottom-left-radius: 1em;
-}
-
-div.column.desktopIdCard-rightPartWrapper {
-  border-bottom-right-radius: 1em;
+div.desktopIdCard-errorMessage {
+  font-weight: bold;
+  color: black;
 }
 
 // Theming 
@@ -219,36 +259,36 @@ div.column.desktopIdCard-rightPartWrapper {
   }
 
   h3.ui.header.ui.header.ui.header.ui.header    {
-    color: vars.$secondaryFontColor_theme1;
+    color: vars.$primaryFontColor_theme2;
   }
 
   div.ui.top.left.attached.label.desktopIdCard-leftPartWrapperLogin {
     background-color: vars.$primaryColor_theme2;
-    color: vars.$secondaryFontColor_theme1;
-    border: 1px solid vars.$secondaryFontColor_theme1;
+    color: vars.$primaryFontColor_theme2;
+    border: 1px solid vars.$primaryBorderColor_theme2;
   }
 
   div.ui.medium.image.desktopIdCard-leftPartWrapperImage {
-    border: 1px solid vars.$secondaryFontColor_theme1;
+    border: 1px solid vars.$primaryBorderColor_theme2;
   }
 
   .ui.label.desktopIdCard-bioLabel {
     background-color: vars.$primaryColor_theme2;
-    border: 1px solid vars.$secondaryFontColor_theme1;
+    border: 1px solid vars.$primaryBorderColor_theme2;
   }
 
   p.desktopIdCard-bioP {
-    color: vars.$secondaryFontColor_theme1;
+    color: vars.$primaryFontColor_theme2;
   }
 
   button.ui.button.desktopIdCard-EditEmail {
     background-color: vars.$primaryColor_theme2;
     color: vars.$primaryFontColor_theme2;
-    border: 1px solid vars.$secondaryFontColor_theme1;
+    border: 1px solid vars.$primaryBorderColor_theme2;
   }
 
   button.ui.button.desktopIdCard-memberDelete {
-    border: 1px solid vars.$secondaryFontColor_theme1;
+    border: 1px solid vars.$primaryBorderColor_theme2;
   }
 
   .desktopIdCard-mainCard {
@@ -258,13 +298,14 @@ div.column.desktopIdCard-rightPartWrapper {
   .setProfilPage-mainWrapper {
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
+    border: 1px solid vars.$primaryBorderColor_theme2;
   }
 
-  .column.desktopIdCard-leftPartWrapper {
+  .desktopIdCard-leftPartWrapper {
     background-color: vars.$primaryColor_theme2;
   }
 
-  .column.desktopIdCard-rightPartWrapper {
+  .desktopIdCard-rightPartWrapper {
     background-color: vars.$primaryColor_theme2;
   }
 
@@ -301,7 +342,11 @@ div.column.desktopIdCard-rightPartWrapper {
   }
 
   button.ui.black.icon.button {
-    border: 1px solid vars.$secondaryFontColor_theme1;
+    border: 1px solid vars.$primaryBorderColor_theme2;
+  }
+
+  button.ui.green.icon.button {
+    border: 1px solid vars.$primaryBorderColor_theme2;
   }
 
   // Theme 2 - Mobile
