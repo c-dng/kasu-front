@@ -1,13 +1,21 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable react/prop-types */
+/* eslint-disable linebreak-style */
 import React from 'react';
-import { Button, Card, Icon, Image, Select } from 'semantic-ui-react';
+import {
+  Button, Card, Icon, Image, Select,
+} from 'semantic-ui-react';
 
-const HomeCard = ({ image,
+const HomeCard = ({
+  // eslint-disable-next-line react/prop-types
+  image,
   mangaName,
   ownerAvatar,
   ownerName,
   location,
   synopsys,
-  volumeOptions, }) => (
+  volumeOptions,
+}) => (
   <div className="homeCard">
     <Card className="homeCard-card">
       <Card.Content className="homeCard-cardContentImgInfos">

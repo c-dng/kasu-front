@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 // == Import npm
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
@@ -15,7 +16,6 @@ import ViewProfilPage from 'src/containers/ViewProfilPage';
 import Team from 'src/components/Team';
 import LegalNotice from 'src/components/LegalNotice';
 import Chat from 'src/containers/Chat';
-import Loading from 'src/components/App/Loading';
 // == Import
 
 import './style.scss';
@@ -23,28 +23,30 @@ import { Route, Switch } from 'react-router-dom';
 import { useBeforeunload } from 'react-beforeunload';
 // == Composant
 const App = ({
-  theme, loading, onPageLoad, onRefreshOrTabClosing, isLogged, chatId,
+  // eslint-disable-next-line react/prop-types
+  theme, onPageLoad, onRefreshOrTabClosing, isLogged, chatId,
 }) => {
-  const handleOnClose = (evt) => {
+  const handleOnClose = () => {
     if (isLogged) {
       onRefreshOrTabClosing();
     }
   };
 
-  useBeforeunload((event) => {
+  useBeforeunload(() => {
     handleOnClose();
   });
 
   useEffect(() => {
+    // eslint-disable-next-line no-console
     console.log('App useEffect', { isLogged, chatId });
     if (isLogged && chatId) {
       onPageLoad(chatId);
     }
   }, [chatId, isLogged]);
 
-  if (loading) {
-    return <Loading />;
-  }
+  // if (loading) {
+  //   return <Loading />;
+  // }
 
   return (
     <div className={`app ${theme}`}>
@@ -104,6 +106,7 @@ const App = ({
 
 App.propTypes = {
   theme: PropTypes.string.isRequired,
+  // eslint-disable-next-line react/no-unused-prop-types
   loading: PropTypes.bool,
 };
 

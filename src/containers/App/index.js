@@ -4,14 +4,14 @@ import App from 'src/components/App';
 import { wsDisconnect, wsConnect } from 'src/actions/chat';
 import { autoLoginUser } from '../../actions/user';
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state) => ({
   theme: state.global.theme,
   loading: state.global.loading,
   isLogged: state.user.logged,
   chatId: state.chat.lastSingleChat.id,
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
+const mapDispatchToProps = (dispatch) => ({
   autoLogin: function () {
     dispatch(autoLoginUser());
   },

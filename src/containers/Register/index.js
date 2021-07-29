@@ -12,7 +12,7 @@ import {
   RegisterUser,
 } from '../../actions/user';
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state) => ({
   zipCode: state.user.zipCode,
   email: state.user.email,
   address: state.user.address,
@@ -23,7 +23,7 @@ const mapStateToProps = (state, ownProps) => ({
   password: state.user.password,
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
+const mapDispatchToProps = (dispatch) => ({
   changePseudo: function (pseudo) {
     dispatch(changePseudo(pseudo));
   },

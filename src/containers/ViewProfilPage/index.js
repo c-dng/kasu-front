@@ -1,5 +1,7 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable no-unused-vars */
+/* eslint-disable linebreak-style */
 import { connect } from 'react-redux';
-import { getUserInfos } from '../../actions/user';
 import ViewProfilPage from '../../components/ViewProfilPage';
 
 const mapStateToProps = (state, ownProps) => ({

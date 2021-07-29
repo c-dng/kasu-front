@@ -6,13 +6,13 @@ import {
 } from '../../actions/chat';
 import { loadConversations } from '../../actions/user';
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state) => ({
   isBoxHidden: state.chat.isBoxHidden,
   conversations: state.user.conversations,
   userPseudo: state.user.data.pseudo,
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
+const mapDispatchToProps = (dispatch) => ({
   handleHiddenBoxDisplay: function () {
     dispatch(toggleHiddenBox());
   },

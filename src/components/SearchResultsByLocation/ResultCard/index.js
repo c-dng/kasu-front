@@ -1,3 +1,16 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable no-restricted-globals */
+/* eslint-disable linebreak-style */
+/* eslint-disable react/jsx-no-comment-textnodes */
+/* eslint-disable linebreak-style */
+/* eslint-disable react/prop-types */
+/* eslint-disable linebreak-style */
+/* eslint-disable max-len */
+/* eslint-disable linebreak-style */
+/* eslint-disable no-unused-vars */
+/* eslint-disable linebreak-style */
+/* eslint-disable object-curly-newline */
+/* eslint-disable linebreak-style */
 import React from 'react';
 import { Button, Card, Icon, Image, Select } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
@@ -15,12 +28,12 @@ const ResultCard = ({ mangaName, mangaPicture, ownerName, ownerPicture, ownerLoc
           <Card.Header className="searchResultsByLocation-nameManga">Nom du manga</Card.Header>
           <div className="searchResultsByLocation-owner">
             <Image src="https://react.semantic-ui.com/images/wireframe/square-image.png" avatar />
-                Propriétaire
-              </div>
+            Propriétaire
+          </div>
           <Card.Meta className="searchResultsByLocation-localisation"> <Icon disabled name="map marker alternate" /> Localisation</Card.Meta>
 
           <Card.Description className="searchResultsByLocation-numberVolume">
-            <Select placeholder="Tomes disponibles"  />
+            <Select placeholder="Tomes disponibles" />
           </Card.Description>
         </div>
       </Card.Content>
@@ -33,6 +46,7 @@ const ResultCard = ({ mangaName, mangaPicture, ownerName, ownerPicture, ownerLoc
             Contacter le propriétaire
           </Button>
         </div>
+        // eslint-disable-next-line no-restricted-globals
         <div className={open ? 'searchResultsByLocation-showMore--active' : 'searchResultsByLocation-showMore--hidden'}>
           <h3>Synopsis</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>

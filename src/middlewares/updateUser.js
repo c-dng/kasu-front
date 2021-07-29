@@ -1,4 +1,13 @@
-import { UPDATE_USER, GET_USER_INFOS, saveUserInfos, saveMessage } from 'src/actions/user';
+/* eslint-disable linebreak-style */
+/* eslint-disable no-console */
+/* eslint-disable linebreak-style */
+/* eslint-disable max-len */
+/* eslint-disable linebreak-style */
+/* eslint-disable camelcase */
+/* eslint-disable linebreak-style */
+import {
+  UPDATE_USER, GET_USER_INFOS, saveUserInfos, saveMessage,
+} from 'src/actions/user';
 import api from 'src/api';
 import { setLoadingFalse, setLoadingTrue } from '../actions/global';
 
@@ -29,11 +38,15 @@ const updateUser = (store) => (next) => (action) => {
       break;
     }
     case UPDATE_USER: {
-      const { zipCode, address, city, lastName, firstName, pseudo, email, password, holiday_mode, description } = store.getState().user;
+      const {
+        zipCode, address, city, lastName, firstName, pseudo, email, password, holiday_mode, description,
+      } = store.getState().user;
       const userId = store.getState().user.data.id;
       store.dispatch(setLoadingTrue());
       api
-        .patch(`api/v1/user/${userId}/update`, { zipcode: zipCode, address, city, lastname: lastName, firstname: firstName, pseudo, email, password, holiday_mode, description })
+        .patch(`api/v1/user/${userId}/update`, {
+          zipcode: zipCode, address, city, lastname: lastName, firstname: firstName, pseudo, email, password, holiday_mode, description,
+        })
         .then(
           (response) => {
             console.log('update user infos succeeded', response.data);
@@ -43,7 +56,7 @@ const updateUser = (store) => (next) => (action) => {
         )
         .catch((error) => {
           store.dispatch(setLoadingFalse());
-          console.log('update user infos failed', error)
+          console.log('update user infos failed', error);
         });
       next(action);
       break;

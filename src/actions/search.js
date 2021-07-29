@@ -1,4 +1,6 @@
+/* eslint-disable linebreak-style */
 export const SET_SEARCH = 'SET_SEARCH';
+// eslint-disable-next-line linebreak-style
 
 export const setSearch = (search) => ({
   type: SET_SEARCH,

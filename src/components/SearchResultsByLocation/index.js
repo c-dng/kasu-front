@@ -1,3 +1,6 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable no-console */
+/* eslint-disable linebreak-style */
 import React from 'react';
 import {
   Card,
@@ -6,8 +9,8 @@ import './style.scss';
 import SearchBar from 'src/containers/SearchBar';
 import ResultCard from './ResultCard';
 
+// eslint-disable-next-line react/prop-types
 const SearchResultsByLocation = ({ users }) => {
-  const open = true;
   console.log('en dehors du return');
 
   return (
@@ -22,7 +25,7 @@ const SearchResultsByLocation = ({ users }) => {
           Object.values(users).map((user) => {
             const tar = Object.values(user.mangas);
             return (
-              tar.map((manga) => (
+              tar.map(() => (
                 <ResultCard />
               ))
             );

@@ -1,7 +1,26 @@
-import React, { useEffect, useState } from 'react';
+/* eslint-disable linebreak-style */
+/* eslint-disable no-console */
+/* eslint-disable linebreak-style */
+/* eslint-disable no-undef */
+/* eslint-disable linebreak-style */
+// eslint-disable-next-line linebreak-style
+/* eslint-disable eqeqeq */
+/* eslint-disable linebreak-style */
+/* eslint-disable no-constant-condition */
+/* eslint-disable linebreak-style */
+/* eslint-disable no-unused-vars */
+/* eslint-disable linebreak-style */
+/* eslint-disable camelcase */
+/* eslint-disable linebreak-style */
+// eslint-disable-next-line linebreak-style
+/* eslint-disable react/prop-types */
+/* eslint-disable linebreak-style */
+import React, { useEffect } from 'react';
+// eslint-disable-next-line linebreak-style
 import {
   Image, TextArea, Button, Form, Label, Checkbox, Modal, Icon, Header,
 } from 'semantic-ui-react';
+// eslint-disable-next-line linebreak-style
 import validator from 'validator'; // checking of password
 import './style.scss';
 import alternativeBanner from 'src/assets/images/alternativeBanner.png';
@@ -20,6 +39,7 @@ const SetProfilPage = ({
   lastName,
   holiday_mode,
   description,
+  picture,
   message,
   changeEmail,
   changePassword,
@@ -92,16 +112,21 @@ const SetProfilPage = ({
   const handleChangeDescription = (evt) => {
     changeDescription(evt.target.value);
   };
-
   // toggle function
   const onChangeCheckbox = (evt, data) => {
     const { checked } = data;
     changeHolidayMode(checked);
   };
-
-  // Check password with validator dependencie
-
-  // console.log(holiday_mode);
+  const PasswordChecking = (value) => {
+    if ({ password } != { confirmPassword }) {
+      setErrorMessage('');
+      console.log(setErrorMessagePassword);
+    }
+    else {
+      setErrorMessage('Les mots de passe ne correspondent pas');
+      console.log(setErrorMessagePassword);
+    }
+  };
 
   return (
     <>
@@ -126,6 +151,7 @@ const SetProfilPage = ({
                     lastName={lastName}
                     holiday_mode={holiday_mode}
                     description={description}
+                    picture={picture}
                     changeEmail={changeEmail}
                     changePassword={changePassword}
                     changePseudo={changePseudo}
@@ -148,39 +174,10 @@ const SetProfilPage = ({
                     <div className="mobileSetProfil-ButtonAddAndImage">
                       <Image
                         className="mobileSetProfil-image"
-                        src="https://react.semantic-ui.com/images/avatar/large/steve.jpg"
+                        src={`https://api.multiavatar.com/${picture}.png`}
                         size="tiny"
                         circular
                       />
-                      <Modal
-                        onClose={() => setAvatar(false)}
-                        onOpen={() => setAvatar(true)}
-                        open={avatar}
-                        trigger={<Button className="mobileSetProfil-addButton" circular icon="photo" />}
-                      >
-                        <Modal.Header>Upload image</Modal.Header>
-                        <Modal.Content image>
-                          <Button><Image circular size="mini" src="/images/wireframe/image-square.png" wrapped /></Button>
-                          <Button><Image circular size="mini" src="/images/wireframe/image-square.png" wrapped /></Button>
-                          <Button><Image circular size="mini" src="/images/wireframe/image-square.png" wrapped /></Button>
-                          <Button><Image circular size="mini" src="/images/wireframe/image-square.png" wrapped /></Button>
-                          <Button><Image circular size="mini" src="/images/wireframe/image-square.png" wrapped /></Button>
-                          <Button><Image circular size="mini" src="/images/wireframe/image-square.png" wrapped /></Button>
-                          <Button><Image circular size="mini" src="/images/wireframe/image-square.png" wrapped /></Button>
-                          <Button><Image circular size="mini" src="/images/wireframe/image-square.png" wrapped /></Button>
-                          <Button><Image circular size="mini" src="/images/wireframe/image-square.png" wrapped /></Button>
-                          <Button><Image circular size="mini" src="/images/wireframe/image-square.png" wrapped /></Button>
-                          <Modal.Description>
-                            <p>Veuillez choisir un avatar</p>
-                          </Modal.Description>
-                        </Modal.Content>
-                        <Modal.Actions>
-                          <Button onClick={() => setAvatar(false)}>Cancel</Button>
-                          <Button onClick={() => setAvatar(false)} positive>
-                            Ok
-                  </Button>
-                        </Modal.Actions>
-                      </Modal>
                     </div>
 
                     <h3 className="mobileSetProfil-h3">{pseudo}</h3>
@@ -205,7 +202,6 @@ const SetProfilPage = ({
                       />
 
                       <Form.Group widths="equal">
-
                         <Form.Input
                           className="mobileSetProfil-formInputName"
                           icon="user"
@@ -260,6 +256,7 @@ const SetProfilPage = ({
 
                         <Form.Input
                           input="password"
+                          id="password"
                           icon="lock"
                           iconPosition="left"
                           placeholder="Mot de passe"
@@ -267,6 +264,19 @@ const SetProfilPage = ({
                           value={password}
                           onChange={handleChangePassword}
                         />
+
+                        <Form.Input
+                          input="password"
+                          id="confirmPassword"
+                          icon="lock"
+                          iconPosition="left"
+                          placeholder="Mot de passe"
+                          fluid
+                        />
+
+                        <div className="mobileSetProfil-messageCheckPassword">
+                          {/* {errorMessagePassword} */}
+                        </div>
 
                         <Form.Input
                           input="email"
@@ -277,7 +287,6 @@ const SetProfilPage = ({
                           value={email}
                           onChange={handleChangeEmail}
                         />
-
                       </Form.Group>
 
                       <div className="desktopIdCard-errorMessage">
@@ -299,10 +308,10 @@ const SetProfilPage = ({
                           <Modal.Actions>
                             <Button color="red" onClick={() => setOpen(false)}>
                               <Icon name="remove" /> Non
-                    </Button>
+                            </Button>
                             <Button color="green" onClick={() => setOpen(true)}>
                               <Icon name="checkmark" /> Oui
-                    </Button>
+                            </Button>
                           </Modal.Actions>
                         </Modal>
                       </div>

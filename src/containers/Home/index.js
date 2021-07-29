@@ -2,13 +2,14 @@ import { connect } from 'react-redux';
 
 import Home from 'src/components/Home';
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state) => ({
 
   isLogged: state.user.logged,
 
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
+// eslint-disable-next-line no-unused-vars
+const mapDispatchToProps = (_dispatch, ownProps) => ({
 
 });
 

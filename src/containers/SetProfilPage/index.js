@@ -1,3 +1,10 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable camelcase */
+/* eslint-disable linebreak-style */
+/* eslint-disable no-unused-vars */
+/* eslint-disable linebreak-style */
+/* eslint-disable max-len */
+/* eslint-disable linebreak-style */
 import { connect } from 'react-redux';
 
 import SetProfilPage from 'src/components/SetProfilPage';
@@ -19,6 +26,7 @@ const mapStateToProps = (state, ownProps) => ({
   description: state.user.description,
   infos: state.user.infos,
   message: state.user.message,
+  picture: state.user.data.picture,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

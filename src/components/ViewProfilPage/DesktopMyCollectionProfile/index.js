@@ -1,6 +1,11 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable max-len */
+/* eslint-disable linebreak-style */
 /* eslint-disable react/self-closing-comp */
 import React from 'react';
-import { Button, Card, Divider, Grid, Header, Icon, Image } from 'semantic-ui-react';
+import {
+  Button, Card, Grid, Header, Icon, Image,
+} from 'semantic-ui-react';
 
 const DesktopMyCollectionProfile = () => (
   <div className="DesktopMyCollectionProfile">

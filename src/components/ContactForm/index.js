@@ -1,6 +1,17 @@
+/* eslint-disable linebreak-style */
+// eslint-disable-next-line linebreak-style
+/* eslint-disable no-console */
+/* eslint-disable linebreak-style */
+/* eslint-disable jsx-a11y/label-has-associated-control */
+/* eslint-disable linebreak-style */
+/* eslint-disable react/jsx-no-comment-textnodes */
+/* eslint-disable linebreak-style */
+/* eslint-disable react/prop-types */
+/* eslint-disable linebreak-style */
+// eslint-disable-next-line linebreak-style
 import React, { useEffect } from 'react';
 import {
-  Button, Card, Divider, Form, Image, Input,
+  Button, Card, Form, Image,
 } from 'semantic-ui-react';
 
 import './style.scss';
@@ -44,7 +55,9 @@ const ContactForm = ({
           <Card.Content className="contactForm-cardContent">
             <Card.Header text-align="center" className="contactForm-cardHeader">Formulaire de contact</Card.Header>
             <Form className="contactForm-form" onSubmit={handleSubmit}>
+              // eslint-disable-next-line react/jsx-no-comment-textnodes
               <Form.Field>
+                // eslint-disable-next-line jsx-a11y/label-has-associated-control
                 <label className="contactForm-objectLabel">Choisissez un objet:</label>
                 <Form.Field control="select" onChange={handleChangeObject} value={object}>
                   <option value="Ajouter un manga">Ajouter un manga</option>

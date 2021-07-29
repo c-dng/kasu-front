@@ -1,4 +1,10 @@
-import { CHANGE_THEME, CHANGE_OBJECT, CHANGE_CONTENT, SAVE_MESSAGE, ERASE_MESSAGE, SUBMIT_FORM, SET_LOADING_TRUE, SET_LOADING_FALSE, LOGOUT_USER, CHANGE_EMAIL } from '../actions/global';
+/* eslint-disable linebreak-style */
+/* eslint-disable import/named */
+/* eslint-disable linebreak-style */
+/* eslint-disable max-len */
+import {
+  CHANGE_THEME, CHANGE_OBJECT, CHANGE_CONTENT, SAVE_MESSAGE, ERASE_MESSAGE, SUBMIT_FORM, SET_LOADING_TRUE, SET_LOADING_FALSE, LOGOUT_USER, CHANGE_EMAIL,
+} from '../actions/global';
 
 export const initialState = {
   theme: 'theme1',
@@ -6,8 +12,9 @@ export const initialState = {
   email: '',
   object: '',
   content: '',
-  message:'',
+  message: '',
   loading: false,
+  picture: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -20,35 +27,35 @@ const reducer = (state = initialState, action = {}) => {
       };
     case CHANGE_EMAIL:
       return {
-      ...state,
-      email: action.email,
-    };
+        ...state,
+        email: action.email,
+      };
     case CHANGE_OBJECT:
       return {
-      ...state,
-      object: action.object,
-    };
+        ...state,
+        object: action.object,
+      };
     case CHANGE_CONTENT:
       return {
-      ...state,
-      content: action.content,
-    };
+        ...state,
+        content: action.content,
+      };
     case SAVE_MESSAGE:
       return {
-      ...state,
-      message: action.message,
-    };
+        ...state,
+        message: action.message,
+      };
     case ERASE_MESSAGE:
       return {
-      ...state,
-      message: '',
-    };
+        ...state,
+        message: '',
+      };
     case SUBMIT_FORM:
       return {
-      ...state,
-      object: '',
-      content: '',
-    };
+        ...state,
+        object: '',
+        content: '',
+      };
     case SET_LOADING_TRUE:
       return {
         ...state,
@@ -66,7 +73,8 @@ const reducer = (state = initialState, action = {}) => {
         email: '',
         object: '',
         content: '',
-        message:'',
+        message: '',
+        picture: '',
         loading: false,
       };
     default:

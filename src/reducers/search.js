@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import { SAVE_SEARCH_RESULTS, SET_SEARCH } from '../actions/search';
 import { LOGOUT_USER } from '../actions/user';
 

@@ -1,4 +1,9 @@
-import React, { useEffect } from 'react';
+/* eslint-disable linebreak-style */
+// eslint-disable-next-line linebreak-style
+/* eslint-disable react/prop-types */
+/* eslint-disable linebreak-style */
+// eslint-disable-next-line linebreak-style
+import React from 'react';
 import PropTypes from 'prop-types';
 import {
   Button, Grid, Image, Transition,
@@ -10,13 +15,12 @@ import helpWhite from 'src/assets/images/help-white.png';
 import './style.scss';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
-import { useBeforeunload } from 'react-beforeunload';
 import Conversation from './Conversation';
 
 const Conversations = ({
-  isBoxHidden, handleHiddenBoxDisplay, conversations, loadSingleChat, userPseudo, handleConversationsLoad,
+  isBoxHidden, handleHiddenBoxDisplay, conversations, loadSingleChat, userPseudo,
 }) => {
-  const handleHiddenBox = (evt) => {
+  const handleHiddenBox = () => {
     handleHiddenBoxDisplay();
   };
 
@@ -57,6 +61,7 @@ const Conversations = ({
               <Link
                 key={conversation[1].chat.id}
                 onClick={() => {
+                  // eslint-disable-next-line no-console
                   console.log(conversation[1].chat.id);
                   loadSingleChat(conversation[1].chat.id);
                 }}

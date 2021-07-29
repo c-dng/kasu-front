@@ -1,10 +1,14 @@
-import { SUBMIT_FORM, saveMessage } from 'src/actions/global';
+/* eslint-disable linebreak-style */
+/* eslint-disable no-console */
+/* eslint-disable linebreak-style */
+import {
+  SUBMIT_FORM, saveMessage, setLoadingFalse, setLoadingTrue,
+} from 'src/actions/global';
 import api from 'src/api';
-import { setLoadingFalse, setLoadingTrue } from '../actions/global';
 
 const token = localStorage.getItem('token');
 if (token) {
-    api.defaults.headers.common.Authorization = `Bearer ${token}`;
+  api.defaults.headers.common.Authorization = `Bearer ${token}`;
 }
 
 const contactAdminMiddleware = (store) => (next) => (action) => {
@@ -15,16 +19,16 @@ const contactAdminMiddleware = (store) => (next) => (action) => {
       api
         .post('api/v1/user/1/contact-admin', { object, content })
         .then(
-            (response) => {
+          (response) => {
             console.log('Post and set save message succeeded', response.data);
             store.dispatch(saveMessage(response.data));
             store.dispatch(setLoadingFalse());
-            },
+          },
         )
         .catch((error) => {
           store.dispatch(setLoadingFalse());
-          console.log('Post and set save message failed', error)
-        });     
+          console.log('Post and set save message failed', error);
+        });
       next(action);
       break;
     }

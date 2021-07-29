@@ -5,7 +5,7 @@ import {
   changePseudo, changePassword, loginUser, logoutUser,
 } from '../../actions/user';
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state) => ({
 
   pseudo: state.user.pseudo,
   password: state.user.password,
@@ -13,7 +13,7 @@ const mapStateToProps = (state, ownProps) => ({
 
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
+const mapDispatchToProps = (dispatch) => ({
   changePseudo: function (pseudo) {
     dispatch(changePseudo(pseudo));
   },

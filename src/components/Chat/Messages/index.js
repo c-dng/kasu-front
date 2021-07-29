@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 
@@ -18,9 +19,13 @@ const Messages = ({ messages }) => {
     <div className="messages">
       {
         messages.map(
-          (message) => <Message key={message.id}
-            messageUserId={message.author.id}
-            singleMessage={message.content} />,
+          (message) => (
+            <Message
+              key={message.id}
+              messageUserId={message.author.id}
+              singleMessage={message.content}
+            />
+          ),
         )
 
       }
