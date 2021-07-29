@@ -84,6 +84,7 @@ div.mobileSetProfil-divDeleteMyAccount {
 }
 
 button.ui.negative.button.mobileSetProfil-deleteMyAccount {
+  margin-top: 1em;
   border-radius: 1em;
   border: 1px solid white;
 }
@@ -198,6 +199,10 @@ div.desktopIdCard-errorMessage {
 
 .theme1 {
 
+  div.desktopIdCard-errorMessage {
+    color: vars.$primaryFontColor_theme1;
+  }
+
   .setProfilPage-mainWrapper {
     border: 1px solid vars.$primaryBorderColor_theme1;
   }
@@ -253,6 +258,10 @@ div.desktopIdCard-errorMessage {
 
 .theme2 {
 
+  div.desktopIdCard-errorMessage {
+    color: vars.$primaryFontColor_theme2;
+  }
+
   h1.setProfilPage-title.setProfilPage-title.setProfilPage-title {
     background-color: white;
     color: vars.$secondaryFontColor_theme2;
@@ -261,6 +270,7 @@ div.desktopIdCard-errorMessage {
   h3.ui.header.ui.header.ui.header.ui.header    {
     color: vars.$primaryFontColor_theme2;
   }
+
 
   div.ui.top.left.attached.label.desktopIdCard-leftPartWrapperLogin {
     background-color: vars.$primaryColor_theme2;

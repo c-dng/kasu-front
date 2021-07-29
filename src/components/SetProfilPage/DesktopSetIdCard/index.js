@@ -75,6 +75,7 @@ const DesktopSetIdCard = ({
     changeHolidayMode(checked);
   }
   
+  //Check password with validator dependencie
   const validate = (value) => {
   
     if (validator.isStrongPassword(value, {

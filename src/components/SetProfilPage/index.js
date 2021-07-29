@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import {
   Image, TextArea, Button, Form, Label, Checkbox, Modal, Icon, Header
 } from 'semantic-ui-react';
+import validator from 'validator'; //checking of password
 import './style.scss';
 import alternativeBanner from 'src/assets/images/alternativeBanner.png';
 import MediaQuery from 'react-responsive';
@@ -37,6 +38,7 @@ const SetProfilPage = ({
 
   const [open, setOpen] = React.useState(false);//Modal to delete account
   const [avatar, setAvatar] = React.useState(false);//Modal to choose an avatar
+  const [errorMessage, setErrorMessage] = React.useState('')//display a message received from API
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -47,6 +49,7 @@ const SetProfilPage = ({
     changeEmail(evt.target.value);
   };
   const handleChangePassword = (evt) => {
+    validate(evt.target.value);//checking password
     changePassword(evt.target.value);
   };
   const handleChangePseudo = (evt) => {
@@ -73,7 +76,22 @@ const SetProfilPage = ({
     changeHolidayMode(checked);
   }
 
-  console.log(holiday_mode);
+  //Check password with validator dependencie
+  const validate = (value) => {
+  
+    if (validator.isStrongPassword(value, {
+      minLength: 6, minLowercase: 1,
+      minUppercase: 1, minNumbers: 1, minSymbols: 1
+    })) {
+      setErrorMessage('');
+      console.log(errorMessage);
+    } else {
+      setErrorMessage('Veuillez entrer un mot de passe valide: min-6 caractères, une majuscule, une minuscule, un chiffre et un des caractères suivants: @$%_*|=-');
+      console.log(errorMessage);
+    }
+  }
+
+  //console.log(holiday_mode);
 
   return (
     <div className="setProfilPage">
@@ -235,6 +253,10 @@ const SetProfilPage = ({
               </Form.Group>
             </Form>
 
+            <div className="desktopIdCard-errorMessage">
+              {errorMessage}
+            </div>
+
             <div className="mobileSetProfil-divDeleteMyAccount">
                 <Modal
                   icon='user delete'
@@ -263,7 +285,6 @@ const SetProfilPage = ({
             </div>
             </div>
         </MediaQuery>
-
       </div>
     </div>
   );
