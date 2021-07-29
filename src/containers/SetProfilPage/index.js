@@ -18,6 +18,7 @@ const mapStateToProps = (state, ownProps) => ({
     description: state.user.description,
     infos: state.user.infos,
     message: state.user.message,
+    picture: state.user.picture
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

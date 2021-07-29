@@ -13,7 +13,7 @@ import logoutlogo from 'src/assets/images/logoutlogo.png';
 import loginlogo from 'src/assets/images/loginlogo.png';
 
 const Nav = ({
-  changeWebsiteTheme, navIconsColor, isLogged, disconnectUser, handleConversationsLoad,
+  changeWebsiteTheme, navIconsColor, isLogged, disconnectUser, handleConversationsLoad, picture
 }) => {
   let logoToDisplay;
   let chatlogoToDisplay;
@@ -63,7 +63,7 @@ const Nav = ({
           </Menu.Item>
           {isLogged && (
             <Menu.Item>
-              <Image circular className="navbuttons" id="temporary-avatar" src="https://react.semantic-ui.com/images/avatar/large/steve.jpg" alt="avatar-logo" size="mini" />
+              <Image circular className="navbuttons" id="temporary-avatar" src={`https://api.multiavatar.com/${picture}.png`} alt="avatar-logo" size="mini" />
               <Dropdown floating icon="dropdown">
                 <Dropdown.Menu>
                   <Dropdown.Header>Gestion de profil</Dropdown.Header>

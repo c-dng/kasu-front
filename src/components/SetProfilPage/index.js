@@ -19,6 +19,7 @@ const SetProfilPage = ({
   lastName,
   holiday_mode,
   description,
+  picture,
   message,
   changeEmail,
   changePassword,
@@ -125,6 +126,7 @@ const SetProfilPage = ({
             lastName={lastName}
             holiday_mode={holiday_mode}
             description={description}
+            picture={picture}
             changeEmail={changeEmail}
             changePassword={changePassword}
             changePseudo={changePseudo}
@@ -147,11 +149,11 @@ const SetProfilPage = ({
             <div className="mobileSetProfil-ButtonAddAndImage">
               <Image
                 className="mobileSetProfil-image"
-                src="https://react.semantic-ui.com/images/avatar/large/steve.jpg"
+                src={`https://api.multiavatar.com/${picture}.png`}
                 size="tiny"
                 circular
               />
-              <Modal
+              {/* <Modal
                 onClose={() => setAvatar(false)}
                 onOpen={() => setAvatar(true)}
                 open={avatar}
@@ -179,7 +181,7 @@ const SetProfilPage = ({
                     Ok
                   </Button>
                 </Modal.Actions>
-              </Modal>
+              </Modal> */}
             </div>
 
             <h3 className="mobileSetProfil-h3">{pseudo}</h3>
@@ -202,7 +204,6 @@ const SetProfilPage = ({
               />
 
               <Form.Group widths='equal'>
-
                 <Form.Input
                   className="mobileSetProfil-formInputName"
                   icon="user"
@@ -274,7 +275,6 @@ const SetProfilPage = ({
                   value={email}
                   onChange={handleChangeEmail}
                 />
-
               </Form.Group>
             
 

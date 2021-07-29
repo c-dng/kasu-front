@@ -15,7 +15,7 @@ const DesktopSetIdCard = ({
   lastName,
   holiday_mode,
   description,
-  message,
+  picture,
   changeEmail,
   changePassword,
   changePseudo,
@@ -101,9 +101,9 @@ const DesktopSetIdCard = ({
         <Image className="desktopIdCard-leftPartWrapperImage"
           centered
           size="medium"
-          src="https://react.semantic-ui.com/images/avatar/large/steve.jpg"
+          src={`https://api.multiavatar.com/${picture}.png`}
         />
-        <Modal
+        {/* <Modal
           onClose={() => setAvatar(false)}
           onOpen={() => setAvatar(true)}
           open={avatar}
@@ -131,7 +131,7 @@ const DesktopSetIdCard = ({
               Ok
               </Button>
           </Modal.Actions>
-        </Modal>
+        </Modal> */}
       </div>
 
       <div className="desktopIdCard-rightPartWrapper">

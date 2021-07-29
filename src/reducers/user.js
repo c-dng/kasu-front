@@ -16,6 +16,7 @@ export const initialState = {
   conversations: {},
   infos: {},
   message:'',
+  picture:''
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -101,6 +102,7 @@ const reducer = (state = initialState, action = {}) => {
         lastName: action.infos.lastname,
         holiday_mode: action.infos.holiday_mode,
         description: action.infos.description,
+        picture: action.infos.picture,
       };
     case UPDATE_USER:
       return {

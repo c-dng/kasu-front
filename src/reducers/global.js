@@ -8,6 +8,7 @@ export const initialState = {
   content: '',
   message:'',
   loading: false,
+  picture:'',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -67,6 +68,7 @@ const reducer = (state = initialState, action = {}) => {
         object: '',
         content: '',
         message:'',
+        picture:'',
         loading: false,
       };
     default:
