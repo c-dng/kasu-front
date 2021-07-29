@@ -36,14 +36,12 @@ const SetProfilPage = ({
   changeDescription,
   handleUpdate,
   displayUserInfos,
-  onSetProfilPageUnmount,
 }) => {
   useEffect(() => {
     displayUserInfos();
   }, []);
 
   const [open, setOpen] = React.useState(false);// Modal to delete account
-  const [avatar, setAvatar] = React.useState(false);// Modal to choose an avatar
   const [errorMessage, setErrorMessage] = React.useState('');// display a message received from API
   const validate = (value) => {
     if (validator.isStrongPassword(value, {
@@ -100,16 +98,16 @@ const SetProfilPage = ({
     const { checked } = data;
     changeHolidayMode(checked);
   };
-  const PasswordChecking = (value) => {
-    if ({ password } != { confirmPassword }) {
-      setErrorMessage('');
-      console.log(setErrorMessagePassword);
-    }
-    else {
-      setErrorMessage('Les mots de passe ne correspondent pas');
-      console.log(setErrorMessagePassword);
-    }
-  };
+  // const PasswordChecking = (value) => {
+  //   if ({ password } != { confirmPassword }) {
+  //     setErrorMessage('');
+  //     console.log(setErrorMessagePassword);
+  //   }
+  //   else {
+  //     setErrorMessage('Les mots de passe ne correspondent pas');
+  //     console.log(setErrorMessagePassword);
+  //   }
+  // };
 
   return (
     <>
@@ -248,14 +246,14 @@ const SetProfilPage = ({
                           onChange={handleChangePassword}
                         />
 
-                        <Form.Input
+                        {/* <Form.Input
                           input="password"
                           id="confirmPassword"
                           icon="lock"
                           iconPosition="left"
                           placeholder="Mot de passe"
                           fluid
-                        />
+                        /> */}
 
                         <div className="mobileSetProfil-messageCheckPassword">
                           {/* {errorMessagePassword} */}

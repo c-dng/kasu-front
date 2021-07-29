@@ -4,6 +4,7 @@ import React from 'react';
 import {
   Button, Card, Form, Image,
 } from 'semantic-ui-react';
+import validator from 'validator'; // checking of password
 import PropTypes from 'prop-types';
 import './style.scss';
 import alternativeBanner from 'src/assets/images/alternativeBanner.png';
@@ -41,6 +42,7 @@ const Register = ({
   };
 
   const handleChangePassword = (evt) => {
+    validate(evt.target.value);// checking password
     changePassword(evt.target.value);
   };
 
@@ -65,6 +67,24 @@ const Register = ({
     handleRegistering();
   };
 
+  const [errorMessage, setErrorMessage] = React.useState('');// display a message received from API
+  const validate = (value) => {
+    if (validator.isStrongPassword(value, {
+      minLength: 6,
+      minLowercase: 1,
+      minUppercase: 1,
+      minNumbers: 1,
+      minSymbols: 1,
+    })) {
+      setErrorMessage('');
+      console.log(errorMessage);
+    }
+    else {
+      setErrorMessage('Veuillez entrer un mot de passe valide: min-6 caractères, une majuscule, une minuscule, un chiffre et un des caractères suivants: @$%_*|=-');
+      console.log(errorMessage);
+    }
+  };
+
   return (
     <div className="registerForm">
       <Image className="registerForm-banner" src={alternativeBanner} />
@@ -83,8 +103,9 @@ const Register = ({
               </div>
               <div className="registerForm-field">
                 <label className="registerForm-fieldLabel">Votre mot de passe</label>
-                <Form.Input onChange={handleChangePassword} value={password} className="registerForm-fieldInput" />
+                <Form.Input onChange={handleChangePassword} type='password' value={password} className="registerForm-fieldInput" />
               </div>
+              <span className="registerForm-errorMessagePassword">{errorMessage}</span>
               <div className="registerForm-field">
                 <label className="registerForm-fieldLabel">Votre prénom</label>
                 <Form.Input onChange={handleChangeFirstName} value={firstName} className="registerForm-fieldInput" />
@@ -113,6 +134,7 @@ const Register = ({
             </Form>
           </Card.Content>
         </Card>
+        
         <AlreadyAccountBox />
       </div>
     </div>
