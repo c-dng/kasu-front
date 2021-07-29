@@ -1,8 +1,9 @@
+import { Redirect } from 'react-router-dom';
 import { SEARCH_BY_ZIPCODE, saveSearchResult } from 'src/actions/search';
 import api from 'src/api';
-import { setLoadingFalse, setLoadingTrue } from '../actions/global';
+import { redirectTo, setLoadingFalse, setLoadingTrue } from '../actions/global';
 import { saveMangaSearch, SEARCH_BY_MANGA_NAME } from '../actions/search';
-
+import React from 'react';
 const token = localStorage.getItem('token');
 if (token) {
   api.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -44,6 +45,8 @@ const contactAdminMiddleware = (store) => (next) => (action) => {
       });
       console.log('filter: ', filtered);
       store.dispatch(saveMangaSearch(filtered));
+      next(action);
+      break;
     }
     default:
       next(action);
