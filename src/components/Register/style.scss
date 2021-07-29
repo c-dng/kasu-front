@@ -15,6 +15,11 @@ div.registerForm{
   margin: 0;
 }
 
+span.registerForm-errorMessagePassword {
+  margin-bottom: 1em;
+  text-align: center;
+  font-weight: bolder;}
+
 .registerForm-globalContentWrapper.registerForm-globalContentWrapper {
   width: 80%;
   display: flex;
@@ -121,6 +126,10 @@ form.ui.form.registerForm-form.registerForm-form{
     color :vars.$primaryFontColor_theme1;
   }
 
+  span.registerForm-errorMessagePassword {
+    color :red;
+  }
+
   div.header.registerForm-cardHeader.registerForm-cardHeader.registerForm-cardHeader {
     color: vars.$secondaryFontColor_theme1;
     background-color: vars.$secondaryColor_theme1;
@@ -156,6 +165,10 @@ form.ui.form.registerForm-form.registerForm-form{
 
   .registerForm-fieldLabel.registerForm-fieldLabel.registerForm-fieldLabel {
     color: vars.$primaryFontColor_theme2;
+  }
+
+  span.registerForm-errorMessagePassword {
+    color :red;
   }
 
 }
