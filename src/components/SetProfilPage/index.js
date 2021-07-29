@@ -1,20 +1,3 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable no-console */
-/* eslint-disable linebreak-style */
-/* eslint-disable no-undef */
-/* eslint-disable linebreak-style */
-// eslint-disable-next-line linebreak-style
-/* eslint-disable eqeqeq */
-/* eslint-disable linebreak-style */
-/* eslint-disable no-constant-condition */
-/* eslint-disable linebreak-style */
-/* eslint-disable no-unused-vars */
-/* eslint-disable linebreak-style */
-/* eslint-disable camelcase */
-/* eslint-disable linebreak-style */
-// eslint-disable-next-line linebreak-style
-/* eslint-disable react/prop-types */
-/* eslint-disable linebreak-style */
 import React, { useEffect } from 'react';
 // eslint-disable-next-line linebreak-style
 import {

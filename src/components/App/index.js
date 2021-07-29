@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 // == Import npm
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
@@ -11,7 +10,7 @@ import Register from 'src/containers/Register';
 import ContactForm from 'src/containers/ContactForm';
 import Conversations from 'src/containers/Conversations';
 import SetProfilPage from 'src/containers/SetProfilPage';
-import ManageMyCollection from 'src/components/ManageMyCollection';
+import ManageMyCollection from 'src/containers/ManageMyCollection';
 import ViewProfilPage from 'src/containers/ViewProfilPage';
 import Team from 'src/components/Team';
 import LegalNotice from 'src/components/LegalNotice';
@@ -21,10 +20,11 @@ import Chat from 'src/containers/Chat';
 import './style.scss';
 import { Route, Switch } from 'react-router-dom';
 import { useBeforeunload } from 'react-beforeunload';
+import Loading from './Loading';
 // == Composant
 const App = ({
-  // eslint-disable-next-line react/prop-types
-  theme, onPageLoad, onRefreshOrTabClosing, isLogged, chatId,
+
+  theme, onPageLoad, onRefreshOrTabClosing, isLogged, chatId, loading, mangaDatabase, loadMangaDatabase,
 }) => {
   const handleOnClose = () => {
     if (isLogged) {
@@ -36,17 +36,24 @@ const App = ({
     handleOnClose();
   });
 
+  const token = localStorage.getItem('token');
+
   useEffect(() => {
-    // eslint-disable-next-line no-console
-    console.log('App useEffect', { isLogged, chatId });
+    console.log('App useEffect', {
+      isLogged, chatId, mangaDatabase, token,
+    });
     if (isLogged && chatId) {
       onPageLoad(chatId);
     }
-  }, [chatId, isLogged]);
+    if (!mangaDatabase && isLogged && token) {
+      console.log('mangaDatabase useEffect test', { mangaDatabase, token });
+      loadMangaDatabase();
+    }
+  }, [chatId, isLogged, mangaDatabase, token]);
 
-  // if (loading) {
-  //   return <Loading />;
-  // }
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <div className={`app ${theme}`}>

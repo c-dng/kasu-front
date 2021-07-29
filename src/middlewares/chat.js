@@ -40,8 +40,6 @@ const chatMiddleware = (store) => (next) => (action) => {
     }
     case SEND_MESSAGE: {
       const newMessage = action.content;
-      // const token = localStorage.getItem('token');
-      // api.defaults.headers.common.Authorization = `Bearer ${token}`;
       const messageToSend = {
         message: newMessage,
         chatId: action.chatId,

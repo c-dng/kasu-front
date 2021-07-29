@@ -4,23 +4,20 @@ import React from 'react';
 import {
   Header, Divider, Icon, Image, Dropdown, Button, Card,
 } from 'semantic-ui-react';
-import SearchBar from 'src/containers/SearchBar';
 import './style.scss';
 import alternativeBanner from 'src/assets/images/alternativeBanner.png';
+import AddMangaSearchBar from './AddMangaSearchBar';
+import MangaCollectionResult from './MangaCollectionResult';
 
-const options = [
-  { key: 't1', value: 'T1', text: '1' },
-  { key: 't2', value: 'T2', text: '2' },
-  { key: 't3', value: 'T3', text: '3' },
-  { key: 't4', value: 'T4', text: '4' },
-  { key: 't5', value: 'T5', text: '5' },
-  { key: 't6', value: 'T6', text: '6' },
-  { key: 't7', value: 'T7', text: '7' },
-  { key: 't8', value: 'T8', text: '8' },
-  { key: 't9', value: 'T9', text: '9' },
-];
-
-const ManageMyCollection = () => (
+const ManageMyCollection = ({
+  setMangaSearch,
+  manageSubmit,
+  loading,
+  mangaSearch,
+  mangaSearchData,
+  mangaFilteredDatabase,
+  addToMyCollection,
+}) => (
   <div className="manageMyCollection">
     <Image className="manageMyCollection-banner" src={alternativeBanner} />
     <div className="manageMyCollection-mainCard">
@@ -30,90 +27,26 @@ const ManageMyCollection = () => (
           <Card.Header className="manageMyCollection-mainCardHeader">Gestion des collections</Card.Header>
           <h3 className="manageMyCollection-subHeader">Cherche un manga à ajouter à ta collection dans notre base de donnée !</h3>
           <div className="manageMyCollection-searchBarWrapper">
-            <SearchBar className="manageMyCollection-searchBar" />
+            <AddMangaSearchBar setMangaSearch={setMangaSearch} manageSubmit={manageSubmit} loading={loading} mangaSearch={mangaSearch} className="manageMyCollection-searchBar" />
           </div>
 
           <Divider className="manageMyCollection-divider" />
           <h4 className="manageMyCollection-subtitle">Résultat(s) trouvé(s) :</h4>
           <Divider className="manageMyCollection-divider" />
-
+          {console.log('checking manga filtered', mangaFilteredDatabase)}
           <div className="manageMyCollection-wrapperDesktopVersion">
-
-            <div className="manageMyCollection-cardDesktopVersion">
-              <h3 className="manageMyCollection-titleNameManga">Seven Deadly Sins</h3>
-              <div className="manageMyCollection-mangaImageWrapper">
-                <Image
-                  className="manageMyCollection-mangaImage"
-                  src="https://images-na.ssl-images-amazon.com/images/I/91GSy4frSdL.jpg"
-                  size="small"
-                />
-              </div>
-              <div className="manageMyCollection-selectAndAdd">
-                <Dropdown className="manageMyCollection-dropdownSelectAndAdd" placeholder="Tome(s) à ajouter" size="5" fluid multiple selection options={options} />
-                <div className="manageMyCollection-addToMyCollection">
-                  <Button className="manageMyCollection-addToMyCollectionButton">Ajouter à ma collection</Button>
-                </div>
-              </div>
-            </div>
-
-            <Divider className="manageMyCollection-divider-MobileVersion" />
-
-            <div className="manageMyCollection-cardDesktopVersion">
-              <h3 className="manageMyCollection-titleNameManga">Seven Deadly Sins: Reloaded, Origins</h3>
-              <div className="manageMyCollection-mangaImageWrapper">
-                <Image
-                  className="manageMyCollection-mangaImage"
-                  src="https://images-na.ssl-images-amazon.com/images/I/91GSy4frSdL.jpg"
-                  size="small"
-                />
-              </div>
-              <div className="manageMyCollection-selectAndAdd">
-                <Dropdown className="manageMyCollection-dropdownSelectAndAdd" placeholder="Tome(s) à ajouter" size="5" fluid multiple selection options={options} />
-                <div className="manageMyCollection-addToMyCollection">
-                  <Button className="manageMyCollection-addToMyCollectionButton">Ajouter à ma collection</Button>
-                </div>
-              </div>
-            </div>
-
-            <Divider className="manageMyCollection-divider-MobileVersion" />
-
-            <div className="manageMyCollection-cardDesktopVersion">
-              <h3 className="manageMyCollection-titleNameManga">Seven Deadly Sins: Reloaded, Origins</h3>
-              <div className="manageMyCollection-mangaImageWrapper">
-                <Image
-                  className="manageMyCollection-mangaImage"
-                  src="https://images-na.ssl-images-amazon.com/images/I/91GSy4frSdL.jpg"
-                  size="small"
-                />
-              </div>
-              <div className="manageMyCollection-selectAndAdd">
-                <Dropdown className="manageMyCollection-dropdownSelectAndAdd" placeholder="Tome(s) à ajouter" size="5" fluid multiple selection options={options} />
-                <div className="manageMyCollection-addToMyCollection">
-                  <Button className="manageMyCollection-addToMyCollectionButton">Ajouter à ma collection</Button>
-                </div>
-              </div>
-            </div>
-
-            <Divider className="manageMyCollection-divider-MobileVersion" />
-            <div className="manageMyCollection-cardDesktopVersion">
-              <h3 className="manageMyCollection-titleNameManga">Seven Deadly Sins: Reloaded, Origins</h3>
-              <div className="manageMyCollection-mangaImageWrapper">
-                <Image
-                  className="manageMyCollection-mangaImage"
-                  src="https://images-na.ssl-images-amazon.com/images/I/91GSy4frSdL.jpg"
-                  size="small"
-                />
-              </div>
-              <div className="manageMyCollection-selectAndAdd">
-                <Dropdown className="manageMyCollection-dropdownSelectAndAdd" placeholder="Tome(s) à ajouter" size="5" fluid multiple selection options={options} />
-                <div className="manageMyCollection-addToMyCollection">
-                  <Button className="manageMyCollection-addToMyCollectionButton">Ajouter à ma collection</Button>
-                </div>
-              </div>
-            </div>
+            {mangaFilteredDatabase.map((result) => (
+              <MangaCollectionResult
+                key={result.id}
+                mangaName={result.title}
+                mangaPicture={result.picture}
+                mangaVolumes={result.volumes}
+                addToMyCollection={addToMyCollection}
+              />
+            ))}
           </div>
 
-          <Divider className="manageMyCollection-divider-MobileVersion" />
+
         </div>
         <div className="manageMyCollection-secondBlocDesktopVersion">
           <div className="manageMyCollection-myCollection">
