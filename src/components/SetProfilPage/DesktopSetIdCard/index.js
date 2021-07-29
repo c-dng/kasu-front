@@ -28,12 +28,12 @@ const DesktopSetIdCard = ({
 
   useEffect(() => (
     displayUserInfos()
-    ),
+  ),
     []);
 
-    const [open, setOpen] = React.useState(false);//Modal to delete account
-    const [avatar, setAvatar] = React.useState(false);//Modal to choose an avatar
-    const [errorMessage, setErrorMessage] = React.useState('')//display a message received from API
+  const [open, setOpen] = React.useState(false);//Modal to delete account
+  const [avatar, setAvatar] = React.useState(false);//Modal to choose an avatar
+  const [errorMessage, setErrorMessage] = React.useState('')//display a message received from API
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -74,9 +74,9 @@ const DesktopSetIdCard = ({
     let checked = data.checked;
     changeHolidayMode(checked);
   }
-  
+
   const validate = (value) => {
-  
+
     if (validator.isStrongPassword(value, {
       minLength: 6, minLowercase: 1,
       minUppercase: 1, minNumbers: 1, minSymbols: 1
@@ -90,43 +90,43 @@ const DesktopSetIdCard = ({
   }
 
   return (
-    
+
     <div className="desktopIdCard-MainWrapper">
       <div className="desktopIdCard-leftPartWrapper">
-          <Image className="desktopIdCard-leftPartWrapperImage"
-              centered
-              size="medium"
-              src="https://react.semantic-ui.com/images/avatar/large/steve.jpg"
-            />
-          <Modal
-            onClose={() => setAvatar(false)}
-            onOpen={() => setAvatar(true)}
-            open={avatar}
-            trigger={<Button size="massive" className="desktopSetProfil-addButton" circular icon='photo' />}
-            >
-            <Modal.Header>Upload image</Modal.Header>
-            <Modal.Content image>
-              <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
-              <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
-              <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
-              <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
-              <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
-              <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
-              <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
-              <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
-              <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
-              <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
-              <Modal.Description>
-                <p>Veuillez choisir un avatar</p>
-              </Modal.Description>
-            </Modal.Content>
-            <Modal.Actions>
-              <Button onClick={() => setAvatar(false)}>Cancel</Button>
-              <Button onClick={() => setAvatar(false)} positive>
-                Ok
+        <Image className="desktopIdCard-leftPartWrapperImage"
+          centered
+          size="medium"
+          src="https://react.semantic-ui.com/images/avatar/large/steve.jpg"
+        />
+        <Modal
+          onClose={() => setAvatar(false)}
+          onOpen={() => setAvatar(true)}
+          open={avatar}
+          trigger={<Button size="massive" className="desktopSetProfil-addButton" circular icon='photo' />}
+        >
+          <Modal.Header>Upload image</Modal.Header>
+          <Modal.Content image>
+            <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
+            <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
+            <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
+            <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
+            <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
+            <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
+            <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
+            <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
+            <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
+            <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
+            <Modal.Description>
+              <p>Veuillez choisir un avatar</p>
+            </Modal.Description>
+          </Modal.Content>
+          <Modal.Actions>
+            <Button onClick={() => setAvatar(false)}>Cancel</Button>
+            <Button onClick={() => setAvatar(false)} positive>
+              Ok
               </Button>
-            </Modal.Actions>
-          </Modal>
+          </Modal.Actions>
+        </Modal>
       </div>
 
       <div className="desktopIdCard-rightPartWrapper">
@@ -136,11 +136,11 @@ const DesktopSetIdCard = ({
           <Form.Input className="desktopIdCard-holidayWrapper">
             <Label className="setProfilPage-fourthPartHolidayModeLabel">Mode vacances:</Label>
             <Checkbox toggle
-            onClick={(evt, data)=>onChangeCheckbox(evt, data)}
+              onClick={(evt, data) => onChangeCheckbox(evt, data)}
             />
           </Form.Input>
           <Label className="desktopIdCard-bioLabel">
-                <p className="desktopIdCard-bioP">Description</p>
+            <p className="desktopIdCard-bioP">Description</p>
           </Label>
           <TextArea className="desktopIdCard-memberDescription" placeholder="Parle nous un peu de toi..." />
 
@@ -165,24 +165,24 @@ const DesktopSetIdCard = ({
               onChange={handleChangeLastName}
             />
           </Form.Group>
-            <Form.Input
-              icon='map marker alternate'
-              iconPosition='left'
-              placeholder='Adresse'
-              value={address}
-              onChange={handleChangeAddress}
-            />
-            <Form.Input
-              placeholder='Code Postal'
-              value={zipCode}
-              type='number'
-              onChange={handleChangeZipCode}
-            />      
-            <Form.Input
-              placeholder='Ville'
-              value={city}
-              onChange={handleChangeCity}
-            />
+          <Form.Input
+            icon='map marker alternate'
+            iconPosition='left'
+            placeholder='Adresse'
+            value={address}
+            onChange={handleChangeAddress}
+          />
+          <Form.Input
+            placeholder='Code Postal'
+            value={zipCode}
+            type='number'
+            onChange={handleChangeZipCode}
+          />
+          <Form.Input
+            placeholder='Ville'
+            value={city}
+            onChange={handleChangeCity}
+          />
           <Form.Group widths='equal'>
             <Form.Input className="desktopIdCard-formInpuPassword"
               input='password'
@@ -192,7 +192,7 @@ const DesktopSetIdCard = ({
               value={password}
               onChange={handleChangePassword}
             />
-            <Form.Input 
+            <Form.Input
               className="desktopIdCard-formInputEmail"
               icon='mail'
               type='email'
@@ -209,32 +209,32 @@ const DesktopSetIdCard = ({
           <div className="desktopIdCard-Bottom3Buttons">
             <ButtonGroup widths='3' >
               <Button icon='erase' color='black' />
-                <Modal
-                  icon='user delete'
-                  open={open}
-                  trigger={<Button className="desktopIdCard-memberDelete" color='red'><Icon name='user delete'/></Button>}
-                  onClose={() => setOpen(false)}
-                  onOpen={() => setOpen(true)}
-                  >      
-                  <Header icon='delete' content='Confirmer votre action' />
-                  <Modal.Content>
-                    <p>Voulez-vous vraiment supprimer votre compte ?</p>
-                  </Modal.Content>
-                  <Modal.Actions>
-                    <Button color='red' onClick={() => setOpen(false)}>
-                      <Icon name='remove' /> Non
+              <Modal
+                icon='user delete'
+                open={open}
+                trigger={<Button className="desktopIdCard-memberDelete" color='red'><Icon name='user delete' /></Button>}
+                onClose={() => setOpen(false)}
+                onOpen={() => setOpen(true)}
+              >
+                <Header icon='delete' content='Confirmer votre action' />
+                <Modal.Content>
+                  <p>Voulez-vous vraiment supprimer votre compte ?</p>
+                </Modal.Content>
+                <Modal.Actions>
+                  <Button color='red' onClick={() => setOpen(false)}>
+                    <Icon name='remove' /> Non
                     </Button>
-                    <Button color='green' onClick={() => setOpen(true)}>
-                      <Icon name='checkmark' /> Oui
+                  <Button color='green' onClick={() => setOpen(true)}>
+                    <Icon name='checkmark' /> Oui
                     </Button>
-                  </Modal.Actions>
-                </Modal>
-                <Button type="submit" icon='save' color='green' />
-              </ButtonGroup>
+                </Modal.Actions>
+              </Modal>
+              <Button type="submit" icon='save' color='green' />
+            </ButtonGroup>
           </div>
         </Form>
       </div>
-    </div>        
+    </div>
   );
 }
 

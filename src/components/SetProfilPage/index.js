@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import {
-  Image, TextArea, Button, Form, Label, Checkbox, Modal, Icon, Header
+  Image, TextArea, Button, Form, Label, Checkbox, Modal, Icon, Header,
 } from 'semantic-ui-react';
 import './style.scss';
 import alternativeBanner from 'src/assets/images/alternativeBanner.png';
@@ -27,16 +27,14 @@ const SetProfilPage = ({
   changeLastName,
   changeHolidayMode,
   handleUpdate,
-  displayUserInfos
+  displayUserInfos,
 }) => {
-  
   useEffect(() => (
     displayUserInfos()
-    ),
-    []);
+  ), []);
 
-  const [open, setOpen] = React.useState(false);//Modal to delete account
-  const [avatar, setAvatar] = React.useState(false);//Modal to choose an avatar
+  const [open, setOpen] = React.useState(false);// Modal to delete account
+  const [avatar, setAvatar] = React.useState(false);// Modal to choose an avatar
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -69,9 +67,9 @@ const SetProfilPage = ({
   };
   // toggle function
   const onChangeCheckbox = (evt, data) => {
-    let checked = data.checked;
+    const { checked } = data;
     changeHolidayMode(checked);
-  }
+  };
 
   console.log(holiday_mode);
 
@@ -81,9 +79,9 @@ const SetProfilPage = ({
       <Image className="registerForm-banner" src={alternativeBanner} />
       <div className="setProfilPage-mainWrapper">
 
-          <h1 className="setProfilPage-title">Gérer mon profil</h1>
-          <MediaQuery minWidth={1224}>
-            <DesktopSetIdCard
+        <h1 className="setProfilPage-title">Gérer mon profil</h1>
+        <MediaQuery minWidth={1224}>
+          <DesktopSetIdCard
             email={email}
             password={password}
             pseudo={pseudo}
@@ -105,10 +103,10 @@ const SetProfilPage = ({
             handleUpdate={handleUpdate}
             displayUserInfos={displayUserInfos}
             onChangeCheckbox={onChangeCheckbox}
-            />
-          </MediaQuery>
+          />
+        </MediaQuery>
 
-      <MediaQuery maxWidth={1223}>
+        <MediaQuery maxWidth={1223}>
           <div className="mobileSetProfilPage">
 
             <div className="mobileSetProfil-ButtonAddAndImage">
@@ -122,20 +120,20 @@ const SetProfilPage = ({
                 onClose={() => setAvatar(false)}
                 onOpen={() => setAvatar(true)}
                 open={avatar}
-                trigger={<Button className="mobileSetProfil-addButton" circular icon='photo' />}
-                >
+                trigger={<Button className="mobileSetProfil-addButton" circular icon="photo" />}
+              >
                 <Modal.Header>Upload image</Modal.Header>
                 <Modal.Content image>
-                  <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
-                  <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
-                  <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
-                  <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
-                  <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
-                  <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
-                  <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
-                  <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
-                  <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
-                  <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
+                  <Button><Image circular size="mini" src="/images/wireframe/image-square.png" wrapped /></Button>
+                  <Button><Image circular size="mini" src="/images/wireframe/image-square.png" wrapped /></Button>
+                  <Button><Image circular size="mini" src="/images/wireframe/image-square.png" wrapped /></Button>
+                  <Button><Image circular size="mini" src="/images/wireframe/image-square.png" wrapped /></Button>
+                  <Button><Image circular size="mini" src="/images/wireframe/image-square.png" wrapped /></Button>
+                  <Button><Image circular size="mini" src="/images/wireframe/image-square.png" wrapped /></Button>
+                  <Button><Image circular size="mini" src="/images/wireframe/image-square.png" wrapped /></Button>
+                  <Button><Image circular size="mini" src="/images/wireframe/image-square.png" wrapped /></Button>
+                  <Button><Image circular size="mini" src="/images/wireframe/image-square.png" wrapped /></Button>
+                  <Button><Image circular size="mini" src="/images/wireframe/image-square.png" wrapped /></Button>
                   <Modal.Description>
                     <p>Veuillez choisir un avatar</p>
                   </Modal.Description>
@@ -151,63 +149,67 @@ const SetProfilPage = ({
 
             <h3 className="mobileSetProfil-h3">{pseudo}</h3>
 
-            <Form  onSubmit={handleSubmit}>
+            <Form onSubmit={handleSubmit}>
 
               <Form.Input className="mobileIdCard-holidayWrapper">
                 <Label className="setProfilPage-fourthPartHolidayModeLabel">Mode vacances:</Label>
-                <Checkbox toggle
-                onClick={(evt, data)=>onChangeCheckbox(evt, data)}
+                <Checkbox
+                  toggle
+                  onClick={(evt, data) => onChangeCheckbox(evt, data)}
                 />
               </Form.Input>
 
-              <TextArea className="mobileSetProfil-textArea" rows={2} placeholder='Bio' />
-              <Form.Group widths='equal'>
+              <TextArea className="mobileSetProfil-textArea" rows={2} placeholder="Bio" />
+              <Form.Group widths="equal">
 
-                <Form.Input className="mobileSetProfil-formInputName"
-                  icon='user'
-                  iconPosition='left'
-                  placeholder='Pseudo'
+                <Form.Input
+                  className="mobileSetProfil-formInputName"
+                  icon="user"
+                  iconPosition="left"
+                  placeholder="Pseudo"
                   value={pseudo}
                   onChange={handleChangePseudo}
                 />
 
-                <Form.Input className="mobileSetProfil-formInputName"
-                  icon='user'
-                  iconPosition='left'
-                  placeholder='Prénom'
+                <Form.Input
+                  className="mobileSetProfil-formInputName"
+                  icon="user"
+                  iconPosition="left"
+                  placeholder="Prénom"
                   value={firstName}
                   onChange={handleChangeFirstName}
                 />
 
-                <Form.Input className="mobileSetProfil-formInputLastName"
-                  icon='user'
-                  iconPosition='left'
-                  placeholder='Nom'
+                <Form.Input
+                  className="mobileSetProfil-formInputLastName"
+                  icon="user"
+                  iconPosition="left"
+                  placeholder="Nom"
                   value={lastName}
                   onChange={handleChangeLastName}
                 />
 
                 <Form.Input
-                  icon='map marker alternate'
-                  iconPosition='left'
-                  placeholder='Adresse'
+                  icon="map marker alternate"
+                  iconPosition="left"
+                  placeholder="Adresse"
                   value={address}
                   onChange={handleChangeAddress}
                 />
 
                 <Form.Input
-                  icon='map'
-                  iconPosition='left'
-                  placeholder='Code Postal'
-                  type='number'
+                  icon="map"
+                  iconPosition="left"
+                  placeholder="Code Postal"
+                  type="number"
                   value={zipCode}
                   onChange={handleChangeZipCode}
                 />
 
                 <Form.Input
-                  icon='map'
-                  iconPosition='left'
-                  placeholder='Ville'
+                  icon="map"
+                  iconPosition="left"
+                  placeholder="Ville"
                   value={city}
                   onChange={handleChangeCity}
                 />
@@ -236,32 +238,32 @@ const SetProfilPage = ({
             </Form>
 
             <div className="mobileSetProfil-divDeleteMyAccount">
-                <Modal
-                  icon='user delete'
-                  open={open}
-                  trigger={<Button size='small' className="mobileSetProfil-deleteMyAccount" negative>Supprimer mon compte</Button>}
-                  onClose={() => setOpen(false)}
-                  onOpen={() => setOpen(true)}
-                  >      
-                  <Header icon='delete' content='Confirmer votre action' />
-                  <Modal.Content>
-                    <p>Voulez-vous vraiment supprimer votre compte ?</p>
-                  </Modal.Content>
-                  <Modal.Actions>
-                    <Button color='red' onClick={() => setOpen(false)}>
-                      <Icon name='remove' /> Non
-                    </Button>
-                    <Button color='green' onClick={() => setOpen(true)}>
-                      <Icon name='checkmark' /> Oui
-                    </Button>
-                  </Modal.Actions>
-                </Modal>
-            </div>   
+              <Modal
+                icon="user delete"
+                open={open}
+                trigger={<Button size="small" className="mobileSetProfil-deleteMyAccount" negative>Supprimer mon compte</Button>}
+                onClose={() => setOpen(false)}
+                onOpen={() => setOpen(true)}
+              >
+                <Header icon="delete" content="Confirmer votre action" />
+                <Modal.Content>
+                  <p>Voulez-vous vraiment supprimer votre compte ?</p>
+                </Modal.Content>
+                <Modal.Actions>
+                  <Button color="red" onClick={() => setOpen(false)}>
+                    <Icon name="remove" /> Non
+                  </Button>
+                  <Button color="green" onClick={() => setOpen(true)}>
+                    <Icon name="checkmark" /> Oui
+                  </Button>
+                </Modal.Actions>
+              </Modal>
+            </div>
             <div className="mobileSetProfil-groupTwoButtons">
-                <Button size='small' className="mobileSetProfil-buttonCancel">Annuler</Button>
-                <Button type="submit" size='small' className="mobileSetProfil-buttonValidate">Valider</Button>
+              <Button size="small" className="mobileSetProfil-buttonCancel">Annuler</Button>
+              <Button type="submit" size="small" className="mobileSetProfil-buttonValidate">Valider</Button>
             </div>
-            </div>
+          </div>
         </MediaQuery>
 
       </div>
