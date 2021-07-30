@@ -1,7 +1,7 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable max-len */
 import {
-  SAVE_USER_INFOS, CHANGE_DESCRIPTION, CHANGE_PSEUDO, CHANGE_EMAIL, CHANGE_PASSWORD, SAVE_USER, LOGOUT_USER, CHANGE_ADDRESS, CHANGE_ZIP_CODE, CHANGE_FIRST_NAME, CHANGE_LAST_NAME, CHANGE_CITY, CHANGE_HOLIDAY_MODE, SAVE_USER_CONVERSATIONS, UPDATE_USER, ERASE_MESSAGE, SAVE_MESSAGE,
+  SAVE_USER_INFOS, CHANGE_DESCRIPTION, CHANGE_PSEUDO, CHANGE_EMAIL, CHANGE_PASSWORD, SAVE_USER, LOGOUT_USER, CHANGE_ADDRESS, CHANGE_ZIP_CODE, CHANGE_FIRST_NAME, CHANGE_LAST_NAME, CHANGE_CITY, CHANGE_HOLIDAY_MODE, SAVE_USER_CONVERSATIONS, UPDATE_USER, ERASE_MESSAGE, SAVE_MESSAGE, SAVE_USER_FULL_DATA,
 } from '../actions/user';
 
 export const initialState = {
@@ -21,6 +21,7 @@ export const initialState = {
   infos: {},
   message: '',
   picture: '',
+  fullData: {},
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -107,6 +108,11 @@ const reducer = (state = initialState, action = {}) => {
         holiday_mode: action.infos.holiday_mode,
         description: action.infos.description,
         picture: action.infos.picture,
+      };
+    case SAVE_USER_FULL_DATA:
+      return {
+        ...state,
+        fullData: action.fullData,
       };
     case UPDATE_USER:
       return {

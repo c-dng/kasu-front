@@ -24,7 +24,7 @@ import Loading from './Loading';
 // == Composant
 const App = ({
 
-  theme, onPageLoad, onRefreshOrTabClosing, isLogged, chatId, loading, mangaDatabase, loadMangaDatabase,
+  theme, onPageLoad, onRefreshOrTabClosing, isLogged, chatId, loading, mangaDatabase, loadMangaDatabase, loadUserFullData, userFullData
 }) => {
   const handleOnClose = () => {
     if (isLogged) {
@@ -49,8 +49,11 @@ const App = ({
       console.log('mangaDatabase useEffect test', { mangaDatabase, token });
       loadMangaDatabase();
     }
-  }, [chatId, isLogged, mangaDatabase, token]);
-
+    if (!userFullData && isLogged && token) {
+      console.log('userFullData useEffect test', { userFullData });
+      loadUserFullData();
+    }
+  }, [chatId, isLogged, mangaDatabase, token, userFullData]);
 
   if (loading) {
     return <Loading />;

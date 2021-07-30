@@ -47,14 +47,14 @@ const Conversations = ({
           // (therefore being able to use the ".map" declarative function)
           Object.entries(conversations).map((conversation) => {
             let pseudoToDisplay;
-            let pictureToDisplay;
+            let picture;
             if (conversation[1].chat.users[1].pseudo === userPseudo) {
               pseudoToDisplay = conversation[1].chat.users[0].pseudo;
-              pictureToDisplay = conversation[1].chat.users[0].picture;
+              picture = conversation[1].chat.users[0].picture;
             }
             else {
               pseudoToDisplay = conversation[1].chat.users[1].pseudo;
-              pictureToDisplay = conversation[1].chat.users[1].picture;
+              picture = conversation[1].chat.users[1].picture;
             }
 
             return (
@@ -71,7 +71,7 @@ const Conversations = ({
                   key={conversation[1].chat.id}
                   lastMessage={conversation[1].lastmessage.content}
                   pseudo={pseudoToDisplay}
-                  picture={pictureToDisplay}
+                  picture={picture}
                 />
               </Link>
             );

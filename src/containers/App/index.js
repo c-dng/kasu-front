@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 
 import App from 'src/components/App';
 import { wsDisconnect, wsConnect } from 'src/actions/chat';
-import { autoLoginUser } from '../../actions/user';
+import { autoLoginUser, loadUserFullData } from '../../actions/user';
 import { loadMangaDatabase } from '../../actions/manga';
 
 const mapStateToProps = (state) => ({
@@ -11,7 +11,7 @@ const mapStateToProps = (state) => ({
   isLogged: state.user.logged,
   chatId: state.chat.lastSingleChat.id,
   mangaDatabase: state.manga.database,
-  redirectTo: state.global.redirectLink,
+  userFullData: state.user.fullData,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -26,6 +26,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   loadMangaDatabase: () => {
     dispatch(loadMangaDatabase());
+  },
+  loadUserFullData: () => {
+    dispatch(loadUserFullData());
   },
 }
 );
