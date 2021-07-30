@@ -128,17 +128,11 @@ export const updateUser = () => ({
   type: UPDATE_USER,
 });
 
-export const GET_USER_INFOS = 'GET_USER_INFOS';
-
-export const getUserInfos = () => ({
-  type: GET_USER_INFOS,
-});
-
 export const SAVE_USER_INFOS = 'SAVE_USER_INFOS';
 
-export const saveUserInfos = (infos) => ({
+export const saveUserInfos = (fullData) => ({
   type: SAVE_USER_INFOS,
-  infos,
+  fullData,
 });
 
 export const SAVE_MESSAGE = 'SAVE_MESSAGE';

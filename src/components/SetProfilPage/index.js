@@ -57,9 +57,9 @@ const SetProfilPage = ({
   handleUpdate,
   displayUserInfos,
 }) => {
-  useEffect(() => {
-    displayUserInfos();
-  }, []);
+  // useEffect(() => {
+  //   displayUserInfos();
+  // }, []);
 
   const [open, setOpen] = React.useState(false);// Modal to delete account
   const [errorMessage, setErrorMessage] = React.useState('');// display a message with errors
@@ -132,9 +132,8 @@ const SetProfilPage = ({
 
   return (
     <>
-      {
-        !pseudo ? <Loading />
-          : (
+      
+       
             <div className="setProfilPage">
 
               <Image className="registerForm-banner" src={alternativeBanner} />
@@ -329,9 +328,7 @@ const SetProfilPage = ({
                   </div>
                 </MediaQuery>
               </div>
-            </div>
-          )
-      }
+            
 
     </>
   );

@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 import Nav from 'src/components/Nav';
 import { changeTheme } from '../../actions/global';
-import { getUserInfos, loadConversations, logoutUser } from '../../actions/user';
+import { loadUserFullData, loadConversations, logoutUser } from '../../actions/user';
 
 const mapStateToProps = (state) => ({
   navIconsColor: state.global.navIcons,
@@ -25,7 +25,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     dispatch(loadConversations());
   },
   loadUserInfos: function () {
-    dispatch(getUserInfos());
+    dispatch(loadUserFullData());
   },
 
 });

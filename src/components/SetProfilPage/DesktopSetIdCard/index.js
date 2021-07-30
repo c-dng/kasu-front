@@ -46,13 +46,13 @@ const DesktopSetIdCard = ({
   changeHolidayMode,
   changeDescription,
   handleUpdate,
-  handleMessage,
   displayUserInfos,
 }) => {
-  useEffect(() => (
-    displayUserInfos()
-  ),
-  []);
+  // useEffect(() => (
+    
+  //   displayUserInfos()
+  // ),
+  // []);
 
   const [open, setOpen] = React.useState(false);// Modal to delete account
   const [errorMessage, setErrorMessage] = React.useState('');// display a message received from API
