@@ -1,5 +1,6 @@
+/* eslint-disable space-infix-ops */
 /* eslint-disable linebreak-style */
-/* eslint-disable no-console */
+/* lint-disable no-console */
 /* eslint-disable linebreak-style */
 /* eslint-disable no-undef */
 /* eslint-disable linebreak-style */
@@ -72,43 +73,26 @@ const SetProfilPage = ({
       minNumbers: 1,
       minSymbols: 1,
     })) {
-      setErrorMessage('Password strong !!!!');
+      setErrorMessage('');
     }
     else {
       setErrorMessage('Veuillez entrer un mot de passe valide: min-6 caractères, une majuscule, une minuscule, un chiffre et un des caractères suivants: @$%_*|=-');
     }
   };
 
-  let passwordIsValid=true;
-
-  const passwordChecking = (confirmPasswordevt) => {
-    if ( confirmPasswordevt  ===  password ) {
-      passwordIsValid = true;
-      setErrorMessagePassword('Les mots de passe sont identiques !');
-      console.log('password checking égaux : ', confirmPasswordevt, password);
-      console.log(setErrorMessagePassword, passwordIsValid);
-     
-    }
-    else {
-      passwordIsValid = false;
-      setErrorMessagePassword('Les mots de passe ne correspondent pas !');
-      console.log('password checking inégaux : ', confirmPasswordevt, password);
-      console.log(setErrorMessagePassword, passwordIsValid);
-
-    }
-  };
   const handleSubmit = (evt) => {
-    evt.preventDefault();
-      if (passwordIsValid) {
+    evt.preventDefault(evt);
+      if ( confirmPassword  ===  password ) {
       setErrorMessagePassword('Les mots de passe sont identiques !');
-      console.log('Bien soumis!');
+      console.log('Bien soumis! mots de passe identiques');
       handleUpdate();
     }
     else {
       setErrorMessagePassword('Les mots de passe ne correspondent pas !');
-      console.log({setErrorMessagePassword, password, confirmPassword});
+      console.log('ERROR mots de passe inégaux');
     } 
   };
+
   const handleChangeEmail = (evt) => {
     changeEmail(evt.target.value);
   };
@@ -118,7 +102,6 @@ const SetProfilPage = ({
   };
   const handleChangeConfirmPassword = (evt) => {
     changeConfirmPasswordPassword(evt.target.value);
-    passwordChecking(evt.target.value);
   };
   const handleChangePseudo = (evt) => {
     changePseudo(evt.target.value);

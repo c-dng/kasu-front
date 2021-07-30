@@ -15,9 +15,10 @@ const contactAdminMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case SUBMIT_FORM: {
       store.dispatch(setLoadingTrue());
+      const userId = store.getState().user.data.id;
       const { object, content } = store.getState().global;
       api
-        .post('api/v1/user/1/contact-admin', { object, content })
+        .post(`api/v1/user/${userId}/contact-admin`, { object, content })
         .then(
           (response) => {
             console.log('Post and set save message succeeded', response.data);

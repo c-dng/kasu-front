@@ -3,7 +3,7 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable max-len */
 import {
-  CHANGE_THEME, CHANGE_OBJECT, CHANGE_CONTENT, SAVE_MESSAGE, ERASE_MESSAGE, SUBMIT_FORM, SET_LOADING_TRUE, SET_LOADING_FALSE, LOGOUT_USER, CHANGE_EMAIL,
+  CHANGE_THEME, CHANGE_OBJECT, CHANGE_CONTENT, SAVE_MESSAGE, ERASE_MESSAGE, SUBMIT_FORM, SET_LOADING_TRUE, SET_LOADING_FALSE, LOGOUT_USER, CHANGE_EMAIL, REDIRECT,
 } from '../actions/global';
 
 export const initialState = {
@@ -15,6 +15,7 @@ export const initialState = {
   message: '',
   loading: false,
   picture: '',
+  redirectLink: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -76,6 +77,12 @@ const reducer = (state = initialState, action = {}) => {
         message: '',
         picture: '',
         loading: false,
+        redirectLink: '',
+      };
+    case REDIRECT:
+      return {
+        ...state,
+        redirectLink: action.link,
       };
     default:
       return state;

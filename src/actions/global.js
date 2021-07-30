@@ -59,3 +59,10 @@ export const SET_LOADING_FALSE = 'SET_LOADING_FALSE';
 export const setLoadingFalse = () => ({
   type: SET_LOADING_FALSE,
 });
+
+export const REDIRECT = 'REDIRECT';
+
+export const redirectTo = (link) => ({
+  type: REDIRECT,
+  link,
+});

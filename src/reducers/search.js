@@ -1,10 +1,12 @@
 /* eslint-disable linebreak-style */
-import { SAVE_SEARCH_RESULTS, SET_SEARCH } from '../actions/search';
+import { SAVE_MANGA_SEARCH, SAVE_SEARCH_RESULTS, SEARCH_BY_MANGA_NAME, SET_MANGA_SEARCH, SET_SEARCH } from '../actions/search';
 import { LOGOUT_USER } from '../actions/user';
 
 export const initialState = {
   search: '',
   searchData: {},
+  mangaSearch: '',
+  mangaSearchData: [],
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -19,10 +21,22 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         searchData: action.searchData,
       };
+    case SET_MANGA_SEARCH:
+      return {
+        ...state,
+        mangaSearch: action.mangaSearch,
+      };
+    case SAVE_MANGA_SEARCH:
+      return {
+        ...state,
+        mangaSearchData: action.mangaData,
+      };
     case LOGOUT_USER:
       return {
         search: '',
         searchData: {},
+        mangaSearch: '',
+        mangaSearchData: [],
       };
     default:
       return state;

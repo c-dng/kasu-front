@@ -20,11 +20,12 @@ const authMiddleware = (store) => (next) => (action) => {
         .then(
           (response) => {
             console.log(response);
-            store.dispatch(setLoadingFalse());
+
             store.dispatch(saveUser(response.data));
 
             api.defaults.headers.common.Authorization = `Bearer ${response.data.token}`;
             localStorage.setItem('token', response.data.token);
+            store.dispatch(setLoadingFalse());
           },
         )
         .catch((error) => {

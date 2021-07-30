@@ -1,4 +1,6 @@
 /* eslint-disable linebreak-style */
+/* eslint-disable camelcase */
+/* eslint-disable linebreak-style */
 export const CHANGE_PSEUDO = 'CHANGE_PSEUDO';
 
 export const changePseudo = (pseudo) => ({
@@ -64,7 +66,6 @@ export const changeCity = (city) => ({
 
 export const CHANGE_HOLIDAY_MODE = 'CHANGE_HOLIDAY_MODE';
 
-// eslint-disable-next-line camelcase
 export const changeHolidayMode = (holiday_mode) => ({
   type: CHANGE_HOLIDAY_MODE,
   holiday_mode,
@@ -151,4 +152,17 @@ export const ERASE_MESSAGE = 'ERASE_MESSAGE';
 
 export const eraseMessage = () => ({
   type: ERASE_MESSAGE,
+});
+
+export const LOAD_USER_FULL_DATA = 'LOAD_USER_FULL_DATA';
+
+export const loadUserFullData = () => ({
+  type: LOAD_USER_FULL_DATA,
+});
+
+export const SAVE_USER_FULL_DATA = 'SAVE_USER_FULL_DATA';
+
+export const saveUserFullData = (fullData) => ({
+  type: SAVE_USER_FULL_DATA,
+  fullData,
 });
