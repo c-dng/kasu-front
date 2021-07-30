@@ -8,7 +8,7 @@ import { Card, Image } from 'semantic-ui-react';
 // eslint-disable-next-line no-unused-vars
 import PropTypes from 'prop-types';
 
-const Conversation = ({ pseudo, lastMessage, pictureToDisplay }) => (
+const Conversation = ({ pseudo, lastMessage, picture }) => (
   <div className="conversation">
     <Card centered className="conversation-card">
       <Card.Content className="conversation-cardContent">
@@ -16,7 +16,7 @@ const Conversation = ({ pseudo, lastMessage, pictureToDisplay }) => (
           floated="left"
           size="mini"
           circular
-          src={pictureToDisplay != null ? pictureToDisplay : 'https://react.semantic-ui.com/images/avatar/large/steve.jpg'}
+          src={`https://api.multiavatar.com/${picture}.png`}
         />
         <Card.Header className="conversation-cardHeader">{pseudo}</Card.Header>
         <Card.Meta className="conversation-cardMeta">{lastMessage}</Card.Meta>
