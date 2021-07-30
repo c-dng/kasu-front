@@ -45,7 +45,7 @@ const SetProfilPage = ({
   confirmPassword,
   changeEmail,
   changePassword,
-  changeConfirmPasswordPassword,
+  changeConfirmPassword,
   changePseudo,
   changeAddress,
   changeZipCode,
@@ -83,12 +83,12 @@ const SetProfilPage = ({
   const handleSubmit = (evt) => {
     evt.preventDefault(evt);
       if ( confirmPassword  ===  password ) {
-      setErrorMessagePassword('Les mots de passe sont identiques !');
+      setErrorMessagePassword('');
       console.log('Bien soumis! mots de passe identiques');
       handleUpdate();
     }
     else {
-      setErrorMessagePassword('Les mots de passe ne correspondent pas !');
+      setErrorMessagePassword('Les mots de passe ne sont pas identiques!');
       console.log('ERROR mots de passe inégaux');
     } 
   };
@@ -101,7 +101,7 @@ const SetProfilPage = ({
     changePassword(evt.target.value);
   };
   const handleChangeConfirmPassword = (evt) => {
-    changeConfirmPasswordPassword(evt.target.value);
+    changeConfirmPassword(evt.target.value);
   };
   const handleChangePseudo = (evt) => {
     changePseudo(evt.target.value);
@@ -145,6 +145,7 @@ const SetProfilPage = ({
                   <DesktopSetIdCard
                     email={email}
                     password={password}
+                    confirmPassword={confirmPassword}
                     pseudo={pseudo}
                     address={address}
                     zipCode={zipCode}
@@ -167,6 +168,7 @@ const SetProfilPage = ({
                     handleUpdate={handleUpdate}
                     displayUserInfos={displayUserInfos}
                     onChangeCheckbox={onChangeCheckbox}
+                    changeConfirmPassword={changeConfirmPassword}
                   />
                 </MediaQuery>
 
@@ -278,7 +280,7 @@ const SetProfilPage = ({
                           fluid
                         /> 
 
-                        <div className="mobileSetProfil-messageCheckPassword">
+                        <div className="desktopIdCard-errorMessage">
                           {errorMessagePassword}
                         </div>
 

@@ -17,7 +17,7 @@ export const changePassword = (password) => ({
 
 export const CHANGE_CONFIRM_PASSWORD = 'CHANGE_CONFIRM_PASSWORD';
 
-export const changeConfirmPasswordPassword = (confirmPassword) => ({
+export const changeConfirmPassword = (confirmPassword) => ({
   type: CHANGE_CONFIRM_PASSWORD,
   confirmPassword,
 });

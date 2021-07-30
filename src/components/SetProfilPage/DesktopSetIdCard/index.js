@@ -24,6 +24,7 @@ import {
 const DesktopSetIdCard = ({
   email,
   password,
+  confirmPassword,
   pseudo,
   address,
   zipCode,
@@ -35,6 +36,7 @@ const DesktopSetIdCard = ({
   picture,
   changeEmail,
   changePassword,
+  changeConfirmPassword,
   changePseudo,
   changeAddress,
   changeZipCode,
@@ -53,14 +55,20 @@ const DesktopSetIdCard = ({
   []);
 
   const [open, setOpen] = React.useState(false);// Modal to delete account
-  const [] = React.useState(false);// Modal to choose an avatar
   const [errorMessage, setErrorMessage] = React.useState('');// display a message received from API
+  const [errorMessagePassword, setErrorMessagePassword] = React.useState('');// display a message with errors
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    console.log('Bien soumis!');
-    handleUpdate();
-    handleMessage();
+    if ( confirmPassword  ===  password ) {
+      setErrorMessagePassword('');
+      console.log('Bien soumis! mots de passe identiques');
+      handleUpdate();
+    }
+    else {
+      setErrorMessagePassword('Les mots de passe ne sont pas identiques!');
+      console.log('ERROR mots de passe inégaux');
+    } 
   };
   const handleChangeEmail = (evt) => {
     changeEmail(evt.target.value);
@@ -68,6 +76,9 @@ const DesktopSetIdCard = ({
   const handleChangePassword = (evt) => {
     validate(evt.target.value);// checking password
     changePassword(evt.target.value);
+  };
+  const handleChangeConfirmPassword = (evt) => {
+    changeConfirmPassword(evt.target.value);
   };
   const handleChangePseudo = (evt) => {
     changePseudo(evt.target.value);
@@ -123,35 +134,6 @@ const DesktopSetIdCard = ({
           size="medium"
           src={`https://api.multiavatar.com/${picture}.png`}
         />
-        {/* <Modal
-          onClose={() => setAvatar(false)}
-          onOpen={() => setAvatar(true)}
-          open={avatar}
-          trigger={<Button size="massive" className="desktopSetProfil-addButton" circular icon='photo' />}
-        >
-          <Modal.Header>Upload image</Modal.Header>
-          <Modal.Content image>
-            <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
-            <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
-            <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
-            <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
-            <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
-            <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
-            <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
-            <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
-            <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
-            <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
-            <Modal.Description>
-              <p>Veuillez choisir un avatar</p>
-            </Modal.Description>
-          </Modal.Content>
-          <Modal.Actions>
-            <Button onClick={() => setAvatar(false)}>Cancel</Button>
-            <Button onClick={() => setAvatar(false)} positive>
-              Ok
-              </Button>
-          </Modal.Actions>
-        </Modal> */}
       </div>
 
       <div className="desktopIdCard-rightPartWrapper">
@@ -229,6 +211,20 @@ const DesktopSetIdCard = ({
               onChange={handleChangePassword}
             />
             <Form.Input
+              input="password"
+              id="confirmPassword"
+              icon="lock"
+              iconPosition="left"
+              placeholder="Confirmer le mot de passe"
+              value={confirmPassword}
+              onChange={handleChangeConfirmPassword}
+              fluid
+            /> 
+          </Form.Group>
+          <div className="desktopIdCard-errorMessage">
+            {errorMessagePassword}
+          </div>
+          <Form.Input
               className="desktopIdCard-formInputEmail"
               icon="mail"
               type="email"
@@ -237,8 +233,6 @@ const DesktopSetIdCard = ({
               value={email}
               onChange={handleChangeEmail}
             />
-          </Form.Group>
-
           <div className="desktopIdCard-errorMessage">
             {errorMessage}
           </div>
