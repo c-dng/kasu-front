@@ -1,10 +1,3 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable camelcase */
-/* eslint-disable linebreak-style */
-/* eslint-disable no-unused-vars */
-/* eslint-disable linebreak-style */
-/* eslint-disable max-len */
-/* eslint-disable linebreak-style */
 import { connect } from 'react-redux';
 
 import SetProfilPage from 'src/components/SetProfilPage';
