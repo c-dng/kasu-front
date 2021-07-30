@@ -1,12 +1,13 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable max-len */
 import {
-  SAVE_USER_INFOS, CHANGE_DESCRIPTION, CHANGE_PSEUDO, CHANGE_EMAIL, CHANGE_PASSWORD, SAVE_USER, LOGOUT_USER, CHANGE_ADDRESS, CHANGE_ZIP_CODE, CHANGE_FIRST_NAME, CHANGE_LAST_NAME, CHANGE_CITY, CHANGE_HOLIDAY_MODE, SAVE_USER_CONVERSATIONS, UPDATE_USER, ERASE_MESSAGE, SAVE_MESSAGE,
+  SAVE_USER_INFOS, CHANGE_CONFIRM_PASSWORD, CHANGE_DESCRIPTION, CHANGE_PSEUDO, CHANGE_EMAIL, CHANGE_PASSWORD, SAVE_USER, LOGOUT_USER, CHANGE_ADDRESS, CHANGE_ZIP_CODE, CHANGE_FIRST_NAME, CHANGE_LAST_NAME, CHANGE_CITY, CHANGE_HOLIDAY_MODE, SAVE_USER_CONVERSATIONS, UPDATE_USER, ERASE_MESSAGE, SAVE_MESSAGE,
 } from '../actions/user';
 
 export const initialState = {
   email: '',
   password: '',
+  confirmPassword:'',
   pseudo: '',
   address: '',
   zipCode: '',
@@ -34,6 +35,11 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         password: action.password,
+      };
+    case CHANGE_CONFIRM_PASSWORD:
+      return {
+        ...state,
+        confirmPassword: action.confirmPassword,
       };
     case CHANGE_ADDRESS:
       return {
@@ -113,6 +119,7 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         email: '',
         password: '',
+        confirmPassword:'',
         pseudo: '',
         address: '',
         zipCode: '',
@@ -131,6 +138,7 @@ const reducer = (state = initialState, action = {}) => {
       return {
         email: '',
         password: '',
+        confirmPassword:'',
         pseudo: '',
         address: '',
         zipCode: '',

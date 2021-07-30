@@ -10,7 +10,7 @@ import { connect } from 'react-redux';
 import SetProfilPage from 'src/components/SetProfilPage';
 
 import {
-  updateUser, changeDescription, changeEmail, changePassword, changeCity, changeAddress, changeZipCode, changeLastName, changeFirstName, changePseudo, changeHolidayMode, getUserInfos, eraseMessage,
+  updateUser, changeDescription, changeEmail, changePassword, changeConfirmPasswordPassword, changeCity, changeAddress, changeZipCode, changeLastName, changeFirstName, changePseudo, changeHolidayMode, getUserInfos, eraseMessage,
 } from '../../actions/user';
 
 const mapStateToProps = (state, ownProps) => ({
@@ -27,6 +27,7 @@ const mapStateToProps = (state, ownProps) => ({
   infos: state.user.infos,
   message: state.user.message,
   picture: state.user.data.picture,
+  confirmPassword: state.user.confirmPassword
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
@@ -41,6 +42,10 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 
   changePassword: function (password) {
     dispatch(changePassword(password));
+  },
+
+  changeConfirmPasswordPassword: function (confirmPassword) {
+    dispatch(changeConfirmPasswordPassword(confirmPassword));
   },
 
   changeCity: function (city) {

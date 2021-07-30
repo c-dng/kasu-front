@@ -55,9 +55,7 @@ const ContactForm = ({
           <Card.Content className="contactForm-cardContent">
             <Card.Header text-align="center" className="contactForm-cardHeader">Formulaire de contact</Card.Header>
             <Form className="contactForm-form" onSubmit={handleSubmit}>
-              // eslint-disable-next-line react/jsx-no-comment-textnodes
               <Form.Field>
-                // eslint-disable-next-line jsx-a11y/label-has-associated-control
                 <label className="contactForm-objectLabel">Choisissez un objet:</label>
                 <Form.Field control="select" onChange={handleChangeObject} value={object}>
                   <option value="Ajouter un manga">Ajouter un manga</option>

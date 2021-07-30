@@ -13,6 +13,13 @@ export const changePassword = (password) => ({
   password,
 });
 
+export const CHANGE_CONFIRM_PASSWORD = 'CHANGE_CONFIRM_PASSWORD';
+
+export const changeConfirmPasswordPassword = (confirmPassword) => ({
+  type: CHANGE_CONFIRM_PASSWORD,
+  confirmPassword,
+});
+
 export const CHANGE_EMAIL = 'CHANGE_EMAIL';
 
 export const changeEmail = (email) => ({

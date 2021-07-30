@@ -41,8 +41,10 @@ const SetProfilPage = ({
   description,
   picture,
   message,
+  confirmPassword,
   changeEmail,
   changePassword,
+  changeConfirmPasswordPassword,
   changePseudo,
   changeAddress,
   changeZipCode,
@@ -59,7 +61,9 @@ const SetProfilPage = ({
   }, []);
 
   const [open, setOpen] = React.useState(false);// Modal to delete account
-  const [errorMessage, setErrorMessage] = React.useState('');// display a message received from API
+  const [errorMessage, setErrorMessage] = React.useState('');// display a message with errors
+  const [errorMessagePassword, setErrorMessagePassword] = React.useState('');// display a message with errors
+
   const validate = (value) => {
     if (validator.isStrongPassword(value, {
       minLength: 6,
@@ -68,19 +72,42 @@ const SetProfilPage = ({
       minNumbers: 1,
       minSymbols: 1,
     })) {
-      setErrorMessage('');
-      console.log(errorMessage);
+      setErrorMessage('Password strong !!!!');
     }
     else {
       setErrorMessage('Veuillez entrer un mot de passe valide: min-6 caractères, une majuscule, une minuscule, un chiffre et un des caractères suivants: @$%_*|=-');
-      console.log(errorMessage);
     }
   };
 
+  let passwordIsValid=true;
+
+  const passwordChecking = (confirmPasswordevt) => {
+    if ( confirmPasswordevt  ===  password ) {
+      passwordIsValid = true;
+      setErrorMessagePassword('Les mots de passe sont identiques !');
+      console.log('password checking égaux : ', confirmPasswordevt, password);
+      console.log(setErrorMessagePassword, passwordIsValid);
+     
+    }
+    else {
+      passwordIsValid = false;
+      setErrorMessagePassword('Les mots de passe ne correspondent pas !');
+      console.log('password checking inégaux : ', confirmPasswordevt, password);
+      console.log(setErrorMessagePassword, passwordIsValid);
+
+    }
+  };
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    console.log('Bien soumis!');
-    handleUpdate();
+      if (passwordIsValid) {
+      setErrorMessagePassword('Les mots de passe sont identiques !');
+      console.log('Bien soumis!');
+      handleUpdate();
+    }
+    else {
+      setErrorMessagePassword('Les mots de passe ne correspondent pas !');
+      console.log({setErrorMessagePassword, password, confirmPassword});
+    } 
   };
   const handleChangeEmail = (evt) => {
     changeEmail(evt.target.value);
@@ -88,6 +115,10 @@ const SetProfilPage = ({
   const handleChangePassword = (evt) => {
     validate(evt.target.value);// checking password
     changePassword(evt.target.value);
+  };
+  const handleChangeConfirmPassword = (evt) => {
+    changeConfirmPasswordPassword(evt.target.value);
+    passwordChecking(evt.target.value);
   };
   const handleChangePseudo = (evt) => {
     changePseudo(evt.target.value);
@@ -115,16 +146,6 @@ const SetProfilPage = ({
     const { checked } = data;
     changeHolidayMode(checked);
   };
-  // const PasswordChecking = (value) => {
-  //   if ({ password } != { confirmPassword }) {
-  //     setErrorMessage('');
-  //     console.log(setErrorMessagePassword);
-  //   }
-  //   else {
-  //     setErrorMessage('Les mots de passe ne correspondent pas');
-  //     console.log(setErrorMessagePassword);
-  //   }
-  // };
 
   return (
     <>
@@ -258,22 +279,24 @@ const SetProfilPage = ({
                           icon="lock"
                           iconPosition="left"
                           placeholder="Mot de passe"
-                          fluid
                           value={password}
                           onChange={handleChangePassword}
+                          fluid
                         />
 
-                        {/* <Form.Input
+                        <Form.Input
                           input="password"
                           id="confirmPassword"
                           icon="lock"
                           iconPosition="left"
-                          placeholder="Mot de passe"
+                          placeholder="Confirmer le mot de passe"
+                          value={confirmPassword}
+                          onChange={handleChangeConfirmPassword}
                           fluid
-                        /> */}
+                        /> 
 
                         <div className="mobileSetProfil-messageCheckPassword">
-                          {/* {errorMessagePassword} */}
+                          {errorMessagePassword}
                         </div>
 
                         <Form.Input
