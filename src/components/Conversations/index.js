@@ -61,7 +61,6 @@ const Conversations = ({
               <Link
                 key={conversation[1].chat.id}
                 onClick={() => {
-                  // eslint-disable-next-line no-console
                   console.log(conversation[1].chat.id);
                   loadSingleChat(conversation[1].chat.id);
                 }}
