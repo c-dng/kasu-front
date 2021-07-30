@@ -1,10 +1,3 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable no-console */
-/* eslint-disable linebreak-style */
-/* eslint-disable max-len */
-/* eslint-disable linebreak-style */
-/* eslint-disable camelcase */
-/* eslint-disable linebreak-style */
 import {
   UPDATE_USER, GET_USER_INFOS, saveUserInfos, saveMessage,
 } from 'src/actions/user';

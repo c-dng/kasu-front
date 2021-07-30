@@ -29,7 +29,7 @@ const mangaMiddleware = (store) => (next) => (action) => {
     case ADD_TO_MY_COLLECTION: {
       const userId = store.getState().user.data.id;
       store.dispatch(setLoadingTrue());
-      api.post(`api/v1/user/${userId}/manga/`, { title: action.mangaTitle, volumes: action.volumes })
+      api.post(`api/v1/user/${userId}/manga`, { title: action.mangaTitle, volumes: action.volumes })
         .then((response) => {
           console.log("l'ajout à ma collection du manga a bien été réalisé", response.data);
           // ICI DISPATCH POUR STOCKER EN STATE MA COLLECTION????
