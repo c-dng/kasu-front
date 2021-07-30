@@ -1,8 +1,9 @@
 import {
-  UPDATE_USER, GET_USER_INFOS, saveUserInfos, saveMessage,
+  UPDATE_USER, GET_USER_INFOS, saveUserInfos, saveMessage, saveUserFullData,
 } from 'src/actions/user';
 import api from 'src/api';
 import { setLoadingFalse, setLoadingTrue } from '../actions/global';
+import { LOAD_USER_FULL_DATA } from '../actions/user';
 
 const token = localStorage.getItem('token');
 if (token) {
@@ -50,6 +51,25 @@ const updateUser = (store) => (next) => (action) => {
         .catch((error) => {
           store.dispatch(setLoadingFalse());
           console.log('update user infos failed', error);
+        });
+      next(action);
+      break;
+    }
+    case LOAD_USER_FULL_DATA: {
+      store.dispatch(setLoadingTrue());
+      const userId = store.getState().user.data.id;
+      api
+        .get(`api/v1/user/${userId}`)
+        .then(
+          (response) => {
+            console.log('get full user infos succeeded', response.data);
+            store.dispatch(saveUserFullData(response.data));
+            store.dispatch(setLoadingFalse());
+          },
+        )
+        .catch((error) => {
+          store.dispatch(setLoadingFalse());
+          console.log('get full user infos failed', error);
         });
       next(action);
       break;

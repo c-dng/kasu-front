@@ -143,3 +143,16 @@ export const ERASE_MESSAGE = 'ERASE_MESSAGE';
 export const eraseMessage = () => ({
   type: ERASE_MESSAGE,
 });
+
+export const LOAD_USER_FULL_DATA = 'LOAD_USER_FULL_DATA';
+
+export const loadUserFullData = () => ({
+  type: LOAD_USER_FULL_DATA,
+});
+
+export const SAVE_USER_FULL_DATA = 'SAVE_USER_FULL_DATA';
+
+export const saveUserFullData = (fullData) => ({
+  type: SAVE_USER_FULL_DATA,
+  fullData,
+});
