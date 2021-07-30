@@ -25,11 +25,18 @@ const SearchResultsByLocation = ({ users }) => {
           Object.values(users).map((user) => {
             const results = Object.values(user.mangas);
             return (
-              results.map((result) => {
-                console.log(result);
-                const userId = user.userId;
-                return <ResultCard mangaName={result.mangaInfo.title} mangaPicture={result.mangaInfo.picture} mangaSynopsis={result.mangaInfo.synopsis} />;
-              })
+              results.map((result) => (
+                <ResultCard
+                  mangaName={result.mangaInfo.title}
+                  mangaPicture={result.mangaInfo.picture}
+                  mangaSynopsis={result.mangaInfo.synopsis}
+                  ownerName={user.user.pseudo}
+                  ownerPicture={user.user.picture}
+                  ownerCity={user.user.city}
+                  ownerZipCode={user.user.zip_code}
+                  mangaVolumes={result.userVolumes}
+                />
+              ))
             );
           })
         }
