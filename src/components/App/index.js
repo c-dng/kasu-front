@@ -93,12 +93,16 @@ const App = ({
           <ManageMyCollection />
           <Footer />
         </Route>
-        <Route path="/profil/mes-infos" exact>
+        <Route path="/profil/mon-profil" exact>
           <ViewProfilPage />
           <Footer />
         </Route>
-        <Route path="/profil/:id" exact>
+        <Route path="/profil/mes-infos" exact>
           <SetProfilPage />
+          <Footer />
+        </Route>
+        <Route path="/profil/:id">
+          <OtherMemberProfilPage />
           <Footer />
         </Route>
         <Route path="/team" exact>
