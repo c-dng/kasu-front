@@ -1,8 +1,9 @@
-import { SAVE_MANGA_DATABASE } from '../actions/manga';
+import { SAVE_MANGA_DATABASE, SET_AVAILABLE_VOLUMES, SET_AVAILABLE_VOLUMES_TO_ZERO } from '../actions/manga';
 import { LOGOUT_USER } from '../actions/user';
 
 export const initialState = {
   mangaDatabase: {},
+  availableVolumes: [],
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -15,7 +16,17 @@ const reducer = (state = initialState, action = {}) => {
     case LOGOUT_USER:
       return {
         mangaDatabase: {},
+        availableVolumes: [],
       };
+    case SET_AVAILABLE_VOLUMES:
+      return {
+        availableVolumes: [...state.availableVolumes, action.availableVolume],
+      };
+    case SET_AVAILABLE_VOLUMES_TO_ZERO:
+      return {
+        availableVolumes: [],
+      };
+
     default:
       return state;
   }
