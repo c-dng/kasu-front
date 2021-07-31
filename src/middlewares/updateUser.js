@@ -3,7 +3,7 @@ import {
 } from 'src/actions/user';
 import api from 'src/api';
 import { setLoadingFalse, setLoadingTrue } from '../actions/global';
-import { LOAD_USER_FULL_DATA } from '../actions/user';
+import { LOAD_OTHER_USER_FULL_DATA, LOAD_USER_FULL_DATA, saveOtherUserFullData } from '../actions/user';
 
 const token = localStorage.getItem('token');
 if (token) {
@@ -70,6 +70,25 @@ const updateUser = (store) => (next) => (action) => {
         .catch((error) => {
           store.dispatch(setLoadingFalse());
           console.log('get full user infos failed', error);
+        });
+      next(action);
+      break;
+    }
+    case LOAD_OTHER_USER_FULL_DATA: {
+      store.dispatch(setLoadingTrue());
+      const otherUserId = action.id;
+      api
+        .get(`api/v1/user/${otherUserId}`)
+        .then(
+          (response) => {
+            console.log('get full other user infos succeeded', response.data);
+            store.dispatch(saveOtherUserFullData(response.data));
+            store.dispatch(setLoadingFalse());
+          },
+        )
+        .catch((error) => {
+          store.dispatch(setLoadingFalse());
+          console.log('get full other user infos failed', error);
         });
       next(action);
       break;

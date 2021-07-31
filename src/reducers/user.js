@@ -1,7 +1,7 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable max-len */
 import {
-  SAVE_USER_INFOS, CHANGE_DESCRIPTION, CHANGE_PSEUDO, CHANGE_EMAIL, CHANGE_PASSWORD, SAVE_USER, LOGOUT_USER, CHANGE_ADDRESS, CHANGE_ZIP_CODE, CHANGE_FIRST_NAME, CHANGE_LAST_NAME, CHANGE_CITY, CHANGE_HOLIDAY_MODE, SAVE_USER_CONVERSATIONS, UPDATE_USER, ERASE_MESSAGE, SAVE_MESSAGE, SAVE_USER_FULL_DATA,
+  SAVE_USER_INFOS, CHANGE_DESCRIPTION, CHANGE_PSEUDO, CHANGE_EMAIL, CHANGE_PASSWORD, SAVE_USER, LOGOUT_USER, CHANGE_ADDRESS, CHANGE_ZIP_CODE, CHANGE_FIRST_NAME, CHANGE_LAST_NAME, CHANGE_CITY, CHANGE_HOLIDAY_MODE, SAVE_USER_CONVERSATIONS, UPDATE_USER, ERASE_MESSAGE, SAVE_MESSAGE, SAVE_USER_FULL_DATA, SAVE_OTHER_USER_FULL_DATA,
 } from '../actions/user';
 
 export const initialState = {
@@ -21,7 +21,8 @@ export const initialState = {
   infos: {},
   message: '',
   picture: '',
-  fullData: {},
+  fullData: '',
+  otherUserFullData: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -114,6 +115,11 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         fullData: action.fullData,
       };
+    case SAVE_OTHER_USER_FULL_DATA:
+      return {
+        ...state,
+        otherUserFullData: action.fullData,
+      };
     case UPDATE_USER:
       return {
         ...state,
@@ -143,11 +149,16 @@ const reducer = (state = initialState, action = {}) => {
         city: '',
         firstName: '',
         lastName: '',
+        holiday_mode: false,
+        description: '',
         logged: false,
         data: {},
         conversations: {},
-        holiday_mode: false,
-        description: '',
+        infos: {},
+        message: '',
+        picture: '',
+        fullData: '',
+        otherUserFullData: '',
       };
     default:
       return state;

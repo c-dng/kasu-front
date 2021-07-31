@@ -31,7 +31,7 @@ const SearchResultsByLocation = ({ users }) => {
                   ownerCity={user.user.city}
                   ownerZipCode={user.user.zip_code}
                   mangaVolumes={result.userVolumes}
-                  // ownerId={result.user.id}
+                  ownerId={user.user.id}
                 />
               ))
             );
