@@ -15,7 +15,6 @@ export const initialState = {
   message: '',
   loading: false,
   picture: '',
-  redirectLink: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -77,12 +76,6 @@ const reducer = (state = initialState, action = {}) => {
         message: '',
         picture: '',
         loading: false,
-        redirectLink: '',
-      };
-    case REDIRECT:
-      return {
-        ...state,
-        redirectLink: action.link,
       };
     default:
       return state;

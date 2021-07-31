@@ -103,7 +103,7 @@ const Register = ({
               </div>
               <div className="registerForm-field">
                 <label className="registerForm-fieldLabel">Votre mot de passe</label>
-                <Form.Input onChange={handleChangePassword} type='password' value={password} className="registerForm-fieldInput" />
+                <Form.Input onChange={handleChangePassword} type="password" value={password} className="registerForm-fieldInput" />
               </div>
               <span className="registerForm-errorMessagePassword">{errorMessage}</span>
               <div className="registerForm-field">
@@ -134,7 +134,7 @@ const Register = ({
             </Form>
           </Card.Content>
         </Card>
-        
+
         <AlreadyAccountBox />
       </div>
     </div>

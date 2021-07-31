@@ -8,6 +8,7 @@ const mapStateToProps = (state, ownProps) => ({
   loading: state.global.loading,
   mangaSearchData: state.search.mangaSearchData,
   mangaFilteredDatabase: state.search.mangaSearchData,
+  userMangas: state.user.fullData.contact.manga,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

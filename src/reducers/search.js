@@ -4,7 +4,7 @@ import { LOGOUT_USER } from '../actions/user';
 
 export const initialState = {
   search: '',
-  searchData: {},
+  searchData: '',
   mangaSearch: '',
   mangaSearchData: [],
 };
@@ -34,7 +34,7 @@ const reducer = (state = initialState, action = {}) => {
     case LOGOUT_USER:
       return {
         search: '',
-        searchData: {},
+        searchData: '',
         mangaSearch: '',
         mangaSearchData: [],
       };

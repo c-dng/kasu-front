@@ -1,6 +1,3 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable no-console */
-/* eslint-disable linebreak-style */
 import React from 'react';
 import {
   Card,
@@ -9,7 +6,6 @@ import './style.scss';
 import SearchBar from 'src/containers/SearchBar';
 import ResultCard from './ResultCard';
 
-// eslint-disable-next-line react/prop-types
 const SearchResultsByLocation = ({ users }) => {
   console.log('en dehors du return');
 
@@ -25,11 +21,19 @@ const SearchResultsByLocation = ({ users }) => {
           Object.values(users).map((user) => {
             const results = Object.values(user.mangas);
             return (
-              results.map((result) => {
-                console.log(result);
-                const userId = user.userId;
-                return <ResultCard mangaName={result.mangaInfo.title} mangaPicture={result.mangaInfo.picture} mangaSynopsis={result.mangaInfo.synopsis} />;
-              })
+              results.map((result) => (
+                <ResultCard
+                  mangaName={result.mangaInfo.title}
+                  mangaPicture={result.mangaInfo.picture}
+                  mangaSynopsis={result.mangaInfo.synopsis}
+                  ownerName={user.user.pseudo}
+                  ownerPicture={user.user.picture}
+                  ownerCity={user.user.city}
+                  ownerZipCode={user.user.zip_code}
+                  mangaVolumes={result.userVolumes}
+                  // ownerId={result.user.id}
+                />
+              ))
             );
           })
         }
