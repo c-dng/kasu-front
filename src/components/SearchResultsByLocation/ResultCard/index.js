@@ -2,7 +2,16 @@ import React from 'react';
 import { Button, Card, Icon, Image, Select } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 
-const ResultCard = ({ mangaName, mangaPicture, ownerName, ownerPicture, ownerCity, ownerZipCode, mangaSynopsis, mangaVolumes }) => {
+const ResultCard = ({
+  mangaName,
+  mangaPicture,
+  ownerName,
+  ownerPicture,
+  ownerCity,
+  ownerZipCode,
+  mangaSynopsis,
+  mangaVolumes,
+  ownerId }) => {
   console.log(mangaVolumes);
   const mangaVolumeOptions = mangaVolumes.map((volume, index) => ({
     key: index,
@@ -48,7 +57,7 @@ const ResultCard = ({ mangaName, mangaPicture, ownerName, ownerPicture, ownerCit
         </Card.Content>
       </Card>
     </div>
-  )
+  );
 };
 // ResultCard.propTypes = {
 //   pseudo: PropTypes.string.isRequired,

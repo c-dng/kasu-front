@@ -1,4 +1,4 @@
-import { Redirect } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { SEARCH_BY_ZIPCODE, saveSearchResult } from 'src/actions/search';
 import api from 'src/api';
 import { redirectTo, setLoadingFalse, setLoadingTrue } from '../actions/global';

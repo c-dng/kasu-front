@@ -1,6 +1,3 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable no-console */
-/* eslint-disable linebreak-style */
 import React from 'react';
 import {
   Card,
@@ -9,7 +6,6 @@ import './style.scss';
 import SearchBar from 'src/containers/SearchBar';
 import ResultCard from './ResultCard';
 
-// eslint-disable-next-line react/prop-types
 const SearchResultsByLocation = ({ users }) => {
   console.log('en dehors du return');
 
@@ -35,6 +31,7 @@ const SearchResultsByLocation = ({ users }) => {
                   ownerCity={user.user.city}
                   ownerZipCode={user.user.zip_code}
                   mangaVolumes={result.userVolumes}
+                  // ownerId={result.user.id}
                 />
               ))
             );

@@ -24,7 +24,7 @@ import Loading from './Loading';
 // == Composant
 const App = ({
 
-  theme, onPageLoad, onRefreshOrTabClosing, isLogged, chatId, loading, mangaDatabase, loadMangaDatabase, loadUserFullData, userFullData
+  theme, onPageLoad, onRefreshOrTabClosing, isLogged, chatId, loading, mangaDatabase, loadMangaDatabase, loadUserFullData, userFullData,
 }) => {
   const handleOnClose = () => {
     if (isLogged) {
