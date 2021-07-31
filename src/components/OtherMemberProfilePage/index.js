@@ -10,7 +10,7 @@ import MediaQuery from 'react-responsive';
 import DesktopIdCard from './DesktopIdCard';
 import DesktopMyCollectionProfile from './DesktopMyCollectionProfile';
 
-const ViewProfilPage = ({
+const OtherMemberProfilePage = ({
   pseudo, bio, city, zipcode, picture, holidayMode,
 }) => {
   const availableTomes = [
@@ -156,4 +156,4 @@ const ViewProfilPage = ({
   );
 };
 
-export default ViewProfilPage;
+export default OtherMemberProfilePage;
