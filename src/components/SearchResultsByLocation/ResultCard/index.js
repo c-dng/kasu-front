@@ -11,7 +11,8 @@ const ResultCard = ({
   ownerZipCode,
   mangaSynopsis,
   mangaVolumes,
-  ownerId }) => {
+  ownerId,
+  handleLoadUser }) => {
   console.log(mangaVolumes);
   const mangaVolumeOptions = mangaVolumes.map((volume, index) => ({
     key: index,
@@ -30,7 +31,7 @@ const ResultCard = ({
 
           <div className="searchResultsByLocation-infoscard">
             <Card.Header className="searchResultsByLocation-nameManga">{mangaName}</Card.Header>
-            <div className="searchResultsByLocation-owner">
+            <div className="searchResultsByLocation-owner" onClick={() => handleLoadUser(ownerId)}>
               <Image src={`https://api.multiavatar.com/${ownerPicture}.png`} avatar />
               {ownerName}
             </div>

@@ -71,7 +71,7 @@ const App = ({
   const history = useHistory();
   if (redirecting) {
     setRedirecting(false);
-    console.log('redirecting');
+    console.log('redirecting to ', redirectLink);
     history.push(redirectLink);
   }
   return (

@@ -6,7 +6,7 @@ import './style.scss';
 import SearchBar from 'src/containers/SearchBar';
 import ResultCard from './ResultCard';
 
-const SearchResultsByLocation = ({ users }) => {
+const SearchResultsByLocation = ({ users, handleLoadUser }) => {
   console.log('en dehors du return');
 
   return (
@@ -32,6 +32,7 @@ const SearchResultsByLocation = ({ users }) => {
                   ownerZipCode={user.user.zip_code}
                   mangaVolumes={result.userVolumes}
                   ownerId={user.user.id}
+                  handleLoadUser={handleLoadUser}
                 />
               ))
             );
