@@ -12,7 +12,9 @@ const ResultCard = ({
   mangaSynopsis,
   mangaVolumes,
   ownerId,
-  handleLoadUser }) => {
+  handleLoadUser,
+  createNewChat,
+}) => {
   console.log(mangaVolumes);
   const mangaVolumeOptions = mangaVolumes.map((volume, index) => ({
     key: index,
@@ -47,7 +49,7 @@ const ResultCard = ({
             <Button basic className="searchResultsByLocation-showMore" color="black">
               Voir plus
             </Button>
-            <Button basic color="blue" className="searchResultsByLocation-contactOwner">
+            <Button onClick={() => createNewChat(ownerId)} basic color="blue" className="searchResultsByLocation-contactOwner">
               Contacter le propriétaire
             </Button>
           </div>

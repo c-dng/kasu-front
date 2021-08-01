@@ -62,3 +62,10 @@ export const saveLastSingleChat = (singleChat) => ({
   type: SAVE_LAST_SINGLE_CHAT,
   singleChat,
 });
+
+export const CREATE_NEW_CHAT = 'CREATE_NEW_CHAT';
+
+export const createNewChat = (id) => ({
+  type: CREATE_NEW_CHAT,
+  chatId: id,
+});
