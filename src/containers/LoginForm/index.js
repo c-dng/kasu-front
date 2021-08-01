@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 
 import LoginForm from 'src/components/LoginForm';
 import {
-  changePseudo, changePassword, loginUser, logoutUser,
+  changePseudo, changePassword, loginUser,
 } from '../../actions/user';
 
 const mapStateToProps = (state) => ({
@@ -23,10 +23,6 @@ const mapDispatchToProps = (dispatch) => ({
   handleLogin: function () {
     dispatch(loginUser());
   },
-  handleLogout: function () {
-    dispatch(logoutUser());
-  },
-
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoginForm);

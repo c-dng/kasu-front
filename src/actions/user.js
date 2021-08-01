@@ -156,3 +156,17 @@ export const saveUserFullData = (fullData) => ({
   type: SAVE_USER_FULL_DATA,
   fullData,
 });
+
+export const LOAD_OTHER_USER_FULL_DATA = 'LOAD_OTHER_USER_FULL_DATA';
+
+export const loadOtherUserFullData = (id) => ({
+  type: LOAD_OTHER_USER_FULL_DATA,
+  id,
+});
+
+export const SAVE_OTHER_USER_FULL_DATA = 'SAVE_OTHER_USER_FULL_DATA';
+
+export const saveOtherUserFullData = (fullData) => ({
+  type: SAVE_OTHER_USER_FULL_DATA,
+  fullData,
+});

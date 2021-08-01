@@ -3,47 +3,32 @@ import { Link } from 'react-router-dom';
 import {
   Button, Divider, Icon, Image,
 } from 'semantic-ui-react';
-import '../style.scss';
 
 const DesktopIdCardOther = ({ pseudo, bio, city, zipcode, picture, holidayMode }) => (
-  <div className="desktopIdCard">
-    <div className="desktopIdCard-mainCard">
+  <div className="desktopIdCardOther">
+    <div className="desktopIdCardOther-mainCard">
       <Image
         size="small"
         src={`https://api.multiavatar.com/${picture}.png`}
-        className="desktopIdCard-avatar"
+        className="desktopIdCardOther-avatar"
       />
 
-      <div className="desktopIdCard-rightPartWrapper">
-        <h3 className="desktopIdCard-memberName">{pseudo}</h3>
-        <div className="desktopIdCard-locationWrapper">
+      <div className="desktopIdCardOther-rightPartWrapper">
+        <h3 className="desktopIdCardOther-memberName">{pseudo}</h3>
+        <div className="desktopIdCardOther-locationWrapper">
           <Icon size="small" bordered circular name="map marker alternate" />
-          <span className="desktopIdCard-memberLocation">{city} - {zipcode}</span>
+          <span className="desktopIdCardOther-memberLocation">{city} - {zipcode}</span>
         </div>
-        <div className="desktopIdCard-holidayWrapper">
+        <div className="desktopIdCardOther-holidayWrapper">
           <Icon size="small" bordered circular name="globe" />
-          <span className="desktopIdCard-memberHolidayMode">Mode vacances : {holidayMode ? 'Activé' : 'Désactivé'}</span>
+          <span className="desktopIdCardOther-memberHolidayMode">Mode vacances : {holidayMode ? 'Activé' : 'Désactivé'}</span>
         </div>
         <Divider />
-        <p className="desktopIdCard-memberDescription">
-          {bio || 'Vous n\'avez pas encore écrit de présentation, rendez-vous dans "Gérer mon profil" !'}
+        <p className="desktopIdCardOther-memberDescription">
+          {bio || 'Cet utilisateur n\'a pas de description !'}
         </p>
         <Divider />
-        <div className="desktopIdCard-memberPartWrapper">
-          <div className="desktopIdCard-changeButtonsWrapper">
-            <Link to="/profil/mes-infos" exact={+true}>
-              <Button size="mini" className="desktopIdCard-changeButtonsLeft" attached="left">Gérer mon profil</Button>
-            </Link>
-            <Link to="/profil/collection" exact={+true}>
-              <Button
-                size="mini"
-                className="desktopIdCard-changeButtonsRight"
-                attached="right"
-              >Gérer mes collections
-              </Button>
-            </Link>
-          </div>
-        </div>
+
       </div>
     </div>
   </div>

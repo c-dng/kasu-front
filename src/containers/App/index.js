@@ -12,6 +12,7 @@ const mapStateToProps = (state) => ({
   chatId: state.chat.lastSingleChat.id,
   mangaDatabase: state.manga.database,
   userFullData: state.user.fullData,
+  redirectLink: state.global.redirectLink,
 });
 
 const mapDispatchToProps = (dispatch) => ({

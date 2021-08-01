@@ -12,7 +12,8 @@ import {
 import api from 'src/api';
 // Ici, on déclare notre variable
 import { io } from 'socket.io-client';
-import { setLoadingFalse, setLoadingTrue } from '../actions/global';
+import { redirectTo, setLoadingFalse, setLoadingTrue } from '../actions/global';
+import { CREATE_NEW_CHAT } from '../actions/chat';
 
 let socket;
 
@@ -76,6 +77,35 @@ const chatMiddleware = (store) => (next) => (action) => {
             console.log(error);
           },
         );
+      next(action);
+      break;
+    }
+    case CREATE_NEW_CHAT: {
+      const otherUserId = action.chatId;
+      const userId = store.getState().user.data.id;
+      console.log('creating new chat for otherUserId: ', otherUserId);
+      console.log('creating new chat by userId ', userId);
+      const token = localStorage.getItem('token');
+      api.defaults.headers.common.Authorization = `Bearer ${token}`;
+      store.dispatch(setLoadingTrue());
+      api
+        .post(`api/v1/user/${userId}/chat`, { other_user: otherUserId })
+        .then(
+          (response) => {
+            console.log('la conversation a bien été créée');
+            console.log(response.data.id);
+            store.dispatch(redirectTo(`conversation/${response.data.id}`));
+          },
+        )
+        .catch(
+          (error) => {
+            console.log('la conversation n\'a pas été créée');
+            console.log(error);
+          },
+        )
+        .finally(() => {
+          store.dispatch(setLoadingFalse());
+        });
       next(action);
       break;
     }

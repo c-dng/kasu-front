@@ -7,8 +7,8 @@ import './style.scss';
 import alternativeBanner from 'src/assets/images/alternativeBanner.png';
 
 import MediaQuery from 'react-responsive';
-import DesktopIdCard from './DesktopIdCard';
-import DesktopMyCollectionProfile from './DesktopMyCollectionProfile';
+import DesktopIdCardOther from './DesktopIdCardOther';
+import DesktopOtherMemberCollection from './DesktopOtherMemberCollection';
 
 const OtherMemberProfilePage = ({
   pseudo, bio, city, zipcode, picture, holidayMode,
@@ -23,34 +23,21 @@ const OtherMemberProfilePage = ({
   ];
 
   return (
-    <div className="viewProfilPage">
+    <div className="otherMemberProfilePage">
       <Image className="registerForm-banner" src={alternativeBanner} />
-      <div className="viewProfilPage-mainWrapper">
+      <div className="otherMemberProfilePage-mainWrapper">
 
-        <h1 className="setProfilPage-h1">Mon profil</h1>
+        <h1 className="setProfilPage-h1">Profil de {pseudo} </h1>
         <MediaQuery minWidth={1224}>
-          <DesktopIdCard pseudo={pseudo} bio={bio} city={city} zipcode={zipcode} picture={picture} holidayMode={holidayMode} />
+          <DesktopIdCardOther pseudo={pseudo} bio={bio} city={city} zipcode={zipcode} picture={picture} holidayMode={holidayMode} />
         </MediaQuery>
         <MediaQuery maxWidth={1223}>
-          <Image className="viewProfilPage-firstPartImage" src={`https://api.multiavatar.com/${picture}.png`} size="tiny" />
-          <div className="viewProfilPage-secondPart">
+          <Image className="otherMemberProfilePage-firstPartImage" src={`https://api.multiavatar.com/${picture}.png`} size="tiny" />
+          <div className="otherMemberProfilePage-secondPart">
             <Container textAlign="center">
-              <h3 className="viewProfilPage-pseudo">{pseudo}</h3>
+              <h3 className="otherMemberProfilePage-pseudo">{pseudo}</h3>
             </Container>
-            <div className="viewProfilPage-secondPartChangeButtons">
-              <Link to="/profil/mes-infos" exact={+true}>
-                <Button size="mini" className="viewProfilPage-secondPartChangeButtonsLeft" attached="left">Gérer mon profil</Button>
-              </Link>
-              <Link to="/profil/collection" exact={+true}>
-                <Button
-                  size="mini"
-                  className="viewProfilPage-secondPartChangeButtonsRight"
-                  attached="right"
-                >Gérer mes collections
-                </Button>
-              </Link>
-            </div>
-            <h4 className="viewProfilPage-infoSubtitles">Présentation</h4>
+            <h4 className="otherMemberProfilePage-infoSubtitles">Présentation</h4>
             <Container textAlign="justified">
               <p>
                 {bio || 'Vous n\'avez pas encore écrit de présentation, rendez-vous dans "Gérer mon profil" !'}
@@ -58,98 +45,95 @@ const OtherMemberProfilePage = ({
             </Container>
           </div>
 
-          <div className="viewProfilPage-thirdPart">
-            <h4 className="viewProfilPage-infoSubtitles">Localisation</h4>
-            <Container className="viewProfilPage-thirdPartLocation">
+          <div className="otherMemberProfilePage-thirdPart">
+            <h4 className="otherMemberProfilePage-infoSubtitles">Localisation</h4>
+            <Container className="otherMemberProfilePage-thirdPartLocation">
               <Icon size="large" name="map marker alternate" />
               <p>{city} - {zipcode}</p>
             </Container>
           </div>
 
-          <div className="viewProfilPage-thirdPart">
-            <h4 className="viewProfilPage-infoSubtitles">Mode Vacances</h4>
-            <Container className="viewProfilPage-thirdPartLocation">
+          <div className="otherMemberProfilePage-thirdPart">
+            <h4 className="otherMemberProfilePage-infoSubtitles">Mode Vacances</h4>
+            <Container className="otherMemberProfilePage-thirdPartLocation">
               <Icon size="large" name="globe" />
               <p>{holidayMode ? 'Activé' : 'Désactivé'}</p>
             </Container>
           </div>
 
-          <Divider className="viewProfilPage-divider" />
+          <Divider className="otherMemberProfilePage-divider" />
           <div className="manageMyCollection-myCollection">
             <Header as="h2">
-              <Icon className="viewProfilPage-myCollectionIcon" name="settings" />
-              <Header.Content className="viewProfilPage-myCollectionHeaderContent">
-                Ma collection
-                <Header.Subheader className="viewProfilPage-myCollectionSubHeaderTwo">
-                  Gérer la visibilité, l'édition, ou la suppression
-                </Header.Subheader>
+              <Icon className="otherMemberProfilePage-myCollectionIcon" name="settings" />
+              <Header.Content className="otherMemberProfilePage-myCollectionHeaderContent">
+                Sa collection
               </Header.Content>
             </Header>
           </div>
-          <Divider className="viewProfilPage-divider" />
-          <div className="viewProfilPage-myCollectionItem">
-            <div className="viewProfilPage-itemContentWrapper">
+          <Divider className="otherMemberProfilePage-divider" />
+          <div className="otherMemberProfilePage-myCollectionItem">
+            <div className="otherMemberProfilePage-itemContentWrapper">
               <Image
-                className="viewProfilPage-myCollectionTitleMangaImage"
+                className="otherMemberProfilePage-myCollectionTitleMangaImage"
                 src="https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/313968/313968._SX1280_QL80_TTD_.jpg"
                 size="tiny"
               />
-              <div className="viewProfilPage-myCollectionMangaInfoWrapper">
-                <h3 className="viewProfilPage-myCollectionTitleManga">Attaque des Titans - <span className="viewProfilPage-myCollectionAuthorManga">Auteur</span></h3>
+              <div className="otherMemberProfilePage-myCollectionMangaInfoWrapper">
+                <h3 className="otherMemberProfilePage-myCollectionTitleManga">Attaque des Titans - <span className="otherMemberProfilePage-myCollectionAuthorManga">Auteur</span></h3>
               </div>
             </div>
-            <div className="viewProfilPage-myCollectionThreeButtons">
-              <div className="viewProfilPage-myCollectionButtonsSubGroup">
-                <Button className="viewProfilPage-myCollectionButtons" fluid>
+            <div className="otherMemberProfilePage-myCollectionThreeButtons">
+              <div className="otherMemberProfilePage-myCollectionButtonsSubGroup">
+                <Button className="otherMemberProfilePage-myCollectionButtons" fluid>
                   Disponibilité
                 </Button>
-                <div className="viewProfilPage-artificialMargin" />
-                <Button className="viewProfilPage-myCollectionButtons" fluid>
+                <div className="otherMemberProfilePage-artificialMargin" />
+                <Button className="otherMemberProfilePage-myCollectionButtons" fluid>
                   Éditer
                 </Button>
               </div>
-              <Button className="viewProfilPage-myCollectionButtons viewProfilPage-DeleteButton" fluid>
+              <Button className="otherMemberProfilePage-myCollectionButtons otherMemberProfilePage-DeleteButton" fluid>
                 Supprimer
               </Button>
             </div>
           </div>
-          <Divider className="viewProfilPage-divider" />
-          <div className="viewProfilPage-myCollectionItem">
-            <div className="viewProfilPage-itemContentWrapper">
+          <Divider className="otherMemberProfilePage-divider" />
+          <div className="otherMemberProfilePage-myCollectionItem">
+            <div className="otherMemberProfilePage-itemContentWrapper">
               <Image
-                className="viewProfilPage-myCollectionTitleMangaImage"
+                className="otherMemberProfilePage-myCollectionTitleMangaImage"
                 src="https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/313968/313968._SX1280_QL80_TTD_.jpg"
                 size="tiny"
               />
-              <div className="viewProfilPage-myCollectionMangaInfoWrapper">
-                <h3 className="viewProfilPage-myCollectionTitleManga">Attaque des Titans - <span className="viewProfilPage-myCollectionAuthorManga">Auteur</span></h3>
+              <div className="otherMemberProfilePage-myCollectionMangaInfoWrapper">
+                <h3 className="otherMemberProfilePage-myCollectionTitleManga">Attaque des Titans - <span className="otherMemberProfilePage-myCollectionAuthorManga">Auteur</span></h3>
               </div>
             </div>
-            <div className="viewProfilPage-myCollectionThreeButtons">
-              <div className="viewProfilPage-myCollectionButtonsSubGroup">
-                <Button className="viewProfilPage-myCollectionButtons" fluid>
+            <div className="otherMemberProfilePage-myCollectionThreeButtons">
+              <div className="otherMemberProfilePage-myCollectionButtonsSubGroup">
+                <Button className="otherMemberProfilePage-myCollectionButtons" fluid>
                   Disponibilité
                 </Button>
-                <div className="viewProfilPage-artificialMargin" />
-                <Button className="viewProfilPage-myCollectionButtons" fluid>
+                <div className="otherMemberProfilePage-artificialMargin" />
+                <Button className="otherMemberProfilePage-myCollectionButtons" fluid>
                   Éditer
                 </Button>
               </div>
-              <Button className="viewProfilPage-myCollectionButtons viewProfilPage-DeleteButton" fluid>
+              <Button className="otherMemberProfilePage-myCollectionButtons otherMemberProfilePage-DeleteButton" fluid>
                 Supprimer
               </Button>
             </div>
           </div>
-          <Divider className="viewProfilPage-divider" />
+          <Divider className="otherMemberProfilePage-divider" />
 
-          <div className="viewProfilPage-sixthPart">
-            <Button className="viewProfilPage-sixthPartDeleteAccountButton" size="mini">Voir plus</Button>
+          <div className="otherMemberProfilePage-sixthPart">
+            <Button className="otherMemberProfilePage-sixthPartDeleteAccountButton" size="mini">Voir plus</Button>
           </div>
         </MediaQuery>
       </div>
 
       <MediaQuery minWidth={1224}>
-        <DesktopMyCollectionProfile />
+        <DesktopOtherMemberCollection />
       </MediaQuery>
 
     </div>

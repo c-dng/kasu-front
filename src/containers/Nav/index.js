@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 // eslint-disable-next-line linebreak-style
 
 import Nav from 'src/components/Nav';
-import { changeTheme } from '../../actions/global';
+import { changeTheme, logoutGlobal } from '../../actions/global';
 import { getUserInfos, loadConversations, logoutUser } from '../../actions/user';
 
 const mapStateToProps = (state) => ({
@@ -20,6 +20,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   },
   disconnectUser: function () {
     dispatch(logoutUser());
+    dispatch(logoutGlobal());
   },
   handleConversationsLoad: function () {
     dispatch(loadConversations());
