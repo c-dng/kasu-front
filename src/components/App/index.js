@@ -15,6 +15,7 @@ import ViewProfilPage from 'src/containers/ViewProfilPage';
 import Team from 'src/components/Team';
 import LegalNotice from 'src/components/LegalNotice';
 import Chat from 'src/containers/Chat';
+import Error from 'src/components/Error';
 // == Import
 
 import './style.scss';
@@ -128,6 +129,10 @@ const App = ({
         <Route path="/mentions-legales" exact>
           <LegalNotice />
           <Footer />
+        </Route>
+        <Route path="*" >
+          <Error/>
+          <Footer/>
         </Route>
       </Switch>
     </div>
