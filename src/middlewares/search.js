@@ -1,4 +1,4 @@
-import { Redirect } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { SEARCH_BY_ZIPCODE, saveSearchResult } from 'src/actions/search';
 import api from 'src/api';
 import { redirectTo, setLoadingFalse, setLoadingTrue } from '../actions/global';
@@ -9,7 +9,7 @@ if (token) {
   api.defaults.headers.common.Authorization = `Bearer ${token}`;
 }
 
-const contactAdminMiddleware = (store) => (next) => (action) => {
+const searchMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case SEARCH_BY_ZIPCODE: {
       const { zipcode } = action;
@@ -20,16 +20,22 @@ const contactAdminMiddleware = (store) => (next) => (action) => {
           (response) => {
             console.log('la recherche par zip code a marché', response.data);
             store.dispatch(saveSearchResult(response.data));
-
-            store.dispatch(setLoadingFalse());
+          },
+        )
+        .then(
+          (response) => {
+            console.log('setting redirectTo to /rechercher/ville');
+            store.dispatch(redirectTo('/rechercher/ville'));
           },
         )
         .catch(
           (error) => {
-            store.dispatch(setLoadingFalse());
             console.log('la recherche par zip code a planté', error);
           },
-        );
+        )
+        .finally(() => {
+          store.dispatch(setLoadingFalse());
+        });
       next(action);
       break;
     }
@@ -53,4 +59,4 @@ const contactAdminMiddleware = (store) => (next) => (action) => {
   }
 };
 
-export default contactAdminMiddleware;
+export default searchMiddleware;

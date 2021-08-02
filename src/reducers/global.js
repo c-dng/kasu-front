@@ -3,7 +3,7 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable max-len */
 import {
-  CHANGE_THEME, CHANGE_OBJECT, CHANGE_CONTENT, SAVE_MESSAGE, ERASE_MESSAGE, SUBMIT_FORM, SET_LOADING_TRUE, SET_LOADING_FALSE, LOGOUT_USER, CHANGE_EMAIL, REDIRECT,
+  CHANGE_THEME, CHANGE_OBJECT, CHANGE_CONTENT, SAVE_MESSAGE, ERASE_MESSAGE, SUBMIT_FORM, SET_LOADING_TRUE, SET_LOADING_FALSE, LOGOUT_USER, CHANGE_EMAIL, REDIRECT, LOGOUT_GLOBAL,
 } from '../actions/global';
 
 export const initialState = {
@@ -67,6 +67,11 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         loading: false,
       };
+    case REDIRECT:
+      return {
+        ...state,
+        redirectLink: action.link,
+      };
     case LOGOUT_USER:
       return {
         theme: 'theme1',
@@ -75,18 +80,24 @@ const reducer = (state = initialState, action = {}) => {
         object: '',
         content: '',
         message: '',
-        picture: '',
         loading: false,
+        picture: '',
         redirectLink: '',
       };
-    case REDIRECT:
+    case LOGOUT_GLOBAL:
       return {
-        ...state,
-        redirectLink: action.link,
+        theme: 'theme1',
+        navIcons: 'black',
+        email: '',
+        object: '',
+        content: '',
+        message: '',
+        loading: false,
+        picture: '',
+        redirectLink: '',
       };
     default:
       return state;
   }
 };
-
 export default reducer;

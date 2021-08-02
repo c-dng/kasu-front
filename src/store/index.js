@@ -5,7 +5,7 @@ import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
 import authMiddleware from 'src/middlewares/auth';
 import reducer from 'src/reducers';
 import chatMiddleware from 'src/middlewares/chat';
-import contactAdmin from 'src/middlewares/contactAdmin';
+import contactAdminMiddleware from 'src/middlewares/contactAdmin';
 import searchMiddleware from 'src/middlewares/search';
 import updateUser from 'src/middlewares/updateUser';
 import mangaMiddleware from 'src/middlewares/manga';
@@ -21,7 +21,7 @@ const persistedReducer = persistReducer(persistConfig, reducer);
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const enhancers = composeEnhancers(
-  applyMiddleware(authMiddleware, chatMiddleware, contactAdmin, searchMiddleware, updateUser, mangaMiddleware),
+  applyMiddleware(authMiddleware, chatMiddleware, contactAdminMiddleware, searchMiddleware, updateUser, mangaMiddleware),
 );
 
 // const store = createStore(reducer, enhancers);

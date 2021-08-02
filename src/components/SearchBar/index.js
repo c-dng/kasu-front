@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import { Form, Segment } from 'semantic-ui-react';
 import './style.scss';
 
@@ -12,16 +12,10 @@ const SearchBar = ({
     manageSubmit(search);
     console.log('search submit');
   };
-  // const history = useHistory();
-
-  // useEffect(() => {
-  //   console.log('searchbar useffect. search results : ', searchResults);
-  //   if (searchResults !== {} && searchResults) {
-  //     console.log('searchbar useffect. modified search results : ', searchResults);
-  //     history.push('/rechercher/ville');
-  //   }
-  // }, [searchResults]);
-
+  // if (searchResults) {
+  //   console.log('redirecting to rechercher/ville. Search results : ', searchResults);
+  //   return <Redirect to="/rechercher/ville" />;
+  // }
   return (
     <div className="searchbar">
       <div className="searchbar-searchWrapper">

@@ -18,13 +18,14 @@ import Chat from 'src/containers/Chat';
 // == Import
 
 import './style.scss';
-import { Redirect, Route, Switch } from 'react-router-dom';
+import { Redirect, Route, Switch, useHistory } from 'react-router-dom';
 import { useBeforeunload } from 'react-beforeunload';
 import Loading from './Loading';
+import OtherMemberProfilePage from '../OtherMemberProfilePage';
+import { redirectTo } from '../../actions/global';
 // == Composant
 const App = ({
-
-  theme, onPageLoad, onRefreshOrTabClosing, isLogged, chatId, loading, mangaDatabase, loadMangaDatabase, loadUserFullData, userFullData
+  theme, onPageLoad, onRefreshOrTabClosing, isLogged, chatId, loading, mangaDatabase, loadMangaDatabase, loadUserFullData, userFullData, redirectLink
 }) => {
   const handleOnClose = () => {
     if (isLogged) {
@@ -55,8 +56,23 @@ const App = ({
     }
   }, [chatId, isLogged, mangaDatabase, token, userFullData]);
 
+  const [redirecting, setRedirecting] = React.useState(false);
+  useEffect(() => {
+    console.log('App redirect useEffect', redirectLink);
+
+    if (redirectLink) {
+      setRedirecting(true);
+    }
+  }, [redirectLink]);
+
   if (loading) {
     return <Loading />;
+  }
+  const history = useHistory();
+  if (redirecting) {
+    setRedirecting(false);
+    console.log('redirecting to ', redirectLink);
+    history.push(redirectLink);
   }
   return (
     <div className={`app ${theme}`}>
@@ -93,12 +109,16 @@ const App = ({
           <ManageMyCollection />
           <Footer />
         </Route>
-        <Route path="/profil/mes-infos" exact>
+        <Route path="/profil/mon-profil" exact>
           <ViewProfilPage />
           <Footer />
         </Route>
-        <Route path="/profil/:id" exact>
+        <Route path="/profil/mes-infos" exact>
           <SetProfilPage />
+          <Footer />
+        </Route>
+        <Route path="/profil/:id">
+          <OtherMemberProfilePage />
           <Footer />
         </Route>
         <Route path="/team" exact>
