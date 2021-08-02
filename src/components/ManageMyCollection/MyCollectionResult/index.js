@@ -31,18 +31,22 @@ const MyCollectionResult = ({ mangaName,
     value: volume,
     className: `volume${volume}`,
   }));
-  console.log('maxVol', maxVolumeArray);
 
   const [selected, setSelected] = React.useState(mangaVolumes.map((volume) => volume.number));
 
   const handleChange = (e, { value }) => {
     console.log('dropdown change value:', value);
+    console.log('select value:', value);
     if (selected.length > value.length) { // an item has been removed
       const difference = selected.filter(
         (x) => !value.includes(x),
       );
+      const differenceIndex = value.indexOf(difference);
+      if (differenceIndex > -1) {
+        value.splice(differenceIndex, 1);
+      }
       console.log('difference of selected', difference); // this is the item
-      return false;
+      return setSelected(value);
     }
     return setSelected(value);
   };
@@ -189,7 +193,6 @@ const MyCollectionResult = ({ mangaName,
                   labelPosition="right"
                   icon="cancel"
                   onClick={() => {
-                    console.log("Envoie des données selected", mangaId, selected.join(', '));
                     deleteManga(mangaId);
                     setOpenDelete(false);
                   }}
