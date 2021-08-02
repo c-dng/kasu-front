@@ -15,14 +15,17 @@ import ViewProfilPage from 'src/containers/ViewProfilPage';
 import Team from 'src/components/Team';
 import LegalNotice from 'src/components/LegalNotice';
 import Chat from 'src/containers/Chat';
+import Error from 'src/components/Error';
 // == Import
 
 import './style.scss';
-import { Redirect, Route, Switch, useHistory } from 'react-router-dom';
+import { Redirect, Route, Switch, useHistory, useLocation } from 'react-router-dom';
 import { useBeforeunload } from 'react-beforeunload';
+import { useDispatch } from 'react-redux';
 import Loading from './Loading';
 import OtherMemberProfilePage from '../OtherMemberProfilePage';
 import { redirectTo } from '../../actions/global';
+
 // == Composant
 const App = ({
   theme, onPageLoad, onRefreshOrTabClosing, isLogged, chatId, loading, mangaDatabase, loadMangaDatabase, loadUserFullData, userFullData, redirectLink
@@ -36,6 +39,8 @@ const App = ({
   useBeforeunload(() => {
     handleOnClose();
   });
+
+  const dispatch = useDispatch();
 
   const token = localStorage.getItem('token');
 
@@ -55,25 +60,28 @@ const App = ({
       loadUserFullData();
     }
   }, [chatId, isLogged, mangaDatabase, token, userFullData]);
+  const history = useHistory();
 
-  const [redirecting, setRedirecting] = React.useState(false);
   useEffect(() => {
     console.log('App redirect useEffect', redirectLink);
-
-    if (redirectLink) {
-      setRedirecting(true);
+    const redirectToLink = redirectLink;
+    if (redirectToLink) {
+      dispatch(redirectTo(false));
+      console.log('redirecting to ', redirectToLink);
+      history.push(redirectToLink);
     }
   }, [redirectLink]);
+
+  const location = useLocation();
+  console.log(location.pathname);
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   if (loading) {
     return <Loading />;
   }
-  const history = useHistory();
-  if (redirecting) {
-    setRedirecting(false);
-    console.log('redirecting to ', redirectLink);
-    history.push(redirectLink);
-  }
+
   return (
     <div className={`app ${theme}`}>
 
@@ -127,6 +135,10 @@ const App = ({
         </Route>
         <Route path="/mentions-legales" exact>
           <LegalNotice />
+          <Footer />
+        </Route>
+        <Route path="*" >
+          <Error />
           <Footer />
         </Route>
       </Switch>

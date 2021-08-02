@@ -1,0 +1,80 @@
+img.ui.fluid.image.error-banner {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+  
+img.ui.image.error-image {
+  height: 400px;
+  width: 550px;
+  margin: auto;
+  margin-top: 4em;
+  margin-bottom: 3em;
+  transform:scale(1, 1);
+  transition: 0.15s;
+  object-fit: cover;
+  
+  &:hover {
+    transform:scale(1.5, 1.5);
+  }
+}
+
+div.error-description p {
+  display: flex;
+  justify-content: center;
+  font-size: large;
+}
+
+div.error-buttonWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.75em;
+  margin-bottom: 1em;
+}
+
+div.error-buttonArtificalMargin {
+  padding-right: 0.50em;
+}
+
+// Handmade button effect
+   div.error-buttonWrapper{
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    width:100%;
+    min-height:100%;
+    margin-bottom:3rem;
+    & a.ui.button.lined.thin{
+      align-self:center;
+      background:transparent;
+      padding:1rem 1rem;
+      margin:0 1rem;
+      transition:all .5s ease;
+      color:#41403E;
+      font-size:2rem;
+      letter-spacing:1px;
+      outline:none;
+      box-shadow: 20px 38px 34px -26px hsla(0,0%,0%,.2);
+      border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+      border:solid 2px #41403E;
+
+       &:hover{
+         box-shadow:2px 8px 4px -6px hsla(0,0%,0%,.3);
+         transform:scale(1.5, 1.5);
+      } 
+    }
+  }
+
+@media (max-width:620px){
+
+    div.error-buttonWrapper{
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      margin-bottom:1rem;
+    & a.ui.button.lined.thin{
+      align-self:center;
+      margin-bottom:2rem;
+    }
+  }
+}
