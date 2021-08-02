@@ -235,33 +235,33 @@ const DesktopSetIdCard = ({
           <div className="desktopIdCard-errorMessage">
             {errorMessage}
           </div>
-          <div className="desktopIdCard-Bottom3Buttons">
-            <ButtonGroup widths="3">
-              <Button icon="erase" color="black" />
-              <Modal
-                icon="user delete"
-                open={open}
-                trigger={<Button className="desktopIdCard-memberDelete" color="red"><Icon name="user delete" /></Button>}
-                onClose={() => setOpen(false)}
-                onOpen={() => setOpen(true)}
-              >
-                <Header icon="delete" content="Confirmer votre action" />
-                <Modal.Content>
-                  <p>Voulez-vous vraiment supprimer votre compte ?</p>
-                </Modal.Content>
-                <Modal.Actions>
-                  <Button color="red" onClick={() => setOpen(false)}>
-                    <Icon name="remove" /> Non
-                  </Button>
-                  <Button color="green" onClick={() => setOpen(true)}>
-                    <Icon name="checkmark" /> Oui
-                  </Button>
-                </Modal.Actions>
-              </Modal>
-              <Button type="submit" icon="save" color="green" />
-            </ButtonGroup>
+          <div className="desktopIdCard-SaveButton">
+            <Button type="submit" color="green">Enregistrer</Button>
           </div>
         </Form>
+        <Modal
+          closeIcon
+          open={open}
+          trigger={<Button>Show Modal</Button>}
+          onClose={() => setOpen(false)}
+          onOpen={() => setOpen(true)}
+        >
+          <Header icon='archive' content='Archive Old Messages' />
+          <Modal.Content>
+            <p>
+              Your inbox is getting full, would you like us to enable automatic
+              archiving of old messages?
+            </p>
+          </Modal.Content>
+          <Modal.Actions>
+            <Button color='red' onClick={() => setOpen(false)}>
+              <Icon name='remove' /> No
+            </Button>
+            <Button color='green' onClick={() => setOpen(false)}>
+              <Icon name='checkmark' /> Yes
+            </Button>
+          </Modal.Actions>
+        </Modal>
       </div>
     </div>
   );
