@@ -19,10 +19,9 @@ const MyCollectionResult = ({ mangaName,
       .map((volume) => volume.number)
   );
   const [openEdit, setOpenEdit] = React.useState(false);
+  const [possessedVolumes, setPossessedVolumes] = React.useState(mangaVolumes.map((volume) => volume.number));
 
-
-
-  // { console.log(mangaVolumes) };
+  console.log(mangaVolumes);
   return (
     <div>
       <div className="manageMyCollection-itemDesktopVersion">
@@ -148,7 +147,7 @@ const MyCollectionResult = ({ mangaName,
             </div>
             <Button className="manageMyCollection-myCollectionButtons manageMyCollection-DeleteButton" fluid>
               Supprimer
-          </Button>
+            </Button>
           </div>
         </div>
       </div>
