@@ -5,6 +5,7 @@ import SetProfilPage from 'src/components/SetProfilPage';
 import {
   getUserInfos, changeMessage, updateUser, changeDescription, changeEmail, changePassword, changeConfirmPassword, changeCity, changeAddress, changeZipCode, changeLastName, changeFirstName, changePseudo, changeHolidayMode, loadUserFullData, eraseMessage
 } from '../../actions/user';
+import { redirectTo } from '../../actions/global';
 
 const mapStateToProps = (state, ownProps) => ({
   pseudo: state.user.pseudo,
@@ -78,10 +79,12 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 
   displayUserInfos: function (infos) {
     dispatch(getUserInfos());
+  },
+  
+  redirectTo: function (link) {
+    dispatch(redirectTo(link));
   }
-  // onSetProfilPageUnmount: () => {
-  //   dispatch(eraseMessage());
-  // },
+
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SetProfilPage);

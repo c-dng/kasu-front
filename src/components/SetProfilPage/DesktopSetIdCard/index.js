@@ -47,7 +47,8 @@ const DesktopSetIdCard = ({
   changeHolidayMode,
   changeDescription,
   handleUpdate,
-  displayUserInfos
+  displayUserInfos,
+  redirectTo
 }) => {
   useEffect(() => {
     displayUserInfos();
@@ -106,6 +107,19 @@ const DesktopSetIdCard = ({
     const { checked } = data;
     changeHolidayMode(checked);
   };
+
+  //Delete Account => Redirect to contactForm
+  const handleDeleteMyAccount = () => {
+    setOpen(false);
+    redirectTo('/contact');
+  }
+
+//Cancel => Redirect to profil
+const handleCancel = () => {
+  setOpen(false);
+  redirectTo('/profil/mon-profil');
+}
+
   // Check password with validator dependencie
   const validate = (value) => {
     if (validator.isStrongPassword(value, {
@@ -236,15 +250,16 @@ const DesktopSetIdCard = ({
           <div className="desktopIdCard-errorMessage">
             {errorMessage}
           </div>
-          <div className="desktopIdCard-divSaveButton">
-            <Button className="desktopIdCard-SaveButtonGreen" size="mini" type="submit">Enregistrer</Button>
+          <div className="desktopIdCard-groupTwoButtons">
+            <Button size="medium" onClick={handleCancel} className="desktopIdCard-buttonCancel">Annuler</Button>
+            <Button type="submit" size="medium" className="desktopIdCard-buttonValidate">Valider</Button>
           </div>
         </Form>
         <div className="desktopIdCard-divDeleteButton" >
           <Modal
             closeIcon
             open={open}
-            trigger={<Button className="desktopIdCard-DeleteButtonRed">Supprimer mon compte</Button>}
+            trigger={<Button size="mini" className="desktopIdCard-DeleteButtonRed">Supprimer mon compte</Button>}
             onClose={() => setOpen(false)}
             onOpen={() => setOpen(true)}
           >
@@ -258,7 +273,7 @@ const DesktopSetIdCard = ({
               <Button color='red' onClick={() => setOpen(false)}>
                 <Icon name='remove' /> Non
               </Button>
-              <Button color='green' onClick={() => setOpen(false)}>
+              <Button color='green' onClick={handleDeleteMyAccount}>
                 <Icon name='checkmark' /> Oui
               </Button>
             </Modal.Actions>

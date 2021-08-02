@@ -48,6 +48,12 @@ const updateUser = (store) => (next) => (action) => {
             store.dispatch(setLoadingFalse());
           },
         )
+        .then(
+          (response) => {
+            console.log('setting redirectTo to /profil/mon-profil');
+            store.dispatch(redirectTo('/profil/mon-profil'));
+          },
+        )
         .catch((error) => {
           store.dispatch(setLoadingFalse());
           console.log('update user infos failed', error);

@@ -58,10 +58,10 @@ const SetProfilPage = ({
   changeDescription,
   handleUpdate,
   displayUserInfos,
+  redirectTo,
 }) => {
   useEffect(() => {
     displayUserInfos();
-    setTimeout(changeMessage(''), 10000);
   }, []);
 
   const [open, setOpen] = React.useState(false);// Modal to delete account
@@ -89,6 +89,7 @@ const SetProfilPage = ({
       setErrorMessagePassword('');
       console.log('Bien soumis! mots de passe identiques');
       handleUpdate();
+
     }
     else {
       setErrorMessagePassword('Les mots de passe ne sont pas identiques!');
@@ -132,6 +133,16 @@ const SetProfilPage = ({
     const { checked } = data;
     changeHolidayMode(checked);
   };
+  //Delete Account => Redirect to contactForm
+  const handleDeleteMyAccount = () => {
+    setOpen(false);
+    redirectTo('/contact');
+  }
+  //Cancel => Redirect to profil
+  const handleCancel = () => {
+    setOpen(false);
+    redirectTo('/profil/mon-profil');
+  }
 
   return (
         <div className="setProfilPage">
@@ -168,6 +179,7 @@ const SetProfilPage = ({
                   displayUserInfos={displayUserInfos}
                   onChangeCheckbox={onChangeCheckbox}
                   changeConfirmPassword={changeConfirmPassword}
+                  redirectTo={redirectTo}
                 />
               </MediaQuery>
 
@@ -281,11 +293,16 @@ const SetProfilPage = ({
                       <div className="desktopIdCard-errorMessage">
                         {errorMessage}
                       </div>
-                      <div className="mobileSetProfil-divDeleteMyAccount">
+                      <div className="mobileSetProfil-groupTwoButtons">
+                        <Button size="small" onClick={handleCancel} className="mobileSetProfil-buttonCancel">Annuler</Button>
+                        <Button type="submit" size="small" className="mobileSetProfil-buttonValidate">Valider</Button>
+                      </div>
+                    </Form>
+                    <div className="mobileSetProfil-divDeleteMyAccount">
                         <Modal
                           icon="user delete"
                           open={open}
-                          trigger={<Button size="small" className="mobileSetProfil-deleteMyAccount" negative>Supprimer mon compte</Button>}
+                          trigger={<Button size="mini" className="mobileSetProfil-deleteMyAccount" negative>Supprimer mon compte</Button>}
                           onClose={() => setOpen(false)}
                           onOpen={() => setOpen(true)}
                         >
@@ -297,17 +314,12 @@ const SetProfilPage = ({
                             <Button color="red" onClick={() => setOpen(false)}>
                               <Icon name="remove" /> Non
                             </Button>
-                            <Button color="green" onClick={() => setOpen(true)}>
+                            <Button color="green" onClick={handleDeleteMyAccount}>
                               <Icon name="checkmark" /> Oui
                             </Button>
                           </Modal.Actions>
                         </Modal>
                       </div>
-                      <div className="mobileSetProfil-groupTwoButtons">
-                        <Button size="small" className="mobileSetProfil-buttonCancel">Annuler</Button>
-                        <Button type="submit" size="small" className="mobileSetProfil-buttonValidate">Valider</Button>
-                      </div>
-                    </Form>
                 </div>
               </MediaQuery>
           </div>
