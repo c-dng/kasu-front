@@ -1,12 +1,13 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable max-len */
 import {
-  SAVE_USER_INFOS, CHANGE_DESCRIPTION, CHANGE_PSEUDO, CHANGE_EMAIL, CHANGE_PASSWORD, SAVE_USER, LOGOUT_USER, CHANGE_ADDRESS, CHANGE_ZIP_CODE, CHANGE_FIRST_NAME, CHANGE_LAST_NAME, CHANGE_CITY, CHANGE_HOLIDAY_MODE, SAVE_USER_CONVERSATIONS, UPDATE_USER, ERASE_MESSAGE, SAVE_MESSAGE, SAVE_USER_FULL_DATA, SAVE_OTHER_USER_FULL_DATA,
+  SAVE_USER_INFOS, CHANGE_MESSAGE, CHANGE_DESCRIPTION, CHANGE_PSEUDO, CHANGE_EMAIL, CHANGE_PASSWORD, CHANGE_CONFIRM_PASSWORD, SAVE_USER, LOGOUT_USER, CHANGE_ADDRESS, CHANGE_ZIP_CODE, CHANGE_FIRST_NAME, CHANGE_LAST_NAME, CHANGE_CITY, CHANGE_HOLIDAY_MODE, SAVE_USER_CONVERSATIONS, UPDATE_USER, ERASE_MESSAGE, SAVE_MESSAGE, SAVE_USER_FULL_DATA, SAVE_OTHER_USER_FULL_DATA,
 } from '../actions/user';
 
 export const initialState = {
   email: '',
   password: '',
+  confirmPassword:'',
   pseudo: '',
   address: '',
   zipCode: '',
@@ -36,6 +37,11 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         password: action.password,
+      };
+    case CHANGE_CONFIRM_PASSWORD:
+      return {
+        ...state,
+        confirmPassword: action.confirmPassword,
       };
     case CHANGE_ADDRESS:
       return {
@@ -82,6 +88,11 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         message: action.message,
       };
+    case CHANGE_MESSAGE:
+      return {
+        ...state,
+        message: action.message,
+      };
     case ERASE_MESSAGE:
       return {
         ...state,
@@ -100,6 +111,7 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         email: action.infos.email,
         password: '',
+        confirmPassword: '',
         pseudo: action.infos.pseudo,
         address: action.infos.address,
         zipCode: action.infos.zip_code,
@@ -109,6 +121,7 @@ const reducer = (state = initialState, action = {}) => {
         holiday_mode: action.infos.holiday_mode,
         description: action.infos.description,
         picture: action.infos.picture,
+        infos: action.infos,
       };
     case SAVE_USER_FULL_DATA:
       return {
@@ -125,6 +138,7 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         email: '',
         password: '',
+        confirmPassword: '',
         pseudo: '',
         address: '',
         zipCode: '',
@@ -143,6 +157,7 @@ const reducer = (state = initialState, action = {}) => {
       return {
         email: '',
         password: '',
+        confirmPassword:'',
         pseudo: '',
         address: '',
         zipCode: '',

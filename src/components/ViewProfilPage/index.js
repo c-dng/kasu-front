@@ -100,15 +100,15 @@ const ViewProfilPage = ({
             </div>
             <div className="viewProfilPage-myCollectionThreeButtons">
               <div className="viewProfilPage-myCollectionButtonsSubGroup">
-                <Button className="viewProfilPage-myCollectionButtons" fluid>
+                <Button className="viewProfilPage-myCollectionButtons" fluid size="mini">
                   Disponibilité
                 </Button>
                 <div className="viewProfilPage-artificialMargin" />
-                <Button className="viewProfilPage-myCollectionButtons" fluid>
+                <Button className="viewProfilPage-myCollectionButtons" fluid size="mini">
                   Éditer
                 </Button>
               </div>
-              <Button className="viewProfilPage-myCollectionButtons viewProfilPage-DeleteButton" fluid>
+              <Button className="viewProfilPage-myCollectionButtons viewProfilPage-DeleteButton" fluid size="mini">
                 Supprimer
               </Button>
             </div>
@@ -127,24 +127,23 @@ const ViewProfilPage = ({
             </div>
             <div className="viewProfilPage-myCollectionThreeButtons">
               <div className="viewProfilPage-myCollectionButtonsSubGroup">
-                <Button className="viewProfilPage-myCollectionButtons" fluid>
+                <Button className="viewProfilPage-myCollectionButtons" fluid size="mini">
                   Disponibilité
                 </Button>
                 <div className="viewProfilPage-artificialMargin" />
-                <Button className="viewProfilPage-myCollectionButtons" fluid>
+                <Button className="viewProfilPage-myCollectionButtons" fluid size="mini">
                   Éditer
                 </Button>
               </div>
-              <Button className="viewProfilPage-myCollectionButtons viewProfilPage-DeleteButton" fluid>
+              <Button className="viewProfilPage-myCollectionButtons viewProfilPage-DeleteButton" fluid size="mini">
                 Supprimer
               </Button>
             </div>
           </div>
           <Divider className="viewProfilPage-divider" />
-
-          <div className="viewProfilPage-sixthPart">
+          {/* <div className="viewProfilPage-sixthPart">
             <Button className="viewProfilPage-sixthPartDeleteAccountButton" size="mini">Voir plus</Button>
-          </div>
+          </div> */}
         </MediaQuery>
       </div>
 
