@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Card, Icon, Image, Select } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 
@@ -21,6 +21,8 @@ const ResultCard = ({
     text: volume.volume.number,
     value: volume.volume.number,
   }));
+
+  const [open, setOpen] = useState(false);
 
   return (
     <div className="resultCard">
@@ -46,17 +48,19 @@ const ResultCard = ({
         </Card.Content>
         <Card.Content extra>
           <div className="ui two buttons">
-            <Button basic className="searchResultsByLocation-showMore" color="black">
+            <Button basic className="searchResultsByLocation-showMore" color="black" onClick={() => setOpen(!open)}>
               Voir plus
             </Button>
             <Button onClick={() => createNewChat(ownerId)} basic color="blue" className="searchResultsByLocation-contactOwner">
               Contacter le propriétaire
             </Button>
           </div>
-          <div className={open ? 'searchResultsByLocation-showMore--active' : 'searchResultsByLocation-showMore--hidden'}>
-            <h3>Synopsis</h3>
-            <p>{mangaSynopsis}</p>
-          </div>
+          {open && (
+            <div className={open ? 'searchResultsByLocation-showMore--active' : 'searchResultsByLocation-showMore--hidden'}>
+              <h3>Synopsis</h3>
+              <p>{mangaSynopsis}</p>
+            </div>
+          )}
         </Card.Content>
       </Card>
     </div>
