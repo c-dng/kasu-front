@@ -25,6 +25,7 @@ import { useDispatch } from 'react-redux';
 import Loading from './Loading';
 import OtherMemberProfilePage from '../OtherMemberProfilePage';
 import { redirectTo } from '../../actions/global';
+import { useDeepCompareEffect, useDeepCompareEffectNoCheck } from 'use-deep-compare-effect';
 
 // == Composant
 const App = ({
@@ -71,6 +72,13 @@ const App = ({
       history.push(redirectToLink);
     }
   }, [redirectLink]);
+
+  // useDeepCompareEffectNoCheck(() => {
+  //   if (userFullData) {
+  //     console.log('useDeepCompareEffectNoCheck on userFullData');
+  //     loadUserFullData();
+  //   }
+  // }, [userFullData]);
 
   const location = useLocation();
   console.log(location.pathname);
@@ -150,10 +158,12 @@ App.propTypes = {
   theme: PropTypes.string.isRequired,
   // eslint-disable-next-line react/no-unused-prop-types
   loading: PropTypes.bool,
+  userMangas: PropTypes.object,
 };
 
 App.defaultProps = {
   loading: false,
+  userMangas: {},
 };
 
 // == Export

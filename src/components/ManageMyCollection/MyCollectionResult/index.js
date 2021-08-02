@@ -10,6 +10,7 @@ const MyCollectionResult = ({ mangaName,
   mangaVolumes,
   mangaAuthor, 
   mangaId,
+  modifyVolumeAvailability,
 }) => {
   const [open, setOpen] = React.useState(false);
   const [checkedVolumes, setCheckedVolumes] = React.useState(
@@ -82,7 +83,7 @@ const MyCollectionResult = ({ mangaName,
                     icon="checkmark"
                     onClick={() => {
                       console.log("Envoie des données", mangaId, checkedVolumes.join(', '));
-                      
+                      modifyVolumeAvailability(mangaId, checkedVolumes.join(', '));
                       setOpen(false);
                     }}
                     positive
