@@ -39,3 +39,11 @@ export const modifyVolumeAvailability = (mangaId, volumeAvailability) => ({
   mangaId,
   volumeAvailability,
 });
+
+export const ADD_OR_REMOVE_VOLUMES = 'ADD_OR_REMOVE_VOLUMES';
+
+export const AddOrRemoveVolumes = (mangaId, volumePossessed) => ({
+  type: ADD_OR_REMOVE_VOLUMES,
+  mangaId,
+  volumePossessed,
+});

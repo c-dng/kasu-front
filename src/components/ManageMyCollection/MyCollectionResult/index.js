@@ -1,7 +1,8 @@
 
 import React from 'react';
+import _ from 'lodash';
 import {
-  Image, Button, Divider, Modal, Header, Checkbox,
+  Image, Button, Divider, Modal, Header, Dropdown,
 } from 'semantic-ui-react';
 import MangaAvailability from 'src/containers/MangaAvailability';
 
@@ -11,6 +12,8 @@ const MyCollectionResult = ({ mangaName,
   mangaAuthor,
   mangaId,
   modifyVolumeAvailability,
+  mangaMaxVolumeNumber,
+  AddOrRemoveVolumes,
 }) => {
   const [openAvailability, setOpenAvailability] = React.useState(false);
   const [checkedVolumes, setCheckedVolumes] = React.useState(
@@ -20,7 +23,31 @@ const MyCollectionResult = ({ mangaName,
   );
   const [openEdit, setOpenEdit] = React.useState(false);
   const [possessedVolumes, setPossessedVolumes] = React.useState(mangaVolumes.map((volume) => volume.number));
+  const maxVolumeArray = _.range(1, mangaMaxVolumeNumber + 1);
+  const mangaVolumeOptions = maxVolumeArray.map((volume) => ({
+    key: volume,
+    text: volume,
+    value: volume,
+    className: `volume${volume}`,
+  }));
+  console.log(mangaVolumeOptions);
 
+  const [selected, setSelected] = React.useState(mangaVolumes.map((volume) => volume.number));
+
+  const handleChange = (e, { value }) => {
+    console.log('dropdown change value:', value);
+    if (selected.length > value.length) { // an item has been removed
+      const difference = selected.filter(
+        (x) => !value.includes(x),
+      );
+      console.log('difference of selected', difference); // this is the item
+      return false;
+    }
+    return setSelected(value);
+  };
+  const mangaTitle = mangaName;
+  const volumes = selected.join(', ');
+  console.log('volume selected = ', volumes);
   console.log(mangaVolumes);
   return (
     <div>
@@ -84,7 +111,7 @@ const MyCollectionResult = ({ mangaName,
                     onClick={() => {
                       console.log("Envoie des données", mangaId, checkedVolumes.join(', '));
                       modifyVolumeAvailability(mangaId, checkedVolumes.join(', '));
-                      setOpen(false);
+                      setOpenAvailability(false);
                     }}
                     positive
                   />
@@ -105,25 +132,18 @@ const MyCollectionResult = ({ mangaName,
                     <p>
                       Veuillez préciser quels tomes {mangaName} vous possédez.
                     </p>
-                    {/* {mangaVolumes.map((volume) => (
-                      <MangaAvailability
-                        volumeNumber={volume.number}
-                        onChangeAvailability={(volumeNumber, checked) => {
-                          console.log("Checked Value", checked);
-                          if (!checked) {
-                            setCheckedVolumes(checkedVolumes.filter((volume) => volume !== volumeNumber));
-                          } else {
-                            setCheckedVolumes([
-                              ...checkedVolumes,
-                              volumeNumber,
-                            ]);
-                          }
 
-                        }}
-                        key={volume.number}
-                        checked={checkedVolumes.includes(volume.number)}
-                      />
-                    ))} */}
+                    <Dropdown
+                      defaultValue={possessedVolumes}
+                      className="manageMyCollection-dropdownSelectAndAdd"
+                      placeholder="Tome(s) à ajouter"
+                      size="5"
+                      fluid
+                      multiple
+                      selection
+                      options={mangaVolumeOptions}
+                      onChange={handleChange}
+                    />
                   </Modal.Description>
                 </Modal.Content>
                 <Modal.Actions>
@@ -135,8 +155,8 @@ const MyCollectionResult = ({ mangaName,
                     labelPosition="right"
                     icon="checkmark"
                     onClick={() => {
-                      console.log("Envoie des données", mangaId, checkedVolumes.join(', '));
-
+                      console.log("Envoie des données selected", mangaId, selected.join(', '));
+                      AddOrRemoveVolumes(mangaId, selected.join(', '));
                       setOpenEdit(false);
                     }}
                     positive

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { addToMyCollection, modifyVolumeAvailability } from '../../actions/manga';
+import { addToMyCollection, modifyVolumeAvailability, AddOrRemoveVolumes } from '../../actions/manga';
 import { searchByMangaName, setMangaSearch } from '../../actions/search';
 import ManageMyCollection from '../../components/ManageMyCollection';
 
@@ -24,7 +24,10 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   },
   modifyVolumeAvailability: function (mangaId, volumeAvailability) {
     dispatch(modifyVolumeAvailability(mangaId, volumeAvailability));
-  }
+  },
+  AddOrRemoveVolumes: function (mangaId, volumeAvailability) {
+    dispatch(AddOrRemoveVolumes(mangaId, volumeAvailability));
+  },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ManageMyCollection);
