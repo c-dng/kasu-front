@@ -3,13 +3,14 @@ import { connect } from 'react-redux';
 import SetProfilPage from 'src/components/SetProfilPage';
 
 import {
-  updateUser, changeDescription, changeEmail, changePassword, changeCity, changeAddress, changeZipCode, changeLastName, changeFirstName, changePseudo, changeHolidayMode, getUserInfos, eraseMessage,
+  getUserInfos, changeMessage, updateUser, changeDescription, changeEmail, changePassword, changeConfirmPassword, changeCity, changeAddress, changeZipCode, changeLastName, changeFirstName, changePseudo, changeHolidayMode, loadUserFullData, eraseMessage
 } from '../../actions/user';
+import { redirectTo } from '../../actions/global';
 
 const mapStateToProps = (state, ownProps) => ({
+  pseudo: state.user.pseudo,
   email: state.user.email,
   password: state.user.password,
-  pseudo: state.user.pseudo,
   address: state.user.address,
   zipCode: state.user.zipCode,
   city: state.user.city,
@@ -17,12 +18,16 @@ const mapStateToProps = (state, ownProps) => ({
   lastName: state.user.lastName,
   holiday_mode: state.user.holiday_mode,
   description: state.user.description,
-  infos: state.user.infos,
   message: state.user.message,
   picture: state.user.data.picture,
+  confirmPassword: state.user.confirmPassword,
+  infos: state.user.infos
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
+  changeMessage: function (message) {
+    dispatch(changeMessage(message));
+  },
 
   handleUpdate: function () {
     dispatch(updateUser());
@@ -34,6 +39,10 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 
   changePassword: function (password) {
     dispatch(changePassword(password));
+  },
+
+  changeConfirmPassword: function (confirmPassword) {
+    dispatch(changeConfirmPassword(confirmPassword));
   },
 
   changeCity: function (city) {
@@ -68,13 +77,14 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     dispatch(changeDescription(description));
   },
 
-  displayUserInfos: function () {
+  displayUserInfos: function (infos) {
     dispatch(getUserInfos());
   },
+  
+  redirectTo: function (link) {
+    dispatch(redirectTo(link));
+  }
 
-  onSetProfilPageUnmount: () => {
-    dispatch(eraseMessage());
-  },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SetProfilPage);

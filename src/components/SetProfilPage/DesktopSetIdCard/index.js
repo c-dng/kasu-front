@@ -24,6 +24,7 @@ import {
 const DesktopSetIdCard = ({
   email,
   password,
+  confirmPassword,
   pseudo,
   address,
   zipCode,
@@ -33,8 +34,10 @@ const DesktopSetIdCard = ({
   holiday_mode,
   description,
   picture,
+  infos,
   changeEmail,
   changePassword,
+  changeConfirmPassword,
   changePseudo,
   changeAddress,
   changeZipCode,
@@ -44,23 +47,29 @@ const DesktopSetIdCard = ({
   changeHolidayMode,
   changeDescription,
   handleUpdate,
-  handleMessage,
   displayUserInfos,
+  redirectTo
 }) => {
-  useEffect(() => (
-    displayUserInfos()
-  ),
-  []);
+  useEffect(() => {
+    displayUserInfos();
+    console.log('infos chargées', {infos});
+  }, []);
 
   const [open, setOpen] = React.useState(false);// Modal to delete account
-  const [] = React.useState(false);// Modal to choose an avatar
   const [errorMessage, setErrorMessage] = React.useState('');// display a message received from API
+  const [errorMessagePassword, setErrorMessagePassword] = React.useState('');// display a message with errors
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    console.log('Bien soumis!');
-    handleUpdate();
-    handleMessage();
+    if ( confirmPassword  ===  password ) {
+      setErrorMessagePassword('');
+      console.log('Bien soumis! mots de passe identiques');
+      handleUpdate();
+    }
+    else {
+      setErrorMessagePassword('Les mots de passe ne sont pas identiques!');
+      console.log('ERROR mots de passe inégaux');
+    } 
   };
   const handleChangeEmail = (evt) => {
     changeEmail(evt.target.value);
@@ -68,6 +77,9 @@ const DesktopSetIdCard = ({
   const handleChangePassword = (evt) => {
     validate(evt.target.value);// checking password
     changePassword(evt.target.value);
+  };
+  const handleChangeConfirmPassword = (evt) => {
+    changeConfirmPassword(evt.target.value);
   };
   const handleChangePseudo = (evt) => {
     changePseudo(evt.target.value);
@@ -95,6 +107,19 @@ const DesktopSetIdCard = ({
     const { checked } = data;
     changeHolidayMode(checked);
   };
+
+  //Delete Account => Redirect to contactForm
+  const handleDeleteMyAccount = () => {
+    setOpen(false);
+    redirectTo('/contact');
+  }
+
+//Cancel => Redirect to profil
+const handleCancel = () => {
+  setOpen(false);
+  redirectTo('/profil/mon-profil');
+}
+
   // Check password with validator dependencie
   const validate = (value) => {
     if (validator.isStrongPassword(value, {
@@ -123,35 +148,6 @@ const DesktopSetIdCard = ({
           size="medium"
           src={`https://api.multiavatar.com/${picture}.png`}
         />
-        {/* <Modal
-          onClose={() => setAvatar(false)}
-          onOpen={() => setAvatar(true)}
-          open={avatar}
-          trigger={<Button size="massive" className="desktopSetProfil-addButton" circular icon='photo' />}
-        >
-          <Modal.Header>Upload image</Modal.Header>
-          <Modal.Content image>
-            <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
-            <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
-            <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
-            <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
-            <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
-            <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
-            <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
-            <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
-            <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
-            <Button><Image circular size='mini' src='/images/wireframe/image-square.png' wrapped /></Button>
-            <Modal.Description>
-              <p>Veuillez choisir un avatar</p>
-            </Modal.Description>
-          </Modal.Content>
-          <Modal.Actions>
-            <Button onClick={() => setAvatar(false)}>Cancel</Button>
-            <Button onClick={() => setAvatar(false)} positive>
-              Ok
-              </Button>
-          </Modal.Actions>
-        </Modal> */}
       </div>
 
       <div className="desktopIdCard-rightPartWrapper">
@@ -229,6 +225,20 @@ const DesktopSetIdCard = ({
               onChange={handleChangePassword}
             />
             <Form.Input
+              input="password"
+              id="confirmPassword"
+              icon="lock"
+              iconPosition="left"
+              placeholder="Confirmer le mot de passe"
+              value={confirmPassword}
+              onChange={handleChangeConfirmPassword}
+              fluid
+            /> 
+          </Form.Group>
+          <div className="desktopIdCard-errorMessage">
+            {errorMessagePassword}
+          </div>
+          <Form.Input
               className="desktopIdCard-formInputEmail"
               icon="mail"
               type="email"
@@ -237,38 +247,38 @@ const DesktopSetIdCard = ({
               value={email}
               onChange={handleChangeEmail}
             />
-          </Form.Group>
-
           <div className="desktopIdCard-errorMessage">
             {errorMessage}
           </div>
-          <div className="desktopIdCard-Bottom3Buttons">
-            <ButtonGroup widths="3">
-              <Button icon="erase" color="black" />
-              <Modal
-                icon="user delete"
-                open={open}
-                trigger={<Button className="desktopIdCard-memberDelete" color="red"><Icon name="user delete" /></Button>}
-                onClose={() => setOpen(false)}
-                onOpen={() => setOpen(true)}
-              >
-                <Header icon="delete" content="Confirmer votre action" />
-                <Modal.Content>
-                  <p>Voulez-vous vraiment supprimer votre compte ?</p>
-                </Modal.Content>
-                <Modal.Actions>
-                  <Button color="red" onClick={() => setOpen(false)}>
-                    <Icon name="remove" /> Non
-                  </Button>
-                  <Button color="green" onClick={() => setOpen(true)}>
-                    <Icon name="checkmark" /> Oui
-                  </Button>
-                </Modal.Actions>
-              </Modal>
-              <Button type="submit" icon="save" color="green" />
-            </ButtonGroup>
+          <div className="desktopIdCard-groupTwoButtons">
+            <Button size="medium" onClick={handleCancel} className="desktopIdCard-buttonCancel">Annuler</Button>
+            <Button type="submit" size="medium" className="desktopIdCard-buttonValidate">Valider</Button>
           </div>
         </Form>
+        <div className="desktopIdCard-divDeleteButton" >
+          <Modal
+            closeIcon
+            open={open}
+            trigger={<Button size="mini" className="desktopIdCard-DeleteButtonRed">Supprimer mon compte</Button>}
+            onClose={() => setOpen(false)}
+            onOpen={() => setOpen(true)}
+          >
+            <Header icon='archive' content='Archive Old Messages' />
+            <Modal.Content>
+              <p>
+                Voulez-vous vraiment supprimer votre compte ?
+              </p>
+            </Modal.Content>
+            <Modal.Actions>
+              <Button color='red' onClick={() => setOpen(false)}>
+                <Icon name='remove' /> Non
+              </Button>
+              <Button color='green' onClick={handleDeleteMyAccount}>
+                <Icon name='checkmark' /> Oui
+              </Button>
+            </Modal.Actions>
+          </Modal>
+        </div>
       </div>
     </div>
   );

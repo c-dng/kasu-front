@@ -12,6 +12,13 @@ export const changePassword = (password) => ({
   password,
 });
 
+export const CHANGE_CONFIRM_PASSWORD = 'CHANGE_CONFIRM_PASSWORD';
+
+export const changeConfirmPassword = (confirmPassword) => ({
+  type: CHANGE_CONFIRM_PASSWORD,
+  confirmPassword,
+});
+
 export const CHANGE_EMAIL = 'CHANGE_EMAIL';
 
 export const changeEmail = (email) => ({
@@ -169,4 +176,11 @@ export const SAVE_OTHER_USER_FULL_DATA = 'SAVE_OTHER_USER_FULL_DATA';
 export const saveOtherUserFullData = (fullData) => ({
   type: SAVE_OTHER_USER_FULL_DATA,
   fullData,
+});
+
+export const CHANGE_MESSAGE = 'CHANGE_MESSAGE';
+
+export const changeMessage = (message) => ({
+  type: CHANGE_MESSAGE,
+  message,
 });
