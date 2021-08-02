@@ -82,7 +82,13 @@ const ManageMyCollection = ({
               ))}
 
             </div>
-          ) : null}
+          ) : (
+            <div>
+              <Divider className="manageMyCollection-divider" />
+                <h4 className="manageMyCollection-subtitle">Vous n'avez pas de mangas dans votre collection</h4>
+              <Divider className="manageMyCollection-divider" />
+            </div>
+        )}
 
         </div>
       </div>
