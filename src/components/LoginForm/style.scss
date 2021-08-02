@@ -56,10 +56,6 @@ div.content.loginform-cardContent.loginform-cardContent.loginform-cardContent {
 
 @media only screen and (min-width : 1224px) {
 
-  .loginform-globalContentWrapper {
-
-  }
-
   .loginform-banner {
     width: 100%;
     height: 250px;
@@ -102,6 +98,13 @@ div.content.loginform-cardContent.loginform-cardContent.loginform-cardContent {
     background-color: vars.$primaryColor_theme1;
     color :vars.$primaryFontColor_theme1;
   }
+
+  button.ui.button.login-button:hover {
+    border: 1px solid vars.$secondaryBorderColor_theme1;
+    background-color: vars.$secondaryColor_theme1;
+    color :vars.$secondaryFontColor_theme1;
+  }
+  
 
   div.header.loginform-cardHeader.loginform-cardHeader.loginform-cardHeader {
     color: vars.$secondaryFontColor_theme1;

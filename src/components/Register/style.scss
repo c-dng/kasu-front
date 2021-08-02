@@ -64,6 +64,11 @@ form.ui.form.registerForm-form.registerForm-form{
   margin-bottom: 1rem;
 }
 
+input#password {
+  font-size: 1em;
+  padding: 0.8em;
+}
+
 
 // Media Queries
 
@@ -124,6 +129,11 @@ form.ui.form.registerForm-form.registerForm-form{
     border: 1px solid vars.$primaryBorderColor_theme1;
     background-color: vars.$primaryColor_theme1;
     color :vars.$primaryFontColor_theme1;
+  }
+  button.ui.button.registerForm-registerButton:hover {
+    border: 1px solid vars.$secondaryBorderColor_theme1;
+    background-color: vars.$secondaryColor_theme1;
+    color :vars.$secondaryFontColor_theme1;
   }
 
   span.registerForm-errorMessagePassword {

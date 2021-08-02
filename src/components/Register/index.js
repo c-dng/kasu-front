@@ -19,10 +19,12 @@ const Register = ({
   pseudo,
   city,
   password,
+  confirmPassword,
   changeEmail,
   changeAddress,
   changeZipCode,
   changePassword,
+  changeConfirmPassword,
   changeCity,
   changeFirstName,
   changeLastName,
@@ -39,6 +41,10 @@ const Register = ({
 
   const handleChangeZipCode = (evt) => {
     changeZipCode(evt.target.value);
+  };
+
+  const handleChangeConfirmPassword = (evt) => {
+    changeConfirmPassword(evt.target.value);
   };
 
   const handleChangePassword = (evt) => {
@@ -62,12 +68,22 @@ const Register = ({
     changePseudo(evt.target.value);
   };
 
+  const [errorMessage, setErrorMessage] = React.useState('');// display a message received from API
+  const [errorMessagePassword, setErrorMessagePassword] = React.useState('');// display a message with errors
+
   const handleSubmit = (evt) => {
-    evt.preventDefault();
-    handleRegistering();
+    evt.preventDefault(evt);
+      if ( confirmPassword  ===  password ) {
+      setErrorMessagePassword('');
+      console.log('Bien soumis! mots de passe identiques');
+      handleRegistering();
+    }
+    else {
+      setErrorMessagePassword('Les mots de passe ne sont pas identiques!');
+      console.log('ERROR mots de passe inégaux');
+    } 
   };
 
-  const [errorMessage, setErrorMessage] = React.useState('');// display a message received from API
   const validate = (value) => {
     if (validator.isStrongPassword(value, {
       minLength: 6,
@@ -105,7 +121,12 @@ const Register = ({
                 <label className="registerForm-fieldLabel">Votre mot de passe</label>
                 <Form.Input onChange={handleChangePassword} type="password" value={password} className="registerForm-fieldInput" />
               </div>
+              <div className="registerForm-field">
+                <label className="registerForm-fieldLabel">Confirmez mot de passe</label>
+                <Form.Input onChange={handleChangeConfirmPassword} type='password' value={confirmPassword} className="registerForm-fieldInput" />
+              </div>
               <span className="registerForm-errorMessagePassword">{errorMessage}</span>
+              <span className="registerForm-errorMessagePassword">{errorMessagePassword}</span>
               <div className="registerForm-field">
                 <label className="registerForm-fieldLabel">Votre prénom</label>
                 <Form.Input onChange={handleChangeFirstName} value={firstName} className="registerForm-fieldInput" />
