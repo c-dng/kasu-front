@@ -94,72 +94,54 @@ div.team h2 {
 .theme1 {
 
   div.content.team-cardContent {
-    // fonctionne (noir)
     background-color: vars.$primaryColor_theme1;
   }
 
   div.header.team-cardName.header.team-cardName.header.team-cardName {
-    // mettre en blanc
     color: vars.$primaryFontColor_theme1;
   }
 
   div.description.team-cardNameRole.description.team-cardNameRole.description.team-cardNameRole  {
-    // mettre en blanc
     color: vars.$primaryFontColor_theme1;
   }
 
-  // GITHUB
   // logo GitHub
   i.github.icon {
     color: vars.$primaryFontColor_theme1;
   }
 
   div.extra.content.team-cardNameExtra.extra.content.team-cardNameExtra.extra.content.team-cardNameExtra.extra.content.team-cardNameExtra {
-    // black
     background-color: vars.$primaryColor_theme1;
   }
-
-  div.a {
-    color: white
-  }
-
 }
 
 .theme2 {
 
   div.content.team-cardContent {
-    // fonctionne (noir)
     background-color: vars.$primaryColor_theme2;
   }
 
   div.header.team-cardName.header.team-cardName.header.team-cardName {
-    // mettre en blanc
     color: vars.$primaryFontColor_theme2;
   }
 
   div.description.team-cardNameRole.description.team-cardNameRole.description.team-cardNameRole  {
-    // mettre en blanc
     color: vars.$primaryFontColor_theme2;
   }
 
-  // GITHUB
   // logo GitHub
   i.github.icon {
     color: vars.$primaryFontColor_theme2;
   }
 
   div.extra.content.team-cardNameExtra.extra.content.team-cardNameExtra.extra.content.team-cardNameExtra.extra.content.team-cardNameExtra {
-    // black
+  // black
     background-color: vars.$primaryColor_theme2;
   }
-  div.a {
-    color: white
-  }
-
-  // Reste à faire (ne fonctionne pas)
-  // a {
-  //   color:red;
-  // }
-}
   // text GitHub
+  a.team-githubLink.team-githubLink.team-githubLink.team-githubLink {
+    color: vars.$primaryFontColor_theme2 !important
+  }
+}
+  
   
