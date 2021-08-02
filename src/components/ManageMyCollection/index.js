@@ -79,6 +79,9 @@ const ManageMyCollection = ({
                   mangaAuthor={manga.info.author}
                   mangaId={manga.info.id}
                   modifyVolumeAvailability={modifyVolumeAvailability}
+                  addOrRemoveVolumes={addOrRemoveVolumes}
+                  deleteManga={deleteManga}
+                  mangaMaxVolumeNumber={manga.info.volume_number}
                 />
               ))}
 

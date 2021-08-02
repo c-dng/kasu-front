@@ -31,7 +31,7 @@ const MyCollectionResult = ({ mangaName,
     value: volume,
     className: `volume${volume}`,
   }));
-  console.log(mangaVolumeOptions);
+  console.log('maxVol', maxVolumeArray);
 
   const [selected, setSelected] = React.useState(mangaVolumes.map((volume) => volume.number));
 
@@ -46,7 +46,7 @@ const MyCollectionResult = ({ mangaName,
     }
     return setSelected(value);
   };
-  const volumes = selected.join(', ');
+
   const [openDelete, setOpenDelete] = React.useState(false);
   return (
     <div>
