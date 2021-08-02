@@ -20,6 +20,8 @@ const ManageMyCollection = ({
   addToMyCollection,
   userMangas,
   modifyVolumeAvailability,
+  addOrRemoveVolumes,
+  deleteManga
 }) => (
   <div className="manageMyCollection">
     <Image className="manageMyCollection-banner" src={alternativeBanner} />
@@ -28,7 +30,7 @@ const ManageMyCollection = ({
 
         <div className="manageMyCollection-firstBlocDesktopVersion">
           <Card.Header className="manageMyCollection-mainCardHeader">Gestion des collections</Card.Header>
-          <h3 className="manageMyCollection-subHeader">Cherche un manga à ajouter à ta collection dans notre base de données !</h3>
+          <h3 className="manageMyCollection-subHeader">Cherche un manga à ajouter à ta collection dans notre base de donnée !</h3>
           <div className="manageMyCollection-searchBarWrapper">
             <AddMangaSearchBar setMangaSearch={setMangaSearch} manageSubmit={manageSubmit} loading={loading} mangaSearch={mangaSearch} className="manageMyCollection-searchBar" />
           </div>
@@ -37,7 +39,6 @@ const ManageMyCollection = ({
           <h4 className="manageMyCollection-subtitle">Résultat(s) trouvé(s) : {mangaFilteredDatabase.length}</h4>
           <Divider className="manageMyCollection-divider" />
           {console.log('checking manga filtered', mangaFilteredDatabase)}
-          {console.log('Nombre de résultats retournés: ', mangaFilteredDatabase.length)}
           <div className="manageMyCollection-wrapperDesktopVersion">
             {mangaFilteredDatabase.map((result) => (
               <MangaCollectionResult
