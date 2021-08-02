@@ -125,6 +125,11 @@ form.ui.form.registerForm-form.registerForm-form{
     background-color: vars.$primaryColor_theme1;
     color :vars.$primaryFontColor_theme1;
   }
+  button.ui.button.registerForm-registerButton:hover {
+    border: 1px solid vars.$secondaryBorderColor_theme1;
+    background-color: vars.$secondaryColor_theme1;
+    color :vars.$secondaryFontColor_theme1;
+  }
 
   span.registerForm-errorMessagePassword {
     color :red;

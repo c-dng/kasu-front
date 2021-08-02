@@ -76,6 +76,11 @@ form.ui.form.contactForm-form.contactForm-form.contactForm-form {
     background-color: vars.$primaryColor_theme1;
     color :vars.$primaryFontColor_theme1;
   }
+  .alreadyAccountBox-loginButton.alreadyAccountBox-loginButton.alreadyAccountBox-loginButton:hover {
+    border: 1px solid vars.$secondaryBorderColor_theme1;
+    background-color: vars.$secondaryColor_theme1;
+    color :vars.$secondaryFontColor_theme1;
+  }
 
   div.header.alreadyAccountBox-cardHeader.alreadyAccountBox-cardHeader.alreadyAccountBox-cardHeader {
     color: vars.$secondaryFontColor_theme1;
