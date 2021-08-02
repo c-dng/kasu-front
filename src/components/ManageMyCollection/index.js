@@ -8,6 +8,7 @@ import './style.scss';
 import alternativeBanner from 'src/assets/images/alternativeBanner.png';
 import AddMangaSearchBar from './AddMangaSearchBar';
 import MangaCollectionResult from './MangaCollectionResult';
+import MyCollectionResult from './MyCollectionResult';
 
 const ManageMyCollection = ({
   setMangaSearch,
@@ -17,6 +18,7 @@ const ManageMyCollection = ({
   mangaSearchData,
   mangaFilteredDatabase,
   addToMyCollection,
+  userMangas,
 }) => (
   <div className="manageMyCollection">
     <Image className="manageMyCollection-banner" src={alternativeBanner} />
@@ -46,7 +48,6 @@ const ManageMyCollection = ({
             ))}
           </div>
 
-
         </div>
         <div className="manageMyCollection-secondBlocDesktopVersion">
           <div className="manageMyCollection-myCollection">
@@ -64,65 +65,17 @@ const ManageMyCollection = ({
           <Divider className="manageMyCollection-divider-MobileVersion" />
 
           <div className="manageMyCollection-itemWrapperDesktopVersion">
-            <div className="manageMyCollection-itemDesktopVersion">
-              <div className="manageMyCollection-myCollectionItem">
-                <div className="manageMyCollection-itemContentWrapper">
-                  <Image
-                    className="manageMyCollection-myCollectionTitleMangaImage"
-                    src="https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/313968/313968._SX1280_QL80_TTD_.jpg"
-                    size="tiny"
-                  />
-                  <div className="manageMyCollection-myCollectionMangaInfoWrapper">
-                    <h3 className="manageMyCollection-myCollectionTitleManga">Attaque des Titans - <span className="manageMyCollection-myCollectionAuthorManga">Auteur</span></h3>
-                  </div>
-                </div>
-                <div className="manageMyCollection-myCollectionThreeButtons">
-                  <div className="manageMyCollection-myCollectionButtonsSubGroup">
-                    <Button className="manageMyCollection-myCollectionButtons" fluid>
-                      Disponibilité
-                    </Button>
-                    <div className="manageMyCollection-artificialMargin"></div>
-                    <Button className="manageMyCollection-myCollectionButtons" fluid>
-                      Éditer
-                    </Button>
-                  </div>
-                  <Button className="manageMyCollection-myCollectionButtons manageMyCollection-DeleteButton" fluid>
-                    Supprimer
-                  </Button>
-                </div>
-              </div>
-            </div>
+            {console.log('user mangas', Object.values(userMangas))}
+            {Object.values(userMangas).map((manga, index) => (
+              <MyCollectionResult
+                key={index}
+                mangaName={manga.info.title}
+                mangaPicture={manga.info.picture}
+                mangaVolumes={manga.volumes}
+                mangaAuthor={manga.info.author}
+              />
+            ))}
 
-            <Divider className="manageMyCollection-divider-MobileVersion" />
-
-            <div className="manageMyCollection-itemDesktopVersion">
-              <div className="manageMyCollection-myCollectionItem">
-                <div className="manageMyCollection-itemContentWrapper">
-                  <Image
-                    className="manageMyCollection-myCollectionTitleMangaImage"
-                    src="https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/313968/313968._SX1280_QL80_TTD_.jpg"
-                    size="tiny"
-                  />
-                  <div className="manageMyCollection-myCollectionMangaInfoWrapper">
-                    <h3 className="manageMyCollection-myCollectionTitleManga">Attaque des Titans - <span className="manageMyCollection-myCollectionAuthorManga">Auteur</span></h3>
-                  </div>
-                </div>
-                <div className="manageMyCollection-myCollectionThreeButtons">
-                  <div className="manageMyCollection-myCollectionButtonsSubGroup">
-                    <Button className="manageMyCollection-myCollectionButtons" fluid>
-                      Disponibilité
-                    </Button>
-                    <div className="manageMyCollection-artificialMargin"></div>
-                    <Button className="manageMyCollection-myCollectionButtons" fluid>
-                      Éditer
-                    </Button>
-                  </div>
-                  <Button className="manageMyCollection-myCollectionButtons manageMyCollection-DeleteButton" fluid>
-                    Supprimer
-                  </Button>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>

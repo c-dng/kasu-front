@@ -46,6 +46,7 @@ const Conversations = ({
           // This is a way to iterate over an object items as if it were arrays
           // (therefore being able to use the ".map" declarative function)
           Object.entries(conversations).map((conversation) => {
+            console.log(conversation);
             let pseudoToDisplay;
             let picture;
             if (conversation[1].chat.users[1].pseudo === userPseudo) {
@@ -56,7 +57,13 @@ const Conversations = ({
               pseudoToDisplay = conversation[1].chat.users[1].pseudo;
               picture = conversation[1].chat.users[1].picture;
             }
-
+            let lastMessageVariable;
+            if (conversation[1].lastmessage) {
+              lastMessageVariable = conversation[1].lastmessage.content;
+            }
+            else {
+              lastMessageVariable = '';
+            }
             return (
               <Link
                 key={conversation[1].chat.id}
@@ -69,7 +76,7 @@ const Conversations = ({
               >
                 <Conversation
                   key={conversation[1].chat.id}
-                  lastMessage={conversation[1].lastmessage.content}
+                  lastMessage={lastMessageVariable}
                   pseudo={pseudoToDisplay}
                   picture={picture}
                 />

@@ -36,7 +36,7 @@ const DesktopIdCard = ({ pseudo, bio, city, zipcode, picture, holidayMode }) => 
         <Divider />
         <div className="desktopIdCard-memberPartWrapper">
           <div className="desktopIdCard-changeButtonsWrapper">
-            <Link to="/profil/id" exact={+true}>
+            <Link to="/profil/mes-infos" exact={+true}>
               <Button size="mini" className="desktopIdCard-changeButtonsLeft" attached="left">Gérer mon profil</Button>
             </Link>
             <Link to="/profil/collection" exact={+true}>

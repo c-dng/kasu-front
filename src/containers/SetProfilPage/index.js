@@ -72,10 +72,6 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     dispatch(changeDescription(description));
   },
 
-  displayUserInfos: function () {
-    dispatch(loadUserFullData());
-  },
-
   onSetProfilPageUnmount: () => {
     dispatch(eraseMessage());
   },

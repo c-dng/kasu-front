@@ -18,3 +18,16 @@ export const addToMyCollection = (mangaTitle, volumes) => ({
   mangaTitle,
   volumes,
 });
+
+export const SET_AVAILABLE_VOLUMES = 'SET_AVAILABLE_VOLUMES';
+
+export const setAvailableVolumes = (availableVolume) => ({
+  type: SET_AVAILABLE_VOLUMES,
+  availableVolume,
+});
+
+export const SET_AVAILABLE_VOLUMES_TO_ZERO = 'SET_AVAILABLE_VOLUMES_TO_ZERO';
+
+export const setAvailableVolumesToZero = () => ({
+  type: SET_AVAILABLE_VOLUMES_TO_ZERO,
+});

@@ -38,7 +38,7 @@ const ViewProfilPage = ({
               <h3 className="viewProfilPage-pseudo">{pseudo}</h3>
             </Container>
             <div className="viewProfilPage-secondPartChangeButtons">
-              <Link to="/profil/id" exact={+true}>
+              <Link to="/profil/mes-infos" exact={+true}>
                 <Button size="mini" className="viewProfilPage-secondPartChangeButtonsLeft" attached="left">Gérer mon profil</Button>
               </Link>
               <Link to="/profil/collection" exact={+true}>

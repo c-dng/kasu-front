@@ -66,3 +66,9 @@ export const redirectTo = (link) => ({
   type: REDIRECT,
   link,
 });
+
+export const LOGOUT_GLOBAL = 'LOGOUT_GLOBAL';
+
+export const logoutGlobal = () => ({
+  type: LOGOUT_GLOBAL,
+});

@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 // eslint-disable-next-line linebreak-style
 
 import Nav from 'src/components/Nav';
-import { changeTheme } from '../../actions/global';
-import { loadUserFullData, loadConversations, logoutUser } from '../../actions/user';
+import { changeTheme, logoutGlobal } from '../../actions/global';
+import { loadConversations, logoutUser } from '../../actions/user';
 
 const mapStateToProps = (state) => ({
   navIconsColor: state.global.navIcons,
@@ -20,6 +20,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   },
   disconnectUser: function () {
     dispatch(logoutUser());
+    dispatch(logoutGlobal());
   },
   handleConversationsLoad: function () {
     dispatch(loadConversations());

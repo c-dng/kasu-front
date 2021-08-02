@@ -2,7 +2,8 @@ import {
   UPDATE_USER, LOAD_USER_FULL_DATA, saveMessage, saveUserFullData,
 } from 'src/actions/user';
 import api from 'src/api';
-import { setLoadingFalse, setLoadingTrue } from '../actions/global';
+import { redirectTo, setLoadingFalse, setLoadingTrue } from '../actions/global';
+import { LOAD_OTHER_USER_FULL_DATA, saveOtherUserFullData } from '../actions/user';
 
 const token = localStorage.getItem('token');
 if (token) {
@@ -70,6 +71,30 @@ const updateUser = (store) => (next) => (action) => {
         .catch((error) => {
           store.dispatch(setLoadingFalse());
           console.log('get full user infos failed', error);
+        });
+      next(action);
+      break;
+    }
+    case LOAD_OTHER_USER_FULL_DATA: {
+      store.dispatch(setLoadingTrue());
+      const otherUserId = action.id;
+      api
+        .get(`api/v1/user/${otherUserId}`)
+        .then(
+          (response) => {
+            console.log('get full other user infos succeeded', response.data);
+            store.dispatch(saveOtherUserFullData(response.data));
+          },
+        )
+        .then((response) => {
+          console.log('setting redirectTo to other user profile page');
+          store.dispatch(redirectTo(`profil/${otherUserId}`));
+        })
+        .catch((error) => {
+          console.log('get full other user infos failed', error);
+        })
+        .finally(() => {
+          store.dispatch(setLoadingFalse());
         });
       next(action);
       break;
