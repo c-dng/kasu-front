@@ -25,7 +25,6 @@ import { useDispatch } from 'react-redux';
 import Loading from './Loading';
 import OtherMemberProfilePage from '../OtherMemberProfilePage';
 import { redirectTo } from '../../actions/global';
-import { useDeepCompareEffect, useDeepCompareEffectNoCheck } from 'use-deep-compare-effect';
 
 // == Composant
 const App = ({
