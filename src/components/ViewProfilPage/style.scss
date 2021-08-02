@@ -110,7 +110,7 @@ button.ui.mini.button.viewProfilPage-sixthPartDeleteAccountButton {
   margin: 0 auto;
 }
 
-h1.setProfilPage-h1 {
+h1.setProfilPage-h1.setProfilPage-h1  {
   color: white;
   background-color: black;
   padding: 1rem;
@@ -118,7 +118,7 @@ h1.setProfilPage-h1 {
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
   text-align: center;
-  font-size: 1.29rem;
+  font-size: 1.7rem;
   margin-top: -.21425em;
   font-family: Lato, Helvetica Neue, Arial, Helvetica, sans-serif;
 }
@@ -171,13 +171,13 @@ img.ui.small.image.desktopIdCard-avatar {
 }
 
 div.ui.mini.left.attached.button.desktopIdCard-changeButtonsLeft {
-  border-top-left-radius: 1em;
-  border-bottom-left-radius: 1em;
+  border-top-left-radius: 1.5em;
+  border-bottom-left-radius: 1.5em;
 }
 
 div.ui.mini.right.attached.button.desktopIdCard-changeButtonsRight {
-  border-top-right-radius: 1em;
-  border-bottom-right-radius: 1em;
+  border-top-right-radius: 1.5em;
+  border-bottom-right-radius: 1.5em;
 }
 
 div.desktopIdCard-changeButtonsWrapper {
@@ -338,15 +338,22 @@ button.ui.fluid.DesktopMyCollectionProfile-DeleteButton.DesktopMyCollectionProfi
   ;
 
   //Theming 1 en desktop
-  .theme1 {}
+  .theme1 {
+    h1.setProfilPage-h1.setProfilPage-h1  {
+      color: vars.$secondaryFontColor_theme1;
+      background-color: vars.$secondaryColor_theme1;
+    }
+  }
 
   //Theming 2 en desktop
   .theme2 {
     .viewProfilPage-mainWrapper {
-      border: 1px solid white !important;
-
+      border: 1px solid vars.$secondaryBorderColor_theme1 !important;
     }
-
+    h1.setProfilPage-h1.setProfilPage-h1  {
+      color: vars.$secondaryFontColor_theme2;
+      background-color: vars.$secondaryColor_theme2;
+    }
   }
 }
 
@@ -523,5 +530,11 @@ button.ui.fluid.DesktopMyCollectionProfile-DeleteButton.DesktopMyCollectionProfi
 
   .viewProfilPage-mainWrapper {
     border: 1px solid vars.$primaryBorderColor_theme2;
+  }
+
+  
+  h1.setProfilPage-h1.setProfilPage-h1  {
+    color: vars.$secondaryFontColor_theme2;
+    background-color: vars.$secondaryColor_theme2;
   }
 }

@@ -42,7 +42,9 @@ const SetProfilPage = ({
   description,
   picture,
   message,
+  infos,
   confirmPassword,
+  changeMessage,
   changeEmail,
   changePassword,
   changeConfirmPassword,
@@ -57,9 +59,10 @@ const SetProfilPage = ({
   handleUpdate,
   displayUserInfos,
 }) => {
-  // useEffect(() => {
-  //   displayUserInfos();
-  // }, []);
+  useEffect(() => {
+    displayUserInfos();
+    setTimeout(changeMessage(''), 10000);
+  }, []);
 
   const [open, setOpen] = React.useState(false);// Modal to delete account
   const [errorMessage, setErrorMessage] = React.useState('');// display a message with errors
@@ -150,6 +153,7 @@ const SetProfilPage = ({
                   holiday_mode={holiday_mode}
                   description={description}
                   picture={picture}
+                  infos={infos}
                   changeEmail={changeEmail}
                   changePassword={changePassword}
                   changePseudo={changePseudo}

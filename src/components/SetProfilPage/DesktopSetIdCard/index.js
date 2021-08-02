@@ -34,6 +34,7 @@ const DesktopSetIdCard = ({
   holiday_mode,
   description,
   picture,
+  infos,
   changeEmail,
   changePassword,
   changeConfirmPassword,
@@ -46,12 +47,12 @@ const DesktopSetIdCard = ({
   changeHolidayMode,
   changeDescription,
   handleUpdate,
+  displayUserInfos
 }) => {
-  // useEffect(() => (
-    
-  //   displayUserInfos()
-  // ),
-  // []);
+  useEffect(() => {
+    displayUserInfos();
+    console.log('infos chargées', {infos});
+  }, []);
 
   const [open, setOpen] = React.useState(false);// Modal to delete account
   const [errorMessage, setErrorMessage] = React.useState('');// display a message received from API
@@ -235,33 +236,34 @@ const DesktopSetIdCard = ({
           <div className="desktopIdCard-errorMessage">
             {errorMessage}
           </div>
-          <div className="desktopIdCard-SaveButton">
-            <Button type="submit" color="green">Enregistrer</Button>
+          <div className="desktopIdCard-divSaveButton">
+            <Button className="desktopIdCard-SaveButtonGreen" size="mini" type="submit">Enregistrer</Button>
           </div>
         </Form>
-        <Modal
-          closeIcon
-          open={open}
-          trigger={<Button>Show Modal</Button>}
-          onClose={() => setOpen(false)}
-          onOpen={() => setOpen(true)}
-        >
-          <Header icon='archive' content='Archive Old Messages' />
-          <Modal.Content>
-            <p>
-              Your inbox is getting full, would you like us to enable automatic
-              archiving of old messages?
-            </p>
-          </Modal.Content>
-          <Modal.Actions>
-            <Button color='red' onClick={() => setOpen(false)}>
-              <Icon name='remove' /> No
-            </Button>
-            <Button color='green' onClick={() => setOpen(false)}>
-              <Icon name='checkmark' /> Yes
-            </Button>
-          </Modal.Actions>
-        </Modal>
+        <div className="desktopIdCard-divDeleteButton" >
+          <Modal
+            closeIcon
+            open={open}
+            trigger={<Button className="desktopIdCard-DeleteButtonRed">Supprimer mon compte</Button>}
+            onClose={() => setOpen(false)}
+            onOpen={() => setOpen(true)}
+          >
+            <Header icon='archive' content='Archive Old Messages' />
+            <Modal.Content>
+              <p>
+                Voulez-vous vraiment supprimer votre compte ?
+              </p>
+            </Modal.Content>
+            <Modal.Actions>
+              <Button color='red' onClick={() => setOpen(false)}>
+                <Icon name='remove' /> Non
+              </Button>
+              <Button color='green' onClick={() => setOpen(false)}>
+                <Icon name='checkmark' /> Oui
+              </Button>
+            </Modal.Actions>
+          </Modal>
+        </div>
       </div>
     </div>
   );

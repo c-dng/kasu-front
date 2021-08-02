@@ -84,16 +84,41 @@ div.ui.input.desktopIdCard-holidayWrapper {
   margin-bottom: 0.5em;
 }
 
-div.mobileSetProfil-divDeleteMyAccount {
+div.desktopIdCard-divSaveButton {
   display: flex;
   justify-content: center;
-  margin-bottom: 1em;
+}
+
+div.desktopIdCard-divDeleteButton {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+}
+
+button.ui.mini.button.desktopIdCard-SaveButtonGreen {
+  border-radius: 1.5em;
+  color: #21ba45;
+  background-color: white;
+  border: 1px solid #21ba45;
+}
+
+button.ui.button.desktopIdCard-DeleteButtonRed {
+  border-radius: 1.5em;
+  color: #db2828;
+  background-color: white;
+  border: 1px solid #db2828;
 }
 
 button.ui.negative.button.mobileSetProfil-deleteMyAccount {
   margin-top: 1em;
   border-radius: 1em;
   border: 1px solid white;
+}
+
+div.mobileSetProfil-divDeleteMyAccount {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1em;
 }
 
 button.ui.small.negative.button.mobileSetProfil-deleteMyAccount {
@@ -126,6 +151,14 @@ button.ui.button.mobileSetProfil-buttonValidate {
     width: 70%;
     margin: auto;
     margin-top: 3rem;
+  }
+
+  h1.setProfilPage-title {
+    text-align: center;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    font-size: 1.7rem;
+    padding: 1rem;
   }
 }
 

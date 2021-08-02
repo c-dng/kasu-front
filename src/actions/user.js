@@ -177,3 +177,10 @@ export const saveOtherUserFullData = (fullData) => ({
   type: SAVE_OTHER_USER_FULL_DATA,
   fullData,
 });
+
+export const CHANGE_MESSAGE = 'CHANGE_MESSAGE';
+
+export const changeMessage = (message) => ({
+  type: CHANGE_MESSAGE,
+  message,
+});

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import SetProfilPage from 'src/components/SetProfilPage';
 
 import {
-  updateUser, changeDescription, changeEmail, changePassword, changeConfirmPassword, changeCity, changeAddress, changeZipCode, changeLastName, changeFirstName, changePseudo, changeHolidayMode, loadUserFullData, eraseMessage,
+  getUserInfos, changeMessage, updateUser, changeDescription, changeEmail, changePassword, changeConfirmPassword, changeCity, changeAddress, changeZipCode, changeLastName, changeFirstName, changePseudo, changeHolidayMode, loadUserFullData, eraseMessage
 } from '../../actions/user';
 
 const mapStateToProps = (state, ownProps) => ({
@@ -19,10 +19,14 @@ const mapStateToProps = (state, ownProps) => ({
   description: state.user.description,
   message: state.user.message,
   picture: state.user.data.picture,
-  confirmPassword: state.user.confirmPassword
+  confirmPassword: state.user.confirmPassword,
+  infos: state.user.infos
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
+  changeMessage: function (message) {
+    dispatch(changeMessage(message));
+  },
 
   handleUpdate: function () {
     dispatch(updateUser());
@@ -72,9 +76,12 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     dispatch(changeDescription(description));
   },
 
-  onSetProfilPageUnmount: () => {
-    dispatch(eraseMessage());
-  },
+  displayUserInfos: function (infos) {
+    dispatch(getUserInfos());
+  }
+  // onSetProfilPageUnmount: () => {
+  //   dispatch(eraseMessage());
+  // },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SetProfilPage);
