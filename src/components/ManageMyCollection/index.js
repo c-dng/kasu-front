@@ -19,6 +19,7 @@ const ManageMyCollection = ({
   mangaFilteredDatabase,
   addToMyCollection,
   userMangas,
+  modifyVolumeAvailability,
 }) => (
   <div className="manageMyCollection">
     <Image className="manageMyCollection-banner" src={alternativeBanner} />
@@ -43,7 +44,6 @@ const ManageMyCollection = ({
                 mangaName={result.title}
                 mangaPicture={result.picture}
                 mangaVolumes={result.volumes}
-                mangaId={result.id}
                 addToMyCollection={addToMyCollection}
               />
             ))}
@@ -75,6 +75,8 @@ const ManageMyCollection = ({
                   mangaPicture={manga.info.picture}
                   mangaVolumes={manga.volumes}
                   mangaAuthor={manga.info.author}
+                  mangaId={manga.info.id}
+                  modifyVolumeAvailability={modifyVolumeAvailability}
                 />
               ))}
 

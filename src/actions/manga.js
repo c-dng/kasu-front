@@ -31,3 +31,11 @@ export const SET_AVAILABLE_VOLUMES_TO_ZERO = 'SET_AVAILABLE_VOLUMES_TO_ZERO';
 export const setAvailableVolumesToZero = () => ({
   type: SET_AVAILABLE_VOLUMES_TO_ZERO,
 });
+
+export const MODIFY_VOLUME_AVAILABILITY = 'MODIFY_VOLUME_AVAILABILITY';
+
+export const modifyVolumeAvailability = (mangaId, volumeAvailability) => ({
+  type: MODIFY_VOLUME_AVAILABILITY,
+  mangaId,
+  volumeAvailability,
+});

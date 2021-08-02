@@ -79,6 +79,11 @@ div.header.noAccount-cardHeader.noAccount-cardHeader.noAccount-cardHeader {
     color: vars.$primaryFontColor_theme1;
     background-color: vars.$primaryColor_theme1;
   }
+  .noAccount-registerButton.noAccount-registerButton.noAccount-registerButton:hover {
+    border: 1px solid vars.$secondaryBorderColor_theme1;
+    background-color: vars.$secondaryColor_theme1;
+    color :vars.$secondaryFontColor_theme1;
+  }
 
 }
 

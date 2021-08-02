@@ -72,6 +72,13 @@ const App = ({
     }
   }, [redirectLink]);
 
+  // useDeepCompareEffectNoCheck(() => {
+  //   if (userFullData) {
+  //     console.log('useDeepCompareEffectNoCheck on userFullData');
+  //     loadUserFullData();
+  //   }
+  // }, [userFullData]);
+
   const location = useLocation();
   console.log(location.pathname);
   React.useEffect(() => {
@@ -150,10 +157,12 @@ App.propTypes = {
   theme: PropTypes.string.isRequired,
   // eslint-disable-next-line react/no-unused-prop-types
   loading: PropTypes.bool,
+  userMangas: PropTypes.object,
 };
 
 App.defaultProps = {
   loading: false,
+  userMangas: {},
 };
 
 // == Export

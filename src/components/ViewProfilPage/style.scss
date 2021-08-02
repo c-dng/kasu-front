@@ -390,10 +390,21 @@ button.ui.fluid.DesktopMyCollectionProfile-DeleteButton.DesktopMyCollectionProfi
     color: vars.$primaryFontColor_theme1;
     border: 1px solid vars.$primaryBorderColor_theme1;
   }
+  //hover 
+  .DesktopMyCollectionProfile-myCollectionButtons.DesktopMyCollectionProfile-myCollectionButtons.DesktopMyCollectionProfile-myCollectionButtons:hover {
+    background-color: vars.$secondaryColor_theme1;
+    color: vars.$secondaryFontColor_theme1;
+  }
 
   .DesktopMyCollectionProfile-DeleteButton.DesktopMyCollectionProfile-DeleteButton.DesktopMyCollectionProfile-DeleteButton {
     background-color: vars.$primaryColor_theme1;
     color: vars.$secondaryFontColor_theme1;
+  }
+  //hover
+  .DesktopMyCollectionProfile-DeleteButton.DesktopMyCollectionProfile-DeleteButton.DesktopMyCollectionProfile-DeleteButton:hover {
+    background-color: vars.$primaryColor_theme1;
+    color: vars.$tertiaryColor_theme1;
+    border: 1px solid vars.$tertiaryColor_theme1;
   }
 
   div.ui.mini.left.attached.button.desktopIdCard-changeButtonsLeft {
@@ -406,6 +417,15 @@ button.ui.fluid.DesktopMyCollectionProfile-DeleteButton.DesktopMyCollectionProfi
     color: vars.$primaryFontColor_theme1;
     border: 1px solid vars.$primaryBorderColor_theme1;
     background-color: vars.$primaryColor_theme1;
+  }
+  //Hover
+  div.ui.mini.right.attached.button.desktopIdCard-changeButtonsRight:hover {
+    color: vars.$secondaryFontColor_theme1;
+    background-color: vars.$secondaryColor_theme1;
+  }
+  div.ui.mini.left.attached.button.desktopIdCard-changeButtonsLeft:hover {
+    color: vars.$secondaryFontColor_theme1;
+    background-color: vars.$secondaryColor_theme1;
   }
 
   .desktopIdCard-mainCard {
@@ -489,10 +509,21 @@ button.ui.fluid.DesktopMyCollectionProfile-DeleteButton.DesktopMyCollectionProfi
     color: vars.$primaryFontColor_theme2;
     border: 1px solid vars.$primaryBorderColor_theme2;
   }
+  //hover
+  .DesktopMyCollectionProfile-myCollectionButtons.DesktopMyCollectionProfile-myCollectionButtons.DesktopMyCollectionProfile-myCollectionButtons:hover {
+    background-color: vars.$secondaryColor_theme2;
+    color: vars.$secondaryFontColor_theme2;
+    border: 1px solid vars.$primaryBorderColor_theme2;
+  }
 
   .DesktopMyCollectionProfile-DeleteButton.DesktopMyCollectionProfile-DeleteButton.DesktopMyCollectionProfile-DeleteButton {
     background-color: vars.$primaryColor_theme2;
     color: vars.$primaryFontColor_theme2;
+  }
+  //hover 
+  .DesktopMyCollectionProfile-DeleteButton.DesktopMyCollectionProfile-DeleteButton.DesktopMyCollectionProfile-DeleteButton:hover {
+    background-color: vars.$secondaryColor_theme2; 
+    color: vars.$tertiaryColor_theme2;
   }
 
   div.ui.mini.left.attached.button.desktopIdCard-changeButtonsLeft {
@@ -505,6 +536,15 @@ button.ui.fluid.DesktopMyCollectionProfile-DeleteButton.DesktopMyCollectionProfi
     color: vars.$primaryFontColor_theme2;
     border: 1px solid vars.$primaryBorderColor_theme2;
     background-color: vars.$primaryColor_theme2;
+  }
+  //Hover
+  div.ui.mini.right.attached.button.desktopIdCard-changeButtonsRight:hover {
+    color:vars.$secondaryFontColor_theme2;
+    background-color:vars.$secondaryColor_theme2;
+  }
+  div.ui.mini.left.attached.button.desktopIdCard-changeButtonsLeft:hover {
+    color:vars.$secondaryFontColor_theme2;
+    background-color:vars.$secondaryColor_theme2;
   }
 
   .desktopIdCard-mainCard {
