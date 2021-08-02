@@ -370,10 +370,20 @@ div.manageMyCollection-itemWrapperDesktopVersion {
     color: vars.$primaryFontColor_theme1;
     border: 1px solid vars.$primaryBorderColor_theme1;
   }
+  .manageMyCollection-myCollectionButtons.manageMyCollection-myCollectionButtons.manageMyCollection-myCollectionButtons:hover {
+    background-color: vars.$secondaryColor_theme1;
+    color: vars.$secondaryFontColor_theme1;
+    border: 1px solid vars.$secondaryBorderColor_theme1;
+  }
 
   .manageMyCollection-DeleteButton.manageMyCollection-DeleteButton.manageMyCollection-DeleteButton {
     background-color: vars.$tertiaryColor_theme1;
     color: vars.$secondaryFontColor_theme1;
+  }
+  .manageMyCollection-DeleteButton.manageMyCollection-DeleteButton.manageMyCollection-DeleteButton:hover {
+    background-color: vars.$primaryColor_theme1;
+    color: vars.$tertiaryColor_theme1;
+    border:1px solid vars.$tertiaryColor_theme1;
   }
 
   .manageMyCollection-divider.manageMyCollection-divider.manageMyCollection-divider {

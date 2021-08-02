@@ -313,6 +313,13 @@ button.ui.blue.basic.button.homeCard-contactOwner {
     background-color: vars.$primaryColor_theme1;
     color: vars.$primaryFontColor_theme1;
   }
+  .home-button.home-button.home-button:hover {
+    background-color: vars.$secondaryColor_theme1;
+    color: vars.$secondaryFontColor_theme1;
+    border:1px solid vars.$secondaryBorderColor_theme1;
+  }
+  
+  
 }
 
 .theme2 {
