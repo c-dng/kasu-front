@@ -43,6 +43,7 @@ const ManageMyCollection = ({
                 mangaName={result.title}
                 mangaPicture={result.picture}
                 mangaVolumes={result.volumes}
+                mangaId={result.id}
                 addToMyCollection={addToMyCollection}
               />
             ))}
@@ -64,19 +65,22 @@ const ManageMyCollection = ({
 
           <Divider className="manageMyCollection-divider-MobileVersion" />
 
-          <div className="manageMyCollection-itemWrapperDesktopVersion">
-            {console.log('user mangas', Object.values(userMangas))}
-            {Object.values(userMangas).map((manga, index) => (
-              <MyCollectionResult
-                key={index}
-                mangaName={manga.info.title}
-                mangaPicture={manga.info.picture}
-                mangaVolumes={manga.volumes}
-                mangaAuthor={manga.info.author}
-              />
-            ))}
+          {userMangas ? (
+            <div className="manageMyCollection-itemWrapperDesktopVersion">
+              {console.log('user mangas', Object.values(userMangas))}
+              {Object.values(userMangas).map((manga, index) => (
+                <MyCollectionResult
+                  key={index}
+                  mangaName={manga.info.title}
+                  mangaPicture={manga.info.picture}
+                  mangaVolumes={manga.volumes}
+                  mangaAuthor={manga.info.author}
+                />
+              ))}
 
-          </div>
+            </div>
+          ) : null}
+
         </div>
       </div>
     </div>
