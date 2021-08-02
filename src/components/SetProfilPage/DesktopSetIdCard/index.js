@@ -46,7 +46,6 @@ const DesktopSetIdCard = ({
   changeHolidayMode,
   changeDescription,
   handleUpdate,
-  displayUserInfos,
 }) => {
   // useEffect(() => (
     

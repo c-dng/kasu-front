@@ -1,6 +1,3 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable camelcase */
-/* eslint-disable linebreak-style */
 export const CHANGE_PSEUDO = 'CHANGE_PSEUDO';
 
 export const changePseudo = (pseudo) => ({
@@ -128,11 +125,17 @@ export const updateUser = () => ({
   type: UPDATE_USER,
 });
 
+export const GET_USER_INFOS = 'GET_USER_INFOS';
+
+export const getUserInfos = () => ({
+  type: GET_USER_INFOS,
+});
+
 export const SAVE_USER_INFOS = 'SAVE_USER_INFOS';
 
-export const saveUserInfos = (fullData) => ({
+export const saveUserInfos = (infos) => ({
   type: SAVE_USER_INFOS,
-  fullData,
+  infos,
 });
 
 export const SAVE_MESSAGE = 'SAVE_MESSAGE';

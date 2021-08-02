@@ -7,9 +7,9 @@ import {
 } from '../../actions/user';
 
 const mapStateToProps = (state, ownProps) => ({
+  pseudo: state.user.pseudo,
   email: state.user.email,
   password: state.user.password,
-  pseudo: state.user.pseudo,
   address: state.user.address,
   zipCode: state.user.zipCode,
   city: state.user.city,

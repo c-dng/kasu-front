@@ -104,18 +104,18 @@ const reducer = (state = initialState, action = {}) => {
     case SAVE_USER_INFOS:
       return {
         ...state,
-        email: action.fullData.email,
+        email: action.infos.email,
         password: '',
         confirmPassword: '',
-        pseudo: action.fullData.pseudo,
-        address: action.fullData.address,
-        zipCode: action.fullData.zip_code,
-        city: action.fullData.city,
-        firstName: action.fullData.firstname,
-        lastName: action.fullData.lastname,
-        holiday_mode: action.fullData.holiday_mode,
-        description: action.fullData.description,
-        picture: action.fullData.picture,
+        pseudo: action.infos.pseudo,
+        address: action.infos.address,
+        zipCode: action.infos.zip_code,
+        city: action.infos.city,
+        firstName: action.infos.firstname,
+        lastName: action.infos.lastname,
+        holiday_mode: action.infos.holiday_mode,
+        description: action.infos.description,
+        picture: action.infos.picture,
       };
     case SAVE_USER_FULL_DATA:
       return {

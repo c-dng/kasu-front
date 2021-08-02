@@ -3,7 +3,7 @@ import {
 } from 'src/actions/user';
 import api from 'src/api';
 import { redirectTo, setLoadingFalse, setLoadingTrue } from '../actions/global';
-import { LOAD_OTHER_USER_FULL_DATA, saveOtherUserFullData } from '../actions/user';
+import { LOAD_OTHER_USER_FULL_DATA, saveOtherUserFullData, saveUserInfos } from '../actions/user';
 
 const token = localStorage.getItem('token');
 if (token) {
@@ -43,7 +43,7 @@ const updateUser = (store) => (next) => (action) => {
         })
         .then(
           (response) => {
-            console.log('update user infos succeeded', response.data);
+            console.log('update user infos succeeded', response.data.contact);
             store.dispatch(saveMessage(response.data));
             store.dispatch(setLoadingFalse());
           },
@@ -64,7 +64,8 @@ const updateUser = (store) => (next) => (action) => {
           (response) => {
             console.log('get full user infos succeeded', response.data);
             store.dispatch(saveUserFullData(response.data));
-            //store.dispatch(saveUserInfos(response.data.contact));
+            console.log('INFOS POUR SET PROFIL PAGE : ', response.data.contact);
+            store.dispatch(saveUserInfos(response.data.contact));
             store.dispatch(setLoadingFalse());
           },
         )
