@@ -20,7 +20,8 @@ const ManageMyCollection = ({
   addToMyCollection,
   userMangas,
   modifyVolumeAvailability,
-  AddOrRemoveVolumes,
+  addOrRemoveVolumes,
+  deleteManga
 }) => {
 
   console.log('user manga : ', userMangas);
@@ -83,7 +84,8 @@ const ManageMyCollection = ({
                     mangaId={manga.info.id}
                     modifyVolumeAvailability={modifyVolumeAvailability}
                     mangaMaxVolumeNumber={manga.info.volume_number}
-                    AddOrRemoveVolumes={AddOrRemoveVolumes}
+                    addOrRemoveVolumes={addOrRemoveVolumes}
+                    deleteManga={deleteManga}
                   />
                 ))}
 

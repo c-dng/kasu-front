@@ -13,7 +13,8 @@ const MyCollectionResult = ({ mangaName,
   mangaId,
   modifyVolumeAvailability,
   mangaMaxVolumeNumber,
-  AddOrRemoveVolumes,
+  addOrRemoveVolumes,
+  deleteManga
 }) => {
   const [openAvailability, setOpenAvailability] = React.useState(false);
   const [checkedVolumes, setCheckedVolumes] = React.useState(
@@ -45,10 +46,8 @@ const MyCollectionResult = ({ mangaName,
     }
     return setSelected(value);
   };
-  const mangaTitle = mangaName;
   const volumes = selected.join(', ');
-  console.log('volume selected = ', volumes);
-  console.log(mangaVolumes);
+  const [openDelete, setOpenDelete] = React.useState(false);
   return (
     <div>
       <div className="manageMyCollection-itemDesktopVersion">
@@ -156,7 +155,7 @@ const MyCollectionResult = ({ mangaName,
                     icon="checkmark"
                     onClick={() => {
                       console.log("Envoie des données selected", mangaId, selected.join(', '));
-                      AddOrRemoveVolumes(mangaId, selected.join(', '));
+                      addOrRemoveVolumes(mangaId, selected.join(', '));
                       setOpenEdit(false);
                     }}
                     positive
@@ -165,9 +164,40 @@ const MyCollectionResult = ({ mangaName,
               </Modal>
 
             </div>
-            <Button className="manageMyCollection-myCollectionButtons manageMyCollection-DeleteButton" fluid>
-              Supprimer
-            </Button>
+            <Modal
+              onClose={() => setOpenDelete(false)}
+              onOpen={() => setOpenDelete(true)}
+              open={openDelete}
+              trigger={<Button className="manageMyCollection-myCollectionButtons manageMyCollection-DeleteButton" fluid>Supprimer</Button>}
+            >
+              <Modal.Header>Suppression d'un manga de sa collection</Modal.Header>
+              <Modal.Content image>
+                <Image size="medium" src={mangaPicture} wrapped />
+                <Modal.Description>
+                  <Header>{mangaName}</Header>
+                  <p>
+                    Souhaitez-vous vraiment supprimer le manga {mangaName} de votre collection ?
+                  </p>
+                </Modal.Description>
+              </Modal.Content>
+              <Modal.Actions>
+                <Button color="black" onClick={() => setOpenDelete(false)}>
+                  Annuler
+                </Button>
+                <Button
+                  content="Supprimer"
+                  labelPosition="right"
+                  icon="cancel"
+                  onClick={() => {
+                    console.log("Envoie des données selected", mangaId, selected.join(', '));
+                    deleteManga(mangaId);
+                    setOpenDelete(false);
+                  }}
+                  negative
+                />
+              </Modal.Actions>
+            </Modal>
+
           </div>
         </div>
       </div>
