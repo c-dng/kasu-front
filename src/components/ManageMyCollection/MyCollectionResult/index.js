@@ -8,15 +8,17 @@ import MangaAvailability from 'src/containers/MangaAvailability';
 const MyCollectionResult = ({ mangaName,
   mangaPicture,
   mangaVolumes,
-  mangaAuthor, }) => {
+  mangaAuthor
+}) => {
   const [open, setOpen] = React.useState(false);
-  const initialStatus = [];
-  mangaVolumes.map((volume) => {
-    if (volume.status) {
-      return initialStatus.push(volume.number);
-    }
-  });
-  console.log(initialStatus);
+  const [checkedVolumes, setCheckedVolumes] = React.useState(
+    mangaVolumes
+    .filter((volume) => volume.status)
+    .map((volume) => volume.number)
+  );
+
+
+
   // { console.log(mangaVolumes) };
   return (
     <div>
@@ -51,8 +53,20 @@ const MyCollectionResult = ({ mangaName,
                     {mangaVolumes.map((volume) => (
                       <MangaAvailability
                         volumeNumber={volume.number}
-                        volumeStatus={volume.status}
-                        initialStatus={initialStatus}
+                        onChangeAvailability={(volumeNumber, checked) => {
+                          console.log("Checked Value", checked);
+                          if (!checked) {
+                            setCheckedVolumes(checkedVolumes.filter((volume) => volume !== volumeNumber));
+                          } else {
+                            setCheckedVolumes([
+                              ...checkedVolumes,
+                              volumeNumber,
+                            ]);
+                          }
+
+                        }}
+                        key={volume.number}
+                        checked={checkedVolumes.includes(volume.number)}
                       />
                     ))}
                   </Modal.Description>
@@ -65,7 +79,10 @@ const MyCollectionResult = ({ mangaName,
                     content="Confirmer"
                     labelPosition="right"
                     icon="checkmark"
-                    onClick={() => setOpen(false)}
+                    onClick={() => {
+                      console.log("Envoie des données", checkedVolumes.join(', '));
+                      setOpen(false)
+                    }}
                     positive
                   />
                 </Modal.Actions>

@@ -85,8 +85,6 @@ const chatMiddleware = (store) => (next) => (action) => {
       const userId = store.getState().user.data.id;
       console.log('creating new chat for otherUserId: ', otherUserId);
       console.log('creating new chat by userId ', userId);
-      const token = localStorage.getItem('token');
-      api.defaults.headers.common.Authorization = `Bearer ${token}`;
       store.dispatch(setLoadingTrue());
       api
         .post(`api/v1/user/${userId}/chat`, { other_user: otherUserId })
@@ -94,7 +92,7 @@ const chatMiddleware = (store) => (next) => (action) => {
           (response) => {
             console.log('la conversation a bien été créée');
             console.log(response.data.id);
-            store.dispatch(redirectTo(`conversation/${response.data.id}`));
+            store.dispatch(redirectTo(`/conversation/${response.data.id}`));
           },
         )
         .catch(
