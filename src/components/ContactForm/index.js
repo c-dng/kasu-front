@@ -62,6 +62,7 @@ const ContactForm = ({
                   <option value="Médiation">Médiation</option>
                   <option value="Problème technique">Problème technique</option>
                   <option value="Problème de connexion">Problème de connexion</option>
+                  <option value="Supprimer mon compte">Supprimer mon compte</option>
                   <option value="Autre">Autre</option>
                 </Form.Field>
               </Form.Field>

@@ -1,7 +1,18 @@
 div.ui.cards.searchResultsByLocation-cardGroup {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  width: 70%;
+  margin: auto;
 }
+
+div.content.searchResultsByLocation-cardContentImgInfos > img.ui.medium.image {
+  display: block;
+  max-width: 290px;
+  max-height: 310px;
+  width: auto;
+  height: auto;
+}
+
 .searchResultsByLocation-cardContentImgInfos.searchResultsByLocation-cardContentImgInfos.searchResultsByLocation-cardContentImgInfos {
   display: flex;
   justify-content: center;

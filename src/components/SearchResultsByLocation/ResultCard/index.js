@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button, Card, Icon, Image, Select } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 
+
 const ResultCard = ({
   mangaName,
   mangaPicture,
