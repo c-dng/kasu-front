@@ -8,15 +8,16 @@ import MangaAvailability from 'src/containers/MangaAvailability';
 const MyCollectionResult = ({ mangaName,
   mangaPicture,
   mangaVolumes,
-  mangaAuthor, 
+  mangaAuthor,
   mangaId,
 }) => {
-  const [open, setOpen] = React.useState(false);
+  const [openAvailability, setOpenAvailability] = React.useState(false);
   const [checkedVolumes, setCheckedVolumes] = React.useState(
     mangaVolumes
-    .filter((volume) => volume.status)
-    .map((volume) => volume.number)
+      .filter((volume) => volume.status)
+      .map((volume) => volume.number)
   );
+  const [openEdit, setOpenEdit] = React.useState(false);
 
 
 
@@ -38,9 +39,9 @@ const MyCollectionResult = ({ mangaName,
           <div className="manageMyCollection-myCollectionThreeButtons">
             <div className="manageMyCollection-myCollectionButtonsSubGroup">
               <Modal
-                onClose={() => setOpen(false)}
-                onOpen={() => setOpen(true)}
-                open={open}
+                onClose={() => setOpenAvailability(false)}
+                onOpen={() => setOpenAvailability(true)}
+                open={openAvailability}
                 trigger={<Button className="manageMyCollection-myCollectionButtons" fluid>Disponibilité</Button>}
               >
                 <Modal.Header>Disponibilité</Modal.Header>
@@ -73,7 +74,7 @@ const MyCollectionResult = ({ mangaName,
                   </Modal.Description>
                 </Modal.Content>
                 <Modal.Actions>
-                  <Button color="black" onClick={() => setOpen(false)}>
+                  <Button color="black" onClick={() => setOpenAvailability(false)}>
                     Annuler
                   </Button>
                   <Button
@@ -82,17 +83,67 @@ const MyCollectionResult = ({ mangaName,
                     icon="checkmark"
                     onClick={() => {
                       console.log("Envoie des données", mangaId, checkedVolumes.join(', '));
-                      
-                      setOpen(false);
+
+                      setOpenAvailability(false);
                     }}
                     positive
                   />
                 </Modal.Actions>
               </Modal>
               <div className="manageMyCollection-artificialMargin"></div>
-              <Button className="manageMyCollection-myCollectionButtons" fluid>
-                Éditer
-            </Button>
+              <Modal
+                onClose={() => setOpenEdit(false)}
+                onOpen={() => setOpenEdit(true)}
+                open={openEdit}
+                trigger={<Button className="manageMyCollection-myCollectionButtons" fluid>Éditer</Button>}
+              >
+                <Modal.Header>Ajout/Retrait de tomes</Modal.Header>
+                <Modal.Content image>
+                  <Image size="medium" src={mangaPicture} wrapped />
+                  <Modal.Description>
+                    <Header>{mangaName}</Header>
+                    <p>
+                      Veuillez préciser quels tomes {mangaName} vous possédez.
+                    </p>
+                    {/* {mangaVolumes.map((volume) => (
+                      <MangaAvailability
+                        volumeNumber={volume.number}
+                        onChangeAvailability={(volumeNumber, checked) => {
+                          console.log("Checked Value", checked);
+                          if (!checked) {
+                            setCheckedVolumes(checkedVolumes.filter((volume) => volume !== volumeNumber));
+                          } else {
+                            setCheckedVolumes([
+                              ...checkedVolumes,
+                              volumeNumber,
+                            ]);
+                          }
+
+                        }}
+                        key={volume.number}
+                        checked={checkedVolumes.includes(volume.number)}
+                      />
+                    ))} */}
+                  </Modal.Description>
+                </Modal.Content>
+                <Modal.Actions>
+                  <Button color="black" onClick={() => setOpenEdit(false)}>
+                    Annuler
+                  </Button>
+                  <Button
+                    content="Confirmer"
+                    labelPosition="right"
+                    icon="checkmark"
+                    onClick={() => {
+                      console.log("Envoie des données", mangaId, checkedVolumes.join(', '));
+
+                      setOpenEdit(false);
+                    }}
+                    positive
+                  />
+                </Modal.Actions>
+              </Modal>
+
             </div>
             <Button className="manageMyCollection-myCollectionButtons manageMyCollection-DeleteButton" fluid>
               Supprimer
