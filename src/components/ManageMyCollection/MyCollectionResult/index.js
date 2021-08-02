@@ -8,7 +8,8 @@ import MangaAvailability from 'src/containers/MangaAvailability';
 const MyCollectionResult = ({ mangaName,
   mangaPicture,
   mangaVolumes,
-  mangaAuthor
+  mangaAuthor, 
+  mangaId,
 }) => {
   const [open, setOpen] = React.useState(false);
   const [checkedVolumes, setCheckedVolumes] = React.useState(
@@ -80,8 +81,9 @@ const MyCollectionResult = ({ mangaName,
                     labelPosition="right"
                     icon="checkmark"
                     onClick={() => {
-                      console.log("Envoie des données", checkedVolumes.join(', '));
-                      setOpen(false)
+                      console.log("Envoie des données", mangaId, checkedVolumes.join(', '));
+                      
+                      setOpen(false);
                     }}
                     positive
                   />
