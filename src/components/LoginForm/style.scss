@@ -97,6 +97,7 @@ div.content.loginform-cardContent.loginform-cardContent.loginform-cardContent {
     border: 1px solid vars.$primaryBorderColor_theme1;
     background-color: vars.$primaryColor_theme1;
     color :vars.$primaryFontColor_theme1;
+    transition: all 0.5s;
   }
 
   button.ui.button.login-button:hover {
