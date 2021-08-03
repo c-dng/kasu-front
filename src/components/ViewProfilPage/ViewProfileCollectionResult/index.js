@@ -19,6 +19,7 @@ const ViewProfileCollectionResult = ({ mangaName,
     value: volume.number,
     className: `volume${volume.status}`,
     disabled: true,
+    
   }));
 
   return (

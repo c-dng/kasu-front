@@ -55,9 +55,8 @@ div.home-mainWrapper.home-mainWrapper {
 }
 
 .searchExplained-searchWrapper {
-  background-image: url("src/assets/images/home-card-logo.png");
+  background-image: url("src/assets/images/mangas-faded.png");
   background-size: cover;
-  background-position: 0% 20%;
   padding: 2rem;
   
 }
@@ -212,6 +211,7 @@ button.ui.blue.basic.button.homeCard-contactOwner {
     width: 70%;
     margin: 0 auto;
     border-radius: 2em;
+    background-position: 50% 95%;
   }
 
   .home-h1.home-h1 {
