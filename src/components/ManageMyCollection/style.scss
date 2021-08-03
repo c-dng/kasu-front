@@ -387,6 +387,11 @@ button.ui.fluid.button.manageMyCollection-myCollectionButtons.manageMyCollection
       border: none;
     }
 
+    button.ui.button.manageMyCollection-addToMyCollectionButton:hover {
+      background-color: vars.$secondaryColor_theme2 ;
+      color: vars.$secondaryFontColor_theme2;;
+    }
+
     button.ui.mini.fluid.button.manageMyCollection-myCollectionButtons.manageMyCollection-DeleteButton {
       background-color: vars.$primaryColor_theme2;
     }
