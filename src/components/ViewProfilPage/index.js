@@ -100,7 +100,6 @@ const ViewProfilPage = ({
                   mangaVolumes={manga.volumes}
                   mangaAuthor={manga.info.author}
                   mangaId={manga.info.id}
-                  mangaMaxVolumeNumber={manga.info.volume_number}
                 />
               ))}
             </div>

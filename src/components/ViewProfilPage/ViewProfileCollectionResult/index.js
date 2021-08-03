@@ -10,23 +10,20 @@ const ViewProfileCollectionResult = ({ mangaName,
   mangaVolumes,
   mangaAuthor,
   mangaId,
-  modifyVolumeAvailability,
   mangaMaxVolumeNumber,
-  addOrRemoveVolumes,
-  deleteManga
 }) => {
-
-  const maxVolumeArray = _.range(1, mangaMaxVolumeNumber + 1);
-  const mangaVolumeOptions = maxVolumeArray.map((volume) => ({
-    key: volume,
-    text: volume,
-    value: volume,
-    className: `volume${volume}`,
+  console.log('manga volumes', mangaVolumes);
+  const mangaVolumeOptions = mangaVolumes.map((volume, index) => ({
+    key: index,
+    text: volume.number,
+    value: volume.number,
+    className: `volume${volume.status}`,
+    disabled: true,
   }));
 
   return (
-  <>
-    <div className="manageMyCollection-cardDesktopVersion">
+    <>
+      <div className="manageMyCollection-cardDesktopVersion">
         <h3 className="manageMyCollection-titleNameManga">{mangaName}</h3>
         <div className="manageMyCollection-mangaImageWrapper">
           <Image
@@ -36,12 +33,12 @@ const ViewProfileCollectionResult = ({ mangaName,
           />
         </div>
         <div className="manageMyCollection-selectAndAdd">
-          <Dropdown className="manageMyCollection-dropdownSelectAndAdd" placeholder="Mes Tomes" size="5" fluid multiple selection options={mangaVolumeOptions}/>
+          <Dropdown className="manageMyCollection-dropdownSelectAndAdd" placeholder="Mes Tomes" size="5" fluid multiple selection options={mangaVolumeOptions} />
         </div>
       </div>
 
       <Divider className="manageMyCollection-divider-MobileVersion" />
-  </>
+    </>
   );
 }
 

@@ -168,6 +168,15 @@ div.desktopIdCard-changeButtonsWrapper {
   align-items: center;
 }
 
+div.disabled.item.volumefalse.volumefalse.volumefalse {
+  color: gray;
+  opacity: 1;
+}
+
+div.disabled.item.volumetrue.volumetrue.volumetrue {
+  color: black;
+  opacity: 1
+}
 .desktopIdCard-memberPartWrapper {
   display: flex;
   justify-content: space-between;
