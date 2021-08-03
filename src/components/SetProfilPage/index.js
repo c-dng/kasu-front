@@ -87,7 +87,7 @@ const SetProfilPage = ({
     evt.preventDefault(evt);
     if ( confirmPassword  ===  password ) {
       setErrorMessagePassword('');
-      console.log('Bien soumis! mots de passe identiques');
+      console.log('Bien soumis! Mots de passe identiques');
       handleUpdate();
 
     }
@@ -148,7 +148,7 @@ const SetProfilPage = ({
         <div className="setProfilPage">
               <Image className="registerForm-banner" src={alternativeBanner} />
           <div className="setProfilPage-mainWrapper">
-                      <h1 className="setProfilPage-title">Gérer ma collection</h1>
+                      <h1 className="setProfilPage-title">Gérer mon profil</h1>
             <div className="contactForm-message">{message}</div>
               <MediaQuery minWidth={1224}>
                 <DesktopSetIdCard
