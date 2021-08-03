@@ -148,7 +148,7 @@ const SetProfilPage = ({
         <div className="setProfilPage">
               <Image className="registerForm-banner" src={alternativeBanner} />
           <div className="setProfilPage-mainWrapper">
-                      <h1 className="setProfilPage-title">Gérer mon profil</h1>
+              <h1 className="setProfilPage-title">Gérer mon profil</h1>
             <div className="contactForm-message">{message}</div>
               <MediaQuery minWidth={1224}>
                 <DesktopSetIdCard

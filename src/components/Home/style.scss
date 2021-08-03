@@ -315,7 +315,9 @@ button.ui.blue.basic.button.homeCard-contactOwner {
   .home-button.home-button.home-button {
     background-color: vars.$primaryColor_theme1;
     color: vars.$primaryFontColor_theme1;
+    transition: all 0.5s;
   }
+  
   .home-button.home-button.home-button:hover {
     background-color: vars.$secondaryColor_theme1;
     color: vars.$secondaryFontColor_theme1;

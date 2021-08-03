@@ -1,10 +1,11 @@
 
 import React from 'react';
 import {
-  Button, Card, Grid, Header, Icon, Image,
+  Button, Card, Divider, Grid, Header, Icon, Image,
 } from 'semantic-ui-react';
+import ViewOtherProfileCollectionResult from '../ViewOtherProfileCollectionResult';
 
-const DesktopOtherMemberCollection = () => (
+const DesktopOtherMemberCollection = ({otherUserMangas}) => (
   <div className="DesktopOtherMemberCollection">
     <Card className="DesktopOtherMemberCollection-mainCard">
       <Card.Header className="DesktopOtherMemberCollection-myCollection">
@@ -16,271 +17,29 @@ const DesktopOtherMemberCollection = () => (
         </Header>
       </Card.Header>
       <Card.Content className="DesktopOtherMemberCollection-myCollectionCardContent">
-
-        <Grid columns="four" className="DesktopOtherMemberCollection-myCollectionGrid">
-          <Grid.Row>
-            <Grid.Column>
-              <div className="DesktopOtherMemberCollection-myCollectionItem">
-                <div className="DesktopOtherMemberCollection-itemContentWrapper">
-                  <Image
-                    className="DesktopOtherMemberCollection-myCollectionTitleMangaImage"
-                    src="https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/313968/313968._SX1280_QL80_TTD_.jpg"
-                    size="tiny"
-                  />
-                  <div className="DesktopOtherMemberCollection-myCollectionMangaInfoWrapper">
-                    <h3 className="DesktopOtherMemberCollection-myCollectionTitleManga">Attaque des Titans - <span className="DesktopOtherMemberCollection-myCollectionAuthorManga">Auteur</span></h3>
-                  </div>
-                </div>
-                <div className="DesktopOtherMemberCollection-myCollectionThreeButtons">
-                  <div className="DesktopOtherMemberCollection-myCollectionButtonsSubGroup">
-                    <Button className="DesktopOtherMemberCollection-myCollectionButtons" fluid>
-                      Disponibilité
-                    </Button>
-                    <div className="DesktopOtherMemberCollection-artificialMargin"></div>
-                    <Button className="DesktopOtherMemberCollection-myCollectionButtons" fluid>
-                      Éditer
-                    </Button>
-                  </div>
-                  <Button className="DesktopOtherMemberCollection-myCollectionButtons DesktopOtherMemberCollection-DeleteButton" fluid>
-                    Supprimer
-                  </Button>
-                </div>
-              </div>
-            </Grid.Column>
-            <Grid.Column>
-              <div className="DesktopOtherMemberCollection-myCollectionItem">
-                <div className="DesktopOtherMemberCollection-itemContentWrapper">
-                  <Image
-                    className="DesktopOtherMemberCollection-myCollectionTitleMangaImage"
-                    src="https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/313968/313968._SX1280_QL80_TTD_.jpg"
-                    size="tiny"
-                  />
-                  <div className="DesktopOtherMemberCollection-myCollectionMangaInfoWrapper">
-                    <h3 className="DesktopOtherMemberCollection-myCollectionTitleManga">Attaque des Titans - <span className="DesktopOtherMemberCollection-myCollectionAuthorManga">Auteur</span></h3>
-                  </div>
-                </div>
-                <div className="DesktopOtherMemberCollection-myCollectionThreeButtons">
-                  <div className="DesktopOtherMemberCollection-myCollectionButtonsSubGroup">
-                    <Button className="DesktopOtherMemberCollection-myCollectionButtons" fluid>
-                      Disponibilité
-                    </Button>
-                    <div className="DesktopOtherMemberCollection-artificialMargin"></div>
-                    <Button className="DesktopOtherMemberCollection-myCollectionButtons" fluid>
-                      Éditer
-                    </Button>
-                  </div>
-                  <Button className="DesktopOtherMemberCollection-myCollectionButtons DesktopOtherMemberCollection-DeleteButton" fluid>
-                    Supprimer
-                  </Button>
-                </div>
-              </div>
-            </Grid.Column>
-            <Grid.Column>
-              <div className="DesktopOtherMemberCollection-myCollectionItem">
-                <div className="DesktopOtherMemberCollection-itemContentWrapper">
-                  <Image
-                    className="DesktopOtherMemberCollection-myCollectionTitleMangaImage"
-                    src="https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/313968/313968._SX1280_QL80_TTD_.jpg"
-                    size="tiny"
-                  />
-                  <div className="DesktopOtherMemberCollection-myCollectionMangaInfoWrapper">
-                    <h3 className="DesktopOtherMemberCollection-myCollectionTitleManga">Attaque des Titans - <span className="DesktopOtherMemberCollection-myCollectionAuthorManga">Auteur</span></h3>
-                  </div>
-                </div>
-                <div className="DesktopOtherMemberCollection-myCollectionThreeButtons">
-                  <div className="DesktopOtherMemberCollection-myCollectionButtonsSubGroup">
-                    <Button className="DesktopOtherMemberCollection-myCollectionButtons" fluid>
-                      Disponibilité
-                    </Button>
-                    <div className="DesktopOtherMemberCollection-artificialMargin"></div>
-                    <Button className="DesktopOtherMemberCollection-myCollectionButtons" fluid>
-                      Éditer
-                    </Button>
-                  </div>
-                  <Button className="DesktopOtherMemberCollection-myCollectionButtons DesktopOtherMemberCollection-DeleteButton" fluid>
-                    Supprimer
-                  </Button>
-                </div>
-              </div>
-            </Grid.Column>
-            <Grid.Column>
-              <div className="DesktopOtherMemberCollection-myCollectionItem">
-                <div className="DesktopOtherMemberCollection-itemContentWrapper">
-                  <Image
-                    className="DesktopOtherMemberCollection-myCollectionTitleMangaImage"
-                    src="https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/313968/313968._SX1280_QL80_TTD_.jpg"
-                    size="tiny"
-                  />
-                  <div className="DesktopOtherMemberCollection-myCollectionMangaInfoWrapper">
-                    <h3 className="DesktopOtherMemberCollection-myCollectionTitleManga">Attaque des Titans - <span className="DesktopOtherMemberCollection-myCollectionAuthorManga">Auteur</span></h3>
-                  </div>
-                </div>
-                <div className="DesktopOtherMemberCollection-myCollectionThreeButtons">
-                  <div className="DesktopOtherMemberCollection-myCollectionButtonsSubGroup">
-                    <Button className="DesktopOtherMemberCollection-myCollectionButtons" fluid>
-                      Disponibilité
-                    </Button>
-                    <div className="DesktopOtherMemberCollection-artificialMargin"></div>
-                    <Button className="DesktopOtherMemberCollection-myCollectionButtons" fluid>
-                      Éditer
-                    </Button>
-                  </div>
-                  <Button className="DesktopOtherMemberCollection-myCollectionButtons DesktopOtherMemberCollection-DeleteButton" fluid>
-                    Supprimer
-                  </Button>
-                </div>
-              </div>
-            </Grid.Column>
-          </Grid.Row>
-
-          <Grid.Row>
-            <Grid.Column>
-              <div className="DesktopOtherMemberCollection-myCollectionItem">
-                <div className="DesktopOtherMemberCollection-itemContentWrapper">
-                  <Image
-                    className="DesktopOtherMemberCollection-myCollectionTitleMangaImage"
-                    src="https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/313968/313968._SX1280_QL80_TTD_.jpg"
-                    size="tiny"
-                  />
-                  <div className="DesktopOtherMemberCollection-myCollectionMangaInfoWrapper">
-                    <h3 className="DesktopOtherMemberCollection-myCollectionTitleManga">Attaque des Titans - <span className="DesktopOtherMemberCollection-myCollectionAuthorManga">Auteur</span></h3>
-                  </div>
-                </div>
-                <div className="DesktopOtherMemberCollection-myCollectionThreeButtons">
-                  <div className="DesktopOtherMemberCollection-myCollectionButtonsSubGroup">
-                    <Button className="DesktopOtherMemberCollection-myCollectionButtons" fluid>
-                      Disponibilité
-                    </Button>
-                    <div className="DesktopOtherMemberCollection-artificialMargin"></div>
-                    <Button className="DesktopOtherMemberCollection-myCollectionButtons" fluid>
-                      Éditer
-                    </Button>
-                  </div>
-                  <Button className="DesktopOtherMemberCollection-myCollectionButtons DesktopOtherMemberCollection-DeleteButton" fluid>
-                    Supprimer
-                  </Button>
-                </div>
-              </div>
-            </Grid.Column>
-            <Grid.Column>
-              <div className="DesktopOtherMemberCollection-myCollectionItem">
-                <div className="DesktopOtherMemberCollection-itemContentWrapper">
-                  <Image
-                    className="DesktopOtherMemberCollection-myCollectionTitleMangaImage"
-                    src="https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/313968/313968._SX1280_QL80_TTD_.jpg"
-                    size="tiny"
-                  />
-                  <div className="DesktopOtherMemberCollection-myCollectionMangaInfoWrapper">
-                    <h3 className="DesktopOtherMemberCollection-myCollectionTitleManga">Attaque des Titans - <span className="DesktopOtherMemberCollection-myCollectionAuthorManga">Auteur</span></h3>
-                  </div>
-                </div>
-                <div className="DesktopOtherMemberCollection-myCollectionThreeButtons">
-                  <div className="DesktopOtherMemberCollection-myCollectionButtonsSubGroup">
-                    <Button className="DesktopOtherMemberCollection-myCollectionButtons" fluid>
-                      Disponibilité
-                    </Button>
-                    <div className="DesktopOtherMemberCollection-artificialMargin"></div>
-                    <Button className="DesktopOtherMemberCollection-myCollectionButtons" fluid>
-                      Éditer
-                    </Button>
-                  </div>
-                  <Button className="DesktopOtherMemberCollection-myCollectionButtons DesktopOtherMemberCollection-DeleteButton" fluid>
-                    Supprimer
-                  </Button>
-                </div>
-              </div>
-            </Grid.Column>
-            <Grid.Column>
-              <div className="DesktopOtherMemberCollection-myCollectionItem">
-                <div className="DesktopOtherMemberCollection-itemContentWrapper">
-                  <Image
-                    className="DesktopOtherMemberCollection-myCollectionTitleMangaImage"
-                    src="https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/313968/313968._SX1280_QL80_TTD_.jpg"
-                    size="tiny"
-                  />
-                  <div className="DesktopOtherMemberCollection-myCollectionMangaInfoWrapper">
-                    <h3 className="DesktopOtherMemberCollection-myCollectionTitleManga">Attaque des Titans - <span className="DesktopOtherMemberCollection-myCollectionAuthorManga">Auteur</span></h3>
-                  </div>
-                </div>
-                <div className="DesktopOtherMemberCollection-myCollectionThreeButtons">
-                  <div className="DesktopOtherMemberCollection-myCollectionButtonsSubGroup">
-                    <Button className="DesktopOtherMemberCollection-myCollectionButtons" fluid>
-                      Disponibilité
-                    </Button>
-                    <div className="DesktopOtherMemberCollection-artificialMargin"></div>
-                    <Button className="DesktopOtherMemberCollection-myCollectionButtons" fluid>
-                      Éditer
-                    </Button>
-                  </div>
-                  <Button className="DesktopOtherMemberCollection-myCollectionButtons DesktopOtherMemberCollection-DeleteButton" fluid>
-                    Supprimer
-                  </Button>
-                </div>
-              </div>
-            </Grid.Column>
-            <Grid.Column>
-              <div className="DesktopOtherMemberCollection-myCollectionItem">
-                <div className="DesktopOtherMemberCollection-itemContentWrapper">
-                  <Image
-                    className="DesktopOtherMemberCollection-myCollectionTitleMangaImage"
-                    src="https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/313968/313968._SX1280_QL80_TTD_.jpg"
-                    size="tiny"
-                  />
-                  <div className="DesktopOtherMemberCollection-myCollectionMangaInfoWrapper">
-                    <h3 className="DesktopOtherMemberCollection-myCollectionTitleManga">Attaque des Titans - <span className="DesktopOtherMemberCollection-myCollectionAuthorManga">Auteur</span></h3>
-                  </div>
-                </div>
-                <div className="DesktopOtherMemberCollection-myCollectionThreeButtons">
-                  <div className="DesktopOtherMemberCollection-myCollectionButtonsSubGroup">
-                    <Button className="DesktopOtherMemberCollection-myCollectionButtons" fluid>
-                      Disponibilité
-                    </Button>
-                    <div className="DesktopOtherMemberCollection-artificialMargin"></div>
-                    <Button className="DesktopOtherMemberCollection-myCollectionButtons" fluid>
-                      Éditer
-                    </Button>
-                  </div>
-                  <Button className="DesktopOtherMemberCollection-myCollectionButtons DesktopOtherMemberCollection-DeleteButton" fluid>
-                    Supprimer
-                  </Button>
-                </div>
-              </div>
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
-
-        {/* <div className="manageMyCollection-itemDesktopVersion">
-
-        </div>
-        <Divider className="manageMyCollection-divider-MobileVersion" />
-        <div className="manageMyCollection-itemDesktopVersion">
-          <div className="manageMyCollection-myCollectionItem">
-            <div className="manageMyCollection-itemContentWrapper">
-              <Image
-                className="manageMyCollection-myCollectionTitleMangaImage"
-                src="https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/313968/313968._SX1280_QL80_TTD_.jpg"
-                size="tiny"
+        {otherUserMangas ? (
+          <div className="manageMyCollection-itemWrapperDesktopVersion">
+            {console.log('user mangas', Object.values(otherUserMangas))}
+            {Object.values(otherUserMangas).map((manga, index) => (
+              <ViewOtherProfileCollectionResult
+                key={index}
+                mangaName={manga.info.title}
+                mangaPicture={manga.info.picture}
+                mangaVolumes={manga.volumes}
+                mangaAuthor={manga.info.author}
+                mangaId={manga.info.id}
+                mangaMaxVolumeNumber={manga.info.volume_number}
               />
-              <div className="manageMyCollection-myCollectionMangaInfoWrapper">
-                <h3 className="manageMyCollection-myCollectionTitleManga">Attaque des Titans - <span className="manageMyCollection-myCollectionAuthorManga">Auteur</span></h3>
-              </div>
-            </div>
-            <div className="manageMyCollection-myCollectionThreeButtons">
-              <div className="manageMyCollection-myCollectionButtonsSubGroup">
-                <Button className="manageMyCollection-myCollectionButtons" fluid>
-                  Disponibilité
-                  </Button>
-                <div className="manageMyCollection-artificialMargin"></div>
-                <Button className="manageMyCollection-myCollectionButtons" fluid>
-                  Éditer
-                  </Button>
-              </div>
-              <Button className="manageMyCollection-myCollectionButtons manageMyCollection-DeleteButton" fluid>
-                Supprimer
-                </Button>
-            </div>
+            ))}
           </div>
-        </div> */}
+        ) : (
+          <div>
+            <Divider className="manageMyCollection-divider" />
+            <h4 className="manageMyCollection-subtitle">Vous n'avez pas de mangas dans votre collection</h4>
+            <Divider className="manageMyCollection-divider" />
+          </div>
+        )}
+
       </Card.Content>
     </Card>
   </div>
