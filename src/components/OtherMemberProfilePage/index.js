@@ -9,9 +9,10 @@ import alternativeBanner from 'src/assets/images/alternativeBanner.png';
 import MediaQuery from 'react-responsive';
 import DesktopIdCardOther from './DesktopIdCardOther';
 import DesktopOtherMemberCollection from './DesktopOtherMemberCollection';
+import ViewOtherProfileCollectionResult from './ViewOtherProfileCollectionResult';
 
 const OtherMemberProfilePage = ({
-  pseudo, bio, city, zipcode, picture, holidayMode,
+  pseudo, bio, city, zipcode, picture, holidayMode, otherUserMangas,
 }) => {
   const availableTomes = [
     { key: 't1', value: 't1', text: 'Tome 1' },
@@ -71,69 +72,32 @@ const OtherMemberProfilePage = ({
             </Header>
           </div>
           <Divider className="otherMemberProfilePage-divider" />
-          <div className="otherMemberProfilePage-myCollectionItem">
-            <div className="otherMemberProfilePage-itemContentWrapper">
-              <Image
-                className="otherMemberProfilePage-myCollectionTitleMangaImage"
-                src="https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/313968/313968._SX1280_QL80_TTD_.jpg"
-                size="tiny"
-              />
-              <div className="otherMemberProfilePage-myCollectionMangaInfoWrapper">
-                <h3 className="otherMemberProfilePage-myCollectionTitleManga">Attaque des Titans - <span className="otherMemberProfilePage-myCollectionAuthorManga">Auteur</span></h3>
-              </div>
+          {otherUserMangas ? (
+            <div className="manageMyCollection-itemWrapperDesktopVersion">
+              {console.log('other user mangas', Object.values(otherUserMangas))}
+              {Object.values(otherUserMangas).map((manga, index) => (
+                <ViewOtherProfileCollectionResult
+                  key={index}
+                  mangaName={manga.info.title}
+                  mangaPicture={manga.info.picture}
+                  mangaVolumes={manga.volumes}
+                  mangaAuthor={manga.info.author}
+                  mangaId={manga.info.id}
+                />
+              ))}
             </div>
-            <div className="otherMemberProfilePage-myCollectionThreeButtons">
-              <div className="otherMemberProfilePage-myCollectionButtonsSubGroup">
-                <Button className="otherMemberProfilePage-myCollectionButtons" fluid>
-                  Disponibilité
-                </Button>
-                <div className="otherMemberProfilePage-artificialMargin" />
-                <Button className="otherMemberProfilePage-myCollectionButtons" fluid>
-                  Éditer
-                </Button>
-              </div>
-              <Button className="otherMemberProfilePage-myCollectionButtons otherMemberProfilePage-DeleteButton" fluid>
-                Supprimer
-              </Button>
+          ) : (
+            <div>
+              <Divider className="manageMyCollection-divider" />
+              <h4 className="manageMyCollection-subtitle">Vous n'avez pas de mangas dans votre collection</h4>
+              <Divider className="manageMyCollection-divider" />
             </div>
-          </div>
-          <Divider className="otherMemberProfilePage-divider" />
-          <div className="otherMemberProfilePage-myCollectionItem">
-            <div className="otherMemberProfilePage-itemContentWrapper">
-              <Image
-                className="otherMemberProfilePage-myCollectionTitleMangaImage"
-                src="https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/313968/313968._SX1280_QL80_TTD_.jpg"
-                size="tiny"
-              />
-              <div className="otherMemberProfilePage-myCollectionMangaInfoWrapper">
-                <h3 className="otherMemberProfilePage-myCollectionTitleManga">Attaque des Titans - <span className="otherMemberProfilePage-myCollectionAuthorManga">Auteur</span></h3>
-              </div>
-            </div>
-            <div className="otherMemberProfilePage-myCollectionThreeButtons">
-              <div className="otherMemberProfilePage-myCollectionButtonsSubGroup">
-                <Button className="otherMemberProfilePage-myCollectionButtons" fluid>
-                  Disponibilité
-                </Button>
-                <div className="otherMemberProfilePage-artificialMargin" />
-                <Button className="otherMemberProfilePage-myCollectionButtons" fluid>
-                  Éditer
-                </Button>
-              </div>
-              <Button className="otherMemberProfilePage-myCollectionButtons otherMemberProfilePage-DeleteButton" fluid>
-                Supprimer
-              </Button>
-            </div>
-          </div>
-          <Divider className="otherMemberProfilePage-divider" />
-
-          <div className="otherMemberProfilePage-sixthPart">
-            <Button className="otherMemberProfilePage-sixthPartDeleteAccountButton" size="mini">Voir plus</Button>
-          </div>
+          )}
         </MediaQuery>
       </div>
 
       <MediaQuery minWidth={1224}>
-        <DesktopOtherMemberCollection />
+        <DesktopOtherMemberCollection otherUserMangas={otherUserMangas}/>
       </MediaQuery>
 
     </div>
