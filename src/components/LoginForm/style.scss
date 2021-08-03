@@ -68,10 +68,12 @@ div.content.loginform-cardContent.loginform-cardContent.loginform-cardContent {
   }
 
   .loginform-desktopImage {
-    background-image: url('src/assets/images/desktopImage.jpg');
+    background-image:  url('src/assets/images/temple2-faded.png');
     background-size: cover;
     background-repeat: no-repeat;
     width: 70%;
+    border-radius:1.3em;
+
     // height: 550px;
 
   }
