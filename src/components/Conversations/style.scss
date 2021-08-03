@@ -44,11 +44,11 @@ div.conversation:not(:first-child) {
 }
 
 .conversations{
-  background-image: linear-gradient(rgba(226, 226, 226, 0.7), rgba(56, 56, 56, 0.7)),url("src/assets/images/conversations-bg.png");;
+  background-image: linear-gradient(rgba(226, 226, 226, 0.7), rgba(56, 56, 56, 0.7)),url("src/assets/images/conversations-bg.png");
   background-size: cover;
   background-attachment: fixed;
-  
-  height:100vh;
+  min-height: 100vh;
+  height:100%;
 }
 .conversations-notHiddenBox{
   background-color: #fff;
