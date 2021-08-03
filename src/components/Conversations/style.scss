@@ -90,6 +90,8 @@ div.conversation:not(:first-child) {
   margin: 0;
 
 }
+
+
 @media only screen and (min-width : 1224px) {
   .conversations{
     background-image: linear-gradient(rgba(226, 226, 226, 0.7), rgba(56, 56, 56, 0.7)),url("src/assets/images/conversations-bg.png");
@@ -127,15 +129,8 @@ div.conversation:not(:first-child) {
 }
 
 .theme2 {
-  .conversation-card.conversation-card.conversation-card {
-
-    background-color: vars.$primaryColor_theme2;
-  }
-
-  div.header.conversation-cardHeader.conversation-cardHeader.conversation-cardHeader {
-    color: vars.$primaryFontColor_theme2;
-  }
   
+
   div.meta.conversation-cardMeta.conversation-cardMeta.conversation-cardMeta {
     color: vars.$metaFontColor_theme2;
   }
