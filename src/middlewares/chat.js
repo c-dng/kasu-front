@@ -13,7 +13,8 @@ import api from 'src/api';
 // Ici, on déclare notre variable
 import { io } from 'socket.io-client';
 import { redirectTo, setLoadingFalse, setLoadingTrue } from '../actions/global';
-import { CREATE_NEW_CHAT } from '../actions/chat';
+import { loadUserFullData } from '../actions/user';
+import { CREATE_NEW_CHAT, loadSingleChat } from '../actions/chat';
 
 let socket;
 
@@ -92,6 +93,8 @@ const chatMiddleware = (store) => (next) => (action) => {
           (response) => {
             console.log('la conversation a bien été créée');
             console.log(response.data.id);
+            console.log('loading single chat');
+            store.dispatch(loadSingleChat(response.data.id));
             store.dispatch(redirectTo(`/conversation/${response.data.id}`));
           },
         )

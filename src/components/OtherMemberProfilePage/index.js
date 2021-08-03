@@ -40,7 +40,7 @@ const OtherMemberProfilePage = ({
             <h4 className="otherMemberProfilePage-infoSubtitles">Présentation</h4>
             <Container textAlign="justified">
               <p>
-                {bio || 'Vous n\'avez pas encore écrit de présentation, rendez-vous dans "Gérer mon profil" !'}
+                {bio || 'Cet utilisateur n\'a pas de description !'}
               </p>
             </Container>
           </div>

@@ -144,6 +144,8 @@ form.ui.form {
 
 div.desktopIdCard-errorMessage {
   font-weight: bold;
+  text-align: center;
+  margin-bottom: 1em;
 }
 
 div.desktopIdCard-divSaveButton {
@@ -232,7 +234,7 @@ button.ui.mini.button.desktopIdCard-DeleteButtonRed {
     background-color: vars.$primaryColor_theme1;
   }
 
-  button.ui.mini.button.desktopIdCard-SaveButtonGreen {
+  button.ui.small.button.mobileSetProfil-buttonValidate {
     background-color: vars.$primaryColor_theme1;
     transition: all 0.5s;
   }
@@ -270,12 +272,12 @@ button.ui.mini.button.desktopIdCard-DeleteButtonRed {
   }
 
   h1.setProfilPage-title.setProfilPage-title.setProfilPage-title {
-    background-color: white;
+    background-color: vars.$secondaryColor_theme2;
     color: vars.$secondaryFontColor_theme2;
   }
 
   img.ui.medium.centered.image.desktopIdCard-leftPartWrapperImage {
-  border: 2px solid white;
+  border: 2px solid vars.$primaryBorderColor_theme2;
   border-radius: 50%;
   }
 
@@ -364,9 +366,5 @@ button.ui.mini.button.desktopIdCard-DeleteButtonRed {
   
   button.ui.mini.negative.button.mobileSetProfil-deleteMyAccount {
     background-color: vars.$primaryColor_theme2;
-  }
-
-  div.ui.fitted.toggle.checkbox {
-    border: 1px solid vars.$primaryBorderColor_theme2;
   }
 }

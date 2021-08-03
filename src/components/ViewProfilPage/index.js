@@ -9,9 +9,11 @@ import alternativeBanner from 'src/assets/images/alternativeBanner.png';
 import MediaQuery from 'react-responsive';
 import DesktopIdCard from './DesktopIdCard';
 import DesktopMyCollectionProfile from './DesktopMyCollectionProfile';
+import MyCollectionResult from '../ManageMyCollection/MyCollectionResult';
+import ViewProfileCollectionResult from './ViewProfileCollectionResult';
 
 const ViewProfilPage = ({
-  pseudo, bio, city, zipcode, picture, holidayMode,
+  pseudo, bio, city, zipcode, picture, holidayMode, userMangas
 }) => {
   const availableTomes = [
     { key: 't1', value: 't1', text: 'Tome 1' },
@@ -87,68 +89,33 @@ const ViewProfilPage = ({
             </Header>
           </div>
           <Divider className="viewProfilPage-divider" />
-          <div className="viewProfilPage-myCollectionItem">
-            <div className="viewProfilPage-itemContentWrapper">
-              <Image
-                className="viewProfilPage-myCollectionTitleMangaImage"
-                src="https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/313968/313968._SX1280_QL80_TTD_.jpg"
-                size="tiny"
-              />
-              <div className="viewProfilPage-myCollectionMangaInfoWrapper">
-                <h3 className="viewProfilPage-myCollectionTitleManga">Attaque des Titans - <span className="viewProfilPage-myCollectionAuthorManga">Auteur</span></h3>
-              </div>
+          {userMangas ? (
+            <div className="manageMyCollection-itemWrapperDesktopVersion">
+              {console.log('user mangas', Object.values(userMangas))}
+              {Object.values(userMangas).map((manga, index) => (
+                <ViewProfileCollectionResult
+                  key={index}
+                  mangaName={manga.info.title}
+                  mangaPicture={manga.info.picture}
+                  mangaVolumes={manga.volumes}
+                  mangaAuthor={manga.info.author}
+                  mangaId={manga.info.id}
+                  mangaMaxVolumeNumber={manga.info.volume_number}
+                />
+              ))}
             </div>
-            <div className="viewProfilPage-myCollectionThreeButtons">
-              <div className="viewProfilPage-myCollectionButtonsSubGroup">
-                <Button className="viewProfilPage-myCollectionButtons" fluid size="mini">
-                  Disponibilité
-                </Button>
-                <div className="viewProfilPage-artificialMargin" />
-                <Button className="viewProfilPage-myCollectionButtons" fluid size="mini">
-                  Éditer
-                </Button>
-              </div>
-              <Button className="viewProfilPage-myCollectionButtons viewProfilPage-DeleteButton" fluid size="mini">
-                Supprimer
-              </Button>
+          ) : (
+            <div>
+              <Divider className="manageMyCollection-divider" />
+              <h4 className="manageMyCollection-subtitle">Vous n'avez pas de mangas dans votre collection</h4>
+              <Divider className="manageMyCollection-divider" />
             </div>
-          </div>
-          <Divider className="viewProfilPage-divider" />
-          <div className="viewProfilPage-myCollectionItem">
-            <div className="viewProfilPage-itemContentWrapper">
-              <Image
-                className="viewProfilPage-myCollectionTitleMangaImage"
-                src="https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/313968/313968._SX1280_QL80_TTD_.jpg"
-                size="tiny"
-              />
-              <div className="viewProfilPage-myCollectionMangaInfoWrapper">
-                <h3 className="viewProfilPage-myCollectionTitleManga">Attaque des Titans - <span className="viewProfilPage-myCollectionAuthorManga">Auteur</span></h3>
-              </div>
-            </div>
-            <div className="viewProfilPage-myCollectionThreeButtons">
-              <div className="viewProfilPage-myCollectionButtonsSubGroup">
-                <Button className="viewProfilPage-myCollectionButtons" fluid size="mini">
-                  Disponibilité
-                </Button>
-                <div className="viewProfilPage-artificialMargin" />
-                <Button className="viewProfilPage-myCollectionButtons" fluid size="mini">
-                  Éditer
-                </Button>
-              </div>
-              <Button className="viewProfilPage-myCollectionButtons viewProfilPage-DeleteButton" fluid size="mini">
-                Supprimer
-              </Button>
-            </div>
-          </div>
-          <Divider className="viewProfilPage-divider" />
-          {/* <div className="viewProfilPage-sixthPart">
-            <Button className="viewProfilPage-sixthPartDeleteAccountButton" size="mini">Voir plus</Button>
-          </div> */}
+          )}
         </MediaQuery>
       </div>
 
       <MediaQuery minWidth={1224}>
-        <DesktopMyCollectionProfile />
+        <DesktopMyCollectionProfile userMangas={userMangas} />
       </MediaQuery>
 
     </div>

@@ -30,7 +30,7 @@ const ManageMyCollection = ({
 
         <div className="manageMyCollection-firstBlocDesktopVersion">
           <Card.Header className="manageMyCollection-mainCardHeader">Gestion des collections</Card.Header>
-          <h3 className="manageMyCollection-subHeader">Cherche un manga à ajouter à ta collection dans notre base de donnée !</h3>
+          <h3 className="manageMyCollection-subHeader">Cherche un manga à ajouter à ta collection dans notre base de données !</h3>
           <div className="manageMyCollection-searchBarWrapper">
             <AddMangaSearchBar setMangaSearch={setMangaSearch} manageSubmit={manageSubmit} loading={loading} mangaSearch={mangaSearch} className="manageMyCollection-searchBar" />
           </div>
