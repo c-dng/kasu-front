@@ -16,6 +16,7 @@ import Team from 'src/components/Team';
 import LegalNotice from 'src/components/LegalNotice';
 import Chat from 'src/containers/Chat';
 import Error from 'src/components/Error';
+import OtherMemberProfilePage from 'src/containers/OtherMemberProfilePage';
 // == Import
 
 import './style.scss';
@@ -23,7 +24,6 @@ import { Redirect, Route, Switch, useHistory, useLocation } from 'react-router-d
 import { useBeforeunload } from 'react-beforeunload';
 import { useDispatch } from 'react-redux';
 import Loading from './Loading';
-import OtherMemberProfilePage from '../OtherMemberProfilePage';
 import { redirectTo } from '../../actions/global';
 
 // == Composant
