@@ -21,6 +21,12 @@ div.team h2 {
   margin: 1rem;
 }
 
+div.small.image.picture img {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+
 .team-description {
   width: 80%;
   margin: 0 auto;
