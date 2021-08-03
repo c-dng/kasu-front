@@ -78,6 +78,7 @@ div.header.noAccount-cardHeader.noAccount-cardHeader.noAccount-cardHeader {
   .noAccountBox-card.noAccountBox-card.noAccountBox-card {
     color: vars.$primaryFontColor_theme1;
     background-color: vars.$primaryColor_theme1;
+    transition: all 0.5s;
   }
   .noAccount-registerButton.noAccount-registerButton.noAccount-registerButton:hover {
     border: 1px solid vars.$secondaryBorderColor_theme1;

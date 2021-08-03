@@ -14,17 +14,7 @@ import ViewProfileCollectionResult from './ViewProfileCollectionResult';
 
 const ViewProfilPage = ({
   pseudo, bio, city, zipcode, picture, holidayMode, userMangas
-}) => {
-  const availableTomes = [
-    { key: 't1', value: 't1', text: 'Tome 1' },
-    { key: 't2', value: 't2', text: 'Tome 2' },
-    { key: 't3', value: 't3', text: 'Tome 3' },
-    { key: 't4', value: 't4', text: 'Tome 4' },
-    { key: 't5', value: 't5', text: 'Tome 5' },
-
-  ];
-
-  return (
+}) => (
     <div className="viewProfilPage">
       <Image className="registerForm-banner" src={alternativeBanner} />
       <div className="viewProfilPage-mainWrapper">
@@ -82,9 +72,6 @@ const ViewProfilPage = ({
               <Icon className="viewProfilPage-myCollectionIcon" name="settings" />
               <Header.Content className="viewProfilPage-myCollectionHeaderContent">
                 Ma collection
-                <Header.Subheader className="viewProfilPage-myCollectionSubHeaderTwo">
-                  Gérer la visibilité, l'édition, ou la suppression
-                </Header.Subheader>
               </Header.Content>
             </Header>
           </div>
@@ -118,7 +105,6 @@ const ViewProfilPage = ({
       </MediaQuery>
 
     </div>
-  );
-};
+);
 
 export default ViewProfilPage;

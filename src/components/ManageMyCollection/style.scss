@@ -172,6 +172,7 @@ div.manageMyCollection-itemWrapperDesktopVersion {
 }
 
 
+
 // Desktop and laptops
 @media only screen and (min-width : 1224px) {
 
@@ -299,10 +300,16 @@ div.manageMyCollection-itemWrapperDesktopVersion {
  button.ui.fluid.button.manageMyCollection-myCollectionButtons.manageMyCollection-DeleteButton.manageMyCollection-myCollectionButtons.manageMyCollection-DeleteButton {
   border: 1px solid #db2828;
   color: #db2828;
-  }
+}
 
- 
-
+// hover
+button.ui.fluid.button.manageMyCollection-myCollectionButtons.manageMyCollection-DeleteButton.manageMyCollection-myCollectionButtons.manageMyCollection-DeleteButton:hover {
+  border: 1px solid #db2828;
+  color: vars.$secondaryFontColor_theme1;
+  background-color: #db2828;
+}
+  
+  
   //Theming 1 en desktop
   .theme1 {
     i.settings.icon.manageMyCollection-myCollectionIcon {
@@ -332,6 +339,11 @@ div.manageMyCollection-itemWrapperDesktopVersion {
 
     div.manageMyCollection-mainCard.manageMyCollection-mainCard  {
       border: none;
+    }
+    
+    button.ui.button.manageMyCollection-addToMyCollectionButton:hover {
+      background-color: vars.$secondaryColor_theme1;
+      color: vars.$secondaryFontColor_theme1;
     }
 
     button.ui.fluid.button.manageMyCollection-myCollectionButtons.manageMyCollection-DeleteButton {
@@ -417,7 +429,9 @@ div.manageMyCollection-itemWrapperDesktopVersion {
     background-color: vars.$primaryColor_theme1;
     color: vars.$primaryFontColor_theme1;
     border: 1px solid vars.$primaryBorderColor_theme1;
+    transition: all 0.5s;
   }
+
   .manageMyCollection-myCollectionButtons.manageMyCollection-myCollectionButtons.manageMyCollection-myCollectionButtons:hover {
     background-color: vars.$secondaryColor_theme1;
     color: vars.$secondaryFontColor_theme1;
@@ -481,10 +495,19 @@ div.manageMyCollection-itemWrapperDesktopVersion {
     background-color: vars.$primaryColor_theme2;
     color: vars.$primaryFontColor_theme2;
     border: 1px solid vars.$primaryBorderColor_theme2;
+    transition: all 0.5s;
+  }
+  .manageMyCollection-myCollectionButtons.manageMyCollection-myCollectionButtons.manageMyCollection-myCollectionButtons:hover {
+    background-color: vars.$secondaryColor_theme2;
+    color: vars.$secondaryFontColor_theme2;
   }
 
   button.ui.mini.fluid.button.manageMyCollection-myCollectionButtons.manageMyCollection-DeleteButton {
     background-color: vars.$primaryColor_theme2;
+  }
+  .manageMyCollection-DeleteButton:hover {
+    background-color: vars.$tertiaryColor_theme2;
+    color: vars.$tertiaryColor_theme2;
   }
 
   .manageMyCollection-divider.manageMyCollection-divider.manageMyCollection-divider {
@@ -510,5 +533,9 @@ div.manageMyCollection-itemWrapperDesktopVersion {
 
   button.ui.fluid.button.manageMyCollection-myCollectionButtons.manageMyCollection-DeleteButton {
     color: vars.$primaryFontColor_theme2;
+    transition: all 0.5s;
+  }
+  button.ui.fluid.button.manageMyCollection-myCollectionButtons.manageMyCollection-DeleteButton:hover {
+    color: vars.$tertiaryColor_theme2;
   }
 }
