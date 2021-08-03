@@ -71,10 +71,11 @@ form.contactForm-form {
     margin: 3rem auto;
   }
   .contactForm-desktopImage {
-    background-image: url('src/assets/images/desktopImage.jpg');
+    background-image: linear-gradient(rgba(87, 87, 87, 0.26), rgba(77, 75, 75, 0.363)), url('src/assets/images/contact-form-desktop.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     width: 70%;
+    border-radius:1.3em;
     // height: 550px;
 
   }
