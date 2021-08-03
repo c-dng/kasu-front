@@ -25,23 +25,23 @@ const ViewProfileCollectionResult = ({ mangaName,
   }));
 
   return (
-    <div>
-      <div className="manageMyCollection-itemDesktopVersion">
-        <div className="manageMyCollection-myCollectionItem">
-          <div className="manageMyCollection-itemContentWrapper">
-            <Image
-              className="manageMyCollection-myCollectionTitleMangaImage"
-              src={mangaPicture}
-              size="tiny"
-            />
-            <div className="manageMyCollection-myCollectionMangaInfoWrapper">
-              <h3 className="manageMyCollection-myCollectionTitleManga">{mangaName} - <span className="manageMyCollection-myCollectionAuthorManga">{mangaAuthor}</span></h3>
-            </div>
-          </div>
+  <>
+    <div className="manageMyCollection-cardDesktopVersion">
+        <h3 className="manageMyCollection-titleNameManga">{mangaName}</h3>
+        <div className="manageMyCollection-mangaImageWrapper">
+          <Image
+            className="manageMyCollection-mangaImage"
+            src={mangaPicture}
+            size="small"
+          />
+        </div>
+        <div className="manageMyCollection-selectAndAdd">
+          <Dropdown className="manageMyCollection-dropdownSelectAndAdd" placeholder="Mes Tomes" size="5" fluid multiple selection options={mangaVolumeOptions}/>
         </div>
       </div>
+
       <Divider className="manageMyCollection-divider-MobileVersion" />
-    </div>
+  </>
   );
 }
 

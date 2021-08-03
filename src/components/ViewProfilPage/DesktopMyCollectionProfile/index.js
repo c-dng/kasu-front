@@ -13,12 +13,12 @@ const DesktopMyCollectionProfile = ({ userMangas }) => (
     <Card className="DesktopMyCollectionProfile-mainCard">
       <Card.Header className="DesktopMyCollectionProfile-myCollection">
         <Header className="DesktopMyCollectionProfile-header" as="h2">
-          <Icon className="DesktopMyCollectionProfile-myCollectionIcon" name="settings" />
+          {/* <Icon className="DesktopMyCollectionProfile-myCollectionIcon" name="settings" /> */}
           <Header.Content className="DesktopMyCollectionProfile-myCollectionHeaderContent">
             Ma collection
-            <Header.Subheader className="DesktopMyCollectionProfile-myCollectionSubHeaderTwo">
+            {/* <Header.Subheader className="DesktopMyCollectionProfile-myCollectionSubHeaderTwo">
               Gérer la visibilité, l'édition, ou la suppression
-            </Header.Subheader>
+            </Header.Subheader> */}
           </Header.Content>
         </Header>
       </Card.Header>
