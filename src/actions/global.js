@@ -1,5 +1,7 @@
+/* eslint-disable linebreak-style */
 export const CHANGE_THEME = 'CHANGE_THEME';
 
+// eslint-disable-next-line linebreak-style
 export const changeTheme = (themeName, navIconsColor) => ({
   type: CHANGE_THEME,
   themeName,
@@ -33,14 +35,14 @@ export const submitForm = () => ({
   type: SUBMIT_FORM,
 });
 
-export const SAVE_MESSAGE= 'SAVE_MESSAGE';
+export const SAVE_MESSAGE = 'SAVE_MESSAGE';
 
 export const saveMessage = (message) => ({
   type: SAVE_MESSAGE,
   message,
 });
 
-export const ERASE_MESSAGE= 'ERASE_MESSAGE';
+export const ERASE_MESSAGE = 'ERASE_MESSAGE';
 
 export const eraseMessage = () => ({
   type: ERASE_MESSAGE,
@@ -56,4 +58,17 @@ export const SET_LOADING_FALSE = 'SET_LOADING_FALSE';
 
 export const setLoadingFalse = () => ({
   type: SET_LOADING_FALSE,
+});
+
+export const REDIRECT = 'REDIRECT';
+
+export const redirectTo = (link) => ({
+  type: REDIRECT,
+  link,
+});
+
+export const LOGOUT_GLOBAL = 'LOGOUT_GLOBAL';
+
+export const logoutGlobal = () => ({
+  type: LOGOUT_GLOBAL,
 });

@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
+/* eslint-disable no-empty-pattern */
+import React from 'react';
 import Messages from '../../containers/Chat/Messages';
 import ChatField from '../../containers/Chat/ChatField';
 

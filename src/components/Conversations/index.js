@@ -1,4 +1,9 @@
-import React, { useEffect } from 'react';
+/* eslint-disable linebreak-style */
+// eslint-disable-next-line linebreak-style
+/* eslint-disable react/prop-types */
+/* eslint-disable linebreak-style */
+// eslint-disable-next-line linebreak-style
+import React from 'react';
 import PropTypes from 'prop-types';
 import {
   Button, Grid, Image, Transition,
@@ -10,13 +15,12 @@ import helpWhite from 'src/assets/images/help-white.png';
 import './style.scss';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
-import { useBeforeunload } from 'react-beforeunload';
 import Conversation from './Conversation';
 
 const Conversations = ({
-  isBoxHidden, handleHiddenBoxDisplay, conversations, loadSingleChat, userPseudo, handleConversationsLoad,
+  isBoxHidden, handleHiddenBoxDisplay, conversations, loadSingleChat, userPseudo,
 }) => {
-  const handleHiddenBox = (evt) => {
+  const handleHiddenBox = () => {
     handleHiddenBoxDisplay();
   };
 
@@ -38,26 +42,28 @@ const Conversations = ({
   return (
     <div className="conversations">
       <div className="conversations-notHiddenBox">
-        {/* <Link to="/conversation/:id" exact={+true}>
-          <Conversation />
-        </Link> */}
-        {console.log(Object.entries(conversations))}
-        {console.log(conversations)}
         {
           // This is a way to iterate over an object items as if it were arrays
           // (therefore being able to use the ".map" declarative function)
           Object.entries(conversations).map((conversation) => {
+            console.log(conversation);
             let pseudoToDisplay;
-            let pictureToDisplay;
+            let picture;
             if (conversation[1].chat.users[1].pseudo === userPseudo) {
               pseudoToDisplay = conversation[1].chat.users[0].pseudo;
-              pictureToDisplay = conversation[1].chat.users[0].picture;
+              picture = conversation[1].chat.users[0].picture;
             }
             else {
               pseudoToDisplay = conversation[1].chat.users[1].pseudo;
-              pictureToDisplay = conversation[1].chat.users[1].picture;
+              picture = conversation[1].chat.users[1].picture;
             }
-
+            let lastMessageVariable;
+            if (conversation[1].lastmessage) {
+              lastMessageVariable = conversation[1].lastmessage.content;
+            }
+            else {
+              lastMessageVariable = '';
+            }
             return (
               <Link
                 key={conversation[1].chat.id}
@@ -70,9 +76,9 @@ const Conversations = ({
               >
                 <Conversation
                   key={conversation[1].chat.id}
-                  lastMessage={conversation[1].lastmessage.content}
+                  lastMessage={lastMessageVariable}
                   pseudo={pseudoToDisplay}
-                  picture={pictureToDisplay}
+                  picture={picture}
                 />
               </Link>
             );

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   Image, Container, Button, Divider, Icon, Header,
 } from 'semantic-ui-react';
@@ -9,8 +9,12 @@ import alternativeBanner from 'src/assets/images/alternativeBanner.png';
 import MediaQuery from 'react-responsive';
 import DesktopIdCard from './DesktopIdCard';
 import DesktopMyCollectionProfile from './DesktopMyCollectionProfile';
+import MyCollectionResult from '../ManageMyCollection/MyCollectionResult';
+import ViewProfileCollectionResult from './ViewProfileCollectionResult';
 
-const ViewProfilPage = () => {
+const ViewProfilPage = ({
+  pseudo, bio, city, zipcode, picture, holidayMode, userMangas
+}) => {
   const availableTomes = [
     { key: 't1', value: 't1', text: 'Tome 1' },
     { key: 't2', value: 't2', text: 'Tome 2' },
@@ -27,17 +31,16 @@ const ViewProfilPage = () => {
 
         <h1 className="setProfilPage-h1">Mon profil</h1>
         <MediaQuery minWidth={1224}>
-          <DesktopIdCard />
+          <DesktopIdCard pseudo={pseudo} bio={bio} city={city} zipcode={zipcode} picture={picture} holidayMode={holidayMode} />
         </MediaQuery>
         <MediaQuery maxWidth={1223}>
-          <Image className="viewProfilPage-firstPartImage" src="https://react.semantic-ui.com/images/avatar/large/steve.jpg" size="tiny" />
-          <Button className="viewProfilPage-firstPartAddButton" circular>+</Button>
+          <Image className="viewProfilPage-firstPartImage" src={`https://api.multiavatar.com/${picture}.png`} size="tiny" />
           <div className="viewProfilPage-secondPart">
             <Container textAlign="center">
-              <h3 className="viewProfilPage-pseudo">Pseudo</h3>
+              <h3 className="viewProfilPage-pseudo">{pseudo}</h3>
             </Container>
             <div className="viewProfilPage-secondPartChangeButtons">
-              <Link to="/profil/id" exact={+true}>
+              <Link to="/profil/mes-infos" exact={+true}>
                 <Button size="mini" className="viewProfilPage-secondPartChangeButtonsLeft" attached="left">Gérer mon profil</Button>
               </Link>
               <Link to="/profil/collection" exact={+true}>
@@ -52,8 +55,7 @@ const ViewProfilPage = () => {
             <h4 className="viewProfilPage-infoSubtitles">Présentation</h4>
             <Container textAlign="justified">
               <p>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-                ligula eget dolor.
+                {bio || 'Vous n\'avez pas encore écrit de présentation, rendez-vous dans "Gérer mon profil" !'}
               </p>
             </Container>
           </div>
@@ -62,7 +64,7 @@ const ViewProfilPage = () => {
             <h4 className="viewProfilPage-infoSubtitles">Localisation</h4>
             <Container className="viewProfilPage-thirdPartLocation">
               <Icon size="large" name="map marker alternate" />
-              <p>Paris - 75000</p>
+              <p>{city} - {zipcode}</p>
             </Container>
           </div>
 
@@ -70,7 +72,7 @@ const ViewProfilPage = () => {
             <h4 className="viewProfilPage-infoSubtitles">Mode Vacances</h4>
             <Container className="viewProfilPage-thirdPartLocation">
               <Icon size="large" name="globe" />
-              <p>Désactivé</p>
+              <p>{holidayMode ? 'Activé' : 'Désactivé'}</p>
             </Container>
           </div>
 
@@ -87,69 +89,33 @@ const ViewProfilPage = () => {
             </Header>
           </div>
           <Divider className="viewProfilPage-divider" />
-          <div className="viewProfilPage-myCollectionItem">
-            <div className="viewProfilPage-itemContentWrapper">
-              <Image
-                className="viewProfilPage-myCollectionTitleMangaImage"
-                src="https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/313968/313968._SX1280_QL80_TTD_.jpg"
-                size="tiny"
-              />
-              <div className="viewProfilPage-myCollectionMangaInfoWrapper">
-                <h3 className="viewProfilPage-myCollectionTitleManga">Attaque des Titans - <span className="viewProfilPage-myCollectionAuthorManga">Auteur</span></h3>
-              </div>
+          {userMangas ? (
+            <div className="manageMyCollection-itemWrapperDesktopVersion">
+              {console.log('user mangas', Object.values(userMangas))}
+              {Object.values(userMangas).map((manga, index) => (
+                <ViewProfileCollectionResult
+                  key={index}
+                  mangaName={manga.info.title}
+                  mangaPicture={manga.info.picture}
+                  mangaVolumes={manga.volumes}
+                  mangaAuthor={manga.info.author}
+                  mangaId={manga.info.id}
+                  mangaMaxVolumeNumber={manga.info.volume_number}
+                />
+              ))}
             </div>
-            <div className="viewProfilPage-myCollectionThreeButtons">
-              <div className="viewProfilPage-myCollectionButtonsSubGroup">
-                <Button className="viewProfilPage-myCollectionButtons" fluid>
-                  Disponibilité
-                </Button>
-                <div className="viewProfilPage-artificialMargin" />
-                <Button className="viewProfilPage-myCollectionButtons" fluid>
-                  Éditer
-                </Button>
-              </div>
-              <Button className="viewProfilPage-myCollectionButtons viewProfilPage-DeleteButton" fluid>
-                Supprimer
-              </Button>
+          ) : (
+            <div>
+              <Divider className="manageMyCollection-divider" />
+              <h4 className="manageMyCollection-subtitle">Vous n'avez pas de mangas dans votre collection</h4>
+              <Divider className="manageMyCollection-divider" />
             </div>
-          </div>
-          <Divider className="viewProfilPage-divider" />
-          <div className="viewProfilPage-myCollectionItem">
-            <div className="viewProfilPage-itemContentWrapper">
-              <Image
-                className="viewProfilPage-myCollectionTitleMangaImage"
-                src="https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/313968/313968._SX1280_QL80_TTD_.jpg"
-                size="tiny"
-              />
-              <div className="viewProfilPage-myCollectionMangaInfoWrapper">
-                <h3 className="viewProfilPage-myCollectionTitleManga">Attaque des Titans - <span className="viewProfilPage-myCollectionAuthorManga">Auteur</span></h3>
-              </div>
-            </div>
-            <div className="viewProfilPage-myCollectionThreeButtons">
-              <div className="viewProfilPage-myCollectionButtonsSubGroup">
-                <Button className="viewProfilPage-myCollectionButtons" fluid>
-                  Disponibilité
-                </Button>
-                <div className="viewProfilPage-artificialMargin" />
-                <Button className="viewProfilPage-myCollectionButtons" fluid>
-                  Éditer
-                </Button>
-              </div>
-              <Button className="viewProfilPage-myCollectionButtons viewProfilPage-DeleteButton" fluid>
-                Supprimer
-              </Button>
-            </div>
-          </div>
-          <Divider className="viewProfilPage-divider" />
-
-          <div className="viewProfilPage-sixthPart">
-            <Button className="viewProfilPage-sixthPartDeleteAccountButton" size="mini">Voir plus</Button>
-          </div>
+          )}
         </MediaQuery>
       </div>
 
       <MediaQuery minWidth={1224}>
-        <DesktopMyCollectionProfile />
+        <DesktopMyCollectionProfile userMangas={userMangas} />
       </MediaQuery>
 
     </div>

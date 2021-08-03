@@ -1,5 +1,12 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable no-console */
+/* eslint-disable linebreak-style */
+/* eslint-disable no-unused-vars */
+/* eslint-disable linebreak-style */
 import api from 'src/api';
-import { LOGIN_USER, REGISTER_USER, saveUser, LOGOUT_USER, saveUserConversations, LOAD_CONVERSATIONS } from 'src/actions/user';
+import {
+  LOGIN_USER, REGISTER_USER, saveUser, LOGOUT_USER, saveUserConversations, LOAD_CONVERSATIONS,
+} from 'src/actions/user';
 import { setLoadingFalse, setLoadingTrue } from '../actions/global';
 import { wsDisconnect } from '../actions/chat';
 
@@ -13,11 +20,12 @@ const authMiddleware = (store) => (next) => (action) => {
         .then(
           (response) => {
             console.log(response);
-            store.dispatch(setLoadingFalse());
+
             store.dispatch(saveUser(response.data));
 
             api.defaults.headers.common.Authorization = `Bearer ${response.data.token}`;
             localStorage.setItem('token', response.data.token);
+            store.dispatch(setLoadingFalse());
           },
         )
         .catch((error) => {
@@ -69,6 +77,7 @@ const authMiddleware = (store) => (next) => (action) => {
       store.dispatch(wsDisconnect());
       next(action);
       break;
+
     case REGISTER_USER: {
       const {
         pseudo,
@@ -90,7 +99,6 @@ const authMiddleware = (store) => (next) => (action) => {
           address,
           zip_code: zipCode,
           city,
-          status: 1,
         })
         .then(
           (response) => {
@@ -103,7 +111,6 @@ const authMiddleware = (store) => (next) => (action) => {
               address,
               zip_code: zipCode,
               city,
-              status: 1,
             });
             console.log(response);
           },
@@ -119,7 +126,6 @@ const authMiddleware = (store) => (next) => (action) => {
               address,
               zip_code: zipCode,
               city,
-              status: 1,
             });
             console.log(error);
           },

@@ -1,19 +1,27 @@
+/* eslint-disable linebreak-style */
+// eslint-disable-next-line linebreak-style
+/* eslint-disable no-console */
+/* eslint-disable linebreak-style */
+/* eslint-disable jsx-a11y/label-has-associated-control */
+/* eslint-disable linebreak-style */
+/* eslint-disable react/jsx-no-comment-textnodes */
+/* eslint-disable linebreak-style */
+/* eslint-disable react/prop-types */
+/* eslint-disable linebreak-style */
+// eslint-disable-next-line linebreak-style
 import React, { useEffect } from 'react';
 import {
-  Button, Card, Divider, Form, Image, Input,
+  Button, Card, Form, Image,
 } from 'semantic-ui-react';
 
 import './style.scss';
 
 import alternativeBanner from 'src/assets/images/alternativeBanner.png';
-import desktopImage from 'src/assets/images/desktopImage.jpg';
 
 const ContactForm = ({
-  email,
   object,
   content,
   message,
-  changeEmail,
   changeObject,
   changeContent,
   handleMessage,
@@ -36,11 +44,6 @@ const ContactForm = ({
     console.log(message.message);
     handleMessage();
   };
-  const handleChangeEmail = (evt) => {
-    changeEmail(evt.target.value);
-    console.log(evt.target.value)
-  };
-
 
   return (
     <div className="contactForm">
@@ -53,20 +56,17 @@ const ContactForm = ({
             <Card.Header text-align="center" className="contactForm-cardHeader">Formulaire de contact</Card.Header>
             <Form className="contactForm-form" onSubmit={handleSubmit}>
               <Form.Field>
-                <label className="contactForm-emailLabel">Saisissez votre email:</label>
-                <Input fluid width="16" id="email" name="email" onChange={handleChangeEmail} value={email} />
-              </Form.Field>
-              <Form.Field>
                 <label className="contactForm-objectLabel">Choisissez un objet:</label>
                 <Form.Field control="select" onChange={handleChangeObject} value={object}>
-                  <option value="Problème">Problème</option>
                   <option value="Ajouter un manga">Ajouter un manga</option>
                   <option value="Médiation">Médiation</option>
+                  <option value="Problème technique">Problème technique</option>
                   <option value="Problème de connexion">Problème de connexion</option>
+                  <option value="Supprimer mon compte">Supprimer mon compte</option>
                   <option value="Autre">Autre</option>
                 </Form.Field>
               </Form.Field>
-              <Form.Field >
+              <Form.Field>
                 <label className="contactForm-msgLabel">Saisissez votre message:</label>
                 <Form.TextArea id="message" name="message" onChange={handleChangeContent} value={content} />
               </Form.Field>

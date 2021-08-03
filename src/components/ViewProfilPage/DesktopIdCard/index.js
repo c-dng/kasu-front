@@ -1,40 +1,42 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable react/prop-types */
+/* eslint-disable linebreak-style */
+/* eslint-disable object-curly-newline */
+/* eslint-disable linebreak-style */
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Button, Divider, Icon, Image } from 'semantic-ui-react';
+import {
+  Button, Divider, Icon, Image,
+} from 'semantic-ui-react';
 import '../style.scss';
 
-const DesktopIdCard = () => (
+const DesktopIdCard = ({ pseudo, bio, city, zipcode, picture, holidayMode }) => (
   <div className="desktopIdCard">
     <div className="desktopIdCard-mainCard">
       <Image
         size="small"
-        src="https://react.semantic-ui.com/images/avatar/large/steve.jpg"
+        src={`https://api.multiavatar.com/${picture}.png`}
         className="desktopIdCard-avatar"
       />
 
       <div className="desktopIdCard-rightPartWrapper">
-        <h3 className="desktopIdCard-memberName">Steve Sanders</h3>
+        <h3 className="desktopIdCard-memberName">{pseudo}</h3>
         <div className="desktopIdCard-locationWrapper">
           <Icon size="small" bordered circular name="map marker alternate" />
-          <span className="desktopIdCard-memberLocation">Paris - 75000</span>
+          <span className="desktopIdCard-memberLocation">{city} - {zipcode}</span>
         </div>
         <div className="desktopIdCard-holidayWrapper">
           <Icon size="small" bordered circular name="globe" />
-          <span className="desktopIdCard-memberHolidayMode">Mode vacances : Activé</span>
+          <span className="desktopIdCard-memberHolidayMode">Mode vacances : {holidayMode ? 'Activé' : 'Désactivé'}</span>
         </div>
         <Divider />
         <p className="desktopIdCard-memberDescription">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam molestiae quaera
-          impedit aspernatu  adipisci aliquid commodi optio ipsum numquam doloremque,
-          laboriosam, deleniti dolorum assumenda architecto minus odit ab. Facilis, quos.
+          {bio || 'Vous n\'avez pas encore écrit de présentation, rendez-vous dans "Gérer mon profil" !'}
         </p>
         <Divider />
         <div className="desktopIdCard-memberPartWrapper">
-          <Button circular icon>
-            <Icon name="camera" />
-          </Button>
           <div className="desktopIdCard-changeButtonsWrapper">
-            <Link to="/profil/id" exact={+true}>
+            <Link to="/profil/mes-infos" exact={+true}>
               <Button size="mini" className="desktopIdCard-changeButtonsLeft" attached="left">Gérer mon profil</Button>
             </Link>
             <Link to="/profil/collection" exact={+true}>

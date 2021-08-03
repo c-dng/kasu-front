@@ -16,6 +16,13 @@ div.ui.icon.input {
   width: 100%;
 }
 
+div.ui.segment.searchbar-segment {
+  width: 80%;
+  border-radius: 2em;
+  padding: 0.5em;
+}
 
-
+form.ui.form.searchbar-form input {
+  border: none;
+}
 // Theming

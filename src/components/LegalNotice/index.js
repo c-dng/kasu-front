@@ -1,3 +1,5 @@
+/* eslint-disable no-irregular-whitespace */
+/* eslint-disable max-len */
 import React from 'react';
 import { Card, Image } from 'semantic-ui-react';
 

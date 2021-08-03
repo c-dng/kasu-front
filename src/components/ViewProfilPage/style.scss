@@ -1,13 +1,12 @@
 @use '/src/styles/vars';
 
+// Mobile version
 .viewProfilPage-mainWrapper {
   width: 80%;
   margin: 3rem auto;
   border-radius: 1em;
   position: relative;
 }
-
-;
 
 .viewProfilPage-pseudo.viewProfilPage-pseudo {
   text-align: center;
@@ -16,24 +15,12 @@
 
 img.ui.tiny.image.viewProfilPage-firstPartImage {
   border-radius: 50%;
-  border: 1px solid black;
   margin: auto;
 }
 
 .viewProfilPage-infoSubtitles.viewProfilPage-infoSubtitles {
   width: 90%;
   margin: 1rem auto;
-}
-
-button.ui.button.viewProfilPage-firstPartAddButton {
-  font-weight: bolder;
-  font-size: x-large;
-  background-color: white;
-  color: black;
-  padding: .2em .4em;
-  position: absolute;
-  top: 9.5%;
-  left: 53%;
 }
 
 div.viewProfilPage-secondPart,
@@ -49,19 +36,13 @@ div.viewProfilPage-secondPartChangeButtons {
 }
 
 div.ui.mini.left.attached.button.viewProfilPage-secondPartChangeButtonsLeft {
-  border-top-left-radius: 1em;
-  border-bottom-left-radius: 1em;
-  color: black;
-  border: 1px solid black;
-  background-color: white;
+  border-top-left-radius: 1.5em;
+  border-bottom-left-radius: 1.5em;
 }
 
 div.ui.mini.right.attached.button.viewProfilPage-secondPartChangeButtonsRight {
-  border-top-right-radius: 1em;
-  border-bottom-right-radius: 1em;
-  color: black;
-  border: 1px solid black;
-  background-color: white;
+  border-top-right-radius: 1.5em;
+  border-bottom-right-radius: 1.5em;
 }
 
 div.viewProfilPage-thirdPart {
@@ -111,7 +92,7 @@ button.ui.mini.button.viewProfilPage-sixthPartDeleteAccountButton {
   margin: 0 auto;
 }
 
-h1.setProfilPage-h1 {
+h1.setProfilPage-h1.setProfilPage-h1  {
   color: white;
   background-color: black;
   padding: 1rem;
@@ -119,19 +100,20 @@ h1.setProfilPage-h1 {
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
   text-align: center;
-  font-size: 1.29rem;
+  font-size: 1.7rem;
   margin-top: -.21425em;
   font-family: Lato, Helvetica Neue, Arial, Helvetica, sans-serif;
 }
 
 // DesktopIdCard 
 
-.desktopIdCard-mainCard {
+div.desktopIdCard-mainCard {
   margin: 0 auto;
   width: 50%;
   border-radius: 1rem;
   padding: 1rem;
   display: flex;
+  justify-content: center;
   margin-bottom: 1em;
 }
 
@@ -142,6 +124,10 @@ h1.setProfilPage-h1 {
   object-fit: cover;
   flex-shrink: 0;
   border-radius: 1rem;
+}
+
+img.ui.small.image.desktopIdCard-avatar {
+  width: 210px;
 }
 
 .desktopIdCard-memberName {
@@ -167,13 +153,13 @@ h1.setProfilPage-h1 {
 }
 
 div.ui.mini.left.attached.button.desktopIdCard-changeButtonsLeft {
-  border-top-left-radius: 1em;
-  border-bottom-left-radius: 1em;
+  border-top-left-radius: 1.5em;
+  border-bottom-left-radius: 1.5em;
 }
 
 div.ui.mini.right.attached.button.desktopIdCard-changeButtonsRight {
-  border-top-right-radius: 1em;
-  border-bottom-right-radius: 1em;
+  border-top-right-radius: 1.5em;
+  border-bottom-right-radius: 1.5em;
 }
 
 div.desktopIdCard-changeButtonsWrapper {
@@ -238,10 +224,16 @@ h3.viewProfilPage-myCollectionTitleManga {
   display: flex;
 }
 
-.viewProfilPage-myCollectionButtons.viewProfilPage-myCollectionButtons.viewProfilPage-myCollectionButtons {
+button.ui.mini.fluid.button.viewProfilPage-myCollectionButtons {
+  border-radius: 1.5em;
+}
+
+button.ui.mini.fluid.button.viewProfilPage-myCollectionButtons.viewProfilPage-DeleteButton {
   font-size: 1rem;
-  margin: 0;
-  border-radius: 1rem;
+  margin-top: 1em;
+  border-radius: 1.5rem;
+  color: #db2828;
+  border: 1px solid #db2828;
 }
 
 .viewProfilPage-artificialMargin {
@@ -287,7 +279,7 @@ h3.viewProfilPage-myCollectionTitleManga {
 .DesktopMyCollectionProfile-myCollectionButtons.DesktopMyCollectionProfile-myCollectionButtons.DesktopMyCollectionProfile-myCollectionButtons {
   font-size: 1rem;
   margin: 0;
-  border-radius: 1rem;
+  border-radius: 1.5rem;
 }
 
 .DesktopMyCollectionProfile-myCollectionThreeButtons {
@@ -295,7 +287,7 @@ h3.viewProfilPage-myCollectionTitleManga {
   margin-top: 1em;
 }
 
-div.content.DesktopMyCollectionProfile-myCollectionCardContent.DesktopMyCollectionProfile-myCollectionCardContent.DesktopMyCollectionProfile-myCollectionCardContent.DesktopMyCollectionProfile-myCollectionCardContent.DesktopMyCollectionProfile-myCollectionCardContent.DesktopMyCollectionProfile-myCollectionCardContent {
+div.content.DesktopMyCollectionProfile-myCollectionCardContent.DesktopMyCollectionProfile-myCollectionCardContent {
   padding: 2em;
   border-bottom-left-radius: 1em !important;
   border-bottom-right-radius: 1em !important;
@@ -307,6 +299,8 @@ div.content.DesktopMyCollectionProfile-myCollectionCardContent.DesktopMyCollecti
 
 button.ui.fluid.DesktopMyCollectionProfile-DeleteButton.DesktopMyCollectionProfile-DeleteButton.DesktopMyCollectionProfile-DeleteButton {
   margin-top: 0.5em;
+  color: #db2828;
+  border: 1px solid #db2828;
 }
 
 .DesktopMyCollectionProfile-myCollectionTitleManga.DesktopMyCollectionProfile-myCollectionTitleManga {
@@ -319,8 +313,6 @@ button.ui.fluid.DesktopMyCollectionProfile-DeleteButton.DesktopMyCollectionProfi
   color: #c1c1c1;
 }
 
-.DesktopMyCollectionProfile-myCollectionGrid.DesktopMyCollectionProfile-myCollectionGrid.DesktopMyCollectionProfile-myCollectionGrid {}
-
 // Desktop and laptops
 @media only screen and (min-width : 1224px) {
 
@@ -331,18 +323,23 @@ button.ui.fluid.DesktopMyCollectionProfile-DeleteButton.DesktopMyCollectionProfi
     border-radius: 1em;
   }
 
-  ;
-
   //Theming 1 en desktop
-  .theme1 {}
+  .theme1 {
+    h1.setProfilPage-h1.setProfilPage-h1  {
+      color: vars.$secondaryFontColor_theme1;
+      background-color: vars.$secondaryColor_theme1;
+    }
+  }
 
   //Theming 2 en desktop
   .theme2 {
     .viewProfilPage-mainWrapper {
-      border: 1px solid white !important;
-
+      border: 1px solid vars.$secondaryBorderColor_theme1 !important;
     }
-
+    h1.setProfilPage-h1.setProfilPage-h1  {
+      color: vars.$secondaryFontColor_theme2;
+      background-color: vars.$secondaryColor_theme2;
+    }
   }
 }
 
@@ -374,7 +371,7 @@ button.ui.fluid.DesktopMyCollectionProfile-DeleteButton.DesktopMyCollectionProfi
   }
 
   .viewProfilPage-DeleteButton.viewProfilPage-DeleteButton.viewProfilPage-DeleteButton {
-    background-color: vars.$tertiaryColor_theme1;
+    background-color: vars.$primaryColor_theme1;
     color: vars.$secondaryFontColor_theme1;
   }
 
@@ -393,10 +390,21 @@ button.ui.fluid.DesktopMyCollectionProfile-DeleteButton.DesktopMyCollectionProfi
     color: vars.$primaryFontColor_theme1;
     border: 1px solid vars.$primaryBorderColor_theme1;
   }
+  //hover 
+  .DesktopMyCollectionProfile-myCollectionButtons.DesktopMyCollectionProfile-myCollectionButtons.DesktopMyCollectionProfile-myCollectionButtons:hover {
+    background-color: vars.$secondaryColor_theme1;
+    color: vars.$secondaryFontColor_theme1;
+  }
 
   .DesktopMyCollectionProfile-DeleteButton.DesktopMyCollectionProfile-DeleteButton.DesktopMyCollectionProfile-DeleteButton {
-    background-color: vars.$tertiaryColor_theme1;
+    background-color: vars.$primaryColor_theme1;
     color: vars.$secondaryFontColor_theme1;
+  }
+  //hover
+  .DesktopMyCollectionProfile-DeleteButton.DesktopMyCollectionProfile-DeleteButton.DesktopMyCollectionProfile-DeleteButton:hover {
+    background-color: vars.$primaryColor_theme1;
+    color: vars.$tertiaryColor_theme1;
+    border: 1px solid vars.$tertiaryColor_theme1;
   }
 
   div.ui.mini.left.attached.button.desktopIdCard-changeButtonsLeft {
@@ -409,6 +417,15 @@ button.ui.fluid.DesktopMyCollectionProfile-DeleteButton.DesktopMyCollectionProfi
     color: vars.$primaryFontColor_theme1;
     border: 1px solid vars.$primaryBorderColor_theme1;
     background-color: vars.$primaryColor_theme1;
+  }
+  //Hover
+  div.ui.mini.right.attached.button.desktopIdCard-changeButtonsRight:hover {
+    color: vars.$secondaryFontColor_theme1;
+    background-color: vars.$secondaryColor_theme1;
+  }
+  div.ui.mini.left.attached.button.desktopIdCard-changeButtonsLeft:hover {
+    color: vars.$secondaryFontColor_theme1;
+    background-color: vars.$secondaryColor_theme1;
   }
 
   .desktopIdCard-mainCard {
@@ -432,6 +449,18 @@ button.ui.fluid.DesktopMyCollectionProfile-DeleteButton.DesktopMyCollectionProfi
 
   .viewProfilPage-mainWrapper {
     border: 1px solid vars.$primaryBorderColor_theme1;
+  }
+
+  div.ui.mini.left.attached.button.viewProfilPage-secondPartChangeButtonsLeft {
+    color: vars.$primaryFontColor_theme1;
+    border: 1px solid vars.$primaryBorderColor_theme1;
+    background-color: vars.$primaryColor_theme1;
+  }
+  
+  div.ui.mini.right.attached.button.viewProfilPage-secondPartChangeButtonsRight {
+    border: 1px solid vars.$primaryBorderColor_theme1;
+    color: vars.$primaryFontColor_theme1;
+    background-color: vars.$primaryColor_theme1;
   }
 }
 
@@ -461,7 +490,7 @@ button.ui.fluid.DesktopMyCollectionProfile-DeleteButton.DesktopMyCollectionProfi
   }
 
   .viewProfilPage-DeleteButton.viewProfilPage-DeleteButton.viewProfilPage-DeleteButton {
-    background-color: vars.$tertiaryColor_theme2;
+    background-color: vars.$primaryColor_theme2;
     color: vars.$secondaryFontColor_theme2;
   }
 
@@ -480,10 +509,21 @@ button.ui.fluid.DesktopMyCollectionProfile-DeleteButton.DesktopMyCollectionProfi
     color: vars.$primaryFontColor_theme2;
     border: 1px solid vars.$primaryBorderColor_theme2;
   }
+  //hover
+  .DesktopMyCollectionProfile-myCollectionButtons.DesktopMyCollectionProfile-myCollectionButtons.DesktopMyCollectionProfile-myCollectionButtons:hover {
+    background-color: vars.$secondaryColor_theme2;
+    color: vars.$secondaryFontColor_theme2;
+    border: 1px solid vars.$primaryBorderColor_theme2;
+  }
 
   .DesktopMyCollectionProfile-DeleteButton.DesktopMyCollectionProfile-DeleteButton.DesktopMyCollectionProfile-DeleteButton {
-    background-color: vars.$tertiaryColor_theme2;
-    color: vars.$secondaryFontColor_theme2;
+    background-color: vars.$primaryColor_theme2;
+    color: vars.$primaryFontColor_theme2;
+  }
+  //hover 
+  .DesktopMyCollectionProfile-DeleteButton.DesktopMyCollectionProfile-DeleteButton.DesktopMyCollectionProfile-DeleteButton:hover {
+    background-color: vars.$secondaryColor_theme2; 
+    color: vars.$tertiaryColor_theme2;
   }
 
   div.ui.mini.left.attached.button.desktopIdCard-changeButtonsLeft {
@@ -496,6 +536,15 @@ button.ui.fluid.DesktopMyCollectionProfile-DeleteButton.DesktopMyCollectionProfi
     color: vars.$primaryFontColor_theme2;
     border: 1px solid vars.$primaryBorderColor_theme2;
     background-color: vars.$primaryColor_theme2;
+  }
+  //Hover
+  div.ui.mini.right.attached.button.desktopIdCard-changeButtonsRight:hover {
+    color:vars.$secondaryFontColor_theme2;
+    background-color:vars.$secondaryColor_theme2;
+  }
+  div.ui.mini.left.attached.button.desktopIdCard-changeButtonsLeft:hover {
+    color:vars.$secondaryFontColor_theme2;
+    background-color:vars.$secondaryColor_theme2;
   }
 
   .desktopIdCard-mainCard {
@@ -519,5 +568,22 @@ button.ui.fluid.DesktopMyCollectionProfile-DeleteButton.DesktopMyCollectionProfi
 
   .viewProfilPage-mainWrapper {
     border: 1px solid vars.$primaryBorderColor_theme2;
+  }
+
+  div.ui.mini.left.attached.button.viewProfilPage-secondPartChangeButtonsLeft {
+    color: vars.$primaryFontColor_theme2;
+    border: 1px solid vars.$primaryBorderColor_theme2;
+    background-color: vars.$primaryColor_theme2;
+  }
+  
+  div.ui.mini.right.attached.button.viewProfilPage-secondPartChangeButtonsRight {
+    border: 1px solid vars.$primaryBorderColor_theme2;
+    color: vars.$primaryFontColor_theme2;
+    background-color: vars.$primaryColor_theme2;
+  }
+  
+  h1.setProfilPage-h1.setProfilPage-h1  {
+    color: vars.$secondaryFontColor_theme2;
+    background-color: vars.$secondaryColor_theme2;
   }
 }
