@@ -4,7 +4,7 @@ import App from 'src/components/App';
 import { wsDisconnect, wsConnect } from 'src/actions/chat';
 import { autoLoginUser, loadUserFullData } from '../../actions/user';
 import { loadMangaDatabase } from '../../actions/manga';
-import { loadCarouselData } from '../../actions/search';
+import { loadCarouselData, loadCarouselDynamicData } from '../../actions/search';
 
 const mapStateToProps = (state) => ({
   theme: state.global.theme,
@@ -35,6 +35,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   loadCarouselData: () => {
     dispatch(loadCarouselData());
+  },
+  loadCarouselDynamicData: (userZipCode) => {
+    dispatch(loadCarouselDynamicData(userZipCode));
   },
 }
 );

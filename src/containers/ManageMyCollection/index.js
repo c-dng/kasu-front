@@ -1,5 +1,7 @@
 import { connect } from 'react-redux';
-import { addToMyCollection, modifyVolumeAvailability, addOrRemoveVolumes, deleteManga } from '../../actions/manga';
+import {
+  addToMyCollection, modifyVolumeAvailability, addOrRemoveVolumes, deleteManga,
+} from '../../actions/manga';
 import { searchByMangaName, setMangaSearch } from '../../actions/search';
 import ManageMyCollection from '../../components/ManageMyCollection';
 

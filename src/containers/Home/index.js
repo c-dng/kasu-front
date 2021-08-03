@@ -5,7 +5,6 @@ import { createNewChat } from '../../actions/chat';
 import { loadOtherUserFullData } from '../../actions/user';
 
 const mapStateToProps = (state) => ({
-
   isLogged: state.user.logged,
   carouselUsers: state.search.carouselSearchData,
 });
