@@ -95,7 +95,7 @@ const updateUser = (store) => (next) => (action) => {
         )
         .then((response) => {
           console.log('setting redirectTo to other user profile page');
-          store.dispatch(redirectTo(`profil/${otherUserId}`));
+          store.dispatch(redirectTo(`/profil/${otherUserId}`));
         })
         .catch((error) => {
           console.log('get full other user infos failed', error);

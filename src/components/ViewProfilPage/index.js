@@ -115,7 +115,7 @@ const ViewProfilPage = ({
       </div>
 
       <MediaQuery minWidth={1224}>
-        <DesktopMyCollectionProfile />
+        <DesktopMyCollectionProfile userMangas={userMangas} />
       </MediaQuery>
 
     </div>
