@@ -12,12 +12,11 @@ const Chat = ({ picture, users, userId }) => {
 
   return (
     <div className="chat">
-      <img src={`https://api.multiavatar.com/${picture}.png`} className="picture"/>
-     
+        <img src={`https://api.multiavatar.com/${otherUserPicture}.png`} className="picture"/>
         <Messages />
         <ChatField />
-     
-      <img src={`https://api.multiavatar.com/${otherUserPicture}.png`} className="picture"/>
+        <img src={`https://api.multiavatar.com/${picture}.png`} className="picture"/>
+      
     </div>
   );
 } 
