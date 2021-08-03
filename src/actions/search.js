@@ -52,3 +52,10 @@ export const saveCarouselData = (carouselSearchData) => ({
   type: SAVE_CAROUSEL_SEARCH,
   carouselSearchData,
 });
+
+export const LOAD_CAROUSEL_DYNAMIC_DATA = 'LOAD_CAROUSEL_DYNAMIC_DATA';
+
+export const loadCarouselDynamicData = (userZipCode) => ({
+  type: LOAD_CAROUSEL_DYNAMIC_DATA,
+  userZipCode,
+});

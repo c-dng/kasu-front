@@ -21,15 +21,15 @@ const ManageMyCollection = ({
   userMangas,
   modifyVolumeAvailability,
   addOrRemoveVolumes,
-  deleteManga
+  deleteManga,
 }) => (
   <div className="manageMyCollection">
     <Image className="manageMyCollection-banner" src={alternativeBanner} />
     <div className="manageMyCollection-mainCard">
       <div className="manageMyCollection-mainCardContent">
 
-          {/* <Card.Header className="manageMyCollection-mainCardHeader">Gestion des collections</Card.Header> */}
-          <div className="manageMyCollection-secondBlocDesktopVersion">
+        {/* <Card.Header className="manageMyCollection-mainCardHeader">Gestion des collections</Card.Header> */}
+        <div className="manageMyCollection-secondBlocDesktopVersion">
           <div className="manageMyCollection-myCollection">
             <Header as="h2">
               <Icon className="manageMyCollection-myCollectionIcon" name="settings" />
@@ -66,13 +66,13 @@ const ManageMyCollection = ({
           ) : (
             <div>
               <Divider className="manageMyCollection-divider" />
-                <h4 className="manageMyCollection-subtitle">Vous n'avez pas de mangas dans votre collection</h4>
+              <h4 className="manageMyCollection-subtitle">Vous n'avez pas de mangas dans votre collection</h4>
               <Divider className="manageMyCollection-divider" />
             </div>
           )}
 
         </div>
-      <div className="manageMyCollection-firstBlocDesktopVersion">
+        <div className="manageMyCollection-firstBlocDesktopVersion">
           <h3 className="manageMyCollection-subHeader">Cherche un manga à ajouter à ta collection dans notre base de données !</h3>
           <div className="manageMyCollection-searchBarWrapper">
             <AddMangaSearchBar setMangaSearch={setMangaSearch} manageSubmit={manageSubmit} loading={loading} mangaSearch={mangaSearch} className="manageMyCollection-searchBar" />

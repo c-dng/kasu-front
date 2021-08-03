@@ -97,7 +97,7 @@ const OtherMemberProfilePage = ({
       </div>
 
       <MediaQuery minWidth={1224}>
-        <DesktopOtherMemberCollection otherUserMangas={otherUserMangas}/>
+        <DesktopOtherMemberCollection otherUserMangas={otherUserMangas} />
       </MediaQuery>
 
     </div>

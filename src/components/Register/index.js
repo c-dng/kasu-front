@@ -73,7 +73,7 @@ const Register = ({
 
   const handleSubmit = (evt) => {
     evt.preventDefault(evt);
-      if ( confirmPassword  ===  password ) {
+    if (confirmPassword === password) {
       setErrorMessagePassword('');
       console.log('Bien soumis! mots de passe identiques');
       handleRegistering();
@@ -81,7 +81,7 @@ const Register = ({
     else {
       setErrorMessagePassword('Les mots de passe ne sont pas identiques!');
       console.log('ERROR mots de passe inégaux');
-    } 
+    }
   };
 
   const validate = (value) => {
@@ -123,7 +123,7 @@ const Register = ({
               </div>
               <div className="registerForm-field">
                 <label className="registerForm-fieldLabel">Confirmez mot de passe</label>
-                <Form.Input onChange={handleChangeConfirmPassword} type='password' value={confirmPassword} className="registerForm-fieldInput" />
+                <Form.Input onChange={handleChangeConfirmPassword} type="password" value={confirmPassword} className="registerForm-fieldInput" />
               </div>
               <span className="registerForm-errorMessagePassword">{errorMessage}</span>
               <span className="registerForm-errorMessagePassword">{errorMessagePassword}</span>
