@@ -1,8 +1,19 @@
+/* eslint-disable space-infix-ops */
 /* eslint-disable linebreak-style */
-/* eslint-disable no-console */
+/* lint-disable no-console */
+/* eslint-disable linebreak-style */
+/* eslint-disable no-undef */
+/* eslint-disable linebreak-style */
+// eslint-disable-next-line linebreak-style
+/* eslint-disable eqeqeq */
+/* eslint-disable linebreak-style */
+/* eslint-disable no-constant-condition */
+/* eslint-disable linebreak-style */
+/* eslint-disable no-unused-vars */
 /* eslint-disable linebreak-style */
 /* eslint-disable camelcase */
 /* eslint-disable linebreak-style */
+// eslint-disable-next-line linebreak-style
 /* eslint-disable react/prop-types */
 /* eslint-disable linebreak-style */
 import React, { useEffect } from 'react';
@@ -31,8 +42,12 @@ const SetProfilPage = ({
   description,
   picture,
   message,
+  infos,
+  confirmPassword,
+  changeMessage,
   changeEmail,
   changePassword,
+  changeConfirmPassword,
   changePseudo,
   changeAddress,
   changeZipCode,
@@ -43,13 +58,16 @@ const SetProfilPage = ({
   changeDescription,
   handleUpdate,
   displayUserInfos,
+  redirectTo,
 }) => {
   useEffect(() => {
     displayUserInfos();
   }, []);
 
   const [open, setOpen] = React.useState(false);// Modal to delete account
-  const [errorMessage, setErrorMessage] = React.useState('');// display a message received from API
+  const [errorMessage, setErrorMessage] = React.useState('');// display a message with errors
+  const [errorMessagePassword, setErrorMessagePassword] = React.useState('');// display a message with errors
+
   const validate = (value) => {
     if (validator.isStrongPassword(value, {
       minLength: 6,
@@ -59,25 +77,35 @@ const SetProfilPage = ({
       minSymbols: 1,
     })) {
       setErrorMessage('');
-      console.log(errorMessage);
     }
     else {
       setErrorMessage('Veuillez entrer un mot de passe valide: min-6 caractères, une majuscule, une minuscule, un chiffre et un des caractères suivants: @$%_*|=-');
-      console.log(errorMessage);
     }
   };
 
   const handleSubmit = (evt) => {
-    evt.preventDefault();
-    console.log('Bien soumis!');
-    handleUpdate();
+    evt.preventDefault(evt);
+    if ( confirmPassword  ===  password ) {
+      setErrorMessagePassword('');
+      console.log('Bien soumis! mots de passe identiques');
+      handleUpdate();
+
+    }
+    else {
+      setErrorMessagePassword('Les mots de passe ne sont pas identiques!');
+      console.log('ERROR mots de passe inégaux');
+    } 
   };
+
   const handleChangeEmail = (evt) => {
     changeEmail(evt.target.value);
   };
   const handleChangePassword = (evt) => {
     validate(evt.target.value);// checking password
     changePassword(evt.target.value);
+  };
+  const handleChangeConfirmPassword = (evt) => {
+    changeConfirmPassword(evt.target.value);
   };
   const handleChangePseudo = (evt) => {
     changePseudo(evt.target.value);
@@ -105,60 +133,58 @@ const SetProfilPage = ({
     const { checked } = data;
     changeHolidayMode(checked);
   };
-  // const PasswordChecking = (value) => {
-  //   if ({ password } != { confirmPassword }) {
-  //     setErrorMessage('');
-  //     console.log(setErrorMessagePassword);
-  //   }
-  //   else {
-  //     setErrorMessage('Les mots de passe ne correspondent pas');
-  //     console.log(setErrorMessagePassword);
-  //   }
-  // };
+  //Delete Account => Redirect to contactForm
+  const handleDeleteMyAccount = () => {
+    setOpen(false);
+    redirectTo('/contact');
+  }
+  //Cancel => Redirect to profil
+  const handleCancel = () => {
+    setOpen(false);
+    redirectTo('/profil/mon-profil');
+  }
 
   return (
-    <>
-      {
-        !pseudo ? <Loading />
-          : (
-            <div className="setProfilPage">
-
+        <div className="setProfilPage">
               <Image className="registerForm-banner" src={alternativeBanner} />
-              <div className="setProfilPage-mainWrapper">
-                <h1 className="setProfilPage-title">Gérer mon profil</h1>
-                <div className="contactForm-message">{message}</div>
-                <MediaQuery minWidth={1224}>
-                  <DesktopSetIdCard
-                    email={email}
-                    password={password}
-                    pseudo={pseudo}
-                    address={address}
-                    zipCode={zipCode}
-                    city={city}
-                    firstName={firstName}
-                    lastName={lastName}
-                    holiday_mode={holiday_mode}
-                    description={description}
-                    picture={picture}
-                    changeEmail={changeEmail}
-                    changePassword={changePassword}
-                    changePseudo={changePseudo}
-                    changeAddress={changeAddress}
-                    changeZipCode={changeZipCode}
-                    changeCity={changeCity}
-                    changeFirstName={changeFirstName}
-                    changeDescription={changeDescription}
-                    changeLastName={changeLastName}
-                    changeHolidayMode={changeHolidayMode}
-                    handleUpdate={handleUpdate}
-                    displayUserInfos={displayUserInfos}
-                    onChangeCheckbox={onChangeCheckbox}
-                  />
-                </MediaQuery>
+          <div className="setProfilPage-mainWrapper">
+                      <h1 className="setProfilPage-title">Gérer ma collection</h1>
+            <div className="contactForm-message">{message}</div>
+              <MediaQuery minWidth={1224}>
+                <DesktopSetIdCard
+                  email={email}
+                  password={password}
+                  confirmPassword={confirmPassword}
+                  pseudo={pseudo}
+                  address={address}
+                  zipCode={zipCode}
+                  city={city}
+                  firstName={firstName}
+                  lastName={lastName}
+                  holiday_mode={holiday_mode}
+                  description={description}
+                  picture={picture}
+                  infos={infos}
+                  changeEmail={changeEmail}
+                  changePassword={changePassword}
+                  changePseudo={changePseudo}
+                  changeAddress={changeAddress}
+                  changeZipCode={changeZipCode}
+                  changeCity={changeCity}
+                  changeFirstName={changeFirstName}
+                  changeDescription={changeDescription}
+                  changeLastName={changeLastName}
+                  changeHolidayMode={changeHolidayMode}
+                  handleUpdate={handleUpdate}
+                  displayUserInfos={displayUserInfos}
+                  onChangeCheckbox={onChangeCheckbox}
+                  changeConfirmPassword={changeConfirmPassword}
+                  redirectTo={redirectTo}
+                />
+              </MediaQuery>
 
-                <MediaQuery maxWidth={1223}>
-                  <div className="mobileSetProfilPage">
-
+              <MediaQuery maxWidth={1223}>
+                <div className="mobileSetProfilPage">
                     <div className="mobileSetProfil-ButtonAddAndImage">
                       <Image
                         className="mobileSetProfil-image"
@@ -167,11 +193,8 @@ const SetProfilPage = ({
                         circular
                       />
                     </div>
-
                     <h3 className="mobileSetProfil-h3">{pseudo}</h3>
-
                     <Form onSubmit={handleSubmit}>
-
                       <Form.Input className="mobileIdCard-holidayWrapper">
                         <Label className="setProfilPage-fourthPartHolidayModeLabel">Mode vacances:</Label>
                         <Checkbox
@@ -180,7 +203,6 @@ const SetProfilPage = ({
                           onClick={(evt, data) => onChangeCheckbox(evt, data)}
                         />
                       </Form.Input>
-
                       <TextArea
                         rows={2}
                         onChange={handleChangeDescription}
@@ -188,7 +210,6 @@ const SetProfilPage = ({
                         className="mobileSetProfil-textArea"
                         placeholder="Bio"
                       />
-
                       <Form.Group widths="equal">
                         <Form.Input
                           className="mobileSetProfil-formInputName"
@@ -198,7 +219,6 @@ const SetProfilPage = ({
                           value={pseudo}
                           onChange={handleChangePseudo}
                         />
-
                         <Form.Input
                           className="mobileSetProfil-formInputName"
                           icon="user"
@@ -207,7 +227,6 @@ const SetProfilPage = ({
                           value={firstName}
                           onChange={handleChangeFirstName}
                         />
-
                         <Form.Input
                           className="mobileSetProfil-formInputLastName"
                           icon="user"
@@ -216,7 +235,6 @@ const SetProfilPage = ({
                           value={lastName}
                           onChange={handleChangeLastName}
                         />
-
                         <Form.Input
                           icon="map marker alternate"
                           iconPosition="left"
@@ -224,7 +242,6 @@ const SetProfilPage = ({
                           value={address}
                           onChange={handleChangeAddress}
                         />
-
                         <Form.Input
                           icon="map"
                           iconPosition="left"
@@ -233,7 +250,6 @@ const SetProfilPage = ({
                           value={zipCode}
                           onChange={handleChangeZipCode}
                         />
-
                         <Form.Input
                           icon="map"
                           iconPosition="left"
@@ -241,31 +257,29 @@ const SetProfilPage = ({
                           value={city}
                           onChange={handleChangeCity}
                         />
-
                         <Form.Input
                           input="password"
                           id="password"
                           icon="lock"
                           iconPosition="left"
                           placeholder="Mot de passe"
-                          fluid
                           value={password}
                           onChange={handleChangePassword}
+                          fluid
                         />
-
-                        {/* <Form.Input
+                        <Form.Input
                           input="password"
                           id="confirmPassword"
                           icon="lock"
                           iconPosition="left"
-                          placeholder="Mot de passe"
+                          placeholder="Confirmer le mot de passe"
+                          value={confirmPassword}
+                          onChange={handleChangeConfirmPassword}
                           fluid
-                        /> */}
-
-                        <div className="mobileSetProfil-messageCheckPassword">
-                          {/* {errorMessagePassword} */}
+                        /> 
+                        <div className="desktopIdCard-errorMessage">
+                          {errorMessagePassword}
                         </div>
-
                         <Form.Input
                           input="email"
                           icon="mail"
@@ -276,16 +290,19 @@ const SetProfilPage = ({
                           onChange={handleChangeEmail}
                         />
                       </Form.Group>
-
                       <div className="desktopIdCard-errorMessage">
                         {errorMessage}
                       </div>
-
-                      <div className="mobileSetProfil-divDeleteMyAccount">
+                      <div className="mobileSetProfil-groupTwoButtons">
+                        <Button size="small" onClick={handleCancel} className="mobileSetProfil-buttonCancel">Annuler</Button>
+                        <Button type="submit" size="small" className="mobileSetProfil-buttonValidate">Valider</Button>
+                      </div>
+                    </Form>
+                    <div className="mobileSetProfil-divDeleteMyAccount">
                         <Modal
                           icon="user delete"
                           open={open}
-                          trigger={<Button size="small" className="mobileSetProfil-deleteMyAccount" negative>Supprimer mon compte</Button>}
+                          trigger={<Button size="mini" className="mobileSetProfil-deleteMyAccount" negative>Supprimer mon compte</Button>}
                           onClose={() => setOpen(false)}
                           onOpen={() => setOpen(true)}
                         >
@@ -297,25 +314,16 @@ const SetProfilPage = ({
                             <Button color="red" onClick={() => setOpen(false)}>
                               <Icon name="remove" /> Non
                             </Button>
-                            <Button color="green" onClick={() => setOpen(true)}>
+                            <Button color="green" onClick={handleDeleteMyAccount}>
                               <Icon name="checkmark" /> Oui
                             </Button>
                           </Modal.Actions>
                         </Modal>
                       </div>
-                      <div className="mobileSetProfil-groupTwoButtons">
-                        <Button size="small" className="mobileSetProfil-buttonCancel">Annuler</Button>
-                        <Button type="submit" size="small" className="mobileSetProfil-buttonValidate">Valider</Button>
-                      </div>
-                    </Form>
-                  </div>
-                </MediaQuery>
-              </div>
-            </div>
-          )
-      }
-
-    </>
+                </div>
+              </MediaQuery>
+          </div>
+        </div>
   );
 };
 

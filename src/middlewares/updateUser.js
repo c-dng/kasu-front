@@ -1,9 +1,9 @@
 import {
-  UPDATE_USER, GET_USER_INFOS, saveUserInfos, saveMessage, saveUserFullData,
+  UPDATE_USER, LOAD_USER_FULL_DATA, saveMessage, saveUserFullData,
 } from 'src/actions/user';
 import api from 'src/api';
 import { redirectTo, setLoadingFalse, setLoadingTrue } from '../actions/global';
-import { LOAD_OTHER_USER_FULL_DATA, LOAD_USER_FULL_DATA, saveOtherUserFullData } from '../actions/user';
+import { GET_USER_INFOS, LOAD_OTHER_USER_FULL_DATA, saveOtherUserFullData, saveUserInfos } from '../actions/user';
 
 const token = localStorage.getItem('token');
 if (token) {
@@ -43,9 +43,15 @@ const updateUser = (store) => (next) => (action) => {
         })
         .then(
           (response) => {
-            console.log('update user infos succeeded', response.data);
+            console.log('update user infos succeeded', response.data.contact);
             store.dispatch(saveMessage(response.data));
             store.dispatch(setLoadingFalse());
+          },
+        )
+        .then(
+          (response) => {
+            console.log('setting redirectTo to /profil/mon-profil');
+            store.dispatch(redirectTo('/profil/mon-profil'));
           },
         )
         .catch((error) => {
@@ -64,6 +70,8 @@ const updateUser = (store) => (next) => (action) => {
           (response) => {
             console.log('get full user infos succeeded', response.data);
             store.dispatch(saveUserFullData(response.data));
+            console.log('INFOS POUR SET PROFIL PAGE : ', response.data.contact);
+            store.dispatch(saveUserInfos(response.data.contact));
             store.dispatch(setLoadingFalse());
           },
         )

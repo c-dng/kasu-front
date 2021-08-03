@@ -1,6 +1,6 @@
 import api from 'src/api';
 import { setLoadingFalse, setLoadingTrue } from '../actions/global';
-import { ADD_TO_MY_COLLECTION, LOAD_MANGA_DATABASE, saveMangaDatabase } from '../actions/manga';
+import { ADD_OR_REMOVE_VOLUMES, ADD_TO_MY_COLLECTION, DELETE_MANGA, LOAD_MANGA_DATABASE, MODIFY_VOLUME_AVAILABILITY, saveMangaDatabase } from '../actions/manga';
 
 const token = localStorage.getItem('token');
 if (token) {
@@ -39,6 +39,60 @@ const mangaMiddleware = (store) => (next) => (action) => {
           (error) => {
             console.log('title & volumes ', action.mangaTitle, action.volumes);
             console.log("l'ajout à ma collection du manga a foiré", error);
+            store.dispatch(setLoadingFalse());
+          },
+        );
+      next(action);
+      break;
+    }
+    case MODIFY_VOLUME_AVAILABILITY: {
+      const userId = store.getState().user.data.id;
+      const { mangaId } = action;
+      store.dispatch(setLoadingTrue());
+      api.put(`api/v1/user/${userId}/manga/${mangaId}/availability`, { volumes: action.volumeAvailability })
+        .then((response) => {
+          console.log('la modification de la disponibilité du manga a bien été réalisé', response.data);
+          store.dispatch(setLoadingFalse());
+        })
+        .catch(
+          (error) => {
+            console.log('la modification de la disponibilité du manga a ratée', error);
+            store.dispatch(setLoadingFalse());
+          },
+        );
+      next(action);
+      break;
+    }
+    case ADD_OR_REMOVE_VOLUMES: {
+      const userId = store.getState().user.data.id;
+      const { mangaId } = action;
+      store.dispatch(setLoadingTrue());
+      api.put(`api/v1/user/${userId}/manga/${mangaId}`, { volumes: action.volumePossessed })
+        .then((response) => {
+          console.log('l\'ajout ou le retrait de tomes du manga a bien été réalisé', response.data);
+          store.dispatch(setLoadingFalse());
+        })
+        .catch(
+          (error) => {
+            console.log('l\'ajout ou le retrait de tomes du manga a ratée', error);
+            store.dispatch(setLoadingFalse());
+          },
+        );
+      next(action);
+      break;
+    }
+    case DELETE_MANGA: {
+      const userId = store.getState().user.data.id;
+      const { mangaId } = action;
+      store.dispatch(setLoadingTrue());
+      api.delete(`api/v1/user/${userId}/manga/${mangaId}`)
+        .then((response) => {
+          console.log('la suppression d\'un manga a bien été réalisé', response.data);
+          store.dispatch(setLoadingFalse());
+        })
+        .catch(
+          (error) => {
+            console.log('la suppression d\'un manga a raté', error);
             store.dispatch(setLoadingFalse());
           },
         );

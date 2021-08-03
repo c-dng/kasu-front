@@ -19,6 +19,9 @@ const ManageMyCollection = ({
   mangaFilteredDatabase,
   addToMyCollection,
   userMangas,
+  modifyVolumeAvailability,
+  addOrRemoveVolumes,
+  deleteManga
 }) => (
   <div className="manageMyCollection">
     <Image className="manageMyCollection-banner" src={alternativeBanner} />
@@ -33,7 +36,7 @@ const ManageMyCollection = ({
           </div>
 
           <Divider className="manageMyCollection-divider" />
-          <h4 className="manageMyCollection-subtitle">Résultat(s) trouvé(s) :</h4>
+          <h4 className="manageMyCollection-subtitle">Résultat(s) trouvé(s) : {mangaFilteredDatabase.length}</h4>
           <Divider className="manageMyCollection-divider" />
           {console.log('checking manga filtered', mangaFilteredDatabase)}
           <div className="manageMyCollection-wrapperDesktopVersion">
@@ -64,19 +67,33 @@ const ManageMyCollection = ({
 
           <Divider className="manageMyCollection-divider-MobileVersion" />
 
-          <div className="manageMyCollection-itemWrapperDesktopVersion">
-            {console.log('user mangas', Object.values(userMangas))}
-            {Object.values(userMangas).map((manga, index) => (
-              <MyCollectionResult
-                key={index}
-                mangaName={manga.info.title}
-                mangaPicture={manga.info.picture}
-                mangaVolumes={manga.volumes}
-                mangaAuthor={manga.info.author}
-              />
-            ))}
+          {userMangas ? (
+            <div className="manageMyCollection-itemWrapperDesktopVersion">
+              {console.log('user mangas', Object.values(userMangas))}
+              {Object.values(userMangas).map((manga, index) => (
+                <MyCollectionResult
+                  key={index}
+                  mangaName={manga.info.title}
+                  mangaPicture={manga.info.picture}
+                  mangaVolumes={manga.volumes}
+                  mangaAuthor={manga.info.author}
+                  mangaId={manga.info.id}
+                  modifyVolumeAvailability={modifyVolumeAvailability}
+                  addOrRemoveVolumes={addOrRemoveVolumes}
+                  deleteManga={deleteManga}
+                  mangaMaxVolumeNumber={manga.info.volume_number}
+                />
+              ))}
 
-          </div>
+            </div>
+          ) : (
+            <div>
+              <Divider className="manageMyCollection-divider" />
+                <h4 className="manageMyCollection-subtitle">Vous n'avez pas de mangas dans votre collection</h4>
+              <Divider className="manageMyCollection-divider" />
+            </div>
+        )}
+
         </div>
       </div>
     </div>

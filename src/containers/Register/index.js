@@ -3,6 +3,7 @@ import Register from 'src/components/Register';
 import {
   changePseudo,
   changePassword,
+  changeConfirmPassword,
   changeCity,
   changeZipCode,
   changeAddress,
@@ -21,6 +22,7 @@ const mapStateToProps = (state) => ({
   pseudo: state.user.pseudo,
   city: state.user.city,
   password: state.user.password,
+  confirmPassword: state.user.confirmPassword,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -29,6 +31,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   changePassword: function (password) {
     dispatch(changePassword(password));
+  },
+  changeConfirmPassword: function (confirmPassword) {
+    dispatch(changeConfirmPassword(confirmPassword));
   },
   changeEmail: function (email) {
     dispatch(changeEmail(email));
