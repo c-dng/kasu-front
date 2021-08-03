@@ -129,6 +129,7 @@ input#password {
     border: 1px solid vars.$primaryBorderColor_theme1;
     background-color: vars.$primaryColor_theme1;
     color :vars.$primaryFontColor_theme1;
+    transition: all 0.5s;
   }
   button.ui.button.registerForm-registerButton:hover {
     border: 1px solid vars.$secondaryBorderColor_theme1;

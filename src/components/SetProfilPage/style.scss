@@ -172,6 +172,7 @@ button.ui.medium.button.desktopIdCard-buttonValidate {
   color: #21ba45;
   border: 1px solid #21ba45;
   margin-left: 1em;
+  transition: all 0.5s;
 }
 
 button.ui.mini.button.desktopIdCard-DeleteButtonRed {
@@ -179,6 +180,7 @@ button.ui.mini.button.desktopIdCard-DeleteButtonRed {
   color: #db2828;
   border: 1px solid #db2828;
   margin-right: 1em;
+  transition: all 0.5s;
 }
 
 // Theming 
@@ -232,16 +234,32 @@ button.ui.mini.button.desktopIdCard-DeleteButtonRed {
 
   button.ui.mini.button.desktopIdCard-SaveButtonGreen {
     background-color: vars.$primaryColor_theme1;
+    transition: all 0.5s;
+  }
+  button.ui.medium.button.desktopIdCard-buttonValidate:hover {
+    background-color: vars.$fourthColor_theme1;
+    color:vars.$secondaryFontColor_theme1;
+  }
+  button.ui.mini.button.desktopIdCard-DeleteButtonRed:hover {
+    background-color: vars.$tertiaryColor_theme1;
+    color:vars.$secondaryFontColor_theme1;
   }
 
   button.ui.medium.button.desktopIdCard-buttonCancel {
     background-color: vars.$primaryColor_theme1;
     border: 1px solid vars.$primaryBorderColor_theme1;
     color: vars.$primaryFontColor_theme1;
+    transition: all 0.5s;
+  }
+  button.ui.medium.button.desktopIdCard-buttonCancel:hover {
+    background-color: vars.$secondaryColor_theme1;
+    border: 1px solid vars.$secondaryBorderColor_theme1;
+    color: vars.$secondaryFontColor_theme1;
   }
   
   button.ui.mini.button.desktopIdCard-DeleteButtonRed {
     background-color: vars.$primaryColor_theme1;
+    transition: all 0.5s;
   }
 }
 
@@ -299,18 +317,32 @@ button.ui.mini.button.desktopIdCard-DeleteButtonRed {
 
   button.ui.medium.button.desktopIdCard-buttonValidate {
     background-color: vars.$primaryColor_theme2;
+    transition: all 0.5s;
   }
+ 
 
   button.ui.medium.button.desktopIdCard-buttonCancel {
     background-color: vars.$primaryColor_theme2;
     border: 1px solid vars.$primaryBorderColor_theme2;
     color: vars.$primaryFontColor_theme2;
+    transition: all 0.5s;
   }
   
   button.ui.mini.button.desktopIdCard-DeleteButtonRed {
     background-color: vars.$primaryColor_theme2;
   }
-
+  button.ui.medium.button.desktopIdCard-buttonValidate:hover {
+    background-color: vars.$fourthColor_theme2;
+    color:vars.$primaryFontColor_theme2;
+  }
+  button.ui.mini.button.desktopIdCard-DeleteButtonRed:hover {
+    background-color: vars.$tertiaryColor_theme2;
+    color:vars.$primaryFontColor_theme2;
+  }
+  button.ui.medium.button.desktopIdCard-buttonCancel:hover {
+    background-color: vars.$secondaryColor_theme2;
+    color: vars.$secondaryFontColor_theme2;
+  }
 
 
   // Theme 2 - Mobile
