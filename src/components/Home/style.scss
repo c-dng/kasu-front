@@ -57,7 +57,9 @@ div.home-mainWrapper.home-mainWrapper {
 .searchExplained-searchWrapper {
   background-image: url("src/assets/images/home-card-logo.png");
   background-size: cover;
+  background-position: 0% 20%;
   padding: 2rem;
+  
 }
 
 .searchExplained {
@@ -209,6 +211,7 @@ button.ui.blue.basic.button.homeCard-contactOwner {
   .searchExplained-searchWrapper.searchExplained-searchWrapper {
     width: 70%;
     margin: 0 auto;
+    border-radius: 2em;
   }
 
   .home-h1.home-h1 {
