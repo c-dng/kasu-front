@@ -11,7 +11,7 @@ import homeBanner from 'src/assets/images/homeBanner.jpg';
 import SearchExplained from './SearchExplained';
 import HomeCarousel from './HomeCarousel';
 
-const Home = ({ isLogged }) => (
+const Home = ({ isLogged, carouselUsers, handleLoadUser, createNewChat }) => (
   <div className="home">
     <div className="home-mainWrapper">
       <Image className="home-banner" src={homeBanner} />
@@ -37,7 +37,7 @@ const Home = ({ isLogged }) => (
     <div className="home-ParisResultsTitleWrapper">
       <h2 className="home-ParisResultsTitle">Voici les mangas disponibles dans un rayon de 30 kilomètres autour de Paris</h2>
     </div>
-    <HomeCarousel />
+    <HomeCarousel carouselUsers={carouselUsers} handleLoadUser={handleLoadUser} createNewChat={createNewChat} />
     <SearchExplained />
   </div>
 );

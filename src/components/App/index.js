@@ -28,7 +28,7 @@ import { redirectTo } from '../../actions/global';
 
 // == Composant
 const App = ({
-  theme, onPageLoad, onRefreshOrTabClosing, isLogged, chatId, loading, mangaDatabase, loadMangaDatabase, loadUserFullData, userFullData, redirectLink
+  theme, onPageLoad, onRefreshOrTabClosing, isLogged, chatId, loading, mangaDatabase, loadMangaDatabase, loadUserFullData, userFullData, redirectLink, carouselSearchData, loadCarouselData
 }) => {
   const handleOnClose = () => {
     if (isLogged) {
@@ -59,7 +59,11 @@ const App = ({
       console.log('userFullData useEffect test', { userFullData });
       loadUserFullData();
     }
-  }, [chatId, isLogged, mangaDatabase, token, userFullData]);
+
+    if (!carouselSearchData) {
+      loadCarouselData();
+    }
+  }, [chatId, isLogged, mangaDatabase, token, userFullData], carouselSearchData);
   const history = useHistory();
 
   useEffect(() => {
