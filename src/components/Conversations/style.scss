@@ -44,7 +44,7 @@ div.conversation:not(:first-child) {
 }
 
 .conversations{
-  background-image: linear-gradient(rgba(219, 220, 226, 0.7), rgba(87, 73, 73, 0.7)),url("src/assets/images/conversations-bg.png");;
+  background-image: linear-gradient(rgba(226, 226, 226, 0.7), rgba(56, 56, 56, 0.7)),url("src/assets/images/conversations-bg.png");;
   background-size: cover;
   background-attachment: fixed;
   
@@ -57,7 +57,7 @@ div.conversation:not(:first-child) {
   border-radius: 25px;
   border: 1px solid #c61100;
   padding-bottom: 20px;
-  opacity: 0.9;
+  opacity: 0.8;
 }
 
 @keyframes slideup {
