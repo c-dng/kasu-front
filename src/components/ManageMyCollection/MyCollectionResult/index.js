@@ -53,159 +53,157 @@ const MyCollectionResult = ({ mangaName,
 
   const [openDelete, setOpenDelete] = React.useState(false);
   return (
-    <div>
+  <>
       <div className="manageMyCollection-itemDesktopVersion">
-        <div className="manageMyCollection-myCollectionItem">
-          <div className="manageMyCollection-itemContentWrapper">
-            <Image
-              className="manageMyCollection-myCollectionTitleMangaImage"
-              src={mangaPicture}
-              size="tiny"
-            />
-            <div className="manageMyCollection-myCollectionMangaInfoWrapper">
-              <h3 className="manageMyCollection-myCollectionTitleManga">{mangaName} - <span className="manageMyCollection-myCollectionAuthorManga">{mangaAuthor}</span></h3>
-            </div>
-          </div>
-          <div className="manageMyCollection-myCollectionThreeButtons">
-            <div className="manageMyCollection-myCollectionButtonsSubGroup">
-              <Modal
-                onClose={() => setOpenAvailability(false)}
-                onOpen={() => setOpenAvailability(true)}
-                open={openAvailability}
-                trigger={<Button className="manageMyCollection-myCollectionButtons" fluid>Disponibilité</Button>}
-              >
-                <Modal.Header>Disponibilité</Modal.Header>
-                <Modal.Content image>
-                  <Image size="medium" src={mangaPicture} wrapped />
-                  <Modal.Description>
-                    <Header>{mangaName}</Header>
-                    <p>
-                      Veuillez définir les disponibilités de vos tomes {mangaName}
-                    </p>
-                    {mangaVolumes.map((volume) => (
-                      <MangaAvailability
-                        volumeNumber={volume.number}
-                        onChangeAvailability={(volumeNumber, checked) => {
-                          console.log("Checked Value", checked);
-                          if (!checked) {
-                            setCheckedVolumes(checkedVolumes.filter((volume) => volume !== volumeNumber));
-                          } else {
-                            setCheckedVolumes([
-                              ...checkedVolumes,
-                              volumeNumber,
-                            ]);
-                          }
-
-                        }}
-                        key={volume.number}
-                        checked={checkedVolumes.includes(volume.number)}
-                      />
-                    ))}
-                  </Modal.Description>
-                </Modal.Content>
-                <Modal.Actions>
-                  <Button color="black" onClick={() => setOpenAvailability(false)}>
-                    Annuler
-                  </Button>
-                  <Button
-                    content="Confirmer"
-                    labelPosition="right"
-                    icon="checkmark"
-                    onClick={() => {
-                      console.log("Envoie des données", mangaId, checkedVolumes.join(', '));
-                      modifyVolumeAvailability(mangaId, checkedVolumes.join(', '));
-                      setOpenAvailability(false);
-                    }}
-                    positive
-                  />
-                </Modal.Actions>
-              </Modal>
-              <div className="manageMyCollection-artificialMargin"></div>
-              <Modal
-                onClose={() => setOpenEdit(false)}
-                onOpen={() => setOpenEdit(true)}
-                open={openEdit}
-                trigger={<Button className="manageMyCollection-myCollectionButtons" fluid>Éditer</Button>}
-              >
-                <Modal.Header>Ajout/Retrait de tomes</Modal.Header>
-                <Modal.Content image>
-                  <Image size="medium" src={mangaPicture} wrapped />
-                  <Modal.Description>
-                    <Header>{mangaName}</Header>
-                    <p>
-                      Veuillez préciser quels tomes {mangaName} vous possédez.
-                    </p>
-
-                    <Dropdown
-                      defaultValue={possessedVolumes}
-                      className="manageMyCollection-dropdownSelectAndAdd"
-                      placeholder="Tome(s) à ajouter"
-                      size="5"
-                      fluid
-                      multiple
-                      selection
-                      options={mangaVolumeOptions}
-                      onChange={handleChange}
-                    />
-                  </Modal.Description>
-                </Modal.Content>
-                <Modal.Actions>
-                  <Button color="black" onClick={() => setOpenEdit(false)}>
-                    Annuler
-                  </Button>
-                  <Button
-                    content="Confirmer"
-                    labelPosition="right"
-                    icon="checkmark"
-                    onClick={() => {
-                      console.log("Envoie des données selected", mangaId, selected.join(', '));
-                      addOrRemoveVolumes(mangaId, selected.join(', '));
-                      setOpenEdit(false);
-                    }}
-                    positive
-                  />
-                </Modal.Actions>
-              </Modal>
-
-            </div>
+        <h3 className="manageMyCollection-titleNameManga">{mangaName}</h3>
+        <div className="manageMyCollection-mangaImageWrapper">
+          <Image
+            className="manageMyCollection-mangaImage"
+            src={mangaPicture}
+            size="small"
+          />
+        </div>
+        <div className="manageMyCollection-selectAndAdd">
+          <Dropdown className="manageMyCollection-dropdownSelectAndAdd" placeholder="Mes Tomes" size="5" fluid multiple selection options={mangaVolumeOptions} />
+        </div>
+        <div className="manageMyCollection-myCollectionThreeButtons">
+          <div className="manageMyCollection-myCollectionButtonsSubGroup">
             <Modal
-              onClose={() => setOpenDelete(false)}
-              onOpen={() => setOpenDelete(true)}
-              open={openDelete}
-              trigger={<Button className="manageMyCollection-myCollectionButtons manageMyCollection-DeleteButton" fluid>Supprimer</Button>}
+              onClose={() => setOpenAvailability(false)}
+              onOpen={() => setOpenAvailability(true)}
+              open={openAvailability}
+              trigger={<Button className="manageMyCollection-myCollectionButtons" fluid  size="mini">Disponibilité</Button>}
             >
-              <Modal.Header>Suppression d'un manga de sa collection</Modal.Header>
+              <Modal.Header>Disponibilité</Modal.Header>
               <Modal.Content image>
                 <Image size="medium" src={mangaPicture} wrapped />
                 <Modal.Description>
                   <Header>{mangaName}</Header>
                   <p>
-                    Souhaitez-vous vraiment supprimer le manga {mangaName} de votre collection ?
+                    Veuillez définir les disponibilités de vos tomes {mangaName}
                   </p>
+                  {mangaVolumes.map((volume) => (
+                    <MangaAvailability
+                      volumeNumber={volume.number}
+                      onChangeAvailability={(volumeNumber, checked) => {
+                        console.log("Checked Value", checked);
+                        if (!checked) {
+                          setCheckedVolumes(checkedVolumes.filter((volume) => volume !== volumeNumber));
+                        } else {
+                          setCheckedVolumes([
+                            ...checkedVolumes,
+                            volumeNumber,
+                          ]);
+                        }
+
+                      }}
+                      key={volume.number}
+                      checked={checkedVolumes.includes(volume.number)}
+                    />
+                  ))}
                 </Modal.Description>
               </Modal.Content>
               <Modal.Actions>
-                <Button color="black" onClick={() => setOpenDelete(false)}>
+                <Button color="black" onClick={() => setOpenAvailability(false)}>
                   Annuler
                 </Button>
                 <Button
-                  content="Supprimer"
+                  content="Confirmer"
                   labelPosition="right"
-                  icon="cancel"
+                  icon="checkmark"
                   onClick={() => {
-                    deleteManga(mangaId);
-                    setOpenDelete(false);
+                    console.log("Envoie des données", mangaId, checkedVolumes.join(', '));
+                    modifyVolumeAvailability(mangaId, checkedVolumes.join(', '));
+                    setOpenAvailability(false);
                   }}
-                  negative
+                  positive
+                />
+              </Modal.Actions>
+            </Modal>
+            <div className="manageMyCollection-artificialMargin"></div>
+            <Modal
+              onClose={() => setOpenEdit(false)}
+              onOpen={() => setOpenEdit(true)}
+              open={openEdit}
+              trigger={<Button className="manageMyCollection-myCollectionButtons" fluid  size="mini">Éditer</Button>}
+            >
+              <Modal.Header>Ajout/Retrait de tomes</Modal.Header>
+              <Modal.Content image>
+                <Image size="medium" src={mangaPicture} wrapped />
+                <Modal.Description>
+                  <Header>{mangaName}</Header>
+                  <p>
+                    Veuillez préciser quels tomes {mangaName} vous possédez.
+                  </p>
+
+                  <Dropdown
+                    defaultValue={possessedVolumes}
+                    className="manageMyCollection-dropdownSelectAndAdd"
+                    placeholder="Tome(s) à ajouter"
+                    size="5"
+                    fluid
+                    multiple
+                    selection
+                    options={mangaVolumeOptions}
+                    onChange={handleChange}
+                  />
+                </Modal.Description>
+              </Modal.Content>
+              <Modal.Actions>
+                <Button color="black" onClick={() => setOpenEdit(false)}>
+                  Annuler
+                </Button>
+                <Button
+                  content="Confirmer"
+                  labelPosition="right"
+                  icon="checkmark"
+                  onClick={() => {
+                    console.log("Envoie des données selected", mangaId, selected.join(', '));
+                    addOrRemoveVolumes(mangaId, selected.join(', '));
+                    setOpenEdit(false);
+                  }}
+                  positive
                 />
               </Modal.Actions>
             </Modal>
 
           </div>
+          <Modal
+            onClose={() => setOpenDelete(false)}
+            onOpen={() => setOpenDelete(true)}
+            open={openDelete}
+            trigger={<Button className="manageMyCollection-myCollectionButtons manageMyCollection-DeleteButton" fluid size="mini">Supprimer</Button>}
+          >
+            <Modal.Header>Supprimer un manga de ma collection</Modal.Header>
+            <Modal.Content image>
+              <Image size="medium" src={mangaPicture} wrapped />
+              <Modal.Description>
+                <Header>{mangaName}</Header>
+                <p>
+                  Souhaitez-vous vraiment supprimer le manga {mangaName} de votre collection ?
+                </p>
+              </Modal.Description>
+            </Modal.Content>
+            <Modal.Actions>
+              <Button color="black" onClick={() => setOpenDelete(false)}>
+                Annuler
+              </Button>
+              <Button
+                content="Supprimer"
+                labelPosition="right"
+                icon="cancel"
+                onClick={() => {
+                  deleteManga(mangaId);
+                  setOpenDelete(false);
+                }}
+                negative
+              />
+            </Modal.Actions>
+          </Modal>
         </div>
       </div>
       <Divider className="manageMyCollection-divider-MobileVersion" />
-    </div>
+  </>  
   );
 }
 

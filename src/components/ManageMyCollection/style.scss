@@ -149,8 +149,10 @@ h2.ui.header {
   display: flex;
 }
 
-.manageMyCollection-DeleteButton.manageMyCollection-DeleteButton.manageMyCollection-DeleteButton {
-  margin-top: 0.5rem;
+button.ui.fluid.button.manageMyCollection-myCollectionButtons.manageMyCollection-DeleteButton.manageMyCollection-myCollectionButtons.manageMyCollection-DeleteButton {
+  border: 1px solid #db2828;
+  color: #db2828;
+  margin-top: 0.5em;
 }
 
 .manageMyCollection-artificialMargin {
@@ -268,6 +270,38 @@ div.manageMyCollection-itemWrapperDesktopVersion {
   .manageMyCollection-itemContentWrapper.manageMyCollection-itemContentWrapper.manageMyCollection-itemContentWrapper {
     width: 70%;
   }
+  //UPDATE CSS OF RESULTS CARDS
+  div.manageMyCollection-itemDesktopVersion {
+    justify-content: center;
+    display: flex;
+     flex-wrap: wrap;
+     width: 25%;
+     margin-bottom: 1em;
+ }
+ 
+ div.manageMyCollection-myCollectionThreeButtons {
+     width: 100%;
+     margin: 0 auto;
+ }
+ 
+ div.manageMyCollection-myCollectionButtonsSubGroup {
+     width: 80%;
+     margin: auto;
+     margin-bottom: 0.5em;
+     display: flex;   
+ }
+ 
+ button.ui.mini.fluid.button.manageMyCollection-myCollectionButtons {
+    width: 80%;
+    margin: auto;
+ }
+
+ button.ui.fluid.button.manageMyCollection-myCollectionButtons.manageMyCollection-DeleteButton.manageMyCollection-myCollectionButtons.manageMyCollection-DeleteButton {
+  border: 1px solid #db2828;
+  color: #db2828;
+  }
+
+ 
 
   //Theming 1 en desktop
   .theme1 {
@@ -301,7 +335,7 @@ div.manageMyCollection-itemWrapperDesktopVersion {
     }
 
     button.ui.fluid.button.manageMyCollection-myCollectionButtons.manageMyCollection-DeleteButton {
-      color: vars.$primaryFontColor_theme1;
+      background-color: vars.$primaryColor_theme1; 
     }
 
     div.sub.header.manageMyCollection-myCollectionSubHeaderTwo.manageMyCollection-myCollectionSubHeaderTwo {
@@ -340,8 +374,8 @@ div.manageMyCollection-itemWrapperDesktopVersion {
       border: none;
     }
 
-    button.ui.fluid.button.manageMyCollection-myCollectionButtons.manageMyCollection-DeleteButton {
-      color: vars.$primaryFontColor_theme2;
+    button.ui.mini.fluid.button.manageMyCollection-myCollectionButtons.manageMyCollection-DeleteButton {
+      background-color: vars.$primaryColor_theme2;
     }
   }
 }
@@ -390,14 +424,8 @@ div.manageMyCollection-itemWrapperDesktopVersion {
     border: 1px solid vars.$secondaryBorderColor_theme1;
   }
 
-  .manageMyCollection-DeleteButton.manageMyCollection-DeleteButton.manageMyCollection-DeleteButton {
-    background-color: vars.$tertiaryColor_theme1;
-    color: vars.$secondaryFontColor_theme1;
-  }
-  .manageMyCollection-DeleteButton.manageMyCollection-DeleteButton.manageMyCollection-DeleteButton:hover {
+  button.ui.mini.fluid.button.manageMyCollection-myCollectionButtons.manageMyCollection-DeleteButton {
     background-color: vars.$primaryColor_theme1;
-    color: vars.$tertiaryColor_theme1;
-    border:1px solid vars.$tertiaryColor_theme1;
   }
 
   .manageMyCollection-divider.manageMyCollection-divider.manageMyCollection-divider {
@@ -455,9 +483,8 @@ div.manageMyCollection-itemWrapperDesktopVersion {
     border: 1px solid vars.$primaryBorderColor_theme2;
   }
 
-  .manageMyCollection-DeleteButton.manageMyCollection-DeleteButton.manageMyCollection-DeleteButton {
-    background-color: vars.$tertiaryColor_theme2;
-    color: vars.$secondaryFontColor_theme2;
+  button.ui.mini.fluid.button.manageMyCollection-myCollectionButtons.manageMyCollection-DeleteButton {
+    background-color: vars.$primaryColor_theme2;
   }
 
   .manageMyCollection-divider.manageMyCollection-divider.manageMyCollection-divider {
