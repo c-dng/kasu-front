@@ -66,21 +66,19 @@ const Nav = ({
             </Link>
           </Menu.Item>
           {isLogged && (
-            <Menu.Item>
+            <Menu.Item className="nav-myProfilButton">
               <Image circular className="navbuttons" id="temporary-avatar" src={`https://api.multiavatar.com/${picture}.png`} alt="avatar-logo" size="mini" />
               <Dropdown floating icon="dropdown">
                 <Dropdown.Menu>
                   <Dropdown.Header>Gestion de profil</Dropdown.Header>
-                  <Dropdown.Item as={Link} to="/profil/mon-profil" onClick={() => loadUserInfos()} exact={+true}>Mon Compte</Dropdown.Item>
-                  <Dropdown.Item as={Link} to="/profil/collection" exact={+true}>Ma Collection</Dropdown.Item>
+                  <Dropdown.Item as={Link} to="/profil/mon-profil" onClick={() => loadUserInfos()} exact={+true} className="nav-dropdownlinkMyProfil">Mon Compte</Dropdown.Item>
+                  <Dropdown.Item as={Link} to="/profil/collection" exact={+true} className="nav-dropdownlinkMyCollection">Ma Collection</Dropdown.Item>
                   <Dropdown.Divider />
-                  <Dropdown.Item>
+                  <Dropdown.Item className="nav-dropdownTheme">
                     <Dropdown text="Mon thème">
                       <Dropdown.Menu>
-                        <Dropdown.Item onClick={handleTheme1}>Thème 1</Dropdown.Item>
-                        <Dropdown.Item onClick={handleTheme2}>Thème 2</Dropdown.Item>
-                        <Dropdown.Item onClick={handleTheme3}>Thème 3</Dropdown.Item>
-                        <Dropdown.Item onClick={handleTheme4}>Thème 4</Dropdown.Item>
+                        <Dropdown.Item onClick={handleTheme1}>Bright mode</Dropdown.Item>
+                        <Dropdown.Item onClick={handleTheme2}>Dark mode</Dropdown.Item>
                       </Dropdown.Menu>
                     </Dropdown>
                   </Dropdown.Item>
@@ -89,17 +87,17 @@ const Nav = ({
             </Menu.Item>
           )}
           {isLogged && (
-            <Menu.Item as="div" onClick={() => handleConversationsLoad()} name="chat">
+            <Menu.Item as="div" onClick={() => handleConversationsLoad()} name="chat" className="nav-myConversationsButton">
               <Image as={Link} to="/conversations" exact={+true} className="navbuttons" src={chatlogoToDisplay} alt="logo" size="mini" />
             </Menu.Item>
           )}
           {isLogged && (
-            <Menu.Item name="logout">
+            <Menu.Item name="logout" className="nav-logoutButton">
               <Image as={Link} to="/" exact={+true} onClick={handleLogout} className="navbuttons" src={logoutlogo} alt="logo" size="mini" />
             </Menu.Item>
           )}
           {!isLogged && (
-            <Menu.Item position="right" name="login">
+            <Menu.Item position="right" name="login" className="nav-loginButton">
               <Image as={Link} to="/login" exact={+true} className="navbuttons nav-loginButton" src={loginlogo} alt="logo" size="mini" />
             </Menu.Item>
           )}
