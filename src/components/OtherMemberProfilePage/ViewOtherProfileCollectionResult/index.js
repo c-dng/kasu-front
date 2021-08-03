@@ -5,7 +5,7 @@ import {
   Image, Button, Divider, Modal, Header, Dropdown,
 } from 'semantic-ui-react';
 
-const ViewProfileCollectionResult = ({ mangaName,
+const ViewOtherProfileCollectionResult = ({ mangaName,
   mangaPicture,
   mangaVolumes,
   mangaAuthor,
@@ -42,4 +42,4 @@ const ViewProfileCollectionResult = ({ mangaName,
   );
 }
 
-export default ViewProfileCollectionResult;
+export default ViewOtherProfileCollectionResult;

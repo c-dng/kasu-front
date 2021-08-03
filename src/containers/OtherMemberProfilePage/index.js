@@ -7,6 +7,7 @@ const mapStateToProps = (state, ownProps) => ({
   city: state.user.otherUserFullData.contact.city,
   zipcode: state.user.otherUserFullData.contact.zip_code,
   picture: state.user.otherUserFullData.contact.picture,
+  otherUserMangas: state.user.otherUserFullData.contact.manga,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
