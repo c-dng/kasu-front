@@ -117,11 +117,13 @@ img.ui.small.image.manageMyCollection-mangaImage.manageMyCollection-mangaImage.m
 h2.ui.header {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .manageMyCollection-myCollection.manageMyCollection-myCollection {
   width: 80%;
   margin: 0 auto;
+  padding-top:10px;
 }
 
 .manageMyCollection-myCollectionMangaInfoWrapper {
