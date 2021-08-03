@@ -43,22 +43,7 @@ div.conversation:not(:first-child) {
   animation-fill-mode: forwards;
 }
 
-.conversations{
-  background-image: linear-gradient(rgba(226, 226, 226, 0.7), rgba(56, 56, 56, 0.7)),url("src/assets/images/conversations-bg.png");
-  background-size: cover;
-  background-attachment: fixed;
-  min-height: 100vh;
-  height:100%;
-}
-.conversations-notHiddenBox{
-  background-color: #fff;
-  margin: 55px auto;
-  width: 50%;
-  border-radius: 25px;
-  border: 1px solid #c61100;
-  padding-bottom: 20px;
-  opacity: 0.8;
-}
+
 
 @keyframes slideup {
   from {
@@ -105,7 +90,24 @@ div.conversation:not(:first-child) {
   margin: 0;
 
 }
-
+@media only screen and (min-width : 1224px) {
+  .conversations{
+    background-image: linear-gradient(rgba(226, 226, 226, 0.7), rgba(56, 56, 56, 0.7)),url("src/assets/images/conversations-bg.png");
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    height:100%;
+  }
+  .conversations-notHiddenBox{
+    background-color: #fff;
+    margin: 55px auto;
+    width: 50%;
+    border-radius: 25px;
+    border: 1px solid #c61100;
+    padding-bottom: 20px;
+    opacity: 0.8;
+  }
+}
 // Theming 
 
 .theme1 {
