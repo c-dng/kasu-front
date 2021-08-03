@@ -68,9 +68,8 @@ div.content.manageMyCollection-mainCardContent.manageMyCollection-mainCardConten
 }
 
 .manageMyCollection-searchBarWrapper {
-  background-image: url('src/assets/images/home-card-logo.png');
+  background-image: url('src/assets/images/mangas-faded.png');
   background-size: cover;
-  background-position: 0% 20%;
   padding: 2rem;
 }
 
@@ -176,6 +175,9 @@ div.manageMyCollection-itemWrapperDesktopVersion {
 // Desktop and laptops
 @media only screen and (min-width : 1224px) {
 
+  .manageMyCollection-searchBarWrapper{
+    background-position: 50% 90%;
+  }
   .manageMyCollection-banner.manageMyCollection-banner.manageMyCollection-banner {
     width: 100%;
     height: 250px;
@@ -199,9 +201,18 @@ div.manageMyCollection-itemWrapperDesktopVersion {
 
   div.manageMyCollection-firstBlocDesktopVersion {
     border-radius: 1.5em;
-    border: 1px solid;
+    margin-top: 3em;
   }
 
+  h3.manageMyCollection-subHeader{
+    background-color:#000;
+    color:#fff;
+    padding: 0.8em;
+    width:100%;
+    margin:0 auto;
+    border-top-left-radius: 1.3rem;
+    border-top-right-radius: 1.3rem;
+  }
   h3.manageMyCollection-subHeader, div.header.manageMyCollection-mainCardHeader {
     font-size: x-large;
   }
@@ -220,7 +231,7 @@ div.manageMyCollection-itemWrapperDesktopVersion {
 
   div.manageMyCollection-secondBlocDesktopVersion {
     border-radius: 1.5em;
-    margin-top: 3em;
+    
   }
 
   div.manageMyCollection-myCollection.manageMyCollection-myCollection {

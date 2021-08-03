@@ -90,7 +90,7 @@ video {
 
 /*disabling default transparency on placeholder dropdowns*/
 .ui.default.dropdown:not(.button)>.text, .ui.dropdown:not(.button)>.default.text {
-  color: rgba(0,0,0,.87) !important;
+  color: rgba(8, 8, 8, 0.671) !important;
 }
 /* HTML5 display-role reset for older browsers */
 article,
