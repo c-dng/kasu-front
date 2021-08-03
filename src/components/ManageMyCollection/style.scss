@@ -168,6 +168,10 @@ button.ui.fluid.button.manageMyCollection-myCollectionButtons.manageMyCollection
   border-radius: 1.5rem;
 }
 
+.ui.default.dropdown:not(.button)>.text {
+  color: red;
+}
+
 div.manageMyCollection-itemWrapperDesktopVersion {
   margin-bottom: 1rem;
 }
