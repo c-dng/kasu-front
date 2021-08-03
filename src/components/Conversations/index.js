@@ -16,6 +16,7 @@ import './style.scss';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import Conversation from './Conversation';
+import { last } from 'lodash-es';
 
 const Conversations = ({
   isBoxHidden, handleHiddenBoxDisplay, conversations, loadSingleChat, userPseudo,
@@ -59,7 +60,16 @@ const Conversations = ({
             }
             let lastMessageVariable;
             if (conversation[1].lastmessage) {
-              lastMessageVariable = conversation[1].lastmessage.content;
+              let messageLength = conversation[1].lastmessage.content.length;
+
+              if (messageLength > 75 ){
+                lastMessageVariable = conversation[1].lastmessage.content.slice(0,75);
+                lastMessageVariable += "...";
+              } else {
+
+                lastMessageVariable = conversation[1].lastmessage.content;
+              }
+              
             }
             else {
               lastMessageVariable = '';
