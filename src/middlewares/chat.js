@@ -92,7 +92,7 @@ const chatMiddleware = (store) => (next) => (action) => {
         .then(
           (response) => {
             console.log('la conversation a bien été créée');
-            console.log(response.data.id);
+            console.log(response);
             console.log('loading single chat');
             store.dispatch(loadSingleChat(response.data.id));
             store.dispatch(redirectTo(`/conversation/${response.data.id}`));

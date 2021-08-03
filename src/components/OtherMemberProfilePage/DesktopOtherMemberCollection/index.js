@@ -1,7 +1,7 @@
 
 import React from 'react';
 import {
-  Button, Card, Divider, Grid, Header, Icon, Image,
+  Card, Divider, Header, Icon,
 } from 'semantic-ui-react';
 import ViewOtherProfileCollectionResult from '../ViewOtherProfileCollectionResult';
 
