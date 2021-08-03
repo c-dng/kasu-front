@@ -1,5 +1,8 @@
 // General
 
+.picture {
+  display: none;
+}
 // ChatField
 
 .chatField.chatField.chatField.chatField {
@@ -74,4 +77,32 @@ div.message.message:nth-last-child(2) {
     background-color: rgb(105, 174, 252);
     text-align: left;
   }
+}
+
+@media only screen and (min-width : 1224px) {
+.chatField.chatField.chatField.chatField {
+    width: 50%;  
+  }
+  form.chatField-form {
+    width:100%;
+  }
+
+   .messages.messages.messages {
+     width: 50%;
+     margin: auto;
+   }
+  .picture {
+    position:fixed;
+    top:50%;
+    right:50px;
+    display: block;
+  
+    height:15em;
+    transform: translateY(-50%);
+  }
+  .picture:first-child {
+    left:50px;
+  }
+  
+  
 }
