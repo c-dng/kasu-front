@@ -21,7 +21,7 @@ let socket;
 const chatMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case WS_CONNECT: {
-      socket = io('http://localhost:3001', { auth: { token: localStorage.getItem('token') } });
+      socket = io('http://websocket.kasu.laetitia-dev.com/', { auth: { token: localStorage.getItem('token') } });
       console.log('socket defined');
       socket.on('send_message', (payload) => {
         console.log('tu viens de recevoir un signal "send_message" de la part de socket.io');
