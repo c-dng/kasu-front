@@ -12,7 +12,18 @@ div.content.searchResultsByLocation-cardContentImgInfos > img.ui.medium.image {
   width: auto;
   height: auto;
 }
-
+.searchResultsByLocation-banner-title{
+  background-color: #000;
+  color: #fff;
+  margin-top:0;
+  text-align: center;
+  font-size:1.5rem;
+  font-weight: bolder;
+  text-transform: uppercase;
+  padding:1.5rem;
+  line-height: 2.5rem;
+  margin-bottom: 2rem;
+}
 .searchResultsByLocation-cardContentImgInfos.searchResultsByLocation-cardContentImgInfos.searchResultsByLocation-cardContentImgInfos {
   display: flex;
   justify-content: center;
@@ -76,5 +87,5 @@ button.ui.blue.basic.button.searchResultsByLocation-contactOwner {
   background-image: url('src/assets/images/alternativeBanner.png');
   background-size: cover ;
   padding: 3rem;
-  margin-bottom: 3rem;
+  // margin-bottom: 3rem;
 }
