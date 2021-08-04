@@ -39,10 +39,11 @@ ChatField.propTypes = {
   manageSubmit: PropTypes.func.isRequired,
   newMessage: PropTypes.string,
   setNewMessage: PropTypes.func.isRequired,
-  chatId: PropTypes.number.isRequired,
+  chatId: PropTypes.number,
 };
 
 ChatField.defaultProps = {
   newMessage: '',
+  chatId: 0,
 };
 export default ChatField;
