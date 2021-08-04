@@ -21,8 +21,9 @@ const SearchResultsByLocation = ({ users, handleLoadUser, createNewChat }) => {
           Object.values(users).map((user) => {
             const results = Object.values(user.mangas);
             return (
-              results.map((result) => (
+              results.map((result, index) => (
                 <ResultCard
+                  key={index}
                   mangaName={result.mangaInfo.title}
                   mangaPicture={result.mangaInfo.picture}
                   mangaSynopsis={result.mangaInfo.synopsis}
