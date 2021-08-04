@@ -31,7 +31,6 @@ import { redirectTo } from '../../actions/global';
 // == Composant
 const App = ({
   theme,
-  onPageLoad,
   onRefreshOrTabClosing,
   isLogged,
   chatId,
@@ -44,7 +43,14 @@ const App = ({
   carouselSearchData,
   loadCarouselData,
   loadCarouselDynamicData,
+  appInit,
+  appDestruct,
 }) => {
+  useEffect(() => {
+    appInit();
+    return appDestruct;
+  }, []);
+
   const handleOnClose = () => {
     if (isLogged) {
       onRefreshOrTabClosing();
@@ -60,12 +66,6 @@ const App = ({
   const token = localStorage.getItem('token');
 
   useEffect(() => {
-    console.log('App useEffect', {
-      isLogged, chatId, mangaDatabase, token,
-    });
-    if (isLogged && chatId) {
-      onPageLoad(chatId);
-    }
     if (!mangaDatabase && isLogged && token) {
       console.log('mangaDatabase useEffect test', { mangaDatabase, token });
       loadMangaDatabase();
@@ -82,7 +82,8 @@ const App = ({
       const userZipCode = userFullData.contact.zip_code;
       loadCarouselDynamicData(userZipCode);
     }
-  }, [chatId, isLogged, mangaDatabase, token, userFullData], carouselSearchData);
+  }, [isLogged, mangaDatabase, token, userFullData], carouselSearchData);
+
   const history = useHistory();
 
   useEffect(() => {

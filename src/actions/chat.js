@@ -13,9 +13,8 @@ export const setNewMessage = (newMessage) => ({
 
 export const WS_CONNECT = 'WS_CONNECT';
 
-export const wsConnect = (chatId) => ({
+export const wsConnect = () => ({
   type: WS_CONNECT,
-  chatId: chatId,
 });
 
 export const WS_DISCONNECT = 'WS_DISCONNECT';
