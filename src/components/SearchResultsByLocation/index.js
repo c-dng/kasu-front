@@ -15,14 +15,20 @@ const SearchResultsByLocation = ({ users, handleLoadUser, createNewChat }) => {
       <div className="searchResultsByLocation-searchBarWrapper">
         <SearchBar />
       </div>
+
+      <div className="searchResultsByLocation-banner-title">Résultats de votre recherche</div>
+
       <Card.Group className="searchResultsByLocation-cardGroup">
+        <h4 class="manageMyCollection-subtitle">{Object.entries(users).length == 0 ? 'Pas de résultats' : ""}</h4>
         {console.log(Object.entries(users))}
+        
         {
           Object.values(users).map((user) => {
             const results = Object.values(user.mangas);
             return (
-              results.map((result) => (
+              results.map((result, index) => (
                 <ResultCard
+                  key={index}
                   mangaName={result.mangaInfo.title}
                   mangaPicture={result.mangaInfo.picture}
                   mangaSynopsis={result.mangaInfo.synopsis}

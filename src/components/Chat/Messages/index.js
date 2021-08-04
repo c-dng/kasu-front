@@ -14,15 +14,15 @@ const Messages = ({ messages }) => {
   };
 
   useEffect(scrollToBottom, [messages]);
-
+  
   return (
     <div className="messages">
 
       {
         messages.map(
-          (message) => (
+          (message, index) => (
             <Message
-              key={message.id}
+              key={index}
               messageUserId={message.author.id}
               singleMessage={message.content}
             />

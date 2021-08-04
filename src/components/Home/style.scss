@@ -93,6 +93,31 @@ div.homeCard.homeCard {
   justify-content: center;
 }
 
+div.searchResultsByLocation-owner.searchResultsByLocation-owner {
+  font-weight: bold;
+}
+
+div.meta.searchResultsByLocation-localisation {
+  font-weight: bold;
+}
+
+div.ui.selection.dropdown {
+  text-align: center;
+}
+
+// hover
+button.ui.black.basic.button.searchResultsByLocation-showMore:hover {
+  background-color: rgb(202, 200, 200) !important;
+  opacity: 0.8;
+  transition: all 0.5s;
+}
+
+button.ui.blue.basic.button.searchResultsByLocation-contactOwner:hover {
+  background-color: rgb(187, 203, 216) !important;
+  opacity: 0.8;
+  transition: all 0.5s;
+}
+
 // Home Card 
 
 .homeCard-cardContentImgInfos.homeCard-cardContentImgInfos.homeCard-cardContentImgInfos {
@@ -125,6 +150,7 @@ div.homeCard.homeCard {
 
 .homeCard-owner {
   font-size: 1em;
+  
 }
 
 .homeCard-localisation {
@@ -132,7 +158,7 @@ div.homeCard.homeCard {
 }
 
 
-// bouton voir plus
+// button see more
 button.ui.black.basic.button.homeCard-showMore {
   border-top-left-radius: 1.5em;
   border-bottom-left-radius: 1.5em;
@@ -305,7 +331,7 @@ button.ui.blue.basic.button.homeCard-contactOwner {
   }
 
   h2.searchExplained-title.searchExplained-title {
-    color: vars.$tertiaryColor_theme1;
+    color: vars.$tertiaryColor_theme2;
   }
 
   .home {
@@ -323,8 +349,6 @@ button.ui.blue.basic.button.homeCard-contactOwner {
     color: vars.$secondaryFontColor_theme1;
     border:1px solid vars.$secondaryBorderColor_theme1;
   }
-  
-  
 }
 
 .theme2 {
@@ -350,4 +374,14 @@ button.ui.blue.basic.button.homeCard-contactOwner {
     background-color: vars.$primaryColor_theme2;
     color: vars.$primaryFontColor_theme2;
   }
+
+  div.searchResultsByLocation-owner.searchResultsByLocation-owner {
+    color: vars.$primaryFontColor_theme1;
+  }
+  
+  button.ui.black.basic.button.searchResultsByLocation-showMore:hover {
+    background-color: rgb(180, 172, 172) !important;
+    transition: all 0.5s;
+  }
+  
 }

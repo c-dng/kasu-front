@@ -31,16 +31,13 @@ const ContactForm = ({
     function cleanup() {
       onContactFormUnmount();
     }),
-  []);
+    []);
+
 
   useEffect(() => {
-   
-      changeObject(object ? object :"Ajouter un manga");
-    
+    changeObject(object || 'Ajouter un manga');
   }, []);
- 
 
-  
   const handleChangeObject = (evt) => {
     changeObject(evt.target.value);
     // console.log(evt.target.value);
@@ -53,8 +50,6 @@ const ContactForm = ({
     console.log(message.message);
     handleMessage();
   };
- 
-
 
   return (
     <div className="contactForm">

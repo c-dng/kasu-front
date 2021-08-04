@@ -21,7 +21,9 @@ let socket;
 const chatMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case WS_CONNECT: {
-      socket = io('http://localhost:3001', { auth: { token: localStorage.getItem('token') } });
+      console.log(process.env.HOSTNAME_CHAT);
+      // adresse serveur prod http://websocket.kasu.laetitia-dev.com/
+      socket = io(process.env.HOSTNAME_CHAT, { auth: { token: localStorage.getItem('token') } });
       console.log('socket defined');
       socket.on('send_message', (payload) => {
         console.log('tu viens de recevoir un signal "send_message" de la part de socket.io');
@@ -68,6 +70,7 @@ const chatMiddleware = (store) => (next) => (action) => {
             console.log('ça marche');
             console.log(response);
             store.dispatch(saveLastSingleChat(response.data));
+           
             store.dispatch(setLoadingFalse());
           },
         )
@@ -94,6 +97,9 @@ const chatMiddleware = (store) => (next) => (action) => {
             console.log('la conversation a bien été créée');
             console.log(response);
             console.log('loading single chat');
+            console.log('create_new_chat action response.data pre-dispatch: ', response.data)
+            // store.dispatch(saveTemporaryLastSingleChat(response.data));
+            // store.dispatch(saveLastSingleChat(response.data));
             store.dispatch(loadSingleChat(response.data.id));
             store.dispatch(redirectTo(`/conversation/${response.data.id}`));
           },

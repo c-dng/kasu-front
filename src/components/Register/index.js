@@ -186,7 +186,7 @@ const Register = ({
               </div>
               <div className="registerForm-field">
                 <label className="registerForm-fieldLabel">Confirmez mot de passe</label>
-                <Form.Input onChange={handleChangeConfirmPassword} type='password' value={confirmPassword} className="registerForm-fieldInput" />
+                <Form.Input onChange={handleChangeConfirmPassword} type="password" value={confirmPassword} className="registerForm-fieldInput" />
               </div>
               <span className="registerForm-errorMessagePassword">{errorMessage}</span>
               <div className="registerForm-field">

@@ -16,7 +16,6 @@ const ResultCard = ({
   handleLoadUser,
   createNewChat,
 }) => {
-  console.log(mangaVolumes);
   const mangaVolumeOptions = mangaVolumes.map((volume, index) => ({
     key: index,
     text: volume.volume.number,
@@ -36,10 +35,10 @@ const ResultCard = ({
 
           <div className="searchResultsByLocation-infoscard">
             <Card.Header className="searchResultsByLocation-nameManga">{mangaName}</Card.Header>
-            <div className="searchResultsByLocation-owner" onClick={() => handleLoadUser(ownerId)}>
+            <a className="searchResultsByLocation-owner" onClick={() => handleLoadUser(ownerId)}>
               <Image src={`https://api.multiavatar.com/${ownerPicture}.png`} avatar />
               {ownerName}
-            </div>
+            </a>
             <Card.Meta className="searchResultsByLocation-localisation"> <Icon disabled name="map marker alternate" />{ownerCity} - {ownerZipCode}</Card.Meta>
 
             <Card.Description className="searchResultsByLocation-numberVolume">

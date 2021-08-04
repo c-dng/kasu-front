@@ -1,3 +1,5 @@
+@use '/src/styles/vars';
+
 div.ui.cards.searchResultsByLocation-cardGroup {
   display: flex;
   justify-content: space-around;
@@ -12,7 +14,18 @@ div.content.searchResultsByLocation-cardContentImgInfos > img.ui.medium.image {
   width: auto;
   height: auto;
 }
-
+.searchResultsByLocation-banner-title{
+  background-color: #000;
+  color: #fff;
+  margin-top:0;
+  text-align: center;
+  font-size:1.5rem;
+  font-weight: bolder;
+  text-transform: uppercase;
+  padding:1.5rem;
+  line-height: 2.5rem;
+  margin-bottom: 2rem;
+}
 .searchResultsByLocation-cardContentImgInfos.searchResultsByLocation-cardContentImgInfos.searchResultsByLocation-cardContentImgInfos {
   display: flex;
   justify-content: center;
@@ -42,8 +55,15 @@ div.content.searchResultsByLocation-cardContentImgInfos > img.ui.medium.image {
 
 .searchResultsByLocation-owner {
   font-size: 1em;
+  font-weight: bolder;
+  color:#000;
+  
 }
-
+.searchResultsByLocation-owner:hover {
+  
+  color:#000;
+  
+}
 div.meta.searchResultsByLocation-localisation {
   margin-bottom: 1em;
   margin-top: 1em;
@@ -76,5 +96,15 @@ button.ui.blue.basic.button.searchResultsByLocation-contactOwner {
   background-image: url('src/assets/images/alternativeBanner.png');
   background-size: cover ;
   padding: 3rem;
-  margin-bottom: 3rem;
+  // margin-bottom: 3rem;
+}
+
+.no-result {
+  text-align: center;
+}
+.theme2 {
+  .searchResultsByLocation-banner-title {
+    background-color: vars.$secondaryColor_theme2;
+    color: vars.$secondaryFontColor_theme2;
+  }
 }

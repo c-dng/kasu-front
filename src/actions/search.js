@@ -39,3 +39,23 @@ export const searchByMangaName = (mangaName) => ({
   type: SEARCH_BY_MANGA_NAME,
   mangaName,
 });
+
+export const LOAD_CAROUSEL_DATA = 'LOAD_CAROUSEL_DATA';
+
+export const loadCarouselData = () => ({
+  type: LOAD_CAROUSEL_DATA,
+});
+
+export const SAVE_CAROUSEL_SEARCH = 'SAVE_CAROUSEL_SEARCH';
+
+export const saveCarouselData = (carouselSearchData) => ({
+  type: SAVE_CAROUSEL_SEARCH,
+  carouselSearchData,
+});
+
+export const LOAD_CAROUSEL_DYNAMIC_DATA = 'LOAD_CAROUSEL_DYNAMIC_DATA';
+
+export const loadCarouselDynamicData = (userZipCode) => ({
+  type: LOAD_CAROUSEL_DYNAMIC_DATA,
+  userZipCode,
+});

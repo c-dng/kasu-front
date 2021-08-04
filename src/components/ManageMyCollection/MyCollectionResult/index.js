@@ -32,6 +32,12 @@ const MyCollectionResult = ({ mangaName,
     className: `volume${volume}`,
   }));
 
+  const possessedMangaVolumeOptions = mangaVolumes.map((volume, index) => ({
+    key: index,
+    text: volume.number,
+    value: volume.number,
+  }));
+
   const [selected, setSelected] = React.useState(mangaVolumes.map((volume) => volume.number));
 
   const handleChange = (e, { value }) => {
@@ -53,7 +59,7 @@ const MyCollectionResult = ({ mangaName,
 
   const [openDelete, setOpenDelete] = React.useState(false);
   return (
-  <>
+    <>
       <div className="manageMyCollection-itemDesktopVersion">
         <h3 className="manageMyCollection-titleNameManga">{mangaName}</h3>
         <div className="manageMyCollection-mangaImageWrapper">
@@ -64,7 +70,7 @@ const MyCollectionResult = ({ mangaName,
           />
         </div>
         <div className="manageMyCollection-selectAndAdd">
-          <Dropdown className="manageMyCollection-dropdownSelectAndAdd" placeholder="Mes Tomes" size="5" fluid multiple selection options={mangaVolumeOptions} />
+          <Dropdown className="manageMyCollection-dropdownSelectAndAdd" placeholder="Mes Tomes" size="5" fluid multiple selection options={possessedMangaVolumeOptions} />
         </div>
         <div className="manageMyCollection-myCollectionThreeButtons">
           <div className="manageMyCollection-myCollectionButtonsSubGroup">
@@ -72,7 +78,7 @@ const MyCollectionResult = ({ mangaName,
               onClose={() => setOpenAvailability(false)}
               onOpen={() => setOpenAvailability(true)}
               open={openAvailability}
-              trigger={<Button className="manageMyCollection-myCollectionButtons" fluid  size="mini">Disponibilité</Button>}
+              trigger={<Button className="manageMyCollection-myCollectionButtons" fluid size="mini">Disponibilité</Button>}
             >
               <Modal.Header>Disponibilité</Modal.Header>
               <Modal.Content image>
@@ -125,7 +131,7 @@ const MyCollectionResult = ({ mangaName,
               onClose={() => setOpenEdit(false)}
               onOpen={() => setOpenEdit(true)}
               open={openEdit}
-              trigger={<Button className="manageMyCollection-myCollectionButtons" fluid  size="mini">Éditer</Button>}
+              trigger={<Button className="manageMyCollection-myCollectionButtons" fluid size="mini">Éditer</Button>}
             >
               <Modal.Header>Ajout/Retrait de tomes</Modal.Header>
               <Modal.Content image>
@@ -203,7 +209,7 @@ const MyCollectionResult = ({ mangaName,
         </div>
       </div>
       <Divider className="manageMyCollection-divider-MobileVersion" />
-  </>  
+    </>
   );
 }
 
