@@ -17,7 +17,7 @@ const Team = () => (
       <p className="team-description">Pendant 4 mois nous avons appris le métier de développeur web, en mêlant théorie et pratique. Dans le cadre du projet de fin de formation, nous avons réalisé ce site en 1 mois : 1 semaine pour définir le cahier des charges, et 3 semaines à coder.</p>
       <div className="team-cardGlobal">
         <Card className="team-card">
-          <Image className="picture" src={Olivier} wrapped ui={false} size="small" />
+          <Image className="picture-ourTeam" src={Olivier} wrapped ui={false} size="small" />
           <Card.Content className="team-cardContent">
             <Card.Header className="team-cardName">Olivier Y.</Card.Header>
             <Card.Description className="team-cardNameRole">
@@ -30,7 +30,7 @@ const Team = () => (
           </Card.Content>
         </Card>
         <Card className="team-card">
-          <Image className="picture" src={Laetitia} wrapped ui={false} size="small" />
+          <Image className="picture-ourTeam" src={Laetitia} wrapped ui={false} size="small" />
           <Card.Content className="team-cardContent">
             <Card.Header className="team-cardName">Laetitia D.</Card.Header>
             <Card.Description className="team-cardNameRole">
@@ -43,7 +43,7 @@ const Team = () => (
           </Card.Content>
         </Card>
         <Card className="team-card">
-          <Image className="picture" src={Listeria} wrapped ui={false} size="small" />
+          <Image className="picture-ourTeam" src={Listeria} wrapped ui={false} size="small" />
           <Card.Content className="team-cardContent">
             <Card.Header className="team-cardName">Laetitia R.</Card.Header>
             <Card.Description className="team-cardNameRole">
@@ -56,7 +56,7 @@ const Team = () => (
           </Card.Content>
         </Card>
         <Card className="team-card">
-          <Image className="picture" src={Mathieu} wrapped ui={false} size="small" />
+          <Image className="picture-ourTeam" src={Mathieu} wrapped ui={false} size="small" />
           <Card.Content className="team-cardContent">
             <Card.Header className="team-cardName">Mathieu G.</Card.Header>
             <Card.Description className="team-cardNameRole">
@@ -69,7 +69,7 @@ const Team = () => (
           </Card.Content>
         </Card>
         <Card className="team-card">
-          <Image className="picture" src={Camille} wrapped ui={false} size="small" />
+          <Image className="picture-ourTeam" src={Camille} wrapped ui={false} size="small" />
           <Card.Content className="team-cardContent">
             <Card.Header className="team-cardName">Camille D.</Card.Header>
             <Card.Description className="team-cardNameRole">
