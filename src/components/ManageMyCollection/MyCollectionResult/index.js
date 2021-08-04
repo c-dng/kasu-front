@@ -31,6 +31,12 @@ const MyCollectionResult = ({ mangaName,
     value: volume,
     className: `volume${volume}`,
   }));
+  
+  const possessedMangaVolumeOptions = mangaVolumes.map((volume, index) => ({
+    key: index,
+    text: volume.number,
+    value: volume.number,
+  }));
 
   const [selected, setSelected] = React.useState(mangaVolumes.map((volume) => volume.number));
 
@@ -64,7 +70,7 @@ const MyCollectionResult = ({ mangaName,
           />
         </div>
         <div className="manageMyCollection-selectAndAdd">
-          <Dropdown className="manageMyCollection-dropdownSelectAndAdd" placeholder="Mes Tomes" size="5" fluid multiple selection options={mangaVolumeOptions} />
+          <Dropdown className="manageMyCollection-dropdownSelectAndAdd" placeholder="Mes Tomes" size="5" fluid multiple selection options={possessedMangaVolumeOptions} />
         </div>
         <div className="manageMyCollection-myCollectionThreeButtons">
           <div className="manageMyCollection-myCollectionButtonsSubGroup">
