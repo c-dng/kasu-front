@@ -27,10 +27,18 @@ module.exports = merge(common, {
           },
           {
             loader: 'css-loader',
-            options: { importLoaders: 3 },
+            options: {
+              sourceMap: false,
+              importLoaders: 2,
+            },
           },
           'postcss-loader',
-          'resolve-url-loader',
+          // {
+          //   loader: 'resolve-url-loader',
+          //   options: {
+          //     sourceMap: false,
+          //   }
+          // },
           {
             loader: 'sass-loader',
             options: {
@@ -41,22 +49,22 @@ module.exports = merge(common, {
       },
     ],
   },
-  stats: {
-    assets: true,
-    entrypoints: true,
-    chunks: true,
-    modules: true,
-    builtAt: true,
-    hash: true,
-  },
+  // stats: {
+  //   assets: true,
+  //   entrypoints: true,
+  //   chunks: true,
+  //   modules: true,
+  //   builtAt: true,
+  //   hash: true,
+  // },
 
-  optimization: {
-    minimizer: [new TerserJSPlugin({}), new CssMinimizerPlugin()],
-    runtimeChunk: 'single',
-    splitChunks: {
-      chunks: 'all',
-    },
-  },
+  // optimization: {
+  //   minimizer: [new TerserJSPlugin({}), new CssMinimizerPlugin()],
+  //   runtimeChunk: 'single',
+  //   splitChunks: {
+  //     chunks: 'all',
+  //   },
+  // },
   performance: {
     hints: false,
     maxEntrypointSize: 512000,
