@@ -97,7 +97,7 @@ const chatMiddleware = (store) => (next) => (action) => {
             console.log('loading single chat');
             console.log('create_new_chat action response.data pre-dispatch: ', response.data)
             // store.dispatch(saveTemporaryLastSingleChat(response.data));
-            store.dispatch(saveLastSingleChat(response.data));
+            // store.dispatch(saveLastSingleChat(response.data));
             store.dispatch(loadSingleChat(response.data.id));
             store.dispatch(redirectTo(`/conversation/${response.data.id}`));
           },
