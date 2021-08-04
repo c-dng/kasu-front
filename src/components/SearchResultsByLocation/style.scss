@@ -42,8 +42,15 @@ div.content.searchResultsByLocation-cardContentImgInfos > img.ui.medium.image {
 
 .searchResultsByLocation-owner {
   font-size: 1em;
+  font-weight: bolder;
+  color:#000;
+  
 }
-
+.searchResultsByLocation-owner:hover {
+  
+  color:rgb(0, 0, 0);
+  
+}
 div.meta.searchResultsByLocation-localisation {
   margin-bottom: 1em;
   margin-top: 1em;
