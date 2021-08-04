@@ -11,7 +11,9 @@ import {
   changeLastName,
   changeEmail,
   RegisterUser,
+  submitForm,
 } from '../../actions/user';
+import { redirectTo } from '../../actions/global';
 
 const mapStateToProps = (state) => ({
   zipCode: state.user.zipCode,
@@ -23,6 +25,8 @@ const mapStateToProps = (state) => ({
   city: state.user.city,
   password: state.user.password,
   confirmPassword: state.user.confirmPassword,
+  errors: state.user.errors,
+  status: state.user.status,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -56,6 +60,15 @@ const mapDispatchToProps = (dispatch) => ({
   handleRegistering: function () {
     dispatch(RegisterUser());
   },
+
+  handleEmpty: function () {
+    dispatch(submitForm());
+  },
+
+  redirectTo: function (link) {
+    dispatch(redirectTo(link));
+  }
+
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Register);

@@ -184,3 +184,23 @@ export const changeMessage = (message) => ({
   type: CHANGE_MESSAGE,
   message,
 });
+
+export const SAVE_ERRORS = 'SAVE_ERRORS';
+
+export const saveErrors = (errors) => ({
+  type: SAVE_ERRORS,
+  errors,
+});
+
+export const SUBMIT_FORM = 'SUBMIT_FORM';
+
+export const submitForm = () => ({
+  type: SUBMIT_FORM,
+});
+
+export const SAVE_STATUS = 'SAVE_STATUS';
+
+export const saveStatus = (status) => ({
+  type: SAVE_STATUS,
+  status,
+});

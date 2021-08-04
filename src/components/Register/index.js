@@ -1,6 +1,6 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   Button, Card, Form, Image,
 } from 'semantic-ui-react';
@@ -20,6 +20,7 @@ const Register = ({
   city,
   password,
   confirmPassword,
+  errors,
   changeEmail,
   changeAddress,
   changeZipCode,
@@ -30,7 +31,14 @@ const Register = ({
   changeLastName,
   changePseudo,
   handleRegistering,
+  handleEmpty,
+  status,
+  redirectTo,
 }) => {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   const handleChangeEmail = (evt) => {
     changeEmail(evt.target.value);
   };
@@ -48,7 +56,7 @@ const Register = ({
   };
 
   const handleChangePassword = (evt) => {
-    validate(evt.target.value);// checking password
+    validatePassword(evt.target.value);// checking password
     changePassword(evt.target.value);
   };
 
@@ -70,21 +78,64 @@ const Register = ({
 
   const [errorMessage, setErrorMessage] = React.useState('');// display a message received from API
   const [errorMessagePassword, setErrorMessagePassword] = React.useState('');// display a message with errors
+  const errorsTab = [errors];
 
   const handleSubmit = (evt) => {
     evt.preventDefault(evt);
-      if ( confirmPassword  ===  password ) {
-      setErrorMessagePassword('');
-      console.log('Bien soumis! mots de passe identiques');
-      handleRegistering();
+      if ( confirmPassword  !=  password) {
+        setErrorMessagePassword('Les mots de passe ne sont pas identiques!');
+        console.log('ERROR mots de passe inégaux');
+        window.scrollTo(0, 0);  
+    }
+    else if (email === '') {
+      setErrorMessagePassword('Veuillez saisir un email');
+      console.log('ERROR Veuillez saisir un email');
+      window.scrollTo(0, 0);  
+    }
+    else if (pseudo === '') {
+      setErrorMessagePassword('Veuillez saisir un pseudo');
+      console.log('ERROR Veuillez saisir un pseudo');
+      window.scrollTo(0, 0);  
+    }
+    else if (password === '') {
+      setErrorMessagePassword('Veuillez saisir un mot de passe');
+      console.log('ERROR Veuillez saisir un mot de passe');
+      window.scrollTo(0, 0);  
+    }
+    else if (firstName === '') {
+      setErrorMessagePassword('Veuillez saisir votre prénom');
+      console.log('ERROR Veuillez saisir votre prénom');
+      window.scrollTo(0, 0);  
+    }
+    else if (lastName === '') {
+      setErrorMessagePassword('Veuillez saisir votre nom de famille');
+      console.log('ERROR Veuillez saisir votre nom de famille');
+      window.scrollTo(0, 0);  
+    }
+    else if (address === '') {
+      setErrorMessagePassword('Veuillez saisir une adresse valide');
+      console.log('ERROR Veuillez saisir une adresse');
+      window.scrollTo(0, 0);  
+    }
+    else if (zipCode === '') {
+      setErrorMessagePassword('Veuillez saisir un code postal valide');
+      console.log('ERROR Veuillez saisir un code postal valide');
+      window.scrollTo(0, 0);  
+    }
+    else if (city === '') {
+      setErrorMessagePassword('Veuillez saisir une ville');
+      console.log('ERROR Veuillez saisir une ville');
+      window.scrollTo(0, 0);  
     }
     else {
-      setErrorMessagePassword('Les mots de passe ne sont pas identiques!');
-      console.log('ERROR mots de passe inégaux');
-    } 
+        setErrorMessagePassword('');
+        console.log('Bien soumis! mots de passe identiques', errorsTab);
+        handleRegistering();
+        window.scrollTo(0, 0);
+    }
   };
 
-  const validate = (value) => {
+  const validatePassword = (value) => {
     if (validator.isStrongPassword(value, {
       minLength: 6,
       minLowercase: 1,
@@ -104,6 +155,18 @@ const Register = ({
   return (
     <div className="registerForm">
       <Image className="registerForm-banner" src={alternativeBanner} />
+      <div className="registerForm-errorsFromAPI">
+        {
+          Object.keys(errors).map((oneKey, i)=>{
+            return (
+                <li key={i}>{errors[oneKey]}</li>
+              )
+            })
+        } 
+        <div className="registerForm-divErrorMessagePasswordNotEqual">
+          <span className="registerForm-errorMessagePasswordNotEqual">{errorMessagePassword}</span>
+        </div>
+      </div>  
       <div className="registerForm-globalContentWrapper">
         <Card className="registerForm-card" centered>
           <Card.Content className="registerForm-cardContent">
@@ -111,7 +174,7 @@ const Register = ({
             <Form className="registerForm-form" onSubmit={handleSubmit}>
               <div className="registerForm-field">
                 <label className="registerForm-fieldLabel">Votre email</label>
-                <Form.Input onChange={handleChangeEmail} value={email} className="registerForm-fieldInput" />
+                <Form.Input type='mail' onChange={handleChangeEmail} value={email} className="registerForm-fieldInput" />
               </div>
               <div className="registerForm-field">
                 <label className="registerForm-fieldLabel">Votre pseudo</label>
@@ -126,7 +189,6 @@ const Register = ({
                 <Form.Input onChange={handleChangeConfirmPassword} type='password' value={confirmPassword} className="registerForm-fieldInput" />
               </div>
               <span className="registerForm-errorMessagePassword">{errorMessage}</span>
-              <span className="registerForm-errorMessagePassword">{errorMessagePassword}</span>
               <div className="registerForm-field">
                 <label className="registerForm-fieldLabel">Votre prénom</label>
                 <Form.Input onChange={handleChangeFirstName} value={firstName} className="registerForm-fieldInput" />
