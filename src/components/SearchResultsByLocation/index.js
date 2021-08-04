@@ -15,6 +15,7 @@ const SearchResultsByLocation = ({ users, handleLoadUser, createNewChat }) => {
       <div className="searchResultsByLocation-searchBarWrapper">
         <SearchBar />
       </div>
+      
       <Card.Group className="searchResultsByLocation-cardGroup">
         {console.log(Object.entries(users))}
         {
