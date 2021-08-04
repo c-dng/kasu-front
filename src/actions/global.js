@@ -72,3 +72,15 @@ export const LOGOUT_GLOBAL = 'LOGOUT_GLOBAL';
 export const logoutGlobal = () => ({
   type: LOGOUT_GLOBAL,
 });
+
+export const APP_INIT = 'APP_INIT';
+
+export const appInit = () => ({
+  type: APP_INIT,
+});
+
+export const APP_DESTRUCT = 'APP_DESTRUCT';
+
+export const appDestruct = () => ({
+  type: APP_DESTRUCT,
+});

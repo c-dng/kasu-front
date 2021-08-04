@@ -5,6 +5,7 @@ import { wsDisconnect, wsConnect } from 'src/actions/chat';
 import { autoLoginUser, loadUserFullData } from '../../actions/user';
 import { loadMangaDatabase } from '../../actions/manga';
 import { loadCarouselData, loadCarouselDynamicData } from '../../actions/search';
+import { appInit, appDestruct } from '../../actions/global';
 
 const mapStateToProps = (state) => ({
   theme: state.global.theme,
@@ -24,9 +25,6 @@ const mapDispatchToProps = (dispatch) => ({
   onRefreshOrTabClosing: () => {
     dispatch(wsDisconnect());
   },
-  onPageLoad: (id) => {
-    dispatch(wsConnect(id));
-  },
   loadMangaDatabase: () => {
     dispatch(loadMangaDatabase());
   },
@@ -38,6 +36,12 @@ const mapDispatchToProps = (dispatch) => ({
   },
   loadCarouselDynamicData: (userZipCode) => {
     dispatch(loadCarouselDynamicData(userZipCode));
+  },
+  appInit: () => {
+    dispatch(appInit());
+  },
+  appDestruct: () => {
+    dispatch(appDestruct());
   },
 }
 );

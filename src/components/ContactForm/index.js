@@ -31,7 +31,8 @@ const ContactForm = ({
     function cleanup() {
       onContactFormUnmount();
     }),
-  []);
+    []);
+
 
   useEffect(() => {
     changeObject(object || 'Ajouter un manga');
