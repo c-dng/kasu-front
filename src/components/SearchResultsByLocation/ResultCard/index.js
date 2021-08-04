@@ -16,7 +16,6 @@ const ResultCard = ({
   handleLoadUser,
   createNewChat,
 }) => {
-  console.log(mangaVolumes);
   const mangaVolumeOptions = mangaVolumes.map((volume, index) => ({
     key: index,
     text: volume.volume.number,

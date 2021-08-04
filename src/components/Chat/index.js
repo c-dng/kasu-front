@@ -30,7 +30,7 @@ const Chat = ({ picture, users, userId }) => {
 
     </div>
   );
-}
+};
 
 Chat.propTypes = {
 

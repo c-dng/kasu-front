@@ -2,7 +2,7 @@ import { useHistory } from 'react-router-dom';
 import { SEARCH_BY_ZIPCODE, saveSearchResult } from 'src/actions/search';
 import api from 'src/api';
 import { redirectTo, setLoadingFalse, setLoadingTrue } from '../actions/global';
-import { saveMangaSearch, SEARCH_BY_MANGA_NAME } from '../actions/search';
+import { LOAD_CAROUSEL_DATA, LOAD_CAROUSEL_DYNAMIC_DATA, saveCarouselData, saveMangaSearch, SEARCH_BY_MANGA_NAME } from '../actions/search';
 import React from 'react';
 const token = localStorage.getItem('token');
 if (token) {
@@ -54,6 +54,50 @@ const searchMiddleware = (store) => (next) => (action) => {
       next(action);
       break;
     }
+    case LOAD_CAROUSEL_DATA: {
+      store.dispatch(setLoadingTrue());
+      api
+        .get('/api/v1/search/75001')
+        .then(
+          (response) => {
+            console.log('la recherche par zip code carousel Paris a marché', response.data);
+            store.dispatch(saveCarouselData(response.data));
+          },
+        )
+        .catch(
+          (error) => {
+            console.log('la recherche par zip code carousel paris a planté', error);
+          },
+        )
+        .finally(() => {
+          store.dispatch(setLoadingFalse());
+        });
+      next(action);
+      break;
+    }
+    case LOAD_CAROUSEL_DYNAMIC_DATA: {
+      const { userZipCode } = action
+      store.dispatch(setLoadingTrue());
+      api
+        .get(`/api/v1/search/${userZipCode}`)
+        .then(
+          (response) => {
+            console.log('la recherche par zip code carousel DYNAMIQUE a marché', response.data);
+            store.dispatch(saveCarouselData(response.data));
+          },
+        )
+        .catch(
+          (error) => {
+            console.log('la recherche par zip code carousel DYNAMIQUE a planté', error);
+          },
+        )
+        .finally(() => {
+          store.dispatch(setLoadingFalse());
+        });
+      next(action);
+      break;
+    }
+
     default:
       next(action);
   }

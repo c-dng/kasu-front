@@ -21,37 +21,14 @@ const ManageMyCollection = ({
   userMangas,
   modifyVolumeAvailability,
   addOrRemoveVolumes,
-  deleteManga
+  deleteManga,
 }) => (
   <div className="manageMyCollection">
     <Image className="manageMyCollection-banner" src={alternativeBanner} />
     <div className="manageMyCollection-mainCard">
       <div className="manageMyCollection-mainCardContent">
 
-        <div className="manageMyCollection-firstBlocDesktopVersion">
-          <Card.Header className="manageMyCollection-mainCardHeader">Gestion des collections</Card.Header>
-          <h3 className="manageMyCollection-subHeader">Cherche un manga à ajouter à ta collection dans notre base de données !</h3>
-          <div className="manageMyCollection-searchBarWrapper">
-            <AddMangaSearchBar setMangaSearch={setMangaSearch} manageSubmit={manageSubmit} loading={loading} mangaSearch={mangaSearch} className="manageMyCollection-searchBar" />
-          </div>
-
-          <Divider className="manageMyCollection-divider" />
-          <h4 className="manageMyCollection-subtitle">Résultat(s) trouvé(s) : {mangaFilteredDatabase.length}</h4>
-          <Divider className="manageMyCollection-divider" />
-          {console.log('checking manga filtered', mangaFilteredDatabase)}
-          <div className="manageMyCollection-wrapperDesktopVersion">
-            {mangaFilteredDatabase.map((result) => (
-              <MangaCollectionResult
-                key={result.id}
-                mangaName={result.title}
-                mangaPicture={result.picture}
-                mangaVolumes={result.volumes}
-                addToMyCollection={addToMyCollection}
-              />
-            ))}
-          </div>
-
-        </div>
+        {/* <Card.Header className="manageMyCollection-mainCardHeader">Gestion des collections</Card.Header> */}
         <div className="manageMyCollection-secondBlocDesktopVersion">
           <div className="manageMyCollection-myCollection">
             <Header as="h2">
@@ -89,12 +66,36 @@ const ManageMyCollection = ({
           ) : (
             <div>
               <Divider className="manageMyCollection-divider" />
-                <h4 className="manageMyCollection-subtitle">Vous n'avez pas de mangas dans votre collection</h4>
+              <h4 className="manageMyCollection-subtitle">Vous n'avez pas de mangas dans votre collection</h4>
               <Divider className="manageMyCollection-divider" />
             </div>
-        )}
+          )}
 
         </div>
+        <div className="manageMyCollection-firstBlocDesktopVersion">
+          <h3 className="manageMyCollection-subHeader">Cherche un manga à ajouter à ta collection dans notre base de données !</h3>
+          <div className="manageMyCollection-searchBarWrapper">
+            <AddMangaSearchBar setMangaSearch={setMangaSearch} manageSubmit={manageSubmit} loading={loading} mangaSearch={mangaSearch} className="manageMyCollection-searchBar" />
+          </div>
+
+          <Divider className="manageMyCollection-divider" />
+          <h4 className="manageMyCollection-subtitle">Résultat(s) trouvé(s) : {mangaFilteredDatabase.length}</h4>
+          <Divider className="manageMyCollection-divider" />
+          {console.log('checking manga filtered', mangaFilteredDatabase)}
+          <div className="manageMyCollection-wrapperDesktopVersion">
+            {mangaFilteredDatabase.map((result) => (
+              <MangaCollectionResult
+                key={result.id}
+                mangaName={result.title}
+                mangaPicture={result.picture}
+                mangaVolumes={result.volumes}
+                addToMyCollection={addToMyCollection}
+              />
+            ))}
+          </div>
+
+        </div>
+
       </div>
     </div>
   </div>

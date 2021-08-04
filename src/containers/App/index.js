@@ -4,6 +4,7 @@ import App from 'src/components/App';
 import { wsDisconnect, wsConnect } from 'src/actions/chat';
 import { autoLoginUser, loadUserFullData } from '../../actions/user';
 import { loadMangaDatabase } from '../../actions/manga';
+import { loadCarouselData, loadCarouselDynamicData } from '../../actions/search';
 
 const mapStateToProps = (state) => ({
   theme: state.global.theme,
@@ -13,6 +14,7 @@ const mapStateToProps = (state) => ({
   mangaDatabase: state.manga.database,
   userFullData: state.user.fullData,
   redirectLink: state.global.redirectLink,
+  carouselSearchData: state.search.carouselSearchData,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -30,6 +32,12 @@ const mapDispatchToProps = (dispatch) => ({
   },
   loadUserFullData: () => {
     dispatch(loadUserFullData());
+  },
+  loadCarouselData: () => {
+    dispatch(loadCarouselData());
+  },
+  loadCarouselDynamicData: (userZipCode) => {
+    dispatch(loadCarouselDynamicData(userZipCode));
   },
 }
 );

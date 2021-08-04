@@ -20,7 +20,9 @@ import OtherMemberProfilePage from 'src/containers/OtherMemberProfilePage';
 // == Import
 
 import './style.scss';
-import { Redirect, Route, Switch, useHistory, useLocation } from 'react-router-dom';
+import {
+  Redirect, Route, Switch, useHistory, useLocation,
+} from 'react-router-dom';
 import { useBeforeunload } from 'react-beforeunload';
 import { useDispatch } from 'react-redux';
 import Loading from './Loading';
@@ -28,7 +30,20 @@ import { redirectTo } from '../../actions/global';
 
 // == Composant
 const App = ({
-  theme, onPageLoad, onRefreshOrTabClosing, isLogged, chatId, loading, mangaDatabase, loadMangaDatabase, loadUserFullData, userFullData, redirectLink
+  theme,
+  onPageLoad,
+  onRefreshOrTabClosing,
+  isLogged,
+  chatId,
+  loading,
+  mangaDatabase,
+  loadMangaDatabase,
+  loadUserFullData,
+  userFullData,
+  redirectLink,
+  carouselSearchData,
+  loadCarouselData,
+  loadCarouselDynamicData,
 }) => {
   const handleOnClose = () => {
     if (isLogged) {
@@ -59,7 +74,15 @@ const App = ({
       console.log('userFullData useEffect test', { userFullData });
       loadUserFullData();
     }
-  }, [chatId, isLogged, mangaDatabase, token, userFullData]);
+
+    if (!carouselSearchData) {
+      loadCarouselData();
+    }
+    if (isLogged && userFullData) {
+      const userZipCode = userFullData.contact.zip_code;
+      loadCarouselDynamicData(userZipCode);
+    }
+  }, [chatId, isLogged, mangaDatabase, token, userFullData], carouselSearchData);
   const history = useHistory();
 
   useEffect(() => {
@@ -95,7 +118,7 @@ const App = ({
       <Nav />
       <Switch>
         <Route path="/" exact>
-          <Home />
+          <Home userFullData={userFullData} />
           <Footer />
         </Route>
         <Route path="/login" exact>
@@ -144,7 +167,7 @@ const App = ({
           <LegalNotice />
           <Footer />
         </Route>
-        <Route path="*" >
+        <Route path="*">
           <Error />
           <Footer />
         </Route>
