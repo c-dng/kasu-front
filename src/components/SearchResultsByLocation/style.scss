@@ -1,3 +1,5 @@
+@use '/src/styles/vars';
+
 div.ui.cards.searchResultsByLocation-cardGroup {
   display: flex;
   justify-content: space-around;
@@ -88,4 +90,11 @@ button.ui.blue.basic.button.searchResultsByLocation-contactOwner {
   background-size: cover ;
   padding: 3rem;
   // margin-bottom: 3rem;
+}
+
+.theme2 {
+  .searchResultsByLocation-banner-title {
+    background-color: vars.$secondaryColor_theme2;
+    color: vars.$secondaryFontColor_theme2;
+  }
 }
