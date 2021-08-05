@@ -7,7 +7,7 @@ import api from 'src/api';
 import {
   LOGIN_USER, REGISTER_USER, saveUser, LOGOUT_USER, saveUserConversations, LOAD_CONVERSATIONS,
 } from 'src/actions/user';
-import { setLoadingFalse, setLoadingTrue } from '../actions/global';
+import { appInit, setLoadingFalse, setLoadingTrue } from '../actions/global';
 import { wsDisconnect } from '../actions/chat';
 
 const authMiddleware = (store) => (next) => (action) => {
@@ -25,11 +25,11 @@ const authMiddleware = (store) => (next) => (action) => {
 
             api.defaults.headers.common.Authorization = `Bearer ${response.data.token}`;
             localStorage.setItem('token', response.data.token);
-            store.dispatch(setLoadingFalse());
+
           },
         )
         .catch((error) => {
-          store.dispatch(setLoadingFalse());
+          console.log('login foiré', error);
         })
         .then((response) => {
           const userId = store.getState().user.data.id;
@@ -40,10 +40,16 @@ const authMiddleware = (store) => (next) => (action) => {
                 console.log(response2);
 
                 store.dispatch(saveUserConversations(response2.data));
-                store.dispatch(setLoadingFalse());
+
                 // store.dispatch(wsConnect());
               },
             );
+        })
+        .then(() => {
+          store.dispatch(appInit());
+        })
+        .finally(() => {
+          store.dispatch(setLoadingFalse());
         });
 
       next(action);

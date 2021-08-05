@@ -27,6 +27,7 @@ const chatMiddleware = (store) => (next) => (action) => {
       console.log('socket defined');
       socket.on('send_message', (payload) => {
         console.log('tu viens de recevoir un signal "send_message" de la part de socket.io');
+        console.log('payload venant de la socket', payload);
         const { chatId, userId, message } = payload;
         store.dispatch(addMessage(message, chatId, userId));
       });
@@ -51,6 +52,7 @@ const chatMiddleware = (store) => (next) => (action) => {
       };
 
       console.log('Envoie du message suivant en socket :', messageToSend);
+      console.log('socket:', socket);
       socket.emit('send_message', messageToSend);
       next(action);
       break;

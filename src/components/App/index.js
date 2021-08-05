@@ -47,7 +47,7 @@ const App = ({
   appDestruct,
 }) => {
   useEffect(() => {
-    appInit();
+    // appInit();
     return appDestruct;
   }, []);
 
