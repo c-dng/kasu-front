@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { createNewChat } from '../../actions/chat';
 import OtherMemberProfilePage from '../../components/OtherMemberProfilePage';
 
 const mapStateToProps = (state, ownProps) => ({
@@ -8,10 +9,13 @@ const mapStateToProps = (state, ownProps) => ({
   zipcode: state.user.otherUserFullData.contact.zip_code,
   picture: state.user.otherUserFullData.contact.picture,
   otherUserMangas: state.user.otherUserFullData.contact.manga,
+  userId: state.user.otherUserFullData.contact.id,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-
+  createNewChat: function (id) {
+    dispatch(createNewChat(id));
+  },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(OtherMemberProfilePage);
