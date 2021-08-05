@@ -4,7 +4,7 @@ import {
   Button, Divider, Icon, Image,
 } from 'semantic-ui-react';
 
-const DesktopIdCardOther = ({ pseudo, bio, city, zipcode, picture, holidayMode }) => (
+const DesktopIdCardOther = ({ pseudo, bio, city, zipcode, picture, holidayMode, userId, createNewChat }) => (
   <div className="desktopIdCardOther">
     <div className="desktopIdCardOther-mainCard">
       <Image
@@ -28,6 +28,9 @@ const DesktopIdCardOther = ({ pseudo, bio, city, zipcode, picture, holidayMode }
           {bio || 'Cet utilisateur n\'a pas de description !'}
         </p>
         <Divider />
+        <Button onClick={() => createNewChat(userId)} basic color="blue" className="desktopIdCardOther-contactOwner">
+          Contacter le propriétaire
+        </Button>
 
       </div>
     </div>
