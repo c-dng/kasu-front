@@ -1,12 +1,14 @@
 /* eslint-disable no-empty-pattern */
 import React, { useEffect } from 'react';
-import Messages from '../../containers/Chat/Messages';
-import ChatField from '../../containers/Chat/ChatField';
 import { Link } from 'react-router-dom';
 import { Button } from 'semantic-ui-react';
+import Messages from '../../containers/Chat/Messages';
+import ChatField from '../../containers/Chat/ChatField';
 
-const Chat = ({ picture, users, userId, handleLoadUser, redirectTo }) => {
-  // We filter the chat users to get the one that is not the logged in user 
+const Chat = ({
+  picture, users, userId, handleLoadUser, redirectTo,
+}) => {
+  // We filter the chat users to get the one that is not the logged in user
 
   console.log(picture);
   let otherUserPicture;

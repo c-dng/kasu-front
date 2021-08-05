@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import SetProfilPage from 'src/components/SetProfilPage';
 
 import {
-  getUserInfos, updateUser, changeDescription, changeEmail, changePassword, changeConfirmPassword, changeCity, changeAddress, changeZipCode, changeLastName, changeFirstName, changePseudo, changeHolidayMode
+  getUserInfos, updateUser, changeDescription, changeEmail, changePassword, changeConfirmPassword, changeCity, changeAddress, changeZipCode, changeLastName, changeFirstName, changePseudo, changeHolidayMode,
 } from '../../actions/user';
 import { redirectTo } from '../../actions/global';
 

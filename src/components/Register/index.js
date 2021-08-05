@@ -33,7 +33,6 @@ const Register = ({
   handleRegistering,
   eraseErrorMessage,
 }) => {
-  
   const [errorMessage, setErrorMessage] = React.useState('');// display a message received from API
   const [errorMessagePassword, setErrorMessagePassword] = React.useState('');// display a message with errors
   const errorsTab = [errors];
@@ -86,10 +85,9 @@ const Register = ({
 
   const handleSubmit = (evt) => {
     evt.preventDefault(evt);
-      if ( confirmPassword  !=  password) {
-        setErrorMessagePassword('Les mots de passe ne sont pas identiques!');
-        console.log('ERROR mots de passe inégaux');
-
+    if (confirmPassword != password) {
+      setErrorMessagePassword('Les mots de passe ne sont pas identiques!');
+      console.log('ERROR mots de passe inégaux');
     }
     else if (email === '') {
       setErrorMessagePassword('Veuillez saisir un email');
@@ -124,11 +122,11 @@ const Register = ({
       console.log('ERROR Veuillez saisir une ville');
     }
     else {
-        setErrorMessagePassword('');
-        console.log('Bien soumis! mots de passe identiques', errorsTab);
-        handleRegistering();
+      setErrorMessagePassword('');
+      console.log('Bien soumis! mots de passe identiques', errorsTab);
+      handleRegistering();
 
-    window.scrollTo(0, 0);  
+      window.scrollTo(0, 0);
     }
   };
 
@@ -154,16 +152,14 @@ const Register = ({
       <Image className="registerForm-banner" src={alternativeBanner} />
       <div className="registerForm-errorsFromAPI">
         {
-          Object.keys(errors).map((oneKey, i)=>{
-            return (
-                <li key={i}>{errors[oneKey]}</li>
-              )
-            })
-        } 
+          Object.keys(errors).map((oneKey, i) => (
+            <li key={i}>{errors[oneKey]}</li>
+          ))
+        }
         <div className="registerForm-divErrorMessagePasswordNotEqual">
           <span className="registerForm-errorMessagePasswordNotEqual">{errorMessagePassword}</span>
         </div>
-      </div>  
+      </div>
       <div className="registerForm-globalContentWrapper">
         <Card className="registerForm-card" centered>
           <Card.Content className="registerForm-cardContent">
@@ -171,7 +167,7 @@ const Register = ({
             <Form className="registerForm-form" onSubmit={handleSubmit}>
               <div className="registerForm-field">
                 <label className="registerForm-fieldLabel">Votre email</label>
-                <Form.Input type='mail' onChange={handleChangeEmail} value={email} className="registerForm-fieldInput" />
+                <Form.Input type="mail" onChange={handleChangeEmail} value={email} className="registerForm-fieldInput" />
               </div>
               <div className="registerForm-field">
                 <label className="registerForm-fieldLabel">Votre pseudo</label>

@@ -19,10 +19,10 @@ const SearchResultsByLocation = ({ users, handleLoadUser, createNewChat }) => {
       <div className="searchResultsByLocation-banner-title">Résultats de votre recherche</div>
 
       <Card.Group className="searchResultsByLocation-cardGroup">
-      {console.log('users test', users)}
+        {console.log('users test', users)}
         <h4 className={users.length !== 0 ? 'searchResultsByLocation-subtitle--displayNone' : 'searchResultsByLocation-subtitle'}>Pas de résultats, essayez une autre localisation.</h4>
         {console.log(Object.entries(users))}
-        
+
         {
           Object.values(users).map((user) => {
             const results = Object.values(user.mangas);

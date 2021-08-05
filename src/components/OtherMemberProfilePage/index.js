@@ -12,7 +12,7 @@ import DesktopOtherMemberCollection from './DesktopOtherMemberCollection';
 import ViewOtherProfileCollectionResult from './ViewOtherProfileCollectionResult';
 
 const OtherMemberProfilePage = ({
-  pseudo, bio, city, zipcode, picture, holidayMode, otherUserMangas, userId, createNewChat
+  pseudo, bio, city, zipcode, picture, holidayMode, otherUserMangas, userId, createNewChat,
 }) => {
   const availableTomes = [
     { key: 't1', value: 't1', text: 'Tome 1' },
@@ -37,12 +37,12 @@ const OtherMemberProfilePage = ({
           <div className="otherMemberProfilePage-secondPart">
             <Container textAlign="center">
               <h3 className="otherMemberProfilePage-pseudo">{pseudo}</h3>
-            <Button onClick={() => createNewChat(userId)}  className="otherMemberProfilePage-contactOwner">
-              Contacter le propriétaire
-            </Button>
+              <Button onClick={() => createNewChat(userId)} className="otherMemberProfilePage-contactOwner">
+                Contacter le propriétaire
+              </Button>
             </Container>
             <Container textAlign="center">
-            <h4 className="otherMemberProfilePage-infoSubtitles">Présentation</h4>
+              <h4 className="otherMemberProfilePage-infoSubtitles">Présentation</h4>
               <p>
                 {bio || 'Cet utilisateur n\'a pas de description !'}
               </p>
@@ -51,8 +51,8 @@ const OtherMemberProfilePage = ({
 
           <div className="otherMemberProfilePage-thirdPart">
             <Container className="otherMemberProfilePage-thirdPartLocation">
-            <h4 className="otherMemberProfilePage-infoSubtitles">Localisation</h4>
-              
+              <h4 className="otherMemberProfilePage-infoSubtitles">Localisation</h4>
+
               <p><Icon size="large" name="map marker alternate" /> {city} - {zipcode}</p>
             </Container>
           </div>
