@@ -29,6 +29,8 @@ div.content.searchResultsByLocation-cardContentImgInfos > img.ui.medium.image {
 .ui.card.searchResultsByLocation-card {
   width:auto;
 }
+
+
 .searchResultsByLocation-cardContentImgInfos.searchResultsByLocation-cardContentImgInfos.searchResultsByLocation-cardContentImgInfos {
   display: flex;
   justify-content: center;
@@ -40,7 +42,7 @@ div.content.searchResultsByLocation-cardContentImgInfos > img.ui.medium.image {
 }
 
 .ui.card.searchResultsByLocation-card.searchResultsByLocation-card.searchResultsByLocation-card.searchResultsByLocation-card {
-  margin: 0rem;
+  margin: 0rem auto;
   margin-bottom: 3rem;
 }
 
@@ -115,5 +117,8 @@ button.ui.blue.basic.button.searchResultsByLocation-contactOwner {
 @media only screen and (min-width : 1224px) {
   .ui.card.searchResultsByLocation-card {
     width:290px;
+  }
+  .react-multi-carousel-track {
+    padding:1em;
   }
 }
