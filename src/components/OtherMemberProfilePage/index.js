@@ -12,7 +12,7 @@ import DesktopOtherMemberCollection from './DesktopOtherMemberCollection';
 import ViewOtherProfileCollectionResult from './ViewOtherProfileCollectionResult';
 
 const OtherMemberProfilePage = ({
-  pseudo, bio, city, zipcode, picture, holidayMode, otherUserMangas,
+  pseudo, bio, city, zipcode, picture, holidayMode, otherUserMangas, userId, createNewChat
 }) => {
   const availableTomes = [
     { key: 't1', value: 't1', text: 'Tome 1' },
@@ -30,16 +30,19 @@ const OtherMemberProfilePage = ({
 
         <h1 className="setProfilPage-h1">Profil de {pseudo} </h1>
         <MediaQuery minWidth={1224}>
-          <DesktopIdCardOther pseudo={pseudo} bio={bio} city={city} zipcode={zipcode} picture={picture} holidayMode={holidayMode} />
+          <DesktopIdCardOther pseudo={pseudo} bio={bio} city={city} zipcode={zipcode} picture={picture} holidayMode={holidayMode} userId={userId} createNewChat={createNewChat} />
         </MediaQuery>
         <MediaQuery maxWidth={1223}>
           <Image className="otherMemberProfilePage-firstPartImage" src={`https://api.multiavatar.com/${picture}.png`} size="tiny" />
           <div className="otherMemberProfilePage-secondPart">
             <Container textAlign="center">
               <h3 className="otherMemberProfilePage-pseudo">{pseudo}</h3>
+            <Button onClick={() => createNewChat(userId)}  className="otherMemberProfilePage-contactOwner">
+              Contacter le propriétaire
+            </Button>
             </Container>
+            <Container textAlign="center">
             <h4 className="otherMemberProfilePage-infoSubtitles">Présentation</h4>
-            <Container textAlign="justified">
               <p>
                 {bio || 'Cet utilisateur n\'a pas de description !'}
               </p>
@@ -47,10 +50,10 @@ const OtherMemberProfilePage = ({
           </div>
 
           <div className="otherMemberProfilePage-thirdPart">
-            <h4 className="otherMemberProfilePage-infoSubtitles">Localisation</h4>
             <Container className="otherMemberProfilePage-thirdPartLocation">
-              <Icon size="large" name="map marker alternate" />
-              <p>{city} - {zipcode}</p>
+            <h4 className="otherMemberProfilePage-infoSubtitles">Localisation</h4>
+              
+              <p><Icon size="large" name="map marker alternate" /> {city} - {zipcode}</p>
             </Container>
           </div>
 

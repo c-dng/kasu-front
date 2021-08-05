@@ -41,10 +41,7 @@ const SetProfilPage = ({
   holiday_mode,
   description,
   picture,
-  message,
-  infos,
   confirmPassword,
-  changeMessage,
   changeEmail,
   changePassword,
   changeConfirmPassword,
@@ -148,7 +145,6 @@ const SetProfilPage = ({
       <Image className="registerForm-banner" src={alternativeBanner} />
       <div className="setProfilPage-mainWrapper">
         <h1 className="setProfilPage-title">Gérer mon profil</h1>
-        <div className="contactForm-message">{message}</div>
         <MediaQuery minWidth={1224}>
           <DesktopSetIdCard
             email={email}
@@ -163,7 +159,6 @@ const SetProfilPage = ({
             holiday_mode={holiday_mode}
             description={description}
             picture={picture}
-            infos={infos}
             changeEmail={changeEmail}
             changePassword={changePassword}
             changePseudo={changePseudo}

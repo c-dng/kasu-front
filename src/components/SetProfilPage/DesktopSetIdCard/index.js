@@ -1,21 +1,4 @@
-/* eslint-disable linebreak-style */
-// eslint-disable-next-line linebreak-style
-/* eslint-disable no-console */
-/* eslint-disable linebreak-style */
-/* eslint-disable max-len */
-/* eslint-disable linebreak-style */
-/* eslint-disable no-use-before-define */
-/* eslint-disable linebreak-style */
-/* eslint-disable no-empty-pattern */
-/* eslint-disable linebreak-style */
-/* eslint-disable camelcase */
-/* eslint-disable linebreak-style */
-/* eslint-disable react/prop-types */
-/* eslint-disable linebreak-style */
-/* eslint-disable import/no-duplicates */
-/* eslint-disable linebreak-style */
 import React, { useEffect } from 'react';
-import { ButtonGroup } from 'semantic-ui-react';
 import validator from 'validator'; // checking of password
 import {
   Button, Header, Form, Icon, Checkbox, Image, Label, Modal, TextArea,
@@ -52,7 +35,6 @@ const DesktopSetIdCard = ({
 }) => {
   useEffect(() => {
     displayUserInfos();
-    console.log('infos chargées', {infos});
   }, []);
 
   const [open, setOpen] = React.useState(false);// Modal to delete account
