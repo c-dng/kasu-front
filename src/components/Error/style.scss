@@ -1,3 +1,5 @@
+@use '/src/styles/vars';
+
 img.ui.fluid.image.error-banner {
   width: 100%;
   height: 250px;
@@ -13,9 +15,12 @@ img.ui.image.error-image {
   transform:scale(1, 1);
   transition: 0.15s;
   object-fit: cover;
-  
+  border-bottom-right-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
   &:hover {
-    transform:scale(1.5, 1.5);
+    transform:scale(1.1, 1.1);
   }
 }
 
@@ -25,56 +30,92 @@ div.error-description p {
   font-size: large;
 }
 
-div.error-buttonWrapper {
-  display: flex;
-  justify-content: center;
-  margin-top: 1.75em;
-  margin-bottom: 1em;
+div.error-TwoButtons {
+  margin-top: 1em;
+  margin-bottom: 3em;
+  text-align: center;
 }
 
-div.error-buttonArtificalMargin {
-  padding-right: 0.50em;
+button.ui.mini.icon.left.labeled.button.error-ButtonLeft {
+  border-top-left-radius: 1.5em;
+  border-bottom-left-radius: 1.5em;
+  border-top-right-radius: 0em;
+  border-bottom-right-radius: 0em;
+  border: 1px solid #000;
+  font-size: larger;
+  color: black;
+  font-size: larger;
+  margin-right: 0;
 }
 
-// Handmade button effect
-   div.error-buttonWrapper{
-    display:flex;
-    flex-direction:row;
-    justify-content:center;
-    width:100%;
-    min-height:100%;
-    margin-bottom:3rem;
-    & a.ui.button.lined.thin{
-      align-self:center;
-      background:transparent;
-      padding:1rem 1rem;
-      margin:0 1rem;
-      transition:all .5s ease;
-      color:#41403E;
-      font-size:2rem;
-      letter-spacing:1px;
-      outline:none;
-      box-shadow: 20px 38px 34px -26px hsla(0,0%,0%,.2);
-      border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
-      border:solid 2px #41403E;
+// hover button left
+button.ui.mini.icon.left.labeled.button.error-ButtonLeft.error-ButtonLeft:hover {
+  background-color: black;
+  color: white;
+  transition: all 0.5s;
+}
 
-       &:hover{
-         box-shadow:2px 8px 4px -6px hsla(0,0%,0%,.3);
-         transform:scale(1.5, 1.5);
-      } 
-    }
+// icon button right
+i.home.icon.error-IconHome{
+  margin-right: 0;
+  margin-left: 0.5em;
+}
+
+button.ui.mini.icon.right.labeled.button.error-ButtonRight {
+  border-top-right-radius: 1.5em;
+  border-bottom-right-radius: 1.5em;
+  border-top-left-radius: 0em;
+  border-bottom-left-radius: 0em;
+  border: 1px solid #000;
+  font-size: larger;
+  color: black;
+}
+
+// hover right button
+button.ui.mini.icon.right.labeled.button.error-ButtonRight.error-ButtonRight:hover {
+  background-color: black;
+  color: white;
+  transition: all 0.5s;
+}
+
+// Theming
+
+.theme1 {
+
+  button.ui.mini.icon.left.labeled.button.error-ButtonLeft {
+    color :vars.$secondaryFontColor_theme2;
+    background-color: vars.$secondaryColor_theme2;
   }
 
-@media (max-width:620px){
+  button.ui.mini.icon.right.labeled.button.error-ButtonRight {
+    color :vars.$secondaryFontColor_theme2;
+    background-color: vars.$secondaryColor_theme2;
+  }
+}
 
-    div.error-buttonWrapper{
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      margin-bottom:1rem;
-    & a.ui.button.lined.thin{
-      align-self:center;
-      margin-bottom:2rem;
-    }
+.theme2 {
+
+  button.ui.mini.icon.left.labeled.button.error-ButtonLeft {
+    background-color: vars.$secondaryColor_theme1;
+    color: vars.$primaryFontColor_theme2;
+    border: 1px solid vars.$primaryBorderColor_theme2;
+  }
+
+  // hover
+  button.ui.mini.icon.left.labeled.button.error-ButtonLeft.error-ButtonLeft:hover {
+    background-color: vars.$primaryColor_theme1;
+    color: vars.$primaryFontColor_theme1;
+  }
+
+  button.ui.mini.icon.right.labeled.button.error-ButtonRight {
+    background-color: vars.$secondaryColor_theme1;
+    color: vars.$primaryFontColor_theme2;
+    border: 1px solid vars.$primaryBorderColor_theme2;
+  }
+
+  // hover
+  button.ui.mini.icon.right.labeled.button.error-ButtonRight.error-ButtonRight:hover {
+  background-color: vars.$primaryColor_theme1;
+  color: vars.$primaryFontColor_theme1;
   }
 }

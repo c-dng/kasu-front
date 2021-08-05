@@ -88,7 +88,7 @@ const Nav = ({
           )}
           {isLogged && (
             <Menu.Item as="div" onClick={() => handleConversationsLoad()} name="chat" className="nav-myConversationsButton">
-              <Image as={Link} to="/conversations" exact={+true} className="navbuttons" src={chatlogoToDisplay} alt="logo" size="mini" />
+              <Image className="nav-ChatButton" as={Link} to="/conversations" exact={+true} className="navbuttons" src={chatlogoToDisplay} alt="logo" size="mini" />
             </Menu.Item>
           )}
           {isLogged && (
