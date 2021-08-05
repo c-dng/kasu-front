@@ -17,7 +17,6 @@ const Conversation = ({ pseudo, lastMessage, picture, redirectTo, userId }) => (
           size="mini"
           circular
           src={`https://api.multiavatar.com/${picture}.png`}
-          // onClick={() => redirectTo(`/profil/${userId}`)}
         />
         <Card.Header className="conversation-cardHeader">{pseudo}</Card.Header>
         <Card.Meta className="conversation-cardMeta">{lastMessage}</Card.Meta>
