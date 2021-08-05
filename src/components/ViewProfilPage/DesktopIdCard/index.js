@@ -14,7 +14,7 @@ const DesktopIdCard = ({ pseudo, bio, city, zipcode, picture, holidayMode }) => 
   <div className="desktopIdCard">
     <div className="desktopIdCard-mainCard">
       <Image
-        size="small"
+        size="medium"
         src={`https://api.multiavatar.com/${picture}.png`}
         className="desktopIdCard-avatar"
       />

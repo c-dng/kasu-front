@@ -37,12 +37,12 @@ const OtherMemberProfilePage = ({
           <div className="otherMemberProfilePage-secondPart">
             <Container textAlign="center">
               <h3 className="otherMemberProfilePage-pseudo">{pseudo}</h3>
-            </Container>
-            <Button onClick={() => createNewChat(userId)} basic color="blue" className="otherMemberProfilePage-contactOwner">
+            <Button onClick={() => createNewChat(userId)}  className="otherMemberProfilePage-contactOwner">
               Contacter le propriétaire
             </Button>
+            </Container>
+            <Container textAlign="center">
             <h4 className="otherMemberProfilePage-infoSubtitles">Présentation</h4>
-            <Container textAlign="justified">
               <p>
                 {bio || 'Cet utilisateur n\'a pas de description !'}
               </p>
@@ -50,10 +50,10 @@ const OtherMemberProfilePage = ({
           </div>
 
           <div className="otherMemberProfilePage-thirdPart">
-            <h4 className="otherMemberProfilePage-infoSubtitles">Localisation</h4>
             <Container className="otherMemberProfilePage-thirdPartLocation">
-              <Icon size="large" name="map marker alternate" />
-              <p>{city} - {zipcode}</p>
+            <h4 className="otherMemberProfilePage-infoSubtitles">Localisation</h4>
+              
+              <p><Icon size="large" name="map marker alternate" /> {city} - {zipcode}</p>
             </Container>
           </div>
 

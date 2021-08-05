@@ -42,8 +42,8 @@ const ViewProfilPage = ({
               </Button>
             </Link>
           </div>
+          <Container textAlign="center">
           <h4 className="viewProfilPage-infoSubtitles">Présentation</h4>
-          <Container textAlign="justified">
             <p>
               {bio || 'Vous n\'avez pas encore écrit de présentation, rendez-vous dans "Gérer mon profil" !'}
             </p>
@@ -51,18 +51,18 @@ const ViewProfilPage = ({
         </div>
 
         <div className="viewProfilPage-thirdPart">
+          <Container textAlign="center" className="viewProfilPage-thirdPartLocation">
           <h4 className="viewProfilPage-infoSubtitles">Localisation</h4>
-          <Container className="viewProfilPage-thirdPartLocation">
-            <Icon size="large" name="map marker alternate" />
-            <p>{city} - {zipcode}</p>
+            
+            <p><Icon size="large" name="map marker alternate" /> {city} - {zipcode}</p>
           </Container>
         </div>
 
         <div className="viewProfilPage-thirdPart">
+          <Container textAlign="center" className="viewProfilPage-thirdPartLocation">
           <h4 className="viewProfilPage-infoSubtitles">Mode Vacances</h4>
-          <Container className="viewProfilPage-thirdPartLocation">
-            <Icon size="large" name="globe" />
-            <p>{holidayMode ? 'Activé' : 'Désactivé'}</p>
+            
+            <p><Icon size="large" name="globe" /> {holidayMode ? 'Activé' : 'Désactivé'}</p>
           </Container>
         </div>
 
