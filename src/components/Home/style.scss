@@ -93,6 +93,10 @@ div.homeCard.homeCard {
   justify-content: center;
 }
 
+.homeCarousel.homeCarousel .react-multiple-carousel__arrow {
+  z-index: 0;
+}
+
 div.searchResultsByLocation-owner.searchResultsByLocation-owner {
   font-weight: bold;
 }
