@@ -124,7 +124,7 @@ div.message.message:nth-last-child(2) {
     height:15em;
     transform: translateY(-50%);
   }
-  .picture:first-child {
+  .picture:nth-child(2) {
     left:50px;
   }
   

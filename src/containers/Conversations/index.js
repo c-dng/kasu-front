@@ -5,11 +5,13 @@ import {
   toggleHiddenBox, loadSingleChat,
 } from '../../actions/chat';
 import { loadConversations } from '../../actions/user';
+import { redirectTo } from '../../actions/global';
 
 const mapStateToProps = (state) => ({
   isBoxHidden: state.chat.isBoxHidden,
   conversations: state.user.conversations,
   userPseudo: state.user.data.pseudo,
+  userId: state.user.data.id,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -21,6 +23,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   handleConversationsLoad: function () {
     dispatch(loadConversations());
+  },
+  redirectTo: function (link) {
+    dispatch(redirectTo(link));
   },
 });
 

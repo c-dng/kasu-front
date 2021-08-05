@@ -2,13 +2,16 @@
 import React, { useEffect } from 'react';
 import Messages from '../../containers/Chat/Messages';
 import ChatField from '../../containers/Chat/ChatField';
+import { Link } from 'react-router-dom';
+import { Button } from 'semantic-ui-react';
 
-const Chat = ({ picture, users, userId }) => {
+const Chat = ({ picture, users, userId, handleLoadUser, redirectTo }) => {
   // We filter the chat users to get the one that is not the logged in user 
 
   console.log(picture);
   let otherUserPicture;
-
+  let otherUserId;
+  let otherUserPseudo;
   if (users) {
     console.log(users);
 
@@ -16,6 +19,8 @@ const Chat = ({ picture, users, userId }) => {
     Object.values(users).map((user) => {
       if (user.id !== userId) {
         otherUserPicture = user.picture;
+        otherUserId = user.id;
+        otherUserPseudo = user.pseudo;
         console.log('other user pic', otherUserPicture);
       }
     });
@@ -23,11 +28,11 @@ const Chat = ({ picture, users, userId }) => {
 
   return (
     <div className="chat">
-      <img src={`https://api.multiavatar.com/${otherUserPicture}.png`} className="picture" />
+      <Button className="chat-otherUserProfilLink" onClick={() => handleLoadUser(otherUserId)}>Voir le profil de {otherUserPseudo}</Button>
+      <img onClick={() => handleLoadUser(otherUserId)} src={`https://api.multiavatar.com/${otherUserPicture}.png`} className="picture" />
       <Messages />
       <ChatField />
-      <img src={`https://api.multiavatar.com/${picture}.png`} className="picture" />
-
+      <img onClick={() => redirectTo('/profil/mon-profil')} src={`https://api.multiavatar.com/${picture}.png`} className="picture" />
     </div>
   );
 };

@@ -8,7 +8,7 @@ import { Card, Image } from 'semantic-ui-react';
 // eslint-disable-next-line no-unused-vars
 import PropTypes from 'prop-types';
 
-const Conversation = ({ pseudo, lastMessage, picture }) => (
+const Conversation = ({ pseudo, lastMessage, picture, redirectTo, userId }) => (
   <div className="conversation">
     <Card centered className="conversation-card">
       <Card.Content className="conversation-cardContent">

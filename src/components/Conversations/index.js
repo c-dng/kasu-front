@@ -18,7 +18,7 @@ import { Link } from 'react-router-dom';
 import Conversation from './Conversation';
 
 const Conversations = ({
-  isBoxHidden, handleHiddenBoxDisplay, conversations, loadSingleChat, userPseudo,
+  isBoxHidden, handleHiddenBoxDisplay, conversations, loadSingleChat, userPseudo, userId, redirectTo,
 }) => {
   const handleHiddenBox = () => {
     handleHiddenBoxDisplay();
@@ -87,6 +87,8 @@ const Conversations = ({
                   lastMessage={lastMessageVariable}
                   pseudo={pseudoToDisplay}
                   picture={picture}
+                  redirectTo={redirectTo}
+                  userId={userId}
                 />
               </Link>
             );
