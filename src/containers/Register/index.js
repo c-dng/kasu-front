@@ -11,7 +11,7 @@ import {
   changeLastName,
   changeEmail,
   RegisterUser,
-  eraseErrorMessage
+  eraseErrorMessage,
 } from '../../actions/user';
 
 const mapStateToProps = (state) => ({
@@ -62,7 +62,7 @@ const mapDispatchToProps = (dispatch) => ({
 
   eraseErrorMessage: function () {
     dispatch(eraseErrorMessage());
-  }
+  },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Register);
