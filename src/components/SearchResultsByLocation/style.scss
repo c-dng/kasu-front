@@ -26,6 +26,9 @@ div.content.searchResultsByLocation-cardContentImgInfos > img.ui.medium.image {
   line-height: 2.5rem;
   margin-bottom: 2rem;
 }
+.ui.card.searchResultsByLocation-card {
+  width:auto;
+}
 .searchResultsByLocation-cardContentImgInfos.searchResultsByLocation-cardContentImgInfos.searchResultsByLocation-cardContentImgInfos {
   display: flex;
   justify-content: center;
@@ -106,5 +109,11 @@ button.ui.blue.basic.button.searchResultsByLocation-contactOwner {
   .searchResultsByLocation-banner-title {
     background-color: vars.$secondaryColor_theme2;
     color: vars.$secondaryFontColor_theme2;
+  }
+}
+
+@media only screen and (min-width : 1224px) {
+  .ui.card.searchResultsByLocation-card {
+    width:290px;
   }
 }
