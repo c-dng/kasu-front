@@ -5,9 +5,9 @@
 /* eslint-disable linebreak-style */
 import api from 'src/api';
 import {
-  LOGIN_USER, REGISTER_USER, saveUser, LOGOUT_USER, saveUserConversations, LOAD_CONVERSATIONS,
+  LOGIN_USER, REGISTER_USER, saveUser, LOGOUT_USER, saveUserConversations, LOAD_CONVERSATIONS, saveErrors, submitFormRegister
 } from 'src/actions/user';
-import { appInit, setLoadingFalse, setLoadingTrue } from '../actions/global';
+import { appInit, setLoadingFalse, setLoadingTrue, redirectTo } from '../actions/global';
 import { wsDisconnect } from '../actions/chat';
 
 const authMiddleware = (store) => (next) => (action) => {
@@ -95,6 +95,7 @@ const authMiddleware = (store) => (next) => (action) => {
         zipCode,
         city,
       } = store.getState().user;
+      store.dispatch(setLoadingTrue());
       api
         .post('/api/v1/user/add', {
           email,
@@ -118,7 +119,9 @@ const authMiddleware = (store) => (next) => (action) => {
               zip_code: zipCode,
               city,
             });
-            console.log(response);
+            console.log('USER CREE: ', response.status);
+            store.dispatch(submitFormRegister());
+            store.dispatch(redirectTo('/login'));
           },
         )
         .catch(
@@ -133,9 +136,13 @@ const authMiddleware = (store) => (next) => (action) => {
               zip_code: zipCode,
               city,
             });
-            console.log(error);
+            console.log('MESSAGE ERREUR API: ', error.request.responseText, 'STATUT ERREUR: ', error.request.status);
+            store.dispatch(saveErrors(error.request.responseText));
           },
-        );
+        )
+        .finally(() => {
+          store.dispatch(setLoadingFalse());
+        });
       next(action);
       break;
     }

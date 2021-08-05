@@ -1,14 +1,3 @@
-/* eslint-disable linebreak-style */
-// eslint-disable-next-line linebreak-style
-/* eslint-disable no-console */
-/* eslint-disable linebreak-style */
-/* eslint-disable jsx-a11y/label-has-associated-control */
-/* eslint-disable linebreak-style */
-/* eslint-disable react/jsx-no-comment-textnodes */
-/* eslint-disable linebreak-style */
-/* eslint-disable react/prop-types */
-/* eslint-disable linebreak-style */
-// eslint-disable-next-line linebreak-style
 import React, { useEffect } from 'react';
 import {
   Button, Card, Form, Image,
