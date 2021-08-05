@@ -24,7 +24,14 @@ img.ui.tiny.image.otherMemberProfilePage-firstPartImage {
   margin: 1.3rem auto 0.5rem auto;
   text-align: center;
 }
+button.ui.button.otherMemberProfilePage-contactOwner{
+  border-radius: 1.5em !important;
+  
+}
+button.ui.button.desktopIdCardOther-contactOwner{
+  border-radius: 1.5em !important;
 
+}
 button.ui.button.otherMemberProfilePage-firstPartAddButton {
   font-weight: bolder;
   font-size: x-large;
@@ -334,7 +341,9 @@ button.ui.fluid.DesktopOtherMemberCollection-DeleteButton.DesktopOtherMemberColl
   ;
 
   //Theming 1 en desktop
-  .theme1 {}
+  .theme1 {
+ 
+  }
 
   //Theming 2 en desktop
   .theme2 {
@@ -433,6 +442,28 @@ button.ui.fluid.DesktopOtherMemberCollection-DeleteButton.DesktopOtherMemberColl
   .otherMemberProfilePage-mainWrapper {
     border: 1px solid vars.$primaryBorderColor_theme1;
   }
+
+  button.ui.button.otherMemberProfilePage-contactOwner{
+    color: vars.$primaryFontColor_theme1;
+    border: 1px solid vars.$primaryBorderColor_theme1;
+    background-color: vars.$primaryColor_theme1; 
+    transition: all 0.5s;
+  }
+  button.ui.button.otherMemberProfilePage-contactOwner:hover{
+    background-color: vars.$secondaryColor_theme1;
+    color: vars.$secondaryFontColor_theme1;
+  }
+  button.ui.button.desktopIdCardOther-contactOwner{
+    color: vars.$primaryFontColor_theme1;
+    border: 1px solid vars.$primaryBorderColor_theme1;
+    background-color: vars.$primaryColor_theme1; 
+    transition: all 0.5s;
+  
+  }
+  button.ui.button.desktopIdCardOther-contactOwner:hover{
+    background-color: vars.$secondaryColor_theme1;
+    color: vars.$secondaryFontColor_theme1;
+  }
 }
 
 
@@ -518,6 +549,30 @@ button.ui.fluid.DesktopOtherMemberCollection-DeleteButton.DesktopOtherMemberColl
   }
 
   .otherMemberProfilePage-mainWrapper {
+    border: 1px solid vars.$primaryBorderColor_theme2;
+  }
+
+  button.ui.button.otherMemberProfilePage-contactOwner{
+    background-color: vars.$primaryColor_theme2;
+    color: vars.$primaryFontColor_theme2;
+    border: 1px solid vars.$primaryBorderColor_theme2;
+    transition: all 0.5s;
+  }
+  button.ui.button.otherMemberProfilePage-contactOwner:hover{
+    background-color: vars.$secondaryColor_theme2;
+    color: vars.$secondaryFontColor_theme2;
+    border: 1px solid vars.$primaryBorderColor_theme2;
+  }
+  button.ui.button.desktopIdCardOther-contactOwner{
+    background-color: vars.$primaryColor_theme2;
+    color: vars.$primaryFontColor_theme2;
+    border: 1px solid vars.$primaryBorderColor_theme2;
+    transition: all 0.5s;
+  
+  }
+  button.ui.button.desktopIdCardOther-contactOwner:hover{
+    background-color: vars.$secondaryColor_theme2;
+    color: vars.$secondaryFontColor_theme2;
     border: 1px solid vars.$primaryBorderColor_theme2;
   }
 }

@@ -28,7 +28,7 @@ const DesktopIdCardOther = ({ pseudo, bio, city, zipcode, picture, holidayMode, 
           {bio || 'Cet utilisateur n\'a pas de description !'}
         </p>
         <Divider />
-        <Button onClick={() => createNewChat(userId)} basic color="blue" className="desktopIdCardOther-contactOwner">
+        <Button onClick={() => createNewChat(userId)} className="desktopIdCardOther-contactOwner">
           Contacter le propriétaire
         </Button>
 
