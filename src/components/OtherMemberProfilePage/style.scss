@@ -21,7 +21,8 @@ img.ui.tiny.image.otherMemberProfilePage-firstPartImage {
 
 .otherMemberProfilePage-infoSubtitles.otherMemberProfilePage-infoSubtitles {
   width: 90%;
-  margin: 1rem auto;
+  margin: 1.3rem auto 0.5rem auto;
+  text-align: center;
 }
 
 button.ui.button.otherMemberProfilePage-firstPartAddButton {
@@ -37,7 +38,6 @@ button.ui.button.otherMemberProfilePage-firstPartAddButton {
 
 div.otherMemberProfilePage-secondPart,
 div.otherMemberProfilePage-thirdPart {
-  margin-bottom: 1em;
   padding-left: 1em;
   padding-right: 1em;
 }
@@ -70,7 +70,7 @@ div.otherMemberProfilePage-thirdPart {
 div.ui.container.otherMemberProfilePage-thirdPartLocation {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
   flex-direction: row;
   border-radius: 0.3em;
 }
@@ -131,12 +131,13 @@ h1.setProfilPage-h1 {
   border-radius: 1rem;
   padding: 1rem;
   display: flex;
+  justify-content: space-around;
   margin-bottom: 1em;
 }
 
 .desktopIdCardOther-avatar.desktopIdCardOther-avatar.desktopIdCardOther-avatar {
-  max-width: 100%;
-  width: 100%;
+  max-width: 40%;
+  width: 40%;
   margin-right: 1rem;
   object-fit: cover;
   flex-shrink: 0;

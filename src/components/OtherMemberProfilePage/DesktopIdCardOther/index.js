@@ -8,7 +8,7 @@ const DesktopIdCardOther = ({ pseudo, bio, city, zipcode, picture, holidayMode, 
   <div className="desktopIdCardOther">
     <div className="desktopIdCardOther-mainCard">
       <Image
-        size="small"
+        size="medium"
         src={`https://api.multiavatar.com/${picture}.png`}
         className="desktopIdCardOther-avatar"
       />
