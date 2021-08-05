@@ -5,9 +5,9 @@
 /* eslint-disable linebreak-style */
 import api from 'src/api';
 import {
-  LOGIN_USER, REGISTER_USER, saveUser, LOGOUT_USER, saveUserConversations, LOAD_CONVERSATIONS, saveErrors, saveStatus, submitForm
+  LOGIN_USER, REGISTER_USER, saveUser, LOGOUT_USER, saveUserConversations, LOAD_CONVERSATIONS, saveErrors, submitFormRegister
 } from 'src/actions/user';
-import { appInit, setLoadingFalse, setLoadingTrue } from '../actions/global';
+import { appInit, setLoadingFalse, setLoadingTrue, redirectTo } from '../actions/global';
 import { wsDisconnect } from '../actions/chat';
 
 const authMiddleware = (store) => (next) => (action) => {
@@ -95,6 +95,7 @@ const authMiddleware = (store) => (next) => (action) => {
         zipCode,
         city,
       } = store.getState().user;
+      store.dispatch(setLoadingTrue());
       api
         .post('/api/v1/user/add', {
           email,
@@ -119,11 +120,8 @@ const authMiddleware = (store) => (next) => (action) => {
               city,
             });
             console.log('USER CREE: ', response.status);
-            store.dispatch(saveStatus(response.status));
-              if (response.status === 201) {
-                store.dispatch(submitForm());
-                store.dispatch(redirectTo('/login'));
-              }
+            store.dispatch(submitFormRegister());
+            store.dispatch(redirectTo('/login'));
           },
         )
         .catch(
@@ -140,9 +138,11 @@ const authMiddleware = (store) => (next) => (action) => {
             });
             console.log('MESSAGE ERREUR API: ', error.request.responseText, 'STATUT ERREUR: ', error.request.status);
             store.dispatch(saveErrors(error.request.responseText));
-            store.dispatch(saveStatus(error.request.status));
           },
-        );
+        )
+        .finally(() => {
+          store.dispatch(setLoadingFalse());
+        });
       next(action);
       break;
     }

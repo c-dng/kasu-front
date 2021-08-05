@@ -1,6 +1,6 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useEffect } from 'react';
+import React from 'react';
 import {
   Button, Card, Form, Image,
 } from 'semantic-ui-react';
@@ -31,107 +31,104 @@ const Register = ({
   changeLastName,
   changePseudo,
   handleRegistering,
-  handleEmpty,
-  status,
-  redirectTo,
+  eraseErrorMessage,
 }) => {
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+  
+  const [errorMessage, setErrorMessage] = React.useState('');// display a message received from API
+  const [errorMessagePassword, setErrorMessagePassword] = React.useState('');// display a message with errors
+  const errorsTab = [errors];
 
   const handleChangeEmail = (evt) => {
     changeEmail(evt.target.value);
+    eraseErrorMessage();
   };
 
   const handleChangeAddress = (evt) => {
     changeAddress(evt.target.value);
+    eraseErrorMessage();
   };
 
   const handleChangeZipCode = (evt) => {
     changeZipCode(evt.target.value);
+    eraseErrorMessage();
   };
 
   const handleChangeConfirmPassword = (evt) => {
     changeConfirmPassword(evt.target.value);
+    eraseErrorMessage();
   };
 
   const handleChangePassword = (evt) => {
     validatePassword(evt.target.value);// checking password
     changePassword(evt.target.value);
+    eraseErrorMessage();
   };
 
   const handleChangeCity = (evt) => {
     changeCity(evt.target.value);
+    eraseErrorMessage();
   };
 
   const handleChangeFirstName = (evt) => {
     changeFirstName(evt.target.value);
+    eraseErrorMessage();
   };
 
   const handleChangeLastName = (evt) => {
     changeLastName(evt.target.value);
+    eraseErrorMessage();
   };
 
   const handleChangePseudo = (evt) => {
     changePseudo(evt.target.value);
+    eraseErrorMessage();
   };
-
-  const [errorMessage, setErrorMessage] = React.useState('');// display a message received from API
-  const [errorMessagePassword, setErrorMessagePassword] = React.useState('');// display a message with errors
-  const errorsTab = [errors];
 
   const handleSubmit = (evt) => {
     evt.preventDefault(evt);
       if ( confirmPassword  !=  password) {
         setErrorMessagePassword('Les mots de passe ne sont pas identiques!');
         console.log('ERROR mots de passe inégaux');
-        window.scrollTo(0, 0);  
+
     }
     else if (email === '') {
       setErrorMessagePassword('Veuillez saisir un email');
       console.log('ERROR Veuillez saisir un email');
-      window.scrollTo(0, 0);  
     }
     else if (pseudo === '') {
       setErrorMessagePassword('Veuillez saisir un pseudo');
       console.log('ERROR Veuillez saisir un pseudo');
-      window.scrollTo(0, 0);  
     }
     else if (password === '') {
       setErrorMessagePassword('Veuillez saisir un mot de passe');
       console.log('ERROR Veuillez saisir un mot de passe');
-      window.scrollTo(0, 0);  
     }
     else if (firstName === '') {
       setErrorMessagePassword('Veuillez saisir votre prénom');
       console.log('ERROR Veuillez saisir votre prénom');
-      window.scrollTo(0, 0);  
     }
     else if (lastName === '') {
       setErrorMessagePassword('Veuillez saisir votre nom de famille');
       console.log('ERROR Veuillez saisir votre nom de famille');
-      window.scrollTo(0, 0);  
     }
     else if (address === '') {
       setErrorMessagePassword('Veuillez saisir une adresse valide');
       console.log('ERROR Veuillez saisir une adresse');
-      window.scrollTo(0, 0);  
     }
     else if (zipCode === '') {
       setErrorMessagePassword('Veuillez saisir un code postal valide');
       console.log('ERROR Veuillez saisir un code postal valide');
-      window.scrollTo(0, 0);  
     }
     else if (city === '') {
       setErrorMessagePassword('Veuillez saisir une ville');
       console.log('ERROR Veuillez saisir une ville');
-      window.scrollTo(0, 0);  
     }
     else {
         setErrorMessagePassword('');
         console.log('Bien soumis! mots de passe identiques', errorsTab);
         handleRegistering();
-        window.scrollTo(0, 0);
+
+    window.scrollTo(0, 0);  
     }
   };
 

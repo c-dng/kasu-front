@@ -11,9 +11,8 @@ import {
   changeLastName,
   changeEmail,
   RegisterUser,
-  submitForm,
+  eraseErrorMessage
 } from '../../actions/user';
-import { redirectTo } from '../../actions/global';
 
 const mapStateToProps = (state) => ({
   zipCode: state.user.zipCode,
@@ -61,14 +60,9 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(RegisterUser());
   },
 
-  handleEmpty: function () {
-    dispatch(submitForm());
-  },
-
-  redirectTo: function (link) {
-    dispatch(redirectTo(link));
+  eraseErrorMessage: function () {
+    dispatch(eraseErrorMessage());
   }
-
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Register);

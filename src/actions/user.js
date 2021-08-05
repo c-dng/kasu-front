@@ -145,10 +145,10 @@ export const saveMessage = (message) => ({
   message,
 });
 
-export const ERASE_MESSAGE = 'ERASE_MESSAGE';
+export const ERASE_ERROR_MESSAGE = 'ERASE_ERROR_MESSAGE';
 
-export const eraseMessage = () => ({
-  type: ERASE_MESSAGE,
+export const eraseErrorMessage = () => ({
+  type: ERASE_ERROR_MESSAGE,
 });
 
 export const LOAD_USER_FULL_DATA = 'LOAD_USER_FULL_DATA';
@@ -192,10 +192,10 @@ export const saveErrors = (errors) => ({
   errors,
 });
 
-export const SUBMIT_FORM = 'SUBMIT_FORM';
+export const SUBMIT_FORM_REGISTER = 'SUBMIT_FORM_REGISTER';
 
-export const submitForm = () => ({
-  type: SUBMIT_FORM,
+export const submitFormRegister = () => ({
+  type: SUBMIT_FORM_REGISTER,
 });
 
 export const SAVE_STATUS = 'SAVE_STATUS';
