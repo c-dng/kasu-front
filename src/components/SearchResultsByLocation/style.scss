@@ -30,7 +30,6 @@ div.content.searchResultsByLocation-cardContentImgInfos > img.ui.medium.image {
   width:auto;
 }
 
-
 .searchResultsByLocation-cardContentImgInfos.searchResultsByLocation-cardContentImgInfos.searchResultsByLocation-cardContentImgInfos {
   display: flex;
   justify-content: center;
@@ -114,11 +113,3 @@ button.ui.blue.basic.button.searchResultsByLocation-contactOwner {
   }
 }
 
-@media only screen and (min-width : 1224px) {
-  .ui.card.searchResultsByLocation-card {
-    width:290px;
-  }
-  .react-multi-carousel-track {
-    padding:1em;
-  }
-}
