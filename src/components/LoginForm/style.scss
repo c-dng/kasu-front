@@ -35,6 +35,7 @@ div.field.loginform-field.loginform-field {
 input#password {
   margin: 0;
   font-size: 0.8rem;
+  padding: 1em;
 }
 
 // login button
@@ -55,10 +56,6 @@ div.content.loginform-cardContent.loginform-cardContent.loginform-cardContent {
 
 @media only screen and (min-width : 1224px) {
 
-  .loginform-globalContentWrapper {
-
-  }
-
   .loginform-banner {
     width: 100%;
     height: 250px;
@@ -71,10 +68,12 @@ div.content.loginform-cardContent.loginform-cardContent.loginform-cardContent {
   }
 
   .loginform-desktopImage {
-    background-image: url('src/assets/images/desktopImage.jpg');
+    background-image:  url('src/assets/images/temple2-faded.png');
     background-size: cover;
     background-repeat: no-repeat;
     width: 70%;
+    border-radius:1.3em;
+
     // height: 550px;
 
   }
@@ -100,7 +99,15 @@ div.content.loginform-cardContent.loginform-cardContent.loginform-cardContent {
     border: 1px solid vars.$primaryBorderColor_theme1;
     background-color: vars.$primaryColor_theme1;
     color :vars.$primaryFontColor_theme1;
+    transition: all 0.5s;
   }
+
+  button.ui.button.login-button:hover {
+    border: 1px solid vars.$secondaryBorderColor_theme1;
+    background-color: vars.$secondaryColor_theme1;
+    color :vars.$secondaryFontColor_theme1;
+  }
+  
 
   div.header.loginform-cardHeader.loginform-cardHeader.loginform-cardHeader {
     color: vars.$secondaryFontColor_theme1;

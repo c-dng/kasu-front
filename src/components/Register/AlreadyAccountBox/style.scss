@@ -75,6 +75,12 @@ form.ui.form.contactForm-form.contactForm-form.contactForm-form {
     border: 1px solid vars.$primaryBorderColor_theme1;
     background-color: vars.$primaryColor_theme1;
     color :vars.$primaryFontColor_theme1;
+    transition: all 0.5s;
+  }
+  .alreadyAccountBox-loginButton.alreadyAccountBox-loginButton.alreadyAccountBox-loginButton:hover {
+    border: 1px solid vars.$secondaryBorderColor_theme1;
+    background-color: vars.$secondaryColor_theme1;
+    color :vars.$secondaryFontColor_theme1;
   }
 
   div.header.alreadyAccountBox-cardHeader.alreadyAccountBox-cardHeader.alreadyAccountBox-cardHeader {

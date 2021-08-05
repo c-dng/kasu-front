@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 
@@ -16,9 +17,21 @@ const Messages = ({ messages }) => {
 
   return (
     <div className="messages">
+
       {
+
         messages.map(
-          (message) => <Message key={message.id} messageUserId={message.author.id} singleMessage={message.content} />,
+          (message, index) => {
+            {/* console.log('messages log : ', messages);
+            console.log('message log : ', message); */}
+            return (
+              <Message
+                key={index}
+                messageUserId={message.author.id}
+                singleMessage={message.content}
+              />
+            );
+          },
         )
 
       }
@@ -32,7 +45,10 @@ Messages.propTypes = {
     PropTypes.shape({
       id: PropTypes.number.isRequired,
     }),
-  ).isRequired,
+  ),
 };
 
+Messages.defaultProps = {
+  messages: [],
+};
 export default Messages;

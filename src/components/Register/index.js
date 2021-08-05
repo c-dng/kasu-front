@@ -1,8 +1,10 @@
+/* eslint-disable linebreak-style */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import {
   Button, Card, Form, Image,
 } from 'semantic-ui-react';
+import validator from 'validator'; // checking of password
 import PropTypes from 'prop-types';
 import './style.scss';
 import alternativeBanner from 'src/assets/images/alternativeBanner.png';
@@ -17,10 +19,12 @@ const Register = ({
   pseudo,
   city,
   password,
+  confirmPassword,
   changeEmail,
   changeAddress,
   changeZipCode,
   changePassword,
+  changeConfirmPassword,
   changeCity,
   changeFirstName,
   changeLastName,
@@ -39,7 +43,12 @@ const Register = ({
     changeZipCode(evt.target.value);
   };
 
+  const handleChangeConfirmPassword = (evt) => {
+    changeConfirmPassword(evt.target.value);
+  };
+
   const handleChangePassword = (evt) => {
+    validate(evt.target.value);// checking password
     changePassword(evt.target.value);
   };
 
@@ -59,9 +68,37 @@ const Register = ({
     changePseudo(evt.target.value);
   };
 
+  const [errorMessage, setErrorMessage] = React.useState('');// display a message received from API
+  const [errorMessagePassword, setErrorMessagePassword] = React.useState('');// display a message with errors
+
   const handleSubmit = (evt) => {
-    evt.preventDefault();
-    handleRegistering();
+    evt.preventDefault(evt);
+    if (confirmPassword === password) {
+      setErrorMessagePassword('');
+      console.log('Bien soumis! mots de passe identiques');
+      handleRegistering();
+    }
+    else {
+      setErrorMessagePassword('Les mots de passe ne sont pas identiques!');
+      console.log('ERROR mots de passe inégaux');
+    }
+  };
+
+  const validate = (value) => {
+    if (validator.isStrongPassword(value, {
+      minLength: 6,
+      minLowercase: 1,
+      minUppercase: 1,
+      minNumbers: 1,
+      minSymbols: 1,
+    })) {
+      setErrorMessage('');
+      console.log(errorMessage);
+    }
+    else {
+      setErrorMessage('Veuillez entrer un mot de passe valide: min-6 caractères, une majuscule, une minuscule, un chiffre et un des caractères suivants: @$%_*|=-');
+      console.log(errorMessage);
+    }
   };
 
   return (
@@ -82,8 +119,14 @@ const Register = ({
               </div>
               <div className="registerForm-field">
                 <label className="registerForm-fieldLabel">Votre mot de passe</label>
-                <Form.Input onChange={handleChangePassword} value={password} className="registerForm-fieldInput" />
+                <Form.Input onChange={handleChangePassword} type="password" value={password} className="registerForm-fieldInput" />
               </div>
+              <div className="registerForm-field">
+                <label className="registerForm-fieldLabel">Confirmez mot de passe</label>
+                <Form.Input onChange={handleChangeConfirmPassword} type="password" value={confirmPassword} className="registerForm-fieldInput" />
+              </div>
+              <span className="registerForm-errorMessagePassword">{errorMessage}</span>
+              <span className="registerForm-errorMessagePassword">{errorMessagePassword}</span>
               <div className="registerForm-field">
                 <label className="registerForm-fieldLabel">Votre prénom</label>
                 <Form.Input onChange={handleChangeFirstName} value={firstName} className="registerForm-fieldInput" />
@@ -98,7 +141,7 @@ const Register = ({
               </div>
               <div className="registerForm-field">
                 <label className="registerForm-fieldLabel">Votre code postal</label>
-                <Form.Input onChange={handleChangeZipCode} value={zipCode} className="registerForm-fieldInput" />
+                <Form.Input type="number" onChange={handleChangeZipCode} value={zipCode} className="registerForm-fieldInput" />
               </div>
               <div className="registerForm-field">
                 <label className="registerForm-fieldLabel">Votre ville</label>
@@ -112,6 +155,7 @@ const Register = ({
             </Form>
           </Card.Content>
         </Card>
+
         <AlreadyAccountBox />
       </div>
     </div>
@@ -126,7 +170,7 @@ Register.propTypes = {
   lastName: PropTypes.string.isRequired,
   address: PropTypes.string.isRequired,
   city: PropTypes.string.isRequired,
-  zipCode: PropTypes.number.isRequired,
+  zipCode: PropTypes.string.isRequired,
   changePseudo: PropTypes.func.isRequired,
   changePassword: PropTypes.func.isRequired,
   changeEmail: PropTypes.func.isRequired,

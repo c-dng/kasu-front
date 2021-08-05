@@ -1,9 +1,12 @@
 // General
 
+.picture {
+  display: none;
+}
 // ChatField
 
 .chatField.chatField.chatField.chatField {
-  position: sticky;
+  position: fixed;
   padding-bottom: 1em;
   padding-top: 1em;
   bottom: 0;
@@ -12,7 +15,6 @@
   margin: 0 auto;
   left: 0;
   right: 0;
-  background-color: white;
 
 }
 
@@ -74,4 +76,54 @@ div.message.message:nth-last-child(2) {
     background-color: rgb(105, 174, 252);
     text-align: left;
   }
+}
+
+@media only screen and (min-width : 1224px) {
+.chatField.chatField.chatField.chatField {
+    width: 50%;  
+    padding-top:0;
+    padding-bottom: 0;
+  }
+  form.chatField-form {
+    width:100%;
+  }
+  .chat {
+    background-image: linear-gradient(rgba(226, 226, 226, 0.7), rgba(56, 56, 56, 0.7)),url("src/assets/images/conversations-bg.png");
+    background-size: cover;
+    background-attachment: fixed;
+    min-height:60vh;
+  }
+  button.ui.icon.button.chatField-submit {
+    margin:0;
+  }
+   .messages.messages.messages {
+     width: 50%;
+     margin: 55px auto;
+     background-color: #fff;
+     width: 50%;
+     border-radius: 25px;
+     border-bottom-left-radius:0px ;
+     border-bottom-right-radius:0px ;
+     min-height: 80vh;
+     border: 1px solid #c61100;
+     padding-bottom: 20px;
+     opacity: 1;
+     padding:1em;
+     display: flex;
+     flex-direction: column;
+     justify-content: flex-end
+   }
+  .picture {
+    position:fixed;
+    top:50%;
+    right:50px;
+    display: block; 
+    height:15em;
+    transform: translateY(-50%);
+  }
+  .picture:first-child {
+    left:50px;
+  }
+  
+  
 }

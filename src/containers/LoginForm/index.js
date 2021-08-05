@@ -2,10 +2,10 @@ import { connect } from 'react-redux';
 
 import LoginForm from 'src/components/LoginForm';
 import {
-  changePseudo, changePassword, loginUser, logoutUser,
+  changePseudo, changePassword, loginUser,
 } from '../../actions/user';
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state) => ({
 
   pseudo: state.user.pseudo,
   password: state.user.password,
@@ -13,7 +13,7 @@ const mapStateToProps = (state, ownProps) => ({
 
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
+const mapDispatchToProps = (dispatch) => ({
   changePseudo: function (pseudo) {
     dispatch(changePseudo(pseudo));
   },
@@ -23,10 +23,6 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   handleLogin: function () {
     dispatch(loginUser());
   },
-  handleLogout: function () {
-    dispatch(logoutUser());
-  },
-
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoginForm);

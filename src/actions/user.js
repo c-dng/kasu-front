@@ -12,6 +12,13 @@ export const changePassword = (password) => ({
   password,
 });
 
+export const CHANGE_CONFIRM_PASSWORD = 'CHANGE_CONFIRM_PASSWORD';
+
+export const changeConfirmPassword = (confirmPassword) => ({
+  type: CHANGE_CONFIRM_PASSWORD,
+  confirmPassword,
+});
+
 export const CHANGE_EMAIL = 'CHANGE_EMAIL';
 
 export const changeEmail = (email) => ({
@@ -52,6 +59,20 @@ export const CHANGE_CITY = 'CHANGE_CITY';
 export const changeCity = (city) => ({
   type: CHANGE_CITY,
   city,
+});
+
+export const CHANGE_HOLIDAY_MODE = 'CHANGE_HOLIDAY_MODE';
+
+export const changeHolidayMode = (holiday_mode) => ({
+  type: CHANGE_HOLIDAY_MODE,
+  holiday_mode,
+});
+
+export const CHANGE_DESCRIPTION = 'CHANGE_DESCRIPTION';
+
+export const changeDescription = (description) => ({
+  type: CHANGE_DESCRIPTION,
+  description,
 });
 
 export const LOGIN_USER = 'LOGIN_USER';
@@ -96,4 +117,70 @@ export const REGISTER_USER = 'REGISTER_USER';
 
 export const RegisterUser = () => ({
   type: REGISTER_USER,
+});
+
+export const UPDATE_USER = 'UPDATE_USER';
+
+export const updateUser = () => ({
+  type: UPDATE_USER,
+});
+
+export const GET_USER_INFOS = 'GET_USER_INFOS';
+
+export const getUserInfos = () => ({
+  type: GET_USER_INFOS,
+});
+
+export const SAVE_USER_INFOS = 'SAVE_USER_INFOS';
+
+export const saveUserInfos = (infos) => ({
+  type: SAVE_USER_INFOS,
+  infos,
+});
+
+export const SAVE_MESSAGE = 'SAVE_MESSAGE';
+
+export const saveMessage = (message) => ({
+  type: SAVE_MESSAGE,
+  message,
+});
+
+export const ERASE_MESSAGE = 'ERASE_MESSAGE';
+
+export const eraseMessage = () => ({
+  type: ERASE_MESSAGE,
+});
+
+export const LOAD_USER_FULL_DATA = 'LOAD_USER_FULL_DATA';
+
+export const loadUserFullData = () => ({
+  type: LOAD_USER_FULL_DATA,
+});
+
+export const SAVE_USER_FULL_DATA = 'SAVE_USER_FULL_DATA';
+
+export const saveUserFullData = (fullData) => ({
+  type: SAVE_USER_FULL_DATA,
+  fullData,
+});
+
+export const LOAD_OTHER_USER_FULL_DATA = 'LOAD_OTHER_USER_FULL_DATA';
+
+export const loadOtherUserFullData = (id) => ({
+  type: LOAD_OTHER_USER_FULL_DATA,
+  id,
+});
+
+export const SAVE_OTHER_USER_FULL_DATA = 'SAVE_OTHER_USER_FULL_DATA';
+
+export const saveOtherUserFullData = (fullData) => ({
+  type: SAVE_OTHER_USER_FULL_DATA,
+  fullData,
+});
+
+export const CHANGE_MESSAGE = 'CHANGE_MESSAGE';
+
+export const changeMessage = (message) => ({
+  type: CHANGE_MESSAGE,
+  message,
 });

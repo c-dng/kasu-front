@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Message = ({ singleMessage, messageUserId, isMine }) => (
+const Message = ({ singleMessage, isMine }) => (
   <div className={isMine ? 'message message--own' : 'message'}>
     <div className={isMine ? 'message-content message-content--own' : 'message-content'}>{singleMessage}</div>
   </div>

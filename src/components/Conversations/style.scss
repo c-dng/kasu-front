@@ -24,7 +24,7 @@ div.conversation:not(:first-child) {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
-  
+
 }
 
 .conversations-button--notHiddenBox.conversations-button--notHiddenBox.conversations-button--notHiddenBox {
@@ -42,6 +42,8 @@ div.conversation:not(:first-child) {
   animation-name: slidedown;
   animation-fill-mode: forwards;
 }
+
+
 
 @keyframes slideup {
   from {
@@ -89,6 +91,27 @@ div.conversation:not(:first-child) {
 
 }
 
+
+
+@media only screen and (min-width : 1224px) {
+  .conversations{
+    background-image: linear-gradient(rgba(226, 226, 226, 0.7), rgba(56, 56, 56, 0.7)),url("src/assets/images/conversations-bg.png");
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    height:100%;
+  }
+  .conversations-notHiddenBox{
+    background-color: #fff;
+    margin: 55px auto;
+    width: 50%;
+    border-radius: 25px;
+    border: 1px solid #c61100;
+    padding-bottom: 20px;
+   
+  }
+}
+
 // Theming 
 
 .theme1 {
@@ -108,16 +131,10 @@ div.conversation:not(:first-child) {
 }
 
 .theme2 {
-  .conversation-card.conversation-card.conversation-card {
-
-    background-color: vars.$primaryColor_theme2;
-  }
-
-  div.header.conversation-cardHeader.conversation-cardHeader.conversation-cardHeader {
-    color: vars.$primaryFontColor_theme2;
-  }
   
+
   div.meta.conversation-cardMeta.conversation-cardMeta.conversation-cardMeta {
     color: vars.$metaFontColor_theme2;
   }
 }
+

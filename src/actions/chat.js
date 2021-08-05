@@ -13,9 +13,8 @@ export const setNewMessage = (newMessage) => ({
 
 export const WS_CONNECT = 'WS_CONNECT';
 
-export const wsConnect = (chatId) => ({
+export const wsConnect = () => ({
   type: WS_CONNECT,
-  chatId: chatId,
 });
 
 export const WS_DISCONNECT = 'WS_DISCONNECT';
@@ -62,3 +61,18 @@ export const saveLastSingleChat = (singleChat) => ({
   type: SAVE_LAST_SINGLE_CHAT,
   singleChat,
 });
+
+export const CREATE_NEW_CHAT = 'CREATE_NEW_CHAT';
+
+export const createNewChat = (id) => ({
+  type: CREATE_NEW_CHAT,
+  chatId: id,
+});
+
+// export const SAVE_TEMPORARY_LAST_SINGLE_CHAT = 'SAVE_TEMPORARY_LAST_SINGLE_CHAT';
+
+// export const saveTemporaryLastSingleChat = (singleChat) => ({
+//   type: SAVE_TEMPORARY_LAST_SINGLE_CHAT,
+//   singleChat,
+// });
+

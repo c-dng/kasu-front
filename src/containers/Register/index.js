@@ -3,6 +3,7 @@ import Register from 'src/components/Register';
 import {
   changePseudo,
   changePassword,
+  changeConfirmPassword,
   changeCity,
   changeZipCode,
   changeAddress,
@@ -12,7 +13,7 @@ import {
   RegisterUser,
 } from '../../actions/user';
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state) => ({
   zipCode: state.user.zipCode,
   email: state.user.email,
   address: state.user.address,
@@ -21,14 +22,18 @@ const mapStateToProps = (state, ownProps) => ({
   pseudo: state.user.pseudo,
   city: state.user.city,
   password: state.user.password,
+  confirmPassword: state.user.confirmPassword,
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
+const mapDispatchToProps = (dispatch) => ({
   changePseudo: function (pseudo) {
     dispatch(changePseudo(pseudo));
   },
   changePassword: function (password) {
     dispatch(changePassword(password));
+  },
+  changeConfirmPassword: function (confirmPassword) {
+    dispatch(changeConfirmPassword(confirmPassword));
   },
   changeEmail: function (email) {
     dispatch(changeEmail(email));

@@ -32,6 +32,7 @@ const reducer = (state = initialState, action = {}) => {
         newMessage: '',
       };
     case ADD_MESSAGE:
+      console.log('singleChat state test', state.lastSingleChat)
       if (state.lastSingleChat.id !== action.chatId) {
         return state;
       }
@@ -55,6 +56,12 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         lastSingleChat: action.singleChat,
       };
+    // case SAVE_TEMPORARY_LAST_SINGLE_CHAT:
+    //   return {
+    //    ...state,
+    //     lastSingleChat: action.singleChat,
+    //   };
+      
     case LOGOUT_USER:
       return {
         isBoxHidden: true,
