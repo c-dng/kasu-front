@@ -123,9 +123,11 @@ div.message.message:nth-last-child(2) {
     display: block; 
     height:15em;
     transform: translateY(-50%);
+    cursor: pointer;
   }
   .picture:nth-child(2) {
     left:50px;
+  
   }
   
   
