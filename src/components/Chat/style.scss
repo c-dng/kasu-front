@@ -15,6 +15,7 @@
   margin: 0 auto;
   left: 0;
   right: 0;
+  background-color: white;
 
 }
 
@@ -48,6 +49,7 @@ button.ui.icon.button.chatField-submit {
   overflow-y: auto;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  margin: 80px auto;
 }
 
 div.message.message:nth-last-child(2) {
@@ -83,6 +85,7 @@ div.message.message:nth-last-child(2) {
     width: 50%;  
     padding-top:0;
     padding-bottom: 0;
+    background-color: transparent;
   }
   form.chatField-form {
     width:100%;

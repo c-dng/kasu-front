@@ -12,7 +12,7 @@ import DesktopOtherMemberCollection from './DesktopOtherMemberCollection';
 import ViewOtherProfileCollectionResult from './ViewOtherProfileCollectionResult';
 
 const OtherMemberProfilePage = ({
-  pseudo, bio, city, zipcode, picture, holidayMode, otherUserMangas,
+  pseudo, bio, city, zipcode, picture, holidayMode, otherUserMangas, userId, createNewChat
 }) => {
   const availableTomes = [
     { key: 't1', value: 't1', text: 'Tome 1' },
@@ -30,7 +30,7 @@ const OtherMemberProfilePage = ({
 
         <h1 className="setProfilPage-h1">Profil de {pseudo} </h1>
         <MediaQuery minWidth={1224}>
-          <DesktopIdCardOther pseudo={pseudo} bio={bio} city={city} zipcode={zipcode} picture={picture} holidayMode={holidayMode} />
+          <DesktopIdCardOther pseudo={pseudo} bio={bio} city={city} zipcode={zipcode} picture={picture} holidayMode={holidayMode} userId={userId} createNewChat={createNewChat} />
         </MediaQuery>
         <MediaQuery maxWidth={1223}>
           <Image className="otherMemberProfilePage-firstPartImage" src={`https://api.multiavatar.com/${picture}.png`} size="tiny" />
@@ -38,6 +38,9 @@ const OtherMemberProfilePage = ({
             <Container textAlign="center">
               <h3 className="otherMemberProfilePage-pseudo">{pseudo}</h3>
             </Container>
+            <Button onClick={() => createNewChat(userId)} basic color="blue" className="otherMemberProfilePage-contactOwner">
+              Contacter le propriétaire
+            </Button>
             <h4 className="otherMemberProfilePage-infoSubtitles">Présentation</h4>
             <Container textAlign="justified">
               <p>

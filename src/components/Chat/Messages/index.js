@@ -14,19 +14,24 @@ const Messages = ({ messages }) => {
   };
 
   useEffect(scrollToBottom, [messages]);
-  
+
   return (
     <div className="messages">
 
       {
+
         messages.map(
-          (message, index) => (
-            <Message
-              key={index}
-              messageUserId={message.author.id}
-              singleMessage={message.content}
-            />
-          ),
+          (message, index) => {
+            {/* console.log('messages log : ', messages);
+            console.log('message log : ', message); */}
+            return (
+              <Message
+                key={index}
+                messageUserId={message.author.id}
+                singleMessage={message.content}
+              />
+            );
+          },
         )
 
       }

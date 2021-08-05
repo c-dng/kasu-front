@@ -23,13 +23,17 @@ const chatMiddleware = (store) => (next) => (action) => {
     case WS_CONNECT: {
       console.log(process.env.HOSTNAME_CHAT);
       // adresse serveur prod http://websocket.kasu.laetitia-dev.com/
-      socket = io(process.env.HOSTNAME_CHAT, { auth: { token: localStorage.getItem('token') } });
-      console.log('socket defined');
-      socket.on('send_message', (payload) => {
-        console.log('tu viens de recevoir un signal "send_message" de la part de socket.io');
-        const { chatId, userId, message } = payload;
-        store.dispatch(addMessage(message, chatId, userId));
-      });
+      if (localStorage.getItem('token')) {
+        socket = io(process.env.HOSTNAME_CHAT, { auth: { token: localStorage.getItem('token') } });
+        console.log('socket defined');
+        socket.on('send_message', (payload) => {
+          console.log('tu viens de recevoir un signal "send_message" de la part de socket.io');
+          console.log('payload venant de la socket', payload);
+          const { chatId, userId, message } = payload;
+          store.dispatch(addMessage(message, chatId, userId));
+        });
+      }
+
 
       next(action);
       break;
@@ -51,6 +55,7 @@ const chatMiddleware = (store) => (next) => (action) => {
       };
 
       console.log('Envoie du message suivant en socket :', messageToSend);
+      console.log('socket:', socket);
       socket.emit('send_message', messageToSend);
       next(action);
       break;
@@ -70,7 +75,7 @@ const chatMiddleware = (store) => (next) => (action) => {
             console.log('ça marche');
             console.log(response);
             store.dispatch(saveLastSingleChat(response.data));
-           
+
             store.dispatch(setLoadingFalse());
           },
         )

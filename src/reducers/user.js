@@ -7,7 +7,7 @@ import {
 export const initialState = {
   email: '',
   password: '',
-  confirmPassword:'',
+  confirmPassword: '',
   pseudo: '',
   address: '',
   zipCode: '',
