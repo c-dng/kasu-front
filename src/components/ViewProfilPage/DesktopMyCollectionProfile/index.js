@@ -1,10 +1,8 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable max-len */
-/* eslint-disable linebreak-style */
-/* eslint-disable react/self-closing-comp */
 import React from 'react';
+import uuid from 'react-uuid';
+import PropTypes from 'prop-types';
 import {
-  Button, Card, Divider, Grid, Header, Icon, Image,
+  Card, Divider, Header,
 } from 'semantic-ui-react';
 import ViewProfileCollectionResult from '../ViewProfileCollectionResult';
 
@@ -13,21 +11,17 @@ const DesktopMyCollectionProfile = ({ userMangas }) => (
     <Card className="DesktopMyCollectionProfile-mainCard">
       <Card.Header className="DesktopMyCollectionProfile-myCollection">
         <Header className="DesktopMyCollectionProfile-header" as="h2">
-          {/* <Icon className="DesktopMyCollectionProfile-myCollectionIcon" name="settings" /> */}
           <Header.Content className="DesktopMyCollectionProfile-myCollectionHeaderContent">
             Ma collection
-            {/* <Header.Subheader className="DesktopMyCollectionProfile-myCollectionSubHeaderTwo">
-              Gérer la visibilité, l'édition, ou la suppression
-            </Header.Subheader> */}
           </Header.Content>
         </Header>
       </Card.Header>
       <Card.Content className="DesktopMyCollectionProfile-myCollectionCardContent">
         {userMangas ? (
           <div className="manageMyCollection-itemWrapperDesktopVersion">
-            {Object.values(userMangas).map((manga, index) => (
+            {Object.values(userMangas).map((manga) => (
               <ViewProfileCollectionResult
-                key={index}
+                key={uuid()}
                 mangaName={manga.info.title}
                 mangaPicture={manga.info.picture}
                 mangaVolumes={manga.volumes}
@@ -49,5 +43,9 @@ const DesktopMyCollectionProfile = ({ userMangas }) => (
     </Card>
   </div>
 );
+
+DesktopMyCollectionProfile.propTypes = {
+  userMangas: PropTypes.object.isRequired,
+};
 
 export default DesktopMyCollectionProfile;
