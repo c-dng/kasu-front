@@ -21,7 +21,7 @@ import OtherMemberProfilePage from 'src/containers/OtherMemberProfilePage';
 
 import './style.scss';
 import {
-  Redirect, Route, Switch, useHistory, useLocation,
+  Route, Switch, useHistory, useLocation,
 } from 'react-router-dom';
 import { useBeforeunload } from 'react-beforeunload';
 import { useDispatch } from 'react-redux';
@@ -33,7 +33,6 @@ const App = ({
   theme,
   onRefreshOrTabClosing,
   isLogged,
-  chatId,
   loading,
   mangaDatabase,
   loadMangaDatabase,
@@ -96,13 +95,6 @@ const App = ({
     }
   }, [redirectLink]);
 
-  // useDeepCompareEffectNoCheck(() => {
-  //   if (userFullData) {
-  //     console.log('useDeepCompareEffectNoCheck on userFullData');
-  //     loadUserFullData();
-  //   }
-  // }, [userFullData]);
-
   const location = useLocation();
   console.log(location.pathname);
   React.useEffect(() => {
@@ -115,7 +107,6 @@ const App = ({
 
   return (
     <div className={`app ${theme}`}>
-
       <Nav />
       <Switch>
         <Route path="/" exact>
@@ -179,14 +170,11 @@ const App = ({
 
 App.propTypes = {
   theme: PropTypes.string.isRequired,
-  // eslint-disable-next-line react/no-unused-prop-types
   loading: PropTypes.bool,
-  userMangas: PropTypes.object,
 };
 
 App.defaultProps = {
   loading: false,
-  userMangas: {},
 };
 
 // == Export
