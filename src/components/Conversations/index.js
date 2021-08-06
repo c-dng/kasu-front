@@ -126,14 +126,11 @@ const Conversations = ({
             );
           })
         }
-
       </div>
       <Button className={buttonClasses} onClick={handleHiddenBox}>
         <Image size="tiny" circular src={convButtonWhite} className="conversations-buttonImages conversations-buttonImage" />
       </Button>
-
       <Transition visible={!isBoxHidden} animation="slide up" duration={500}>
-
         <Grid centered columns={3} className="conversations-hiddenBox">
           <Grid.Column textAlign="center">
             <Modal
@@ -159,7 +156,6 @@ const Conversations = ({
                     onChange={getUserValue}
                   />
                 </Modal.Description>
-
               </Modal.Content>
               <Modal.Actions>
                 <Button color="red" onClick={() => setOpen(false)}>
@@ -188,7 +184,6 @@ const Conversations = ({
             </Link>
           </Grid.Column>
         </Grid>
-
       </Transition>
     </div>
   );
