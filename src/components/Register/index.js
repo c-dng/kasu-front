@@ -2,6 +2,7 @@ import React from 'react';
 import {
   Button, Card, Form, Image,
 } from 'semantic-ui-react';
+import uuid from 'react-uuid';
 import validator from 'validator'; // checking of password
 import PropTypes from 'prop-types';
 import './style.scss';
@@ -52,12 +53,6 @@ const Register = ({
 
   const handleChangeConfirmPassword = (evt) => {
     changeConfirmPassword(evt.target.value);
-    eraseErrorMessage();
-  };
-
-  const handleChangePassword = (evt) => {
-    validatePassword(evt.target.value);// checking password
-    changePassword(evt.target.value);
     eraseErrorMessage();
   };
 
@@ -133,13 +128,19 @@ const Register = ({
     }
   };
 
+  const handleChangePassword = (evt) => {
+    validatePassword(evt.target.value);// checking password
+    changePassword(evt.target.value);
+    eraseErrorMessage();
+  };
+
   return (
     <div className="registerForm">
       <Image className="registerForm-banner" src={alternativeBanner} />
       <div className="registerForm-errorsFromAPI">
         {
-          Object.keys(errors).map((oneKey, i) => (
-            <li key={i}>{errors[oneKey]}</li>
+          Object.keys(errors).map((oneKey) => (
+            <li key={uuid()}>{errors[oneKey]}</li>
           ))
         }
         <div className="registerForm-divErrorMessagePasswordNotEqual">
@@ -221,5 +222,9 @@ Register.propTypes = {
   changeCity: PropTypes.func.isRequired,
   changeZipCode: PropTypes.func.isRequired,
   handleRegistering: PropTypes.func.isRequired,
+  confirmPassword: PropTypes.string.isRequired,
+  errors: PropTypes.string.isRequired,
+  changeConfirmPassword: PropTypes.func.isRequired,
+  eraseErrorMessage: PropTypes.func.isRequired,
 };
 export default Register;
