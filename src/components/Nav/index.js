@@ -47,15 +47,6 @@ const Nav = ({
     changeWebsiteTheme('theme2', 'white');
   };
 
-  const handleTheme3 = () => {
-    changeWebsiteTheme('theme3', 'black');
-  };
-
-  // eslint-disable-next-line no-unused-vars
-  const handleTheme4 = (evt) => {
-    changeWebsiteTheme('theme4', 'black');
-  };
-
   return (
     <div className="nav">
       <Segment className="nav-segment">

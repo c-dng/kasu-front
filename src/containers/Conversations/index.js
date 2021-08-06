@@ -4,8 +4,8 @@ import Conversations from 'src/components/Conversations';
 import {
   toggleHiddenBox, loadSingleChat,
 } from '../../actions/chat';
-import { loadConversations } from '../../actions/user';
-import { redirectTo } from '../../actions/global';
+import { loadConversations, loadOtherUserFullData } from '../../actions/user';
+import { changeTheme, redirectTo } from '../../actions/global';
 
 const mapStateToProps = (state) => ({
   isBoxHidden: state.chat.isBoxHidden,
@@ -26,6 +26,12 @@ const mapDispatchToProps = (dispatch) => ({
   },
   redirectTo: function (link) {
     dispatch(redirectTo(link));
+  },
+  changeWebsiteTheme: function (theme, navIconColor) {
+    dispatch(changeTheme(theme, navIconColor));
+  },
+  loadOtherUserFullData: function (id) {
+    dispatch(loadOtherUserFullData(id));
   },
 });
 

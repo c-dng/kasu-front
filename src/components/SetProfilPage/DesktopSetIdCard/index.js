@@ -42,7 +42,7 @@ const DesktopSetIdCard = ({
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    if ( confirmPassword  ===  password ) {
+    if (confirmPassword === password) {
       setErrorMessagePassword('');
       console.log('Bien soumis! mots de passe identiques');
       handleUpdate();
@@ -50,7 +50,7 @@ const DesktopSetIdCard = ({
     else {
       setErrorMessagePassword('Les mots de passe ne sont pas identiques!');
       console.log('ERROR mots de passe inégaux');
-    } 
+    }
   };
   const handleChangeEmail = (evt) => {
     changeEmail(evt.target.value);
@@ -83,7 +83,7 @@ const DesktopSetIdCard = ({
   const handleChangeDescription = (evt) => {
     changeDescription(evt.target.value);
   };
-    // toggle function
+  // toggle function
   const onChangeCheckbox = (evt, data) => {
     const { checked } = data;
     changeHolidayMode(checked);
@@ -95,11 +95,11 @@ const DesktopSetIdCard = ({
     redirectTo('/contact');
   }
 
-//Cancel => Redirect to profil
-const handleCancel = () => {
-  setOpen(false);
-  redirectTo('/profil/mon-profil');
-}
+  //Cancel => Redirect to profil
+  const handleCancel = () => {
+    setOpen(false);
+    redirectTo('/profil/mon-profil');
+  }
 
   // Check password with validator dependencie
   const validate = (value) => {
@@ -222,7 +222,7 @@ const handleCancel = () => {
               value={confirmPassword}
               onChange={handleChangeConfirmPassword}
               fluid
-            /> 
+            />
           </Form.Group>
           <div className="desktopIdCard-errorMessage">
             {errorMessagePassword}
@@ -247,6 +247,7 @@ const handleCancel = () => {
         </Form>
         <div className="desktopIdCard-divDeleteButton" >
           <Modal
+            dimmer="blurring"
             closeIcon
             open={open}
             trigger={<Button size="mini" className="desktopIdCard-DeleteButtonRed">Supprimer mon compte</Button>}

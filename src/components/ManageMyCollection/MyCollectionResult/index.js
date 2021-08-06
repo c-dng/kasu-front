@@ -75,6 +75,7 @@ const MyCollectionResult = ({ mangaName,
         <div className="manageMyCollection-myCollectionThreeButtons">
           <div className="manageMyCollection-myCollectionButtonsSubGroup">
             <Modal
+              dimmer="blurring"
               onClose={() => setOpenAvailability(false)}
               onOpen={() => setOpenAvailability(true)}
               open={openAvailability}
@@ -128,6 +129,7 @@ const MyCollectionResult = ({ mangaName,
             </Modal>
             <div className="manageMyCollection-artificialMargin"></div>
             <Modal
+              dimmer="blurring"
               onClose={() => setOpenEdit(false)}
               onOpen={() => setOpenEdit(true)}
               open={openEdit}
@@ -175,6 +177,7 @@ const MyCollectionResult = ({ mangaName,
 
           </div>
           <Modal
+            dimmer="blurring"
             onClose={() => setOpenDelete(false)}
             onOpen={() => setOpenDelete(true)}
             open={openDelete}

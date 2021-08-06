@@ -284,6 +284,7 @@ const SetProfilPage = ({
             </Form>
             <div className="mobileSetProfil-divDeleteMyAccount">
               <Modal
+                dimmer="blurring"
                 icon="user delete"
                 open={open}
                 trigger={<Button size="mini" className="mobileSetProfil-deleteMyAccount" negative>Supprimer mon compte</Button>}
