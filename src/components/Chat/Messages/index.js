@@ -1,7 +1,7 @@
 /* eslint-disable linebreak-style */
 import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
-
+import uuid from 'react-uuid';
 import Message from 'src/containers/Chat/Message';
 
 import '../style.scss';
@@ -21,9 +21,9 @@ const Messages = ({ messages }) => {
       {
 
         messages.map(
-          (message, index) => (
+          (message) => (
             <Message
-              key={index}
+              key={uuid()}
               messageUserId={message.author.id}
               singleMessage={message.content}
             />
