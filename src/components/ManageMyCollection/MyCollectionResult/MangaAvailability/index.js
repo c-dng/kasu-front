@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Checkbox } from 'semantic-ui-react';
+import PropTypes from 'prop-types';
 
 const MangaAvailability = ({ volumeNumber, checked, onChangeAvailability }) => (
   <div>
@@ -7,11 +8,17 @@ const MangaAvailability = ({ volumeNumber, checked, onChangeAvailability }) => (
       label={`Volume ${volumeNumber}`}
       value={volumeNumber}
       checked={checked}
-      onChange={(evt) => {
+      onChange={() => {
         onChangeAvailability(volumeNumber, !checked);
       }}
     />
   </div>
 );
+
+MangaAvailability.propTypes = {
+  volumeNumber: PropTypes.number.isRequired,
+  checked: PropTypes.bool.isRequired,
+  onChangeAvailability: PropTypes.func.isRequired,
+};
 
 export default MangaAvailability;

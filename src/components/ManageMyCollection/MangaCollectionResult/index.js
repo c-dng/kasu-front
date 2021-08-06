@@ -1,7 +1,12 @@
 import React from 'react';
-import { Button, Divider, Dropdown, Image } from 'semantic-ui-react';
+import {
+  Button, Divider, Dropdown, Image,
+} from 'semantic-ui-react';
+import PropTypes from 'prop-types';
 
-const MangaCollectionResult = ({ mangaName, mangaPicture, mangaVolumes, addToMyCollection }) => {
+const MangaCollectionResult = ({
+  mangaName, mangaPicture, mangaVolumes, addToMyCollection,
+}) => {
   const mangaVolumeOptions = mangaVolumes.map((volume) => ({
     key: volume.number,
     text: volume.number,
@@ -44,7 +49,14 @@ const MangaCollectionResult = ({ mangaName, mangaPicture, mangaVolumes, addToMyC
 
       <Divider className="manageMyCollection-divider-MobileVersion" />
     </>
-  )
+  );
+};
+
+MangaCollectionResult.propTypes = {
+  mangaName: PropTypes.string.isRequired,
+  mangaPicture: PropTypes.string.isRequired,
+  mangaVolumes: PropTypes.array.isRequired,
+  addToMyCollection: PropTypes.func.isRequired,
 };
 
 export default MangaCollectionResult;

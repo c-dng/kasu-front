@@ -67,6 +67,7 @@ const App = ({
   useEffect(() => {
     if (!mangaDatabase && isLogged && token) {
       loadMangaDatabase();
+      console.log('useEffect manga database', mangaDatabase);
     }
     if (!userFullData && isLogged && token) {
       loadUserFullData();
@@ -178,7 +179,10 @@ App.propTypes = {
     PropTypes.string,
     PropTypes.bool,
   ]),
-  mangaDatabase: PropTypes.object,
+  mangaDatabase: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object,
+  ]),
   userFullData: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.object,
@@ -192,7 +196,7 @@ App.propTypes = {
 App.defaultProps = {
   loading: false,
   redirectLink: '',
-  mangaDatabase: {},
+  mangaDatabase: '',
   userFullData: {},
   carouselSearchData: {},
 };

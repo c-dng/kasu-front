@@ -37,7 +37,7 @@ const LoginForm = ({
     <div className="loginform">
       <Image className="loginform-banner" src={alternativeBanner} />
       <div className="loginform-ImageAndGlobalWrapper">
-        <div className="loginform-desktopImage"></div>
+        <div className="loginform-desktopImage" />
         <div className="loginform-globalContentWrapper">
           <Card className="loginform-card" centered>
             <Card.Content className="loginform-cardContent">

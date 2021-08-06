@@ -1,10 +1,12 @@
 import React from 'react';
 import { Form, Segment } from 'semantic-ui-react';
 import './style.scss';
+import PropTypes from 'prop-types';
 
 const AddMangaSearchBar = ({setMangaSearch, manageSubmit, loading, mangaSearch}) => {
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log(mangaSearch);
     manageSubmit(mangaSearch);
   };
 
@@ -28,6 +30,12 @@ const AddMangaSearchBar = ({setMangaSearch, manageSubmit, loading, mangaSearch})
       </div>
     </div>
   );
+};
+AddMangaSearchBar.propTypes = {
+  setMangaSearch: PropTypes.func.isRequired,
+  manageSubmit: PropTypes.func.isRequired,
+  loading: PropTypes.bool.isRequired,
+  mangaSearch: PropTypes.string.isRequired,
 };
 
 export default AddMangaSearchBar;
