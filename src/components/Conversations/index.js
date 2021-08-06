@@ -172,16 +172,13 @@ const Conversations = ({
             </Modal>
           </Grid.Column>
           <Grid.Column textAlign="center">
-
-            <Image size="tiny" circular src={paletteWhite} className="conversations-searchImage conversations-buttonImages" />
+            <Image size="tiny" circular src={paletteWhite} className="conversations-paletteImage conversations-buttonImages" />
             <Dropdown icon="dropdown">
               <Dropdown.Menu>
                 <Dropdown.Item onClick={handleTheme1}>Bright mode</Dropdown.Item>
                 <Dropdown.Item onClick={handleTheme2}>Dark mode</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
-            {/* <Button className="conversations-search conversations-buttons">
-           </Button> */}
           </Grid.Column>
           <Grid.Column textAlign="center">
             <Link to="/contact" exact={+true}>
