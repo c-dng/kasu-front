@@ -1,13 +1,23 @@
 import { connect } from 'react-redux';
-
 import SetProfilPage from 'src/components/SetProfilPage';
-
 import {
-  getUserInfos, updateUser, changeDescription, changeEmail, changePassword, changeConfirmPassword, changeCity, changeAddress, changeZipCode, changeLastName, changeFirstName, changePseudo, changeHolidayMode,
+  getUserInfos,
+  updateUser,
+  changeDescription,
+  changeEmail,
+  changePassword,
+  changeConfirmPassword,
+  changeCity,
+  changeAddress,
+  changeZipCode,
+  changeLastName,
+  changeFirstName,
+  changePseudo,
+  changeHolidayMode,
 } from '../../actions/user';
 import { redirectTo } from '../../actions/global';
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state) => ({
   pseudo: state.user.pseudo,
   email: state.user.email,
   password: state.user.password,
@@ -22,7 +32,7 @@ const mapStateToProps = (state, ownProps) => ({
   confirmPassword: state.user.confirmPassword,
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
+const mapDispatchToProps = (dispatch) => ({
 
   handleUpdate: function () {
     dispatch(updateUser());

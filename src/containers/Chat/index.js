@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-
 import Chat from 'src/components/Chat';
 import { redirectTo } from '../../actions/global';
 import { loadOtherUserFullData } from '../../actions/user';
@@ -11,7 +10,7 @@ const mapStateToprops = (state) => ({
   userId: state.user.data.id,
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
+const mapDispatchToProps = (dispatch) => ({
   handleLoadUser: function (id) {
     dispatch(loadOtherUserFullData(id));
   },

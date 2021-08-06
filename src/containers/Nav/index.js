@@ -1,8 +1,4 @@
-/* eslint-disable linebreak-style */
-// eslint-disable-next-line linebreak-style
 import { connect } from 'react-redux';
-// eslint-disable-next-line linebreak-style
-
 import Nav from 'src/components/Nav';
 import { changeTheme, logoutGlobal } from '../../actions/global';
 import { getUserInfos, loadConversations, logoutUser } from '../../actions/user';
@@ -13,8 +9,7 @@ const mapStateToProps = (state) => ({
   picture: state.user.data.picture,
 });
 
-// eslint-disable-next-line no-unused-vars
-const mapDispatchToProps = (dispatch, ownProps) => ({
+const mapDispatchToProps = (dispatch) => ({
   changeWebsiteTheme: function (theme, navIconColor) {
     dispatch(changeTheme(theme, navIconColor));
   },

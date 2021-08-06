@@ -1,16 +1,14 @@
 import { connect } from 'react-redux';
-import React from 'react';
-import { Redirect } from 'react-router-dom';
 import { searchByZipCode, setSearch } from '../../actions/search';
 import SearchBar from '../../components/SearchBar';
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state) => ({
   search: state.search.search,
   loading: state.global.loading,
   searchResults: state.search.searchData,
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
+const mapDispatchToProps = (dispatch) => ({
   setSearch: function (search) {
     dispatch(setSearch(search));
   },

@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-
 import Conversations from 'src/components/Conversations';
 import {
   toggleHiddenBox, loadSingleChat,

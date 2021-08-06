@@ -2,11 +2,11 @@ import { connect } from 'react-redux';
 import { setAvailableVolumes, setAvailableVolumesToZero } from '../../actions/manga';
 import MangaAvailability from '../../components/ManageMyCollection/MyCollectionResult/MangaAvailability';
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state) => ({
   availableVolumes: state.manga.availableVolumes,
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
+const mapDispatchToProps = (dispatch) => ({
   setAvailableVolumes: function (availableVolume) {
     dispatch(setAvailableVolumes(availableVolume));
   },
