@@ -21,17 +21,13 @@ const Messages = ({ messages }) => {
       {
 
         messages.map(
-          (message, index) => {
-            {/* console.log('messages log : ', messages);
-            console.log('message log : ', message); */}
-            return (
-              <Message
-                key={index}
-                messageUserId={message.author.id}
-                singleMessage={message.content}
-              />
-            );
-          },
+          (message, index) => (
+            <Message
+              key={index}
+              messageUserId={message.author.id}
+              singleMessage={message.content}
+            />
+          ),
         )
 
       }

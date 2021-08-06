@@ -32,7 +32,6 @@ const reducer = (state = initialState, action = {}) => {
         newMessage: '',
       };
     case ADD_MESSAGE:
-      console.log('singleChat state test', state.lastSingleChat)
       if (state.lastSingleChat.id !== action.chatId) {
         return state;
       }

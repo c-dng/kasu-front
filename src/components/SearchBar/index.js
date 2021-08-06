@@ -10,12 +10,8 @@ const SearchBar = ({
   const handleSubmit = (event) => {
     event.preventDefault();
     manageSubmit(search);
-    console.log('search submit');
   };
-  // if (searchResults) {
-  //   console.log('redirecting to rechercher/ville. Search results : ', searchResults);
-  //   return <Redirect to="/rechercher/ville" />;
-  // }
+
   return (
     <div className="searchbar">
       <div className="searchbar-searchWrapper">

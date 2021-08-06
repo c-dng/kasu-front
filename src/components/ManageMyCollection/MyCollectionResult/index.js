@@ -41,8 +41,6 @@ const MyCollectionResult = ({ mangaName,
   const [selected, setSelected] = React.useState(mangaVolumes.map((volume) => volume.number));
 
   const handleChange = (e, { value }) => {
-    console.log('dropdown change value:', value);
-    console.log('select value:', value);
     if (selected.length > value.length) { // an item has been removed
       const difference = selected.filter(
         (x) => !value.includes(x),
@@ -51,7 +49,6 @@ const MyCollectionResult = ({ mangaName,
       if (differenceIndex > -1) {
         value.splice(differenceIndex, 1);
       }
-      console.log('difference of selected', difference); // this is the item
       return setSelected(value);
     }
     return setSelected(value);
@@ -93,7 +90,6 @@ const MyCollectionResult = ({ mangaName,
                     <MangaAvailability
                       volumeNumber={volume.number}
                       onChangeAvailability={(volumeNumber, checked) => {
-                        console.log("Checked Value", checked);
                         if (!checked) {
                           setCheckedVolumes(checkedVolumes.filter((volume) => volume !== volumeNumber));
                         } else {
@@ -119,7 +115,6 @@ const MyCollectionResult = ({ mangaName,
                   labelPosition="right"
                   icon="checkmark"
                   onClick={() => {
-                    console.log("Envoie des données", mangaId, checkedVolumes.join(', '));
                     modifyVolumeAvailability(mangaId, checkedVolumes.join(', '));
                     setOpenAvailability(false);
                   }}
@@ -166,7 +161,6 @@ const MyCollectionResult = ({ mangaName,
                   labelPosition="right"
                   icon="checkmark"
                   onClick={() => {
-                    console.log("Envoie des données selected", mangaId, selected.join(', '));
                     addOrRemoveVolumes(mangaId, selected.join(', '));
                     setOpenEdit(false);
                   }}

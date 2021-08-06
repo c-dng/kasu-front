@@ -10,20 +10,15 @@ const Chat = ({
 }) => {
   // We filter the chat users to get the one that is not the logged in user
 
-  console.log(picture);
   let otherUserPicture;
   let otherUserId;
   let otherUserPseudo;
   if (users) {
-    console.log(users);
-
-    console.log('object keys Chat', Object.values(users));
     Object.values(users).map((user) => {
       if (user.id !== userId) {
         otherUserPicture = user.picture;
         otherUserId = user.id;
         otherUserPseudo = user.pseudo;
-        console.log('other user pic', otherUserPicture);
       }
     });
   }

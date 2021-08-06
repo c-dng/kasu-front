@@ -19,7 +19,6 @@ const DesktopOtherMemberCollection = ({otherUserMangas}) => (
       <Card.Content className="DesktopOtherMemberCollection-myCollectionCardContent">
         {otherUserMangas ? (
           <div className="manageMyCollection-itemWrapperDesktopVersion">
-            {console.log('user mangas', Object.values(otherUserMangas))}
             {Object.values(otherUserMangas).map((manga, index) => (
               <ViewOtherProfileCollectionResult
                 key={index}

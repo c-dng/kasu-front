@@ -63,9 +63,7 @@ const Conversations = ({
   const [userValue, setUserValue] = React.useState(0);
 
   const getUserValue = (event, { value }) => {
-    console.log('uservalue in value: ', userValue);
     setUserValue(value);
-    console.log('uservalue state: ', userValue);
   };
 
   const handleConfirmClick = () => {
@@ -80,7 +78,6 @@ const Conversations = ({
           // This is a way to iterate over an object items as if it were arrays
           // (therefore being able to use the ".map" declarative function)
           Object.entries(conversations).map((conversation) => {
-            console.log(conversation);
             let pseudoToDisplay;
             let picture;
             if (conversation[1].chat.users[1].pseudo === userPseudo) {
@@ -110,7 +107,6 @@ const Conversations = ({
               <Link
                 key={conversation[1].chat.id}
                 onClick={() => {
-                  console.log(conversation[1].chat.id);
                   loadSingleChat(conversation[1].chat.id);
                 }}
                 to={`/conversation/${conversation[1].chat.id}`}

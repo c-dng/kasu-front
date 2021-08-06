@@ -28,14 +28,12 @@ const ContactForm = ({
 
   const handleChangeObject = (evt) => {
     changeObject(evt.target.value);
-    // console.log(evt.target.value);
   };
   const handleChangeContent = (evt) => {
     changeContent(evt.target.value);
   };
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    console.log(message.message);
     handleMessage();
   };
 

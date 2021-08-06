@@ -44,12 +44,10 @@ const DesktopSetIdCard = ({
     evt.preventDefault();
     if (confirmPassword === password) {
       setErrorMessagePassword('');
-      console.log('Bien soumis! mots de passe identiques');
       handleUpdate();
     }
     else {
       setErrorMessagePassword('Les mots de passe ne sont pas identiques!');
-      console.log('ERROR mots de passe inégaux');
     }
   };
   const handleChangeEmail = (evt) => {
@@ -111,11 +109,9 @@ const DesktopSetIdCard = ({
       minSymbols: 1,
     })) {
       setErrorMessage('');
-      console.log(errorMessage);
     }
     else {
       setErrorMessage('Veuillez entrer un mot de passe valide: min-6 caractères, une majuscule, une minuscule, un chiffre et un des caractères suivants: @$%_*|=-');
-      console.log(errorMessage);
     }
   };
 

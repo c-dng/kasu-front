@@ -18,7 +18,6 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     dispatch(setMangaSearch(search));
   },
   manageSubmit: function (search) {
-    console.log(search);
     dispatch(searchByMangaName(search));
   },
   addToMyCollection: function (mangaTitle, volumes) {

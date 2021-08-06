@@ -15,7 +15,6 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     dispatch(setSearch(search));
   },
   manageSubmit: function (search) {
-    console.log(search);
     dispatch(searchByZipCode(search));
   },
 });

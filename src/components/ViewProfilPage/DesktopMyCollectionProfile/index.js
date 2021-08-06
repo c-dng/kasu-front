@@ -25,7 +25,6 @@ const DesktopMyCollectionProfile = ({ userMangas }) => (
       <Card.Content className="DesktopMyCollectionProfile-myCollectionCardContent">
         {userMangas ? (
           <div className="manageMyCollection-itemWrapperDesktopVersion">
-            {console.log('user mangas', Object.values(userMangas))}
             {Object.values(userMangas).map((manga, index) => (
               <ViewProfileCollectionResult
                 key={index}

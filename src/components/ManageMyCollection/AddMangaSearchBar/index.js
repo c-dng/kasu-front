@@ -6,10 +6,7 @@ const AddMangaSearchBar = ({setMangaSearch, manageSubmit, loading, mangaSearch})
   const handleSubmit = (event) => {
     event.preventDefault();
     manageSubmit(mangaSearch);
-
-    console.log('search submit');
   };
-
 
   return (
     <div className="addMangaSearchbar">

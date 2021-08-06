@@ -12,7 +12,6 @@ const ViewProfileCollectionResult = ({ mangaName,
   mangaId,
   mangaMaxVolumeNumber,
 }) => {
-  console.log('manga volumes', mangaVolumes);
   const mangaVolumeOptions = mangaVolumes.map((volume, index) => ({
     key: index,
     text: volume.number,

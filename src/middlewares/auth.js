@@ -19,8 +19,6 @@ const authMiddleware = (store) => (next) => (action) => {
         .post('api/login_check', { username: pseudo, password })
         .then(
           (response) => {
-            console.log(response);
-
             store.dispatch(saveUser(response.data));
 
             api.defaults.headers.common.Authorization = `Bearer ${response.data.token}`;
@@ -29,7 +27,6 @@ const authMiddleware = (store) => (next) => (action) => {
           },
         )
         .catch((error) => {
-          console.log('login foiré', error);
         })
         .then((response) => {
           const userId = store.getState().user.data.id;
@@ -37,11 +34,7 @@ const authMiddleware = (store) => (next) => (action) => {
             .get(`api/v1/user/${userId}/chat`)
             .then(
               (response2) => {
-                console.log(response2);
-
                 store.dispatch(saveUserConversations(response2.data));
-
-                // store.dispatch(wsConnect());
               },
             );
         })
@@ -57,21 +50,18 @@ const authMiddleware = (store) => (next) => (action) => {
     }
 
     case LOAD_CONVERSATIONS: {
-      console.log('doing a load of conversations');
       const userId = store.getState().user.data.id;
       store.dispatch(setLoadingTrue());
       api
         .get(`api/v1/user/${userId}/chat`)
         .then(
           (response) => {
-            console.log('great conversation loading', response);
             store.dispatch(setLoadingFalse());
             store.dispatch(saveUserConversations(response.data));
             store.dispatch(setLoadingFalse());
           },
         )
         .catch((error) => {
-          console.log('load conversations went wrong', error);
           store.dispatch(setLoadingFalse());
         });
       next(action);
@@ -109,34 +99,12 @@ const authMiddleware = (store) => (next) => (action) => {
         })
         .then(
           (response) => {
-            console.log({
-              email,
-              firstname: firstName,
-              lastname: lastName,
-              pseudo,
-              password,
-              address,
-              zip_code: zipCode,
-              city,
-            });
-            console.log('USER CREE: ', response.status);
             store.dispatch(submitFormRegister());
             store.dispatch(redirectTo('/login'));
           },
         )
         .catch(
           (error) => {
-            console.log({
-              email,
-              firstname: firstName,
-              lastname: lastName,
-              pseudo,
-              password,
-              address,
-              zip_code: zipCode,
-              city,
-            });
-            console.log('MESSAGE ERREUR API: ', error.request.responseText, 'STATUT ERREUR: ', error.request.status);
             store.dispatch(saveErrors(error.request.responseText));
           },
         )

@@ -66,11 +66,9 @@ const App = ({
 
   useEffect(() => {
     if (!mangaDatabase && isLogged && token) {
-      console.log('mangaDatabase useEffect test', { mangaDatabase, token });
       loadMangaDatabase();
     }
     if (!userFullData && isLogged && token) {
-      console.log('userFullData useEffect test', { userFullData });
       loadUserFullData();
     }
 
@@ -86,17 +84,14 @@ const App = ({
   const history = useHistory();
 
   useEffect(() => {
-    console.log('App redirect useEffect', redirectLink);
     const redirectToLink = redirectLink;
     if (redirectToLink) {
       dispatch(redirectTo(false));
-      console.log('redirecting to ', redirectToLink);
       history.push(redirectToLink);
     }
   }, [redirectLink]);
 
   const location = useLocation();
-  console.log(location.pathname);
   React.useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);

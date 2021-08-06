@@ -77,7 +77,6 @@ const OtherMemberProfilePage = ({
           <Divider className="otherMemberProfilePage-divider" />
           {otherUserMangas ? (
             <div className="manageMyCollection-itemWrapperDesktopVersion">
-              {console.log('other user mangas', Object.values(otherUserMangas))}
               {Object.values(otherUserMangas).map((manga, index) => (
                 <ViewOtherProfileCollectionResult
                   key={index}

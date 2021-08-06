@@ -87,43 +87,33 @@ const Register = ({
     evt.preventDefault(evt);
     if (confirmPassword != password) {
       setErrorMessagePassword('Les mots de passe ne sont pas identiques!');
-      console.log('ERROR mots de passe inégaux');
     }
     else if (email === '') {
       setErrorMessagePassword('Veuillez saisir un email');
-      console.log('ERROR Veuillez saisir un email');
     }
     else if (pseudo === '') {
       setErrorMessagePassword('Veuillez saisir un pseudo');
-      console.log('ERROR Veuillez saisir un pseudo');
     }
     else if (password === '') {
       setErrorMessagePassword('Veuillez saisir un mot de passe');
-      console.log('ERROR Veuillez saisir un mot de passe');
     }
     else if (firstName === '') {
       setErrorMessagePassword('Veuillez saisir votre prénom');
-      console.log('ERROR Veuillez saisir votre prénom');
     }
     else if (lastName === '') {
       setErrorMessagePassword('Veuillez saisir votre nom de famille');
-      console.log('ERROR Veuillez saisir votre nom de famille');
     }
     else if (address === '') {
       setErrorMessagePassword('Veuillez saisir une adresse valide');
-      console.log('ERROR Veuillez saisir une adresse');
     }
     else if (zipCode === '') {
       setErrorMessagePassword('Veuillez saisir un code postal valide');
-      console.log('ERROR Veuillez saisir un code postal valide');
     }
     else if (city === '') {
       setErrorMessagePassword('Veuillez saisir une ville');
-      console.log('ERROR Veuillez saisir une ville');
     }
     else {
       setErrorMessagePassword('');
-      console.log('Bien soumis! mots de passe identiques', errorsTab);
       handleRegistering();
 
       window.scrollTo(0, 0);
@@ -139,11 +129,9 @@ const Register = ({
       minSymbols: 1,
     })) {
       setErrorMessage('');
-      console.log(errorMessage);
     }
     else {
       setErrorMessage('Veuillez entrer un mot de passe valide: min-6 caractères, une majuscule, une minuscule, un chiffre et un des caractères suivants: @$%_*|=-');
-      console.log(errorMessage);
     }
   };
 

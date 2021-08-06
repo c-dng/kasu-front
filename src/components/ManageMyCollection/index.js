@@ -45,7 +45,6 @@ const ManageMyCollection = ({
 
           {userMangas ? (
             <div className="manageMyCollection-itemWrapperDesktopVersion">
-              {console.log('user mangas', Object.values(userMangas))}
               {Object.values(userMangas).map((manga, index) => (
                 <MyCollectionResult
                   key={index}
@@ -89,7 +88,6 @@ const ManageMyCollection = ({
               </>
             )}
           <Divider className="manageMyCollection-divider" />
-          {console.log('checking manga filtered', mangaFilteredDatabase)}
           <div className="manageMyCollection-wrapperDesktopVersion">
             {mangaFilteredDatabase.map((result) => (
               <MangaCollectionResult

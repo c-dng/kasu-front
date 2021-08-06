@@ -64,12 +64,10 @@ const SetProfilPage = ({
     evt.preventDefault(evt);
     if (confirmPassword === password) {
       setErrorMessagePassword('');
-      console.log('Bien soumis! Mots de passe identiques');
       handleUpdate();
     }
     else {
       setErrorMessagePassword('Les mots de passe ne sont pas identiques!');
-      console.log('ERROR mots de passe inégaux');
     }
   };
 

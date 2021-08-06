@@ -8,7 +8,6 @@ const MangaCollectionResult = ({ mangaName, mangaPicture, mangaVolumes, addToMyC
     value: volume.number,
     className: `volume${volume.number}`,
   }));
-  console.log(mangaVolumeOptions);
 
   const [selected, setSelected] = React.useState([]);
 
@@ -17,14 +16,12 @@ const MangaCollectionResult = ({ mangaName, mangaPicture, mangaVolumes, addToMyC
       const difference = selected.filter(
         (x) => !value.includes(x),
       );
-      console.log('difference of selected', difference); // this is the item
       return false;
     }
     return setSelected(value);
   };
   const mangaTitle = mangaName;
   const volumes = selected.join(', ');
-  console.log('volume selected = ', volumes);
 
   return (
     <>
