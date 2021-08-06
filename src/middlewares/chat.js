@@ -82,8 +82,6 @@ const chatMiddleware = (store) => (next) => (action) => {
         .post(`api/v1/user/${userId}/chat`, { other_user: otherUserId })
         .then(
           (response) => {
-            // store.dispatch(saveTemporaryLastSingleChat(response.data));
-            // store.dispatch(saveLastSingleChat(response.data));
             store.dispatch(loadSingleChat(response.data.id));
             store.dispatch(redirectTo(`/conversation/${response.data.id}`));
           },

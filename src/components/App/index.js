@@ -166,10 +166,29 @@ const App = ({
 App.propTypes = {
   theme: PropTypes.string.isRequired,
   loading: PropTypes.bool,
+  isLogged: PropTypes.bool.isRequired,
+  onRefreshOrTabClosing: PropTypes.func.isRequired,
+  loadCarouselData: PropTypes.func.isRequired,
+  loadCarouselDynamicData: PropTypes.func.isRequired,
+  loadMangaDatabase: PropTypes.func.isRequired,
+  appInit: PropTypes.func.isRequired,
+  appDestruct: PropTypes.func.isRequired,
+  loadUserFullData: PropTypes.func.isRequired,
+  redirectLink: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.bool,
+  ]),
+  mangaDatabase: PropTypes.object,
+  userFullData: PropTypes.object,
+  carouselSearchData: PropTypes.object,
 };
 
 App.defaultProps = {
   loading: false,
+  redirectLink: '',
+  mangaDatabase: {},
+  userFullData: {},
+  carouselSearchData: {},
 };
 
 // == Export
