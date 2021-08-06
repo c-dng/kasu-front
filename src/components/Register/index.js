@@ -1,5 +1,3 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import {
   Button, Card, Form, Image,

@@ -179,8 +179,14 @@ App.propTypes = {
     PropTypes.bool,
   ]),
   mangaDatabase: PropTypes.object,
-  userFullData: PropTypes.object,
-  carouselSearchData: PropTypes.object,
+  userFullData: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object,
+  ]),
+  carouselSearchData: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object,
+  ]),
 };
 
 App.defaultProps = {
