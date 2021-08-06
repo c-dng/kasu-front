@@ -17,7 +17,6 @@ const DesktopSetIdCard = ({
   holiday_mode,
   description,
   picture,
-  infos,
   changeEmail,
   changePassword,
   changeConfirmPassword,
@@ -156,12 +155,14 @@ const DesktopSetIdCard = ({
             placeholder="Bio"
           />
           <Form.Input
+            label="Pseudo:"
             placeholder="Pseudo"
             value={pseudo}
             onChange={handleChangePseudo}
           />
           <Form.Group widths="equal">
             <Form.Input
+              label="Prénom:"
               className="desktopIdCard-formInputName"
               icon="user"
               iconPosition="left"
@@ -170,6 +171,7 @@ const DesktopSetIdCard = ({
               onChange={handleChangeFirstName}
             />
             <Form.Input
+              label="Nom:"
               className="desktopIdCard-formInputLastName"
               icon="user"
               iconPosition="left"
@@ -179,6 +181,7 @@ const DesktopSetIdCard = ({
             />
           </Form.Group>
           <Form.Input
+            label="Adresse:"
             icon="map marker alternate"
             iconPosition="left"
             placeholder="Adresse"
@@ -186,18 +189,21 @@ const DesktopSetIdCard = ({
             onChange={handleChangeAddress}
           />
           <Form.Input
+            label="Code postal:"
             placeholder="Code Postal"
             value={zipCode}
             type="number"
             onChange={handleChangeZipCode}
           />
           <Form.Input
+            label="Ville:"
             placeholder="Ville"
             value={city}
             onChange={handleChangeCity}
           />
           <Form.Group widths="equal">
             <Form.Input
+              label="Mot de passe:"
               className="desktopIdCard-formInpuPassword"
               input="password"
               icon="lock"
@@ -207,6 +213,7 @@ const DesktopSetIdCard = ({
               onChange={handleChangePassword}
             />
             <Form.Input
+              label="Confirmer mot de passe:"
               input="password"
               id="confirmPassword"
               icon="lock"
@@ -221,14 +228,15 @@ const DesktopSetIdCard = ({
             {errorMessagePassword}
           </div>
           <Form.Input
-            className="desktopIdCard-formInputEmail"
-            icon="mail"
-            type="email"
-            iconPosition="left"
-            placeholder="Email"
-            value={email}
-            onChange={handleChangeEmail}
-          />
+              label="Email:"
+              className="desktopIdCard-formInputEmail"
+              icon="mail"
+              type="email"
+              iconPosition="left"
+              placeholder="Email"
+              value={email}
+              onChange={handleChangeEmail}
+            />
           <div className="desktopIdCard-errorMessage">
             {errorMessage}
           </div>
