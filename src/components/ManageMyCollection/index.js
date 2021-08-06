@@ -2,13 +2,14 @@
 /* eslint-disable react/self-closing-comp */
 import React from 'react';
 import {
-  Header, Divider, Icon, Image, Dropdown, Button, Card,
+  Header, Divider, Icon, Image, Button,
 } from 'semantic-ui-react';
 import './style.scss';
 import alternativeBanner from 'src/assets/images/alternativeBanner.png';
 import AddMangaSearchBar from './AddMangaSearchBar';
 import MangaCollectionResult from './MangaCollectionResult';
 import MyCollectionResult from './MyCollectionResult';
+import { Link } from 'react-router-dom';
 
 const ManageMyCollection = ({
   setMangaSearch,
@@ -27,8 +28,6 @@ const ManageMyCollection = ({
     <Image className="manageMyCollection-banner" src={alternativeBanner} />
     <div className="manageMyCollection-mainCard">
       <div className="manageMyCollection-mainCardContent">
-
-        {/* <Card.Header className="manageMyCollection-mainCardHeader">Gestion des collections</Card.Header> */}
         <div className="manageMyCollection-secondBlocDesktopVersion">
           <div className="manageMyCollection-myCollection">
             <Header as="h2">
@@ -77,9 +76,18 @@ const ManageMyCollection = ({
           <div className="manageMyCollection-searchBarWrapper">
             <AddMangaSearchBar setMangaSearch={setMangaSearch} manageSubmit={manageSubmit} loading={loading} mangaSearch={mangaSearch} className="manageMyCollection-searchBar" />
           </div>
-
           <Divider className="manageMyCollection-divider" />
-          <h4 className="manageMyCollection-subtitle">Résultat(s) trouvé(s) : {mangaFilteredDatabase.length}</h4>
+          {mangaFilteredDatabase.length ? <h4 className="manageMyCollection-subtitle">Résultat(s) trouvé(s) : {mangaFilteredDatabase.length}</h4>
+            : (
+              <>
+                <h4 className="manageMyCollection-subtitle">Pas de résultats</h4>
+                <div className="manageMyCollection-addMangaLinkWrapper">
+                  <Link className="manageMyCollection-addMangaLink" to="/contact" exact={+true}>
+                    <Button className="manageMyCollection-addMangaButton">Demander l'ajout d'un manga</Button>
+                  </Link>
+                </div>
+              </>
+            )}
           <Divider className="manageMyCollection-divider" />
           {console.log('checking manga filtered', mangaFilteredDatabase)}
           <div className="manageMyCollection-wrapperDesktopVersion">

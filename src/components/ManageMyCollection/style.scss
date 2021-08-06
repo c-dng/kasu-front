@@ -12,6 +12,15 @@ div.ui.card.manageMyCollection {
   margin: 0;
 }
 
+button.ui.button.manageMyCollection-addMangaButton.manageMyCollection-addMangaButton {
+  border-radius: 1.5em;
+}
+
+div.manageMyCollection-addMangaLinkWrapper {
+  margin: 1em auto;
+  text-align: center;
+}
+
 h3.manageMyCollection-myCollectionTitleManga {
   font-size: 1rem;
   margin: 0 1rem;
@@ -123,7 +132,7 @@ h2.ui.header {
 .manageMyCollection-myCollection.manageMyCollection-myCollection {
   width: 80%;
   margin: 0 auto;
-  padding-top:10px;
+  padding-top: 10px;
 }
 
 .manageMyCollection-myCollectionMangaInfoWrapper {
@@ -182,9 +191,10 @@ div.manageMyCollection-itemWrapperDesktopVersion {
 // Desktop and laptops
 @media only screen and (min-width : 1224px) {
 
-  .manageMyCollection-searchBarWrapper{
+  .manageMyCollection-searchBarWrapper {
     background-position: 50% 90%;
   }
+
   .manageMyCollection-banner.manageMyCollection-banner.manageMyCollection-banner {
     width: 100%;
     height: 250px;
@@ -211,16 +221,18 @@ div.manageMyCollection-itemWrapperDesktopVersion {
     margin-top: 3em;
   }
 
-  h3.manageMyCollection-subHeader{
-    background-color:#000;
-    color:#fff;
+  h3.manageMyCollection-subHeader {
+    background-color: #000;
+    color: #fff;
     padding: 0.8em;
-    width:100%;
-    margin:0 auto;
+    width: 100%;
+    margin: 0 auto;
     border-top-left-radius: 1.3rem;
     border-top-right-radius: 1.3rem;
   }
-  h3.manageMyCollection-subHeader, div.header.manageMyCollection-mainCardHeader {
+
+  h3.manageMyCollection-subHeader,
+  div.header.manageMyCollection-mainCardHeader {
     font-size: x-large;
   }
 
@@ -238,7 +250,7 @@ div.manageMyCollection-itemWrapperDesktopVersion {
 
   div.manageMyCollection-secondBlocDesktopVersion {
     border-radius: 1.5em;
-    
+
   }
 
   div.manageMyCollection-myCollection.manageMyCollection-myCollection {
@@ -271,7 +283,7 @@ div.manageMyCollection-itemWrapperDesktopVersion {
   .manageMyCollection-myCollectionThreeButtons {
     width: 70%;
   }
-  
+
 
   h2.ui.header {
     display: inline-block;
@@ -289,124 +301,127 @@ div.manageMyCollection-itemWrapperDesktopVersion {
   .manageMyCollection-itemContentWrapper.manageMyCollection-itemContentWrapper.manageMyCollection-itemContentWrapper {
     width: 70%;
   }
+
   //UPDATE CSS OF RESULTS CARDS
   div.manageMyCollection-itemDesktopVersion {
     justify-content: center;
     display: flex;
-     flex-wrap: wrap;
-     width: 25%;
-     margin-bottom: 1em;
- }
- 
- div.manageMyCollection-myCollectionThreeButtons {
-     width: 100%;
-     margin: 0 auto;
- }
- 
- div.manageMyCollection-myCollectionButtonsSubGroup {
-     width: 80%;
-     margin: auto;
-     margin-bottom: 0.5em;
-     display: flex;   
- }
- 
- button.ui.mini.fluid.button.manageMyCollection-myCollectionButtons {
+    flex-wrap: wrap;
+    width: 25%;
+    margin-bottom: 1em;
+  }
+
+  div.manageMyCollection-myCollectionThreeButtons {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  div.manageMyCollection-myCollectionButtonsSubGroup {
     width: 80%;
     margin: auto;
- }
+    margin-bottom: 0.5em;
+    display: flex;
+  }
 
- button.ui.fluid.button.manageMyCollection-myCollectionButtons.manageMyCollection-DeleteButton.manageMyCollection-myCollectionButtons.manageMyCollection-DeleteButton {
-  border: 1px solid #db2828;
-  color: #db2828;
-}
+  button.ui.mini.fluid.button.manageMyCollection-myCollectionButtons {
+    width: 80%;
+    margin: auto;
+  }
 
-// hover
-button.ui.fluid.button.manageMyCollection-myCollectionButtons.manageMyCollection-DeleteButton.manageMyCollection-myCollectionButtons.manageMyCollection-DeleteButton:hover {
-  border: 1px solid #db2828;
-  color: vars.$secondaryFontColor_theme1;
-  background-color: #db2828;
-}
-  
-  
+  button.ui.fluid.button.manageMyCollection-myCollectionButtons.manageMyCollection-DeleteButton.manageMyCollection-myCollectionButtons.manageMyCollection-DeleteButton {
+    border: 1px solid #db2828;
+    color: #db2828;
+  }
+
+  // hover
+  button.ui.fluid.button.manageMyCollection-myCollectionButtons.manageMyCollection-DeleteButton.manageMyCollection-myCollectionButtons.manageMyCollection-DeleteButton:hover {
+    border: 1px solid #db2828;
+    color: vars.$secondaryFontColor_theme1;
+    background-color: #db2828;
+  }
+
+
   //Theming 1 en desktop
   .theme1 {
     i.settings.icon.manageMyCollection-myCollectionIcon {
       color: vars.$primaryColor_theme1;
     }
-  
+
     div.sub.header.manageMyCollection-myCollectionSubHeaderTwo.manageMyCollection-myCollectionSubHeaderTwo {
       color: vars.$secondaryFontColor_theme1;
-    } 
-    
+    }
+
     div.content.manageMyCollection-myCollectionHeaderContent {
       background-color: vars.$secondaryColor_theme1;
       color: vars.$secondaryFontColor_theme1;
     }
-  
+
     div.manageMyCollection-myCollection {
       background-color: vars.$secondaryColor_theme1;
     }
-    
+
     div.manageMyCollection-secondBlocDesktopVersion {
       border: 1px solid vars.$primaryBorderColor_theme1;
-      }
-  
+    }
+
     div.manageMyCollection-firstBlocDesktopVersion {
       border: 1px solid vars.$primaryBorderColor_theme1;
     }
 
-    div.manageMyCollection-mainCard.manageMyCollection-mainCard  {
+    div.manageMyCollection-mainCard.manageMyCollection-mainCard {
       border: none;
     }
-    
+
     button.ui.button.manageMyCollection-addToMyCollectionButton:hover {
       background-color: vars.$secondaryColor_theme1;
       color: vars.$secondaryFontColor_theme1;
     }
 
     button.ui.fluid.button.manageMyCollection-myCollectionButtons.manageMyCollection-DeleteButton {
-      background-color: vars.$primaryColor_theme1; 
+      background-color: vars.$primaryColor_theme1;
     }
 
     div.sub.header.manageMyCollection-myCollectionSubHeaderTwo.manageMyCollection-myCollectionSubHeaderTwo {
       color: vars.$secondaryFontColor_theme1;
-    } 
+    }
 
   }
+
   //Theming 2 en desktop
   .theme2 {
     i.settings.icon.manageMyCollection-myCollectionIcon {
       color: vars.$primaryColor_theme2;
     }
-  
+
     div.sub.header.manageMyCollection-myCollectionSubHeaderTwo.manageMyCollection-myCollectionSubHeaderTwo {
       color: vars.$secondaryFontColor_theme2;
-    } 
-    
+    }
+
     div.content.manageMyCollection-myCollectionHeaderContent {
       background-color: vars.$secondaryColor_theme2;
       color: vars.$secondaryFontColor_theme2;
     }
-  
+
     div.manageMyCollection-myCollection {
       background-color: vars.$secondaryColor_theme2;
     }
 
     div.manageMyCollection-secondBlocDesktopVersion {
       border: 1px solid vars.$secondaryBorderColor_theme1;
-      }
-  
+    }
+
     div.manageMyCollection-firstBlocDesktopVersion {
       border: 1px solid vars.$secondaryBorderColor_theme1;
     }
 
-    div.manageMyCollection-mainCard.manageMyCollection-mainCard  {
+    div.manageMyCollection-mainCard.manageMyCollection-mainCard {
       border: none;
     }
 
     button.ui.button.manageMyCollection-addToMyCollectionButton:hover {
-      background-color: vars.$secondaryColor_theme2 ;
-      color: vars.$secondaryFontColor_theme2;;
+      background-color: vars.$secondaryColor_theme2;
+      color: vars.$secondaryFontColor_theme2;
+      ;
     }
 
     button.ui.mini.fluid.button.manageMyCollection-myCollectionButtons.manageMyCollection-DeleteButton {
@@ -418,6 +433,19 @@ button.ui.fluid.button.manageMyCollection-myCollectionButtons.manageMyCollection
 // Theming
 
 .theme1 {
+
+  button.ui.button.manageMyCollection-addMangaButton.manageMyCollection-addMangaButton {
+    color: vars.$primaryFontColor_theme1;
+    border: 1px solid vars.$primaryBorderColor_theme1;
+    background-color: vars.$primaryColor_theme1;
+    transition: all 0.5s;
+  }
+
+  button.ui.button.manageMyCollection-addMangaButton.manageMyCollection-addMangaButton:hover {
+    background-color: vars.$secondaryColor_theme1;
+    color: vars.$secondaryFontColor_theme1;
+  }
+
 
   div.manageMyCollection-mainCard {
     border: 1px solid vars.$primaryBorderColor_theme1;
@@ -476,7 +504,7 @@ button.ui.fluid.button.manageMyCollection-myCollectionButtons.manageMyCollection
 
   div.sub.header.manageMyCollection-myCollectionSubHeaderTwo {
     color: vars.$primaryFontColor_theme1;
-  } 
+  }
 
   div.ui.divider.manageMyCollection-divider-MobileVersion {
     background-color: vars.$secondaryColor_theme1;
@@ -484,10 +512,24 @@ button.ui.fluid.button.manageMyCollection-myCollectionButtons.manageMyCollection
 
   button.ui.fluid.button.manageMyCollection-myCollectionButtons.manageMyCollection-DeleteButton {
     color: vars.$primaryFontColor_theme1;
-  }  
+  }
 }
 
 .theme2 {
+
+  button.ui.button.manageMyCollection-addMangaButton.manageMyCollection-addMangaButton {
+    color: vars.$primaryFontColor_theme2;
+    border: 1px solid vars.$primaryBorderColor_theme2;
+    background-color: vars.$primaryColor_theme2;
+    transition: all 0.5s;
+
+  }
+
+  button.ui.button.manageMyCollection-addMangaButton.manageMyCollection-addMangaButton:hover {
+    background-color: vars.$secondaryColor_theme2;
+    color: vars.$secondaryFontColor_theme2;
+    border: 1px solid vars.$primaryBorderColor_theme2;
+  }
 
   .manageMyCollection-mainCard.manageMyCollection-mainCard.manageMyCollection-mainCard.manageMyCollection-mainCard {
     background-color: vars.$primaryColor_theme2;
@@ -520,6 +562,7 @@ button.ui.fluid.button.manageMyCollection-myCollectionButtons.manageMyCollection
     border: 1px solid vars.$primaryBorderColor_theme2;
     transition: all 0.5s;
   }
+
   .manageMyCollection-myCollectionButtons.manageMyCollection-myCollectionButtons.manageMyCollection-myCollectionButtons:hover {
     background-color: vars.$secondaryColor_theme2;
     color: vars.$secondaryFontColor_theme2;
@@ -528,6 +571,7 @@ button.ui.fluid.button.manageMyCollection-myCollectionButtons.manageMyCollection
   button.ui.mini.fluid.button.manageMyCollection-myCollectionButtons.manageMyCollection-DeleteButton {
     background-color: vars.$primaryColor_theme2;
   }
+
   .manageMyCollection-DeleteButton:hover {
     background-color: vars.$tertiaryColor_theme2;
     color: vars.$tertiaryColor_theme2;
@@ -558,6 +602,7 @@ button.ui.fluid.button.manageMyCollection-myCollectionButtons.manageMyCollection
     color: vars.$primaryFontColor_theme2;
     transition: all 0.5s;
   }
+
   button.ui.fluid.button.manageMyCollection-myCollectionButtons.manageMyCollection-DeleteButton:hover {
     color: vars.$tertiaryColor_theme2;
   }
