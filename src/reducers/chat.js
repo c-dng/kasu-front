@@ -55,19 +55,12 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         lastSingleChat: action.singleChat,
       };
-    // case SAVE_TEMPORARY_LAST_SINGLE_CHAT:
-    //   return {
-    //    ...state,
-    //     lastSingleChat: action.singleChat,
-    //   };
-      
     case LOGOUT_USER:
       return {
         isBoxHidden: true,
         newMessage: '',
         lastSingleChat: {},
       };
-
     default:
       return state;
   }
