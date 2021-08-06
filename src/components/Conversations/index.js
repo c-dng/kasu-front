@@ -137,7 +137,7 @@ const Conversations = ({
         <Grid centered columns={3} className="conversations-hiddenBox">
           <Grid.Column textAlign="center">
             <Modal
-              size='tiny'
+              size="tiny"
               closeIcon
               dimmer="blurring"
               open={open}
