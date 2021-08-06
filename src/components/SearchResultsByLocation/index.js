@@ -1,4 +1,6 @@
 import React from 'react';
+import uuid from 'react-uuid';
+import PropTypes from 'prop-types';
 import {
   Card,
 } from 'semantic-ui-react';
@@ -22,9 +24,9 @@ const SearchResultsByLocation = ({ users, handleLoadUser, createNewChat }) => (
         Object.values(users).map((user) => {
           const results = Object.values(user.mangas);
           return (
-            results.map((result, index) => (
+            results.map((result) => (
               <ResultCard
-                key={index}
+                key={uuid()}
                 mangaName={result.mangaInfo.title}
                 mangaPicture={result.mangaInfo.picture}
                 mangaSynopsis={result.mangaInfo.synopsis}
@@ -44,5 +46,11 @@ const SearchResultsByLocation = ({ users, handleLoadUser, createNewChat }) => (
     </Card.Group>
   </div>
 );
+
+SearchResultsByLocation.propTypes = {
+  users: PropTypes.object.isRequired,
+  handleLoadUser: PropTypes.func.isRequired,
+  createNewChat: PropTypes.func.isRequired,
+};
 
 export default SearchResultsByLocation;

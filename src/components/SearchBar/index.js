@@ -1,11 +1,10 @@
-import React, { useEffect } from 'react';
-import { Redirect } from 'react-router-dom';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Form, Segment } from 'semantic-ui-react';
 import './style.scss';
 
 const SearchBar = ({
-
-  search, setSearch, manageSubmit, loading, searchResults,
+  search, setSearch, manageSubmit, loading,
 }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -32,6 +31,13 @@ const SearchBar = ({
       </div>
     </div>
   );
+};
+
+SearchBar.propTypes = {
+  search: PropTypes.string.isRequired,
+  setSearch: PropTypes.func.isRequired,
+  manageSubmit: PropTypes.func.isRequired,
+  loading: PropTypes.bool.isRequired,
 };
 
 export default SearchBar;
