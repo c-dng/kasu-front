@@ -6,19 +6,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  Button, Grid, Image, Transition,
+  Button, Dropdown, Grid, Header, Icon, Image, Modal, Transition,
 } from 'semantic-ui-react';
 import convButtonWhite from 'src/assets/images/conversations-button-white.png';
-import newMessageWhite from 'src/assets/images/new-message-white.png';
 import searchWhite from 'src/assets/images/search-white.png';
+import paletteWhite from 'src/assets/images/palette-white.png';
+import detectiveConan from 'src/assets/images/detective-conan.jpg';
 import helpWhite from 'src/assets/images/help-white.png';
 import './style.scss';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import Conversation from './Conversation';
+import { loadOtherUserFullData, loadUserFullData } from '../../actions/user';
 
 const Conversations = ({
-  isBoxHidden, handleHiddenBoxDisplay, conversations, loadSingleChat, userPseudo, userId, redirectTo,
+  isBoxHidden, handleHiddenBoxDisplay, conversations, loadSingleChat, userPseudo, userId, redirectTo, changeWebsiteTheme, loadOtherUserFullData,
 }) => {
   const handleHiddenBox = () => {
     handleHiddenBoxDisplay();
@@ -30,15 +32,45 @@ const Conversations = ({
     'conversations-button--notHiddenBox': !isBoxHidden,
   });
 
-  // useEffect(() => {
-  //   console.log('App useEffect Conversations');
-  //   handleConversationsLoad();
-  // });
+  const handleTheme1 = () => {
+    changeWebsiteTheme('theme1', 'black');
+  };
 
-  // useBeforeunload((event) => {
-  //   console.log('action before unload');
-  //   handleConversationsLoad();
-  // });
+  const handleTheme2 = () => {
+    changeWebsiteTheme('theme2', 'white');
+  };
+  const userOptions = [];
+  if (conversations) {
+    Object.values(conversations).map((conversation) => {
+      const conversationUsers = conversation.chat.users;
+      conversationUsers.map((user, index) => {
+        let otherUserPseudo;
+        let otherUserPicture;
+        let otherUserId;
+        if (user.pseudo !== userPseudo) {
+          otherUserPseudo = user.pseudo;
+          otherUserPicture = user.picture;
+          otherUserId = user.id;
+          userOptions.push({ key: user.id, value: otherUserId, image: `https://api.multiavatar.com/${otherUserPicture}.png`, text: otherUserPseudo })
+        }
+      });
+    });
+  }
+
+  const [open, setOpen] = React.useState(false);
+  const [userValue, setUserValue] = React.useState(0);
+
+  const getUserValue = (event, { value }) => {
+    console.log('uservalue in value: ', userValue);
+    setUserValue(value);
+    console.log('uservalue state: ', userValue);
+  };
+
+  const handleConfirmClick = () => {
+    setOpen(false);
+    loadOtherUserFullData(userValue);
+  };
+
   return (
     <div className="conversations">
       <div className="conversations-notHiddenBox">
@@ -104,19 +136,59 @@ const Conversations = ({
 
         <Grid centered columns={3} className="conversations-hiddenBox">
           <Grid.Column textAlign="center">
-            <Button className="conversations-newMessage conversations-buttons">
-              <Image size="tiny" circular src={newMessageWhite} className="conversations-newMessageImage conversations-buttonImages" />
-            </Button>
+            <Modal
+              size='tiny'
+              closeIcon
+              dimmer="blurring"
+              open={open}
+              trigger={<Image size="tiny" circular src={searchWhite} className="conversations-searchImage conversations-buttonImages" />}
+              onClose={() => setOpen(false)}
+              onOpen={() => setOpen(true)}
+            >
+              <Header icon="user" content="Recherche d'utilisateur" />
+              <Modal.Content image className="conversations-modalContent">
+                <Image size="medium" className="conversations-modalContentImage" src={detectiveConan} wrapped />
+                <Modal.Description className="conversations-modalDescription">
+                  <Dropdown
+                    placeholder="Sélectionner un utilisateur"
+                    search
+                    clearable
+                    selection
+                    className="conversations-userSearchBar"
+                    options={userOptions}
+                    onChange={getUserValue}
+                  />
+                </Modal.Description>
+
+              </Modal.Content>
+              <Modal.Actions>
+                <Button color="red" onClick={() => setOpen(false)}>
+                  <Icon name="cancel" /> Annuler
+                </Button>
+                <Button color="green" onClick={() => handleConfirmClick()}>
+                  <Icon name="eye" /> Voir le profil
+                </Button>
+              </Modal.Actions>
+            </Modal>
           </Grid.Column>
           <Grid.Column textAlign="center">
-            <Button className="conversations-search conversations-buttons">
-              <Image size="tiny" circular src={searchWhite} className="conversations-searchImage conversations-buttonImages" />
-            </Button>
+
+            <Image size="tiny" circular src={paletteWhite} className="conversations-searchImage conversations-buttonImages" />
+            <Dropdown icon="dropdown">
+              <Dropdown.Menu>
+                <Dropdown.Item onClick={handleTheme1}>Bright mode</Dropdown.Item>
+                <Dropdown.Item onClick={handleTheme2}>Dark mode</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+            {/* <Button className="conversations-search conversations-buttons">
+           </Button> */}
           </Grid.Column>
           <Grid.Column textAlign="center">
-            <Button className="conversations-help conversations-buttons">
-              <Image size="tiny" circular src={helpWhite} className="conversations-helpImage conversations-buttonImages" />
-            </Button>
+            <Link to="/contact" exact={+true}>
+              <Button className="conversations-help conversations-buttons">
+                <Image size="tiny" circular src={helpWhite} className="conversations-helpImage conversations-buttonImages" />
+              </Button>
+            </Link>
           </Grid.Column>
         </Grid>
 

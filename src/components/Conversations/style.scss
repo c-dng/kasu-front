@@ -69,6 +69,10 @@ div.conversation:not(:first-child) {
   }
 }
 
+div.ui.medium.image.conversations-modalContentImage.conversations-modalContentImage {
+  display: flex;
+  justify-content: center;
+}
 
 .conversations-buttons.conversations-buttons.conversations-buttons.conversations-buttons {
   padding: 0;
@@ -80,6 +84,16 @@ div.conversation:not(:first-child) {
 .conversations-buttonImages.conversations-buttonImages.conversations-buttonImages {
   padding: 0.5rem;
 }
+div.description.conversations-modalDescription.conversations-modalDescription.conversations-modalDescription.conversations-modalDescription {
+  display: flex;
+  justify-content: center;
+  height: auto;
+}
+div.conversations-modalContent.image.content {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
 
 .conversations-hiddenBox.conversations-hiddenBox.conversations-hiddenBox {
   background-color: #c61100;
@@ -88,7 +102,6 @@ div.conversation:not(:first-child) {
   position: fixed;
   bottom: 0;
   margin: 0;
-
 }
 
 
