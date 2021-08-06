@@ -1,20 +1,16 @@
-/* eslint-disable no-console */
-/* eslint-disable no-unused-vars */
 import {
   WS_CONNECT,
   SEND_MESSAGE,
-  saveReceivedMessage,
   LOAD_SINGLE_CHAT,
   saveLastSingleChat,
   WS_DISCONNECT,
   addMessage,
+  CREATE_NEW_CHAT,
+  loadSingleChat,
 } from 'src/actions/chat';
 import api from 'src/api';
-// Ici, on déclare notre variable
 import { io } from 'socket.io-client';
 import { redirectTo, setLoadingFalse, setLoadingTrue } from '../actions/global';
-import { loadUserFullData } from '../actions/user';
-import { CREATE_NEW_CHAT, loadSingleChat } from '../actions/chat';
 
 let socket;
 
@@ -28,7 +24,6 @@ const chatMiddleware = (store) => (next) => (action) => {
           store.dispatch(addMessage(message, chatId, userId));
         });
       }
-
       next(action);
       break;
     }
@@ -46,7 +41,6 @@ const chatMiddleware = (store) => (next) => (action) => {
         chatId: action.chatId,
         userId: store.getState().user.data.id,
       };
-
       socket.emit('send_message', messageToSend);
       next(action);
       break;
@@ -67,7 +61,7 @@ const chatMiddleware = (store) => (next) => (action) => {
           },
         )
         .catch(
-          (error) => {
+          () => {
             store.dispatch(setLoadingFalse());
           },
         );
@@ -87,7 +81,7 @@ const chatMiddleware = (store) => (next) => (action) => {
           },
         )
         .catch(
-          (error) => {
+          () => {
           },
         )
         .finally(() => {
@@ -98,6 +92,7 @@ const chatMiddleware = (store) => (next) => (action) => {
     }
     default:
       next(action);
+      break;
   }
 };
 

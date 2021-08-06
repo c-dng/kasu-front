@@ -1,9 +1,15 @@
-import { useHistory } from 'react-router-dom';
-import { SEARCH_BY_ZIPCODE, saveSearchResult } from 'src/actions/search';
 import api from 'src/api';
 import { redirectTo, setLoadingFalse, setLoadingTrue } from '../actions/global';
-import { LOAD_CAROUSEL_DATA, LOAD_CAROUSEL_DYNAMIC_DATA, saveCarouselData, saveMangaSearch, SEARCH_BY_MANGA_NAME } from '../actions/search';
-import React from 'react';
+import {
+  LOAD_CAROUSEL_DATA,
+  LOAD_CAROUSEL_DYNAMIC_DATA,
+  saveCarouselData,
+  saveMangaSearch,
+  SEARCH_BY_MANGA_NAME,
+  SEARCH_BY_ZIPCODE,
+  saveSearchResult,
+} from '../actions/search';
+
 const token = localStorage.getItem('token');
 if (token) {
   api.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -22,12 +28,12 @@ const searchMiddleware = (store) => (next) => (action) => {
           },
         )
         .then(
-          (response) => {
+          () => {
             store.dispatch(redirectTo('/rechercher/ville'));
           },
         )
         .catch(
-          (error) => {
+          () => {
           },
         )
         .finally(() => {
@@ -60,7 +66,7 @@ const searchMiddleware = (store) => (next) => (action) => {
           },
         )
         .catch(
-          (error) => {
+          () => {
           },
         )
         .finally(() => {
@@ -80,7 +86,7 @@ const searchMiddleware = (store) => (next) => (action) => {
           },
         )
         .catch(
-          (error) => {
+          () => {
           },
         )
         .finally(() => {

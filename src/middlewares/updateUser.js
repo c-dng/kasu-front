@@ -1,9 +1,15 @@
 import {
-  UPDATE_USER, LOAD_USER_FULL_DATA, saveMessage, saveUserFullData,
+  UPDATE_USER,
+  LOAD_USER_FULL_DATA,
+  saveMessage,
+  saveUserFullData,
+  GET_USER_INFOS,
+  LOAD_OTHER_USER_FULL_DATA,
+  saveOtherUserFullData,
+  saveUserInfos,
 } from 'src/actions/user';
 import api from 'src/api';
 import { redirectTo, setLoadingFalse, setLoadingTrue } from '../actions/global';
-import { GET_USER_INFOS, LOAD_OTHER_USER_FULL_DATA, saveOtherUserFullData, saveUserInfos } from '../actions/user';
 
 const token = localStorage.getItem('token');
 if (token) {
@@ -13,7 +19,6 @@ if (token) {
 const updateUser = (store) => (next) => (action) => {
   switch (action.type) {
     case GET_USER_INFOS: {
-      // store.dispatch(setLoadingTrue());
       const userId = store.getState().user.data.id;
       api
         .get(`api/v1/user/${userId}`)
@@ -22,20 +27,38 @@ const updateUser = (store) => (next) => (action) => {
             store.dispatch(saveUserInfos(response.data.contact));
           },
         )
-        .catch((error) => {
+        .catch(() => {
         });
       next(action);
       break;
     }
     case UPDATE_USER: {
       const {
-        zipCode, address, city, lastName, firstName, pseudo, email, password, holiday_mode, description,
+        zipCode,
+        address,
+        city,
+        lastName,
+        firstName,
+        pseudo,
+        email,
+        password,
+        holiday_mode,
+        description,
       } = store.getState().user;
       const userId = store.getState().user.data.id;
       store.dispatch(setLoadingTrue());
       api
         .patch(`api/v1/user/${userId}/update`, {
-          zipcode: zipCode, address, city, lastname: lastName, firstname: firstName, pseudo, email, password, holiday_mode, description,
+          zipcode: zipCode,
+          address,
+          city,
+          lastname: lastName,
+          firstname: firstName,
+          pseudo,
+          email,
+          password,
+          holiday_mode,
+          description,
         })
         .then(
           (response) => {
@@ -44,11 +67,11 @@ const updateUser = (store) => (next) => (action) => {
           },
         )
         .then(
-          (response) => {
+          () => {
             store.dispatch(redirectTo('/profil/mon-profil'));
           },
         )
-        .catch((error) => {
+        .catch(() => {
           store.dispatch(setLoadingFalse());
         });
       next(action);
@@ -66,7 +89,7 @@ const updateUser = (store) => (next) => (action) => {
             store.dispatch(setLoadingFalse());
           },
         )
-        .catch((error) => {
+        .catch(() => {
           store.dispatch(setLoadingFalse());
         });
       next(action);
@@ -82,10 +105,10 @@ const updateUser = (store) => (next) => (action) => {
             store.dispatch(saveOtherUserFullData(response.data));
           },
         )
-        .then((response) => {
+        .then(() => {
           store.dispatch(redirectTo(`/profil/${otherUserId}`));
         })
-        .catch((error) => {
+        .catch(() => {
         })
         .finally(() => {
           store.dispatch(setLoadingFalse());

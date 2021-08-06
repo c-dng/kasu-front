@@ -1,13 +1,17 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable no-console */
-/* eslint-disable linebreak-style */
-/* eslint-disable no-unused-vars */
-/* eslint-disable linebreak-style */
 import api from 'src/api';
 import {
-  LOGIN_USER, REGISTER_USER, saveUser, LOGOUT_USER, saveUserConversations, LOAD_CONVERSATIONS, saveErrors, submitFormRegister
+  LOGIN_USER,
+  REGISTER_USER,
+  saveUser,
+  LOGOUT_USER,
+  saveUserConversations,
+  LOAD_CONVERSATIONS,
+  saveErrors,
+  submitFormRegister,
 } from 'src/actions/user';
-import { appInit, setLoadingFalse, setLoadingTrue, redirectTo } from '../actions/global';
+import {
+  appInit, setLoadingFalse, setLoadingTrue, redirectTo,
+} from '../actions/global';
 import { wsDisconnect } from '../actions/chat';
 
 const authMiddleware = (store) => (next) => (action) => {
@@ -20,15 +24,13 @@ const authMiddleware = (store) => (next) => (action) => {
         .then(
           (response) => {
             store.dispatch(saveUser(response.data));
-
             api.defaults.headers.common.Authorization = `Bearer ${response.data.token}`;
             localStorage.setItem('token', response.data.token);
-
           },
         )
-        .catch((error) => {
+        .catch(() => {
         })
-        .then((response) => {
+        .then(() => {
           const userId = store.getState().user.data.id;
           api
             .get(`api/v1/user/${userId}/chat`)
@@ -61,7 +63,7 @@ const authMiddleware = (store) => (next) => (action) => {
             store.dispatch(setLoadingFalse());
           },
         )
-        .catch((error) => {
+        .catch(() => {
           store.dispatch(setLoadingFalse());
         });
       next(action);
@@ -98,7 +100,7 @@ const authMiddleware = (store) => (next) => (action) => {
           city,
         })
         .then(
-          (response) => {
+          () => {
             store.dispatch(submitFormRegister());
             store.dispatch(redirectTo('/login'));
           },

@@ -1,6 +1,3 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable no-console */
-/* eslint-disable linebreak-style */
 import {
   SUBMIT_FORM, saveMessage, setLoadingFalse, setLoadingTrue,
 } from 'src/actions/global';
@@ -25,7 +22,7 @@ const contactAdminMiddleware = (store) => (next) => (action) => {
             store.dispatch(setLoadingFalse());
           },
         )
-        .catch((error) => {
+        .catch(() => {
           store.dispatch(setLoadingFalse());
         });
       next(action);

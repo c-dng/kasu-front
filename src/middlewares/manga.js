@@ -1,6 +1,13 @@
 import api from 'src/api';
 import { setLoadingFalse, setLoadingTrue } from '../actions/global';
-import { ADD_OR_REMOVE_VOLUMES, ADD_TO_MY_COLLECTION, DELETE_MANGA, LOAD_MANGA_DATABASE, MODIFY_VOLUME_AVAILABILITY, saveMangaDatabase } from '../actions/manga';
+import {
+  ADD_OR_REMOVE_VOLUMES,
+  ADD_TO_MY_COLLECTION,
+  DELETE_MANGA,
+  LOAD_MANGA_DATABASE,
+  MODIFY_VOLUME_AVAILABILITY,
+  saveMangaDatabase,
+} from '../actions/manga';
 import { loadUserFullData } from '../actions/user';
 
 const token = localStorage.getItem('token');
@@ -18,7 +25,7 @@ const mangaMiddleware = (store) => (next) => (action) => {
           store.dispatch(setLoadingFalse());
         })
         .catch(
-          (error) => {
+          () => {
             store.dispatch(setLoadingFalse());
           },
         );
@@ -29,16 +36,16 @@ const mangaMiddleware = (store) => (next) => (action) => {
       const userId = store.getState().user.data.id;
       store.dispatch(setLoadingTrue());
       api.post(`api/v1/user/${userId}/manga`, { title: action.mangaTitle, volumes: action.volumes })
-        .then((response) => {
+        .then(() => {
         })
-        .then((response) => {
+        .then(() => {
           store.dispatch(loadUserFullData());
         })
         .catch(
-          (error) => {
+          () => {
           },
         )
-        .finally((response) => {
+        .finally(() => {
           store.dispatch(setLoadingFalse());
         });
       next(action);
@@ -49,13 +56,13 @@ const mangaMiddleware = (store) => (next) => (action) => {
       const { mangaId } = action;
       store.dispatch(setLoadingTrue());
       api.put(`api/v1/user/${userId}/manga/${mangaId}/availability`, { volumes: action.volumeAvailability })
-        .then((response) => {
+        .then(() => {
         })
-        .then((response) => {
+        .then(() => {
           store.dispatch(loadUserFullData());
         })
         .catch(
-          (error) => {
+          () => {
           },
         )
         .finally(() => {
@@ -69,13 +76,13 @@ const mangaMiddleware = (store) => (next) => (action) => {
       const { mangaId } = action;
       store.dispatch(setLoadingTrue());
       api.put(`api/v1/user/${userId}/manga/${mangaId}`, { volumes: action.volumePossessed })
-        .then((response) => {
+        .then(() => {
         })
-        .then((response) => {
+        .then(() => {
           store.dispatch(loadUserFullData());
         })
         .catch(
-          (error) => {
+          () => {
           },
         )
         .finally(() => {
@@ -89,13 +96,13 @@ const mangaMiddleware = (store) => (next) => (action) => {
       const { mangaId } = action;
       store.dispatch(setLoadingTrue());
       api.delete(`api/v1/user/${userId}/manga/${mangaId}`)
-        .then((response) => {
+        .then(() => {
         })
-        .then((response) => {
+        .then(() => {
           store.dispatch(loadUserFullData());
         })
         .catch(
-          (error) => {
+          () => {
           },
         )
         .finally(() => {
