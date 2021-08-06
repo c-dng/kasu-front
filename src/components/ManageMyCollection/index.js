@@ -6,10 +6,10 @@ import {
 } from 'semantic-ui-react';
 import './style.scss';
 import alternativeBanner from 'src/assets/images/alternativeBanner.png';
+import { Link } from 'react-router-dom';
 import AddMangaSearchBar from './AddMangaSearchBar';
 import MangaCollectionResult from './MangaCollectionResult';
 import MyCollectionResult from './MyCollectionResult';
-import { Link } from 'react-router-dom';
 
 const ManageMyCollection = ({
   setMangaSearch,

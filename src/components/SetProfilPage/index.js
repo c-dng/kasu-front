@@ -186,7 +186,7 @@ const SetProfilPage = ({
                 placeholder="Bio"
               />
               <Form.Group widths="equal">
-              <Label className="setProfilPage-fourthPartLabels">Pseudo:</Label>
+                <Label className="setProfilPage-fourthPartLabels">Pseudo:</Label>
                 <Form.Input
                   className="mobileSetProfil-formInputName"
                   icon="user"

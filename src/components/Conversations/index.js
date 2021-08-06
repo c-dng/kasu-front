@@ -51,7 +51,9 @@ const Conversations = ({
           otherUserPseudo = user.pseudo;
           otherUserPicture = user.picture;
           otherUserId = user.id;
-          userOptions.push({ key: user.id, value: otherUserId, image: `https://api.multiavatar.com/${otherUserPicture}.png`, text: otherUserPseudo })
+          userOptions.push({
+            key: user.id, value: otherUserId, image: `https://api.multiavatar.com/${otherUserPicture}.png`, text: otherUserPseudo,
+          });
         }
       });
     });
