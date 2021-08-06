@@ -67,7 +67,6 @@ const App = ({
   useEffect(() => {
     if (!mangaDatabase && isLogged && token) {
       loadMangaDatabase();
-      console.log('useEffect manga database', mangaDatabase);
     }
     if (!userFullData && isLogged && token) {
       loadUserFullData();

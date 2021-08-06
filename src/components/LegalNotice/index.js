@@ -68,7 +68,7 @@ const LegalNotice = () => (
             <h2 className="legalNotice-h2">ARTICLE 6 : Propriété intellectuelle</h2>
             <p>
               Toute utilisation, reproduction, diffusion, commercialisation, modification
-              de toute ou partie du site www.kasu.com﻿,  sans autorisation de l’Editeur est
+              de toute ou partie du site www.kasu.com,  sans autorisation de l’Editeur est
               prohibée et pourra entraînée des actions et poursuites judiciaires telles que
               notamment prévues par le Code de la propriété intellectuelle et le Code civil.
             </p>

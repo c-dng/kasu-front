@@ -34,7 +34,6 @@ const Register = ({
 }) => {
   const [errorMessage, setErrorMessage] = React.useState('');// display a message received from API
   const [errorMessagePassword, setErrorMessagePassword] = React.useState('');// display a message with errors
-  const errorsTab = [errors];
 
   const handleChangeEmail = (evt) => {
     changeEmail(evt.target.value);
@@ -78,7 +77,7 @@ const Register = ({
 
   const handleSubmit = (evt) => {
     evt.preventDefault(evt);
-    if (confirmPassword != password) {
+    if (confirmPassword !== password) {
       setErrorMessagePassword('Les mots de passe ne sont pas identiques!');
     }
     else if (email === '') {

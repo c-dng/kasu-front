@@ -18,6 +18,7 @@ const Chat = ({
         otherUserId = user.id;
         otherUserPseudo = user.pseudo;
       }
+      return null;
     });
   }
 

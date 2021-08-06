@@ -46,12 +46,8 @@ const searchMiddleware = (store) => (next) => (action) => {
       const { mangaDatabase } = store.getState().manga;
       const mangaDatabaseAsAnArray = Object.values(mangaDatabase);
       const mangaSearch = action.mangaName;
-      console.log('mangaDatabaseAsAnArray', mangaDatabaseAsAnArray);
-      const filtered = mangaDatabaseAsAnArray.filter((manga) => {
-        console.log(mangaSearch);
-        return manga.title.toLowerCase().includes(mangaSearch.toLowerCase());
-      });
-      console.log('middleware', filtered);
+      const filtered = mangaDatabaseAsAnArray
+        .filter((manga) => manga.title.toLowerCase().includes(mangaSearch.toLowerCase()));
       store.dispatch(saveMangaSearch(filtered));
       next(action);
       break;

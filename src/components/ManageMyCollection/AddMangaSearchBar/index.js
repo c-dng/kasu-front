@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 const AddMangaSearchBar = ({setMangaSearch, manageSubmit, loading, mangaSearch}) => {
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(mangaSearch);
     manageSubmit(mangaSearch);
   };
 
