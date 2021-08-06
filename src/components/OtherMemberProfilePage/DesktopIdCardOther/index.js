@@ -1,10 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import {
   Button, Divider, Icon, Image,
 } from 'semantic-ui-react';
 
-const DesktopIdCardOther = ({ pseudo, bio, city, zipcode, picture, holidayMode, userId, createNewChat }) => (
+const DesktopIdCardOther = ({
+  pseudo,
+  bio,
+  city,
+  zipcode,
+  picture,
+  holidayMode,
+  userId,
+  createNewChat,
+}) => (
   <div className="desktopIdCardOther">
     <div className="desktopIdCardOther-mainCard">
       <Image
@@ -36,5 +45,21 @@ const DesktopIdCardOther = ({ pseudo, bio, city, zipcode, picture, holidayMode, 
     </div>
   </div>
 );
+
+DesktopIdCardOther.propTypes = {
+  pseudo: PropTypes.string.isRequired,
+  bio: PropTypes.string,
+  city: PropTypes.string.isRequired,
+  zipcode: PropTypes.number.isRequired,
+  picture: PropTypes.string.isRequired,
+  holidayMode: PropTypes.bool,
+  userId: PropTypes.number.isRequired,
+  createNewChat: PropTypes.func.isRequired,
+};
+
+DesktopIdCardOther.defaultProps = {
+  bio: '',
+  holidayMode: false,
+};
 
 export default DesktopIdCardOther;

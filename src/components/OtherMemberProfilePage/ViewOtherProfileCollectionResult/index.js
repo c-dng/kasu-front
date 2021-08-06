@@ -1,16 +1,13 @@
-
 import React from 'react';
-import _ from 'lodash';
 import {
-  Image, Button, Divider, Modal, Header, Dropdown,
+  Image, Divider, Dropdown,
 } from 'semantic-ui-react';
+import PropTypes from 'prop-types';
 
-const ViewOtherProfileCollectionResult = ({ mangaName,
+const ViewOtherProfileCollectionResult = ({
+  mangaName,
   mangaPicture,
   mangaVolumes,
-  mangaAuthor,
-  mangaId,
-  mangaMaxVolumeNumber,
 }) => {
   const mangaVolumeOptions = mangaVolumes.map((volume, index) => ({
     key: index,
@@ -39,6 +36,12 @@ const ViewOtherProfileCollectionResult = ({ mangaName,
       <Divider className="manageMyCollection-divider-MobileVersion" />
     </>
   );
-}
+};
+
+ViewOtherProfileCollectionResult.propTypes = {
+  mangaName: PropTypes.string.isRequired,
+  mangaPicture: PropTypes.string.isRequired,
+  mangaVolumes: PropTypes.array.isRequired,
+};
 
 export default ViewOtherProfileCollectionResult;
