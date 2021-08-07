@@ -21,6 +21,8 @@ const ResultCard = ({
     key: index,
     text: volume.volume.number,
     value: volume.volume.number,
+    className: `resultCard-volume${volume.status}`,
+    disabled: true,
   }));
 
   const [open, setOpen] = useState(false);

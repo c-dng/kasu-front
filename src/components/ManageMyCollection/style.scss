@@ -8,6 +8,16 @@ img.ui.small.image.manageMyCollection-mangaImage {
   height: auto;
 }
 
+div.disabled.item.myCollectionResult-volumefalse.myCollectionResult-volumefalse.myCollectionResult-volumefalse {
+  color: gray;
+  opacity: 1;
+}
+
+div.disabled.item.myCollectionResult-volumetrue.myCollectionResult-volumetrue.myCollectionResult-volumetrue {
+  color: black;
+  opacity: 1
+}
+
 div.ui.card.manageMyCollection {
   margin: 0;
 }

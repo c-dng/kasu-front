@@ -38,6 +38,8 @@ const MyCollectionResult = ({
     key: index,
     text: volume.number,
     value: volume.number,
+    className: `myCollectionResult-volume${volume.status}`,
+    disabled: true,
   }));
 
   const [selected, setSelected] = React.useState(mangaVolumes.map((volume) => volume.number));
