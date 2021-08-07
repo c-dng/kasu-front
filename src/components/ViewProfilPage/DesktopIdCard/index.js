@@ -54,7 +54,7 @@ const DesktopIdCard = ({
 
 DesktopIdCard.propTypes = {
   pseudo: PropTypes.string.isRequired,
-  bio: PropTypes.string.isRequired,
+  bio: PropTypes.string,
   city: PropTypes.string.isRequired,
   zipcode: PropTypes.number.isRequired,
   picture: PropTypes.string.isRequired,
@@ -63,6 +63,7 @@ DesktopIdCard.propTypes = {
 
 DesktopIdCard.defaultProps = {
   holidayMode: false,
+  bio: '',
 };
 
 export default DesktopIdCard;
