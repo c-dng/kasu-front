@@ -134,7 +134,7 @@ const Conversations = ({
       </Button>
       <Transition visible={!isBoxHidden} animation="slide up" duration={500}>
         <Grid centered columns={3} className="conversations-hiddenBox">
-          <Grid.Column textAlign="center">
+          <Grid.Column className="conversations-footerDivIcon" textAlign="center">
             <Modal
               size="tiny"
               closeIcon
@@ -169,16 +169,16 @@ const Conversations = ({
               </Modal.Actions>
             </Modal>
           </Grid.Column>
-          <Grid.Column textAlign="center">
+          <Grid.Column className="conversations-footerDivIcon" textAlign="center">
             <Image size="tiny" circular src={paletteWhite} className="conversations-paletteImage conversations-buttonImages" />
             <Dropdown icon="dropdown">
-              <Dropdown.Menu>
+              <Dropdown.Menu className="conversations-dropdownThemingFooter">
                 <Dropdown.Item onClick={handleTheme1}>Bright mode</Dropdown.Item>
                 <Dropdown.Item onClick={handleTheme2}>Dark mode</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </Grid.Column>
-          <Grid.Column textAlign="center">
+          <Grid.Column className="conversations-footerDivIcon" textAlign="center">
             <Link to="/contact" exact={+true}>
               <Button className="conversations-help conversations-buttons">
                 <Image size="tiny" circular src={helpWhite} className="conversations-helpImage conversations-buttonImages" />
