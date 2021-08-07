@@ -285,7 +285,7 @@ DesktopSetIdCard.propTypes = {
   firstName: PropTypes.string.isRequired,
   lastName: PropTypes.string.isRequired,
   holiday_mode: PropTypes.bool.isRequired,
-  description: PropTypes.string.isRequired,
+  description: PropTypes.string,
   picture: PropTypes.string.isRequired,
   changeEmail: PropTypes.func.isRequired,
   changePassword: PropTypes.func.isRequired,
@@ -301,6 +301,10 @@ DesktopSetIdCard.propTypes = {
   handleUpdate: PropTypes.func.isRequired,
   displayUserInfos: PropTypes.func.isRequired,
   redirectTo: PropTypes.func.isRequired,
+};
+
+DesktopSetIdCard.defaultProps = {
+  description: '',
 };
 
 export default DesktopSetIdCard;

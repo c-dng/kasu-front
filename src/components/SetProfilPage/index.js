@@ -320,7 +320,7 @@ SetProfilPage.propTypes = {
   firstName: PropTypes.string.isRequired,
   lastName: PropTypes.string.isRequired,
   holiday_mode: PropTypes.bool.isRequired,
-  description: PropTypes.string.isRequired,
+  description: PropTypes.string,
   picture: PropTypes.string.isRequired,
   confirmPassword: PropTypes.string.isRequired,
   changeEmail: PropTypes.func.isRequired,
@@ -337,6 +337,10 @@ SetProfilPage.propTypes = {
   handleUpdate: PropTypes.func.isRequired,
   displayUserInfos: PropTypes.func.isRequired,
   redirectTo: PropTypes.func.isRequired,
+};
+
+SetProfilPage.defaultProps = {
+  description: '',
 };
 
 export default SetProfilPage;
