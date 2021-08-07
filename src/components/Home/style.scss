@@ -335,6 +335,9 @@ li.react-multi-carousel-item {
     background-color: vars.$secondaryColor_theme1;
     color: vars.$secondaryFontColor_theme1;
   }
+  .searchExplained{
+    border: 1px solid vars.$secondaryBorderColor_theme2;
+  }
 }
 
 .theme2{
@@ -345,6 +348,10 @@ li.react-multi-carousel-item {
   div.searchExplained-searchWrapper.searchExplained-searchWrapper.searchExplained-searchWrapper {
     background-color: vars.$secondaryColor_theme2;
     color: vars.$secondaryFontColor_theme2;
+   
+  }
+  .searchExplained{
+    border: 1px solid vars.$primaryBorderColor_theme2;
   }
 }
 
