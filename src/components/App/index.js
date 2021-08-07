@@ -45,25 +45,33 @@ const App = ({
   appInit,
   appDestruct,
 }) => {
+  // appInit connect the websocket on app mount, appDestruct disconnect the socket on app unmount.
   useEffect(() => {
     appInit();
     return appDestruct;
   }, []);
 
+  // onRefreshOrTabClosing disconnect the websocket.
+  // duplicate of appDestruct.
+  // Didn't have time to test its usefullness. Try to prefer appInit/appDestruct
   const handleOnClose = () => {
     if (isLogged) {
       onRefreshOrTabClosing();
     }
   };
 
+  // hook via library, that does an action just before tab refresh or close.
   useBeforeunload(() => {
     handleOnClose();
   });
-
+  // Dispatching in a component. Use with caution
   const dispatch = useDispatch();
 
+  // jwt token
   const token = localStorage.getItem('token');
 
+  // multi useEffect to load manga database, connected user data, default or dynamic carousel data
+  // based on specific conditions
   useEffect(() => {
     if (!mangaDatabase && isLogged && token) {
       loadMangaDatabase();
@@ -81,8 +89,10 @@ const App = ({
     }
   }, [isLogged, mangaDatabase, token, userFullData], carouselSearchData);
 
+  // history hook to perform redirections
   const history = useHistory();
-
+  // everytime redirectLink is modified due to the REDIRECT action (action creator = redirectTo)
+  // the url is pushed by the new link
   useEffect(() => {
     const redirectToLink = redirectLink;
     if (redirectToLink) {
@@ -91,16 +101,20 @@ const App = ({
     }
   }, [redirectLink]);
 
+  // performs an automatic top of the page scroll on url change
   const location = useLocation();
   React.useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
+  // if the loading state is passed to true, the app renders the loading animation page
+  // in order to wait for asynchronous task to get done appropriately.
   if (loading) {
     return <Loading />;
   }
 
   return (
+    // the theme variable is used for theming is every scss files
     <div className={`app ${theme}`}>
       <Nav />
       <Switch>
