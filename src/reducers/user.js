@@ -1,9 +1,7 @@
 import {
   SAVE_USER_INFOS,
-  SAVE_STATUS,
   SUBMIT_FORM_REGISTER,
   SAVE_ERRORS,
-  CHANGE_MESSAGE,
   CHANGE_DESCRIPTION,
   CHANGE_PSEUDO,
   CHANGE_EMAIL,
@@ -175,11 +173,6 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         errors: JSON.parse(action.errors),
-      };
-    case SAVE_STATUS:
-      return {
-        ...state,
-        status: action.status,
       };
     case SUBMIT_FORM_REGISTER:
       return {

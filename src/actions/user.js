@@ -198,6 +198,7 @@ export const saveOtherUserFullData = (fullData) => ({
   fullData,
 });
 
+// save in the state the error message
 export const SAVE_ERRORS = 'SAVE_ERRORS';
 
 export const saveErrors = (errors) => ({
@@ -205,15 +206,9 @@ export const saveErrors = (errors) => ({
   errors,
 });
 
+// Clears state input fields in the register component
 export const SUBMIT_FORM_REGISTER = 'SUBMIT_FORM_REGISTER';
 
 export const submitFormRegister = () => ({
   type: SUBMIT_FORM_REGISTER,
-});
-
-export const SAVE_STATUS = 'SAVE_STATUS';
-
-export const saveStatus = (status) => ({
-  type: SAVE_STATUS,
-  status,
 });
