@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Nav from 'src/components/Nav';
-import { changeTheme, logoutGlobal } from '../../actions/global';
+import { changeTheme } from '../../actions/global';
 import { getUserInfos, loadConversations, logoutUser } from '../../actions/user';
 
 const mapStateToProps = (state) => ({
@@ -15,7 +15,6 @@ const mapDispatchToProps = (dispatch) => ({
   },
   disconnectUser: function () {
     dispatch(logoutUser());
-    dispatch(logoutGlobal());
   },
   handleConversationsLoad: function () {
     dispatch(loadConversations());

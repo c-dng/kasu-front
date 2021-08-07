@@ -1,3 +1,4 @@
+// Pseudo field controlled component
 export const CHANGE_PSEUDO = 'CHANGE_PSEUDO';
 
 export const changePseudo = (pseudo) => ({
@@ -5,6 +6,7 @@ export const changePseudo = (pseudo) => ({
   pseudo,
 });
 
+// Password field controlled component
 export const CHANGE_PASSWORD = 'CHANGE_PASSWORD';
 
 export const changePassword = (password) => ({
@@ -12,6 +14,7 @@ export const changePassword = (password) => ({
   password,
 });
 
+// ConfirmPassword field controlled component
 export const CHANGE_CONFIRM_PASSWORD = 'CHANGE_CONFIRM_PASSWORD';
 
 export const changeConfirmPassword = (confirmPassword) => ({
@@ -19,6 +22,7 @@ export const changeConfirmPassword = (confirmPassword) => ({
   confirmPassword,
 });
 
+// Email field controlled component
 export const CHANGE_EMAIL = 'CHANGE_EMAIL';
 
 export const changeEmail = (email) => ({
@@ -26,6 +30,7 @@ export const changeEmail = (email) => ({
   email,
 });
 
+// Zipcode field controlled component
 export const CHANGE_ZIP_CODE = 'CHANGE_ZIP_CODE';
 
 export const changeZipCode = (zipCode) => ({
@@ -33,6 +38,7 @@ export const changeZipCode = (zipCode) => ({
   zipCode,
 });
 
+// Firstname field controlled component
 export const CHANGE_FIRST_NAME = 'CHANGE_FIRST_NAME';
 
 export const changeFirstName = (firstName) => ({
@@ -40,6 +46,7 @@ export const changeFirstName = (firstName) => ({
   firstName,
 });
 
+// Lastname field controlled component
 export const CHANGE_LAST_NAME = 'CHANGE_LAST_NAME';
 
 export const changeLastName = (lastName) => ({
@@ -47,6 +54,7 @@ export const changeLastName = (lastName) => ({
   lastName,
 });
 
+// Address field controlled component
 export const CHANGE_ADDRESS = 'CHANGE_ADDRESS';
 
 export const changeAddress = (address) => ({
@@ -54,6 +62,7 @@ export const changeAddress = (address) => ({
   address,
 });
 
+// City field controlled component
 export const CHANGE_CITY = 'CHANGE_CITY';
 
 export const changeCity = (city) => ({
@@ -61,6 +70,7 @@ export const changeCity = (city) => ({
   city,
 });
 
+// Holiday mode field controlled component
 export const CHANGE_HOLIDAY_MODE = 'CHANGE_HOLIDAY_MODE';
 
 export const changeHolidayMode = (holiday_mode) => ({
@@ -68,6 +78,7 @@ export const changeHolidayMode = (holiday_mode) => ({
   holiday_mode,
 });
 
+// Description field controlled component
 export const CHANGE_DESCRIPTION = 'CHANGE_DESCRIPTION';
 
 export const changeDescription = (description) => ({
@@ -75,18 +86,14 @@ export const changeDescription = (description) => ({
   description,
 });
 
+// Action to log the user
 export const LOGIN_USER = 'LOGIN_USER';
 
 export const loginUser = () => ({
   type: LOGIN_USER,
 });
 
-export const AUTO_LOGIN_USER = 'AUTO_LOGIN_USER';
-
-export const autoLoginUser = () => ({
-  type: AUTO_LOGIN_USER,
-});
-
+// Saving the connected user's data in the state
 export const SAVE_USER = 'SAVE_USER';
 
 export const saveUser = (data) => ({
@@ -94,12 +101,14 @@ export const saveUser = (data) => ({
   data,
 });
 
+// api call to load the connected user's conversations in the state
 export const LOAD_CONVERSATIONS = 'LOAD_CONVERSATIONS';
 
 export const loadConversations = () => ({
   type: LOAD_CONVERSATIONS,
 });
 
+// saving the connected user's conversations in the state
 export const SAVE_USER_CONVERSATIONS = 'SAVE_USER_CONVERSATIONS';
 
 export const saveUserConversations = (data) => ({
@@ -107,30 +116,35 @@ export const saveUserConversations = (data) => ({
   data,
 });
 
+// action used by every reducer to re-init the state after user logging out
 export const LOGOUT_USER = 'LOGOUT_USER';
 
 export const logoutUser = () => ({
   type: LOGOUT_USER,
 });
 
+// call to api for registering from register form submit
 export const REGISTER_USER = 'REGISTER_USER';
 
 export const RegisterUser = () => ({
   type: REGISTER_USER,
 });
 
+// call to api for updating user's info from updating form submit
 export const UPDATE_USER = 'UPDATE_USER';
 
 export const updateUser = () => ({
   type: UPDATE_USER,
 });
 
+// call to api to get user's connected infos
 export const GET_USER_INFOS = 'GET_USER_INFOS';
 
 export const getUserInfos = () => ({
   type: GET_USER_INFOS,
 });
 
+// saving in the state the connected user's data
 export const SAVE_USER_INFOS = 'SAVE_USER_INFOS';
 
 export const saveUserInfos = (infos) => ({
@@ -138,6 +152,7 @@ export const saveUserInfos = (infos) => ({
   infos,
 });
 
+// saving in state the response message on successful updating profile data.
 export const SAVE_MESSAGE = 'SAVE_MESSAGE';
 
 export const saveMessage = (message) => ({
@@ -145,18 +160,21 @@ export const saveMessage = (message) => ({
   message,
 });
 
+// erasing from state the response message.
 export const ERASE_ERROR_MESSAGE = 'ERASE_ERROR_MESSAGE';
 
 export const eraseErrorMessage = () => ({
   type: ERASE_ERROR_MESSAGE,
 });
 
+// call to api to load full user's connected infos
 export const LOAD_USER_FULL_DATA = 'LOAD_USER_FULL_DATA';
 
 export const loadUserFullData = () => ({
   type: LOAD_USER_FULL_DATA,
 });
 
+// saving in state the full user's connected infos
 export const SAVE_USER_FULL_DATA = 'SAVE_USER_FULL_DATA';
 
 export const saveUserFullData = (fullData) => ({
@@ -164,6 +182,7 @@ export const saveUserFullData = (fullData) => ({
   fullData,
 });
 
+// call to api to load another member's data in order to display its profile page
 export const LOAD_OTHER_USER_FULL_DATA = 'LOAD_OTHER_USER_FULL_DATA';
 
 export const loadOtherUserFullData = (id) => ({
@@ -171,18 +190,12 @@ export const loadOtherUserFullData = (id) => ({
   id,
 });
 
+// saving in state another member's data in order to display its profile page
 export const SAVE_OTHER_USER_FULL_DATA = 'SAVE_OTHER_USER_FULL_DATA';
 
 export const saveOtherUserFullData = (fullData) => ({
   type: SAVE_OTHER_USER_FULL_DATA,
   fullData,
-});
-
-export const CHANGE_MESSAGE = 'CHANGE_MESSAGE';
-
-export const changeMessage = (message) => ({
-  type: CHANGE_MESSAGE,
-  message,
 });
 
 export const SAVE_ERRORS = 'SAVE_ERRORS';

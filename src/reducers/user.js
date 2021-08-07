@@ -111,11 +111,6 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         message: action.message,
       };
-    case CHANGE_MESSAGE:
-      return {
-        ...state,
-        message: action.message,
-      };
     case ERASE_ERROR_MESSAGE:
       return {
         ...state,

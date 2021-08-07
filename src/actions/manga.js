@@ -1,9 +1,11 @@
+// Load the entire manga database from the api
 export const LOAD_MANGA_DATABASE = 'LOAD_MANGA_DATABASE';
 
 export const loadMangaDatabase = () => ({
   type: LOAD_MANGA_DATABASE,
 });
 
+// Save the entire manga database from the api in the state
 export const SAVE_MANGA_DATABASE = 'SAVE_MANGA_DATABASE';
 
 export const saveMangaDatabase = (database) => ({
@@ -11,6 +13,7 @@ export const saveMangaDatabase = (database) => ({
   database,
 });
 
+// adds the desired manga with its associated volumes in the user's collection.
 export const ADD_TO_MY_COLLECTION = 'ADD_TO_MY_COLLECTION';
 
 export const addToMyCollection = (mangaTitle, volumes) => ({
@@ -19,19 +22,7 @@ export const addToMyCollection = (mangaTitle, volumes) => ({
   volumes,
 });
 
-export const SET_AVAILABLE_VOLUMES = 'SET_AVAILABLE_VOLUMES';
-
-export const setAvailableVolumes = (availableVolume) => ({
-  type: SET_AVAILABLE_VOLUMES,
-  availableVolume,
-});
-
-export const SET_AVAILABLE_VOLUMES_TO_ZERO = 'SET_AVAILABLE_VOLUMES_TO_ZERO';
-
-export const setAvailableVolumesToZero = () => ({
-  type: SET_AVAILABLE_VOLUMES_TO_ZERO,
-});
-
+// api call to modify volumes' availability
 export const MODIFY_VOLUME_AVAILABILITY = 'MODIFY_VOLUME_AVAILABILITY';
 
 export const modifyVolumeAvailability = (mangaId, volumeAvailability) => ({
@@ -40,6 +31,7 @@ export const modifyVolumeAvailability = (mangaId, volumeAvailability) => ({
   volumeAvailability,
 });
 
+// api call to add or remove volumes from a possessed manga
 export const ADD_OR_REMOVE_VOLUMES = 'ADD_OR_REMOVE_VOLUMES';
 
 export const addOrRemoveVolumes = (mangaId, volumePossessed) => ({
@@ -48,6 +40,7 @@ export const addOrRemoveVolumes = (mangaId, volumePossessed) => ({
   volumePossessed,
 });
 
+// api call to delete a possessed manga (with its associate volumes)
 export const DELETE_MANGA = 'DELETE_MANGA';
 
 export const deleteManga = (mangaId) => ({

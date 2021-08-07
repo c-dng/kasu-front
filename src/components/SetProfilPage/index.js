@@ -315,11 +315,17 @@ SetProfilPage.propTypes = {
   password: PropTypes.string.isRequired,
   pseudo: PropTypes.string.isRequired,
   address: PropTypes.string.isRequired,
-  zipCode: PropTypes.number.isRequired,
+  zipCode: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
   city: PropTypes.string.isRequired,
   firstName: PropTypes.string.isRequired,
   lastName: PropTypes.string.isRequired,
-  holiday_mode: PropTypes.bool.isRequired,
+  holiday_mode: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.bool,
+  ]),
   description: PropTypes.string,
   picture: PropTypes.string.isRequired,
   confirmPassword: PropTypes.string.isRequired,
@@ -341,6 +347,8 @@ SetProfilPage.propTypes = {
 
 SetProfilPage.defaultProps = {
   description: '',
+  holiday_mode: false,
+  zipCode: '',
 };
 
 export default SetProfilPage;
