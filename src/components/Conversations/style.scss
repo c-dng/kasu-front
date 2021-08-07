@@ -32,7 +32,7 @@ div.conversation:not(:first-child) {
   animation-duration: 0.5s;
   animation-name: slideup;
   animation-fill-mode: forwards;
-  
+
 
 }
 
@@ -84,11 +84,13 @@ div.ui.medium.image.conversations-modalContentImage.conversations-modalContentIm
 .conversations-buttonImages.conversations-buttonImages.conversations-buttonImages {
   padding: 0.5rem;
 }
+
 div.description.conversations-modalDescription.conversations-modalDescription.conversations-modalDescription.conversations-modalDescription {
   display: flex;
   justify-content: center;
   height: auto;
 }
+
 div.conversations-modalContent.image.content {
   display: flex;
   justify-content: space-evenly;
@@ -104,27 +106,6 @@ div.conversations-modalContent.image.content {
   margin: 0;
 }
 
-
-
-@media only screen and (min-width : 1224px) {
-  .conversations{
-    background-image: linear-gradient(rgba(226, 226, 226, 0.7), rgba(56, 56, 56, 0.7)),url("src/assets/images/conversations-bg.png");
-    background-size: cover;
-    background-attachment: fixed;
-    min-height: 100vh;
-    height:100%;
-  }
-  .conversations-notHiddenBox{
-    background-color: #fff;
-    margin: 55px auto;
-    width: 50%;
-    border-radius: 25px;
-    border: 1px solid #c61100;
-    padding-bottom: 20px;
-   
-  }
-}
-
 // Theming 
 
 .theme1 {
@@ -136,7 +117,7 @@ div.conversations-modalContent.image.content {
   div.header.conversation-cardHeader.conversation-cardHeader.conversation-cardHeader {
     color: vars.$primaryFontColor_theme1;
   }
-  
+
   div.meta.conversation-cardMeta.conversation-cardMeta.conversation-cardMeta {
     color: vars.$metaFontColor_theme1;
   }
@@ -144,10 +125,48 @@ div.conversations-modalContent.image.content {
 }
 
 .theme2 {
-  
+  .conversation-card.conversation-card.conversation-card {
+
+    background-color: vars.$primaryColor_theme2;
+  }
+
+  div.header.conversation-cardHeader.conversation-cardHeader.conversation-cardHeader {
+    color: vars.$primaryFontColor_theme2;
+  }
 
   div.meta.conversation-cardMeta.conversation-cardMeta.conversation-cardMeta {
     color: vars.$metaFontColor_theme2;
   }
 }
 
+
+@media only screen and (min-width : 1224px) {
+  .conversations {
+    background-image: linear-gradient(rgba(226, 226, 226, 0.7), rgba(56, 56, 56, 0.7)), url("src/assets/images/conversations-bg.png");
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    height: 100%;
+  }
+
+  .conversations-notHiddenBox {
+    margin: 55px auto;
+    width: 50%;
+    border-radius: 25px;
+    border: 1px solid #c61100;
+    padding-bottom: 20px;
+
+  }
+
+  .theme1 {
+    .conversations-notHiddenBox {
+      background-color: vars.$primaryColor_theme1;
+    }
+  }
+
+  .theme2 {
+    .conversations-notHiddenBox {
+      background-color: vars.$primaryColor_theme2;
+    }
+  }
+}

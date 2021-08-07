@@ -16,7 +16,6 @@
   margin: 0 auto;
   left: 0;
   right: 0;
-  background-color: white;
 
 }
 
@@ -103,6 +102,10 @@ div.message.message:nth-last-child(2) {
     background-color: vars.$secondaryColor_theme1;
     color: vars.$secondaryFontColor_theme1;
   }
+
+  div.chatField {
+    background-color: vars.$primaryColor_theme1;
+  }
 }
 .theme2 {
 
@@ -116,6 +119,9 @@ div.message.message:nth-last-child(2) {
     color: vars.$primaryFontColor_theme2;
     border:1px solid  vars.$primaryFontColor_theme2;
   }
+  div.chatField {
+    background-color: vars.$primaryColor_theme2;
+  }
 }
 
 
@@ -124,7 +130,6 @@ div.message.message:nth-last-child(2) {
     width: 50%;  
     padding-top:0;
     padding-bottom: 0;
-    background-color: transparent;
   }
   form.chatField-form {
     width:100%;
@@ -172,5 +177,16 @@ div.message.message:nth-last-child(2) {
   display: none;
   }
 
+  .theme1 {
+    .messages.messages.messages {
+      background-color: vars.$primaryColor_theme1;
+    }
+  }
+
+  .theme2 {
+    .messages.messages.messages {
+      background-color:vars.$primaryColor_theme2;
+    }
+  }
   
 }
