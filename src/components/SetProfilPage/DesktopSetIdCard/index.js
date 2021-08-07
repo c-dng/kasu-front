@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import validator from 'validator'; // checking of password
 import {
   Button, Header, Form, Icon, Checkbox, Image, Label, Modal, TextArea,
@@ -30,7 +31,7 @@ const DesktopSetIdCard = ({
   changeDescription,
   handleUpdate,
   displayUserInfos,
-  redirectTo
+  redirectTo,
 }) => {
   useEffect(() => {
     displayUserInfos();
@@ -44,21 +45,16 @@ const DesktopSetIdCard = ({
     evt.preventDefault();
     if (confirmPassword === password) {
       setErrorMessagePassword('');
-      console.log('Bien soumis! mots de passe identiques');
       handleUpdate();
     }
     else {
       setErrorMessagePassword('Les mots de passe ne sont pas identiques!');
-      console.log('ERROR mots de passe inégaux');
     }
   };
   const handleChangeEmail = (evt) => {
     changeEmail(evt.target.value);
   };
-  const handleChangePassword = (evt) => {
-    validate(evt.target.value);// checking password
-    changePassword(evt.target.value);
-  };
+
   const handleChangeConfirmPassword = (evt) => {
     changeConfirmPassword(evt.target.value);
   };
@@ -89,17 +85,17 @@ const DesktopSetIdCard = ({
     changeHolidayMode(checked);
   };
 
-  //Delete Account => Redirect to contactForm
+  // Delete Account => Redirect to contactForm
   const handleDeleteMyAccount = () => {
     setOpen(false);
     redirectTo('/contact');
-  }
+  };
 
-  //Cancel => Redirect to profil
+  // Cancel => Redirect to profil
   const handleCancel = () => {
     setOpen(false);
     redirectTo('/profil/mon-profil');
-  }
+  };
 
   // Check password with validator dependencie
   const validate = (value) => {
@@ -111,12 +107,15 @@ const DesktopSetIdCard = ({
       minSymbols: 1,
     })) {
       setErrorMessage('');
-      console.log(errorMessage);
     }
     else {
       setErrorMessage('Veuillez entrer un mot de passe valide: min-6 caractères, une majuscule, une minuscule, un chiffre et un des caractères suivants: @$%_*|=-');
-      console.log(errorMessage);
     }
+  };
+
+  const handleChangePassword = (evt) => {
+    validate(evt.target.value);// checking password
+    changePassword(evt.target.value);
   };
 
   return (
@@ -228,15 +227,15 @@ const DesktopSetIdCard = ({
             {errorMessagePassword}
           </div>
           <Form.Input
-              label="Email:"
-              className="desktopIdCard-formInputEmail"
-              icon="mail"
-              type="email"
-              iconPosition="left"
-              placeholder="Email"
-              value={email}
-              onChange={handleChangeEmail}
-            />
+            label="Email:"
+            className="desktopIdCard-formInputEmail"
+            icon="mail"
+            type="email"
+            iconPosition="left"
+            placeholder="Email"
+            value={email}
+            onChange={handleChangeEmail}
+          />
           <div className="desktopIdCard-errorMessage">
             {errorMessage}
           </div>
@@ -254,18 +253,18 @@ const DesktopSetIdCard = ({
             onClose={() => setOpen(false)}
             onOpen={() => setOpen(true)}
           >
-            <Header icon='archive' content='Archive Old Messages' />
+            <Header icon="archive" content="Archive Old Messages" />
             <Modal.Content>
               <p>
                 Voulez-vous vraiment supprimer votre compte ?
               </p>
             </Modal.Content>
             <Modal.Actions>
-              <Button color='red' onClick={() => setOpen(false)}>
-                <Icon name='remove' /> Non
+              <Button color="red" onClick={() => setOpen(false)}>
+                <Icon name="remove" /> Non
               </Button>
-              <Button color='green' onClick={handleDeleteMyAccount}>
-                <Icon name='checkmark' /> Oui
+              <Button color="green" onClick={handleDeleteMyAccount}>
+                <Icon name="checkmark" /> Oui
               </Button>
             </Modal.Actions>
           </Modal>
@@ -273,6 +272,35 @@ const DesktopSetIdCard = ({
       </div>
     </div>
   );
+};
+
+DesktopSetIdCard.propTypes = {
+  email: PropTypes.string.isRequired,
+  password: PropTypes.string.isRequired,
+  confirmPassword: PropTypes.string.isRequired,
+  pseudo: PropTypes.string.isRequired,
+  address: PropTypes.string.isRequired,
+  zipCode: PropTypes.number.isRequired,
+  city: PropTypes.string.isRequired,
+  firstName: PropTypes.string.isRequired,
+  lastName: PropTypes.string.isRequired,
+  holiday_mode: PropTypes.bool.isRequired,
+  description: PropTypes.string.isRequired,
+  picture: PropTypes.string.isRequired,
+  changeEmail: PropTypes.func.isRequired,
+  changePassword: PropTypes.func.isRequired,
+  changeConfirmPassword: PropTypes.func.isRequired,
+  changePseudo: PropTypes.func.isRequired,
+  changeAddress: PropTypes.func.isRequired,
+  changeZipCode: PropTypes.func.isRequired,
+  changeCity: PropTypes.func.isRequired,
+  changeFirstName: PropTypes.func.isRequired,
+  changeLastName: PropTypes.func.isRequired,
+  changeHolidayMode: PropTypes.func.isRequired,
+  changeDescription: PropTypes.func.isRequired,
+  handleUpdate: PropTypes.func.isRequired,
+  displayUserInfos: PropTypes.func.isRequired,
+  redirectTo: PropTypes.func.isRequired,
 };
 
 export default DesktopSetIdCard;

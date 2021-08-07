@@ -1,9 +1,14 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable import/named */
-/* eslint-disable linebreak-style */
-/* eslint-disable max-len */
 import {
-  CHANGE_THEME, CHANGE_OBJECT, CHANGE_CONTENT, SAVE_MESSAGE, ERASE_MESSAGE, SUBMIT_FORM, SET_LOADING_TRUE, SET_LOADING_FALSE, CHANGE_EMAIL, REDIRECT,
+  CHANGE_THEME,
+  CHANGE_OBJECT,
+  CHANGE_CONTENT,
+  SAVE_MESSAGE,
+  ERASE_MESSAGE,
+  SUBMIT_FORM,
+  SET_LOADING_TRUE,
+  SET_LOADING_FALSE,
+  CHANGE_EMAIL,
+  REDIRECT,
 } from '../actions/global';
 import {
   LOGOUT_USER,

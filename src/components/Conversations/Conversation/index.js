@@ -8,7 +8,7 @@ import { Card, Image } from 'semantic-ui-react';
 // eslint-disable-next-line no-unused-vars
 import PropTypes from 'prop-types';
 
-const Conversation = ({ pseudo, lastMessage, picture, redirectTo, userId }) => (
+const Conversation = ({ pseudo, lastMessage, picture }) => (
   <div className="conversation">
     <Card centered className="conversation-card">
       <Card.Content className="conversation-cardContent">
@@ -24,8 +24,5 @@ const Conversation = ({ pseudo, lastMessage, picture, redirectTo, userId }) => (
     </Card>
   </div>
 );
-// Conversation.propTypes = {
-//   pseudo: PropTypes.string.isRequired,
-// };
 
 export default Conversation;

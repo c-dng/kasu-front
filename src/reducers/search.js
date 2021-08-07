@@ -1,5 +1,10 @@
-/* eslint-disable linebreak-style */
-import { SAVE_CAROUSEL_SEARCH, SAVE_MANGA_SEARCH, SAVE_SEARCH_RESULTS, SEARCH_BY_MANGA_NAME, SET_MANGA_SEARCH, SET_SEARCH } from '../actions/search';
+import {
+  SAVE_CAROUSEL_SEARCH,
+  SAVE_MANGA_SEARCH,
+  SAVE_SEARCH_RESULTS,
+  SET_MANGA_SEARCH,
+  SET_SEARCH,
+} from '../actions/search';
 import { LOGOUT_USER } from '../actions/user';
 
 export const initialState = {

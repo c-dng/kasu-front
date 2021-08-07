@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Button, Card, Icon, Image, Select } from 'semantic-ui-react';
+import {
+  Button, Card, Icon, Image, Select,
+} from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-
 
 const ResultCard = ({
   mangaName,
@@ -66,8 +67,18 @@ const ResultCard = ({
     </div>
   );
 };
-// ResultCard.propTypes = {
-//   pseudo: PropTypes.string.isRequired,
-// };
+ResultCard.propTypes = {
+  mangaName: PropTypes.string.isRequired,
+  mangaPicture: PropTypes.string.isRequired,
+  ownerName: PropTypes.string.isRequired,
+  ownerPicture: PropTypes.string.isRequired,
+  ownerCity: PropTypes.string.isRequired,
+  ownerZipCode: PropTypes.number.isRequired,
+  mangaSynopsis: PropTypes.string.isRequired,
+  mangaVolumes: PropTypes.array.isRequired,
+  ownerId: PropTypes.number.isRequired,
+  handleLoadUser: PropTypes.func.isRequired,
+  createNewChat: PropTypes.func.isRequired,
+};
 
 export default ResultCard;

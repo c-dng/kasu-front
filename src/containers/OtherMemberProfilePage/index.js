@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { createNewChat } from '../../actions/chat';
 import OtherMemberProfilePage from '../../components/OtherMemberProfilePage';
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state) => ({
   pseudo: state.user.otherUserFullData.contact.pseudo,
   bio: state.user.otherUserFullData.contact.description,
   city: state.user.otherUserFullData.contact.city,
@@ -12,7 +12,7 @@ const mapStateToProps = (state, ownProps) => ({
   userId: state.user.otherUserFullData.contact.id,
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
+const mapDispatchToProps = (dispatch) => ({
   createNewChat: function (id) {
     dispatch(createNewChat(id));
   },

@@ -21,7 +21,7 @@ import OtherMemberProfilePage from 'src/containers/OtherMemberProfilePage';
 
 import './style.scss';
 import {
-  Redirect, Route, Switch, useHistory, useLocation,
+  Route, Switch, useHistory, useLocation,
 } from 'react-router-dom';
 import { useBeforeunload } from 'react-beforeunload';
 import { useDispatch } from 'react-redux';
@@ -33,7 +33,6 @@ const App = ({
   theme,
   onRefreshOrTabClosing,
   isLogged,
-  chatId,
   loading,
   mangaDatabase,
   loadMangaDatabase,
@@ -67,11 +66,9 @@ const App = ({
 
   useEffect(() => {
     if (!mangaDatabase && isLogged && token) {
-      console.log('mangaDatabase useEffect test', { mangaDatabase, token });
       loadMangaDatabase();
     }
     if (!userFullData && isLogged && token) {
-      console.log('userFullData useEffect test', { userFullData });
       loadUserFullData();
     }
 
@@ -87,24 +84,14 @@ const App = ({
   const history = useHistory();
 
   useEffect(() => {
-    console.log('App redirect useEffect', redirectLink);
     const redirectToLink = redirectLink;
     if (redirectToLink) {
       dispatch(redirectTo(false));
-      console.log('redirecting to ', redirectToLink);
       history.push(redirectToLink);
     }
   }, [redirectLink]);
 
-  // useDeepCompareEffectNoCheck(() => {
-  //   if (userFullData) {
-  //     console.log('useDeepCompareEffectNoCheck on userFullData');
-  //     loadUserFullData();
-  //   }
-  // }, [userFullData]);
-
   const location = useLocation();
-  console.log(location.pathname);
   React.useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
@@ -115,7 +102,6 @@ const App = ({
 
   return (
     <div className={`app ${theme}`}>
-
       <Nav />
       <Switch>
         <Route path="/" exact>
@@ -179,14 +165,39 @@ const App = ({
 
 App.propTypes = {
   theme: PropTypes.string.isRequired,
-  // eslint-disable-next-line react/no-unused-prop-types
   loading: PropTypes.bool,
-  userMangas: PropTypes.object,
+  isLogged: PropTypes.bool.isRequired,
+  onRefreshOrTabClosing: PropTypes.func.isRequired,
+  loadCarouselData: PropTypes.func.isRequired,
+  loadCarouselDynamicData: PropTypes.func.isRequired,
+  loadMangaDatabase: PropTypes.func.isRequired,
+  appInit: PropTypes.func.isRequired,
+  appDestruct: PropTypes.func.isRequired,
+  loadUserFullData: PropTypes.func.isRequired,
+  redirectLink: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.bool,
+  ]),
+  mangaDatabase: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object,
+  ]),
+  userFullData: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object,
+  ]),
+  carouselSearchData: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object,
+  ]),
 };
 
 App.defaultProps = {
   loading: false,
-  userMangas: {},
+  redirectLink: '',
+  mangaDatabase: '',
+  userFullData: {},
+  carouselSearchData: {},
 };
 
 // == Export

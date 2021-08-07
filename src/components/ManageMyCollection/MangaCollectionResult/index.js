@@ -1,14 +1,18 @@
 import React from 'react';
-import { Button, Divider, Dropdown, Image } from 'semantic-ui-react';
+import {
+  Button, Divider, Dropdown, Image,
+} from 'semantic-ui-react';
+import PropTypes from 'prop-types';
 
-const MangaCollectionResult = ({ mangaName, mangaPicture, mangaVolumes, addToMyCollection }) => {
+const MangaCollectionResult = ({
+  mangaName, mangaPicture, mangaVolumes, addToMyCollection,
+}) => {
   const mangaVolumeOptions = mangaVolumes.map((volume) => ({
     key: volume.number,
     text: volume.number,
     value: volume.number,
     className: `volume${volume.number}`,
   }));
-  console.log(mangaVolumeOptions);
 
   const [selected, setSelected] = React.useState([]);
 
@@ -17,14 +21,12 @@ const MangaCollectionResult = ({ mangaName, mangaPicture, mangaVolumes, addToMyC
       const difference = selected.filter(
         (x) => !value.includes(x),
       );
-      console.log('difference of selected', difference); // this is the item
       return false;
     }
     return setSelected(value);
   };
   const mangaTitle = mangaName;
   const volumes = selected.join(', ');
-  console.log('volume selected = ', volumes);
 
   return (
     <>
@@ -47,7 +49,14 @@ const MangaCollectionResult = ({ mangaName, mangaPicture, mangaVolumes, addToMyC
 
       <Divider className="manageMyCollection-divider-MobileVersion" />
     </>
-  )
+  );
+};
+
+MangaCollectionResult.propTypes = {
+  mangaName: PropTypes.string.isRequired,
+  mangaPicture: PropTypes.string.isRequired,
+  mangaVolumes: PropTypes.array.isRequired,
+  addToMyCollection: PropTypes.func.isRequired,
 };
 
 export default MangaCollectionResult;

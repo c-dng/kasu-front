@@ -1,6 +1,3 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable no-console */
-/* eslint-disable linebreak-style */
 import {
   SUBMIT_FORM, saveMessage, setLoadingFalse, setLoadingTrue,
 } from 'src/actions/global';
@@ -21,14 +18,12 @@ const contactAdminMiddleware = (store) => (next) => (action) => {
         .post(`api/v1/user/${userId}/contact-admin`, { object, content })
         .then(
           (response) => {
-            console.log('Post and set save message succeeded', response.data);
             store.dispatch(saveMessage(response.data));
             store.dispatch(setLoadingFalse());
           },
         )
-        .catch((error) => {
+        .catch(() => {
           store.dispatch(setLoadingFalse());
-          console.log('Post and set save message failed', error);
         });
       next(action);
       break;

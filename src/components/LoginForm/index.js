@@ -1,6 +1,3 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable react/self-closing-comp */
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
@@ -40,7 +37,7 @@ const LoginForm = ({
     <div className="loginform">
       <Image className="loginform-banner" src={alternativeBanner} />
       <div className="loginform-ImageAndGlobalWrapper">
-        <div className="loginform-desktopImage"></div>
+        <div className="loginform-desktopImage" />
         <div className="loginform-globalContentWrapper">
           <Card className="loginform-card" centered>
             <Card.Content className="loginform-cardContent">

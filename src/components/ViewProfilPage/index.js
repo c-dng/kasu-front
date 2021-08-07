@@ -1,15 +1,15 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import uuid from 'react-uuid';
+import PropTypes from 'prop-types';
 import {
   Image, Container, Button, Divider, Icon, Header,
 } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import './style.scss';
 import alternativeBanner from 'src/assets/images/alternativeBanner.png';
-
 import MediaQuery from 'react-responsive';
 import DesktopIdCard from './DesktopIdCard';
 import DesktopMyCollectionProfile from './DesktopMyCollectionProfile';
-import MyCollectionResult from '../ManageMyCollection/MyCollectionResult';
 import ViewProfileCollectionResult from './ViewProfileCollectionResult';
 
 const ViewProfilPage = ({
@@ -21,7 +21,14 @@ const ViewProfilPage = ({
 
       <h1 className="setProfilPage-h1">Mon profil</h1>
       <MediaQuery minWidth={1224}>
-        <DesktopIdCard pseudo={pseudo} bio={bio} city={city} zipcode={zipcode} picture={picture} holidayMode={holidayMode} />
+        <DesktopIdCard
+          pseudo={pseudo}
+          bio={bio}
+          city={city}
+          zipcode={zipcode}
+          picture={picture}
+          holidayMode={holidayMode}
+        />
       </MediaQuery>
       <MediaQuery maxWidth={1223}>
         <Image className="viewProfilPage-firstPartImage" src={`https://api.multiavatar.com/${picture}.png`} size="tiny" />
@@ -49,7 +56,6 @@ const ViewProfilPage = ({
             </p>
           </Container>
         </div>
-
         <div className="viewProfilPage-thirdPart">
           <Container textAlign="center" className="viewProfilPage-thirdPartLocation">
             <h4 className="viewProfilPage-infoSubtitles">Localisation</h4>
@@ -57,7 +63,6 @@ const ViewProfilPage = ({
             <p><Icon size="large" name="map marker alternate" /> {city} - {zipcode}</p>
           </Container>
         </div>
-
         <div className="viewProfilPage-thirdPart">
           <Container textAlign="center" className="viewProfilPage-thirdPartLocation">
             <h4 className="viewProfilPage-infoSubtitles">Mode Vacances</h4>
@@ -65,7 +70,6 @@ const ViewProfilPage = ({
             <p><Icon size="large" name="globe" /> {holidayMode ? 'Activé' : 'Désactivé'}</p>
           </Container>
         </div>
-
         <Divider className="viewProfilPage-divider" />
         <div className="manageMyCollection-myCollection">
           <Header as="h2">
@@ -78,10 +82,9 @@ const ViewProfilPage = ({
         <Divider className="viewProfilPage-divider" />
         {userMangas ? (
           <div className="manageMyCollection-itemWrapperDesktopVersion">
-            {console.log('user mangas', Object.values(userMangas))}
-            {Object.values(userMangas).map((manga, index) => (
+            {Object.values(userMangas).map((manga) => (
               <ViewProfileCollectionResult
-                key={index}
+                key={uuid()}
                 mangaName={manga.info.title}
                 mangaPicture={manga.info.picture}
                 mangaVolumes={manga.volumes}
@@ -99,12 +102,24 @@ const ViewProfilPage = ({
         )}
       </MediaQuery>
     </div>
-
     <MediaQuery minWidth={1224}>
       <DesktopMyCollectionProfile userMangas={userMangas} />
     </MediaQuery>
-
   </div>
 );
+
+ViewProfilPage.propTypes = {
+  pseudo: PropTypes.string.isRequired,
+  bio: PropTypes.string.isRequired,
+  city: PropTypes.string.isRequired,
+  zipcode: PropTypes.number.isRequired,
+  picture: PropTypes.string.isRequired,
+  holidayMode: PropTypes.bool,
+  userMangas: PropTypes.object.isRequired,
+};
+
+ViewProfilPage.defaultProps = {
+  holidayMode: false,
+};
 
 export default ViewProfilPage;

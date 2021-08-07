@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-
 import ContactForm from 'src/components/ContactForm';
 import {
   changeEmail, changeObject, changeContent, submitForm, eraseMessage,

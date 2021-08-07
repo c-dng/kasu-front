@@ -39,13 +39,27 @@ const Home = ({
     <div className="home-ParisResultsTitleWrapper">
       <h2 className="home-ParisResultsTitle">{isLogged && userFullData ? `Voici les mangas disponibles dans un rayon de 30 kilomètres autour de ${userFullData.contact.city}` : 'Voici les mangas disponibles dans un rayon de 30 kilomètres autour de Paris'}</h2>
     </div>
-    <HomeCarousel carouselUsers={carouselUsers} handleLoadUser={handleLoadUser} createNewChat={createNewChat} />
+    <HomeCarousel
+      carouselUsers={carouselUsers}
+      handleLoadUser={handleLoadUser}
+      createNewChat={createNewChat}
+    />
     <SearchExplained />
   </div>
 );
 
 Home.propTypes = {
   isLogged: PropTypes.bool.isRequired,
+  carouselUsers: PropTypes.PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.string,
+  ]).isRequired,
+  handleLoadUser: PropTypes.func.isRequired,
+  createNewChat: PropTypes.func.isRequired,
+  userFullData: PropTypes.PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.string,
+  ]).isRequired,
 };
 
 export default Home;

@@ -1,11 +1,12 @@
-
+import uuid from 'react-uuid';
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   Card, Divider, Header, Icon,
 } from 'semantic-ui-react';
 import ViewOtherProfileCollectionResult from '../ViewOtherProfileCollectionResult';
 
-const DesktopOtherMemberCollection = ({otherUserMangas}) => (
+const DesktopOtherMemberCollection = ({ otherUserMangas }) => (
   <div className="DesktopOtherMemberCollection">
     <Card className="DesktopOtherMemberCollection-mainCard">
       <Card.Header className="DesktopOtherMemberCollection-myCollection">
@@ -19,10 +20,9 @@ const DesktopOtherMemberCollection = ({otherUserMangas}) => (
       <Card.Content className="DesktopOtherMemberCollection-myCollectionCardContent">
         {otherUserMangas ? (
           <div className="manageMyCollection-itemWrapperDesktopVersion">
-            {console.log('user mangas', Object.values(otherUserMangas))}
-            {Object.values(otherUserMangas).map((manga, index) => (
+            {Object.values(otherUserMangas).map((manga) => (
               <ViewOtherProfileCollectionResult
-                key={index}
+                key={uuid()}
                 mangaName={manga.info.title}
                 mangaPicture={manga.info.picture}
                 mangaVolumes={manga.volumes}
@@ -39,10 +39,13 @@ const DesktopOtherMemberCollection = ({otherUserMangas}) => (
             <Divider className="manageMyCollection-divider" />
           </div>
         )}
-
       </Card.Content>
     </Card>
   </div>
 );
+
+DesktopOtherMemberCollection.propTypes = {
+  otherUserMangas: PropTypes.object.isRequired,
+};
 
 export default DesktopOtherMemberCollection;

@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-
 import LoginForm from 'src/components/LoginForm';
 import {
   changePseudo, changePassword, loginUser,

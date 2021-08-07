@@ -1,13 +1,17 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable no-console */
-/* eslint-disable linebreak-style */
-/* eslint-disable no-unused-vars */
-/* eslint-disable linebreak-style */
 import api from 'src/api';
 import {
-  LOGIN_USER, REGISTER_USER, saveUser, LOGOUT_USER, saveUserConversations, LOAD_CONVERSATIONS, saveErrors, submitFormRegister
+  LOGIN_USER,
+  REGISTER_USER,
+  saveUser,
+  LOGOUT_USER,
+  saveUserConversations,
+  LOAD_CONVERSATIONS,
+  saveErrors,
+  submitFormRegister,
 } from 'src/actions/user';
-import { appInit, setLoadingFalse, setLoadingTrue, redirectTo } from '../actions/global';
+import {
+  appInit, setLoadingFalse, setLoadingTrue, redirectTo,
+} from '../actions/global';
 import { wsDisconnect } from '../actions/chat';
 
 const authMiddleware = (store) => (next) => (action) => {
@@ -19,29 +23,20 @@ const authMiddleware = (store) => (next) => (action) => {
         .post('api/login_check', { username: pseudo, password })
         .then(
           (response) => {
-            console.log(response);
-
             store.dispatch(saveUser(response.data));
-
             api.defaults.headers.common.Authorization = `Bearer ${response.data.token}`;
             localStorage.setItem('token', response.data.token);
-
           },
         )
-        .catch((error) => {
-          console.log('login foiré', error);
+        .catch(() => {
         })
-        .then((response) => {
+        .then(() => {
           const userId = store.getState().user.data.id;
           api
             .get(`api/v1/user/${userId}/chat`)
             .then(
               (response2) => {
-                console.log(response2);
-
                 store.dispatch(saveUserConversations(response2.data));
-
-                // store.dispatch(wsConnect());
               },
             );
         })
@@ -57,21 +52,18 @@ const authMiddleware = (store) => (next) => (action) => {
     }
 
     case LOAD_CONVERSATIONS: {
-      console.log('doing a load of conversations');
       const userId = store.getState().user.data.id;
       store.dispatch(setLoadingTrue());
       api
         .get(`api/v1/user/${userId}/chat`)
         .then(
           (response) => {
-            console.log('great conversation loading', response);
             store.dispatch(setLoadingFalse());
             store.dispatch(saveUserConversations(response.data));
             store.dispatch(setLoadingFalse());
           },
         )
-        .catch((error) => {
-          console.log('load conversations went wrong', error);
+        .catch(() => {
           store.dispatch(setLoadingFalse());
         });
       next(action);
@@ -108,35 +100,13 @@ const authMiddleware = (store) => (next) => (action) => {
           city,
         })
         .then(
-          (response) => {
-            console.log({
-              email,
-              firstname: firstName,
-              lastname: lastName,
-              pseudo,
-              password,
-              address,
-              zip_code: zipCode,
-              city,
-            });
-            console.log('USER CREE: ', response.status);
+          () => {
             store.dispatch(submitFormRegister());
             store.dispatch(redirectTo('/login'));
           },
         )
         .catch(
           (error) => {
-            console.log({
-              email,
-              firstname: firstName,
-              lastname: lastName,
-              pseudo,
-              password,
-              address,
-              zip_code: zipCode,
-              city,
-            });
-            console.log('MESSAGE ERREUR API: ', error.request.responseText, 'STATUT ERREUR: ', error.request.status);
             store.dispatch(saveErrors(error.request.responseText));
           },
         )

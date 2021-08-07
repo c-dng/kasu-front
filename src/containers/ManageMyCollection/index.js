@@ -5,7 +5,7 @@ import {
 import { searchByMangaName, setMangaSearch } from '../../actions/search';
 import ManageMyCollection from '../../components/ManageMyCollection';
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state) => ({
   mangaSearch: state.search.mangaSearch,
   loading: state.global.loading,
   mangaSearchData: state.search.mangaSearchData,
@@ -13,12 +13,11 @@ const mapStateToProps = (state, ownProps) => ({
   userMangas: state.user.fullData.contact.manga,
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
+const mapDispatchToProps = (dispatch) => ({
   setMangaSearch: function (search) {
     dispatch(setMangaSearch(search));
   },
   manageSubmit: function (search) {
-    console.log(search);
     dispatch(searchByMangaName(search));
   },
   addToMyCollection: function (mangaTitle, volumes) {

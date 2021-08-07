@@ -1,9 +1,8 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import {
   Button, Card, Form, Image,
 } from 'semantic-ui-react';
+import uuid from 'react-uuid';
 import validator from 'validator'; // checking of password
 import PropTypes from 'prop-types';
 import './style.scss';
@@ -35,7 +34,6 @@ const Register = ({
 }) => {
   const [errorMessage, setErrorMessage] = React.useState('');// display a message received from API
   const [errorMessagePassword, setErrorMessagePassword] = React.useState('');// display a message with errors
-  const errorsTab = [errors];
 
   const handleChangeEmail = (evt) => {
     changeEmail(evt.target.value);
@@ -54,12 +52,6 @@ const Register = ({
 
   const handleChangeConfirmPassword = (evt) => {
     changeConfirmPassword(evt.target.value);
-    eraseErrorMessage();
-  };
-
-  const handleChangePassword = (evt) => {
-    validatePassword(evt.target.value);// checking password
-    changePassword(evt.target.value);
     eraseErrorMessage();
   };
 
@@ -85,45 +77,35 @@ const Register = ({
 
   const handleSubmit = (evt) => {
     evt.preventDefault(evt);
-    if (confirmPassword != password) {
+    if (confirmPassword !== password) {
       setErrorMessagePassword('Les mots de passe ne sont pas identiques!');
-      console.log('ERROR mots de passe inégaux');
     }
     else if (email === '') {
       setErrorMessagePassword('Veuillez saisir un email');
-      console.log('ERROR Veuillez saisir un email');
     }
     else if (pseudo === '') {
       setErrorMessagePassword('Veuillez saisir un pseudo');
-      console.log('ERROR Veuillez saisir un pseudo');
     }
     else if (password === '') {
       setErrorMessagePassword('Veuillez saisir un mot de passe');
-      console.log('ERROR Veuillez saisir un mot de passe');
     }
     else if (firstName === '') {
       setErrorMessagePassword('Veuillez saisir votre prénom');
-      console.log('ERROR Veuillez saisir votre prénom');
     }
     else if (lastName === '') {
       setErrorMessagePassword('Veuillez saisir votre nom de famille');
-      console.log('ERROR Veuillez saisir votre nom de famille');
     }
     else if (address === '') {
       setErrorMessagePassword('Veuillez saisir une adresse valide');
-      console.log('ERROR Veuillez saisir une adresse');
     }
     else if (zipCode === '') {
       setErrorMessagePassword('Veuillez saisir un code postal valide');
-      console.log('ERROR Veuillez saisir un code postal valide');
     }
     else if (city === '') {
       setErrorMessagePassword('Veuillez saisir une ville');
-      console.log('ERROR Veuillez saisir une ville');
     }
     else {
       setErrorMessagePassword('');
-      console.log('Bien soumis! mots de passe identiques', errorsTab);
       handleRegistering();
 
       window.scrollTo(0, 0);
@@ -139,12 +121,16 @@ const Register = ({
       minSymbols: 1,
     })) {
       setErrorMessage('');
-      console.log(errorMessage);
     }
     else {
       setErrorMessage('Veuillez entrer un mot de passe valide: min-6 caractères, une majuscule, une minuscule, un chiffre et un des caractères suivants: @$%_*|=-');
-      console.log(errorMessage);
     }
+  };
+
+  const handleChangePassword = (evt) => {
+    validatePassword(evt.target.value);// checking password
+    changePassword(evt.target.value);
+    eraseErrorMessage();
   };
 
   return (
@@ -152,8 +138,8 @@ const Register = ({
       <Image className="registerForm-banner" src={alternativeBanner} />
       <div className="registerForm-errorsFromAPI">
         {
-          Object.keys(errors).map((oneKey, i) => (
-            <li key={i}>{errors[oneKey]}</li>
+          Object.keys(errors).map((oneKey) => (
+            <li key={uuid()}>{errors[oneKey]}</li>
           ))
         }
         <div className="registerForm-divErrorMessagePasswordNotEqual">
@@ -235,5 +221,9 @@ Register.propTypes = {
   changeCity: PropTypes.func.isRequired,
   changeZipCode: PropTypes.func.isRequired,
   handleRegistering: PropTypes.func.isRequired,
+  confirmPassword: PropTypes.string.isRequired,
+  errors: PropTypes.string.isRequired,
+  changeConfirmPassword: PropTypes.func.isRequired,
+  eraseErrorMessage: PropTypes.func.isRequired,
 };
 export default Register;

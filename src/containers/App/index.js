@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import App from 'src/components/App';
-import { wsDisconnect, wsConnect } from 'src/actions/chat';
+import { wsDisconnect } from 'src/actions/chat';
 import { autoLoginUser, loadUserFullData } from '../../actions/user';
 import { loadMangaDatabase } from '../../actions/manga';
 import { loadCarouselData, loadCarouselDynamicData } from '../../actions/search';

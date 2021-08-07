@@ -1,16 +1,13 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable no-unused-vars */
-/* eslint-disable linebreak-style */
 import { connect } from 'react-redux';
 import { createNewChat } from '../../actions/chat';
 import { loadOtherUserFullData } from '../../actions/user';
 import SearchResultsByLocation from '../../components/SearchResultsByLocation';
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state) => ({
   users: state.search.searchData,
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
+const mapDispatchToProps = (dispatch) => ({
   handleLoadUser: function (id) {
     dispatch(loadOtherUserFullData(id));
   },

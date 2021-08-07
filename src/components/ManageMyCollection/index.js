@@ -1,10 +1,10 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable react/self-closing-comp */
 import React from 'react';
+import uuid from 'react-uuid';
 import {
   Header, Divider, Icon, Image, Button,
 } from 'semantic-ui-react';
 import './style.scss';
+import PropTypes from 'prop-types';
 import alternativeBanner from 'src/assets/images/alternativeBanner.png';
 import { Link } from 'react-router-dom';
 import AddMangaSearchBar from './AddMangaSearchBar';
@@ -16,7 +16,6 @@ const ManageMyCollection = ({
   manageSubmit,
   loading,
   mangaSearch,
-  mangaSearchData,
   mangaFilteredDatabase,
   addToMyCollection,
   userMangas,
@@ -45,10 +44,9 @@ const ManageMyCollection = ({
 
           {userMangas ? (
             <div className="manageMyCollection-itemWrapperDesktopVersion">
-              {console.log('user mangas', Object.values(userMangas))}
-              {Object.values(userMangas).map((manga, index) => (
+              {Object.values(userMangas).map((manga) => (
                 <MyCollectionResult
-                  key={index}
+                  key={uuid()}
                   mangaName={manga.info.title}
                   mangaPicture={manga.info.picture}
                   mangaVolumes={manga.volumes}
@@ -89,7 +87,6 @@ const ManageMyCollection = ({
               </>
             )}
           <Divider className="manageMyCollection-divider" />
-          {console.log('checking manga filtered', mangaFilteredDatabase)}
           <div className="manageMyCollection-wrapperDesktopVersion">
             {mangaFilteredDatabase.map((result) => (
               <MangaCollectionResult
@@ -108,5 +105,18 @@ const ManageMyCollection = ({
     </div>
   </div>
 );
+
+ManageMyCollection.propTypes = {
+  setMangaSearch: PropTypes.func.isRequired,
+  manageSubmit: PropTypes.func.isRequired,
+  loading: PropTypes.bool.isRequired,
+  mangaSearch: PropTypes.string.isRequired,
+  mangaFilteredDatabase: PropTypes.array.isRequired,
+  addToMyCollection: PropTypes.func.isRequired,
+  userMangas: PropTypes.object.isRequired,
+  modifyVolumeAvailability: PropTypes.func.isRequired,
+  addOrRemoveVolumes: PropTypes.func.isRequired,
+  deleteManga: PropTypes.func.isRequired,
+};
 
 export default ManageMyCollection;

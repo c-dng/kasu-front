@@ -1,8 +1,3 @@
-/* eslint-disable linebreak-style */
-// eslint-disable-next-line linebreak-style
-/* eslint-disable react/prop-types */
-/* eslint-disable linebreak-style */
-// eslint-disable-next-line linebreak-style
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
@@ -17,10 +12,17 @@ import './style.scss';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import Conversation from './Conversation';
-import { loadOtherUserFullData, loadUserFullData } from '../../actions/user';
 
 const Conversations = ({
-  isBoxHidden, handleHiddenBoxDisplay, conversations, loadSingleChat, userPseudo, userId, redirectTo, changeWebsiteTheme, loadOtherUserFullData,
+  isBoxHidden,
+  handleHiddenBoxDisplay,
+  conversations,
+  loadSingleChat,
+  userPseudo,
+  userId,
+  redirectTo,
+  changeWebsiteTheme,
+  loadOtherUserFullData,
 }) => {
   const handleHiddenBox = () => {
     handleHiddenBoxDisplay();
@@ -43,7 +45,7 @@ const Conversations = ({
   if (conversations) {
     Object.values(conversations).map((conversation) => {
       const conversationUsers = conversation.chat.users;
-      conversationUsers.map((user, index) => {
+      conversationUsers.map((user) => {
         let otherUserPseudo;
         let otherUserPicture;
         let otherUserId;
@@ -55,7 +57,9 @@ const Conversations = ({
             key: user.id, value: otherUserId, image: `https://api.multiavatar.com/${otherUserPicture}.png`, text: otherUserPseudo,
           });
         }
+        return null;
       });
+      return null;
     });
   }
 
@@ -63,9 +67,7 @@ const Conversations = ({
   const [userValue, setUserValue] = React.useState(0);
 
   const getUserValue = (event, { value }) => {
-    console.log('uservalue in value: ', userValue);
     setUserValue(value);
-    console.log('uservalue state: ', userValue);
   };
 
   const handleConfirmClick = () => {
@@ -80,7 +82,6 @@ const Conversations = ({
           // This is a way to iterate over an object items as if it were arrays
           // (therefore being able to use the ".map" declarative function)
           Object.entries(conversations).map((conversation) => {
-            console.log(conversation);
             let pseudoToDisplay;
             let picture;
             if (conversation[1].chat.users[1].pseudo === userPseudo) {
@@ -110,7 +111,6 @@ const Conversations = ({
               <Link
                 key={conversation[1].chat.id}
                 onClick={() => {
-                  console.log(conversation[1].chat.id);
                   loadSingleChat(conversation[1].chat.id);
                 }}
                 to={`/conversation/${conversation[1].chat.id}`}
@@ -192,9 +192,15 @@ const Conversations = ({
 };
 
 Conversations.propTypes = {
-
   handleHiddenBoxDisplay: PropTypes.func.isRequired,
   isBoxHidden: PropTypes.bool.isRequired,
+  conversations: PropTypes.object.isRequired,
+  loadSingleChat: PropTypes.func.isRequired,
+  userPseudo: PropTypes.string.isRequired,
+  userId: PropTypes.number.isRequired,
+  redirectTo: PropTypes.func.isRequired,
+  changeWebsiteTheme: PropTypes.func.isRequired,
+  loadOtherUserFullData: PropTypes.func.isRequired,
 };
 
 export default Conversations;

@@ -1,29 +1,31 @@
-
 import React from 'react';
 import _ from 'lodash';
 import {
   Image, Button, Divider, Modal, Header, Dropdown,
 } from 'semantic-ui-react';
 import MangaAvailability from 'src/containers/MangaAvailability';
+import PropTypes from 'prop-types';
 
-const MyCollectionResult = ({ mangaName,
+const MyCollectionResult = ({
+  mangaName,
   mangaPicture,
   mangaVolumes,
-  mangaAuthor,
   mangaId,
   modifyVolumeAvailability,
   mangaMaxVolumeNumber,
   addOrRemoveVolumes,
-  deleteManga
+  deleteManga,
 }) => {
   const [openAvailability, setOpenAvailability] = React.useState(false);
   const [checkedVolumes, setCheckedVolumes] = React.useState(
     mangaVolumes
       .filter((volume) => volume.status)
-      .map((volume) => volume.number)
+      .map((volume) => volume.number),
   );
   const [openEdit, setOpenEdit] = React.useState(false);
-  const [possessedVolumes, setPossessedVolumes] = React.useState(mangaVolumes.map((volume) => volume.number));
+  const [possessedVolumes, setPossessedVolumes] = React.useState(
+    mangaVolumes.map((volume) => volume.number),
+  );
   const maxVolumeArray = _.range(1, mangaMaxVolumeNumber + 1);
   const mangaVolumeOptions = maxVolumeArray.map((volume) => ({
     key: volume,
@@ -41,8 +43,6 @@ const MyCollectionResult = ({ mangaName,
   const [selected, setSelected] = React.useState(mangaVolumes.map((volume) => volume.number));
 
   const handleChange = (e, { value }) => {
-    console.log('dropdown change value:', value);
-    console.log('select value:', value);
     if (selected.length > value.length) { // an item has been removed
       const difference = selected.filter(
         (x) => !value.includes(x),
@@ -51,7 +51,6 @@ const MyCollectionResult = ({ mangaName,
       if (differenceIndex > -1) {
         value.splice(differenceIndex, 1);
       }
-      console.log('difference of selected', difference); // this is the item
       return setSelected(value);
     }
     return setSelected(value);
@@ -93,16 +92,16 @@ const MyCollectionResult = ({ mangaName,
                     <MangaAvailability
                       volumeNumber={volume.number}
                       onChangeAvailability={(volumeNumber, checked) => {
-                        console.log("Checked Value", checked);
                         if (!checked) {
-                          setCheckedVolumes(checkedVolumes.filter((volume) => volume !== volumeNumber));
-                        } else {
+                          setCheckedVolumes(checkedVolumes.filter((volumeFilter) => (
+                            volumeFilter !== volumeNumber)));
+                        }
+                        else {
                           setCheckedVolumes([
                             ...checkedVolumes,
                             volumeNumber,
                           ]);
                         }
-
                       }}
                       key={volume.number}
                       checked={checkedVolumes.includes(volume.number)}
@@ -119,7 +118,6 @@ const MyCollectionResult = ({ mangaName,
                   labelPosition="right"
                   icon="checkmark"
                   onClick={() => {
-                    console.log("Envoie des données", mangaId, checkedVolumes.join(', '));
                     modifyVolumeAvailability(mangaId, checkedVolumes.join(', '));
                     setOpenAvailability(false);
                   }}
@@ -127,7 +125,7 @@ const MyCollectionResult = ({ mangaName,
                 />
               </Modal.Actions>
             </Modal>
-            <div className="manageMyCollection-artificialMargin"></div>
+            <div className="manageMyCollection-artificialMargin" />
             <Modal
               dimmer="blurring"
               onClose={() => setOpenEdit(false)}
@@ -166,7 +164,6 @@ const MyCollectionResult = ({ mangaName,
                   labelPosition="right"
                   icon="checkmark"
                   onClick={() => {
-                    console.log("Envoie des données selected", mangaId, selected.join(', '));
                     addOrRemoveVolumes(mangaId, selected.join(', '));
                     setOpenEdit(false);
                   }}
@@ -214,6 +211,17 @@ const MyCollectionResult = ({ mangaName,
       <Divider className="manageMyCollection-divider-MobileVersion" />
     </>
   );
-}
+};
+
+MyCollectionResult.propTypes = {
+  mangaName: PropTypes.string.isRequired,
+  mangaPicture: PropTypes.string.isRequired,
+  mangaVolumes: PropTypes.array.isRequired,
+  mangaId: PropTypes.number.isRequired,
+  modifyVolumeAvailability: PropTypes.func.isRequired,
+  mangaMaxVolumeNumber: PropTypes.number.isRequired,
+  addOrRemoveVolumes: PropTypes.func.isRequired,
+  deleteManga: PropTypes.func.isRequired,
+};
 
 export default MyCollectionResult;
