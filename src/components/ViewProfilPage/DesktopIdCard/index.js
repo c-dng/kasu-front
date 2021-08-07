@@ -56,7 +56,10 @@ DesktopIdCard.propTypes = {
   pseudo: PropTypes.string.isRequired,
   bio: PropTypes.string,
   city: PropTypes.string.isRequired,
-  zipcode: PropTypes.number.isRequired,
+  zipcode: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
   picture: PropTypes.string.isRequired,
   holidayMode: PropTypes.bool,
 };
@@ -64,6 +67,7 @@ DesktopIdCard.propTypes = {
 DesktopIdCard.defaultProps = {
   holidayMode: false,
   bio: '',
+  zipcode: '',
 };
 
 export default DesktopIdCard;

@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 
 import App from 'src/components/App';
 import { wsDisconnect } from 'src/actions/chat';
-import { autoLoginUser, loadUserFullData } from '../../actions/user';
+import { loadUserFullData } from '../../actions/user';
 import { loadMangaDatabase } from '../../actions/manga';
 import { loadCarouselData, loadCarouselDynamicData } from '../../actions/search';
 import { appInit, appDestruct } from '../../actions/global';
@@ -19,9 +19,6 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  autoLogin: function () {
-    dispatch(autoLoginUser());
-  },
   onRefreshOrTabClosing: () => {
     dispatch(wsDisconnect());
   },

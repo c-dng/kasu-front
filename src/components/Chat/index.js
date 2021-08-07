@@ -12,6 +12,8 @@ const Chat = ({
   let otherUserId;
   let otherUserPseudo;
   if (users) {
+    // Object.values/entries/keys allows to iterate with array functions like .map or .filter 
+    // through objects
     Object.values(users).map((user) => {
       if (user.id !== userId) {
         otherUserPicture = user.picture;
@@ -24,10 +26,13 @@ const Chat = ({
 
   return (
     <div className="chat">
+      {/* button reserved for mobile view. Load other user data + redirect to its profile page */}
       <Button className="chat-otherUserProfilLink" onClick={() => handleLoadUser(otherUserId)}>Voir le profil de {otherUserPseudo}</Button>
+      {/* image reserved for desktop view. Load other user data + redirect to its profile page */}
       <img onClick={() => handleLoadUser(otherUserId)} src={`https://api.multiavatar.com/${otherUserPicture}.png`} alt="other user" className="picture" />
       <Messages />
       <ChatField />
+      {/* image reserved for desktop view. redirect to connected user profile page */}
       <img onClick={() => redirectTo('/profil/mon-profil')} src={`https://api.multiavatar.com/${picture}.png`} alt="user" className="picture" />
     </div>
   );
