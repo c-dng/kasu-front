@@ -160,13 +160,13 @@ div.conversations-modalContent.image.content {
 
   .theme1 {
     .conversations-notHiddenBox {
-      background-color: white;
+      background-color: vars.$primaryColor_theme1;
     }
   }
 
   .theme2 {
     .conversations-notHiddenBox {
-      background-color: black;
+      background-color: vars.$primaryColor_theme2;
     }
   }
 }
