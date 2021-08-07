@@ -18,15 +18,6 @@ const reducer = (state = initialState, action = {}) => {
         mangaDatabase: {},
         availableVolumes: [],
       };
-    case SET_AVAILABLE_VOLUMES:
-      return {
-        availableVolumes: [...state.availableVolumes, action.availableVolume],
-      };
-    case SET_AVAILABLE_VOLUMES_TO_ZERO:
-      return {
-        availableVolumes: [],
-      };
-
     default:
       return state;
   }
