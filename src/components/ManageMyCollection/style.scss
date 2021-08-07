@@ -316,6 +316,7 @@ div.manageMyCollection-itemWrapperDesktopVersion {
   div.manageMyCollection-itemDesktopVersion {
     justify-content: center;
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     width: 25%;
     margin-bottom: 1em;
