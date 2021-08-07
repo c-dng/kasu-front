@@ -6,6 +6,17 @@ div.ui.cards.searchResultsByLocation-cardGroup {
   width: 70%;
   margin: auto;
 }
+
+div.disabled.item.resultCard-volumefalse.resultCard-volumefalse.resultCard-volumefalse {
+  color: gray;
+  opacity: 1;
+}
+
+div.disabled.item.resultCard-volumetrue.resultCard-volumetrue.resultCard-volumetrue {
+  color: black;
+  opacity: 1
+}
+
 h4.searchResultsByLocation-subtitle--displayNone.searchResultsByLocation-subtitle--displayNone.searchResultsByLocation-subtitle--displayNone{
   display: none;
 }

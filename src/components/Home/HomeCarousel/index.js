@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 import React from 'react';
 import Carousel from 'react-multi-carousel';
 import PropTypes from 'prop-types';
