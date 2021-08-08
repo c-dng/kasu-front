@@ -1,7 +1,26 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable max-len */
 import {
-  SAVE_USER_INFOS, CHANGE_MESSAGE, CHANGE_DESCRIPTION, CHANGE_PSEUDO, CHANGE_EMAIL, CHANGE_PASSWORD, CHANGE_CONFIRM_PASSWORD, SAVE_USER, LOGOUT_USER, CHANGE_ADDRESS, CHANGE_ZIP_CODE, CHANGE_FIRST_NAME, CHANGE_LAST_NAME, CHANGE_CITY, CHANGE_HOLIDAY_MODE, SAVE_USER_CONVERSATIONS, UPDATE_USER, ERASE_MESSAGE, SAVE_MESSAGE, SAVE_USER_FULL_DATA, SAVE_OTHER_USER_FULL_DATA,
+  SAVE_USER_INFOS,
+  SUBMIT_FORM_REGISTER,
+  SAVE_ERRORS,
+  CHANGE_DESCRIPTION,
+  CHANGE_PSEUDO,
+  CHANGE_EMAIL,
+  CHANGE_PASSWORD,
+  CHANGE_CONFIRM_PASSWORD,
+  SAVE_USER,
+  LOGOUT_USER,
+  CHANGE_ADDRESS,
+  CHANGE_ZIP_CODE,
+  CHANGE_FIRST_NAME,
+  CHANGE_LAST_NAME,
+  CHANGE_CITY,
+  CHANGE_HOLIDAY_MODE,
+  SAVE_USER_CONVERSATIONS,
+  UPDATE_USER,
+  ERASE_ERROR_MESSAGE,
+  SAVE_MESSAGE,
+  SAVE_USER_FULL_DATA,
+  SAVE_OTHER_USER_FULL_DATA,
 } from '../actions/user';
 
 export const initialState = {
@@ -24,6 +43,8 @@ export const initialState = {
   picture: '',
   fullData: '',
   otherUserFullData: '',
+  errors: '',
+  status: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -88,15 +109,10 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         message: action.message,
       };
-    case CHANGE_MESSAGE:
+    case ERASE_ERROR_MESSAGE:
       return {
         ...state,
-        message: action.message,
-      };
-    case ERASE_MESSAGE:
-      return {
-        ...state,
-        message: '',
+        errors: '',
       };
     case SAVE_USER:
       return {
@@ -153,11 +169,30 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         conversations: action.data,
       };
+    case SAVE_ERRORS:
+      return {
+        ...state,
+        errors: JSON.parse(action.errors),
+      };
+    case SUBMIT_FORM_REGISTER:
+      return {
+        ...state,
+        email: '',
+        password: '',
+        confirmPassword: '',
+        pseudo: '',
+        address: '',
+        zipCode: '',
+        city: '',
+        firstName: '',
+        lastName: '',
+        errors: '',
+      };
     case LOGOUT_USER:
       return {
         email: '',
         password: '',
-        confirmPassword:'',
+        confirmPassword: '',
         pseudo: '',
         address: '',
         zipCode: '',
@@ -174,6 +209,7 @@ const reducer = (state = initialState, action = {}) => {
         picture: '',
         fullData: '',
         otherUserFullData: '',
+        errors: '',
       };
     default:
       return state;

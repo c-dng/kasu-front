@@ -1,15 +1,5 @@
-/* eslint-disable linebreak-style */
-// eslint-disable-next-line linebreak-style
-/* eslint-disable no-console */
-/* eslint-disable linebreak-style */
-/* eslint-disable jsx-a11y/label-has-associated-control */
-/* eslint-disable linebreak-style */
-/* eslint-disable react/jsx-no-comment-textnodes */
-/* eslint-disable linebreak-style */
-/* eslint-disable react/prop-types */
-/* eslint-disable linebreak-style */
-// eslint-disable-next-line linebreak-style
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import {
   Button, Card, Form, Image,
 } from 'semantic-ui-react';
@@ -31,8 +21,7 @@ const ContactForm = ({
     function cleanup() {
       onContactFormUnmount();
     }),
-    []);
-
+  []);
 
   useEffect(() => {
     changeObject(object || 'Ajouter un manga');
@@ -40,14 +29,12 @@ const ContactForm = ({
 
   const handleChangeObject = (evt) => {
     changeObject(evt.target.value);
-    // console.log(evt.target.value);
   };
   const handleChangeContent = (evt) => {
     changeContent(evt.target.value);
   };
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    console.log(message.message);
     handleMessage();
   };
 
@@ -85,6 +72,19 @@ const ContactForm = ({
       </div>
     </div>
   );
+};
+
+ContactForm.propTypes = {
+  object: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
+  message: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object,
+  ]).isRequired,
+  changeObject: PropTypes.func.isRequired,
+  changeContent: PropTypes.func.isRequired,
+  handleMessage: PropTypes.func.isRequired,
+  onContactFormUnmount: PropTypes.func.isRequired,
 };
 
 export default ContactForm;

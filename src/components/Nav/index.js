@@ -13,8 +13,13 @@ import logoutlogo from 'src/assets/images/logoutlogo.png';
 import loginlogo from 'src/assets/images/loginlogo.png';
 
 const Nav = ({
-
-  changeWebsiteTheme, navIconsColor, isLogged, disconnectUser, handleConversationsLoad, loadUserInfos, picture,
+  changeWebsiteTheme,
+  navIconsColor,
+  isLogged,
+  disconnectUser,
+  handleConversationsLoad,
+  loadUserInfos,
+  picture,
 }) => {
   let logoToDisplay;
   let chatlogoToDisplay;
@@ -34,26 +39,15 @@ const Nav = ({
       break;
   }
 
-  // eslint-disable-next-line no-unused-vars
-  const handleLogout = (evt) => {
+  const handleLogout = () => {
     disconnectUser();
   };
-  // eslint-disable-next-line no-unused-vars
-  const handleTheme1 = (evt) => {
+  const handleTheme1 = () => {
     changeWebsiteTheme('theme1', 'black');
   };
 
   const handleTheme2 = () => {
     changeWebsiteTheme('theme2', 'white');
-  };
-
-  const handleTheme3 = () => {
-    changeWebsiteTheme('theme3', 'black');
-  };
-
-  // eslint-disable-next-line no-unused-vars
-  const handleTheme4 = (evt) => {
-    changeWebsiteTheme('theme4', 'black');
   };
 
   return (
@@ -113,7 +107,12 @@ Nav.propTypes = {
   isLogged: PropTypes.bool.isRequired,
   disconnectUser: PropTypes.func.isRequired,
   handleConversationsLoad: PropTypes.func.isRequired,
+  loadUserInfos: PropTypes.func.isRequired,
+  picture: PropTypes.string,
+};
 
+Nav.defaultProps = {
+  picture: '',
 };
 
 export default Nav;

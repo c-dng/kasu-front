@@ -1,11 +1,10 @@
-/* eslint-disable linebreak-style */
 import React from 'react';
 import Carousel from 'react-multi-carousel';
+import PropTypes from 'prop-types';
 import 'react-multi-carousel/lib/styles.css';
-import ResultCard from '../../SearchResultsByLocation/ResultCard';
+import ResultCard from 'src/containers/ResultCard';
 
 const HomeCarousel = ({ carouselUsers, handleLoadUser, createNewChat }) => (
-
 
   <div className="homeCarousel">
     <Carousel
@@ -81,5 +80,14 @@ const HomeCarousel = ({ carouselUsers, handleLoadUser, createNewChat }) => (
     </Carousel>
   </div>
 );
+
+HomeCarousel.propTypes = {
+  carouselUsers: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.string,
+  ]).isRequired,
+  handleLoadUser: PropTypes.func.isRequired,
+  createNewChat: PropTypes.func.isRequired,
+};
 
 export default HomeCarousel;

@@ -1,21 +1,5 @@
-/* eslint-disable linebreak-style */
-// eslint-disable-next-line linebreak-style
-/* eslint-disable no-console */
-/* eslint-disable linebreak-style */
-/* eslint-disable max-len */
-/* eslint-disable linebreak-style */
-/* eslint-disable no-use-before-define */
-/* eslint-disable linebreak-style */
-/* eslint-disable no-empty-pattern */
-/* eslint-disable linebreak-style */
-/* eslint-disable camelcase */
-/* eslint-disable linebreak-style */
-/* eslint-disable react/prop-types */
-/* eslint-disable linebreak-style */
-/* eslint-disable import/no-duplicates */
-/* eslint-disable linebreak-style */
 import React, { useEffect } from 'react';
-import { ButtonGroup } from 'semantic-ui-react';
+import PropTypes from 'prop-types';
 import validator from 'validator'; // checking of password
 import {
   Button, Header, Form, Icon, Checkbox, Image, Label, Modal, TextArea,
@@ -34,7 +18,6 @@ const DesktopSetIdCard = ({
   holiday_mode,
   description,
   picture,
-  infos,
   changeEmail,
   changePassword,
   changeConfirmPassword,
@@ -48,11 +31,10 @@ const DesktopSetIdCard = ({
   changeDescription,
   handleUpdate,
   displayUserInfos,
-  redirectTo
+  redirectTo,
 }) => {
   useEffect(() => {
     displayUserInfos();
-    console.log('infos chargées', {infos});
   }, []);
 
   const [open, setOpen] = React.useState(false);// Modal to delete account
@@ -61,23 +43,18 @@ const DesktopSetIdCard = ({
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    if ( confirmPassword  ===  password ) {
+    if (confirmPassword === password) {
       setErrorMessagePassword('');
-      console.log('Bien soumis! mots de passe identiques');
       handleUpdate();
     }
     else {
       setErrorMessagePassword('Les mots de passe ne sont pas identiques!');
-      console.log('ERROR mots de passe inégaux');
-    } 
+    }
   };
   const handleChangeEmail = (evt) => {
     changeEmail(evt.target.value);
   };
-  const handleChangePassword = (evt) => {
-    validate(evt.target.value);// checking password
-    changePassword(evt.target.value);
-  };
+
   const handleChangeConfirmPassword = (evt) => {
     changeConfirmPassword(evt.target.value);
   };
@@ -102,23 +79,23 @@ const DesktopSetIdCard = ({
   const handleChangeDescription = (evt) => {
     changeDescription(evt.target.value);
   };
-    // toggle function
+  // toggle function
   const onChangeCheckbox = (evt, data) => {
     const { checked } = data;
     changeHolidayMode(checked);
   };
 
-  //Delete Account => Redirect to contactForm
+  // Delete Account => Redirect to contactForm
   const handleDeleteMyAccount = () => {
     setOpen(false);
     redirectTo('/contact');
-  }
+  };
 
-//Cancel => Redirect to profil
-const handleCancel = () => {
-  setOpen(false);
-  redirectTo('/profil/mon-profil');
-}
+  // Cancel => Redirect to profil
+  const handleCancel = () => {
+    setOpen(false);
+    redirectTo('/profil/mon-profil');
+  };
 
   // Check password with validator dependencie
   const validate = (value) => {
@@ -130,12 +107,15 @@ const handleCancel = () => {
       minSymbols: 1,
     })) {
       setErrorMessage('');
-      console.log(errorMessage);
     }
     else {
       setErrorMessage('Veuillez entrer un mot de passe valide: min-6 caractères, une majuscule, une minuscule, un chiffre et un des caractères suivants: @$%_*|=-');
-      console.log(errorMessage);
     }
+  };
+
+  const handleChangePassword = (evt) => {
+    validate(evt.target.value);// checking password
+    changePassword(evt.target.value);
   };
 
   return (
@@ -174,12 +154,14 @@ const handleCancel = () => {
             placeholder="Bio"
           />
           <Form.Input
+            label="Pseudo:"
             placeholder="Pseudo"
             value={pseudo}
             onChange={handleChangePseudo}
           />
           <Form.Group widths="equal">
             <Form.Input
+              label="Prénom:"
               className="desktopIdCard-formInputName"
               icon="user"
               iconPosition="left"
@@ -188,6 +170,7 @@ const handleCancel = () => {
               onChange={handleChangeFirstName}
             />
             <Form.Input
+              label="Nom:"
               className="desktopIdCard-formInputLastName"
               icon="user"
               iconPosition="left"
@@ -197,6 +180,7 @@ const handleCancel = () => {
             />
           </Form.Group>
           <Form.Input
+            label="Adresse:"
             icon="map marker alternate"
             iconPosition="left"
             placeholder="Adresse"
@@ -204,18 +188,21 @@ const handleCancel = () => {
             onChange={handleChangeAddress}
           />
           <Form.Input
+            label="Code postal:"
             placeholder="Code Postal"
             value={zipCode}
             type="number"
             onChange={handleChangeZipCode}
           />
           <Form.Input
+            label="Ville:"
             placeholder="Ville"
             value={city}
             onChange={handleChangeCity}
           />
           <Form.Group widths="equal">
             <Form.Input
+              label="Mot de passe:"
               className="desktopIdCard-formInpuPassword"
               input="password"
               icon="lock"
@@ -225,6 +212,7 @@ const handleCancel = () => {
               onChange={handleChangePassword}
             />
             <Form.Input
+              label="Confirmer mot de passe:"
               input="password"
               id="confirmPassword"
               icon="lock"
@@ -233,20 +221,21 @@ const handleCancel = () => {
               value={confirmPassword}
               onChange={handleChangeConfirmPassword}
               fluid
-            /> 
+            />
           </Form.Group>
           <div className="desktopIdCard-errorMessage">
             {errorMessagePassword}
           </div>
           <Form.Input
-              className="desktopIdCard-formInputEmail"
-              icon="mail"
-              type="email"
-              iconPosition="left"
-              placeholder="Email"
-              value={email}
-              onChange={handleChangeEmail}
-            />
+            label="Email:"
+            className="desktopIdCard-formInputEmail"
+            icon="mail"
+            type="email"
+            iconPosition="left"
+            placeholder="Email"
+            value={email}
+            onChange={handleChangeEmail}
+          />
           <div className="desktopIdCard-errorMessage">
             {errorMessage}
           </div>
@@ -257,24 +246,25 @@ const handleCancel = () => {
         </Form>
         <div className="desktopIdCard-divDeleteButton" >
           <Modal
+            dimmer="blurring"
             closeIcon
             open={open}
             trigger={<Button size="mini" className="desktopIdCard-DeleteButtonRed">Supprimer mon compte</Button>}
             onClose={() => setOpen(false)}
             onOpen={() => setOpen(true)}
           >
-            <Header icon='archive' content='Archive Old Messages' />
+            <Header icon="archive" content="Archive Old Messages" />
             <Modal.Content>
               <p>
                 Voulez-vous vraiment supprimer votre compte ?
               </p>
             </Modal.Content>
             <Modal.Actions>
-              <Button color='red' onClick={() => setOpen(false)}>
-                <Icon name='remove' /> Non
+              <Button color="red" onClick={() => setOpen(false)}>
+                <Icon name="remove" /> Non
               </Button>
-              <Button color='green' onClick={handleDeleteMyAccount}>
-                <Icon name='checkmark' /> Oui
+              <Button color="green" onClick={handleDeleteMyAccount}>
+                <Icon name="checkmark" /> Oui
               </Button>
             </Modal.Actions>
           </Modal>
@@ -282,6 +272,47 @@ const handleCancel = () => {
       </div>
     </div>
   );
+};
+
+DesktopSetIdCard.propTypes = {
+  email: PropTypes.string.isRequired,
+  password: PropTypes.string.isRequired,
+  confirmPassword: PropTypes.string.isRequired,
+  pseudo: PropTypes.string.isRequired,
+  address: PropTypes.string.isRequired,
+  zipCode: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
+  city: PropTypes.string.isRequired,
+  firstName: PropTypes.string.isRequired,
+  lastName: PropTypes.string.isRequired,
+  holiday_mode: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.bool,
+  ]),
+  description: PropTypes.string,
+  picture: PropTypes.string.isRequired,
+  changeEmail: PropTypes.func.isRequired,
+  changePassword: PropTypes.func.isRequired,
+  changeConfirmPassword: PropTypes.func.isRequired,
+  changePseudo: PropTypes.func.isRequired,
+  changeAddress: PropTypes.func.isRequired,
+  changeZipCode: PropTypes.func.isRequired,
+  changeCity: PropTypes.func.isRequired,
+  changeFirstName: PropTypes.func.isRequired,
+  changeLastName: PropTypes.func.isRequired,
+  changeHolidayMode: PropTypes.func.isRequired,
+  changeDescription: PropTypes.func.isRequired,
+  handleUpdate: PropTypes.func.isRequired,
+  displayUserInfos: PropTypes.func.isRequired,
+  redirectTo: PropTypes.func.isRequired,
+};
+
+DesktopSetIdCard.defaultProps = {
+  description: '',
+  holiday_mode: false,
+  zipCode: '',
 };
 
 export default DesktopSetIdCard;

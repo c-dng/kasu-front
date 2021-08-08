@@ -1,20 +1,18 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable react/prop-types */
-/* eslint-disable linebreak-style */
-/* eslint-disable object-curly-newline */
-/* eslint-disable linebreak-style */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import {
   Button, Divider, Icon, Image,
 } from 'semantic-ui-react';
 import '../style.scss';
 
-const DesktopIdCard = ({ pseudo, bio, city, zipcode, picture, holidayMode }) => (
+const DesktopIdCard = ({
+  pseudo, bio, city, zipcode, picture, holidayMode,
+}) => (
   <div className="desktopIdCard">
     <div className="desktopIdCard-mainCard">
       <Image
-        size="small"
+        size="medium"
         src={`https://api.multiavatar.com/${picture}.png`}
         className="desktopIdCard-avatar"
       />
@@ -53,5 +51,23 @@ const DesktopIdCard = ({ pseudo, bio, city, zipcode, picture, holidayMode }) => 
     </div>
   </div>
 );
+
+DesktopIdCard.propTypes = {
+  pseudo: PropTypes.string.isRequired,
+  bio: PropTypes.string,
+  city: PropTypes.string.isRequired,
+  zipcode: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
+  picture: PropTypes.string.isRequired,
+  holidayMode: PropTypes.bool,
+};
+
+DesktopIdCard.defaultProps = {
+  holidayMode: false,
+  bio: '',
+  zipcode: '',
+};
 
 export default DesktopIdCard;

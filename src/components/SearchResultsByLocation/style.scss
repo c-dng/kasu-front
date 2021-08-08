@@ -7,6 +7,24 @@ div.ui.cards.searchResultsByLocation-cardGroup {
   margin: auto;
 }
 
+div.disabled.item.resultCard-volumefalse.resultCard-volumefalse.resultCard-volumefalse {
+  color: gray;
+  opacity: 1;
+}
+
+div.disabled.item.resultCard-volumetrue.resultCard-volumetrue.resultCard-volumetrue {
+  color: black;
+  opacity: 1
+}
+
+h4.searchResultsByLocation-subtitle--displayNone.searchResultsByLocation-subtitle--displayNone.searchResultsByLocation-subtitle--displayNone{
+  display: none;
+}
+h4.searchResultsByLocation-subtitle{
+  margin:0 auto;
+  font-size: 1.5rem;
+  text-align: center;
+}
 div.content.searchResultsByLocation-cardContentImgInfos > img.ui.medium.image {
   display: block;
   max-width: 290px;
@@ -26,6 +44,10 @@ div.content.searchResultsByLocation-cardContentImgInfos > img.ui.medium.image {
   line-height: 2.5rem;
   margin-bottom: 2rem;
 }
+.react-multi-carousel-item .ui.card.searchResultsByLocation-card {
+  width:auto;
+}
+
 .searchResultsByLocation-cardContentImgInfos.searchResultsByLocation-cardContentImgInfos.searchResultsByLocation-cardContentImgInfos {
   display: flex;
   justify-content: center;
@@ -37,7 +59,7 @@ div.content.searchResultsByLocation-cardContentImgInfos > img.ui.medium.image {
 }
 
 .ui.card.searchResultsByLocation-card.searchResultsByLocation-card.searchResultsByLocation-card.searchResultsByLocation-card {
-  margin: 0rem;
+  margin: 0rem auto;
   margin-bottom: 3rem;
 }
 
@@ -108,3 +130,4 @@ button.ui.blue.basic.button.searchResultsByLocation-contactOwner {
     color: vars.$secondaryFontColor_theme2;
   }
 }
+

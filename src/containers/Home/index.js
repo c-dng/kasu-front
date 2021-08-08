@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-
 import Home from 'src/components/Home';
 import { createNewChat } from '../../actions/chat';
 import { loadOtherUserFullData } from '../../actions/user';
@@ -9,7 +8,7 @@ const mapStateToProps = (state) => ({
   carouselUsers: state.search.carouselSearchData,
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
+const mapDispatchToProps = (dispatch) => ({
   handleLoadUser: function (id) {
     dispatch(loadOtherUserFullData(id));
   },

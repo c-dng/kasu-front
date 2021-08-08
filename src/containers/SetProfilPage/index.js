@@ -1,13 +1,23 @@
 import { connect } from 'react-redux';
-
 import SetProfilPage from 'src/components/SetProfilPage';
-
 import {
-  getUserInfos, changeMessage, updateUser, changeDescription, changeEmail, changePassword, changeConfirmPassword, changeCity, changeAddress, changeZipCode, changeLastName, changeFirstName, changePseudo, changeHolidayMode, loadUserFullData, eraseMessage,
+  getUserInfos,
+  updateUser,
+  changeDescription,
+  changeEmail,
+  changePassword,
+  changeConfirmPassword,
+  changeCity,
+  changeAddress,
+  changeZipCode,
+  changeLastName,
+  changeFirstName,
+  changePseudo,
+  changeHolidayMode,
 } from '../../actions/user';
 import { redirectTo } from '../../actions/global';
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state) => ({
   pseudo: state.user.pseudo,
   email: state.user.email,
   password: state.user.password,
@@ -18,16 +28,11 @@ const mapStateToProps = (state, ownProps) => ({
   lastName: state.user.lastName,
   holiday_mode: state.user.holiday_mode,
   description: state.user.description,
-  message: state.user.message,
   picture: state.user.data.picture,
   confirmPassword: state.user.confirmPassword,
-  infos: state.user.infos,
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
-  changeMessage: function (message) {
-    dispatch(changeMessage(message));
-  },
+const mapDispatchToProps = (dispatch) => ({
 
   handleUpdate: function () {
     dispatch(updateUser());
@@ -77,7 +82,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     dispatch(changeDescription(description));
   },
 
-  displayUserInfos: function (infos) {
+  displayUserInfos: function () {
     dispatch(getUserInfos());
   },
 

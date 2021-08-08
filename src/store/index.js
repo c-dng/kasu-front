@@ -33,6 +33,5 @@ const enhancers = composeEnhancers(
   ),
 );
 
-// const store = createStore(reducer, enhancers);
 export const store = createStore(persistedReducer, enhancers);
 export const persistor = persistStore(store);

@@ -11,6 +11,7 @@ import {
   changeLastName,
   changeEmail,
   RegisterUser,
+  eraseErrorMessage,
 } from '../../actions/user';
 
 const mapStateToProps = (state) => ({
@@ -23,6 +24,8 @@ const mapStateToProps = (state) => ({
   city: state.user.city,
   password: state.user.password,
   confirmPassword: state.user.confirmPassword,
+  errors: state.user.errors,
+  status: state.user.status,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -55,6 +58,10 @@ const mapDispatchToProps = (dispatch) => ({
   },
   handleRegistering: function () {
     dispatch(RegisterUser());
+  },
+
+  eraseErrorMessage: function () {
+    dispatch(eraseErrorMessage());
   },
 });
 

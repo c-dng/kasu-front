@@ -1,3 +1,4 @@
+@use '/src/styles/vars';
 // General
 
 .picture {
@@ -39,6 +40,16 @@ div.chatField-inputAndSubmit {
 button.ui.icon.button.chatField-submit {
   border: 1px solid black;
 }
+.ui.button.chat-otherUserProfilLink {
+    border-radius: 1rem;
+    margin-top: 1em;
+    border: 1px solid black;
+    padding:1.2rem;
+    font-size: 0.8rem;
+    position: fixed;
+    left:50%;
+    transform: translateX(-50%);
+}
 
 // Messages 
 
@@ -48,6 +59,7 @@ button.ui.icon.button.chatField-submit {
   overflow-y: auto;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  margin: 80px auto;
 }
 
 div.message.message:nth-last-child(2) {
@@ -77,6 +89,41 @@ div.message.message:nth-last-child(2) {
     text-align: left;
   }
 }
+//Theming
+
+.theme1 {
+
+  .ui.button.chat-otherUserProfilLink {
+    background-color: vars.$primaryColor_theme1;
+    color: vars.$primaryFontColor_theme1;
+    transition: all 0.5s;
+  }
+  .ui.button.chat-otherUserProfilLink:hover {
+    background-color: vars.$secondaryColor_theme1;
+    color: vars.$secondaryFontColor_theme1;
+  }
+
+  div.chatField {
+    background-color: vars.$primaryColor_theme1;
+  }
+}
+.theme2 {
+
+  .ui.button.chat-otherUserProfilLink {
+    background-color: vars.$secondaryColor_theme2;
+    color: vars.$secondaryFontColor_theme2;
+    transition: all 0.5s;
+  }
+  .ui.button.chat-otherUserProfilLink:hover {
+    background-color: vars.$primaryColor_theme2;
+    color: vars.$primaryFontColor_theme2;
+    border:1px solid  vars.$primaryFontColor_theme2;
+  }
+  div.chatField {
+    background-color: vars.$primaryColor_theme2;
+  }
+}
+
 
 @media only screen and (min-width : 1224px) {
 .chatField.chatField.chatField.chatField {
@@ -120,10 +167,25 @@ div.message.message:nth-last-child(2) {
     display: block; 
     height:15em;
     transform: translateY(-50%);
+    cursor: pointer;
   }
-  .picture:first-child {
+  .picture:nth-child(2) {
     left:50px;
   }
-  
+  .ui.button.chat-otherUserProfilLink {
+  display: none;
+  }
+
+  .theme1 {
+    .messages.messages.messages {
+      background-color: vars.$primaryColor_theme1;
+    }
+  }
+
+  .theme2 {
+    .messages.messages.messages {
+      background-color:vars.$primaryColor_theme2;
+    }
+  }
   
 }
