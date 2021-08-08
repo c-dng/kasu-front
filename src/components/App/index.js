@@ -147,30 +147,38 @@ const App = ({
           <Footer />
         </Route>
         {isLogged && (
-          <>
-            <Route path="/conversations" exact>
-              <Conversations />
-            </Route>
-            <Route path="/conversation/:id" exact>
-              <Chat />
-            </Route>
-            <Route path="/profil/collection" exact>
-              <ManageMyCollection />
-              <Footer />
-            </Route>
-            <Route path="/profil/mon-profil" exact>
-              <ViewProfilPage />
-              <Footer />
-            </Route>
-            <Route path="/profil/mes-infos" exact>
-              <SetProfilPage />
-              <Footer />
-            </Route>
-            <Route path="/profil/:id">
-              <OtherMemberProfilePage />
-              <Footer />
-            </Route>
-          </>
+          <Route path="/conversations" exact>
+            <Conversations />
+          </Route>
+        )}
+        {isLogged && (
+          <Route path="/conversation/:id" exact>
+            <Chat />
+          </Route>
+        )}
+        {isLogged && (
+          <Route path="/profil/collection" exact>
+            <ManageMyCollection />
+            <Footer />
+          </Route>
+        )}
+        {isLogged && (
+          <Route path="/profil/mon-profil" exact>
+            <ViewProfilPage />
+            <Footer />
+          </Route>
+        )}
+        {isLogged && (
+          <Route path="/profil/mes-infos" exact>
+            <SetProfilPage />
+            <Footer />
+          </Route>
+        )}
+        {isLogged && (
+          <Route path="/profil/:id">
+            <OtherMemberProfilePage />
+            <Footer />
+          </Route>
         )}
         <Route path="*">
           <Error />

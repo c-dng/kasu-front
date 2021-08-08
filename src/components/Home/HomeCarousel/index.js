@@ -2,7 +2,7 @@ import React from 'react';
 import Carousel from 'react-multi-carousel';
 import PropTypes from 'prop-types';
 import 'react-multi-carousel/lib/styles.css';
-import ResultCard from '../../SearchResultsByLocation/ResultCard';
+import ResultCard from 'src/containers/ResultCard';
 
 const HomeCarousel = ({ carouselUsers, handleLoadUser, createNewChat }) => (
 
