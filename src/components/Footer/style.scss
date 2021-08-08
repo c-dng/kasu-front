@@ -7,7 +7,9 @@
   justify-content: center;
   margin-top: auto;
 }
+.items.footer-items{
 
+}
 // Theming
 
 .theme1 {
@@ -22,6 +24,8 @@
   }
   a.item.footer-items.footer-items.footer-items {
     color: vars.$tertiaryFontColor_theme1;
+    font-weight: bolder;
+
   }
 
   a.item.footer-items.footer-items.footer-items[tabIndex]:focus {
@@ -44,6 +48,8 @@
   }
   a.item.footer-items.footer-items.footer-items {
     color: vars.$tertiaryFontColor_theme2;
+    font-weight: bolder;
+
   }
 
   a.item.footer-items.footer-items.footer-items[tabIndex]:focus {
@@ -70,6 +76,7 @@
 
     a.item.footer-items.footer-items.footer-items {
       color: vars.$primaryFontColor_theme1;
+      
     }
   
     a.item.footer-items.footer-items.footer-items[tabIndex]:focus {

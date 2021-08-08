@@ -6,7 +6,7 @@ import {
 } from 'semantic-ui-react';
 import './style.scss';
 import SearchBar from 'src/containers/SearchBar';
-import ResultCard from './ResultCard';
+import ResultCard from 'src/containers/ResultCard';
 
 const SearchResultsByLocation = ({ users, handleLoadUser, createNewChat }) => (
   <div className="searchResultsByLocation">
