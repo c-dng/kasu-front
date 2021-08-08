@@ -34,13 +34,6 @@ const Conversations = ({
     'conversations-button--notHiddenBox': !isBoxHidden,
   });
 
-  const handleTheme1 = () => {
-    changeWebsiteTheme('theme1', 'black');
-  };
-
-  const handleTheme2 = () => {
-    changeWebsiteTheme('theme2', 'white');
-  };
   const userOptions = [];
   if (conversations) {
     Object.values(conversations).map((conversation) => {
@@ -65,6 +58,28 @@ const Conversations = ({
 
   const [open, setOpen] = React.useState(false);
   const [userValue, setUserValue] = React.useState(0);
+  const [theme, setTheme] = React.useState(false);
+
+  const handleTheme1 = () => {
+    changeWebsiteTheme('theme1', 'black');
+  };
+
+  const handleTheme2 = () => {
+    changeWebsiteTheme('theme2', 'white');
+  };
+
+  const changeTheming = () => {
+    setTheme(!theme);
+  
+    if(theme === true ) {
+      handleTheme1();
+      console.log(theme);
+    } else {
+      handleTheme2();
+      console.log(theme);
+    }
+  }
+  
 
   const getUserValue = (event, { value }) => {
     setUserValue(value);
@@ -170,13 +185,9 @@ const Conversations = ({
             </Modal>
           </Grid.Column>
           <Grid.Column className="conversations-footerDivIcon" textAlign="center">
-            <Image size="tiny" circular src={paletteWhite} className="conversations-paletteImage conversations-buttonImages" />
-            <Dropdown icon="dropdown">
-              <Dropdown.Menu className="conversations-dropdownThemingFooter">
-                <Dropdown.Item onClick={handleTheme1}>Bright mode</Dropdown.Item>
-                <Dropdown.Item onClick={handleTheme2}>Dark mode</Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
+            <Button onClick={changeTheming} className="conversations-themingButton">
+              <Image size="tiny" circular src={paletteWhite} className="conversations-paletteImage conversations-buttonImages" />
+            </Button>
           </Grid.Column>
           <Grid.Column className="conversations-footerDivIcon" textAlign="center">
             <Link to="/contact" exact={+true}>
