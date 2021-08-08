@@ -34,13 +34,6 @@ const Conversations = ({
     'conversations-button--notHiddenBox': !isBoxHidden,
   });
 
-  const handleTheme1 = () => {
-    changeWebsiteTheme('theme1', 'black');
-  };
-
-  const handleTheme2 = () => {
-    changeWebsiteTheme('theme2', 'white');
-  };
   const userOptions = [];
   if (conversations) {
     Object.values(conversations).map((conversation) => {
@@ -65,6 +58,28 @@ const Conversations = ({
 
   const [open, setOpen] = React.useState(false);
   const [userValue, setUserValue] = React.useState(0);
+  const [theme, setTheme] = React.useState(false);
+
+  const handleTheme1 = () => {
+    changeWebsiteTheme('theme1', 'black');
+  };
+
+  const handleTheme2 = () => {
+    changeWebsiteTheme('theme2', 'white');
+  };
+
+  const changeTheming = () => {
+    setTheme(!theme);
+  
+    if(theme === true ) {
+      handleTheme1();
+      console.log(theme);
+    } else {
+      handleTheme2();
+      console.log(theme);
+    }
+  }
+  
 
   const getUserValue = (event, { value }) => {
     setUserValue(value);
@@ -134,7 +149,7 @@ const Conversations = ({
       </Button>
       <Transition visible={!isBoxHidden} animation="slide up" duration={500}>
         <Grid centered columns={3} className="conversations-hiddenBox">
-          <Grid.Column textAlign="center">
+          <Grid.Column className="conversations-footerDivIcon" textAlign="center">
             <Modal
               size="tiny"
               closeIcon
@@ -169,16 +184,12 @@ const Conversations = ({
               </Modal.Actions>
             </Modal>
           </Grid.Column>
-          <Grid.Column textAlign="center">
-            <Image size="tiny" circular src={paletteWhite} className="conversations-paletteImage conversations-buttonImages" />
-            <Dropdown icon="dropdown">
-              <Dropdown.Menu>
-                <Dropdown.Item onClick={handleTheme1}>Bright mode</Dropdown.Item>
-                <Dropdown.Item onClick={handleTheme2}>Dark mode</Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
+          <Grid.Column className="conversations-footerDivIcon" textAlign="center">
+            <Button onClick={changeTheming} className="conversations-themingButton">
+              <Image size="tiny" circular src={paletteWhite} className="conversations-paletteImage conversations-buttonImages" />
+            </Button>
           </Grid.Column>
-          <Grid.Column textAlign="center">
+          <Grid.Column className="conversations-footerDivIcon" textAlign="center">
             <Link to="/contact" exact={+true}>
               <Button className="conversations-help conversations-buttons">
                 <Image size="tiny" circular src={helpWhite} className="conversations-helpImage conversations-buttonImages" />

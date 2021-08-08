@@ -3,6 +3,7 @@ import {
   Button, Card, Icon, Image, Select,
 } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
+import NoAccessModal from '../../NoAccessModal';
 
 const ResultCard = ({
   mangaName,
@@ -16,6 +17,7 @@ const ResultCard = ({
   ownerId,
   handleLoadUser,
   createNewChat,
+  isLogged,
 }) => {
   const mangaVolumeOptions = mangaVolumes.map((volume, index) => ({
     key: index,
@@ -38,10 +40,23 @@ const ResultCard = ({
 
           <div className="searchResultsByLocation-infoscard">
             <Card.Header className="searchResultsByLocation-nameManga">{mangaName}</Card.Header>
-            <a className="searchResultsByLocation-owner" onClick={() => handleLoadUser(ownerId)}>
-              <Image src={`https://api.multiavatar.com/${ownerPicture}.png`} avatar />
-              {ownerName}
-            </a>
+            {isLogged
+              ? (
+                <a className="searchResultsByLocation-owner" onClick={() => handleLoadUser(ownerId)}>
+                  <Image src={`https://api.multiavatar.com/${ownerPicture}.png`} avatar />
+                  {ownerName}
+                </a>
+              ) : (
+                <NoAccessModal
+                  trigger={(
+                    <a className="searchResultsByLocation-owner">
+                      <Image src={`https://api.multiavatar.com/${ownerPicture}.png`} avatar />
+                      {ownerName}
+                    </a>
+                  )}
+                />
+              )}
+
             <Card.Meta className="searchResultsByLocation-localisation"> <Icon disabled name="map marker alternate" />{ownerCity} - {ownerZipCode}</Card.Meta>
 
             <Card.Description className="searchResultsByLocation-numberVolume">
@@ -54,9 +69,21 @@ const ResultCard = ({
             <Button basic className="searchResultsByLocation-showMore" color="black" onClick={() => setOpen(!open)}>
               Voir plus
             </Button>
-            <Button onClick={() => createNewChat(ownerId)} basic color="blue" className="searchResultsByLocation-contactOwner">
-              Contacter le propriétaire
-            </Button>
+            {isLogged
+              ? (
+                <Button onClick={() => createNewChat(ownerId)} basic color="blue" className="searchResultsByLocation-contactOwner">
+                  Contacter le propriétaire
+                </Button>
+              ) : (
+                <NoAccessModal
+                  trigger={(
+                    <Button basic color="blue" className="searchResultsByLocation-contactOwner">
+                      Contacter le propriétaire
+                    </Button>
+                  )}
+                />
+              )}
+
           </div>
           {open && (
             <div className={open ? 'searchResultsByLocation-showMore--active' : 'searchResultsByLocation-showMore--hidden'}>
@@ -81,6 +108,7 @@ ResultCard.propTypes = {
   ownerId: PropTypes.number.isRequired,
   handleLoadUser: PropTypes.func.isRequired,
   createNewChat: PropTypes.func.isRequired,
+  isLogged: PropTypes.bool.isRequired,
 };
 
 export default ResultCard;

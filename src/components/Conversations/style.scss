@@ -43,7 +43,10 @@ div.conversation:not(:first-child) {
   animation-fill-mode: forwards;
 }
 
-
+button.ui.button.conversations-themingButton {
+  background-color: #c61100;
+  padding: 0;
+}
 
 @keyframes slideup {
   from {
@@ -83,6 +86,7 @@ div.ui.medium.image.conversations-modalContentImage.conversations-modalContentIm
 
 .conversations-buttonImages.conversations-buttonImages.conversations-buttonImages {
   padding: 0.5rem;
+  margin: auto;
 }
 
 div.description.conversations-modalDescription.conversations-modalDescription.conversations-modalDescription.conversations-modalDescription {
@@ -156,6 +160,10 @@ div.conversations-modalContent.image.content {
     border: 1px solid #c61100;
     padding-bottom: 20px;
 
+  }
+
+  div.center.aligned.column.conversations-footerDivIcon.conversations-footerDivIcon {
+    width: 30%;
   }
 
   .theme1 {
