@@ -43,7 +43,10 @@ div.conversation:not(:first-child) {
   animation-fill-mode: forwards;
 }
 
-
+button.ui.button.conversations-themingButton {
+  background-color: #c61100;
+  padding: 0;
+}
 
 @keyframes slideup {
   from {
