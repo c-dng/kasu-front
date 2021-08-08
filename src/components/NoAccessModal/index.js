@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import {
-  Button, Header, Icon, Modal
+  Button, Header, Icon, Modal,
 } from 'semantic-ui-react';
 
 const NoAccessModal = ({
-  trigger
+  trigger,
 }) => {
   const [openNotLoggedModal, setOpenNotLoggedModal] = React.useState(false);
 
@@ -28,7 +28,7 @@ const NoAccessModal = ({
         <p>
           Cette page est reservé aux utilisateurs enregistrés.
           Veuillez vous connecter, ou vous créer un compte afin d'accéder à ce contenu !
-                    </p>
+        </p>
       </Modal.Content>
       <Modal.Actions>
         <div className="home-buttonWrapper">
@@ -43,7 +43,7 @@ const NoAccessModal = ({
       </Modal.Actions>
     </Modal>
   );
-}
+};
 
 NoAccessModal.propTypes = {
   trigger: PropTypes.element.isRequired,
