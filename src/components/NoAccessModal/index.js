@@ -12,6 +12,7 @@ const NoAccessModal = ({
 
   return (
     <Modal
+      closeIcon
       basic
       dimmer="blurring"
       onClose={() => setOpenNotLoggedModal(false)}
