@@ -61,7 +61,7 @@ const SetProfilPage = ({
   };
 
   const handleSubmit = (evt) => {
-    evt.preventDefault(evt);
+    evt.preventDefault();
     if (confirmPassword === password) {
       setErrorMessagePassword('');
       handleUpdate();
