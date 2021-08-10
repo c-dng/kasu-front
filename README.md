@@ -24,20 +24,24 @@ Il s'agit d'un projet de prêt de mangas entre particuliers, avec différentes f
 
 
 ## Stack
-- **Front-end** : React, axios, socket.io, Redux,
+- **Front-end** : React/Redux,
 - **Back-end** : Symfony5, MySQL
 
 La communication fonctionne donc en mode API, avec sécurisation par token JWT. 
 
-### Front office:
-- 
-- 
-- 
+### Dépendances front-end principales:
+
+- redux-persist pour la persistence du state en localstorage
+- Utilisation de semantic-ui-react comme framework css (intégration react) + complété par du CSS natif
+- react-router-dom assure le routing en front
+- react-uuid pour créer des keys uniques pour les composants React issus de fonctions itératives type .map
+- react-responsive pour les cas où les media queries css ne suffisaient pas
+- react-multi-carousel : carouel de page d'accueil
+- prop-types : vérificateur de props React.
+- axios : pour nos requêtes HTTP (au lieu de l'api fetch)
 
 **Chat en realtime :**
 - via un serveur Node et socket.io.
-- 
-- 
 
 ## V2
 Dans une V2, nous envisageons de :
