@@ -23,7 +23,8 @@ const Nav = ({
 }) => {
   let logoToDisplay;
   let chatlogoToDisplay;
-
+  // the icons can't change colors directly via css, so had to import icons both in white and black.
+  // This switch allows to specify what image file to take in function of the chosen theme.
   switch (navIconsColor) {
     case 'black':
       logoToDisplay = logo;
@@ -38,7 +39,8 @@ const Nav = ({
       chatlogoToDisplay = chatlogo;
       break;
   }
-
+  // sends a LOGOUT_USER action type to every reducer to re-init states
+  // and removes the jwt token from localstorage
   const handleLogout = () => {
     disconnectUser();
   };
@@ -59,6 +61,7 @@ const Nav = ({
               <Image className="nav-logo" src={logoToDisplay} alt="logo" />
             </Link>
           </Menu.Item>
+          {/* conditional rendering if the user is logged or not */}
           {isLogged && (
             <Menu.Item className="nav-myProfilButton">
               <Image circular className="navbuttons" id="temporary-avatar" src={`https://api.multiavatar.com/${picture}.png`} alt="avatar-logo" size="mini" />

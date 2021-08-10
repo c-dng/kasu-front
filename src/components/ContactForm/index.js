@@ -17,22 +17,26 @@ const ContactForm = ({
   handleMessage,
   onContactFormUnmount,
 }) => {
+  // erase the message received by the api in response to the form submit displayed to the client
   useEffect(() => (
     function cleanup() {
       onContactFormUnmount();
     }),
   []);
-
+  // If the user doesn't change the form subject (so, if he wants to add a manga),
+  // this useEffect won't allow a null subject being sent.
   useEffect(() => {
     changeObject(object || 'Ajouter un manga');
   }, []);
-
+  // form subject as a controlled component
   const handleChangeObject = (evt) => {
     changeObject(evt.target.value);
   };
+  // form content as a controlled component
   const handleChangeContent = (evt) => {
     changeContent(evt.target.value);
   };
+  // sends the form to the api + save the message in response + erase the subject & content state
   const handleSubmit = (evt) => {
     evt.preventDefault();
     handleMessage();

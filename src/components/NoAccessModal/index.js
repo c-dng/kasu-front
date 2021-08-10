@@ -5,6 +5,7 @@ import {
   Button, Header, Icon, Modal,
 } from 'semantic-ui-react';
 
+// component used in case the user tries to access a content reserved to connected members
 const NoAccessModal = ({
   trigger,
 }) => {

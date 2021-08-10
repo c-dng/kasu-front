@@ -24,10 +24,12 @@ const Conversations = ({
   changeWebsiteTheme,
   loadOtherUserFullData,
 }) => {
+  // Toggler to display or not the additional chat bar
   const handleHiddenBox = () => {
     handleHiddenBoxDisplay();
   };
 
+  // using classnames library to manage classes instead of a complicated ternary operator.
   const buttonClasses = classNames({
     'conversations-buttons': true,
     'conversations-button--hiddenBox': isBoxHidden,
@@ -36,6 +38,7 @@ const Conversations = ({
 
   const userOptions = [];
   if (conversations) {
+    // iterating through an object in a declarative manner
     Object.values(conversations).map((conversation) => {
       const conversationUsers = conversation.chat.users;
       conversationUsers.map((user) => {
@@ -68,23 +71,22 @@ const Conversations = ({
     changeWebsiteTheme('theme2', 'white');
   };
 
+  // allows to change theme in a toggling manner
   const changeTheming = () => {
     setTheme(!theme);
-  
-    if(theme === true ) {
+    if (theme === true) {
       handleTheme1();
-      console.log(theme);
-    } else {
-      handleTheme2();
-      console.log(theme);
     }
-  }
-  
+    else {
+      handleTheme2();
+    }
+  };
 
   const getUserValue = (event, { value }) => {
     setUserValue(value);
   };
 
+  // loads the necessary other user infos in state for display, then redirects to its profile page.
   const handleConfirmClick = () => {
     setOpen(false);
     loadOtherUserFullData(userValue);
@@ -108,6 +110,7 @@ const Conversations = ({
               picture = conversation[1].chat.users[1].picture;
             }
             let lastMessageVariable;
+            // limits the displaying of last message to 75 characters
             if (conversation[1].lastmessage) {
               const messageLength = conversation[1].lastmessage.content.length;
 

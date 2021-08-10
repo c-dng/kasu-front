@@ -5,7 +5,6 @@ import 'react-multi-carousel/lib/styles.css';
 import ResultCard from 'src/containers/ResultCard';
 
 const HomeCarousel = ({ carouselUsers, handleLoadUser, createNewChat }) => (
-
   <div className="homeCarousel">
     <Carousel
       additionalTransfrom={0}

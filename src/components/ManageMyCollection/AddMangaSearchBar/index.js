@@ -3,7 +3,12 @@ import { Form, Segment } from 'semantic-ui-react';
 import './style.scss';
 import PropTypes from 'prop-types';
 
-const AddMangaSearchBar = ({setMangaSearch, manageSubmit, loading, mangaSearch}) => {
+const AddMangaSearchBar = ({
+  setMangaSearch, manageSubmit, loading, mangaSearch,
+}) => {
+  // retrieves manga database from state
+  // then filter it based on mangaSearch
+  // then saves results in state
   const handleSubmit = (event) => {
     event.preventDefault();
     manageSubmit(mangaSearch);

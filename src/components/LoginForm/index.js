@@ -18,17 +18,25 @@ const LoginForm = ({
   handleLogin,
   isLogged,
 }) => {
+  // api post request to login :
+  // stores in state user infos + stores in local storage jwt token received
+  // then api get request to retrieve user's conversations and save them in state
+  // then websocket connection
   const handleSubmit = (evt) => {
     evt.preventDefault();
     handleLogin();
   };
+
+  // pseudo controlled component
   const handleChangePseudo = (evt) => {
     changePseudo(evt.target.value);
   };
+  // password controlled component
   const handleChangePassword = (evt) => {
     changePassword(evt.target.value);
   };
 
+  // automatic redirect to home page if user's already logged
   if (isLogged) {
     return <Redirect to="/" />;
   }
