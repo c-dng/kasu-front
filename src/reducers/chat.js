@@ -45,11 +45,6 @@ const reducer = (state = initialState, action = {}) => {
           ],
         },
       };
-    case SAVE_RECEIVED_MESSAGE:
-      return {
-        ...state,
-        // A FAIRE
-      };
     case SAVE_LAST_SINGLE_CHAT:
       return {
         ...state,

@@ -1,4 +1,3 @@
-/* eslint-disable react/self-closing-comp */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
@@ -30,7 +29,7 @@ const Home = ({
         {!isLogged && (
           <div className="home-buttonWrapper">
             <Button className="home-button" as={Link} to="/login">Se connecter</Button>
-            <div className="home-buttonArtificalMargin"></div>
+            <div className="home-buttonArtificalMargin" />
             <Button className="home-button" as={Link} to="/register">S'inscrire</Button>
           </div>
         )}

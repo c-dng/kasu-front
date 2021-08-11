@@ -11,6 +11,9 @@ import updateUser from 'src/middlewares/updateUser';
 import mangaMiddleware from 'src/middlewares/manga';
 import globalMiddleware from 'src/middlewares/global';
 
+// redux-persist used to make the state persist in localstorage, so that on refresh for example
+// user's display is not impacted by re-init of state.
+
 const persistConfig = {
   key: 'root',
   storage,

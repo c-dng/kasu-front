@@ -18,14 +18,12 @@ const MangaCollectionResult = ({
 
   const handleChange = (e, { value }) => {
     if (selected.length > value.length) { // an item has been removed
-      const difference = selected.filter(
-        (x) => !value.includes(x),
-      );
       return false;
     }
     return setSelected(value);
   };
   const mangaTitle = mangaName;
+  // using this string as the payload to the post request to respect api's requirements.
   const volumes = selected.join(', ');
 
   return (

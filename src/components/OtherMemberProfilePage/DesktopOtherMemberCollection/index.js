@@ -6,6 +6,7 @@ import {
 } from 'semantic-ui-react';
 import ViewOtherProfileCollectionResult from '../ViewOtherProfileCollectionResult';
 
+// Desktop component to display another member manga collection
 const DesktopOtherMemberCollection = ({ otherUserMangas }) => (
   <div className="DesktopOtherMemberCollection">
     <Card className="DesktopOtherMemberCollection-mainCard">

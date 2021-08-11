@@ -47,14 +47,6 @@ export const addMessage = (message, chatId, userId) => ({
 
 });
 
-// Store in the state the received message
-export const SAVE_RECEIVED_MESSAGE = 'SAVE_RECEIVED_MESSAGE';
-
-export const saveReceivedMessage = (receivedMessage) => ({
-  type: SAVE_RECEIVED_MESSAGE,
-  receivedMessage,
-});
-
 // Load via API chat conversation with another member before displaying it
 export const LOAD_SINGLE_CHAT = 'LOAD_SINGLE_CHAT';
 

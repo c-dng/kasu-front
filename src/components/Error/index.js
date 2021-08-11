@@ -6,12 +6,11 @@ import homeBanner from 'src/assets/images/homeBanner.jpg';
 import './style.scss';
 
 const Error = () => {
+  // automatically scrolls to the home button on page display
   const homeButtonRef = useRef(null);
-
   const scrollToBottom = () => {
     homeButtonRef.current.scrollIntoView({ behavior: 'smooth' });
   };
-
   useEffect(() => {
     scrollToBottom();
   }, []);

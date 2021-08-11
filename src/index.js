@@ -11,8 +11,11 @@ import 'semantic-ui-css/semantic.min.css';
 import Loading from './components/App/Loading';
 
 const rootReactElement = (
+  // allows front routing
   <Router>
+    {/* implants redux store mechanism */}
     <Provider store={store}>
+      {/* PersistGate is a react specific component for redux-persist integration */}
       <PersistGate loading={<Loading />} persistor={persistor}>
         <App />
       </PersistGate>

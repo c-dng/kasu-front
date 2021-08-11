@@ -16,16 +16,19 @@ const MyCollectionResult = ({
   addOrRemoveVolumes,
   deleteManga,
 }) => {
+  // manages the availability modal
   const [openAvailability, setOpenAvailability] = React.useState(false);
   const [checkedVolumes, setCheckedVolumes] = React.useState(
     mangaVolumes
       .filter((volume) => volume.status)
       .map((volume) => volume.number),
   );
+  // manages the edit modal
   const [openEdit, setOpenEdit] = React.useState(false);
-  const [possessedVolumes, setPossessedVolumes] = React.useState(
+  const [ownedVolumes, setOwnedVolumes] = React.useState(
     mangaVolumes.map((volume) => volume.number),
   );
+  // using lodash .range() to easily create an array from 1 to mangaMaxVolumeNumber
   const maxVolumeArray = _.range(1, mangaMaxVolumeNumber + 1);
   const mangaVolumeOptions = maxVolumeArray.map((volume) => ({
     key: volume,
@@ -33,8 +36,9 @@ const MyCollectionResult = ({
     value: volume,
     className: `volume${volume}`,
   }));
-
-  const possessedMangaVolumeOptions = mangaVolumes.map((volume, index) => ({
+  // creating an array of options used to display which volumes are owned by the user
+  // and allocate a specific css class if volume status true or false.
+  const ownedMangaVolumeOptions = mangaVolumes.map((volume, index) => ({
     key: index,
     text: volume.number,
     value: volume.number,
@@ -44,6 +48,7 @@ const MyCollectionResult = ({
 
   const [selected, setSelected] = React.useState(mangaVolumes.map((volume) => volume.number));
 
+  // controlled component, handling multiple selection
   const handleChange = (e, { value }) => {
     if (selected.length > value.length) { // an item has been removed
       const difference = selected.filter(
@@ -57,7 +62,7 @@ const MyCollectionResult = ({
     }
     return setSelected(value);
   };
-
+  // manages the delete modal
   const [openDelete, setOpenDelete] = React.useState(false);
   return (
     <>
@@ -71,7 +76,7 @@ const MyCollectionResult = ({
           />
         </div>
         <div className="manageMyCollection-selectAndAdd">
-          <Dropdown className="manageMyCollection-dropdownSelectAndAdd" placeholder="Mes Tomes" size="5" fluid multiple selection options={possessedMangaVolumeOptions} />
+          <Dropdown className="manageMyCollection-dropdownSelectAndAdd" placeholder="Mes Tomes" size="5" fluid multiple selection options={ownedMangaVolumeOptions} />
         </div>
         <div className="manageMyCollection-myCollectionThreeButtons">
           <div className="manageMyCollection-myCollectionButtonsSubGroup">
@@ -145,7 +150,7 @@ const MyCollectionResult = ({
                   </p>
 
                   <Dropdown
-                    defaultValue={possessedVolumes}
+                    defaultValue={ownedVolumes}
                     className="manageMyCollection-dropdownSelectAndAdd"
                     placeholder="Tome(s) à ajouter"
                     size="5"

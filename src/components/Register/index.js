@@ -35,46 +35,55 @@ const Register = ({
   const [errorMessage, setErrorMessage] = React.useState('');// display a message received from API
   const [errorMessagePassword, setErrorMessagePassword] = React.useState('');// display a message with errors
 
+  // email controlled component
   const handleChangeEmail = (evt) => {
     changeEmail(evt.target.value);
     eraseErrorMessage();
   };
 
+  // adress controlled component
   const handleChangeAddress = (evt) => {
     changeAddress(evt.target.value);
     eraseErrorMessage();
   };
 
+  // zip code controlled component
   const handleChangeZipCode = (evt) => {
     changeZipCode(evt.target.value);
     eraseErrorMessage();
   };
 
+  // confirmed password controlled component
   const handleChangeConfirmPassword = (evt) => {
     changeConfirmPassword(evt.target.value);
     eraseErrorMessage();
   };
 
+  // city controlled component
   const handleChangeCity = (evt) => {
     changeCity(evt.target.value);
     eraseErrorMessage();
   };
 
+  // first name controlled component
   const handleChangeFirstName = (evt) => {
     changeFirstName(evt.target.value);
     eraseErrorMessage();
   };
 
+  // last name controlled component
   const handleChangeLastName = (evt) => {
     changeLastName(evt.target.value);
     eraseErrorMessage();
   };
 
+  // pseudo controlled component
   const handleChangePseudo = (evt) => {
     changePseudo(evt.target.value);
     eraseErrorMessage();
   };
 
+  // Handling user inputs' quality
   const handleSubmit = (evt) => {
     evt.preventDefault(evt);
     if (confirmPassword !== password) {
@@ -112,6 +121,7 @@ const Register = ({
     }
   };
 
+  // Checking user password's strength
   const validatePassword = (value) => {
     if (validator.isStrongPassword(value, {
       minLength: 6,
@@ -127,6 +137,7 @@ const Register = ({
     }
   };
 
+  // password controlled component
   const handleChangePassword = (evt) => {
     validatePassword(evt.target.value);// checking password
     changePassword(evt.target.value);

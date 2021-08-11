@@ -4,6 +4,7 @@ import {
   Button, Divider, Icon, Image,
 } from 'semantic-ui-react';
 
+// Desktop component to display another member infos
 const DesktopIdCardOther = ({
   pseudo,
   bio,

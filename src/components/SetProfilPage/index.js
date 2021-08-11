@@ -45,6 +45,7 @@ const SetProfilPage = ({
   const [errorMessage, setErrorMessage] = React.useState('');// display a message with errors
   const [errorMessagePassword, setErrorMessagePassword] = React.useState('');// display a message with errors
 
+  // checking password strength
   const validate = (value) => {
     if (validator.isStrongPassword(value, {
       minLength: 6,
@@ -60,6 +61,7 @@ const SetProfilPage = ({
     }
   };
 
+  // submitting only if both password and confirm-password fields are identical
   const handleSubmit = (evt) => {
     evt.preventDefault();
     if (confirmPassword === password) {
@@ -71,47 +73,69 @@ const SetProfilPage = ({
     }
   };
 
+  // email field controlled component
   const handleChangeEmail = (evt) => {
     changeEmail(evt.target.value);
   };
+
+  // password field controlled component
   const handleChangePassword = (evt) => {
     validate(evt.target.value);// checking password
     changePassword(evt.target.value);
   };
+
+  // confirm-password field controlled component
   const handleChangeConfirmPassword = (evt) => {
     changeConfirmPassword(evt.target.value);
   };
+
+  // pseudo field controlled component
   const handleChangePseudo = (evt) => {
     changePseudo(evt.target.value);
   };
+
+  // adress field controlled component
   const handleChangeAddress = (evt) => {
     changeAddress(evt.target.value);
   };
+
+  // zip code field controlled component
   const handleChangeZipCode = (evt) => {
     changeZipCode(evt.target.value);
   };
+
+  // city field controlled component
   const handleChangeCity = (evt) => {
     changeCity(evt.target.value);
   };
+
+  // first name field controlled component
   const handleChangeFirstName = (evt) => {
     changeFirstName(evt.target.value);
   };
+
+  // last name field controlled component
   const handleChangeLastName = (evt) => {
     changeLastName(evt.target.value);
   };
+
+  // bio/description field controlled component
   const handleChangeDescription = (evt) => {
     changeDescription(evt.target.value);
   };
+
   // toggle function
   const onChangeCheckbox = (evt, data) => {
     const { checked } = data;
     changeHolidayMode(checked);
   };
+
   // Delete Account => Redirect to contactForm
   const handleDeleteMyAccount = () => {
     setOpen(false);
     redirectTo('/contact');
   };
+
   // Cancel => Redirect to profil
   const handleCancel = () => {
     setOpen(false);

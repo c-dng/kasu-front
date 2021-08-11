@@ -5,6 +5,8 @@ import {
 import PropTypes from 'prop-types';
 import NoAccessModal from '../../NoAccessModal';
 
+// This component is used for displaying results for the zip code search, but also for
+// the home page carousel.
 const ResultCard = ({
   mangaName,
   mangaPicture,
@@ -26,7 +28,6 @@ const ResultCard = ({
     className: `resultCard-volume${volume.status}`,
     disabled: true,
   }));
-
   const [open, setOpen] = useState(false);
 
   return (
@@ -40,6 +41,7 @@ const ResultCard = ({
 
           <div className="searchResultsByLocation-infoscard">
             <Card.Header className="searchResultsByLocation-nameManga">{mangaName}</Card.Header>
+            {/* Restricting user from reaching member-reserved content */}
             {isLogged
               ? (
                 <a className="searchResultsByLocation-owner" onClick={() => handleLoadUser(ownerId)}>
