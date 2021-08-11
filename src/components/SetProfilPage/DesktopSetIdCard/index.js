@@ -41,6 +41,7 @@ const DesktopSetIdCard = ({
   const [errorMessage, setErrorMessage] = React.useState('');// display a message received from API
   const [errorMessagePassword, setErrorMessagePassword] = React.useState('');// display a message with errors
 
+  // checking that both passwords are identical before submitting.
   const handleSubmit = (evt) => {
     evt.preventDefault();
     if (confirmPassword === password) {
@@ -51,34 +52,52 @@ const DesktopSetIdCard = ({
       setErrorMessagePassword('Les mots de passe ne sont pas identiques!');
     }
   };
+
+  // email field controlled component
   const handleChangeEmail = (evt) => {
     changeEmail(evt.target.value);
   };
 
+  // confirm password field controlled component
   const handleChangeConfirmPassword = (evt) => {
     changeConfirmPassword(evt.target.value);
   };
+
+  // pseudo field controlled component
   const handleChangePseudo = (evt) => {
     changePseudo(evt.target.value);
   };
+
+  // adress field controlled component
   const handleChangeAddress = (evt) => {
     changeAddress(evt.target.value);
   };
+
+  // zip code field controlled component
   const handleChangeZipCode = (evt) => {
     changeZipCode(evt.target.value);
   };
+
+  // city field controlled component
   const handleChangeCity = (evt) => {
     changeCity(evt.target.value);
   };
+
+  // first name field controlled component
   const handleChangeFirstName = (evt) => {
     changeFirstName(evt.target.value);
   };
+
+  // last name field controlled component
   const handleChangeLastName = (evt) => {
     changeLastName(evt.target.value);
   };
+
+  // bio/description field controlled component
   const handleChangeDescription = (evt) => {
     changeDescription(evt.target.value);
   };
+
   // toggle function
   const onChangeCheckbox = (evt, data) => {
     const { checked } = data;
@@ -97,7 +116,7 @@ const DesktopSetIdCard = ({
     redirectTo('/profil/mon-profil');
   };
 
-  // Check password with validator dependencie
+  // Check password with validator dependency
   const validate = (value) => {
     if (validator.isStrongPassword(value, {
       minLength: 6,
@@ -113,6 +132,7 @@ const DesktopSetIdCard = ({
     }
   };
 
+  // password field controlled component
   const handleChangePassword = (evt) => {
     validate(evt.target.value);// checking password
     changePassword(evt.target.value);
