@@ -17,8 +17,14 @@ let socket;
 const chatMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case WS_CONNECT: {
+      // connects the websocket only if user's connected
       if (localStorage.getItem('token')) {
+        // creating the connection to socket, with env variable. will be localhost if in development
+        // and will be the hosted server in production. See env.development or env.production files.
         socket = io(process.env.HOSTNAME_CHAT, { auth: { token: localStorage.getItem('token') } });
+        // when a message is sent by someone, the socket will emit a 'send_message' to every other
+        // connected user. With this signal is transported a payload containing
+        // necessary infos to add it in state, ready to be displayed.
         socket.on('send_message', (payload) => {
           const { chatId, userId, message } = payload;
           store.dispatch(addMessage(message, chatId, userId));
@@ -28,7 +34,10 @@ const chatMiddleware = (store) => (next) => (action) => {
       break;
     }
     case WS_DISCONNECT: {
+      // disconnects the websocket only if it was previsouly defined in the WS_CONNECT action
       if (socket) {
+        // emit a special kind of signal intepreted by the node server that will disconnect 
+        // the websocket.
         socket.emit('disconnectAction');
       }
       next(action);
